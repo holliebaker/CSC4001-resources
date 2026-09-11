@@ -9,9 +9,9 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
-  <meta name="author" content="Hollie">
+  <meta name="author" content="CSC4001: Computer Systems Architecture">
   <meta name="dcterms.date" content="2026-01-01">
-  <title>CSC4001-resources – My Minimal Reveal Example</title>
+  <title>CSC4001-resources – Logic gates</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -134,45 +134,498 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">My Minimal Reveal Example</h1>
+  <h1 class="title">Logic gates</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Hollie
+CSC4001: Computer Systems Architecture
 </div>
 </div>
 </div>
 
   <p class="date">2026-01-01</p>
 </section>
+<section id="learning-outcomes" class="slide level2">
+<h2>Learning Outcomes</h2>
+<ul>
+<li>Draw logic gates and define them using truth tables</li>
+<li>Combine logic gates to create different outputs.</li>
+</ul>
+</section>
 <section>
-<section id="section-title" class="title-slide slide level1 center">
-<h1>Section title</h1>
+<section id="logic-gates" class="title-slide slide level1 center">
+<h1>Logic gates</h1>
 
 </section>
-<section id="first-slide" class="slide level2">
-<h2>First slide</h2>
-<p>Here is some text on a slide.</p>
+<section id="boolean-algebra" class="slide level2">
+<h2>Boolean Algebra</h2>
+<ul>
+<li>Variant of Aristottle’s Propositional Logic proposed by George Boole
+<ol start="1854" type="1">
+<li></li>
+</ol></li>
+<li><strong>Variables</strong> can be <code>true</code> <span class="math inline">\(1\)</span> or <code>false</code> <span class="math inline">\(0\)</span></li>
+<li>Logical operations performed on variables to produe an output.</li>
+<li>Used to build digital circuits.</li>
+</ul>
 </section>
-<section id="another-slide" class="slide level2">
-<h2>Another slide</h2>
+<section id="logic-gates-and-truth-tables" class="slide level2">
+<h2>Logic gates and truth tables</h2>
 <div class="columns">
 <div class="column">
+<p>We can represent a Boolean logical operator as a <strong>logic gate</strong></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./assets/01-logic.svg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="A generic logic gate with two inputs."></p>
+</figure>
+</div>
+</div>
+</div>
 <ul>
-<li>This is a list</li>
-<li>of items</li>
-<li>with bullet points</li>
+<li>One or more inputS.</li>
+<li>One output determined by input values.</li>
 </ul>
 </div><div class="column">
-<p>The slide is arranged in two columns.</p>
+<p>Defined by a <strong>truth table</strong>.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(A\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(B\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q = A \ast B\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(!\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(!\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
 </div></div>
-</section></section>
-<section id="happy-quarto-ing" class="title-slide slide level1 center">
-<h1>Happy quarto-ing</h1>
-
-
 </section>
+<section id="and" class="slide level2">
+<h2>And</h2>
+<p>Output <span class="math inline">\(Q\)</span> is <em>True</em> only when <strong>both</strong> inputs <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <em>True</em>.</p>
+<div class="columns">
+<div class="column">
+<p>Defining Truth Table:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(A\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(B\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q = A\ \mathrm{AND}\ B\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(!\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(!\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(!\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column">
+<p>Logic gate:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./assets/01-and-gate.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="An AND gate.."></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p>When building circuit diagrams, it is convenient to use symbols to represent logic gates. Here we depict the ANSI symbols (other symbels, e.g., IEC and DIN are also available, but ANSI seems to be the most widely used).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="or" class="slide level2">
+<h2>OR</h2>
+<p>Output <span class="math inline">\(Q\)</span> is <em>True</em> only when <strong>either</strong> (or both) inputs <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span> are <em>True</em>.</p>
+<div class="columns">
+<div class="column">
+<p>Defining Truth Table:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(A\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(B\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q = A\ \mathrm{OR}\ B\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(!\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(!\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(!\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column">
+<p>Logic gate:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./assets/01-or-gate.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="An OR gate.."></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p>Note that this is different from the way we use “or” in everyday language. When a parent asks a child if they want chocolate “or” clrsps, they mean for the child to choose one of the other, not both. However, logical or would allow chocolate, crisps or both chocolate and crisps.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="xor" class="slide level2">
+<h2>XOR</h2>
+<p>Output <span class="math inline">\(Q\)</span> is <em>True</em> only when <strong>either</strong> inputs <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <em>True</em>, but <strong>not both</strong>.</p>
+<div class="columns">
+<p>Defining Truth Table:</p><div class="column">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(A\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(B\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q = A\ \mathrm{XOR}\ B\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(!\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(!\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column">
+<p>Logic gate:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./assets/01-xor-gate.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="An XOR gate.."></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<p>XOR or exclusive or is true if either input is true, but not both, as in the use of “or” in daily life.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="not" class="slide level2">
+<h2>NOT</h2>
+<p>One input; output <span class="math inline">\(Q\)</span> is <em>True</em> only when inputs <span class="math inline">\(A\)</span> is <em>False</em>.</p>
+<div class="columns">
+<p>Defining Truth Table:</p><div class="column">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(A\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q = \mathrm{NOT}\ A\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(!\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column">
+<p>Logic gate:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./assets/01-not-gate.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="A NOT gate."></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="nand" class="slide level2">
+<h2>NAND</h2>
+<p>Output <span class="math inline">\(Q\)</span> is <em>True</em> only when <strong>either</strong> (or both) inputs <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <em>False</em>.</p>
+<div class="columns">
+<div class="column">
+<p>Defining Truth Table:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(A\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(B\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q = A\ \mathrm{NAND}\ B\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(!\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(!\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column">
+<p>Logic gate:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./assets/01-nand-gate.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="A NAND gate.."></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="nor" class="slide level2">
+<h2>NOR</h2>
+<p>Output <span class="math inline">\(Q\)</span> is <em>True</em> only when *both** inputs <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <em>False</em>.</p>
+<div class="columns">
+<div class="column">
+<p>Defining Truth Table:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(A\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(B\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q = A\ \mathrm{NAND}\ B\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(!\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(!\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column">
+<p>Logic gate:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./assets/01-nor-gate.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="A NOR gate.."></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="exercise-logic-gate-simulator" class="slide level2">
+<h2>Exercise: logic gate simulator</h2>
+<div class="columns">
+<div class="column">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./assets/01-sim-1.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="Logic.ly simulator showing two toggle switches and a light bulb."> - Go to <a href="https://logic.ly/demo/">https://logic.ly/demo</a>.</p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Add two <em>Toggle Switches</em> as inputs and one <em>Light Bulb</em> as the output.</li>
+<li>Test out some logic gates – connect the two inputs to the output using the <strong>AND</strong>, <strong>OR</strong>, <strong>XOR</strong>, <strong>NOT</strong>, <strong>NAND</strong> and <strong>NOR</strong> gates.</li>
+</ul>
+</div><div class="column">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./assets/01-sim-2.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Logic.ly simulator, logic gates in seft-hand panel."></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="exercise-one-gate-in-terms-of-another" class="slide level2">
+<h2>Exercise: One gate in terms of another</h2>
+<p>Build the following:</p>
+<ul>
+<li>and <strong>AND</strong> gate using of only <strong>NOT</strong> and <strong>OR</strong>;</li>
+<li>an <strong>OR</strong> using only <strong>NOT</strong> and <strong>AND</strong>;</li>
+<li>a <strong>NOT</strong> gate using only <strong>NAND</strong>;</li>
+<li>an <strong>AND</strong> gate using only <strong>NAND</strong>;</li>
+<li>an <strong>OR</strong> gate using only <strong>NAND</strong>;</li>
+<li><strong>NOT</strong>, <strong>AND</strong> and <strong>OR</strong> gates using only <strong>NOR</strong>.</li>
+</ul>
+<aside class="notes">
+<p>Use the simulator, do it on paper, of if hardware is available, could even build real circuits.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="universal-logic-gates" class="slide level2">
+<h2>Universal logic gates</h2>
+<ul>
+<li><p>A <strong>universal</strong> logic gate (or logical operator) can be used to represent <strong>any</strong> other logical operator.</p></li>
+<li><p>Which of the logical operators <strong>AND</strong>, <strong>OR</strong>, <strong>NAND</strong> and <strong>NOR</strong> are universal?</p></li>
+</ul>
+</section>
+<section id="universal-logic-gates-solution" class="slide level2">
+<h2>Universal logic gates Solution</h2>
+<ul>
+<li><strong>NAND</strong> and <strong>NOR</strong></li>
+</ul>
+</section>
+<section id="make-it-true" class="slide level2">
+<h2>Make it true</h2>
+<ul>
+<li><a href="https://apps.apple.com/in/app/make-it-true-solve-circuits/id1536287319">for IOS</a></li>
+</ul>
+</section>
+<section id="next-time" class="slide level2">
+<h2>Next Time</h2>
+<p>Building components with logic gates</p>
+
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
