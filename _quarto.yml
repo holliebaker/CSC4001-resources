@@ -1,0 +1,4 @@
+project:
+  title: "CSC4001-resources"
+  type: website
+  output-dir: docs
