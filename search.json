@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "test.html#first-slide",
+    "href": "test.html#first-slide",
+    "title": "My Minimal Reveal Example",
+    "section": "First slide",
+    "text": "First slide\nHere is some text on a slide."
+  },
+  {
+    "objectID": "test.html#another-slide",
+    "href": "test.html#another-slide",
+    "title": "My Minimal Reveal Example",
+    "section": "Another slide",
+    "text": "Another slide\n\n\n\nThis is a list\nof items\nwith bullet points\n\n\nThe slide is arranged in two columns."
+  }
+]
