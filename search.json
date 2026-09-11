@@ -1,159 +1,5 @@
 [
   {
-    "objectID": "test.html#first-slide",
-    "href": "test.html#first-slide",
-    "title": "My Minimal Reveal Example",
-    "section": "First slide",
-    "text": "First slide\nHere is some text on a slide."
-  },
-  {
-    "objectID": "test.html#another-slide",
-    "href": "test.html#another-slide",
-    "title": "My Minimal Reveal Example",
-    "section": "Another slide",
-    "text": "Another slide\n\n\n\nThis is a list\nof items\nwith bullet points\n\n\nThe slide is arranged in two columns."
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#teaching-staff",
-    "href": "CSC4001-S00-welcome.html#teaching-staff",
-    "title": "Welcome",
-    "section": "Teaching Staff",
-    "text": "Teaching Staff\n\n\nDave Cobb, Module Leader.\n\n\n\n\n\n\n\n25 years experience in the computer industry. Subject leader, senior lecturer specialising in softare development.\n\nHollie Baker, Associate Lecturer\n\n\n\n\n\n\n\nPhD in computer science. Worked at a local company building web-based patient management systems and databases. Currently developing software for Bristol Braille Technology. Braillist."
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#intended-learning-outcomes",
-    "href": "CSC4001-S00-welcome.html#intended-learning-outcomes",
-    "title": "Welcome",
-    "section": "Intended Learning Outcomes",
-    "text": "Intended Learning Outcomes"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#topics-covered",
-    "href": "CSC4001-S00-welcome.html#topics-covered",
-    "title": "Welcome",
-    "section": "Topics covered",
-    "text": "Topics covered"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#schedule",
-    "href": "CSC4001-S00-welcome.html#schedule",
-    "title": "Welcome",
-    "section": "Schedule",
-    "text": "Schedule"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#timetable",
-    "href": "CSC4001-S00-welcome.html#timetable",
-    "title": "Welcome",
-    "section": "Timetable",
-    "text": "Timetable"
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#learning-outcomes",
-    "href": "CSC4001-S01-Logic.html#learning-outcomes",
-    "title": "Logic gates",
-    "section": "Learning Outcomes",
-    "text": "Learning Outcomes\n\nDraw logic gates and define them using truth tables\nCombine logic gates to create different outputs."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#boolean-algebra",
-    "href": "CSC4001-S01-Logic.html#boolean-algebra",
-    "title": "Logic gates",
-    "section": "Boolean Algebra",
-    "text": "Boolean Algebra\n\nVariant of Aristottle’s Propositional Logic proposed by George Boole\n\n\n\nVariables can be true \\(1\\) or false \\(0\\)\nLogical operations performed on variables to produe an output.\nUsed to build digital circuits."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#logic-gates-and-truth-tables",
-    "href": "CSC4001-S01-Logic.html#logic-gates-and-truth-tables",
-    "title": "Logic gates",
-    "section": "Logic gates and truth tables",
-    "text": "Logic gates and truth tables\n\n\nWe can represent a Boolean logical operator as a logic gate\n\n\n\n\n\n\n\n\n\n\nOne or more inputS.\nOne output determined by input values.\n\n\nDefined by a truth table.\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A \\ast B\\)\n\n\n\n\n\\(!\\)\n\\(1\\)\n\n\n\n\\(!\\)\n\\(0\\)\n\n\n\n\\(0\\)\n\\(1\\)\n\n\n\n\\(0\\)\n\\(0\\)"
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#and",
-    "href": "CSC4001-S01-Logic.html#and",
-    "title": "Logic gates",
-    "section": "And",
-    "text": "And\nOutput \\(Q\\) is True only when both inputs \\(A\\) and \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{AND}\\ B\\)\n\n\n\n\n\\(!\\)\n\\(1\\)\n\\(!\\)\n\n\n\\(!\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nWhen building circuit diagrams, it is convenient to use symbols to represent logic gates. Here we depict the ANSI symbols (other symbels, e.g., IEC and DIN are also available, but ANSI seems to be the most widely used)."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#or",
-    "href": "CSC4001-S01-Logic.html#or",
-    "title": "Logic gates",
-    "section": "OR",
-    "text": "OR\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) or \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{OR}\\ B\\)\n\n\n\n\n\\(!\\)\n\\(1\\)\n\\(!\\)\n\n\n\\(!\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nNote that this is different from the way we use “or” in everyday language. When a parent asks a child if they want chocolate “or” clrsps, they mean for the child to choose one of the other, not both. However, logical or would allow chocolate, crisps or both chocolate and crisps."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#xor",
-    "href": "CSC4001-S01-Logic.html#xor",
-    "title": "Logic gates",
-    "section": "XOR",
-    "text": "XOR\nOutput \\(Q\\) is True only when either inputs \\(A\\) and \\(B\\) are True, but not both.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{XOR}\\ B\\)\n\n\n\n\n\\(!\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(!\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nXOR or exclusive or is true if either input is true, but not both, as in the use of “or” in daily life."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#not",
-    "href": "CSC4001-S01-Logic.html#not",
-    "title": "Logic gates",
-    "section": "NOT",
-    "text": "NOT\nOne input; output \\(Q\\) is True only when inputs \\(A\\) is False.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(Q = \\mathrm{NOT}\\ A\\)\n\n\n\n\n\\(!\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#nand",
-    "href": "CSC4001-S01-Logic.html#nand",
-    "title": "Logic gates",
-    "section": "NAND",
-    "text": "NAND\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(!\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(!\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#nor",
-    "href": "CSC4001-S01-Logic.html#nor",
-    "title": "Logic gates",
-    "section": "NOR",
-    "text": "NOR\nOutput \\(Q\\) is True only when *both** inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(!\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(!\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#exercise-logic-gate-simulator",
-    "href": "CSC4001-S01-Logic.html#exercise-logic-gate-simulator",
-    "title": "Logic gates",
-    "section": "Exercise: logic gate simulator",
-    "text": "Exercise: logic gate simulator\n\n\n\n\n\n\n - Go to https://logic.ly/demo.\n\n\n\n\n\nAdd two Toggle Switches as inputs and one Light Bulb as the output.\nTest out some logic gates – connect the two inputs to the output using the AND, OR, XOR, NOT, NAND and NOR gates."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#exercise-one-gate-in-terms-of-another",
-    "href": "CSC4001-S01-Logic.html#exercise-one-gate-in-terms-of-another",
-    "title": "Logic gates",
-    "section": "Exercise: One gate in terms of another",
-    "text": "Exercise: One gate in terms of another\nBuild the following:\n\nand AND gate using of only NOT and OR;\nan OR using only NOT and AND;\na NOT gate using only NAND;\nan AND gate using only NAND;\nan OR gate using only NAND;\nNOT, AND and OR gates using only NOR.\n\n\nUse the simulator, do it on paper, of if hardware is available, could even build real circuits."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#universal-logic-gates",
-    "href": "CSC4001-S01-Logic.html#universal-logic-gates",
-    "title": "Logic gates",
-    "section": "Universal logic gates",
-    "text": "Universal logic gates\n\nA universal logic gate (or logical operator) can be used to represent any other logical operator.\nWhich of the logical operators AND, OR, NAND and NOR are universal?"
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#universal-logic-gates-solution",
-    "href": "CSC4001-S01-Logic.html#universal-logic-gates-solution",
-    "title": "Logic gates",
-    "section": "Universal logic gates Solution",
-    "text": "Universal logic gates Solution\n\nNAND and NOR"
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#make-it-true",
-    "href": "CSC4001-S01-Logic.html#make-it-true",
-    "title": "Logic gates",
-    "section": "Make it true",
-    "text": "Make it true\n\nfor IOS"
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#next-time",
-    "href": "CSC4001-S01-Logic.html#next-time",
-    "title": "Logic gates",
-    "section": "Next Time",
-    "text": "Next Time\nBuilding components with logic gates"
-  },
-  {
     "objectID": "CSC4001-S02-Logic.html#learning-outcomes",
     "href": "CSC4001-S02-Logic.html#learning-outcomes",
     "title": "Building With Logic gates",
@@ -292,5 +138,145 @@
     "title": "Building With Logic gates",
     "section": "Next time",
     "text": "Next time\nComputer architecture overview"
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#learning-outcomes",
+    "href": "CSC4001-S01-Logic.html#learning-outcomes",
+    "title": "Logic gates",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n\nDraw logic gates and define them using truth tables\nCombine logic gates to create different outputs."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#boolean-algebra",
+    "href": "CSC4001-S01-Logic.html#boolean-algebra",
+    "title": "Logic gates",
+    "section": "Boolean Algebra",
+    "text": "Boolean Algebra\n\nVariant of Aristottle’s Propositional Logic proposed by George Boole\n\n\n\nVariables can be true \\(1\\) or false \\(0\\)\nLogical operations performed on variables to produe an output.\nUsed to build digital circuits."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#logic-gates-and-truth-tables",
+    "href": "CSC4001-S01-Logic.html#logic-gates-and-truth-tables",
+    "title": "Logic gates",
+    "section": "Logic gates and truth tables",
+    "text": "Logic gates and truth tables\n\n\nWe can represent a Boolean logical operator as a logic gate\n\n\n\n\n\n\n\n\n\n\nOne or more inputS.\nOne output determined by input values.\n\n\nDefined by a truth table.\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A \\ast B\\)\n\n\n\n\n\\(!\\)\n\\(1\\)\n\n\n\n\\(!\\)\n\\(0\\)\n\n\n\n\\(0\\)\n\\(1\\)\n\n\n\n\\(0\\)\n\\(0\\)"
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#and",
+    "href": "CSC4001-S01-Logic.html#and",
+    "title": "Logic gates",
+    "section": "And",
+    "text": "And\nOutput \\(Q\\) is True only when both inputs \\(A\\) and \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{AND}\\ B\\)\n\n\n\n\n\\(!\\)\n\\(1\\)\n\\(!\\)\n\n\n\\(!\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nWhen building circuit diagrams, it is convenient to use symbols to represent logic gates. Here we depict the ANSI symbols (other symbels, e.g., IEC and DIN are also available, but ANSI seems to be the most widely used)."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#or",
+    "href": "CSC4001-S01-Logic.html#or",
+    "title": "Logic gates",
+    "section": "OR",
+    "text": "OR\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) or \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{OR}\\ B\\)\n\n\n\n\n\\(!\\)\n\\(1\\)\n\\(!\\)\n\n\n\\(!\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nNote that this is different from the way we use “or” in everyday language. When a parent asks a child if they want chocolate “or” clrsps, they mean for the child to choose one of the other, not both. However, logical or would allow chocolate, crisps or both chocolate and crisps."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#xor",
+    "href": "CSC4001-S01-Logic.html#xor",
+    "title": "Logic gates",
+    "section": "XOR",
+    "text": "XOR\nOutput \\(Q\\) is True only when either inputs \\(A\\) and \\(B\\) are True, but not both.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{XOR}\\ B\\)\n\n\n\n\n\\(!\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(!\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nXOR or exclusive or is true if either input is true, but not both, as in the use of “or” in daily life."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#not",
+    "href": "CSC4001-S01-Logic.html#not",
+    "title": "Logic gates",
+    "section": "NOT",
+    "text": "NOT\nOne input; output \\(Q\\) is True only when inputs \\(A\\) is False.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(Q = \\mathrm{NOT}\\ A\\)\n\n\n\n\n\\(!\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#nand",
+    "href": "CSC4001-S01-Logic.html#nand",
+    "title": "Logic gates",
+    "section": "NAND",
+    "text": "NAND\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(!\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(!\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#nor",
+    "href": "CSC4001-S01-Logic.html#nor",
+    "title": "Logic gates",
+    "section": "NOR",
+    "text": "NOR\nOutput \\(Q\\) is True only when *both** inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(!\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(!\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#exercise-logic-gate-simulator",
+    "href": "CSC4001-S01-Logic.html#exercise-logic-gate-simulator",
+    "title": "Logic gates",
+    "section": "Exercise: logic gate simulator",
+    "text": "Exercise: logic gate simulator\n\n\n\n\n\n\n - Go to https://logic.ly/demo.\n\n\n\n\n\nAdd two Toggle Switches as inputs and one Light Bulb as the output.\nTest out some logic gates – connect the two inputs to the output using the AND, OR, XOR, NOT, NAND and NOR gates."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#exercise-one-gate-in-terms-of-another",
+    "href": "CSC4001-S01-Logic.html#exercise-one-gate-in-terms-of-another",
+    "title": "Logic gates",
+    "section": "Exercise: One gate in terms of another",
+    "text": "Exercise: One gate in terms of another\nBuild the following:\n\nand AND gate using of only NOT and OR;\nan OR using only NOT and AND;\na NOT gate using only NAND;\nan AND gate using only NAND;\nan OR gate using only NAND;\nNOT, AND and OR gates using only NOR.\n\n\nUse the simulator, do it on paper, of if hardware is available, could even build real circuits."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#universal-logic-gates",
+    "href": "CSC4001-S01-Logic.html#universal-logic-gates",
+    "title": "Logic gates",
+    "section": "Universal logic gates",
+    "text": "Universal logic gates\n\nA universal logic gate (or logical operator) can be used to represent any other logical operator.\nWhich of the logical operators AND, OR, NAND and NOR are universal?"
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#universal-logic-gates-solution",
+    "href": "CSC4001-S01-Logic.html#universal-logic-gates-solution",
+    "title": "Logic gates",
+    "section": "Universal logic gates Solution",
+    "text": "Universal logic gates Solution\n\nNAND and NOR"
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#make-it-true",
+    "href": "CSC4001-S01-Logic.html#make-it-true",
+    "title": "Logic gates",
+    "section": "Make it true",
+    "text": "Make it true\n\nfor IOS"
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#next-time",
+    "href": "CSC4001-S01-Logic.html#next-time",
+    "title": "Logic gates",
+    "section": "Next Time",
+    "text": "Next Time\nBuilding components with logic gates"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#teaching-staff",
+    "href": "CSC4001-S00-welcome.html#teaching-staff",
+    "title": "Welcome",
+    "section": "Teaching Staff",
+    "text": "Teaching Staff\n\n\nDave Cobb, Module Leader.\n\n\n\n\n\n\n\n\n25 years experience in the computer industry. Subject leader, senior lecturer specialising in softare development.\n\nHollie Baker, Associate Lecturer\n\n\n\n\n\n\n\n\nPhD in computer science. Worked at a local company building web-based patient management systems and databases. Currently developing software for Bristol Braille Technology. Braillist."
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#intended-learning-outcomes",
+    "href": "CSC4001-S00-welcome.html#intended-learning-outcomes",
+    "title": "Welcome",
+    "section": "Intended Learning Outcomes",
+    "text": "Intended Learning Outcomes"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#topics-covered",
+    "href": "CSC4001-S00-welcome.html#topics-covered",
+    "title": "Welcome",
+    "section": "Topics covered",
+    "text": "Topics covered"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#schedule",
+    "href": "CSC4001-S00-welcome.html#schedule",
+    "title": "Welcome",
+    "section": "Schedule",
+    "text": "Schedule"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#timetable",
+    "href": "CSC4001-S00-welcome.html#timetable",
+    "title": "Welcome",
+    "section": "Timetable",
+    "text": "Timetable"
   }
 ]
