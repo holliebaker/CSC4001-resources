@@ -1,0 +1,306 @@
+---
+title: "Logic gates"
+author: "CSC4001: Computer Systems Architecture"
+date: Autumn 2026
+format: revealjs
+---
+
+## Learning Outcomes
+
+- Draw logic gates and define them using truth tables
+- Combine logic gates to create different outputs.
+
+# Logic gates
+
+## Boolean Algebra
+
+- Variant of Aristottle's Propositional Logic proposed by George Boole
+  1854.
+- **Variables** can be `true` $1$ or `false` $0$
+- Logical operations performed on variables to produe an output.
+- Used to build digital circuits.
+
+## Logic gates and truth tables
+
+::::::: columns
+::::: column
+We can represent a Boolean logical operator as a **logic gate**
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](./assets/01-logic.svg){fig-align="center"
+fig-alt="A generic logic gate with two inputs." width="60%"}
+:::
+::::
+
+- One or more inputS.
+- One output determined by input values.
+:::::
+
+::: column
+Defined by a **truth table**.
+
+| $A$ | $B$ | $Q = A \ast B$ |
+|:---:|:---:|:--------------:|
+| $!$ | $1$ |                |
+| $!$ | $0$ |                |
+| $0$ | $1$ |                |
+| $0$ | $0$ |                |
+:::
+:::::::
+
+## And
+
+Output $Q$ is *True* only when **both** inputs $A$ and $B$ are *True*.
+
+::::::: columns
+::: column
+Defining Truth Table:
+
+| $A$ | $B$ | $Q = A\ \mathrm{AND}\ B$ |
+|:---:|:---:|:------------------------:|
+| $!$ | $1$ |           $!$            |
+| $!$ | $0$ |           $0$            |
+| $0$ | $1$ |           $0$            |
+| $0$ | $0$ |           $0$            |
+
+:::
+::: column
+
+Logic gate:
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](./assets/01-and-gate.png){fig-align="center"
+fig-alt="An AND gate.." width="80%"}
+:::
+::::
+:::
+::::::
+
+::: notes
+When building circuit diagrams, it is convenient to use symbols to
+represent logic gates. Here we depict the ANSI symbols (other symbels,
+e.g., IEC and DIN are also available, but ANSI seems to be the most
+widely used).
+:::
+
+## OR
+
+Output $Q$ is *True* only when **either** (or both) inputs $A$ or $B$
+are *True*.
+
+::::: columns
+::: column
+Defining Truth Table:
+
+| $A$ | $B$ | $Q = A\ \mathrm{OR}\ B$ |
+|:---:|:---:|:-----------------------:|
+| $!$ | $1$ |           $!$           |
+| $!$ | $0$ |           $1$           |
+| $0$ | $1$ |           $1$           |
+| $0$ | $0$ |           $0$           |
+
+:::
+::: column
+Logic gate:
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](./assets/01-or-gate.png){fig-align="center" fig-alt="An OR gate.."
+width="80%"}
+:::
+::::
+:::
+:::::
+
+::: notes
+Note that this is different from the way we use "or" in everyday
+language. When a parent asks a child if they want chocolate "or" clrsps,
+they mean for the child to choose one of the other, not both. However,
+logical or would allow chocolate, crisps or both chocolate and crisps.
+:::
+
+## XOR
+
+Output $Q$ is *True* only when **either** inputs $A$ and $B$ are *True*,
+but **not both**.
+
+::::: columns
+Defining Truth Table:
+
+::: column
+| $A$ | $B$ | $Q = A\ \mathrm{XOR}\ B$ |
+|:---:|:---:|:------------------------:|
+| $!$ | $1$ |           $0$            |
+| $!$ | $0$ |           $0$            |
+| $0$ | $1$ |           $0$            |
+| $0$ | $0$ |           $0$            |
+:::
+::: column
+Logic gate:
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](./assets/01-xor-gate.png){fig-align="center"
+fig-alt="An XOR gate.." width="80%"}
+:::
+::::
+:::
+:::::
+
+::: notes
+XOR or exclusive or is true if either input is true, but not both, as in
+the use of "or" in daily life.
+:::
+
+## NOT
+
+One input; output $Q$ is *True* only when inputs $A$ is *False*.
+
+::::: columns
+Defining Truth Table:
+
+::: column
+| $A$ | $Q = \mathrm{NOT}\ A$ |
+|:---:|:---------------------:|
+| $!$ |          $0$          |
+| $0$ |          $1$          |
+
+:::
+::: column
+Logic gate:
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](./assets/01-not-gate.png){fig-align="center" fig-alt="A NOT gate."
+width="80%"}
+:::
+::::
+:::
+:::::
+
+## NAND
+
+Output $Q$ is *True* only when **either** (or both) inputs $A$ and $B$
+are *False*.
+
+::::: columns
+::: column
+Defining Truth Table:
+
+| $A$ | $B$ | $Q = A\ \mathrm{NAND}\ B$ |
+|:---:|:---:|:-------------------------:|
+| $!$ | $1$ |            $0$            |
+| $!$ | $0$ |            $1$            |
+| $0$ | $1$ |            $1$            |
+| $0$ | $0$ |            $1$            |
+
+:::
+::: column
+Logic gate:
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](./assets/01-nand-gate.png){fig-align="center"
+fig-alt="A NAND gate.." width="80%"}
+:::
+::::
+:::
+:::::
+
+## NOR
+
+Output $Q$ is *True* only when \*both\*\* inputs $A$ and $B$ are
+*False*.
+
+::::: columns
+::: column
+Defining Truth Table:
+
+| $A$ | $B$ | $Q = A\ \mathrm{NAND}\ B$ |
+|:---:|:---:|:-------------------------:|
+| $!$ | $1$ |            $0$            |
+| $!$ | $0$ |            $0$            |
+| $0$ | $1$ |            $0$            |
+| $0$ | $0$ |            $1$            |
+
+:::
+::: column
+
+Logic gate:
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](./assets/01-nor-gate.png){fig-align="center" fig-alt="A NOR gate.."
+width="80%"}
+:::
+::::
+:::
+:::::
+
+## Exercise: logic gate simulator
+
+::::::: columns
+::: column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](./assets/01-sim-1.png){fig-align="center"
+fig-alt="Logic.ly simulator showing two toggle switches and a light bulb."
+width="90%"}
+- Go to [https://logic.ly/demo](https://logic.ly/demo/).
+:::
+::::
+- Add two *Toggle Switches* as inputs and one *Light Bulb* as the
+  output.
+- Test out some logic gates -- connect the two inputs to the output
+  using the **AND**, **OR**, **XOR**, **NOT**, **NAND** and **NOR**
+  gates.
+
+:::
+::: column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](./assets/01-sim-2.png){fig-align="center"
+fig-alt="Logic.ly simulator, logic gates in seft-hand panel."
+width="60%"}
+:::
+::::
+:::
+:::::::
+
+## Exercise: One gate in terms of another
+
+Build the following:
+
+- and **AND** gate using of only **NOT** and **OR**;
+- an **OR** using only **NOT** and **AND**;
+- a **NOT** gate using only **NAND**;
+- an **AND** gate using only **NAND**;
+- an **OR** gate using only **NAND**;
+- **NOT**, **AND** and **OR** gates using only **NOR**.
+
+::: notes
+Use the simulator, do it on paper, of if hardware is available, could
+even build real circuits.
+:::
+
+## Universal logic gates
+
+- A **universal** logic gate (or logical operator) can be used to
+  represent **any** other logical operator.
+
+- Which of the logical operators **AND**, **OR**, **NAND** and **NOR**
+  are universal?
+
+## Universal logic gates Solution
+
+- **NAND** and **NOR**
+
+## Make it true
+
+- [for IOS](https://apps.apple.com/in/app/make-it-true-solve-circuits/id1536287319)
+
+## Next Time
+
+Building components with logic gates
