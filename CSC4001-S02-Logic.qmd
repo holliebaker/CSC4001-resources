@@ -1,8 +1,11 @@
 ---
 title: "Building With Logic gates"
-author: "CSC4001: Computer Systems Architecture"
-date: Autumn 2026
-format: revealjs
+author: "CSC4001: Computer Systems and Architecture"
+date: ""
+format:
+  revealjs:
+    theme: simple
+    css: style.scss
 ---
 
 ## Learning Outcomes
@@ -296,25 +299,19 @@ fig-alt="JK flip-flop counter and timing diagram." width="55%"}
 The timing diagram shows how the values of $Q_0,\ldots,Q_3$ should change.
 :::
 
-## Exercise: build the counter
-:::: columns
-::: column
+## Exercise: build the counter {.smaller}
+
 1. Add one *toggle switch*, this will act as the clock.
 2. Add a *High* voltage.
 3. Add one *$4$-bit digit*, this will display the output.
 4. Add four JK flip flops and connect high voltage to $J$ and $K$ on all
   of them.
-:::
-::: column
 5. connect the button (clock) to the *Clock* input of the first
   flip-flop.
 6. The output of the first flip-flop is $Q_0$, the final digit. connect
   this to the $4$-bit digit and to the *Clock* input on the next
   flip-flop.
 7. repeat with the remaining 3 flip-flops.
-
-:::
-::::
 
 ## Next time
 
