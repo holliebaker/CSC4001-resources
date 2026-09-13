@@ -2,245 +2,245 @@
   {
     "objectID": "CSC4001-S02-Logic.html#learning-outcomes",
     "href": "CSC4001-S02-Logic.html#learning-outcomes",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "Learning Outcomes",
     "text": "Learning Outcomes\n\neXPLAIN WHY WE NEED LATCHES, AND HOW FLIPFLOPS DIFFER FROM LATCHES.\nrECOGNISE VARIOUS TYPES OF LATCH.\nuSE FLIP-FLOPS TO BUILD A COUNTER."
   },
   {
     "objectID": "CSC4001-S02-Logic.html#latches-1",
     "href": "CSC4001-S02-Logic.html#latches-1",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "Latches",
     "text": "Latches\n\nComponent which “remembers” a value until it is changed by a new signal.\nCan be used to store \\(1\\) bit of data.\nWidely used in digital circuits, e.g., for data storage, control and flip-flop circuits."
   },
   {
     "objectID": "CSC4001-S02-Logic.html#sr-latch",
     "href": "CSC4001-S02-Logic.html#sr-latch",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "SR-latch",
     "text": "SR-latch\n\n\n\nSet-reset latches are the simplest type of latch.\nCan be constructed from two NOR gates.\nTwo inputs, \\(S\\) (set) and \\(R\\) (reset). State is changed when a pulse (high voltage, or \\(1\\)) is applied to \\(S\\) or \\(R\\).\nThe output is \\(Q\\) and its inverse is \\(\\overline{Q}\\)."
   },
   {
     "objectID": "CSC4001-S02-Logic.html#sr-latch-1",
     "href": "CSC4001-S02-Logic.html#sr-latch-1",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "SR-latch",
     "text": "SR-latch\n\n\n\n\n\n\n\n\n\n\n\n\nInitial state: no voltage to \\(S\\) or \\(R\\).\n\n\n\n\\(Q\\) shows \\(1\\), its inverse, \\(\\overline{Q}\\) shows \\(0\\).\nTo reset, apply a pulse to \\(R\\).\n\\(Q\\) set to \\(0\\) and \\(\\overline{Q}\\) set to \\(1\\).\nTo set the latch, apply a pulse to \\(S\\).\n\\(Q\\) is set \\(1\\) and \\(\\overline{Q}\\) set to \\(0\\).\nApplying a pulse to both \\(Q\\) and \\(R\\) is not valid."
   },
   {
     "objectID": "CSC4001-S02-Logic.html#exercise-sr-latch-with-nand-gates",
     "href": "CSC4001-S02-Logic.html#exercise-sr-latch-with-nand-gates",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "Exercise: SR-latch with NAND gates",
     "text": "Exercise: SR-latch with NAND gates\n\nCan you build a SR-latch using two NAND gates?"
   },
   {
     "objectID": "CSC4001-S02-Logic.html#solution-sr-latch-with-nand-gates",
     "href": "CSC4001-S02-Logic.html#solution-sr-latch-with-nand-gates",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "Solution: SR-latch with NAND gates",
     "text": "Solution: SR-latch with NAND gates\n\n\n\n\n\n\n\n\n\n\n\n\n\nA high voltage needs to be applied to both \\(\\overline{S}\\) and \\(\\overline{R}\\).\nA pulse of low voltage will cause the state to change.\nIt is called an active low SR-latch."
   },
   {
     "objectID": "CSC4001-S02-Logic.html#gated-sr-latch",
     "href": "CSC4001-S02-Logic.html#gated-sr-latch",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "Gated SR latch",
     "text": "Gated SR latch\n\n\n\nWe may only want the state to change if the latch is enabled.\nThis can be done by building a gated latch.\nRecall that an AND gate is only true when both inputs are true.\nSo we add AND gates, creating another input, \\(E\\).\n\n\n\nThe state can only change if \\(E\\) has a high voltage applied to it."
   },
   {
     "objectID": "CSC4001-S02-Logic.html#exercise-gated-sr-latch-with-nand-gates",
     "href": "CSC4001-S02-Logic.html#exercise-gated-sr-latch-with-nand-gates",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "Exercise: gated SR-latch with NAND gates",
     "text": "Exercise: gated SR-latch with NAND gates\n\nHow could you convert your NAND gate SR-latch to make it gated?"
   },
   {
     "objectID": "CSC4001-S02-Logic.html#solution-gated-sr-latch-with-nand-gates",
     "href": "CSC4001-S02-Logic.html#solution-gated-sr-latch-with-nand-gates",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "Solution: gated SR-latch with NAND gates",
     "text": "Solution: gated SR-latch with NAND gates\n\n\n\n\n\n\n\n\n\n\n\n\n\nConnect a NAND gate to the inputs \\(\\overline{S}\\) and \\(\\overline{R}\\), we get \\(S\\), \\(R\\) and the enabling input \\(E\\)."
   },
   {
     "objectID": "CSC4001-S02-Logic.html#application-switch-bounce",
     "href": "CSC4001-S02-Logic.html#application-switch-bounce",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "Application: switch bounce",
     "text": "Application: switch bounce\n\nLatches are widely used in electrical engineering as well as electronic computers.\nWhen a mechanical switch is pressed, it may cause several pulses to be sent.\nAn SR-latch ensures that only one signal is sent, since subsequent pulses to \\(S\\) or \\(R\\) will not cause a change in state.\n\nA gated latch can be used when state should only be changed when a device is Enabled.\n\n\n\nE.g., an air conditioning unit may switch cooling on and off depending on input from a temperature sensor, but the unit should only switch on cooling if it has been turned on by the user."
   },
   {
     "objectID": "CSC4001-S02-Logic.html#d-latch",
     "href": "CSC4001-S02-Logic.html#d-latch",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "D-latch",
     "text": "D-latch\n\n\n\n0Data or transparent latches have two inputs: Data (\\(D\\)) and Enable (\\(E\\)).\nThe state changes to the value of \\(D\\) only when \\(E\\) signal is high.\nWhen the Enable signal is low, the value of \\(D\\) is stored until the leading edge of the next rising Enable Signal.\n\n\n\nA D-latch can be built from a gated SR-latch."
   },
   {
     "objectID": "CSC4001-S02-Logic.html#d-latch-1",
     "href": "CSC4001-S02-Logic.html#d-latch-1",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "D-latch",
     "text": "D-latch\n\n\nBuilt by connecting the \\(S\\) and \\(R\\) inputs of an SR-latch."
   },
   {
     "objectID": "CSC4001-S02-Logic.html#d-latch-alternative",
     "href": "CSC4001-S02-Logic.html#d-latch-alternative",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "D-latch (Alternative)",
     "text": "D-latch (Alternative)\n\nIt can also be built from the NAND SR-latch.\n\n\n\nThis version is made from only NAND gates."
   },
   {
     "objectID": "CSC4001-S02-Logic.html#flip-flops",
     "href": "CSC4001-S02-Logic.html#flip-flops",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "Flip-flops",
     "text": "Flip-flops\n\nLatches are inexpensive and easy to implement using simple logic components. 2\nHowever, their behaviour can be unpredictable owing to a lack of synchronisation.\nFlip-flops add a clack to synchronise their operaton.\nA gated latch can be converted into a flip-flop by connecting a clock to the Enable input."
   },
   {
     "objectID": "CSC4001-S02-Logic.html#jk-flip-flops",
     "href": "CSC4001-S02-Logic.html#jk-flip-flops",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "JK Flip-flops",
     "text": "JK Flip-flops\n\n\n\nThe JK flip-flop has the same behaviour as an SR-flip flop:\n\nReset: high pulse to \\(K\\).\nSet: high pulse to \\(J\\).\n\nIf a high pulse is sent to both \\(J\\) and \\(K\\), then the state is toggled.\nI.e., \\(0\\) becomes \\(1\\) and \\(1\\) becomes \\(0\\).\n\n\n\n\n\n\n\n\n\n\n\nWe will use this latch shortly to build a counter."
   },
   {
     "objectID": "CSC4001-S02-Logic.html#counting-in-binary",
     "href": "CSC4001-S02-Logic.html#counting-in-binary",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "Counting in binary",
     "text": "Counting in binary\n\nWe saw that digital circuits have two possible values: low (or \\(0\\)) and high (or \\(1\\)).\nEverything (letters, images, sounds, programs) in a computer is represented by a number.\nNumbers are encoded in binary using a certain number of binary digits (bits).\nA whole (integer) number is typically represented using \\(8\\) bits (a byte).\nE.g., for unsigned (\\(\\ge 0\\)) integers, \\(0 = 00000000\\), \\(37 = 00100101\\)."
   },
   {
     "objectID": "CSC4001-S02-Logic.html#building-a-counter",
     "href": "CSC4001-S02-Logic.html#building-a-counter",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "Building a counter",
     "text": "Building a counter\nWe can build a counter, using JK flip-flops, which increments an integer represented by \\(4\\) bits (half a byte; a nibble).\n\nStart by adding one Push button as input and one 4-bit digit as the output.\nThe counter should start at \\(0\\) and increase by \\(1\\) each time the button is pushed."
   },
   {
     "objectID": "CSC4001-S02-Logic.html#building-a-counter-2",
     "href": "CSC4001-S02-Logic.html#building-a-counter-2",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "Building a Counter 2",
     "text": "Building a Counter 2\n\n\nThe timing diagram shows how the values of \\(Q_0,\\ldots,Q_3\\) should change."
   },
   {
     "objectID": "CSC4001-S02-Logic.html#exercise-build-the-counter",
     "href": "CSC4001-S02-Logic.html#exercise-build-the-counter",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "Exercise: build the counter",
     "text": "Exercise: build the counter\n\nAdd one toggle switch, this will act as the clock.\nAdd a High voltage.\nAdd one \\(4\\)-bit digit, this will display the output.\nAdd four JK flip flops and connect high voltage to \\(J\\) and \\(K\\) on all of them.\nconnect the button (clock) to the Clock input of the first flip-flop.\nThe output of the first flip-flop is \\(Q_0\\), the final digit. connect this to the \\(4\\)-bit digit and to the Clock input on the next flip-flop.\nrepeat with the remaining 3 flip-flops."
   },
   {
     "objectID": "CSC4001-S02-Logic.html#next-time",
     "href": "CSC4001-S02-Logic.html#next-time",
-    "title": "Building With Logic gates",
+    "title": "Building With Logic Gates",
     "section": "Next time",
     "text": "Next time\nComputer architecture overview"
   },
   {
     "objectID": "CSC4001-S01-Logic.html#learning-outcomes",
     "href": "CSC4001-S01-Logic.html#learning-outcomes",
-    "title": "Logic gates",
+    "title": "Logic Gates",
     "section": "Learning Outcomes",
     "text": "Learning Outcomes\n\nDraw logic gates and define them using truth tables\nCombine logic gates to create different outputs."
   },
   {
     "objectID": "CSC4001-S01-Logic.html#boolean-algebra",
     "href": "CSC4001-S01-Logic.html#boolean-algebra",
-    "title": "Logic gates",
+    "title": "Logic Gates",
     "section": "Boolean Algebra",
     "text": "Boolean Algebra\n\nVariant of Aristottle’s Propositional Logic proposed by George Boole\n\n\n\nVariables can be true \\(1\\) or false \\(0\\)\nLogical operations performed on variables to produe an output.\nUsed to build digital circuits."
   },
   {
     "objectID": "CSC4001-S01-Logic.html#logic-gates-and-truth-tables",
     "href": "CSC4001-S01-Logic.html#logic-gates-and-truth-tables",
-    "title": "Logic gates",
+    "title": "Logic Gates",
     "section": "Logic gates and truth tables",
     "text": "Logic gates and truth tables\n\n\nWe can represent a Boolean logical operator as a logic gate\n\n\n\n\n\n\n\n\n\n\nOne or more inputS.\nOne output determined by input values.\n\n\nDefined by a truth table.\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A \\ast B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\n\n\n\\(1\\)\n\\(0\\)\n\n\n\n\\(0\\)\n\\(1\\)\n\n\n\n\\(0\\)\n\\(0\\)"
   },
   {
     "objectID": "CSC4001-S01-Logic.html#and",
     "href": "CSC4001-S01-Logic.html#and",
-    "title": "Logic gates",
+    "title": "Logic Gates",
     "section": "And",
     "text": "And\nOutput \\(Q\\) is True only when both inputs \\(A\\) and \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{AND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nWhen building circuit diagrams, it is convenient to use symbols to represent logic gates. Here we depict the ANSI symbols (other symbels, e.g., IEC and DIN are also available, but ANSI seems to be the most widely used)."
   },
   {
     "objectID": "CSC4001-S01-Logic.html#or",
     "href": "CSC4001-S01-Logic.html#or",
-    "title": "Logic gates",
+    "title": "Logic Gates",
     "section": "OR",
     "text": "OR\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) or \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{OR}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nNote that this is different from the way we use “or” in everyday language. When a parent asks a child if they want chocolate “or” clrsps, they mean for the child to choose one of the other, not both. However, logical or would allow chocolate, crisps or both chocolate and crisps."
   },
   {
     "objectID": "CSC4001-S01-Logic.html#xor",
     "href": "CSC4001-S01-Logic.html#xor",
-    "title": "Logic gates",
+    "title": "Logic Gates",
     "section": "XOR",
     "text": "XOR\nOutput \\(Q\\) is True only when either inputs \\(A\\) and \\(B\\) are True, but not both.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{XOR}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nXOR or exclusive or is true if either input is true, but not both, as in the use of “or” in daily life."
   },
   {
     "objectID": "CSC4001-S01-Logic.html#not",
     "href": "CSC4001-S01-Logic.html#not",
-    "title": "Logic gates",
+    "title": "Logic Gates",
     "section": "NOT",
     "text": "NOT\nOne input; output \\(Q\\) is True only when inputs \\(A\\) is False.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(Q = \\mathrm{NOT}\\ A\\)\n\n\n\n\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
   },
   {
     "objectID": "CSC4001-S01-Logic.html#nand",
     "href": "CSC4001-S01-Logic.html#nand",
-    "title": "Logic gates",
+    "title": "Logic Gates",
     "section": "NAND",
     "text": "NAND\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
   },
   {
     "objectID": "CSC4001-S01-Logic.html#nor",
     "href": "CSC4001-S01-Logic.html#nor",
-    "title": "Logic gates",
+    "title": "Logic Gates",
     "section": "NOR",
     "text": "NOR\nOutput \\(Q\\) is True only when *both** inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
   },
   {
     "objectID": "CSC4001-S01-Logic.html#exercise-logic-gate-simulator",
     "href": "CSC4001-S01-Logic.html#exercise-logic-gate-simulator",
-    "title": "Logic gates",
+    "title": "Logic Gates",
     "section": "Exercise: logic gate simulator",
     "text": "Exercise: logic gate simulator\n\n\n\n\n\n\n\n\n\n\n\n\nGo to https://logic.ly/demo.\nAdd two Toggle Switches as inputs and one Light Bulb as the output."
   },
   {
     "objectID": "CSC4001-S01-Logic.html#exercise-one-gate-in-terms-of-another",
     "href": "CSC4001-S01-Logic.html#exercise-one-gate-in-terms-of-another",
-    "title": "Logic gates",
+    "title": "Logic Gates",
     "section": "Exercise: One gate in terms of another",
     "text": "Exercise: One gate in terms of another\nBuild the following:\n\nan AND gate using only NOT and OR;\nan OR using only NOT and AND;\na NOT gate using only NAND;\nan AND gate using only NAND;\nan OR gate using only NAND;\nNOT, AND and OR gates using only NOR.\n\n\nUse the simulator, do it on paper, of if hardware is available, could even build real circuits."
   },
   {
     "objectID": "CSC4001-S01-Logic.html#universal-logic-gates",
     "href": "CSC4001-S01-Logic.html#universal-logic-gates",
-    "title": "Logic gates",
+    "title": "Logic Gates",
     "section": "Universal logic gates",
     "text": "Universal logic gates\n\nA universal logic gate (or logical operator) can be used to represent any other logical operator.\nWhich of the logical operators AND, OR, NAND and NOR are universal?"
   },
   {
     "objectID": "CSC4001-S01-Logic.html#universal-logic-gates-solution",
     "href": "CSC4001-S01-Logic.html#universal-logic-gates-solution",
-    "title": "Logic gates",
+    "title": "Logic Gates",
     "section": "Universal logic gates Solution",
     "text": "Universal logic gates Solution\n\nNAND and NOR"
   },
   {
     "objectID": "CSC4001-S01-Logic.html#make-it-true",
     "href": "CSC4001-S01-Logic.html#make-it-true",
-    "title": "Logic gates",
+    "title": "Logic Gates",
     "section": "Make it true",
     "text": "Make it true\n\nfor IOS"
   },
   {
     "objectID": "CSC4001-S01-Logic.html#next-time",
     "href": "CSC4001-S01-Logic.html#next-time",
-    "title": "Logic gates",
+    "title": "Logic Gates",
     "section": "Next Time",
     "text": "Next Time\nBuilding components with logic gates"
   },
