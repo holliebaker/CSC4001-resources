@@ -2,7 +2,9 @@
 title: "Welcome"
 author: "CSC4001: Computer Systems Architecture"
 date: Autumn 2026
-format: revealjs
+format:
+  revealjs:
+    theme: league
 ---
 
 # Introductions
@@ -12,29 +14,27 @@ format: revealjs
 :::: columns
 ::: column
 
-**Dave Cobb**, Module Leader.
+#### Dave Cobb
 
 ::: cell-output-display
 ![](./assets/dave-cobb.jpg){fig-align="center"
-fig-alt="Staff photo of Dave cobb" width="60%"}
+fig-alt="Staff photo of Dave cobb" width="40%"}
 :::
 
-::: {.column}
-25 years experience in the computer industry. Subject leader, senior lecturer specialising in softare development. 
-:::
+Module leader. 25 years experience in the computer industry. Senior lecturer specialising in software development. 
+
 :::
 ::: column
 
-**Hollie Baker**, Associate Lecturer
+#### Hollie Baker
 
 ::: cell-output-display
 ![](./assets/Hollie-Baker.jpg){fig-align="center"
-fig-alt="Staff photo of Hollie Baker" width="60%"}
+fig-alt="Staff photo of Hollie Baker" width="40%"}
 :::
 
-::: {.smaller}
-PhD in computer science. Worked at a local company building web-based patient management systems and databases. Currently developing software for Bristol Braille Technology. Braillist.
-:::
+Associate Lecturer. PhD in computer science. Industry experience in web development and databases. Keen Braillist.
+
 :::
 ::::
 
@@ -43,12 +43,81 @@ PhD in computer science. Worked at a local company building web-based patient ma
 
 ## Intended Learning Outcomes
 
+By successful completion of the module, you will be able to:
+
+1. Describe the role of the different computer system components and their interactions
+2. Explain how instructions are executed by a computer processor
+3. Illustrate key computer architecture concepts such as instruction sets, memory hierarchy and data storage
+4. Explain the role operating systems have in providing services and sharing
+
+::: notes
+From the DPD
+The module’s lectures provide the fundamental aspects of computer systems and architectures,
+covering hardware, software and networking. The practical sessions enable students to reflect on
+the role of each computer component and understand how design choices impact data input,
+process and output.
+Independent Learning
+Students are encouraged to explore and understand different approaches hardware and software
+system design. Independent study and formative assessment also help students to assess an
+appreciate the evolution of micro-processors, hardware and operating systems.
+Intended learning outcomes
+:::
+
 ## Topics covered
 
-## Schedule
+- Computer system organisation
+- Memory organisation and management
+- Assembly level programs
+- Microprocessor design fundamentals (pipelined architecture, CPU)
+- Operating systems architectures
+- Resources and resource management
+- Control unit operations
+
+## Schedule {.smaller}
+
+| Week | Session A | Session B |
+|-----:|-----------|-----------|
+| 1 | Welcome | Logic |
+| 2 | Von Neumann Architecture | Computer history |
+| 3 | Assembler, Risc and CISC | Pipelines and More |
+| 4 | Memory | *Workshop activity* |
+| 5 | Operating Systems Overview | *Workshop Activity* |
+| 6 | *Reading Week* | |
+| 7 | Process Lifecycle | Bootstrapping |
+| 8 | Scheduling | Scheduling algorithms |
+| 9 | Deadlock | Process protection |
+| 10 | Inter-process communication | *Workshop activity* |
+| 11 | Memory Management | *Workshop activity* |
+| 12 | Files and Filesystems | *Workshop activity* | 
 
 ## Timetable
 
+#### Computer Science
+
+- Tuesdays 09:30 - 11:30
+- Wednesdays 11:30 - 13:30
+
+#### Cyber Security
+
+- Thursday 09:30 - 11:30
+- Friday 12:30 - 14:30
+
 # Assessment
 
+## Overview
 
+- Formative assessment
+  - Workshop activities: *Review and analysis of scenarios using different system components, with
+emphasis on understanding the evolution of computer architecture*
+  - Workshop activity: *Group presentation on the role of operating systems, in use case
+scenarios*
+
+- Summative assessment
+  - **S1**: Report on the role of core computer architectural components (worth 40%)
+  - **S2**: Computer system design project (worth 60%)
+
+More detail to follow...
+
+---
+
+Okay, administration's done. Let's get started!
