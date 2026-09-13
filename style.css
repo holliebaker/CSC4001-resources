@@ -5,7 +5,7 @@
 #title-slide {
   padding: 2ex 0;
   background: center / cover no-repeat
-    url("../assets/banner.jpeg"),
+    url("./assets/banner.jpeg"),
     black 35%
 }
 

@@ -1,5 +1,5 @@
 ---
-title: "Building With Logic gates"
+title: "Building With Logic Gates"
 author: "CSC4001: Computer Systems and Architecture"
 date: ""
 format:
