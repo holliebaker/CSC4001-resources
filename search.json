@@ -158,49 +158,49 @@
     "href": "CSC4001-S01-Logic.html#logic-gates-and-truth-tables",
     "title": "Logic gates",
     "section": "Logic gates and truth tables",
-    "text": "Logic gates and truth tables\n\n\nWe can represent a Boolean logical operator as a logic gate\n\n\n\n\n\n\n\n\n\n\nOne or more inputS.\nOne output determined by input values.\n\n\nDefined by a truth table.\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A \\ast B\\)\n\n\n\n\n\\(!\\)\n\\(1\\)\n\n\n\n\\(!\\)\n\\(0\\)\n\n\n\n\\(0\\)\n\\(1\\)\n\n\n\n\\(0\\)\n\\(0\\)"
+    "text": "Logic gates and truth tables\n\n\nWe can represent a Boolean logical operator as a logic gate\n\n\n\n\n\n\n\n\n\n\nOne or more inputS.\nOne output determined by input values.\n\n\nDefined by a truth table.\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A \\ast B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\n\n\n\\(1\\)\n\\(0\\)\n\n\n\n\\(0\\)\n\\(1\\)\n\n\n\n\\(0\\)\n\\(0\\)"
   },
   {
     "objectID": "CSC4001-S01-Logic.html#and",
     "href": "CSC4001-S01-Logic.html#and",
     "title": "Logic gates",
     "section": "And",
-    "text": "And\nOutput \\(Q\\) is True only when both inputs \\(A\\) and \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{AND}\\ B\\)\n\n\n\n\n\\(!\\)\n\\(1\\)\n\\(!\\)\n\n\n\\(!\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nWhen building circuit diagrams, it is convenient to use symbols to represent logic gates. Here we depict the ANSI symbols (other symbels, e.g., IEC and DIN are also available, but ANSI seems to be the most widely used)."
+    "text": "And\nOutput \\(Q\\) is True only when both inputs \\(A\\) and \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{AND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nWhen building circuit diagrams, it is convenient to use symbols to represent logic gates. Here we depict the ANSI symbols (other symbels, e.g., IEC and DIN are also available, but ANSI seems to be the most widely used)."
   },
   {
     "objectID": "CSC4001-S01-Logic.html#or",
     "href": "CSC4001-S01-Logic.html#or",
     "title": "Logic gates",
     "section": "OR",
-    "text": "OR\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) or \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{OR}\\ B\\)\n\n\n\n\n\\(!\\)\n\\(1\\)\n\\(!\\)\n\n\n\\(!\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nNote that this is different from the way we use “or” in everyday language. When a parent asks a child if they want chocolate “or” clrsps, they mean for the child to choose one of the other, not both. However, logical or would allow chocolate, crisps or both chocolate and crisps."
+    "text": "OR\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) or \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{OR}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nNote that this is different from the way we use “or” in everyday language. When a parent asks a child if they want chocolate “or” clrsps, they mean for the child to choose one of the other, not both. However, logical or would allow chocolate, crisps or both chocolate and crisps."
   },
   {
     "objectID": "CSC4001-S01-Logic.html#xor",
     "href": "CSC4001-S01-Logic.html#xor",
     "title": "Logic gates",
     "section": "XOR",
-    "text": "XOR\nOutput \\(Q\\) is True only when either inputs \\(A\\) and \\(B\\) are True, but not both.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{XOR}\\ B\\)\n\n\n\n\n\\(!\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(!\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nXOR or exclusive or is true if either input is true, but not both, as in the use of “or” in daily life."
+    "text": "XOR\nOutput \\(Q\\) is True only when either inputs \\(A\\) and \\(B\\) are True, but not both.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{XOR}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nXOR or exclusive or is true if either input is true, but not both, as in the use of “or” in daily life."
   },
   {
     "objectID": "CSC4001-S01-Logic.html#not",
     "href": "CSC4001-S01-Logic.html#not",
     "title": "Logic gates",
     "section": "NOT",
-    "text": "NOT\nOne input; output \\(Q\\) is True only when inputs \\(A\\) is False.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(Q = \\mathrm{NOT}\\ A\\)\n\n\n\n\n\\(!\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
+    "text": "NOT\nOne input; output \\(Q\\) is True only when inputs \\(A\\) is False.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(Q = \\mathrm{NOT}\\ A\\)\n\n\n\n\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
   },
   {
     "objectID": "CSC4001-S01-Logic.html#nand",
     "href": "CSC4001-S01-Logic.html#nand",
     "title": "Logic gates",
     "section": "NAND",
-    "text": "NAND\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(!\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(!\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
+    "text": "NAND\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
   },
   {
     "objectID": "CSC4001-S01-Logic.html#nor",
     "href": "CSC4001-S01-Logic.html#nor",
     "title": "Logic gates",
     "section": "NOR",
-    "text": "NOR\nOutput \\(Q\\) is True only when *both** inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(!\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(!\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
+    "text": "NOR\nOutput \\(Q\\) is True only when *both** inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
   },
   {
     "objectID": "CSC4001-S01-Logic.html#exercise-logic-gate-simulator",
