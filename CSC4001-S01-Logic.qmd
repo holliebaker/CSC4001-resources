@@ -5,7 +5,7 @@ date: ""
 format:
   revealjs:
     theme: simple
-    css: style.scss
+    css: ./style.css
 ---
 
 ## Learning Outcomes
