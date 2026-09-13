@@ -130,7 +130,7 @@
     "href": "CSC4001-S02-Logic.html#exercise-build-the-counter",
     "title": "Building With Logic gates",
     "section": "Exercise: build the counter",
-    "text": "Exercise: build the counter\n\n\n\nAdd one toggle switch, this will act as the clock.\nAdd a High voltage.\nAdd one \\(4\\)-bit digit, this will display the output.\nAdd four JK flip flops and connect high voltage to \\(J\\) and \\(K\\) on all of them.\n\n\n\nconnect the button (clock) to the Clock input of the first flip-flop.\nThe output of the first flip-flop is \\(Q_0\\), the final digit. connect this to the \\(4\\)-bit digit and to the Clock input on the next flip-flop.\nrepeat with the remaining 3 flip-flops."
+    "text": "Exercise: build the counter\n\nAdd one toggle switch, this will act as the clock.\nAdd a High voltage.\nAdd one \\(4\\)-bit digit, this will display the output.\nAdd four JK flip flops and connect high voltage to \\(J\\) and \\(K\\) on all of them.\nconnect the button (clock) to the Clock input of the first flip-flop.\nThe output of the first flip-flop is \\(Q_0\\), the final digit. connect this to the \\(4\\)-bit digit and to the Clock input on the next flip-flop.\nrepeat with the remaining 3 flip-flops."
   },
   {
     "objectID": "CSC4001-S02-Logic.html#next-time",
@@ -207,14 +207,14 @@
     "href": "CSC4001-S01-Logic.html#exercise-logic-gate-simulator",
     "title": "Logic gates",
     "section": "Exercise: logic gate simulator",
-    "text": "Exercise: logic gate simulator\n\n\n\n\n\n\n - Go to https://logic.ly/demo.\n\n\n\n\n\nAdd two Toggle Switches as inputs and one Light Bulb as the output.\nTest out some logic gates – connect the two inputs to the output using the AND, OR, XOR, NOT, NAND and NOR gates."
+    "text": "Exercise: logic gate simulator\n\n\n\n\n\n\n\n\n\n\n\n\nGo to https://logic.ly/demo.\nAdd two Toggle Switches as inputs and one Light Bulb as the output."
   },
   {
     "objectID": "CSC4001-S01-Logic.html#exercise-one-gate-in-terms-of-another",
     "href": "CSC4001-S01-Logic.html#exercise-one-gate-in-terms-of-another",
     "title": "Logic gates",
     "section": "Exercise: One gate in terms of another",
-    "text": "Exercise: One gate in terms of another\nBuild the following:\n\nand AND gate using of only NOT and OR;\nan OR using only NOT and AND;\na NOT gate using only NAND;\nan AND gate using only NAND;\nan OR gate using only NAND;\nNOT, AND and OR gates using only NOR.\n\n\nUse the simulator, do it on paper, of if hardware is available, could even build real circuits."
+    "text": "Exercise: One gate in terms of another\nBuild the following:\n\nan AND gate using only NOT and OR;\nan OR using only NOT and AND;\na NOT gate using only NAND;\nan AND gate using only NAND;\nan OR gate using only NAND;\nNOT, AND and OR gates using only NOR.\n\n\nUse the simulator, do it on paper, of if hardware is available, could even build real circuits."
   },
   {
     "objectID": "CSC4001-S01-Logic.html#universal-logic-gates",
@@ -280,10 +280,38 @@
     "text": "Timetable\nComputer Science\n\nTuesdays 09:30 - 11:30\nWednesdays 11:30 - 13:30\n\nCyber Security\n\nThursday 09:30 - 11:30\nFriday 12:30 - 14:30"
   },
   {
+    "objectID": "CSC4001-S00-welcome.html#resources",
+    "href": "CSC4001-S00-welcome.html#resources",
+    "title": "Welcome",
+    "section": "Resources",
+    "text": "Resources\n\nYou’ll find everything on Ultra"
+  },
+  {
     "objectID": "CSC4001-S00-welcome.html#overview",
     "href": "CSC4001-S00-welcome.html#overview",
     "title": "Welcome",
     "section": "Overview",
-    "text": "Overview\n\nFormative assessment\n\nWorkshop activities: Review and analysis of scenarios using different system components, with emphasis on understanding the evolution of computer architecture\nWorkshop activity: Group presentation on the role of operating systems, in use case scenarios\n\nSummative assessment\n\nS1: Report on the role of core computer architectural components (worth 40%)\nS2: Computer system design project (worth 60%)\n\n\nMore detail to follow…"
+    "text": "Overview\n\nFormative assessments\n\nWorkshop activities throughout the course\nAllows you to collaborate and get feedback\n\nSummative assessment\n\nTwo pieces of work\nMakes up your module grade"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#s1",
+    "href": "CSC4001-S00-welcome.html#s1",
+    "title": "Welcome",
+    "section": "S1",
+    "text": "S1\nReport on the role of core computer architectural components\n\nWorth 40%, 1400 word equivalent\nDiscuss the impact on computing of developments in a chosen element of computer hardware during your chosen time period\nAnalyse an LLM’s response to the same question"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#s2",
+    "href": "CSC4001-S00-welcome.html#s2",
+    "title": "Welcome",
+    "section": "S2",
+    "text": "S2\nComputer system design project (worth 60%)\n\nWorth 60%, 1600 word equivalent\nDesign an embedded computer system\nReport on the design process, elementns of hardware architecture and operating system design you have used."
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
+    "href": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
+    "title": "Welcome",
+    "section": "CSC4001 Systems and Architecture",
+    "text": "CSC4001 Systems and Architecture\nOkay, administration’s done. Let’s get started!"
   }
 ]

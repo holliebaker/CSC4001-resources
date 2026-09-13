@@ -9,8 +9,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.10.18">
 
-  <meta name="author" content="CSC4001: Computer Systems Architecture">
-  <meta name="dcterms.date" content="2026-01-01">
+  <meta name="author" content="CSC4001: Computer Systems and Architecture">
   <title>CSC4001-resources – Building With Logic gates</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -36,7 +35,8 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
+  <link rel="stylesheet" href="style.scss">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -139,12 +139,11 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-CSC4001: Computer Systems Architecture
+CSC4001: Computer Systems and Architecture
 </div>
 </div>
 </div>
 
-  <p class="date">2026-01-01</p>
 </section>
 <section id="learning-outcomes" class="slide level2">
 <h2>Learning Outcomes</h2>
@@ -437,23 +436,17 @@ CSC4001: Computer Systems Architecture
           display:block!important;
       }</style></aside>
 </section>
-<section id="exercise-build-the-counter" class="slide level2">
+<section id="exercise-build-the-counter" class="slide level2 smaller">
 <h2>Exercise: build the counter</h2>
-<div class="columns">
-<div class="column">
 <ol type="1">
 <li>Add one <em>toggle switch</em>, this will act as the clock.</li>
 <li>Add a <em>High</em> voltage.</li>
 <li>Add one <em><span class="math inline">\(4\)</span>-bit digit</em>, this will display the output.</li>
 <li>Add four JK flip flops and connect high voltage to <span class="math inline">\(J\)</span> and <span class="math inline">\(K\)</span> on all of them.</li>
-</ol>
-</div><div class="column">
-<ol start="5" type="1">
 <li>connect the button (clock) to the <em>Clock</em> input of the first flip-flop.</li>
 <li>The output of the first flip-flop is <span class="math inline">\(Q_0\)</span>, the final digit. connect this to the <span class="math inline">\(4\)</span>-bit digit and to the <em>Clock</em> input on the next flip-flop.</li>
 <li>repeat with the remaining 3 flip-flops.</li>
 </ol>
-</div></div>
 </section>
 <section id="next-time" class="slide level2">
 <h2>Next time</h2>
