@@ -1,10 +1,11 @@
 ---
 title: "Welcome"
 author: "CSC4001: Computer Systems Architecture"
-date: Autumn 2026
+date: "Autumn 2026"
 format:
   revealjs:
-    theme: league
+    theme: simple
+    css: style.scss
 ---
 
 # Introductions
@@ -102,22 +103,50 @@ Intended learning outcomes
 - Thursday 09:30 - 11:30
 - Friday 12:30 - 14:30
 
+## Resources
+
+- You'll find everything on [Ultra](https://ultra.bathspa.ac.uk/ultra/courses/_144834_1/outline)
+
 # Assessment
 
 ## Overview
 
-- Formative assessment
-  - Workshop activities: *Review and analysis of scenarios using different system components, with
-emphasis on understanding the evolution of computer architecture*
-  - Workshop activity: *Group presentation on the role of operating systems, in use case
-scenarios*
-
+- Formative assessments
+  - Workshop activities throughout the course
+  - Allows you to collaborate and get feedback
 - Summative assessment
-  - **S1**: Report on the role of core computer architectural components (worth 40%)
-  - **S2**: Computer system design project (worth 60%)
+  - Two pieces of work
+  - Makes up your module grade
 
-More detail to follow...
+# Formative assessment
 
----
+- Workshop activities: 
+
+  *Review and analysis of scenarios using different system components, with
+emphasis on understanding the evolution of computer architecture*
+
+- Workshop activity: 
+
+  **Group presentation on the role of operating systems, in use case
+scenarios**
+
+## S1
+
+
+#### Report on the role of core computer architectural components
+
+- Worth 40%, 1400 word equivalent
+- Discuss the impact on computing of developments in a chosen element of computer hardware during your chosen time period
+- Analyse an LLM's response to the same question
+
+## S2
+
+#### Computer system design project (worth 60%)
+
+- Worth 60%, 1600 word equivalent
+- Design an embedded computer system
+- Report on the design process, elementns of hardware architecture and operating system design you have used.
+
+## CSC4001 Systems and Architecture
 
 Okay, administration's done. Let's get started!
