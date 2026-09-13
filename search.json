@@ -249,34 +249,41 @@
     "href": "CSC4001-S00-welcome.html#teaching-staff",
     "title": "Welcome",
     "section": "Teaching Staff",
-    "text": "Teaching Staff\n\n\nDave Cobb, Module Leader.\n\n\n\n\n\n\n\n\n25 years experience in the computer industry. Subject leader, senior lecturer specialising in softare development.\n\nHollie Baker, Associate Lecturer\n\n\n\n\n\n\n\n\nPhD in computer science. Worked at a local company building web-based patient management systems and databases. Currently developing software for Bristol Braille Technology. Braillist."
+    "text": "Teaching Staff\n\n\nDave Cobb\n\n\n\n\n\n\n\nModule leader. 25 years experience in the computer industry. Senior lecturer specialising in software development.\n\nHollie Baker\n\n\n\n\n\n\n\nAssociate Lecturer. PhD in computer science. Industry experience in web development and databases. Keen Braillist."
   },
   {
     "objectID": "CSC4001-S00-welcome.html#intended-learning-outcomes",
     "href": "CSC4001-S00-welcome.html#intended-learning-outcomes",
     "title": "Welcome",
     "section": "Intended Learning Outcomes",
-    "text": "Intended Learning Outcomes"
+    "text": "Intended Learning Outcomes\nBy successful completion of the module, you will be able to:\n\nDescribe the role of the different computer system components and their interactions\nExplain how instructions are executed by a computer processor\nIllustrate key computer architecture concepts such as instruction sets, memory hierarchy and data storage\nExplain the role operating systems have in providing services and sharing\n\n\nFrom the DPD The module’s lectures provide the fundamental aspects of computer systems and architectures, covering hardware, software and networking. The practical sessions enable students to reflect on the role of each computer component and understand how design choices impact data input, process and output. Independent Learning Students are encouraged to explore and understand different approaches hardware and software system design. Independent study and formative assessment also help students to assess an appreciate the evolution of micro-processors, hardware and operating systems. Intended learning outcomes"
   },
   {
     "objectID": "CSC4001-S00-welcome.html#topics-covered",
     "href": "CSC4001-S00-welcome.html#topics-covered",
     "title": "Welcome",
     "section": "Topics covered",
-    "text": "Topics covered"
+    "text": "Topics covered\n\nComputer system organisation\nMemory organisation and management\nAssembly level programs\nMicroprocessor design fundamentals (pipelined architecture, CPU)\nOperating systems architectures\nResources and resource management\nControl unit operations"
   },
   {
     "objectID": "CSC4001-S00-welcome.html#schedule",
     "href": "CSC4001-S00-welcome.html#schedule",
     "title": "Welcome",
     "section": "Schedule",
-    "text": "Schedule"
+    "text": "Schedule\n\n\n\nWeek\nSession A\nSession B\n\n\n\n\n1\nWelcome\nLogic\n\n\n2\nVon Neumann Architecture\nComputer history\n\n\n3\nAssembler, Risc and CISC\nPipelines and More\n\n\n4\nMemory\nWorkshop activity\n\n\n5\nOperating Systems Overview\nWorkshop Activity\n\n\n6\nReading Week\n\n\n\n7\nProcess Lifecycle\nBootstrapping\n\n\n8\nScheduling\nScheduling algorithms\n\n\n9\nDeadlock\nProcess protection\n\n\n10\nInter-process communication\nWorkshop activity\n\n\n11\nMemory Management\nWorkshop activity\n\n\n12\nFiles and Filesystems\nWorkshop activity"
   },
   {
     "objectID": "CSC4001-S00-welcome.html#timetable",
     "href": "CSC4001-S00-welcome.html#timetable",
     "title": "Welcome",
     "section": "Timetable",
-    "text": "Timetable"
+    "text": "Timetable\nComputer Science\n\nTuesdays 09:30 - 11:30\nWednesdays 11:30 - 13:30\n\nCyber Security\n\nThursday 09:30 - 11:30\nFriday 12:30 - 14:30"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#overview",
+    "href": "CSC4001-S00-welcome.html#overview",
+    "title": "Welcome",
+    "section": "Overview",
+    "text": "Overview\n\nFormative assessment\n\nWorkshop activities: Review and analysis of scenarios using different system components, with emphasis on understanding the evolution of computer architecture\nWorkshop activity: Group presentation on the role of operating systems, in use case scenarios\n\nSummative assessment\n\nS1: Report on the role of core computer architectural components (worth 40%)\nS2: Computer system design project (worth 60%)\n\n\nMore detail to follow…"
   }
 ]
