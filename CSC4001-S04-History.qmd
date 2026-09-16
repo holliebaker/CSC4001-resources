@@ -38,7 +38,7 @@ format:
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/02-eniac.jpg){fig-align="center" fig-alt="ENIAC" width="70%"}
+![](./assets/02-eniac.jpg){fig-align="center" fig-alt="ENIAC" width="70%"}
 :::
 :::
 ::::
@@ -60,7 +60,7 @@ format:
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/02-colossus.jpg){fig-align="center" fig-alt="Colossus" width="70%"}
+![](./assets/02-colossus.jpg){fig-align="center" fig-alt="Colossus" width="70%"}
 :::
 ::::
 :::
@@ -124,7 +124,7 @@ More information on mercury delay lines: Radar pulses were captured and played a
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/02-edsac.jpg){fig-align="center" fig-alt="EDSAC" width="70%"}
+![](./assets/02-edsac.jpg){fig-align="center" fig-alt="EDSAC" width="70%"}
 :::
 ::::
 :::

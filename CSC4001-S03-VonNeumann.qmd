@@ -21,7 +21,7 @@ format:
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/02-brooks.jpg){fig-align="center" fig-alt="Photograph of Brooks" width="80%"}
+![](./assets/02-brooks.jpg){fig-align="center" fig-alt="Photograph of Brooks" width="80%"}
 :::
 ::::
 :::
@@ -68,7 +68,7 @@ Brooks was an American computer architect, software engineer and computer scient
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/02-vna.svg){fig-align="center" fig-alt="diagram of Von Neumann architecture showing five components described on the next page" width="60%"}
+![](./assets/02-vna.svg){fig-align="center" fig-alt="diagram of Von Neumann architecture showing five components described on the next page" width="60%"}
 :::
 ::::
 
@@ -124,7 +124,7 @@ Arrows represent data transfer connections and directions. I.e., there is an arr
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/02-harvard.svg){fig-align="center" fig-alt="diagram of Harvard architecture showing the same components as Von Neumann, but with separate memory and separate buses for instructions and data" width="60%"}
+![](./assets/02-harvard.svg){fig-align="center" fig-alt="diagram of Harvard architecture showing the same components as Von Neumann, but with separate memory and separate buses for instructions and data" width="60%"}
 :::
 ::::
 
