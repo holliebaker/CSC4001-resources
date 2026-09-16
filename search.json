@@ -25,7 +25,28 @@
     "href": "CSC4001-S03-VonNeumann.html#computer-architecture-1",
     "title": "Architecture overview",
     "section": "Computer Architecture",
-    "text": "Computer Architecture\n\nFirst documented computer architecture was in correspondence between Charles Babbage and Ada Lovelace, where Babbage described his analytical engine.\n1936, Conrad Zeus described a computer where both instructions and data are stored in the same memory: First documented instance of a “stored program” or general purpose computer.\n1945, John Von Neumann described the famous Von Neumann Architecture in his paper on the EDVAC computer (successor to the ENIAC).\n1946, Alan Turing wrote a detailed proposal for the electronic calculator, Automatic Computing Engine, citing Von Neumann."
+    "text": "Computer Architecture\n\nFirst documented computer architecture was in correspondence between Charles Babbage and Ada Lovelace, where Babbage described his analytical engine.\n1936, Conrad Zeus described a computer where both instructions and data are stored in the same memory: First documented instance of a “stored program” or general purpose computer."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-2",
+    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-2",
+    "title": "Architecture overview",
+    "section": "Computer Architecture",
+    "text": "Computer Architecture\n\n1945, John Von Neumann described the famous Von Neumann Architecture in his paper on the EDVAC computer (successor to the ENIAC)."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-3",
+    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-3",
+    "title": "Architecture overview",
+    "section": "Computer Architecture",
+    "text": "Computer Architecture\n\n1946, Alan Turing wrote a detailed proposal for the electronic calculator, Automatic Computing Engine, citing Von Neumann."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-4",
+    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-4",
+    "title": "Architecture overview",
+    "section": "Computer Architecture",
+    "text": "Computer Architecture"
   },
   {
     "objectID": "CSC4001-S03-VonNeumann.html#von-neumann-architecture",
@@ -47,6 +68,13 @@
     "title": "Architecture overview",
     "section": "Store",
     "text": "Store\n\nTo store data and instructions. E.g., paper tape, magnetic tape, RAM."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#control-unit",
+    "href": "CSC4001-S03-VonNeumann.html#control-unit",
+    "title": "Architecture overview",
+    "section": "Control Unit",
+    "text": "Control Unit\n\ndecides which instruction to perform next."
   },
   {
     "objectID": "CSC4001-S03-VonNeumann.html#arithmetic-logic-unit",
@@ -91,81 +119,18 @@
     "text": "In small groups\n\nIn which situations is each architecture used?\n\nToday and historically?\nWhy is it a good choice for that situation, or why not?\n\nThings to think about:\n\nwhere are the bottlenecks?\nspecial purpose vs general purpose\ndata integrity / tampering / security"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#next-time",
-    "href": "CSC4001-S03-VonNeumann.html#next-time",
+    "objectID": "CSC4001-S03-VonNeumann.html#section",
+    "href": "CSC4001-S03-VonNeumann.html#section",
     "title": "Architecture overview",
-    "section": "Next time",
-    "text": "Next time\nHistory"
+    "section": "1949",
+    "text": "1949\n\n“The”brain” [computer] may one day come down to our level [of the common people] and help with our income-tax and book-keeping calculations. But this is speculation and there is no sign of it so far.”\n\n– British newspaper The Star in a June 1949 news article about the EDSAC computer."
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#teaching-staff",
-    "href": "CSC4001-S00-welcome.html#teaching-staff",
-    "title": "Welcome",
-    "section": "Teaching Staff",
-    "text": "Teaching Staff\n\n\nDave Cobb\n\n\n\n\n\n\n\nModule leader. 25 years experience in the computer industry. Senior lecturer specialising in software development.\n\nHollie Baker\n\n\n\n\n\n\n\nAssociate Lecturer. PhD in computer science. Industry experience in web development and databases. Keen Braillist."
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#intended-learning-outcomes",
-    "href": "CSC4001-S00-welcome.html#intended-learning-outcomes",
-    "title": "Welcome",
-    "section": "Intended Learning Outcomes",
-    "text": "Intended Learning Outcomes\nBy successful completion of the module, you will be able to:\n\nDescribe the role of the different computer system components and their interactions\nExplain how instructions are executed by a computer processor\nIllustrate key computer architecture concepts such as instruction sets, memory hierarchy and data storage\nExplain the role operating systems have in providing services and sharing\n\n\nFrom the DPD The module’s lectures provide the fundamental aspects of computer systems and architectures, covering hardware, software and networking. The practical sessions enable students to reflect on the role of each computer component and understand how design choices impact data input, process and output. Independent Learning Students are encouraged to explore and understand different approaches hardware and software system design. Independent study and formative assessment also help students to assess an appreciate the evolution of micro-processors, hardware and operating systems. Intended learning outcomes"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#topics-covered",
-    "href": "CSC4001-S00-welcome.html#topics-covered",
-    "title": "Welcome",
-    "section": "Topics covered",
-    "text": "Topics covered\n\nComputer system organisation\nMemory organisation and management\nAssembly level programs\nMicroprocessor design fundamentals (pipelined architecture, CPU)\nOperating systems architectures\nResources and resource management\nControl unit operations"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#schedule",
-    "href": "CSC4001-S00-welcome.html#schedule",
-    "title": "Welcome",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\nWeek\nSession A\nSession B\n\n\n\n\n1\nWelcome\nLogic\n\n\n2\nVon Neumann Architecture\nComputer history\n\n\n3\nAssembler, Risc and CISC\nPipelines and More\n\n\n4\nMemory\nWorkshop activity\n\n\n5\nOperating Systems Overview\nWorkshop Activity\n\n\n6\nReading Week\n\n\n\n7\nProcess Lifecycle\nBootstrapping\n\n\n8\nScheduling\nScheduling algorithms\n\n\n9\nDeadlock\nProcess protection\n\n\n10\nInter-process communication\nWorkshop activity\n\n\n11\nMemory Management\nWorkshop activity\n\n\n12\nFiles and Filesystems\nWorkshop activity"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#timetable",
-    "href": "CSC4001-S00-welcome.html#timetable",
-    "title": "Welcome",
-    "section": "Timetable",
-    "text": "Timetable\nComputer Science\n\nTuesdays 09:30 - 11:30\nWednesdays 11:30 - 13:30\n\nCyber Security\n\nThursday 09:30 - 11:30\nFriday 12:30 - 14:30"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#resources",
-    "href": "CSC4001-S00-welcome.html#resources",
-    "title": "Welcome",
-    "section": "Resources",
-    "text": "Resources\n\nYou’ll find everything on Ultra"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#overview",
-    "href": "CSC4001-S00-welcome.html#overview",
-    "title": "Welcome",
-    "section": "Overview",
-    "text": "Overview\n\nFormative assessments\n\nWorkshop activities throughout the course\nAllows you to collaborate and get feedback\n\nSummative assessment\n\nTwo pieces of work\nMakes up your module grade"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#s1",
-    "href": "CSC4001-S00-welcome.html#s1",
-    "title": "Welcome",
-    "section": "S1",
-    "text": "S1\nReport on the role of core computer architectural components\n\nWorth 40%, 1400 word equivalent\nDiscuss the impact on computing of developments in a chosen element of computer hardware during your chosen time period\nAnalyse an LLM’s response to the same question"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#s2",
-    "href": "CSC4001-S00-welcome.html#s2",
-    "title": "Welcome",
-    "section": "S2",
-    "text": "S2\nComputer system design project (worth 60%)\n\nWorth 60%, 1600 word equivalent\nDesign an embedded computer system\nReport on the design process, elementns of hardware architecture and operating system design you have used."
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
-    "href": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
-    "title": "Welcome",
-    "section": "CSC4001 Systems and Architecture",
-    "text": "CSC4001 Systems and Architecture\nOkay, administration’s done. Let’s get started!"
+    "objectID": "CSC4001-S03-VonNeumann.html#section-1",
+    "href": "CSC4001-S03-VonNeumann.html#section-1",
+    "title": "Architecture overview",
+    "section": "1953",
+    "text": "1953\n\n“I think there is a world market for maybe five computers.”\n\n– Thomas Watson, IBM Chairman, although this is now thought to be urban legend.\n\nThe “brain” computer has now very much “come down to the level of the common people”, and does much more than just book-keeping.\nRegarding the Watson quote, it is now thought to be an urban legend. see https://geekhistory.com/content/urban-legend-i-think-there-world-market-maybe-five-computers\n“We believe the statement that you attribute to Thomas Watson is a misunderstanding of remarks made at IBM’s annual stockholders meeting on April 28, 1953. In referring specifically and only to the IBM 701 Electronic Data Processing Machine – which had been introduced the year before as the company’s first production computer designed for scientific calculations – Thomas Watson, Jr., told stockholders that “IBM had developed a paper plan for such a machine and took this paper plan across the country to some 20 concerns that we thought could use such a machine. I would like to tell you that the machine rents for between $12,000 and $18,000 a month, so it was not the type of thing that could be sold from place to place. But, as a result of our trip, on which we expected to get orders for five machines, we came home with orders for 18.” https://geekhistory.com/content/urban-legend-i-think-there-world-market-maybe-five-computers"
   },
   {
     "objectID": "CSC4001-S01-Logic.html#learning-outcomes",
@@ -266,11 +231,151 @@
     "text": "Make it true\n\nfor IOS"
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#next-time",
-    "href": "CSC4001-S01-Logic.html#next-time",
-    "title": "Logic Gates",
-    "section": "Next Time",
-    "text": "Next Time\nBuilding components with logic gates"
+    "objectID": "CSC4001-S04-History.html#learning-outcomes",
+    "href": "CSC4001-S04-History.html#learning-outcomes",
+    "title": "Evolution of the Computer",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n\nGive an overview of early computers: use, specs, how they were programmed.\nCompare early and modern computers\nExplain how developments in early computing have influenced modern computer hardware."
+  },
+  {
+    "objectID": "CSC4001-S04-History.html#but-first-why-are-we-doing-this",
+    "href": "CSC4001-S04-History.html#but-first-why-are-we-doing-this",
+    "title": "Evolution of the Computer",
+    "section": "But first, why are we doing this?",
+    "text": "But first, why are we doing this?\n\nGain perspective.\nUnderstanding of why things are the way they are today.\nLearn from previous successes and failures."
+  },
+  {
+    "objectID": "CSC4001-S04-History.html#the-eniac-1945",
+    "href": "CSC4001-S04-History.html#the-eniac-1945",
+    "title": "Evolution of the Computer",
+    "section": "The ENIAC (1945)",
+    "text": "The ENIAC (1945)\n\n\nElectronic Numerical Integrator and Computer\n\nSpecial purpose computer for artillery firing table calculations.\nLocated at the School of Engineering and Applied Science, Pennsylvania State University\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCould be “programmed” by using the plug-board and switches, data entered via punched cards.\nLater converted into a stored program computer.\nBase-10 arithmetic instead of the usual binary.\nUsed vacuum tubes, which burnt out often – high maintenance."
+  },
+  {
+    "objectID": "CSC4001-S04-History.html#colossus-1943-45",
+    "href": "CSC4001-S04-History.html#colossus-1943-45",
+    "title": "Evolution of the Computer",
+    "section": "Colossus (1943-45)",
+    "text": "Colossus (1943-45)\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecial purpose computer developed at Bletchley Park to help break the Lorenz cipher.\nDesigned by Tommy Flowers, a research engineer at the General Post Office, based on plans by Code and Cipher School mathematician Max Newman.\n\n\n\n\nUsed vacuum tubes; programmed using switches and a plug board.\nData memory was a cycling strip of paper tape.\nColossus Mk II, which used shift registers to run 6 times faster, went into operation in time for the D-day landings.\nBy the end of the war, 10 Colossi were in operation."
+  },
+  {
+    "objectID": "CSC4001-S04-History.html#general-purpose-computers-post-ww2",
+    "href": "CSC4001-S04-History.html#general-purpose-computers-post-ww2",
+    "title": "Evolution of the Computer",
+    "section": "General purpose computers (post WW2)",
+    "text": "General purpose computers (post WW2)\nVon Neumann arranged a 6-week summer workshop to design and build a new type of computer.\n\nGeneral purpose: many early computers were designed with a specific task in mind, which meant they were difficult to repurpose.\nVon Neumann wanted to build a stored program computer.\nElectronic:replacing electromechanical components which were brittle, hot and noisy.\nColossus and the ENIAC both consumed 150KW of power.\nUse binary, which is the easiest encoding to work with when using electronic components."
+  },
+  {
+    "objectID": "CSC4001-S04-History.html#maurice-wilkes",
+    "href": "CSC4001-S04-History.html#maurice-wilkes",
+    "title": "Evolution of the Computer",
+    "section": "Maurice Wilkes",
+    "text": "Maurice Wilkes\n\nCambridge mathematician, physics PhD on “radio propagation of very long radio waves in the ionosphere”.\nAttended Jon Neumann’s workshop, then returned to Cambridge to build the EDSAC machine.\nWorked in radar during WW2, which inspired the memory technology for EDSAC.\nMemory was a limitation for early electronic computers, Wilkes used “delay lines”, mercury tubes and an oscilloscope, as memory.\n\n\nMore information on mercury delay lines: Radar pulses were captured and played as sound waves. Sound waves passed through mercury, which slowed them down. Picked up by a microphone and displayed no an oscilloscope screen. Sound wave amplified and played back through the speaker so the pulse would repeat as long as needed."
+  },
+  {
+    "objectID": "CSC4001-S04-History.html#edsac-6-may-1949",
+    "href": "CSC4001-S04-History.html#edsac-6-may-1949",
+    "title": "Evolution of the Computer",
+    "section": "EDSAC (6 May 1949)",
+    "text": "EDSAC (6 May 1949)\n\n\nElectronic Delay Storage Automatic Calculator\n\nOne of the first stored program computers which used binary.\nDeveloped by Maurice Wilkes, William Renwick (hardware engineer) and David Wheeler (first system software engineer).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCould perform 700 additions or 200 multiplications per second.\n512 18-bit words of memory for programs and data, upgraded to 1024 18-bit words in 1952.\nData and programs were loaded via 5-hole punched paper tape, initial orders instructed the computer to load the program.\nConsumed 11KW of power.\nThe delay line memory was sub-optimal, but one of the best options at the time.\nAlthough the words were 18-bits, only 17 bits were used in practice owing to unreliability of memory. ## Programming the EDSAC\nPrograms designed on paper and then punched, in assembler, onto 5-hole paper tape. Programmers became proficient at reading programs from the tape.\nProgrammers would hang their tape on a line, waiting for an operator to run them – the first “job queue”.\nOperator would load program and data and then either return the printed output or inform the programmer of the memory address at which the program failed. ## Operating EDSAC\nBuilt-in add, multiply, bus and conditional jump.\n\nNo load. Instead, Instead clear the register (set to \\(0\\)) and add the value from memory to the register.\nNo division, but it was included as a subroutine.\n\nIn case of a program error, the operator would inform the programmer at which address their program failed.\nThere was no debugger. An oscilloscope screen showed the state of the registers, and a speaker played a different note depending on the value of the accumulator register. An experienced programmer learnt the sound of a failing program, e.g., if there was an infinite loop. ## Operating EDSAC\nProgrammers had to use “bad” programming technique. E.g., to access a different array element, the code would modify itself to point to the correct address.\nNo built-in mechanism for subroutines, instead perform a Wheeler jump: Jump with return memory address, computer would modify the last instruction of the subroutine to jump back to this return address.- No recursion was possible on the EDSAC. Turing proposed the call stack in his 1945 paper, which implemented subroutines “properly” and allowed recursion."
+  },
+  {
+    "objectID": "CSC4001-S04-History.html#usage",
+    "href": "CSC4001-S04-History.html#usage",
+    "title": "Evolution of the Computer",
+    "section": "Usage",
+    "text": "Usage\nA condition for funding was that EDSAC must provide a service, as opposed to just being an engineering experiment.\n\nRonald Fisher, with Wilkes and Wheeler, used EDSAC to solve a differential equation for gene frequency – first use of computers in biology.\nIn 1951, Miller and Wheeler computed a 79-digit prime number, the largest known at its time.\nEDSAC played a role in Nobel-prize-winning research: Nobel laureates thanked EDSAC in their acceptance speech. John Kendrew and Max Perutz (Chemistry, 1962), Andrew Huxley (Medicine, 1963) and Martin Ryle (Physics, 1974)\nEDSAC remained in operation until 11 July 1958, when it was superseded by EDSAC 2, which ran until 1965."
+  },
+  {
+    "objectID": "CSC4001-S04-History.html#exercise-computer-history-research",
+    "href": "CSC4001-S04-History.html#exercise-computer-history-research",
+    "title": "Evolution of the Computer",
+    "section": "Exercise: computer history research",
+    "text": "Exercise: computer history research\nIn pairs, teams, or individually…\n\nChoose a computer from history. Find out:\n\nWho created it, and when?\nWhat could it do? hardware operations\nSpecs: processing, memory, operations per second.\nHow was it programmed? Could it be programmed?\nHow did programmers / operators / scientists interact with it? Input/output mechanisms, how was it debugged?"
+  },
+  {
+    "objectID": "CSC4001-S04-History.html#exercise-play-with-the-edsac-simulator",
+    "href": "CSC4001-S04-History.html#exercise-play-with-the-edsac-simulator",
+    "title": "Evolution of the Computer",
+    "section": "Exercise: play with the EDSAC simulator",
+    "text": "Exercise: play with the EDSAC simulator\n\nMartin Campbell Kelly, University of Warwick, developed an EDSAC simulator.\nhttps://dcs.warwick.ac.uk/~edsac/\nSeveral programs and games are available.\nTry Sandy Douglas’ OXO game (a tic-tac-toe game vs the computer).\nAlthough a faithful simulation, it is still easier to use than the real thing – imagine loading the paper tape, vacuum tubes blowing frequently, and try setting the speed to EDSAC real-time."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CSC4001: Systems and Architecture",
+    "section": "",
+    "text": "Index\n\nS00: \nS01: \nS02:"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#teaching-staff",
+    "href": "CSC4001-S00-welcome.html#teaching-staff",
+    "title": "Welcome",
+    "section": "Teaching Staff",
+    "text": "Teaching Staff\n\n\nDave Cobb\n\n\n\n\n\n\n\nModule leader. 25 years experience in the computer industry. Senior lecturer specialising in software development.\n\nHollie Baker\n\n\n\n\n\n\n\nAssociate Lecturer. PhD in computer science. Industry experience in web development and databases. Keen Braillist."
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#intended-learning-outcomes",
+    "href": "CSC4001-S00-welcome.html#intended-learning-outcomes",
+    "title": "Welcome",
+    "section": "Intended Learning Outcomes",
+    "text": "Intended Learning Outcomes\nBy successful completion of the module, you will be able to:\n\nDescribe the role of the different computer system components and their interactions\nExplain how instructions are executed by a computer processor\nIllustrate key computer architecture concepts such as instruction sets, memory hierarchy and data storage\nExplain the role operating systems have in providing services and sharing\n\n\nFrom the DPD The module’s lectures provide the fundamental aspects of computer systems and architectures, covering hardware, software and networking. The practical sessions enable students to reflect on the role of each computer component and understand how design choices impact data input, process and output. Independent Learning Students are encouraged to explore and understand different approaches hardware and software system design. Independent study and formative assessment also help students to assess an appreciate the evolution of micro-processors, hardware and operating systems. Intended learning outcomes"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#topics-covered",
+    "href": "CSC4001-S00-welcome.html#topics-covered",
+    "title": "Welcome",
+    "section": "Topics covered",
+    "text": "Topics covered\n\nComputer system organisation\nMemory organisation and management\nAssembly level programs\nMicroprocessor design fundamentals (pipelined architecture, CPU)\nOperating systems architectures\nResources and resource management\nControl unit operations"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#schedule",
+    "href": "CSC4001-S00-welcome.html#schedule",
+    "title": "Welcome",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\nWeek\nSession A\nSession B\n\n\n\n\n1\nWelcome\nLogic\n\n\n2\nVon Neumann Architecture\nComputer history\n\n\n3\nAssembler, Risc and CISC\nPipelines and More\n\n\n4\nMemory\nWorkshop activity\n\n\n5\nOperating Systems Overview\nWorkshop Activity\n\n\n6\nReading Week\n\n\n\n7\nProcess Lifecycle\nBootstrapping\n\n\n8\nScheduling\nScheduling algorithms\n\n\n9\nDeadlock\nProcess protection\n\n\n10\nInter-process communication\nWorkshop activity\n\n\n11\nMemory Management\nWorkshop activity\n\n\n12\nFiles and Filesystems\nWorkshop activity"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#timetable",
+    "href": "CSC4001-S00-welcome.html#timetable",
+    "title": "Welcome",
+    "section": "Timetable",
+    "text": "Timetable\nComputer Science\n\nTuesdays 09:30 - 11:30\nWednesdays 11:30 - 13:30\n\nCyber Security\n\nThursday 09:30 - 11:30\nFriday 12:30 - 14:30"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#resources",
+    "href": "CSC4001-S00-welcome.html#resources",
+    "title": "Welcome",
+    "section": "Resources",
+    "text": "Resources\n\nYou’ll find everything on Ultra"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#overview",
+    "href": "CSC4001-S00-welcome.html#overview",
+    "title": "Welcome",
+    "section": "Overview",
+    "text": "Overview\n\nFormative assessments\n\nWorkshop activities throughout the course\nAllows you to collaborate and get feedback\n\nSummative assessment\n\nTwo pieces of work\nMakes up your module grade"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#s1",
+    "href": "CSC4001-S00-welcome.html#s1",
+    "title": "Welcome",
+    "section": "S1",
+    "text": "S1\nReport on the role of core computer architectural components\n\nWorth 40%, 1400 word equivalent\nDiscuss the impact on computing of developments in a chosen element of computer hardware during your chosen time period\nAnalyse an LLM’s response to the same question"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#s2",
+    "href": "CSC4001-S00-welcome.html#s2",
+    "title": "Welcome",
+    "section": "S2",
+    "text": "S2\nComputer system design project (worth 60%)\n\nWorth 60%, 1600 word equivalent\nDesign an embedded computer system\nReport on the design process, elementns of hardware architecture and operating system design you have used."
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
+    "href": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
+    "title": "Welcome",
+    "section": "CSC4001 Systems and Architecture",
+    "text": "CSC4001 Systems and Architecture\nOkay, administration’s done. Let’s get started!"
   },
   {
     "objectID": "CSC4001-S02-Logic.html#learning-outcomes",
@@ -411,12 +516,5 @@
     "title": "Building With Logic Gates",
     "section": "Exercise: build the counter",
     "text": "Exercise: build the counter\n\nAdd one toggle switch, this will act as the clock.\nAdd a High voltage.\nAdd one \\(4\\)-bit digit, this will display the output.\nAdd four JK flip flops and connect high voltage to \\(J\\) and \\(K\\) on all of them.\nconnect the button (clock) to the Clock input of the first flip-flop.\nThe output of the first flip-flop is \\(Q_0\\), the final digit. connect this to the \\(4\\)-bit digit and to the Clock input on the next flip-flop.\nrepeat with the remaining 3 flip-flops."
-  },
-  {
-    "objectID": "CSC4001-S02-Logic.html#next-time",
-    "href": "CSC4001-S02-Logic.html#next-time",
-    "title": "Building With Logic Gates",
-    "section": "Next time",
-    "text": "Next time\nComputer architecture overview"
   }
 ]
