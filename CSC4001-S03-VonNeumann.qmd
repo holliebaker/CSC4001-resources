@@ -148,6 +148,29 @@ Arrows represent data transfer connections and directions. I.e., there is an arr
   - special purpose vs general purpose
   - data integrity / tampering / security
 
+# Before the era of personal computers
+
+## 1949
+
+> "The"brain" \[computer\] may one day come down to our level \[of the common people\] and help with our income-tax and book-keeping calculations. But this is speculation and there is no sign of it so far."
+
+-- British newspaper The Star in a June 1949 news article about the EDSAC computer.
+
+## 1953
+
+> "I think there is a world market for maybe five computers."
+
+-- Thomas Watson, IBM Chairman, although this is now thought to be urban legend.
+
+::: notes
+The "brain" computer has now very much "come down to the level of the common people", and does much more than just book-keeping.
+
+Regarding the Watson quote, it is now thought to be an urban legend. see https://geekhistory.com/content/urban-legend-i-think-there-world-market-maybe-five-computers
+
+“We believe the statement that you attribute to Thomas Watson is a misunderstanding of remarks made at IBM’s annual stockholders meeting on April 28, 1953. In referring specifically and only to the IBM 701 Electronic Data Processing Machine – which had been introduced the year before as the company’s first production computer designed for scientific calculations – Thomas Watson, Jr., told stockholders that “IBM had developed a paper plan for such a machine and took this paper plan across the country to some 20 concerns that we thought could use such a machine. I would like to tell you that the machine rents for between $12,000 and $18,000 a month, so it was not the type of thing that could be sold from place to place. But, as a result of our trip, on which we expected to get orders for five machines, we came home with orders for 18.”
+https://geekhistory.com/content/urban-legend-i-think-there-world-market-maybe-five-computers
+:::
+
 ## Next time
 
-History
+Evolution of the computer
