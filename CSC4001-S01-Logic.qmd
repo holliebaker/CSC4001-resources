@@ -302,6 +302,6 @@ even build real circuits.
 
 - [for IOS](https://apps.apple.com/in/app/make-it-true-solve-circuits/id1536287319)
 
-## Next Time
+# Next Time
 
 Building components with logic gates

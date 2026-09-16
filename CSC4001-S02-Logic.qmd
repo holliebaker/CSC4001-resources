@@ -314,6 +314,6 @@ The timing diagram shows how the values of $Q_0,\ldots,Q_3$ should change.
   flip-flop.
 7. repeat with the remaining 3 flip-flops.
 
-## Next time
+# Next time
 
 Computer architecture overview

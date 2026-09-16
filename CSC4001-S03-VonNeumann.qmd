@@ -52,9 +52,15 @@ Brooks was an American computer architect, software engineer and computer scient
 
 - 1936, Conrad Zeus described a computer where both instructions and data are stored in the same memory: First documented instance of a "stored program" or general purpose computer.
 
+## Computer Architecture
+
 - 1945, John Von Neumann described the famous Von Neumann Architecture in his paper on the EDVAC computer (successor to the ENIAC).
 
+## Computer Architecture
+
 - 1946, Alan Turing wrote a detailed proposal for the electronic calculator, Automatic Computing Engine, citing Von Neumann.
+
+## Computer Architecture
 
 # Von Neumann vs Harvard
 
@@ -82,7 +88,7 @@ Arrows represent data transfer connections and directions. I.e., there is an arr
 
 - To store data and instructions. E.g., paper tape, magnetic tape, RAM.
 
-# Control Unit
+## Control Unit
 
 - decides which instruction to perform next.
 
@@ -171,6 +177,6 @@ Regarding the Watson quote, it is now thought to be an urban legend. see https:/
 https://geekhistory.com/content/urban-legend-i-think-there-world-market-maybe-five-computers
 :::
 
-## Next time
+# Next time
 
 Evolution of the computer

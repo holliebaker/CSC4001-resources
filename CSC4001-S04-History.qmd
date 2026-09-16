@@ -1,5 +1,5 @@
 ---
-title: "Computer History"
+title: "Evolution of the Computer"
 author: "CSC4001: Computer Systems and Architecture"
 date: ""
 format:
@@ -14,7 +14,7 @@ format:
 - Compare early and modern computers
 - Explain how developments in early computing have influenced modern computer hardware.
 
-# Histor 
+# History 
 
 ## But first, why are we doing this?
 
@@ -157,7 +157,7 @@ More information on mercury delay lines: Radar pulses were captured and played a
   Turing proposed the **call stack** in his 1945 paper, which implemented subroutines "properly" and allowed recursion.
 :::
 
-## Usage
+## Usage {.smaller}
 
 A condition for funding was that EDSAC must provide a service, as opposed to just being an engineering experiment.
 
@@ -197,6 +197,6 @@ Find out:
 
 - Although a faithful simulation, it is still easier to use than the real thing -- imagine loading the paper tape, vacuum tubes blowing frequently, and try setting the speed to EDSAC real-time.
 
-## Next time
+# Next time
 
 The CPU
