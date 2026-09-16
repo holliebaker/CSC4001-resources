@@ -10,11 +10,11 @@ format:
 
 ## Learning Outcomes
 
-- eXPLAIN WHY WE NEED LATCHES, AND HOW FLIPFLOPS DIFFER FROM LATCHES.
-- rECOGNISE VARIOUS TYPES OF LATCH.
-- uSE FLIP-FLOPS TO BUILD A COUNTER.
+- Explain why we need latches, and how flip-flops differ from latches.
+- Recognise various types of latch.
+- Build a counter out of logic gates..
 
-# lATCHES
+## Latches
 
 ## Latches
 
@@ -219,11 +219,13 @@ fig-alt="D-latch build from nand gates." width="95%"}
 
 - This version is made from **only** *NAND* gates.
 
+# Flip-Flops
+
 ## Flip-flops
 
 - Latches are inexpensive and easy to implement using simple logic
   components.
-2
+
 - However, their behaviour can be unpredictable owing to a lack of
   synchronisation.
 
@@ -236,9 +238,8 @@ fig-alt="D-latch build from nand gates." width="95%"}
 
 ::::: columns
 ::: column
-- The JK flip-flop has the same behaviour as an SR-flip flop:
-  - **Reset**: high pulse to $K$.
-  - **Set**: high pulse to $J$.
+- **Reset**: high pulse to $K$.
+- **Set**: high pulse to $J$.
 
 - If a high pulse is sent to **both** $J$ and $K$, then the state is
   *toggled*.
