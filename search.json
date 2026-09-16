@@ -1,143 +1,171 @@
 [
   {
-    "objectID": "CSC4001-S02-Logic.html#learning-outcomes",
-    "href": "CSC4001-S02-Logic.html#learning-outcomes",
-    "title": "Building With Logic Gates",
+    "objectID": "CSC4001-S03-VonNeumann.html#learning-outcomes",
+    "href": "CSC4001-S03-VonNeumann.html#learning-outcomes",
+    "title": "Architecture overview",
     "section": "Learning Outcomes",
-    "text": "Learning Outcomes\n\neXPLAIN WHY WE NEED LATCHES, AND HOW FLIPFLOPS DIFFER FROM LATCHES.\nrECOGNISE VARIOUS TYPES OF LATCH.\nuSE FLIP-FLOPS TO BUILD A COUNTER."
+    "text": "Learning Outcomes\n\nState the five components of a Von Neumann computer.\nDescribe the difference between the Von Neumann and Harvard architecture.\nExplain the advantages and disadvantages of the Von Neumann vs Harvard architectures.\nArgue for the “best” architecture in a given situation."
   },
   {
-    "objectID": "CSC4001-S02-Logic.html#latches-1",
-    "href": "CSC4001-S02-Logic.html#latches-1",
-    "title": "Building With Logic Gates",
-    "section": "Latches",
-    "text": "Latches\n\nComponent which “remembers” a value until it is changed by a new signal.\nCan be used to store \\(1\\) bit of data.\nWidely used in digital circuits, e.g., for data storage, control and flip-flop circuits."
+    "objectID": "CSC4001-S03-VonNeumann.html#architecture",
+    "href": "CSC4001-S03-VonNeumann.html#architecture",
+    "title": "Architecture overview",
+    "section": "Architecture",
+    "text": "Architecture\n\n\n\n\n\n\n\n\n\n\n\n\n“Computer architecture, like other architecture, is the art of determining the needs of the user of a structure and then designing to meet those needs as effectively as possible within economic and technological constraints.”\n– Frederick P. Brooks\n\n\nBrooks was an American computer architect, software engineer and computer scientist who managed IBM 360 series of mainframes and their accompanying software."
   },
   {
-    "objectID": "CSC4001-S02-Logic.html#sr-latch",
-    "href": "CSC4001-S02-Logic.html#sr-latch",
-    "title": "Building With Logic Gates",
-    "section": "SR-latch",
-    "text": "SR-latch\n\n\n\nSet-reset latches are the simplest type of latch.\nCan be constructed from two NOR gates.\nTwo inputs, \\(S\\) (set) and \\(R\\) (reset). State is changed when a pulse (high voltage, or \\(1\\)) is applied to \\(S\\) or \\(R\\).\nThe output is \\(Q\\) and its inverse is \\(\\overline{Q}\\)."
+    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture",
+    "href": "CSC4001-S03-VonNeumann.html#computer-architecture",
+    "title": "Architecture overview",
+    "section": "Computer Architecture",
+    "text": "Computer Architecture\n\nA description of a computer (or computer system) which is made from component parts.\nOften a high-level description, indicating how components are linked and what each does.\nSometimes includes details such as the instruction set used and other implementation details."
   },
   {
-    "objectID": "CSC4001-S02-Logic.html#sr-latch-1",
-    "href": "CSC4001-S02-Logic.html#sr-latch-1",
-    "title": "Building With Logic Gates",
-    "section": "SR-latch",
-    "text": "SR-latch\n\n\n\n\n\n\n\n\n\n\n\n\nInitial state: no voltage to \\(S\\) or \\(R\\).\n\n\n\n\\(Q\\) shows \\(1\\), its inverse, \\(\\overline{Q}\\) shows \\(0\\).\nTo reset, apply a pulse to \\(R\\).\n\\(Q\\) set to \\(0\\) and \\(\\overline{Q}\\) set to \\(1\\).\nTo set the latch, apply a pulse to \\(S\\).\n\\(Q\\) is set \\(1\\) and \\(\\overline{Q}\\) set to \\(0\\).\nApplying a pulse to both \\(Q\\) and \\(R\\) is not valid."
+    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-1",
+    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-1",
+    "title": "Architecture overview",
+    "section": "Computer Architecture",
+    "text": "Computer Architecture\n\nFirst documented computer architecture was in correspondence between Charles Babbage and Ada Lovelace, where Babbage described his analytical engine.\n1936, Conrad Zeus described a computer where both instructions and data are stored in the same memory: First documented instance of a “stored program” or general purpose computer.\n1945, John Von Neumann described the famous Von Neumann Architecture in his paper on the EDVAC computer (successor to the ENIAC).\n1946, Alan Turing wrote a detailed proposal for the electronic calculator, Automatic Computing Engine, citing Von Neumann."
   },
   {
-    "objectID": "CSC4001-S02-Logic.html#exercise-sr-latch-with-nand-gates",
-    "href": "CSC4001-S02-Logic.html#exercise-sr-latch-with-nand-gates",
-    "title": "Building With Logic Gates",
-    "section": "Exercise: SR-latch with NAND gates",
-    "text": "Exercise: SR-latch with NAND gates\n\nCan you build a SR-latch using two NAND gates?"
+    "objectID": "CSC4001-S03-VonNeumann.html#von-neumann-architecture",
+    "href": "CSC4001-S03-VonNeumann.html#von-neumann-architecture",
+    "title": "Architecture overview",
+    "section": "Von Neumann Architecture",
+    "text": "Von Neumann Architecture\n\n\nArrows represent data transfer connections and directions. I.e., there is an arrow in both directions between the memory and the arithmetic logic unit, representing a “shared bus”. We will see later that this shared bus can be a bottleneck."
   },
   {
-    "objectID": "CSC4001-S02-Logic.html#solution-sr-latch-with-nand-gates",
-    "href": "CSC4001-S02-Logic.html#solution-sr-latch-with-nand-gates",
-    "title": "Building With Logic Gates",
-    "section": "Solution: SR-latch with NAND gates",
-    "text": "Solution: SR-latch with NAND gates\n\n\n\n\n\n\n\n\n\n\n\n\n\nA high voltage needs to be applied to both \\(\\overline{S}\\) and \\(\\overline{R}\\).\nA pulse of low voltage will cause the state to change.\nIt is called an active low SR-latch."
+    "objectID": "CSC4001-S03-VonNeumann.html#five-components",
+    "href": "CSC4001-S03-VonNeumann.html#five-components",
+    "title": "Architecture overview",
+    "section": "Five components",
+    "text": "Five components\n\nStore\nControl Unit\nArithmetic Logic Unit\ninput\nOutput"
   },
   {
-    "objectID": "CSC4001-S02-Logic.html#gated-sr-latch",
-    "href": "CSC4001-S02-Logic.html#gated-sr-latch",
-    "title": "Building With Logic Gates",
-    "section": "Gated SR latch",
-    "text": "Gated SR latch\n\n\n\nWe may only want the state to change if the latch is enabled.\nThis can be done by building a gated latch.\nRecall that an AND gate is only true when both inputs are true.\nSo we add AND gates, creating another input, \\(E\\).\n\n\n\nThe state can only change if \\(E\\) has a high voltage applied to it."
+    "objectID": "CSC4001-S03-VonNeumann.html#store",
+    "href": "CSC4001-S03-VonNeumann.html#store",
+    "title": "Architecture overview",
+    "section": "Store",
+    "text": "Store\n\nTo store data and instructions. E.g., paper tape, magnetic tape, RAM."
   },
   {
-    "objectID": "CSC4001-S02-Logic.html#exercise-gated-sr-latch-with-nand-gates",
-    "href": "CSC4001-S02-Logic.html#exercise-gated-sr-latch-with-nand-gates",
-    "title": "Building With Logic Gates",
-    "section": "Exercise: gated SR-latch with NAND gates",
-    "text": "Exercise: gated SR-latch with NAND gates\n\nHow could you convert your NAND gate SR-latch to make it gated?"
+    "objectID": "CSC4001-S03-VonNeumann.html#arithmetic-logic-unit",
+    "href": "CSC4001-S03-VonNeumann.html#arithmetic-logic-unit",
+    "title": "Architecture overview",
+    "section": "Arithmetic Logic Unit",
+    "text": "Arithmetic Logic Unit\n\nPerforms calculations.\n\nTypically the ALU and control unit are combined into the CPU.\nOperations performed on the hardware, or implemented in software.\nIn early computers, electromechanical hardware was used; these days transistors are used, which require much less energy."
   },
   {
-    "objectID": "CSC4001-S02-Logic.html#solution-gated-sr-latch-with-nand-gates",
-    "href": "CSC4001-S02-Logic.html#solution-gated-sr-latch-with-nand-gates",
-    "title": "Building With Logic Gates",
-    "section": "Solution: gated SR-latch with NAND gates",
-    "text": "Solution: gated SR-latch with NAND gates\n\n\n\n\n\n\n\n\n\n\n\n\n\nConnect a NAND gate to the inputs \\(\\overline{S}\\) and \\(\\overline{R}\\), we get \\(S\\), \\(R\\) and the enabling input \\(E\\)."
+    "objectID": "CSC4001-S03-VonNeumann.html#input-and-output",
+    "href": "CSC4001-S03-VonNeumann.html#input-and-output",
+    "title": "Architecture overview",
+    "section": "Input and Output",
+    "text": "Input and Output\n\nMeans for the user to interact with the computer.\n\nKeyboard, mouse, camera, sensors.\nMonitor, speakers.\nVaried and interesting ways for humans and computers to interact."
   },
   {
-    "objectID": "CSC4001-S02-Logic.html#application-switch-bounce",
-    "href": "CSC4001-S02-Logic.html#application-switch-bounce",
-    "title": "Building With Logic Gates",
-    "section": "Application: switch bounce",
-    "text": "Application: switch bounce\n\nLatches are widely used in electrical engineering as well as electronic computers.\nWhen a mechanical switch is pressed, it may cause several pulses to be sent.\nAn SR-latch ensures that only one signal is sent, since subsequent pulses to \\(S\\) or \\(R\\) will not cause a change in state.\n\nA gated latch can be used when state should only be changed when a device is Enabled.\n\n\n\nE.g., an air conditioning unit may switch cooling on and off depending on input from a temperature sensor, but the unit should only switch on cooling if it has been turned on by the user."
+    "objectID": "CSC4001-S03-VonNeumann.html#key-features",
+    "href": "CSC4001-S03-VonNeumann.html#key-features",
+    "title": "Architecture overview",
+    "section": "Key features",
+    "text": "Key features\n\nInstructions and data are stored in the same memory.\nSimple, cost-effective and widely used.\n\n\n\nSingle bus to transfer all data.\nThis can cause a bottleneck.\nSequential architecture Can limit speed of processing. : CPU can perform only one instruction at a time.\nThis is the architecture found in most desktop PCs today."
   },
   {
-    "objectID": "CSC4001-S02-Logic.html#d-latch",
-    "href": "CSC4001-S02-Logic.html#d-latch",
-    "title": "Building With Logic Gates",
-    "section": "D-latch",
-    "text": "D-latch\n\n\n\n0Data or transparent latches have two inputs: Data (\\(D\\)) and Enable (\\(E\\)).\nThe state changes to the value of \\(D\\) only when \\(E\\) signal is high.\nWhen the Enable signal is low, the value of \\(D\\) is stored until the leading edge of the next rising Enable Signal.\n\n\n\nA D-latch can be built from a gated SR-latch."
+    "objectID": "CSC4001-S03-VonNeumann.html#harvard-architecture",
+    "href": "CSC4001-S03-VonNeumann.html#harvard-architecture",
+    "title": "Architecture overview",
+    "section": "Harvard Architecture",
+    "text": "Harvard Architecture"
   },
   {
-    "objectID": "CSC4001-S02-Logic.html#d-latch-1",
-    "href": "CSC4001-S02-Logic.html#d-latch-1",
-    "title": "Building With Logic Gates",
-    "section": "D-latch",
-    "text": "D-latch\n\n\nBuilt by connecting the \\(S\\) and \\(R\\) inputs of an SR-latch."
+    "objectID": "CSC4001-S03-VonNeumann.html#harvard-architecture-1",
+    "href": "CSC4001-S03-VonNeumann.html#harvard-architecture-1",
+    "title": "Architecture overview",
+    "section": "Harvard Architecture",
+    "text": "Harvard Architecture\n\nHas separate memory for instructions and data.\nWell suited to embedded systems and main-frames.\n\n\n\nReduces the memory bottleneck found in Von Neumann machines.\n\nLess contention as there is no shared bus.\nData and instruction access can be done simultaneously.\nLess flexible than Von-Neumann. E.g., instructions cannot be modified at run-time."
   },
   {
-    "objectID": "CSC4001-S02-Logic.html#d-latch-alternative",
-    "href": "CSC4001-S02-Logic.html#d-latch-alternative",
-    "title": "Building With Logic Gates",
-    "section": "D-latch (Alternative)",
-    "text": "D-latch (Alternative)\n\nIt can also be built from the NAND SR-latch.\n\n\n\nThis version is made from only NAND gates."
+    "objectID": "CSC4001-S03-VonNeumann.html#in-small-groups",
+    "href": "CSC4001-S03-VonNeumann.html#in-small-groups",
+    "title": "Architecture overview",
+    "section": "In small groups",
+    "text": "In small groups\n\nIn which situations is each architecture used?\n\nToday and historically?\nWhy is it a good choice for that situation, or why not?\n\nThings to think about:\n\nwhere are the bottlenecks?\nspecial purpose vs general purpose\ndata integrity / tampering / security"
   },
   {
-    "objectID": "CSC4001-S02-Logic.html#flip-flops",
-    "href": "CSC4001-S02-Logic.html#flip-flops",
-    "title": "Building With Logic Gates",
-    "section": "Flip-flops",
-    "text": "Flip-flops\n\nLatches are inexpensive and easy to implement using simple logic components. 2\nHowever, their behaviour can be unpredictable owing to a lack of synchronisation.\nFlip-flops add a clack to synchronise their operaton.\nA gated latch can be converted into a flip-flop by connecting a clock to the Enable input."
-  },
-  {
-    "objectID": "CSC4001-S02-Logic.html#jk-flip-flops",
-    "href": "CSC4001-S02-Logic.html#jk-flip-flops",
-    "title": "Building With Logic Gates",
-    "section": "JK Flip-flops",
-    "text": "JK Flip-flops\n\n\n\nThe JK flip-flop has the same behaviour as an SR-flip flop:\n\nReset: high pulse to \\(K\\).\nSet: high pulse to \\(J\\).\n\nIf a high pulse is sent to both \\(J\\) and \\(K\\), then the state is toggled.\nI.e., \\(0\\) becomes \\(1\\) and \\(1\\) becomes \\(0\\).\n\n\n\n\n\n\n\n\n\n\n\nWe will use this latch shortly to build a counter."
-  },
-  {
-    "objectID": "CSC4001-S02-Logic.html#counting-in-binary",
-    "href": "CSC4001-S02-Logic.html#counting-in-binary",
-    "title": "Building With Logic Gates",
-    "section": "Counting in binary",
-    "text": "Counting in binary\n\nWe saw that digital circuits have two possible values: low (or \\(0\\)) and high (or \\(1\\)).\nEverything (letters, images, sounds, programs) in a computer is represented by a number.\nNumbers are encoded in binary using a certain number of binary digits (bits).\nA whole (integer) number is typically represented using \\(8\\) bits (a byte).\nE.g., for unsigned (\\(\\ge 0\\)) integers, \\(0 = 00000000\\), \\(37 = 00100101\\)."
-  },
-  {
-    "objectID": "CSC4001-S02-Logic.html#building-a-counter",
-    "href": "CSC4001-S02-Logic.html#building-a-counter",
-    "title": "Building With Logic Gates",
-    "section": "Building a counter",
-    "text": "Building a counter\nWe can build a counter, using JK flip-flops, which increments an integer represented by \\(4\\) bits (half a byte; a nibble).\n\nStart by adding one Push button as input and one 4-bit digit as the output.\nThe counter should start at \\(0\\) and increase by \\(1\\) each time the button is pushed."
-  },
-  {
-    "objectID": "CSC4001-S02-Logic.html#building-a-counter-2",
-    "href": "CSC4001-S02-Logic.html#building-a-counter-2",
-    "title": "Building With Logic Gates",
-    "section": "Building a Counter 2",
-    "text": "Building a Counter 2\n\n\nThe timing diagram shows how the values of \\(Q_0,\\ldots,Q_3\\) should change."
-  },
-  {
-    "objectID": "CSC4001-S02-Logic.html#exercise-build-the-counter",
-    "href": "CSC4001-S02-Logic.html#exercise-build-the-counter",
-    "title": "Building With Logic Gates",
-    "section": "Exercise: build the counter",
-    "text": "Exercise: build the counter\n\nAdd one toggle switch, this will act as the clock.\nAdd a High voltage.\nAdd one \\(4\\)-bit digit, this will display the output.\nAdd four JK flip flops and connect high voltage to \\(J\\) and \\(K\\) on all of them.\nconnect the button (clock) to the Clock input of the first flip-flop.\nThe output of the first flip-flop is \\(Q_0\\), the final digit. connect this to the \\(4\\)-bit digit and to the Clock input on the next flip-flop.\nrepeat with the remaining 3 flip-flops."
-  },
-  {
-    "objectID": "CSC4001-S02-Logic.html#next-time",
-    "href": "CSC4001-S02-Logic.html#next-time",
-    "title": "Building With Logic Gates",
+    "objectID": "CSC4001-S03-VonNeumann.html#next-time",
+    "href": "CSC4001-S03-VonNeumann.html#next-time",
+    "title": "Architecture overview",
     "section": "Next time",
-    "text": "Next time\nComputer architecture overview"
+    "text": "Next time\nHistory"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#teaching-staff",
+    "href": "CSC4001-S00-welcome.html#teaching-staff",
+    "title": "Welcome",
+    "section": "Teaching Staff",
+    "text": "Teaching Staff\n\n\nDave Cobb\n\n\n\n\n\n\n\nModule leader. 25 years experience in the computer industry. Senior lecturer specialising in software development.\n\nHollie Baker\n\n\n\n\n\n\n\nAssociate Lecturer. PhD in computer science. Industry experience in web development and databases. Keen Braillist."
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#intended-learning-outcomes",
+    "href": "CSC4001-S00-welcome.html#intended-learning-outcomes",
+    "title": "Welcome",
+    "section": "Intended Learning Outcomes",
+    "text": "Intended Learning Outcomes\nBy successful completion of the module, you will be able to:\n\nDescribe the role of the different computer system components and their interactions\nExplain how instructions are executed by a computer processor\nIllustrate key computer architecture concepts such as instruction sets, memory hierarchy and data storage\nExplain the role operating systems have in providing services and sharing\n\n\nFrom the DPD The module’s lectures provide the fundamental aspects of computer systems and architectures, covering hardware, software and networking. The practical sessions enable students to reflect on the role of each computer component and understand how design choices impact data input, process and output. Independent Learning Students are encouraged to explore and understand different approaches hardware and software system design. Independent study and formative assessment also help students to assess an appreciate the evolution of micro-processors, hardware and operating systems. Intended learning outcomes"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#topics-covered",
+    "href": "CSC4001-S00-welcome.html#topics-covered",
+    "title": "Welcome",
+    "section": "Topics covered",
+    "text": "Topics covered\n\nComputer system organisation\nMemory organisation and management\nAssembly level programs\nMicroprocessor design fundamentals (pipelined architecture, CPU)\nOperating systems architectures\nResources and resource management\nControl unit operations"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#schedule",
+    "href": "CSC4001-S00-welcome.html#schedule",
+    "title": "Welcome",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\nWeek\nSession A\nSession B\n\n\n\n\n1\nWelcome\nLogic\n\n\n2\nVon Neumann Architecture\nComputer history\n\n\n3\nAssembler, Risc and CISC\nPipelines and More\n\n\n4\nMemory\nWorkshop activity\n\n\n5\nOperating Systems Overview\nWorkshop Activity\n\n\n6\nReading Week\n\n\n\n7\nProcess Lifecycle\nBootstrapping\n\n\n8\nScheduling\nScheduling algorithms\n\n\n9\nDeadlock\nProcess protection\n\n\n10\nInter-process communication\nWorkshop activity\n\n\n11\nMemory Management\nWorkshop activity\n\n\n12\nFiles and Filesystems\nWorkshop activity"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#timetable",
+    "href": "CSC4001-S00-welcome.html#timetable",
+    "title": "Welcome",
+    "section": "Timetable",
+    "text": "Timetable\nComputer Science\n\nTuesdays 09:30 - 11:30\nWednesdays 11:30 - 13:30\n\nCyber Security\n\nThursday 09:30 - 11:30\nFriday 12:30 - 14:30"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#resources",
+    "href": "CSC4001-S00-welcome.html#resources",
+    "title": "Welcome",
+    "section": "Resources",
+    "text": "Resources\n\nYou’ll find everything on Ultra"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#overview",
+    "href": "CSC4001-S00-welcome.html#overview",
+    "title": "Welcome",
+    "section": "Overview",
+    "text": "Overview\n\nFormative assessments\n\nWorkshop activities throughout the course\nAllows you to collaborate and get feedback\n\nSummative assessment\n\nTwo pieces of work\nMakes up your module grade"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#s1",
+    "href": "CSC4001-S00-welcome.html#s1",
+    "title": "Welcome",
+    "section": "S1",
+    "text": "S1\nReport on the role of core computer architectural components\n\nWorth 40%, 1400 word equivalent\nDiscuss the impact on computing of developments in a chosen element of computer hardware during your chosen time period\nAnalyse an LLM’s response to the same question"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#s2",
+    "href": "CSC4001-S00-welcome.html#s2",
+    "title": "Welcome",
+    "section": "S2",
+    "text": "S2\nComputer system design project (worth 60%)\n\nWorth 60%, 1600 word equivalent\nDesign an embedded computer system\nReport on the design process, elementns of hardware architecture and operating system design you have used."
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
+    "href": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
+    "title": "Welcome",
+    "section": "CSC4001 Systems and Architecture",
+    "text": "CSC4001 Systems and Architecture\nOkay, administration’s done. Let’s get started!"
   },
   {
     "objectID": "CSC4001-S01-Logic.html#learning-outcomes",
@@ -245,73 +273,150 @@
     "text": "Next Time\nBuilding components with logic gates"
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#teaching-staff",
-    "href": "CSC4001-S00-welcome.html#teaching-staff",
-    "title": "Welcome",
-    "section": "Teaching Staff",
-    "text": "Teaching Staff\n\n\nDave Cobb\n\n\n\n\n\n\n\nModule leader. 25 years experience in the computer industry. Senior lecturer specialising in software development.\n\nHollie Baker\n\n\n\n\n\n\n\nAssociate Lecturer. PhD in computer science. Industry experience in web development and databases. Keen Braillist."
+    "objectID": "CSC4001-S02-Logic.html#learning-outcomes",
+    "href": "CSC4001-S02-Logic.html#learning-outcomes",
+    "title": "Building With Logic Gates",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n\nExplain why we need latches, and how flip-flops differ from latches.\nRecognise various types of latch.\nBuild a counter out of logic gates.."
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#intended-learning-outcomes",
-    "href": "CSC4001-S00-welcome.html#intended-learning-outcomes",
-    "title": "Welcome",
-    "section": "Intended Learning Outcomes",
-    "text": "Intended Learning Outcomes\nBy successful completion of the module, you will be able to:\n\nDescribe the role of the different computer system components and their interactions\nExplain how instructions are executed by a computer processor\nIllustrate key computer architecture concepts such as instruction sets, memory hierarchy and data storage\nExplain the role operating systems have in providing services and sharing\n\n\nFrom the DPD The module’s lectures provide the fundamental aspects of computer systems and architectures, covering hardware, software and networking. The practical sessions enable students to reflect on the role of each computer component and understand how design choices impact data input, process and output. Independent Learning Students are encouraged to explore and understand different approaches hardware and software system design. Independent study and formative assessment also help students to assess an appreciate the evolution of micro-processors, hardware and operating systems. Intended learning outcomes"
+    "objectID": "CSC4001-S02-Logic.html#latches",
+    "href": "CSC4001-S02-Logic.html#latches",
+    "title": "Building With Logic Gates",
+    "section": "Latches",
+    "text": "Latches"
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#topics-covered",
-    "href": "CSC4001-S00-welcome.html#topics-covered",
-    "title": "Welcome",
-    "section": "Topics covered",
-    "text": "Topics covered\n\nComputer system organisation\nMemory organisation and management\nAssembly level programs\nMicroprocessor design fundamentals (pipelined architecture, CPU)\nOperating systems architectures\nResources and resource management\nControl unit operations"
+    "objectID": "CSC4001-S02-Logic.html#latches-1",
+    "href": "CSC4001-S02-Logic.html#latches-1",
+    "title": "Building With Logic Gates",
+    "section": "Latches",
+    "text": "Latches\n\nComponent which “remembers” a value until it is changed by a new signal.\nCan be used to store \\(1\\) bit of data.\nWidely used in digital circuits, e.g., for data storage, control and flip-flop circuits."
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#schedule",
-    "href": "CSC4001-S00-welcome.html#schedule",
-    "title": "Welcome",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\nWeek\nSession A\nSession B\n\n\n\n\n1\nWelcome\nLogic\n\n\n2\nVon Neumann Architecture\nComputer history\n\n\n3\nAssembler, Risc and CISC\nPipelines and More\n\n\n4\nMemory\nWorkshop activity\n\n\n5\nOperating Systems Overview\nWorkshop Activity\n\n\n6\nReading Week\n\n\n\n7\nProcess Lifecycle\nBootstrapping\n\n\n8\nScheduling\nScheduling algorithms\n\n\n9\nDeadlock\nProcess protection\n\n\n10\nInter-process communication\nWorkshop activity\n\n\n11\nMemory Management\nWorkshop activity\n\n\n12\nFiles and Filesystems\nWorkshop activity"
+    "objectID": "CSC4001-S02-Logic.html#sr-latch",
+    "href": "CSC4001-S02-Logic.html#sr-latch",
+    "title": "Building With Logic Gates",
+    "section": "SR-latch",
+    "text": "SR-latch\n\n\n\nSet-reset latches are the simplest type of latch.\nCan be constructed from two NOR gates.\nTwo inputs, \\(S\\) (set) and \\(R\\) (reset). State is changed when a pulse (high voltage, or \\(1\\)) is applied to \\(S\\) or \\(R\\).\nThe output is \\(Q\\) and its inverse is \\(\\overline{Q}\\)."
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#timetable",
-    "href": "CSC4001-S00-welcome.html#timetable",
-    "title": "Welcome",
-    "section": "Timetable",
-    "text": "Timetable\nComputer Science\n\nTuesdays 09:30 - 11:30\nWednesdays 11:30 - 13:30\n\nCyber Security\n\nThursday 09:30 - 11:30\nFriday 12:30 - 14:30"
+    "objectID": "CSC4001-S02-Logic.html#sr-latch-1",
+    "href": "CSC4001-S02-Logic.html#sr-latch-1",
+    "title": "Building With Logic Gates",
+    "section": "SR-latch",
+    "text": "SR-latch\n\n\n\n\n\n\n\n\n\n\n\n\nInitial state: no voltage to \\(S\\) or \\(R\\).\n\n\n\n\\(Q\\) shows \\(1\\), its inverse, \\(\\overline{Q}\\) shows \\(0\\).\nTo reset, apply a pulse to \\(R\\).\n\\(Q\\) set to \\(0\\) and \\(\\overline{Q}\\) set to \\(1\\).\nTo set the latch, apply a pulse to \\(S\\).\n\\(Q\\) is set \\(1\\) and \\(\\overline{Q}\\) set to \\(0\\).\nApplying a pulse to both \\(Q\\) and \\(R\\) is not valid."
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#resources",
-    "href": "CSC4001-S00-welcome.html#resources",
-    "title": "Welcome",
-    "section": "Resources",
-    "text": "Resources\n\nYou’ll find everything on Ultra"
+    "objectID": "CSC4001-S02-Logic.html#exercise-sr-latch-with-nand-gates",
+    "href": "CSC4001-S02-Logic.html#exercise-sr-latch-with-nand-gates",
+    "title": "Building With Logic Gates",
+    "section": "Exercise: SR-latch with NAND gates",
+    "text": "Exercise: SR-latch with NAND gates\n\nCan you build a SR-latch using two NAND gates?"
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#overview",
-    "href": "CSC4001-S00-welcome.html#overview",
-    "title": "Welcome",
-    "section": "Overview",
-    "text": "Overview\n\nFormative assessments\n\nWorkshop activities throughout the course\nAllows you to collaborate and get feedback\n\nSummative assessment\n\nTwo pieces of work\nMakes up your module grade"
+    "objectID": "CSC4001-S02-Logic.html#solution-sr-latch-with-nand-gates",
+    "href": "CSC4001-S02-Logic.html#solution-sr-latch-with-nand-gates",
+    "title": "Building With Logic Gates",
+    "section": "Solution: SR-latch with NAND gates",
+    "text": "Solution: SR-latch with NAND gates\n\n\n\n\n\n\n\n\n\n\n\n\n\nA high voltage needs to be applied to both \\(\\overline{S}\\) and \\(\\overline{R}\\).\nA pulse of low voltage will cause the state to change.\nIt is called an active low SR-latch."
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#s1",
-    "href": "CSC4001-S00-welcome.html#s1",
-    "title": "Welcome",
-    "section": "S1",
-    "text": "S1\nReport on the role of core computer architectural components\n\nWorth 40%, 1400 word equivalent\nDiscuss the impact on computing of developments in a chosen element of computer hardware during your chosen time period\nAnalyse an LLM’s response to the same question"
+    "objectID": "CSC4001-S02-Logic.html#gated-sr-latch",
+    "href": "CSC4001-S02-Logic.html#gated-sr-latch",
+    "title": "Building With Logic Gates",
+    "section": "Gated SR latch",
+    "text": "Gated SR latch\n\n\n\nWe may only want the state to change if the latch is enabled.\nThis can be done by building a gated latch.\nRecall that an AND gate is only true when both inputs are true.\nSo we add AND gates, creating another input, \\(E\\).\n\n\n\nThe state can only change if \\(E\\) has a high voltage applied to it."
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#s2",
-    "href": "CSC4001-S00-welcome.html#s2",
-    "title": "Welcome",
-    "section": "S2",
-    "text": "S2\nComputer system design project (worth 60%)\n\nWorth 60%, 1600 word equivalent\nDesign an embedded computer system\nReport on the design process, elementns of hardware architecture and operating system design you have used."
+    "objectID": "CSC4001-S02-Logic.html#exercise-gated-sr-latch-with-nand-gates",
+    "href": "CSC4001-S02-Logic.html#exercise-gated-sr-latch-with-nand-gates",
+    "title": "Building With Logic Gates",
+    "section": "Exercise: gated SR-latch with NAND gates",
+    "text": "Exercise: gated SR-latch with NAND gates\n\nHow could you convert your NAND gate SR-latch to make it gated?"
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
-    "href": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
-    "title": "Welcome",
-    "section": "CSC4001 Systems and Architecture",
-    "text": "CSC4001 Systems and Architecture\nOkay, administration’s done. Let’s get started!"
+    "objectID": "CSC4001-S02-Logic.html#solution-gated-sr-latch-with-nand-gates",
+    "href": "CSC4001-S02-Logic.html#solution-gated-sr-latch-with-nand-gates",
+    "title": "Building With Logic Gates",
+    "section": "Solution: gated SR-latch with NAND gates",
+    "text": "Solution: gated SR-latch with NAND gates\n\n\n\n\n\n\n\n\n\n\n\n\n\nConnect a NAND gate to the inputs \\(\\overline{S}\\) and \\(\\overline{R}\\), we get \\(S\\), \\(R\\) and the enabling input \\(E\\)."
+  },
+  {
+    "objectID": "CSC4001-S02-Logic.html#application-switch-bounce",
+    "href": "CSC4001-S02-Logic.html#application-switch-bounce",
+    "title": "Building With Logic Gates",
+    "section": "Application: switch bounce",
+    "text": "Application: switch bounce\n\nLatches are widely used in electrical engineering as well as electronic computers.\nWhen a mechanical switch is pressed, it may cause several pulses to be sent.\nAn SR-latch ensures that only one signal is sent, since subsequent pulses to \\(S\\) or \\(R\\) will not cause a change in state.\n\nA gated latch can be used when state should only be changed when a device is Enabled.\n\n\n\nE.g., an air conditioning unit may switch cooling on and off depending on input from a temperature sensor, but the unit should only switch on cooling if it has been turned on by the user."
+  },
+  {
+    "objectID": "CSC4001-S02-Logic.html#d-latch",
+    "href": "CSC4001-S02-Logic.html#d-latch",
+    "title": "Building With Logic Gates",
+    "section": "D-latch",
+    "text": "D-latch\n\n\n\n0Data or transparent latches have two inputs: Data (\\(D\\)) and Enable (\\(E\\)).\nThe state changes to the value of \\(D\\) only when \\(E\\) signal is high.\nWhen the Enable signal is low, the value of \\(D\\) is stored until the leading edge of the next rising Enable Signal.\n\n\n\nA D-latch can be built from a gated SR-latch."
+  },
+  {
+    "objectID": "CSC4001-S02-Logic.html#d-latch-1",
+    "href": "CSC4001-S02-Logic.html#d-latch-1",
+    "title": "Building With Logic Gates",
+    "section": "D-latch",
+    "text": "D-latch\n\n\nBuilt by connecting the \\(S\\) and \\(R\\) inputs of an SR-latch."
+  },
+  {
+    "objectID": "CSC4001-S02-Logic.html#d-latch-alternative",
+    "href": "CSC4001-S02-Logic.html#d-latch-alternative",
+    "title": "Building With Logic Gates",
+    "section": "D-latch (Alternative)",
+    "text": "D-latch (Alternative)\n\nIt can also be built from the NAND SR-latch.\n\n\n\nThis version is made from only NAND gates."
+  },
+  {
+    "objectID": "CSC4001-S02-Logic.html#flip-flops-1",
+    "href": "CSC4001-S02-Logic.html#flip-flops-1",
+    "title": "Building With Logic Gates",
+    "section": "Flip-flops",
+    "text": "Flip-flops\n\nLatches are inexpensive and easy to implement using simple logic components.\nHowever, their behaviour can be unpredictable owing to a lack of synchronisation.\nFlip-flops add a clack to synchronise their operaton.\nA gated latch can be converted into a flip-flop by connecting a clock to the Enable input."
+  },
+  {
+    "objectID": "CSC4001-S02-Logic.html#jk-flip-flops",
+    "href": "CSC4001-S02-Logic.html#jk-flip-flops",
+    "title": "Building With Logic Gates",
+    "section": "JK Flip-flops",
+    "text": "JK Flip-flops\n\n\n\nReset: high pulse to \\(K\\).\nSet: high pulse to \\(J\\).\nIf a high pulse is sent to both \\(J\\) and \\(K\\), then the state is toggled.\nI.e., \\(0\\) becomes \\(1\\) and \\(1\\) becomes \\(0\\).\n\n\n\n\n\n\n\n\n\n\n\nWe will use this latch shortly to build a counter."
+  },
+  {
+    "objectID": "CSC4001-S02-Logic.html#counting-in-binary",
+    "href": "CSC4001-S02-Logic.html#counting-in-binary",
+    "title": "Building With Logic Gates",
+    "section": "Counting in binary",
+    "text": "Counting in binary\n\nWe saw that digital circuits have two possible values: low (or \\(0\\)) and high (or \\(1\\)).\nEverything (letters, images, sounds, programs) in a computer is represented by a number.\nNumbers are encoded in binary using a certain number of binary digits (bits).\nA whole (integer) number is typically represented using \\(8\\) bits (a byte).\nE.g., for unsigned (\\(\\ge 0\\)) integers, \\(0 = 00000000\\), \\(37 = 00100101\\)."
+  },
+  {
+    "objectID": "CSC4001-S02-Logic.html#building-a-counter",
+    "href": "CSC4001-S02-Logic.html#building-a-counter",
+    "title": "Building With Logic Gates",
+    "section": "Building a counter",
+    "text": "Building a counter\nWe can build a counter, using JK flip-flops, which increments an integer represented by \\(4\\) bits (half a byte; a nibble).\n\nStart by adding one Push button as input and one 4-bit digit as the output.\nThe counter should start at \\(0\\) and increase by \\(1\\) each time the button is pushed."
+  },
+  {
+    "objectID": "CSC4001-S02-Logic.html#building-a-counter-2",
+    "href": "CSC4001-S02-Logic.html#building-a-counter-2",
+    "title": "Building With Logic Gates",
+    "section": "Building a Counter 2",
+    "text": "Building a Counter 2\n\n\nThe timing diagram shows how the values of \\(Q_0,\\ldots,Q_3\\) should change."
+  },
+  {
+    "objectID": "CSC4001-S02-Logic.html#exercise-build-the-counter",
+    "href": "CSC4001-S02-Logic.html#exercise-build-the-counter",
+    "title": "Building With Logic Gates",
+    "section": "Exercise: build the counter",
+    "text": "Exercise: build the counter\n\nAdd one toggle switch, this will act as the clock.\nAdd a High voltage.\nAdd one \\(4\\)-bit digit, this will display the output.\nAdd four JK flip flops and connect high voltage to \\(J\\) and \\(K\\) on all of them.\nconnect the button (clock) to the Clock input of the first flip-flop.\nThe output of the first flip-flop is \\(Q_0\\), the final digit. connect this to the \\(4\\)-bit digit and to the Clock input on the next flip-flop.\nrepeat with the remaining 3 flip-flops."
+  },
+  {
+    "objectID": "CSC4001-S02-Logic.html#next-time",
+    "href": "CSC4001-S02-Logic.html#next-time",
+    "title": "Building With Logic Gates",
+    "section": "Next time",
+    "text": "Next time\nComputer architecture overview"
   }
 ]

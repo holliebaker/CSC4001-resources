@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="CSC4001: Computer Systems and Architecture">
-  <title>CSC4001-resources – Building With Logic Gates</title>
+  <title>CSC4001-resources – Architecture overview</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -134,7 +134,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Building With Logic Gates</h1>
+  <h1 class="title">Architecture overview</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -148,160 +148,31 @@ CSC4001: Computer Systems and Architecture
 <section id="learning-outcomes" class="slide level2">
 <h2>Learning Outcomes</h2>
 <ul>
-<li>Explain why we need latches, and how flip-flops differ from latches.</li>
-<li>Recognise various types of latch.</li>
-<li>Build a counter out of logic gates..</li>
+<li>State the five components of a Von Neumann computer.</li>
+<li>Describe the difference between the Von Neumann and Harvard architecture.</li>
+<li>Explain the advantages and disadvantages of the Von Neumann vs Harvard architectures.</li>
+<li>Argue for the “best” architecture in a given situation.</li>
 </ul>
 </section>
-<section id="latches" class="slide level2">
-<h2>Latches</h2>
-</section>
-<section id="latches-1" class="slide level2">
-<h2>Latches</h2>
-<ul>
-<li>Component which “remembers” a value until it is changed by a new signal.</li>
-<li>Can be used to store <span class="math inline">\(1\)</span> bit of data.</li>
-<li>Widely used in digital circuits, e.g., for data storage, control and flip-flop circuits.</li>
-</ul>
-</section>
-<section id="sr-latch" class="slide level2">
-<h2>SR-latch</h2>
-<div class="columns">
-<div class="column">
-<ul>
-<li><strong>Set-reset</strong> latches are the simplest type of latch.</li>
-<li>Can be constructed from two <em>NOR</em> gates.</li>
-<li>Two inputs, <span class="math inline">\(S\)</span> (set) and <span class="math inline">\(R\)</span> (reset). State is changed when a <em>pulse</em> (high voltage, or <span class="math inline">\(1\)</span>) is applied to <span class="math inline">\(S\)</span> or <span class="math inline">\(R\)</span>.</li>
-<li>The output is <span class="math inline">\(Q\)</span> and its inverse is <span class="math inline">\(\overline{Q}\)</span>.</li>
-</ul>
-</div><div class="column">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./assets/01-sr-latch.gif" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="Animation of an sr-latch."></p>
-</figure>
-</div>
-</div>
-</div>
-</div></div>
-</section>
-<section id="sr-latch-1" class="slide level2">
-<h2>SR-latch</h2>
+<section id="architecture" class="slide level2">
+<h2>Architecture</h2>
 <div class="columns">
 <div class="column">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./assets/01-sr-latch.gif" class="quarto-figure quarto-figure-center" style="width:95.0%" alt="Animation of an sr-latch."></p>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li>Initial state: no voltage to <span class="math inline">\(S\)</span> or <span class="math inline">\(R\)</span>.</li>
-</ul>
-</div><div class="column">
-<ul>
-<li><p><span class="math inline">\(Q\)</span> shows <span class="math inline">\(1\)</span>, its inverse, <span class="math inline">\(\overline{Q}\)</span> shows <span class="math inline">\(0\)</span>.</p></li>
-<li><p>To <strong>reset</strong>, apply a pulse to <span class="math inline">\(R\)</span>.</p>
-<p><span class="math inline">\(Q\)</span> set to <span class="math inline">\(0\)</span> and <span class="math inline">\(\overline{Q}\)</span> set to <span class="math inline">\(1\)</span>.</p></li>
-<li><p>To <strong>set</strong> the latch, apply a pulse to <span class="math inline">\(S\)</span>.</p>
-<p><span class="math inline">\(Q\)</span> is set <span class="math inline">\(1\)</span> and <span class="math inline">\(\overline{Q}\)</span> set to <span class="math inline">\(0\)</span>.</p></li>
-<li><p>Applying a pulse to both <span class="math inline">\(Q\)</span> and <span class="math inline">\(R\)</span> is not valid.</p></li>
-</ul>
-</div></div>
-</section>
-<section id="exercise-sr-latch-with-nand-gates" class="slide level2">
-<h2>Exercise: SR-latch with NAND gates</h2>
-<ul>
-<li>Can you build a SR-latch using two NAND gates?</li>
-</ul>
-</section>
-<section id="solution-sr-latch-with-nand-gates" class="slide level2">
-<h2>Solution: SR-latch with NAND gates</h2>
-<div class="columns">
-<div class="column">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./assets/01-sr-nand.png" class="quarto-figure quarto-figure-center" style="width:95.0%" alt="SR latch built with NAND gates."></p>
+<p><img data-src="../assets/02-brooks.jpg" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Photograph of Brooks"></p>
 </figure>
 </div>
 </div>
 </div>
 </div><div class="column">
-<ul>
-<li><p>A high voltage needs to be applied to both <span class="math inline">\(\overline{S}\)</span> and <span class="math inline">\(\overline{R}\)</span>.</p></li>
-<li><p>A pulse of <strong>low voltage</strong> will cause the state to change.</p></li>
-<li><p>It is called an <strong>active low SR-latch</strong>.</p></li>
-</ul>
+<p>“Computer architecture, like other architecture, is the art of determining the needs of the user of a structure and then designing to meet those needs as effectively as possible within economic and technological constraints.”</p>
+<p>– Frederick P. Brooks</p>
 </div></div>
-</section>
-<section id="gated-sr-latch" class="slide level2">
-<h2>Gated SR latch</h2>
-<div class="columns">
-<div class="column">
-<ul>
-<li><p>We may only want the state to change if the latch is <em>enabled</em>.</p></li>
-<li><p>This can be done by building a <strong>gated</strong> latch.</p></li>
-<li><p>Recall that an <em>AND</em> gate is only true when both inputs are true.</p></li>
-<li><p>So we add <em>AND</em> gates, creating another input, <span class="math inline">\(E\)</span>.</p></li>
-</ul>
-</div><div class="column">
-<ul>
-<li>The state can only change if <span class="math inline">\(E\)</span> has a high voltage applied to it.</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./assets/01-gated-sr.png" class="quarto-figure quarto-figure-center" style="width:95.0%" alt="Gated SR-latch, the NOR SR-latch with and gates added to the left."></p>
-</figure>
-</div>
-</div>
-</div>
-</div></div>
-</section>
-<section id="exercise-gated-sr-latch-with-nand-gates" class="slide level2">
-<h2>Exercise: gated SR-latch with NAND gates</h2>
-<ul>
-<li>How could you convert your NAND gate SR-latch to make it gated?</li>
-</ul>
-</section>
-<section id="solution-gated-sr-latch-with-nand-gates" class="slide level2">
-<h2>Solution: gated SR-latch with NAND gates</h2>
-<div class="columns">
-<div class="column">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./assets/01-gated-sr.png" class="quarto-figure quarto-figure-center" style="width:95.0%" alt="Gated SR-latch, the NAND SR-latch with NAND gates added to the left."></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column">
-<ul>
-<li>Connect a <em>NAND</em> gate to the inputs <span class="math inline">\(\overline{S}\)</span> and <span class="math inline">\(\overline{R}\)</span>, we get <span class="math inline">\(S\)</span>, <span class="math inline">\(R\)</span> and the <em>enabling</em> input <span class="math inline">\(E\)</span>.</li>
-</ul>
-</div></div>
-</section>
-<section id="application-switch-bounce" class="slide level2">
-<h2>Application: switch bounce</h2>
-<ul>
-<li><p>Latches are widely used in electrical engineering as well as electronic computers.</p></li>
-<li><p>When a mechanical switch is pressed, it may cause several pulses to be sent.</p>
-<p>An SR-latch ensures that only one signal is sent, since subsequent pulses to <span class="math inline">\(S\)</span> or <span class="math inline">\(R\)</span> will not cause a change in state.</p>
-<ul>
-<li>A gated latch can be used when state should only be changed when a device is <em>Enabled</em>.</li>
-</ul></li>
-</ul>
 <aside class="notes">
-<p>E.g., an air conditioning unit may switch cooling on and off depending on input from a temperature sensor, but the unit should only switch on cooling if it has been turned on by the user.</p>
+<p>Brooks was an American computer architect, software engineer and computer scientist who managed IBM 360 series of mainframes and their accompanying software.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -314,116 +185,33 @@ CSC4001: Computer Systems and Architecture
           display:block!important;
       }</style></aside>
 </section>
-<section id="d-latch" class="slide level2">
-<h2>D-latch</h2>
-<div class="columns">
-<div class="column">
+<section id="computer-architecture" class="slide level2">
+<h2>Computer Architecture</h2>
 <ul>
-<li><p><strong>0Data</strong> or <strong>transparent</strong> latches have two inputs: <em>Data</em> (<span class="math inline">\(D\)</span>) and <em>Enable</em> (<span class="math inline">\(E\)</span>).</p></li>
-<li><p>The state changes to the value of <span class="math inline">\(D\)</span> only when <span class="math inline">\(E\)</span> signal is high.</p></li>
-<li><p>When the <em>Enable</em> signal is low, the value of <span class="math inline">\(D\)</span> is stored until the leading edge of the next rising <em>Enable</em> Signal.</p></li>
+<li><p>A description of a computer (or computer system) which is made from component parts.</p></li>
+<li><p>Often a high-level description, indicating how components are linked and what each does.</p></li>
+<li><p>Sometimes includes details such as the <em>instruction set</em> used and other implementation details.</p></li>
 </ul>
-</div><div class="column">
-<ul>
-<li>A D-latch can be built from a gated SR-latch.</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./assets/01-d-latch.png" class="quarto-figure quarto-figure-center" style="width:95.0%" alt="D-latch."></p>
-</figure>
-</div>
-</div>
-</div>
-</div></div>
 </section>
-<section id="d-latch-1" class="slide level2">
-<h2>D-latch</h2>
-<div class="columns">
+<section id="computer-architecture-1" class="slide level2">
+<h2>Computer Architecture</h2>
 <ul>
-<li>Built by connecting the <span class="math inline">\(S\)</span> and <span class="math inline">\(R\)</span> inputs of an SR-latch.</li>
-</ul><div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./assets/01-d-latch.png" class="quarto-figure quarto-figure-center" style="width:95.0%" alt="D-latch."></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="d-latch-alternative" class="slide level2">
-<h2>D-latch (Alternative)</h2>
-<ul>
-<li>It can also be built from the NAND SR-latch.</li>
-</ul>
-
-<img data-src="./assets/01-d-nand.png" class="quarto-figure quarto-figure-center r-stretch" style="width:95.0%" alt="D-latch build from nand gates."><ul>
-<li>This version is made from <strong>only</strong> <em>NAND</em> gates.</li>
+<li><p>First documented computer architecture was in correspondence between Charles Babbage and Ada Lovelace, where Babbage described his analytical engine.</p></li>
+<li><p>1936, Conrad Zeus described a computer where both instructions and data are stored in the same memory: First documented instance of a “stored program” or general purpose computer.</p></li>
+<li><p>1945, John Von Neumann described the famous Von Neumann Architecture in his paper on the EDVAC computer (successor to the ENIAC).</p></li>
+<li><p>1946, Alan Turing wrote a detailed proposal for the electronic calculator, Automatic Computing Engine, citing Von Neumann.</p></li>
 </ul>
 </section>
 <section>
-<section id="flip-flops" class="title-slide slide level1 center">
-<h1>Flip-Flops</h1>
+<section id="von-neumann-vs-harvard" class="title-slide slide level1 center">
+<h1>Von Neumann vs Harvard</h1>
 
 </section>
-<section id="flip-flops-1" class="slide level2">
-<h2>Flip-flops</h2>
-<ul>
-<li><p>Latches are inexpensive and easy to implement using simple logic components.</p></li>
-<li><p>However, their behaviour can be unpredictable owing to a lack of synchronisation.</p></li>
-<li><p>Flip-flops add a <strong>clack</strong> to synchronise their operaton.</p></li>
-<li><p>A gated latch can be converted into a flip-flop by connecting a <strong>clock</strong> to the <em>Enable</em> input.</p></li>
-</ul>
-</section>
-<section id="jk-flip-flops" class="slide level2">
-<h2>JK Flip-flops</h2>
-<div class="columns">
-<div class="column">
-<ul>
-<li><p><strong>Reset</strong>: high pulse to <span class="math inline">\(K\)</span>.</p></li>
-<li><p><strong>Set</strong>: high pulse to <span class="math inline">\(J\)</span>.</p></li>
-<li><p>If a high pulse is sent to <strong>both</strong> <span class="math inline">\(J\)</span> and <span class="math inline">\(K\)</span>, then the state is <em>toggled</em>.</p>
-<p>I.e., <span class="math inline">\(0\)</span> becomes <span class="math inline">\(1\)</span> and <span class="math inline">\(1\)</span> becomes <span class="math inline">\(0\)</span>.</p></li>
-</ul>
-</div><div class="column">
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="./assets/01-jk.png" class="quarto-figure quarto-figure-center" style="width:95.0%" alt="JK flip-flop."></p>
-</figure>
-</div>
-</div>
-</div>
-<p>We will use this latch shortly to build a <em>counter</em>.</p>
-</div></div>
-</section>
-<section id="counting-in-binary" class="slide level2">
-<h2>Counting in binary</h2>
-<ul>
-<li><p>We saw that digital circuits have two possible values: <em>low</em> (or <span class="math inline">\(0\)</span>) and <em>high</em> (or <span class="math inline">\(1\)</span>).</p></li>
-<li><p>Everything (letters, images, sounds, programs) in a computer is represented by a number.</p></li>
-<li><p>Numbers are encoded in <strong>binary</strong> using a certain number of <em>binary digits</em> (bits).</p></li>
-<li><p>A whole (integer) number is typically represented using <span class="math inline">\(8\)</span> bits (a byte).</p>
-<p>E.g., for unsigned (<span class="math inline">\(\ge 0\)</span>) integers, <span class="math inline">\(0 = 00000000\)</span>, <span class="math inline">\(37 = 00100101\)</span>.</p></li>
-</ul>
-</section>
-<section id="building-a-counter" class="slide level2">
-<h2>Building a counter</h2>
-<p>We can build a counter, using JK flip-flops, which increments an integer represented by <span class="math inline">\(4\)</span> bits (half a byte; a nibble).</p>
-<ul>
-<li><p>Start by adding one <em>Push button</em> as input and one <em>4-bit digit</em> as the output.</p></li>
-<li><p>The counter should start at <span class="math inline">\(0\)</span> and increase by <span class="math inline">\(1\)</span> each time the button is pushed.</p></li>
-</ul>
-</section>
-<section id="building-a-counter-2" class="slide level2">
-<h2>Building a Counter 2</h2>
+<section id="von-neumann-architecture" class="slide level2">
+<h2>Von Neumann Architecture</h2>
 
-<img data-src="./assets/01-counter-timing.png" class="quarto-figure quarto-figure-center r-stretch" style="width:55.0%" alt="JK flip-flop counter and timing diagram."><aside class="notes">
-<p>The timing diagram shows how the values of <span class="math inline">\(Q_0,\ldots,Q_3\)</span> should change.</p>
+<img data-src="../assets/02-vna.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%" alt="diagram of Von Neumann architecture showing five components described on the next page"><aside class="notes">
+<p>Arrows represent data transfer connections and directions. I.e., there is an arrow in both directions between the memory and the arithmetic logic unit, representing a “shared bus”. We will see later that this shared bus can be a bottleneck.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -436,21 +224,131 @@ CSC4001: Computer Systems and Architecture
           display:block!important;
       }</style></aside>
 </section>
-<section id="exercise-build-the-counter" class="slide level2 smaller">
-<h2>Exercise: build the counter</h2>
-<ol type="1">
-<li>Add one <em>toggle switch</em>, this will act as the clock.</li>
-<li>Add a <em>High</em> voltage.</li>
-<li>Add one <em><span class="math inline">\(4\)</span>-bit digit</em>, this will display the output.</li>
-<li>Add four JK flip flops and connect high voltage to <span class="math inline">\(J\)</span> and <span class="math inline">\(K\)</span> on all of them.</li>
-<li>connect the button (clock) to the <em>Clock</em> input of the first flip-flop.</li>
-<li>The output of the first flip-flop is <span class="math inline">\(Q_0\)</span>, the final digit. connect this to the <span class="math inline">\(4\)</span>-bit digit and to the <em>Clock</em> input on the next flip-flop.</li>
-<li>repeat with the remaining 3 flip-flops.</li>
-</ol>
+<section id="five-components" class="slide level2">
+<h2>Five components</h2>
+<ul>
+<li>Store</li>
+<li>Control Unit</li>
+<li>Arithmetic Logic Unit</li>
+<li>input</li>
+<li>Output</li>
+</ul>
+</section>
+<section id="store" class="slide level2">
+<h2>Store</h2>
+<ul>
+<li>To store data and instructions. E.g., paper tape, magnetic tape, RAM.</li>
+</ul>
+</section></section>
+<section>
+<section id="control-unit" class="title-slide slide level1 center">
+<h1>Control Unit</h1>
+<ul>
+<li>decides which instruction to perform next.</li>
+</ul>
+</section>
+<section id="arithmetic-logic-unit" class="slide level2">
+<h2>Arithmetic Logic Unit</h2>
+<ul>
+<li>Performs calculations.
+<ul>
+<li>Typically the ALU and control unit are combined into the CPU.</li>
+<li>Operations performed on the hardware, or implemented in software.</li>
+<li>In early computers, electromechanical hardware was used; these days transistors are used, which require much less energy.</li>
+</ul></li>
+</ul>
+</section>
+<section id="input-and-output" class="slide level2">
+<h2>Input and Output</h2>
+<ul>
+<li>Means for the user to interact with the computer.
+<ul>
+<li>Keyboard, mouse, camera, sensors.</li>
+<li>Monitor, speakers.</li>
+<li>Varied and interesting ways for humans and computers to interact.</li>
+</ul></li>
+</ul>
+</section>
+<section id="key-features" class="slide level2">
+<h2>Key features</h2>
+<ul>
+<li><p>Instructions and data are stored in the same memory.</p></li>
+<li><p>Simple, cost-effective and widely used.</p></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Single bus to transfer all data.</li>
+<li>This can cause a bottleneck.</li>
+<li>Sequential architecture Can limit speed of processing. : CPU can perform only one instruction at a time.</li>
+<li>This is the architecture found in most desktop PCs today.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="harvard-architecture" class="slide level2">
+<h2>Harvard Architecture</h2>
+
+<img data-src="../assets/02-harvard.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%" alt="diagram of Harvard architecture showing the same components as Von Neumann, but with separate memory and separate buses for instructions and data"></section>
+<section id="harvard-architecture-1" class="slide level2">
+<h2>Harvard Architecture</h2>
+<ul>
+<li><p>Has <strong>separate</strong> memory for instructions and data.</p></li>
+<li><p>Well suited to embedded systems and main-frames.</p></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Reduces the memory bottleneck found in Von Neumann machines.
+<ul>
+<li>Less contention as there is no shared bus.</li>
+<li>Data and instruction access can be done simultaneously.</li>
+<li>Less flexible than Von-Neumann. E.g., instructions cannot be modified at run-time.</li>
+</ul></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="discussion" class="title-slide slide level1 center">
+<h1>Discussion</h1>
+
+</section>
+<section id="in-small-groups" class="slide level2">
+<h2>In small groups</h2>
+<ul>
+<li>In which situations is each architecture used?
+<ul>
+<li>Today and historically?</li>
+<li>Why is it a good choice for that situation, or why not?</li>
+</ul></li>
+<li>Things to think about:
+<ul>
+<li>where are the bottlenecks?</li>
+<li>special purpose vs general purpose</li>
+<li>data integrity / tampering / security</li>
+</ul></li>
+</ul>
 </section>
 <section id="next-time" class="slide level2">
 <h2>Next time</h2>
-<p>Computer architecture overview</p>
+<p>History</p>
 
 
 </section></section>
