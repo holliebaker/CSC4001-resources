@@ -1,0 +1,153 @@
+---
+title: "Architecture overview"
+author: "CSC4001: Computer Systems and Architecture"
+date: ""
+format:
+  revealjs:
+    theme: simple
+    css: ./style.css
+---
+
+## Learning Outcomes
+
+- State the five components of a Von Neumann computer.
+- Describe the difference between the Von Neumann and Harvard architecture.
+- Explain the advantages and disadvantages of the Von Neumann vs Harvard architectures.
+- Argue for the "best" architecture in a given situation.
+
+## Architecture
+
+::::: columns
+::: column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/02-brooks.jpg){fig-align="center" fig-alt="Photograph of Brooks" width="80%"}
+:::
+::::
+:::
+::: column
+
+"Computer architecture, like other architecture, is the art of determining the needs of the user of a structure and then designing to meet those needs as effectively as possible within economic and technological constraints."
+
+-- Frederick P. Brooks
+
+:::
+:::::
+
+::: notes
+Brooks was an American computer architect, software engineer and computer scientist who managed IBM 360 series of mainframes and their accompanying software.
+:::
+
+## Computer Architecture
+
+- A description of a computer (or computer system) which is made from component parts.
+
+- Often a high-level description, indicating how components are linked and what each does.
+
+- Sometimes includes details such as the *instruction set* used and other implementation details.
+
+## Computer Architecture
+
+- First documented computer architecture was in correspondence between Charles Babbage and Ada Lovelace, where Babbage described his analytical engine.
+
+- 1936, Conrad Zeus described a computer where both instructions and data are stored in the same memory: First documented instance of a "stored program" or general purpose computer.
+
+- 1945, John Von Neumann described the famous Von Neumann Architecture in his paper on the EDVAC computer (successor to the ENIAC).
+
+- 1946, Alan Turing wrote a detailed proposal for the electronic calculator, Automatic Computing Engine, citing Von Neumann.
+
+# Von Neumann vs Harvard
+
+## Von Neumann Architecture
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/02-vna.svg){fig-align="center" fig-alt="diagram of Von Neumann architecture showing five components described on the next page" width="60%"}
+:::
+::::
+
+::: notes
+Arrows represent data transfer connections and directions. I.e., there is an arrow in both directions between the memory and the arithmetic logic unit, representing a "shared bus". We will see later that this shared bus can be a bottleneck.
+:::
+
+## Five components
+
+- Store
+- Control Unit
+- Arithmetic Logic Unit
+- input
+- Output
+
+## Store
+
+- To store data and instructions. E.g., paper tape, magnetic tape, RAM.
+
+# Control Unit
+
+- decides which instruction to perform next.
+
+## Arithmetic Logic Unit
+
+- Performs calculations.
+  - Typically the ALU and control unit are combined into the CPU.
+  - Operations performed on the hardware, or implemented in software.
+  - In early computers, electromechanical hardware was used; these days transistors are used, which require much less energy.
+
+## Input and Output
+
+- Means for the user to interact with the computer.
+  - Keyboard, mouse, camera, sensors.
+  - Monitor, speakers.
+  - Varied and interesting ways for humans and computers to interact.
+
+## Key features
+
+- Instructions and data are stored in the same memory.
+
+- Simple, cost-effective and widely used.
+
+::: notes
+
+- Single bus to transfer all data.
+- This can cause a bottleneck.
+- Sequential architecture Can limit speed of processing. : CPU can perform only one instruction at a time.
+- This is the architecture found in most desktop PCs today.
+:::
+
+## Harvard Architecture
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/02-harvard.svg){fig-align="center" fig-alt="diagram of Harvard architecture showing the same components as Von Neumann, but with separate memory and separate buses for instructions and data" width="60%"}
+:::
+::::
+
+## Harvard Architecture
+
+- Has **separate** memory for instructions and data.
+
+- Well suited to embedded systems and main-frames.
+
+::: notes
+- Reduces the memory bottleneck found in Von Neumann machines.
+  - Less contention as there is no shared bus.
+  - Data and instruction access can be done simultaneously.
+  - Less flexible than Von-Neumann. E.g., instructions cannot be modified at run-time.
+:::
+
+# Discussion
+
+## In small groups
+
+- In which situations is each architecture used?
+  - Today and historically?
+  - Why is it a good choice for that situation, or why not?
+
+- Things to think about:
+  - where are the bottlenecks?
+  - special purpose vs general purpose
+  - data integrity / tampering / security
+
+## Next time
+
+History
