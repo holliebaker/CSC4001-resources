@@ -1,0 +1,12 @@
+---
+title: "CSC4001: Systems and Architecture"
+---
+
+# Index
+
+- S00: [](./CSC4001-S00-welcome.qmd)
+- S01: [](./CSC4001-S01-Logic.qmd)
+- S02: [](./CSC4001-S02-Logic.qmd)
+- S03: [](./CSC4001-S03-VonNeumann.qmd)
+- S04: [](./CSC4001-S04-History.qmd)
+
