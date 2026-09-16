@@ -1,0 +1,202 @@
+---
+title: "Computer History"
+author: "CSC4001: Computer Systems and Architecture"
+date: ""
+format:
+  revealjs:
+    theme: simple
+    css: ./style.css
+---
+
+## Learning Outcomes
+
+- Give an overview of early computers: use, specs, how they were programmed.
+- Compare early and modern computers
+- Explain how developments in early computing have influenced modern computer hardware.
+
+# Histor 
+
+## But first, why are we doing this?
+
+- Gain perspective.
+- Understanding of why things are the way they are today.
+- Learn from previous successes and failures.
+
+# Early computers
+
+## The ENIAC (1945)
+
+::::: columns
+::: column
+
+**Electronic Numerical Integrator and Computer**
+
+- Special purpose computer for artillery firing table calculations.
+
+- Located at the School of Engineering and Applied Science, Pennsylvania State University
+:::
+::: column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/02-eniac.jpg){fig-align="center" fig-alt="ENIAC" width="70%"}
+:::
+:::
+::::
+:::::
+
+::: notes
+- Could be "programmed" by using the plug-board and switches, data entered via punched cards.
+
+- Later converted into a stored program computer.
+
+- Base-10 arithmetic instead of the usual binary.
+
+- Used vacuum tubes, which burnt out often -- high maintenance.
+:::
+
+## Colossus (1943-45)
+
+::::: columns
+::: column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/02-colossus.jpg){fig-align="center" fig-alt="Colossus" width="70%"}
+:::
+::::
+:::
+::: column
+
+- Special purpose computer developed at Bletchley Park to help break the Lorenz cipher.
+- Designed by Tommy Flowers, a research engineer at the General Post Office, based on plans by Code and Cipher School mathematician Max Newman.
+
+:::
+:::::
+
+::: notes
+
+- Used vacuum tubes; programmed using switches and a plug board.
+- Data memory was a cycling strip of paper tape.
+- Colossus Mk II, which used shift registers to run 6 times faster, went into operation in time for the D-day landings.
+- By the end of the war, 10 Colossi were in operation.
+
+:::
+
+## General purpose computers (post WW2)
+
+Von Neumann arranged a 6-week summer workshop to design and build a new type of computer.
+
+- **General purpose**: many early computers were designed with a specific task in mind, which meant they were difficult to repurpose.
+
+  Von Neumann wanted to build a stored program computer.
+
+- **Electronic**:replacing electromechanical components which were brittle, hot and noisy.
+
+  Colossus and the ENIAC both consumed **150KW** of power.
+
+- **Use binary**, which is the easiest encoding to work with when using electronic components.
+
+## Maurice Wilkes
+
+- Cambridge mathematician, physics PhD on "radio propagation of very long radio waves in the ionosphere".
+
+- Attended Jon Neumann's workshop, then returned to Cambridge to build the EDSAC machine.
+
+- Worked in radar during WW2, which inspired the memory technology for EDSAC.
+
+- Memory was a limitation for early electronic computers, Wilkes used "delay lines", mercury tubes and an oscilloscope, as memory.
+
+::: notes
+More information on mercury delay lines: Radar pulses were captured and played as sound waves. Sound waves passed through mercury, which slowed them down. Picked up by a microphone and displayed no an oscilloscope screen. Sound wave amplified and played back through the speaker so the pulse would repeat as long as needed.
+:::
+
+## EDSAC (6 May 1949)
+
+::::: columns
+::: column
+
+**Electronic Delay Storage Automatic Calculator**
+
+- One of the first **stored program computers** which used **binary**.
+
+- Developed by Maurice Wilkes, William Renwick (hardware engineer) and David Wheeler (first system software engineer).
+
+:::
+::: column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/02-edsac.jpg){fig-align="center" fig-alt="EDSAC" width="70%"}
+:::
+::::
+:::
+:::::
+
+::: notes
+- Could perform 700 additions or 200 multiplications per second.
+- 512 18-bit words of memory for programs and data, upgraded to 1024 18-bit words in 1952.
+- Data **and programs** were loaded via 5-hole punched paper tape, *initial orders* instructed the computer to load the program.
+- Consumed **11KW** of power.
+- The delay line memory was sub-optimal, but one of the best options at the time.
+- Although the words were 18-bits, only 17 bits were used in practice owing to unreliability of memory.
+## Programming the EDSAC
+- Programs designed on paper and then punched, in assembler, onto 5-hole paper tape.
+  Programmers became proficient at reading programs from the tape.
+- Programmers would hang their tape on a line, waiting for an operator to run them -- the first "job queue".
+- Operator would load program and data and then either return the printed output or inform the programmer of the memory address at which the program failed.
+## Operating EDSAC
+- Built-in **add**, **multiply**, **bus** and **conditional jump**.
+  - No **load**. Instead, Instead clear the register (set to $0$) and add the value from memory to the register.
+  - No **division**, but it was included as a subroutine.
+- In case of a program error, the operator would inform the programmer at which address their program failed.
+- There was no debugger. An oscilloscope screen showed the state of the registers, and a speaker played a different note depending on the value of the accumulator register.
+  An experienced programmer learnt the sound of a failing program, e.g., if there was an infinite loop.
+## Operating EDSAC
+- Programmers had to use "bad" programming technique.
+  E.g., to access a different array element, the code would **modify itself** to point to the correct address.
+- No built-in mechanism for subroutines, instead perform a **Wheeler jump**:
+  Jump with return memory address, computer would modify the last instruction of the subroutine to jump back to this return address.- No recursion was possible on the EDSAC.
+  Turing proposed the **call stack** in his 1945 paper, which implemented subroutines "properly" and allowed recursion.
+:::
+
+## Usage
+
+A condition for funding was that EDSAC must provide a service, as opposed to just being an engineering experiment.
+
+- Ronald Fisher, with Wilkes and Wheeler, used EDSAC to solve a differential equation for gene frequency -- first use of computers in biology.
+
+- In 1951, Miller and Wheeler computed a 79-digit prime number, the largest known at its time.
+
+- EDSAC played a role in Nobel-prize-winning research: Nobel laureates thanked EDSAC in their acceptance speech. John Kendrew and Max Perutz (Chemistry, 1962), Andrew Huxley (Medicine, 1963) and Martin Ryle (Physics, 1974)
+
+- EDSAC remained in operation until 11 July 1958, when it was superseded by EDSAC 2, which ran until 1965.
+
+# Over to you...
+
+## Exercise: computer history research
+
+In pairs, teams, or individually...
+
+- Choose a computer from history.
+Find out:
+  - Who created it, and when?
+  - What could it do? hardware operations
+  - Specs: processing, memory, operations per second.
+  - How was it programmed? Could it be programmed?
+  - How did programmers / operators / scientists interact with it? Input/output mechanisms, how was it debugged?
+
+# EDSAC Simulator
+
+## Exercise: play with the EDSAC simulator
+
+- Martin Campbell Kelly, University of Warwick, developed an EDSAC simulator.
+
+  <https://dcs.warwick.ac.uk/~edsac/>
+
+- Several programs and games are available.
+
+  Try Sandy Douglas' OXO game (a tic-tac-toe game vs the computer).
+
+- Although a faithful simulation, it is still easier to use than the real thing -- imagine loading the paper tape, vacuum tubes blowing frequently, and try setting the speed to EDSAC real-time.
+
+## Next time
+
+The CPU
