@@ -291,21 +291,35 @@
     "href": "CSC4001-S01-Logic.html#boolean-algebra",
     "title": "Logic Gates",
     "section": "Boolean Algebra",
-    "text": "Boolean Algebra\n\nVariant of Aristottle’s Propositional Logic proposed by George Boole\n\n\n\nVariables can be true \\(1\\) or false \\(0\\)\nLogical operations performed on variables to produe an output.\nUsed to build digital circuits."
+    "text": "Boolean Algebra\n\nVariant of Aristottle’s Propositional Logic proposed by George Boole 1854.\nVariables can be true \\(1\\) or false \\(0\\)\nLogical operations performed on variables to produce an output.\nUsed to build digital circuits."
   },
   {
     "objectID": "CSC4001-S01-Logic.html#logic-gates-and-truth-tables",
     "href": "CSC4001-S01-Logic.html#logic-gates-and-truth-tables",
     "title": "Logic Gates",
     "section": "Logic gates and truth tables",
-    "text": "Logic gates and truth tables\n\n\nWe can represent a Boolean logical operator as a logic gate\n\n\n\n\n\n\n\n\n\n\nOne or more inputS.\nOne output determined by input values.\n\n\nDefined by a truth table.\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A \\ast B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\n\n\n\\(1\\)\n\\(0\\)\n\n\n\n\\(0\\)\n\\(1\\)\n\n\n\n\\(0\\)\n\\(0\\)"
+    "text": "Logic gates and truth tables\n\n\nWe can represent a Boolean logical operator as a logic gate\n\n\n\n\n\n\n\n\n\n\nOne or more inputs.\nOne output determined by input values.\n\n\nDefined by a truth table.\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A \\ast B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n?\n\n\n\\(1\\)\n\\(0\\)\n?\n\n\n\\(0\\)\n\\(1\\)\n?\n\n\n\\(0\\)\n\\(0\\)\n?\n\n\n\n\n\nLogic gate is a “black box” (a thing that takes in inputs, does something with it, and gives you an output), truth table is its lookup table."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#physical-computing",
+    "href": "CSC4001-S01-Logic.html#physical-computing",
+    "title": "Logic Gates",
+    "section": "Physical Computing…",
+    "text": "Physical Computing…"
   },
   {
     "objectID": "CSC4001-S01-Logic.html#and",
     "href": "CSC4001-S01-Logic.html#and",
     "title": "Logic Gates",
-    "section": "And",
-    "text": "And\nOutput \\(Q\\) is True only when both inputs \\(A\\) and \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{AND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nWhen building circuit diagrams, it is convenient to use symbols to represent logic gates. Here we depict the ANSI symbols (other symbels, e.g., IEC and DIN are also available, but ANSI seems to be the most widely used)."
+    "section": "AND",
+    "text": "AND\nOutput \\(Q\\) is True only when both inputs \\(A\\) and \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{AND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nWhen building circuit diagrams, it is convenient to use symbols to represent logic gates. Here we depict the ANSI symbols (other symbels, e.g., IEC and DIN are also available, but ANSI seems to be the most widely used)."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#and-example",
+    "href": "CSC4001-S01-Logic.html#and-example",
+    "title": "Logic Gates",
+    "section": "AND: example",
+    "text": "AND: example\n\nNuclear weapons can only be activated if BOTH switches are pulled."
   },
   {
     "objectID": "CSC4001-S01-Logic.html#or",
@@ -315,11 +329,25 @@
     "text": "OR\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) or \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{OR}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nNote that this is different from the way we use “or” in everyday language. When a parent asks a child if they want chocolate “or” clrsps, they mean for the child to choose one of the other, not both. However, logical or would allow chocolate, crisps or both chocolate and crisps."
   },
   {
+    "objectID": "CSC4001-S01-Logic.html#or-example",
+    "href": "CSC4001-S01-Logic.html#or-example",
+    "title": "Logic Gates",
+    "section": "OR: example",
+    "text": "OR: example\n\nBackup power system in a hospital.\nHospital power OK if main power working, backup power working, or both."
+  },
+  {
     "objectID": "CSC4001-S01-Logic.html#xor",
     "href": "CSC4001-S01-Logic.html#xor",
     "title": "Logic Gates",
     "section": "XOR",
-    "text": "XOR\nOutput \\(Q\\) is True only when either inputs \\(A\\) and \\(B\\) are True, but not both.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{XOR}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nXOR or exclusive or is true if either input is true, but not both, as in the use of “or” in daily life."
+    "text": "XOR\nOutput \\(Q\\) is True only when either inputs \\(A\\) and \\(B\\) are True, but not both.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{XOR}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nXOR or exclusive or is true if either input is true, but not both, as in the use of “or” in daily life."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#xor-example",
+    "href": "CSC4001-S01-Logic.html#xor-example",
+    "title": "Logic Gates",
+    "section": "XOR: example",
+    "text": "XOR: example\n\nVery widely used in cryptography."
   },
   {
     "objectID": "CSC4001-S01-Logic.html#not",
@@ -329,6 +357,13 @@
     "text": "NOT\nOne input; output \\(Q\\) is True only when inputs \\(A\\) is False.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(Q = \\mathrm{NOT}\\ A\\)\n\n\n\n\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
   },
   {
+    "objectID": "CSC4001-S01-Logic.html#not-example",
+    "href": "CSC4001-S01-Logic.html#not-example",
+    "title": "Logic Gates",
+    "section": "NOT: example",
+    "text": "NOT: example\n\nAutomatic headlights illuminate when lights sensor does not sense light."
+  },
+  {
     "objectID": "CSC4001-S01-Logic.html#nand",
     "href": "CSC4001-S01-Logic.html#nand",
     "title": "Logic Gates",
@@ -336,11 +371,25 @@
     "text": "NAND\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
   },
   {
+    "objectID": "CSC4001-S01-Logic.html#nand-example",
+    "href": "CSC4001-S01-Logic.html#nand-example",
+    "title": "Logic Gates",
+    "section": "NAND: example",
+    "text": "NAND: example\n\nTriggered if any section of the circuit is broken."
+  },
+  {
     "objectID": "CSC4001-S01-Logic.html#nor",
     "href": "CSC4001-S01-Logic.html#nor",
     "title": "Logic Gates",
     "section": "NOR",
     "text": "NOR\nOutput \\(Q\\) is True only when *both** inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#nor-example",
+    "href": "CSC4001-S01-Logic.html#nor-example",
+    "title": "Logic Gates",
+    "section": "NOR: example",
+    "text": "NOR: example\n\nOnly running if all cores are not in unsafe state.\n\nDetects Xenon buildup in each reactor in the nuclear power plant.\nIf ANY reactor registers True (unsafe condition) the safety system activates.\nAll cores are shutdown safely.\nPower station running if NONE of the cores are unsafe."
   },
   {
     "objectID": "CSC4001-S01-Logic.html#exercise-logic-gate-simulator",
@@ -369,13 +418,6 @@
     "title": "Logic Gates",
     "section": "Universal logic gates Solution",
     "text": "Universal logic gates Solution\n\nNAND and NOR"
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#make-it-true",
-    "href": "CSC4001-S01-Logic.html#make-it-true",
-    "title": "Logic Gates",
-    "section": "Make it true",
-    "text": "Make it true\n\nfor IOS"
   },
   {
     "objectID": "CSC4001-S00-welcome.html#teaching-staff",

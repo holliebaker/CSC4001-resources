@@ -160,12 +160,9 @@ CSC4001: Computer Systems and Architecture
 <section id="boolean-algebra" class="slide level2">
 <h2>Boolean Algebra</h2>
 <ul>
-<li>Variant of Aristottle’s Propositional Logic proposed by George Boole
-<ol start="1854" type="1">
-<li></li>
-</ol></li>
+<li>Variant of Aristottle’s Propositional Logic proposed by George Boole 1854.</li>
 <li><strong>Variables</strong> can be <code>true</code> <span class="math inline">\(1\)</span> or <code>false</code> <span class="math inline">\(0\)</span></li>
-<li>Logical operations performed on variables to produe an output.</li>
+<li>Logical operations performed on variables to produce an output.</li>
 <li>Used to build digital circuits.</li>
 </ul>
 </section>
@@ -184,7 +181,7 @@ CSC4001: Computer Systems and Architecture
 </div>
 </div>
 <ul>
-<li>One or more inputS.</li>
+<li>One or more inputs.</li>
 <li>One output determined by input values.</li>
 </ul>
 </div><div class="column">
@@ -201,29 +198,47 @@ CSC4001: Computer Systems and Architecture
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(1\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(1\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">?</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(1\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(0\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">?</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(0\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(1\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">?</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(0\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(0\)</span></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">?</td>
 </tr>
 </tbody>
 </table>
 </div></div>
+<aside class="notes">
+<p>Logic gate is a “black box” (a thing that takes in inputs, does something with it, and gives you an output), truth table is its lookup table.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="physical-computing" class="slide level2">
+<h2>Physical Computing…</h2>
+<iframe width="697" height="837" src="https://www.youtube.com/embed/z2Frzt_hkQY" title="The world's first human-powered computer.  ||  3 body problem#3bodyproblem #shorts #viral #edit" frameborder="0" allow="encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
 </section>
 <section id="and" class="slide level2">
-<h2>And</h2>
+<h2>AND</h2>
 <p>Output <span class="math inline">\(Q\)</span> is <em>True</em> only when <strong>both</strong> inputs <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <em>True</em>.</p>
 <div class="columns">
 <div class="column">
@@ -265,7 +280,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./assets/01-and-gate.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="An AND gate.."></p>
+<p><img data-src="./assets/01-and-gate.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="An AND gate. Flat at the back."></p>
 </figure>
 </div>
 </div>
@@ -285,6 +300,10 @@ CSC4001: Computer Systems and Architecture
           display:block!important;
       }</style></aside>
 </section>
+<section id="and-example" class="slide level2">
+<h2>AND: example</h2>
+
+<img data-src="./assets/01-nuclear.jpeg" style="width:80.0%" alt="Two people pulling switches simultaneously to activate a nuclear weapon." class="r-stretch quarto-figure-center"><p class="caption">Nuclear weapons can only be activated if BOTH switches are pulled.</p></section>
 <section id="or" class="slide level2">
 <h2>OR</h2>
 <p>Output <span class="math inline">\(Q\)</span> is <em>True</em> only when <strong>either</strong> (or both) inputs <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span> are <em>True</em>.</p>
@@ -328,7 +347,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./assets/01-or-gate.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="An OR gate.."></p>
+<p><img data-src="./assets/01-or-gate.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="An OR gate. Curved at the back."></p>
 </figure>
 </div>
 </div>
@@ -336,6 +355,23 @@ CSC4001: Computer Systems and Architecture
 </div></div>
 <aside class="notes">
 <p>Note that this is different from the way we use “or” in everyday language. When a parent asks a child if they want chocolate “or” clrsps, they mean for the child to choose one of the other, not both. However, logical or would allow chocolate, crisps or both chocolate and crisps.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="or-example" class="slide level2">
+<h2>OR: example</h2>
+
+<img data-src="./assets/01-lightning.jpeg" style="width:80.0%" alt="Lightning striking a building.." class="r-stretch quarto-figure-center"><p class="caption">Backup power system in a hospital.</p><aside class="notes">
+<p>Hospital power OK if main power working, backup power working, or both.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -370,12 +406,12 @@ CSC4001: Computer Systems and Architecture
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(1\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(0\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(0\)</span></td>
 <td style="text-align: center;"><span class="math inline">\(1\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(0\)</span></td>
@@ -390,7 +426,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./assets/01-xor-gate.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="An XOR gate.."></p>
+<p><img data-src="./assets/01-xor-gate.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="An XOR gate. Double line curved back."></p>
 </figure>
 </div>
 </div>
@@ -410,6 +446,10 @@ CSC4001: Computer Systems and Architecture
           display:block!important;
       }</style></aside>
 </section>
+<section id="xor-example" class="slide level2">
+<h2>XOR: example</h2>
+
+<img data-src="./assets/01-enigma.jpeg" style="width:80.0%" alt="Enigma machine." class="r-stretch quarto-figure-center"><p class="caption">Very widely used in cryptography.</p></section>
 <section id="not" class="slide level2">
 <h2>NOT</h2>
 <p>One input; output <span class="math inline">\(Q\)</span> is <em>True</em> only when inputs <span class="math inline">\(A\)</span> is <em>False</em>.</p>
@@ -439,13 +479,17 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./assets/01-not-gate.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="A NOT gate."></p>
+<p><img data-src="./assets/01-not-gate.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="A NOT gate. Forward pointing triangle with a small circle on the end."></p>
 </figure>
 </div>
 </div>
 </div>
 </div></div>
 </section>
+<section id="not-example" class="slide level2">
+<h2>NOT: example</h2>
+
+<img data-src="./assets/01-headlights.jpeg" style="width:80.0%" alt="Car headlights lit in the dark" class="r-stretch quarto-figure-center"><p class="caption">Automatic headlights illuminate when lights sensor does not sense light.</p></section>
 <section id="nand" class="slide level2">
 <h2>NAND</h2>
 <p>Output <span class="math inline">\(Q\)</span> is <em>True</em> only when <strong>either</strong> (or both) inputs <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <em>False</em>.</p>
@@ -489,13 +533,17 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./assets/01-nand-gate.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="A NAND gate.."></p>
+<p><img data-src="./assets/01-nand-gate.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="A NAND gate.. Same symbol as AND, with small circle at the end."></p>
 </figure>
 </div>
 </div>
 </div>
 </div></div>
 </section>
+<section id="nand-example" class="slide level2">
+<h2>NAND: example</h2>
+
+<img data-src="./assets/01-alarm.jpeg" style="width:80.0%" alt="Burglar alarm." class="r-stretch quarto-figure-center"><p class="caption">Triggered if any section of the circuit is broken.</p></section>
 <section id="nor" class="slide level2">
 <h2>NOR</h2>
 <p>Output <span class="math inline">\(Q\)</span> is <em>True</em> only when *both** inputs <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <em>False</em>.</p>
@@ -539,12 +587,34 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./assets/01-nor-gate.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="A NOR gate.."></p>
+<p><img data-src="./assets/01-nor-gate.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="A NOR gate. Same symbol as OR with small circle to right."></p>
 </figure>
 </div>
 </div>
 </div>
 </div></div>
+</section>
+<section id="nor-example" class="slide level2">
+<h2>NOR: example</h2>
+
+<img data-src="./assets/01-reactor.jpeg" style="width:80.0%" alt="Nuclear power plant." class="r-stretch quarto-figure-center"><p class="caption">Only running if all cores are not in unsafe state.</p><aside class="notes">
+<ul>
+<li>Detects Xenon buildup in each reactor in the nuclear power plant.</li>
+<li>If <strong>ANY</strong> reactor registers True (unsafe condition) the safety system activates.</li>
+<li>All cores are shutdown safely.</li>
+<li>Power station running if <em>NONE</em> of the cores are unsafe.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="exercise-logic-gate-simulator" class="slide level2">
 <h2>Exercise: logic gate simulator</h2>
@@ -568,7 +638,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./assets/01-sim-2.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Logic.ly simulator, logic gates in seft-hand panel."></p>
+<p><img data-src="./assets/01-sim-2.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Logic.ly simulator, logic gates in left-hand panel."></p>
 </figure>
 </div>
 </div>
@@ -611,12 +681,6 @@ CSC4001: Computer Systems and Architecture
 <h2>Universal logic gates Solution</h2>
 <ul>
 <li><strong>NAND</strong> and <strong>NOR</strong></li>
-</ul>
-</section>
-<section id="make-it-true" class="slide level2">
-<h2>Make it true</h2>
-<ul>
-<li><a href="https://apps.apple.com/in/app/make-it-true-solve-circuits/id1536287319">for IOS</a></li>
 </ul>
 </section></section>
 <section id="next-time" class="title-slide slide level1 center">
