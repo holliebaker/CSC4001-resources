@@ -17,10 +17,9 @@ format:
 
 ## Boolean Algebra
 
-- Variant of Aristottle's Propositional Logic proposed by George Boole
-  1854.
+- Variant of Aristottle's Propositional Logic proposed by George Boole 1854.
 - **Variables** can be `true` $1$ or `false` $0$
-- Logical operations performed on variables to produe an output.
+- Logical operations performed on variables to produce an output.
 - Used to build digital circuits.
 
 ## Logic gates and truth tables
@@ -36,7 +35,7 @@ fig-alt="A generic logic gate with two inputs." width="60%"}
 :::
 ::::
 
-- One or more inputS.
+- One or more inputs.
 - One output determined by input values.
 :::::
 
@@ -45,14 +44,22 @@ Defined by a **truth table**.
 
 | $A$ | $B$ | $Q = A \ast B$ |
 |:---:|:---:|:--------------:|
-| $1$ | $1$ |                |
-| $1$ | $0$ |                |
-| $0$ | $1$ |                |
-| $0$ | $0$ |                |
+| $1$ | $1$ | ?              |
+| $1$ | $0$ | ?              |
+| $0$ | $1$ | ?              |
+| $0$ | $0$ | ?              |
 :::
 :::::::
 
-## And
+::: notes
+Logic gate is a "black box" (a thing that takes in inputs, does something with it, and gives you an output), truth table is its lookup table. 
+:::
+
+## Physical Computing...
+
+<iframe width="697" height="837" src="https://www.youtube.com/embed/z2Frzt_hkQY" title="The world&#39;s first human-powered computer.  ||  3 body problem#3bodyproblem #shorts #viral #edit" frameborder="0" allow="encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## AND
 
 Output $Q$ is *True* only when **both** inputs $A$ and $B$ are *True*.
 
@@ -75,7 +82,7 @@ Logic gate:
 :::: {.cell layout-align="center"}
 ::: cell-output-display
 ![](./assets/01-and-gate.png){fig-align="center"
-fig-alt="An AND gate.." width="80%"}
+fig-alt="An AND gate. Flat at the back." width="80%"}
 :::
 ::::
 :::
@@ -87,6 +94,15 @@ represent logic gates. Here we depict the ANSI symbols (other symbels,
 e.g., IEC and DIN are also available, but ANSI seems to be the most
 widely used).
 :::
+
+## AND: example
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![Nuclear weapons can only be activated if BOTH switches are pulled.](./assets/01-nuclear.jpeg){fig-align="center"
+fig-alt="Two people pulling switches simultaneously to activate a nuclear weapon." width="80%"}
+:::
+::::
 
 ## OR
 
@@ -110,7 +126,7 @@ Logic gate:
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](./assets/01-or-gate.png){fig-align="center" fig-alt="An OR gate.."
+![](./assets/01-or-gate.png){fig-align="center" fig-alt="An OR gate. Curved at the back."
 width="80%"}
 :::
 ::::
@@ -122,6 +138,19 @@ Note that this is different from the way we use "or" in everyday
 language. When a parent asks a child if they want chocolate "or" clrsps,
 they mean for the child to choose one of the other, not both. However,
 logical or would allow chocolate, crisps or both chocolate and crisps.
+:::
+
+## OR: example
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![Backup power system in a hospital.](./assets/01-lightning.jpeg){fig-align="center"
+fig-alt="Lightning striking a building.." width="80%"}
+:::
+::::
+
+::: notes
+Hospital power OK if main power working, backup power working, or both.
 :::
 
 ## XOR
@@ -136,8 +165,8 @@ Defining Truth Table:
 | $A$ | $B$ | $Q = A\ \mathrm{XOR}\ B$ |
 |:---:|:---:|:------------------------:|
 | $1$ | $1$ |           $0$            |
-| $1$ | $0$ |           $0$            |
-| $0$ | $1$ |           $0$            |
+| $1$ | $0$ |           $1$            |
+| $0$ | $1$ |           $1$            |
 | $0$ | $0$ |           $0$            |
 :::
 ::: column
@@ -146,7 +175,7 @@ Logic gate:
 :::: {.cell layout-align="center"}
 ::: cell-output-display
 ![](./assets/01-xor-gate.png){fig-align="center"
-fig-alt="An XOR gate.." width="80%"}
+fig-alt="An XOR gate. Double line curved back." width="80%"}
 :::
 ::::
 :::
@@ -156,6 +185,16 @@ fig-alt="An XOR gate.." width="80%"}
 XOR or exclusive or is true if either input is true, but not both, as in
 the use of "or" in daily life.
 :::
+
+## XOR: example
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![Very widely used in cryptography.](./assets/01-enigma.jpeg){fig-align="center"
+fig-alt="Enigma machine." width="80%"}
+:::
+::::
+
 
 ## NOT
 
@@ -176,12 +215,22 @@ Logic gate:
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](./assets/01-not-gate.png){fig-align="center" fig-alt="A NOT gate."
+![](./assets/01-not-gate.png){fig-align="center" fig-alt="A NOT gate. Forward pointing triangle with a small circle on the end."
 width="80%"}
 :::
 ::::
 :::
 :::::
+
+## NOT: example
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![Automatic headlights illuminate when lights sensor does not sense light.](./assets/01-headlights.jpeg){fig-align="center"
+fig-alt="Car headlights lit in the dark" width="80%"}
+:::
+::::
+
 
 ## NAND
 
@@ -206,11 +255,20 @@ Logic gate:
 :::: {.cell layout-align="center"}
 ::: cell-output-display
 ![](./assets/01-nand-gate.png){fig-align="center"
-fig-alt="A NAND gate.." width="80%"}
+fig-alt="A NAND gate.. Same symbol as AND, with small circle at the end." width="80%"}
 :::
 ::::
 :::
 :::::
+
+## NAND: example
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![Triggered if any section of the circuit is broken.](./assets/01-alarm.jpeg){fig-align="center"
+fig-alt="Burglar alarm." width="80%"}
+:::
+::::
 
 ## NOR
 
@@ -235,12 +293,28 @@ Logic gate:
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](./assets/01-nor-gate.png){fig-align="center" fig-alt="A NOR gate.."
+![](./assets/01-nor-gate.png){fig-align="center" fig-alt="A NOR gate. Same symbol as OR with small circle to right."
 width="80%"}
 :::
 ::::
 :::
 :::::
+
+## NOR: example
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![Only running if all cores are not in unsafe state.](./assets/01-reactor.jpeg){fig-align="center"
+fig-alt="Nuclear power plant." width="80%"}
+:::
+::::
+
+::: notes
+- Detects Xenon buildup in each reactor in the nuclear power plant.
+- If **ANY** reactor registers True (unsafe condition) the safety system activates.
+- All cores are shutdown safely.
+- Power station running if *NONE* of the cores are unsafe.
+:::
 
 ## Exercise: logic gate simulator
 
@@ -263,7 +337,7 @@ width="90%"}
 :::: {.cell layout-align="center"}
 ::: cell-output-display
 ![](./assets/01-sim-2.png){fig-align="center"
-fig-alt="Logic.ly simulator, logic gates in seft-hand panel."
+fig-alt="Logic.ly simulator, logic gates in left-hand panel."
 width="60%"}
 :::
 ::::
@@ -297,10 +371,6 @@ even build real circuits.
 ## Universal logic gates Solution
 
 - **NAND** and **NOR**
-
-## Make it true
-
-- [for IOS](https://apps.apple.com/in/app/make-it-true-solve-circuits/id1536287319)
 
 # Next Time
 
