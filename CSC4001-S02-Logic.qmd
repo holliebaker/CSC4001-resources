@@ -12,17 +12,26 @@ format:
 
 - Explain why we need latches, and how flip-flops differ from latches.
 - Recognise various types of latch.
-- Build a counter out of logic gates..
+- Build a counter out of logic gates.
+
+## Worksheet
+
+please find the [worksheet here](https://holliebaker.github.io/CSC4001-resources/CSC4001-S02W-Logic.html)
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](./assets/01-worksheet-qr.png){fig-align="center"
+fig-alt="QR code for the worksheet, linked above" width="50%"}
+:::
+::::
+
+# Latches
 
 ## Latches
 
-## Latches
-
-- Component which "remembers" a value until it is changed by a new
-  signal.
+- Component which "remembers" a value until it is changed by a new signal.
 - Can be used to store $1$ bit of data.
-- Widely used in digital circuits, e.g., for data storage, control and
-  flip-flop circuits.
+- Widely used in digital circuits, e.g., for data storage, control and flip-flop circuits.
 
 ## SR-latch
 
@@ -255,7 +264,7 @@ width="95%"}
 :::
 ::::
 
-We will use this latch shortly to build a *counter*.
+We can use the above to build a counter.
 :::
 :::::
 
@@ -275,6 +284,8 @@ We will use this latch shortly to build a *counter*.
 
   E.g., for unsigned ($\ge 0$) integers, $0 = 00000000$,
   $37 = 00100101$.
+
+## Exercise: the clock
 
 ## Building a counter
 
@@ -300,19 +311,9 @@ fig-alt="JK flip-flop counter and timing diagram." width="55%"}
 The timing diagram shows how the values of $Q_0,\ldots,Q_3$ should change.
 :::
 
-## Exercise: build the counter {.smaller}
+## Exercise: logic gates and truth tables
 
-1. Add one *toggle switch*, this will act as the clock.
-2. Add a *High* voltage.
-3. Add one *$4$-bit digit*, this will display the output.
-4. Add four JK flip flops and connect high voltage to $J$ and $K$ on all
-  of them.
-5. connect the button (clock) to the *Clock* input of the first
-  flip-flop.
-6. The output of the first flip-flop is $Q_0$, the final digit. connect
-  this to the $4$-bit digit and to the *Clock* input on the next
-  flip-flop.
-7. repeat with the remaining 3 flip-flops.
+Please find the [worksheet here](https://holliebaker.github.io/CSC4001-resources/CSC4001-S02W-Logic.html)
 
 # Next time
 

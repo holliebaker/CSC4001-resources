@@ -42,9 +42,30 @@ fig-alt="" width="50%"}
 ![](./assets/02-ex6.png){fig-align="center"
 fig-alt="" width="50%"}
 
+## SR Latch with only NAND gates
+
+**Question 1** Rebuild the below SR latch with only NAND gates.
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](./assets/01-sr-latch.gif){fig-align="center"
+fig-alt="Animation of an sr-latch." width="95%"}
+:::
+::::
+
+**Question 2** Rebuild the below *gated* SR latch with only NAND gates.
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](./assets/01-gated-sr.png){fig-align="center"
+fig-alt="Gated SR-latch, the NOR SR-latch with and gates added to the left."
+width="95%"}
+:::
+::::
+
 ## The Clock
 
-Use the clock to geterate signals.
+Use the clock to generate signals.
 
 Create the circuit as shown below:
 
@@ -56,7 +77,6 @@ Connecting the clock as input and adding the data graph.
 - Experiment with different Clock Input Frequencies, what observations can you make? Discuss with the a peer or with the tutor.
 - Replace the or gate with a different gate, change the frequency. 
 - Does the data graph show a pattern?
-
 
 ## Half Adder
 
