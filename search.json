@@ -1,5 +1,341 @@
 [
   {
+    "objectID": "CSC4001-S04-History.html#learning-outcomes",
+    "href": "CSC4001-S04-History.html#learning-outcomes",
+    "title": "Evolution of the Computer",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n\nGive an overview of early computers: use, specs, how they were programmed.\nCompare early and modern computers\nExplain how developments in early computing have influenced modern computer hardware."
+  },
+  {
+    "objectID": "CSC4001-S04-History.html#but-first-why-are-we-doing-this",
+    "href": "CSC4001-S04-History.html#but-first-why-are-we-doing-this",
+    "title": "Evolution of the Computer",
+    "section": "But first, why are we doing this?",
+    "text": "But first, why are we doing this?\n\nGain perspective.\nUnderstanding of why things are the way they are today.\nLearn from previous successes and failures."
+  },
+  {
+    "objectID": "CSC4001-S04-History.html#the-eniac-1945",
+    "href": "CSC4001-S04-History.html#the-eniac-1945",
+    "title": "Evolution of the Computer",
+    "section": "The ENIAC (1945)",
+    "text": "The ENIAC (1945)\n\n\nElectronic Numerical Integrator and Computer\n\nSpecial purpose computer for artillery firing table calculations.\nLocated at the School of Engineering and Applied Science, Pennsylvania State University\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCould be “programmed” by using the plug-board and switches, data entered via punched cards.\nLater converted into a stored program computer.\nBase-10 arithmetic instead of the usual binary.\nUsed vacuum tubes, which burnt out often – high maintenance."
+  },
+  {
+    "objectID": "CSC4001-S04-History.html#colossus-1943-45",
+    "href": "CSC4001-S04-History.html#colossus-1943-45",
+    "title": "Evolution of the Computer",
+    "section": "Colossus (1943-45)",
+    "text": "Colossus (1943-45)\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecial purpose computer developed at Bletchley Park to help break the Lorenz cipher.\nDesigned by Tommy Flowers, a research engineer at the General Post Office, based on plans by Code and Cipher School mathematician Max Newman.\n\n\n\n\nUsed vacuum tubes; programmed using switches and a plug board.\nData memory was a cycling strip of paper tape.\nColossus Mk II, which used shift registers to run 6 times faster, went into operation in time for the D-day landings.\nBy the end of the war, 10 Colossi were in operation."
+  },
+  {
+    "objectID": "CSC4001-S04-History.html#general-purpose-computers-post-ww2",
+    "href": "CSC4001-S04-History.html#general-purpose-computers-post-ww2",
+    "title": "Evolution of the Computer",
+    "section": "General purpose computers (post WW2)",
+    "text": "General purpose computers (post WW2)\nVon Neumann arranged a 6-week summer workshop to design and build a new type of computer.\n\nGeneral purpose: many early computers were designed with a specific task in mind, which meant they were difficult to repurpose.\nVon Neumann wanted to build a stored program computer.\nElectronic:replacing electromechanical components which were brittle, hot and noisy.\nColossus and the ENIAC both consumed 150KW of power.\nUse binary, which is the easiest encoding to work with when using electronic components."
+  },
+  {
+    "objectID": "CSC4001-S04-History.html#maurice-wilkes",
+    "href": "CSC4001-S04-History.html#maurice-wilkes",
+    "title": "Evolution of the Computer",
+    "section": "Maurice Wilkes",
+    "text": "Maurice Wilkes\n\nCambridge mathematician, physics PhD on “radio propagation of very long radio waves in the ionosphere”.\nAttended Jon Neumann’s workshop, then returned to Cambridge to build the EDSAC machine.\nWorked in radar during WW2, which inspired the memory technology for EDSAC.\nMemory was a limitation for early electronic computers, Wilkes used “delay lines”, mercury tubes and an oscilloscope, as memory.\n\n\nMore information on mercury delay lines: Radar pulses were captured and played as sound waves. Sound waves passed through mercury, which slowed them down. Picked up by a microphone and displayed no an oscilloscope screen. Sound wave amplified and played back through the speaker so the pulse would repeat as long as needed."
+  },
+  {
+    "objectID": "CSC4001-S04-History.html#edsac-6-may-1949",
+    "href": "CSC4001-S04-History.html#edsac-6-may-1949",
+    "title": "Evolution of the Computer",
+    "section": "EDSAC (6 May 1949)",
+    "text": "EDSAC (6 May 1949)\n\n\nElectronic Delay Storage Automatic Calculator\n\nOne of the first stored program computers which used binary.\nDeveloped by Maurice Wilkes, William Renwick (hardware engineer) and David Wheeler (first system software engineer).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCould perform 700 additions or 200 multiplications per second.\n512 18-bit words of memory for programs and data, upgraded to 1024 18-bit words in 1952.\nData and programs were loaded via 5-hole punched paper tape, initial orders instructed the computer to load the program.\nConsumed 11KW of power.\nThe delay line memory was sub-optimal, but one of the best options at the time.\nAlthough the words were 18-bits, only 17 bits were used in practice owing to unreliability of memory. ## Programming the EDSAC\nPrograms designed on paper and then punched, in assembler, onto 5-hole paper tape. Programmers became proficient at reading programs from the tape.\nProgrammers would hang their tape on a line, waiting for an operator to run them – the first “job queue”.\nOperator would load program and data and then either return the printed output or inform the programmer of the memory address at which the program failed. ## Operating EDSAC\nBuilt-in add, multiply, bus and conditional jump.\n\nNo load. Instead, Instead clear the register (set to \\(0\\)) and add the value from memory to the register.\nNo division, but it was included as a subroutine.\n\nIn case of a program error, the operator would inform the programmer at which address their program failed.\nThere was no debugger. An oscilloscope screen showed the state of the registers, and a speaker played a different note depending on the value of the accumulator register. An experienced programmer learnt the sound of a failing program, e.g., if there was an infinite loop. ## Operating EDSAC\nProgrammers had to use “bad” programming technique. E.g., to access a different array element, the code would modify itself to point to the correct address.\nNo built-in mechanism for subroutines, instead perform a Wheeler jump: Jump with return memory address, computer would modify the last instruction of the subroutine to jump back to this return address.- No recursion was possible on the EDSAC. Turing proposed the call stack in his 1945 paper, which implemented subroutines “properly” and allowed recursion."
+  },
+  {
+    "objectID": "CSC4001-S04-History.html#usage",
+    "href": "CSC4001-S04-History.html#usage",
+    "title": "Evolution of the Computer",
+    "section": "Usage",
+    "text": "Usage\nA condition for funding was that EDSAC must provide a service, as opposed to just being an engineering experiment.\n\nRonald Fisher, with Wilkes and Wheeler, used EDSAC to solve a differential equation for gene frequency – first use of computers in biology.\nIn 1951, Miller and Wheeler computed a 79-digit prime number, the largest known at its time.\nEDSAC played a role in Nobel-prize-winning research: Nobel laureates thanked EDSAC in their acceptance speech. John Kendrew and Max Perutz (Chemistry, 1962), Andrew Huxley (Medicine, 1963) and Martin Ryle (Physics, 1974)\nEDSAC remained in operation until 11 July 1958, when it was superseded by EDSAC 2, which ran until 1965."
+  },
+  {
+    "objectID": "CSC4001-S04-History.html#exercise-computer-history-research",
+    "href": "CSC4001-S04-History.html#exercise-computer-history-research",
+    "title": "Evolution of the Computer",
+    "section": "Exercise: computer history research",
+    "text": "Exercise: computer history research\nIn pairs, teams, or individually…\n\nChoose a computer from history. Find out:\n\nWho created it, and when?\nWhat could it do? hardware operations\nSpecs: processing, memory, operations per second.\nHow was it programmed? Could it be programmed?\nHow did programmers / operators / scientists interact with it? Input/output mechanisms, how was it debugged?"
+  },
+  {
+    "objectID": "CSC4001-S04-History.html#exercise-play-with-the-edsac-simulator",
+    "href": "CSC4001-S04-History.html#exercise-play-with-the-edsac-simulator",
+    "title": "Evolution of the Computer",
+    "section": "Exercise: play with the EDSAC simulator",
+    "text": "Exercise: play with the EDSAC simulator\n\nMartin Campbell Kelly, University of Warwick, developed an EDSAC simulator.\nhttps://dcs.warwick.ac.uk/~edsac/\nSeveral programs and games are available.\nTry Sandy Douglas’ OXO game (a tic-tac-toe game vs the computer).\nAlthough a faithful simulation, it is still easier to use than the real thing – imagine loading the paper tape, vacuum tubes blowing frequently, and try setting the speed to EDSAC real-time."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#learning-outcomes",
+    "href": "CSC4001-S01-Logic.html#learning-outcomes",
+    "title": "Logic Gates",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n\nDraw logic gates and define them using truth tables\nCombine logic gates to create different outputs."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#boolean-algebra",
+    "href": "CSC4001-S01-Logic.html#boolean-algebra",
+    "title": "Logic Gates",
+    "section": "Boolean Algebra",
+    "text": "Boolean Algebra\n\nVariant of Aristottle’s Propositional Logic proposed by George Boole 1854.\nVariables can be true \\(1\\) or false \\(0\\)\nLogical operations performed on variables to produce an output.\nUsed to build digital circuits."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#logic-gates-and-truth-tables",
+    "href": "CSC4001-S01-Logic.html#logic-gates-and-truth-tables",
+    "title": "Logic Gates",
+    "section": "Logic gates and truth tables",
+    "text": "Logic gates and truth tables\n\n\nWe can represent a Boolean logical operator as a logic gate\n\n\n\n\n\n\n\n\n\n\nOne or more inputs.\nOne output determined by input values.\n\n\nDefined by a truth table.\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A \\ast B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n?\n\n\n\\(1\\)\n\\(0\\)\n?\n\n\n\\(0\\)\n\\(1\\)\n?\n\n\n\\(0\\)\n\\(0\\)\n?\n\n\n\n\n\nLogic gate is a “black box” (a thing that takes in inputs, does something with it, and gives you an output), truth table is its lookup table."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#physical-computing",
+    "href": "CSC4001-S01-Logic.html#physical-computing",
+    "title": "Logic Gates",
+    "section": "Physical Computing…",
+    "text": "Physical Computing…"
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#and",
+    "href": "CSC4001-S01-Logic.html#and",
+    "title": "Logic Gates",
+    "section": "AND",
+    "text": "AND\nOutput \\(Q\\) is True only when both inputs \\(A\\) and \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{AND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nWhen building circuit diagrams, it is convenient to use symbols to represent logic gates. Here we depict the ANSI symbols (other symbels, e.g., IEC and DIN are also available, but ANSI seems to be the most widely used)."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#and-example",
+    "href": "CSC4001-S01-Logic.html#and-example",
+    "title": "Logic Gates",
+    "section": "AND: example",
+    "text": "AND: example\n\nNuclear weapons can only be activated if BOTH switches are pulled."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#or",
+    "href": "CSC4001-S01-Logic.html#or",
+    "title": "Logic Gates",
+    "section": "OR",
+    "text": "OR\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) or \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{OR}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nNote that this is different from the way we use “or” in everyday language. When a parent asks a child if they want chocolate “or” clrsps, they mean for the child to choose one of the other, not both. However, logical or would allow chocolate, crisps or both chocolate and crisps."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#or-example",
+    "href": "CSC4001-S01-Logic.html#or-example",
+    "title": "Logic Gates",
+    "section": "OR: example",
+    "text": "OR: example\n\nBackup power system in a hospital.\nHospital power OK if main power working, backup power working, or both."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#xor",
+    "href": "CSC4001-S01-Logic.html#xor",
+    "title": "Logic Gates",
+    "section": "XOR",
+    "text": "XOR\nOutput \\(Q\\) is True only when either inputs \\(A\\) and \\(B\\) are True, but not both.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{XOR}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nXOR or exclusive or is true if either input is true, but not both, as in the use of “or” in daily life."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#xor-example",
+    "href": "CSC4001-S01-Logic.html#xor-example",
+    "title": "Logic Gates",
+    "section": "XOR: example",
+    "text": "XOR: example\n\nVery widely used in cryptography."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#not",
+    "href": "CSC4001-S01-Logic.html#not",
+    "title": "Logic Gates",
+    "section": "NOT",
+    "text": "NOT\nOne input; output \\(Q\\) is True only when inputs \\(A\\) is False.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(Q = \\mathrm{NOT}\\ A\\)\n\n\n\n\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#not-example",
+    "href": "CSC4001-S01-Logic.html#not-example",
+    "title": "Logic Gates",
+    "section": "NOT: example",
+    "text": "NOT: example\n\nAutomatic headlights illuminate when lights sensor does not sense light."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#nand",
+    "href": "CSC4001-S01-Logic.html#nand",
+    "title": "Logic Gates",
+    "section": "NAND",
+    "text": "NAND\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#nand-example",
+    "href": "CSC4001-S01-Logic.html#nand-example",
+    "title": "Logic Gates",
+    "section": "NAND: example",
+    "text": "NAND: example\n\nTriggered if any section of the circuit is broken."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#nor",
+    "href": "CSC4001-S01-Logic.html#nor",
+    "title": "Logic Gates",
+    "section": "NOR",
+    "text": "NOR\nOutput \\(Q\\) is True only when *both** inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#nor-example",
+    "href": "CSC4001-S01-Logic.html#nor-example",
+    "title": "Logic Gates",
+    "section": "NOR: example",
+    "text": "NOR: example\n\nOnly running if all cores are not in unsafe state.\n\nDetects Xenon buildup in each reactor in the nuclear power plant.\nIf ANY reactor registers True (unsafe condition) the safety system activates.\nAll cores are shutdown safely.\nPower station running if NONE of the cores are unsafe."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#exercise-logic-gate-simulator",
+    "href": "CSC4001-S01-Logic.html#exercise-logic-gate-simulator",
+    "title": "Logic Gates",
+    "section": "Exercise: logic gate simulator",
+    "text": "Exercise: logic gate simulator\n\n\n\n\n\n\n\n\n\n\n\n\nGo to https://logic.ly/demo.\nAdd two Toggle Switches as inputs and one Light Bulb as the output."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#exercise-one-gate-in-terms-of-another",
+    "href": "CSC4001-S01-Logic.html#exercise-one-gate-in-terms-of-another",
+    "title": "Logic Gates",
+    "section": "Exercise: One gate in terms of another",
+    "text": "Exercise: One gate in terms of another\nBuild the following:\n\nan AND gate using only NOT and OR;\nan OR using only NOT and AND;\na NOT gate using only NAND;\nan AND gate using only NAND;\nan OR gate using only NAND;\nNOT, AND and OR gates using only NOR.\n\n\nUse the simulator, do it on paper, of if hardware is available, could even build real circuits."
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#universal-logic-gates",
+    "href": "CSC4001-S01-Logic.html#universal-logic-gates",
+    "title": "Logic Gates",
+    "section": "Universal logic gates",
+    "text": "Universal logic gates\n\nA universal logic gate (or logical operator) can be used to represent any other logical operator.\nWhich of the logical operators AND, OR, NAND and NOR are universal?"
+  },
+  {
+    "objectID": "CSC4001-S01-Logic.html#universal-logic-gates-solution",
+    "href": "CSC4001-S01-Logic.html#universal-logic-gates-solution",
+    "title": "Logic Gates",
+    "section": "Universal logic gates Solution",
+    "text": "Universal logic gates Solution\n\nNAND and NOR"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#teaching-staff",
+    "href": "CSC4001-S00-welcome.html#teaching-staff",
+    "title": "Welcome",
+    "section": "Teaching Staff",
+    "text": "Teaching Staff\n\n\nDave Cobb\n\n\n\n\n\n\n\nModule leader. 25 years experience in the computer industry. Senior lecturer specialising in software development.\n\nHollie Baker\n\n\n\n\n\n\n\nAssociate Lecturer. PhD in computer science. Industry experience in web development and databases. Keen Braillist."
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#intended-learning-outcomes",
+    "href": "CSC4001-S00-welcome.html#intended-learning-outcomes",
+    "title": "Welcome",
+    "section": "Intended Learning Outcomes",
+    "text": "Intended Learning Outcomes\nBy successful completion of the module, you will be able to:\n\nDescribe the role of the different computer system components and their interactions\nExplain how instructions are executed by a computer processor\nIllustrate key computer architecture concepts such as instruction sets, memory hierarchy and data storage\nExplain the role operating systems have in providing services and sharing\n\n\nFrom the DPD The module’s lectures provide the fundamental aspects of computer systems and architectures, covering hardware, software and networking. The practical sessions enable students to reflect on the role of each computer component and understand how design choices impact data input, process and output. Independent Learning Students are encouraged to explore and understand different approaches hardware and software system design. Independent study and formative assessment also help students to assess an appreciate the evolution of micro-processors, hardware and operating systems. Intended learning outcomes"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#topics-covered",
+    "href": "CSC4001-S00-welcome.html#topics-covered",
+    "title": "Welcome",
+    "section": "Topics covered",
+    "text": "Topics covered\n\nComputer system organisation\nMemory organisation and management\nAssembly level programs\nMicroprocessor design fundamentals (pipelined architecture, CPU)\nOperating systems architectures\nResources and resource management\nControl unit operations"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#schedule",
+    "href": "CSC4001-S00-welcome.html#schedule",
+    "title": "Welcome",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\nWeek\nSession A\nSession B\n\n\n\n\n1\nWelcome\nLogic\n\n\n2\nVon Neumann Architecture\nComputer history\n\n\n3\nAssembler, Risc and CISC\nPipelines and More\n\n\n4\nMemory\nWorkshop activity\n\n\n5\nOperating Systems Overview\nWorkshop Activity\n\n\n6\nReading Week\n\n\n\n7\nProcess Lifecycle\nBootstrapping\n\n\n8\nScheduling\nScheduling algorithms\n\n\n9\nDeadlock\nProcess protection\n\n\n10\nInter-process communication\nWorkshop activity\n\n\n11\nMemory Management\nWorkshop activity\n\n\n12\nFiles and Filesystems\nWorkshop activity"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#timetable",
+    "href": "CSC4001-S00-welcome.html#timetable",
+    "title": "Welcome",
+    "section": "Timetable",
+    "text": "Timetable\nComputer Science\n\nTuesdays 09:30 - 11:30\nWednesdays 11:30 - 13:30\n\nCyber Security\n\nThursday 09:30 - 11:30\nFriday 12:30 - 14:30"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#resources",
+    "href": "CSC4001-S00-welcome.html#resources",
+    "title": "Welcome",
+    "section": "Resources",
+    "text": "Resources\n\nYou’ll find everything on Ultra"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#overview",
+    "href": "CSC4001-S00-welcome.html#overview",
+    "title": "Welcome",
+    "section": "Overview",
+    "text": "Overview\n\nFormative assessments\n\nWorkshop activities throughout the course\nAllows you to collaborate and get feedback\n\nSummative assessment\n\nTwo pieces of work\nMakes up your module grade"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#s1",
+    "href": "CSC4001-S00-welcome.html#s1",
+    "title": "Welcome",
+    "section": "S1",
+    "text": "S1\nReport on the role of core computer architectural components\n\nWorth 40%, 1400 word equivalent\nDiscuss the impact on computing of developments in a chosen element of computer hardware during your chosen time period\nAnalyse an LLM’s response to the same question"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#s2",
+    "href": "CSC4001-S00-welcome.html#s2",
+    "title": "Welcome",
+    "section": "S2",
+    "text": "S2\nComputer system design project (worth 60%)\n\nWorth 60%, 1600 word equivalent\nDesign an embedded computer system\nReport on the design process, elementns of hardware architecture and operating system design you have used."
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
+    "href": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
+    "title": "Welcome",
+    "section": "CSC4001 Systems and Architecture",
+    "text": "CSC4001 Systems and Architecture\nOkay, administration’s done. Let’s get started!"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CSC4001: Systems and Architecture",
+    "section": "",
+    "text": "Index\n\nS00: \nS01: \nCSC4001-S02W-Logic.qmd: \nS02: \nS03: \nS04:"
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html",
+    "href": "CSC4001-S02W-Logic.html",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "",
+    "text": "Adapted from https://cccu-uk.github.io/U10793_FCC_Labs/Logic_Gates/Logic_Gates.html"
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#universal-logic-circuits",
+    "href": "CSC4001-S02W-Logic.html#universal-logic-circuits",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Universal Logic Circuits",
+    "text": "Universal Logic Circuits\nWe can build any of the fundamental logic gates by chaining only nand or only nor gates together.\nQuestion 1 Create the circuit as shown below.\n\n\n\n\n\nDraw its truth table. Which logic gate does it represent?\nQuestion 2 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 3 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 4 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 5 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 6 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents."
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#sr-latch-with-only-nand-gates",
+    "href": "CSC4001-S02W-Logic.html#sr-latch-with-only-nand-gates",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "SR Latch with only NAND gates",
+    "text": "SR Latch with only NAND gates\nQuestion 1 Rebuild the below SR latch with only NAND gates.\n\n\n\n\n\n\n\n\n\nQuestion 2 Rebuild the below gated SR latch with only NAND gates."
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#the-clock",
+    "href": "CSC4001-S02W-Logic.html#the-clock",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "The Clock",
+    "text": "The Clock\nUse the clock to generate signals.\nCreate the circuit as shown below:\n\n\n\n\n\nConnecting the clock as input and adding the data graph.\n\nExperiment with different Clock Input Frequencies, what observations can you make? Discuss with the a peer or with the tutor.\nReplace the or gate with a different gate, change the frequency.\nDoes the data graph show a pattern?"
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#half-adder",
+    "href": "CSC4001-S02W-Logic.html#half-adder",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Half Adder",
+    "text": "Half Adder\nRecreate the half adder circuit as shown below. \nUse the simulator to complete the truth table\n\n\n\nA\nB\nS\nCout\n\n\n\n\n1\n1\n\n\n\n\n1\n0\n\n\n\n\n0\n1\n\n\n\n\n0\n0"
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#full-adder",
+    "href": "CSC4001-S02W-Logic.html#full-adder",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Full adder",
+    "text": "Full adder\nNow produce a full adder, simulate and complete the truth table.\n\n\n\nA\nB\nCin\nS\nCout\n\n\n\n\n1\n1\n1\n\n\n\n\n1\n1\n0\n\n\n\n\n1\n0\n1\n\n\n\n\n1\n0\n0\n\n\n\n\n1\n1\n1\n\n\n\n\n0\n1\n0\n\n\n\n\n0\n0\n1\n\n\n\n\n0\n0\n0"
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#binary-decoder",
+    "href": "CSC4001-S02W-Logic.html#binary-decoder",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Binary Decoder",
+    "text": "Binary Decoder\nResearch and implement a 2-bit binary decoder.\nA binary decoder takes \\(n\\) bits as input and can output one of \\(2^n\\) possible options, depending on the value of the input. For example, in a 2-bit decoder, there are four possible outputs, each corresponding to one of the possible assignments of bits:\n\n\\(00\\)\n\\(01\\)\n\\(10\\)\n\\(11\\)"
+  },
+  {
     "objectID": "CSC4001-S03-VonNeumann.html#learning-outcomes",
     "href": "CSC4001-S03-VonNeumann.html#learning-outcomes",
     "title": "Architecture overview",
@@ -278,341 +614,5 @@
     "title": "Building With Logic Gates",
     "section": "Exercise: logic gates and truth tables",
     "text": "Exercise: logic gates and truth tables\nPlease find the worksheet here"
-  },
-  {
-    "objectID": "CSC4001-S02W-Logic.html",
-    "href": "CSC4001-S02W-Logic.html",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "",
-    "text": "Adapted from https://cccu-uk.github.io/U10793_FCC_Labs/Logic_Gates/Logic_Gates.html"
-  },
-  {
-    "objectID": "CSC4001-S02W-Logic.html#universal-logic-circuits",
-    "href": "CSC4001-S02W-Logic.html#universal-logic-circuits",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "Universal Logic Circuits",
-    "text": "Universal Logic Circuits\nWe can build any of the fundamental logic gates by chaining only nand or only nor gates together.\nQuestion 1 Create the circuit as shown below.\n\n\n\n\n\nDraw its truth table. Which logic gate does it represent?\nQuestion 2 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 3 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 4 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 5 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 6 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents."
-  },
-  {
-    "objectID": "CSC4001-S02W-Logic.html#sr-latch-with-only-nand-gates",
-    "href": "CSC4001-S02W-Logic.html#sr-latch-with-only-nand-gates",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "SR Latch with only NAND gates",
-    "text": "SR Latch with only NAND gates\nQuestion 1 Rebuild the below SR latch with only NAND gates.\n\n\n\n\n\n\n\n\n\nQuestion 2 Rebuild the below gated SR latch with only NAND gates."
-  },
-  {
-    "objectID": "CSC4001-S02W-Logic.html#the-clock",
-    "href": "CSC4001-S02W-Logic.html#the-clock",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "The Clock",
-    "text": "The Clock\nUse the clock to generate signals.\nCreate the circuit as shown below:\n\n\n\n\n\nConnecting the clock as input and adding the data graph.\n\nExperiment with different Clock Input Frequencies, what observations can you make? Discuss with the a peer or with the tutor.\nReplace the or gate with a different gate, change the frequency.\nDoes the data graph show a pattern?"
-  },
-  {
-    "objectID": "CSC4001-S02W-Logic.html#half-adder",
-    "href": "CSC4001-S02W-Logic.html#half-adder",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "Half Adder",
-    "text": "Half Adder\nRecreate the half adder circuit as shown below. \nUse the simulator to complete the truth table\n\n\n\nA\nB\nS\nCout\n\n\n\n\n1\n1\n\n\n\n\n1\n0\n\n\n\n\n0\n1\n\n\n\n\n0\n0"
-  },
-  {
-    "objectID": "CSC4001-S02W-Logic.html#full-adder",
-    "href": "CSC4001-S02W-Logic.html#full-adder",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "Full adder",
-    "text": "Full adder\nNow produce a full adder, simulate and complete the truth table.\n\n\n\nA\nB\nCin\nS\nCout\n\n\n\n\n1\n1\n1\n\n\n\n\n1\n1\n0\n\n\n\n\n1\n0\n1\n\n\n\n\n1\n0\n0\n\n\n\n\n1\n1\n1\n\n\n\n\n0\n1\n0\n\n\n\n\n0\n0\n1\n\n\n\n\n0\n0\n0"
-  },
-  {
-    "objectID": "CSC4001-S02W-Logic.html#binary-decoder",
-    "href": "CSC4001-S02W-Logic.html#binary-decoder",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "Binary Decoder",
-    "text": "Binary Decoder\nResearch and implement a 2-bit binary decoder.\nA binary decoder takes \\(n\\) bits as input and can output one of \\(2^n\\) possible options, depending on the value of the input. For example, in a 2-bit decoder, there are four possible outputs, each corresponding to one of the possible assignments of bits:\n\n\\(00\\)\n\\(01\\)\n\\(10\\)\n\\(11\\)"
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#learning-outcomes",
-    "href": "CSC4001-S01-Logic.html#learning-outcomes",
-    "title": "Logic Gates",
-    "section": "Learning Outcomes",
-    "text": "Learning Outcomes\n\nDraw logic gates and define them using truth tables\nCombine logic gates to create different outputs."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#boolean-algebra",
-    "href": "CSC4001-S01-Logic.html#boolean-algebra",
-    "title": "Logic Gates",
-    "section": "Boolean Algebra",
-    "text": "Boolean Algebra\n\nVariant of Aristottle’s Propositional Logic proposed by George Boole 1854.\nVariables can be true \\(1\\) or false \\(0\\)\nLogical operations performed on variables to produce an output.\nUsed to build digital circuits."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#logic-gates-and-truth-tables",
-    "href": "CSC4001-S01-Logic.html#logic-gates-and-truth-tables",
-    "title": "Logic Gates",
-    "section": "Logic gates and truth tables",
-    "text": "Logic gates and truth tables\n\n\nWe can represent a Boolean logical operator as a logic gate\n\n\n\n\n\n\n\n\n\n\nOne or more inputs.\nOne output determined by input values.\n\n\nDefined by a truth table.\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A \\ast B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n?\n\n\n\\(1\\)\n\\(0\\)\n?\n\n\n\\(0\\)\n\\(1\\)\n?\n\n\n\\(0\\)\n\\(0\\)\n?\n\n\n\n\n\nLogic gate is a “black box” (a thing that takes in inputs, does something with it, and gives you an output), truth table is its lookup table."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#physical-computing",
-    "href": "CSC4001-S01-Logic.html#physical-computing",
-    "title": "Logic Gates",
-    "section": "Physical Computing…",
-    "text": "Physical Computing…"
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#and",
-    "href": "CSC4001-S01-Logic.html#and",
-    "title": "Logic Gates",
-    "section": "AND",
-    "text": "AND\nOutput \\(Q\\) is True only when both inputs \\(A\\) and \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{AND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nWhen building circuit diagrams, it is convenient to use symbols to represent logic gates. Here we depict the ANSI symbols (other symbels, e.g., IEC and DIN are also available, but ANSI seems to be the most widely used)."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#and-example",
-    "href": "CSC4001-S01-Logic.html#and-example",
-    "title": "Logic Gates",
-    "section": "AND: example",
-    "text": "AND: example\n\nNuclear weapons can only be activated if BOTH switches are pulled."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#or",
-    "href": "CSC4001-S01-Logic.html#or",
-    "title": "Logic Gates",
-    "section": "OR",
-    "text": "OR\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) or \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{OR}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nNote that this is different from the way we use “or” in everyday language. When a parent asks a child if they want chocolate “or” clrsps, they mean for the child to choose one of the other, not both. However, logical or would allow chocolate, crisps or both chocolate and crisps."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#or-example",
-    "href": "CSC4001-S01-Logic.html#or-example",
-    "title": "Logic Gates",
-    "section": "OR: example",
-    "text": "OR: example\n\nBackup power system in a hospital.\nHospital power OK if main power working, backup power working, or both."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#xor",
-    "href": "CSC4001-S01-Logic.html#xor",
-    "title": "Logic Gates",
-    "section": "XOR",
-    "text": "XOR\nOutput \\(Q\\) is True only when either inputs \\(A\\) and \\(B\\) are True, but not both.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{XOR}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nXOR or exclusive or is true if either input is true, but not both, as in the use of “or” in daily life."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#xor-example",
-    "href": "CSC4001-S01-Logic.html#xor-example",
-    "title": "Logic Gates",
-    "section": "XOR: example",
-    "text": "XOR: example\n\nVery widely used in cryptography."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#not",
-    "href": "CSC4001-S01-Logic.html#not",
-    "title": "Logic Gates",
-    "section": "NOT",
-    "text": "NOT\nOne input; output \\(Q\\) is True only when inputs \\(A\\) is False.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(Q = \\mathrm{NOT}\\ A\\)\n\n\n\n\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#not-example",
-    "href": "CSC4001-S01-Logic.html#not-example",
-    "title": "Logic Gates",
-    "section": "NOT: example",
-    "text": "NOT: example\n\nAutomatic headlights illuminate when lights sensor does not sense light."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#nand",
-    "href": "CSC4001-S01-Logic.html#nand",
-    "title": "Logic Gates",
-    "section": "NAND",
-    "text": "NAND\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#nand-example",
-    "href": "CSC4001-S01-Logic.html#nand-example",
-    "title": "Logic Gates",
-    "section": "NAND: example",
-    "text": "NAND: example\n\nTriggered if any section of the circuit is broken."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#nor",
-    "href": "CSC4001-S01-Logic.html#nor",
-    "title": "Logic Gates",
-    "section": "NOR",
-    "text": "NOR\nOutput \\(Q\\) is True only when *both** inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#nor-example",
-    "href": "CSC4001-S01-Logic.html#nor-example",
-    "title": "Logic Gates",
-    "section": "NOR: example",
-    "text": "NOR: example\n\nOnly running if all cores are not in unsafe state.\n\nDetects Xenon buildup in each reactor in the nuclear power plant.\nIf ANY reactor registers True (unsafe condition) the safety system activates.\nAll cores are shutdown safely.\nPower station running if NONE of the cores are unsafe."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#exercise-logic-gate-simulator",
-    "href": "CSC4001-S01-Logic.html#exercise-logic-gate-simulator",
-    "title": "Logic Gates",
-    "section": "Exercise: logic gate simulator",
-    "text": "Exercise: logic gate simulator\n\n\n\n\n\n\n\n\n\n\n\n\nGo to https://logic.ly/demo.\nAdd two Toggle Switches as inputs and one Light Bulb as the output."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#exercise-one-gate-in-terms-of-another",
-    "href": "CSC4001-S01-Logic.html#exercise-one-gate-in-terms-of-another",
-    "title": "Logic Gates",
-    "section": "Exercise: One gate in terms of another",
-    "text": "Exercise: One gate in terms of another\nBuild the following:\n\nan AND gate using only NOT and OR;\nan OR using only NOT and AND;\na NOT gate using only NAND;\nan AND gate using only NAND;\nan OR gate using only NAND;\nNOT, AND and OR gates using only NOR.\n\n\nUse the simulator, do it on paper, of if hardware is available, could even build real circuits."
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#universal-logic-gates",
-    "href": "CSC4001-S01-Logic.html#universal-logic-gates",
-    "title": "Logic Gates",
-    "section": "Universal logic gates",
-    "text": "Universal logic gates\n\nA universal logic gate (or logical operator) can be used to represent any other logical operator.\nWhich of the logical operators AND, OR, NAND and NOR are universal?"
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#universal-logic-gates-solution",
-    "href": "CSC4001-S01-Logic.html#universal-logic-gates-solution",
-    "title": "Logic Gates",
-    "section": "Universal logic gates Solution",
-    "text": "Universal logic gates Solution\n\nNAND and NOR"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "CSC4001: Systems and Architecture",
-    "section": "",
-    "text": "Index\n\nS00: \nS01: \nCSC4001-S02W-Logic.qmd: \nS02: \nS03: \nS04:"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#teaching-staff",
-    "href": "CSC4001-S00-welcome.html#teaching-staff",
-    "title": "Welcome",
-    "section": "Teaching Staff",
-    "text": "Teaching Staff\n\n\nDave Cobb\n\n\n\n\n\n\n\nModule leader. 25 years experience in the computer industry. Senior lecturer specialising in software development.\n\nHollie Baker\n\n\n\n\n\n\n\nAssociate Lecturer. PhD in computer science. Industry experience in web development and databases. Keen Braillist."
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#intended-learning-outcomes",
-    "href": "CSC4001-S00-welcome.html#intended-learning-outcomes",
-    "title": "Welcome",
-    "section": "Intended Learning Outcomes",
-    "text": "Intended Learning Outcomes\nBy successful completion of the module, you will be able to:\n\nDescribe the role of the different computer system components and their interactions\nExplain how instructions are executed by a computer processor\nIllustrate key computer architecture concepts such as instruction sets, memory hierarchy and data storage\nExplain the role operating systems have in providing services and sharing\n\n\nFrom the DPD The module’s lectures provide the fundamental aspects of computer systems and architectures, covering hardware, software and networking. The practical sessions enable students to reflect on the role of each computer component and understand how design choices impact data input, process and output. Independent Learning Students are encouraged to explore and understand different approaches hardware and software system design. Independent study and formative assessment also help students to assess an appreciate the evolution of micro-processors, hardware and operating systems. Intended learning outcomes"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#topics-covered",
-    "href": "CSC4001-S00-welcome.html#topics-covered",
-    "title": "Welcome",
-    "section": "Topics covered",
-    "text": "Topics covered\n\nComputer system organisation\nMemory organisation and management\nAssembly level programs\nMicroprocessor design fundamentals (pipelined architecture, CPU)\nOperating systems architectures\nResources and resource management\nControl unit operations"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#schedule",
-    "href": "CSC4001-S00-welcome.html#schedule",
-    "title": "Welcome",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\nWeek\nSession A\nSession B\n\n\n\n\n1\nWelcome\nLogic\n\n\n2\nVon Neumann Architecture\nComputer history\n\n\n3\nAssembler, Risc and CISC\nPipelines and More\n\n\n4\nMemory\nWorkshop activity\n\n\n5\nOperating Systems Overview\nWorkshop Activity\n\n\n6\nReading Week\n\n\n\n7\nProcess Lifecycle\nBootstrapping\n\n\n8\nScheduling\nScheduling algorithms\n\n\n9\nDeadlock\nProcess protection\n\n\n10\nInter-process communication\nWorkshop activity\n\n\n11\nMemory Management\nWorkshop activity\n\n\n12\nFiles and Filesystems\nWorkshop activity"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#timetable",
-    "href": "CSC4001-S00-welcome.html#timetable",
-    "title": "Welcome",
-    "section": "Timetable",
-    "text": "Timetable\nComputer Science\n\nTuesdays 09:30 - 11:30\nWednesdays 11:30 - 13:30\n\nCyber Security\n\nThursday 09:30 - 11:30\nFriday 12:30 - 14:30"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#resources",
-    "href": "CSC4001-S00-welcome.html#resources",
-    "title": "Welcome",
-    "section": "Resources",
-    "text": "Resources\n\nYou’ll find everything on Ultra"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#overview",
-    "href": "CSC4001-S00-welcome.html#overview",
-    "title": "Welcome",
-    "section": "Overview",
-    "text": "Overview\n\nFormative assessments\n\nWorkshop activities throughout the course\nAllows you to collaborate and get feedback\n\nSummative assessment\n\nTwo pieces of work\nMakes up your module grade"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#s1",
-    "href": "CSC4001-S00-welcome.html#s1",
-    "title": "Welcome",
-    "section": "S1",
-    "text": "S1\nReport on the role of core computer architectural components\n\nWorth 40%, 1400 word equivalent\nDiscuss the impact on computing of developments in a chosen element of computer hardware during your chosen time period\nAnalyse an LLM’s response to the same question"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#s2",
-    "href": "CSC4001-S00-welcome.html#s2",
-    "title": "Welcome",
-    "section": "S2",
-    "text": "S2\nComputer system design project (worth 60%)\n\nWorth 60%, 1600 word equivalent\nDesign an embedded computer system\nReport on the design process, elementns of hardware architecture and operating system design you have used."
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
-    "href": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
-    "title": "Welcome",
-    "section": "CSC4001 Systems and Architecture",
-    "text": "CSC4001 Systems and Architecture\nOkay, administration’s done. Let’s get started!"
-  },
-  {
-    "objectID": "CSC4001-S04-History.html#learning-outcomes",
-    "href": "CSC4001-S04-History.html#learning-outcomes",
-    "title": "Evolution of the Computer",
-    "section": "Learning Outcomes",
-    "text": "Learning Outcomes\n\nGive an overview of early computers: use, specs, how they were programmed.\nCompare early and modern computers\nExplain how developments in early computing have influenced modern computer hardware."
-  },
-  {
-    "objectID": "CSC4001-S04-History.html#but-first-why-are-we-doing-this",
-    "href": "CSC4001-S04-History.html#but-first-why-are-we-doing-this",
-    "title": "Evolution of the Computer",
-    "section": "But first, why are we doing this?",
-    "text": "But first, why are we doing this?\n\nGain perspective.\nUnderstanding of why things are the way they are today.\nLearn from previous successes and failures."
-  },
-  {
-    "objectID": "CSC4001-S04-History.html#the-eniac-1945",
-    "href": "CSC4001-S04-History.html#the-eniac-1945",
-    "title": "Evolution of the Computer",
-    "section": "The ENIAC (1945)",
-    "text": "The ENIAC (1945)\n\n\nElectronic Numerical Integrator and Computer\n\nSpecial purpose computer for artillery firing table calculations.\nLocated at the School of Engineering and Applied Science, Pennsylvania State University\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCould be “programmed” by using the plug-board and switches, data entered via punched cards.\nLater converted into a stored program computer.\nBase-10 arithmetic instead of the usual binary.\nUsed vacuum tubes, which burnt out often – high maintenance."
-  },
-  {
-    "objectID": "CSC4001-S04-History.html#colossus-1943-45",
-    "href": "CSC4001-S04-History.html#colossus-1943-45",
-    "title": "Evolution of the Computer",
-    "section": "Colossus (1943-45)",
-    "text": "Colossus (1943-45)\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecial purpose computer developed at Bletchley Park to help break the Lorenz cipher.\nDesigned by Tommy Flowers, a research engineer at the General Post Office, based on plans by Code and Cipher School mathematician Max Newman.\n\n\n\n\nUsed vacuum tubes; programmed using switches and a plug board.\nData memory was a cycling strip of paper tape.\nColossus Mk II, which used shift registers to run 6 times faster, went into operation in time for the D-day landings.\nBy the end of the war, 10 Colossi were in operation."
-  },
-  {
-    "objectID": "CSC4001-S04-History.html#general-purpose-computers-post-ww2",
-    "href": "CSC4001-S04-History.html#general-purpose-computers-post-ww2",
-    "title": "Evolution of the Computer",
-    "section": "General purpose computers (post WW2)",
-    "text": "General purpose computers (post WW2)\nVon Neumann arranged a 6-week summer workshop to design and build a new type of computer.\n\nGeneral purpose: many early computers were designed with a specific task in mind, which meant they were difficult to repurpose.\nVon Neumann wanted to build a stored program computer.\nElectronic:replacing electromechanical components which were brittle, hot and noisy.\nColossus and the ENIAC both consumed 150KW of power.\nUse binary, which is the easiest encoding to work with when using electronic components."
-  },
-  {
-    "objectID": "CSC4001-S04-History.html#maurice-wilkes",
-    "href": "CSC4001-S04-History.html#maurice-wilkes",
-    "title": "Evolution of the Computer",
-    "section": "Maurice Wilkes",
-    "text": "Maurice Wilkes\n\nCambridge mathematician, physics PhD on “radio propagation of very long radio waves in the ionosphere”.\nAttended Jon Neumann’s workshop, then returned to Cambridge to build the EDSAC machine.\nWorked in radar during WW2, which inspired the memory technology for EDSAC.\nMemory was a limitation for early electronic computers, Wilkes used “delay lines”, mercury tubes and an oscilloscope, as memory.\n\n\nMore information on mercury delay lines: Radar pulses were captured and played as sound waves. Sound waves passed through mercury, which slowed them down. Picked up by a microphone and displayed no an oscilloscope screen. Sound wave amplified and played back through the speaker so the pulse would repeat as long as needed."
-  },
-  {
-    "objectID": "CSC4001-S04-History.html#edsac-6-may-1949",
-    "href": "CSC4001-S04-History.html#edsac-6-may-1949",
-    "title": "Evolution of the Computer",
-    "section": "EDSAC (6 May 1949)",
-    "text": "EDSAC (6 May 1949)\n\n\nElectronic Delay Storage Automatic Calculator\n\nOne of the first stored program computers which used binary.\nDeveloped by Maurice Wilkes, William Renwick (hardware engineer) and David Wheeler (first system software engineer).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCould perform 700 additions or 200 multiplications per second.\n512 18-bit words of memory for programs and data, upgraded to 1024 18-bit words in 1952.\nData and programs were loaded via 5-hole punched paper tape, initial orders instructed the computer to load the program.\nConsumed 11KW of power.\nThe delay line memory was sub-optimal, but one of the best options at the time.\nAlthough the words were 18-bits, only 17 bits were used in practice owing to unreliability of memory. ## Programming the EDSAC\nPrograms designed on paper and then punched, in assembler, onto 5-hole paper tape. Programmers became proficient at reading programs from the tape.\nProgrammers would hang their tape on a line, waiting for an operator to run them – the first “job queue”.\nOperator would load program and data and then either return the printed output or inform the programmer of the memory address at which the program failed. ## Operating EDSAC\nBuilt-in add, multiply, bus and conditional jump.\n\nNo load. Instead, Instead clear the register (set to \\(0\\)) and add the value from memory to the register.\nNo division, but it was included as a subroutine.\n\nIn case of a program error, the operator would inform the programmer at which address their program failed.\nThere was no debugger. An oscilloscope screen showed the state of the registers, and a speaker played a different note depending on the value of the accumulator register. An experienced programmer learnt the sound of a failing program, e.g., if there was an infinite loop. ## Operating EDSAC\nProgrammers had to use “bad” programming technique. E.g., to access a different array element, the code would modify itself to point to the correct address.\nNo built-in mechanism for subroutines, instead perform a Wheeler jump: Jump with return memory address, computer would modify the last instruction of the subroutine to jump back to this return address.- No recursion was possible on the EDSAC. Turing proposed the call stack in his 1945 paper, which implemented subroutines “properly” and allowed recursion."
-  },
-  {
-    "objectID": "CSC4001-S04-History.html#usage",
-    "href": "CSC4001-S04-History.html#usage",
-    "title": "Evolution of the Computer",
-    "section": "Usage",
-    "text": "Usage\nA condition for funding was that EDSAC must provide a service, as opposed to just being an engineering experiment.\n\nRonald Fisher, with Wilkes and Wheeler, used EDSAC to solve a differential equation for gene frequency – first use of computers in biology.\nIn 1951, Miller and Wheeler computed a 79-digit prime number, the largest known at its time.\nEDSAC played a role in Nobel-prize-winning research: Nobel laureates thanked EDSAC in their acceptance speech. John Kendrew and Max Perutz (Chemistry, 1962), Andrew Huxley (Medicine, 1963) and Martin Ryle (Physics, 1974)\nEDSAC remained in operation until 11 July 1958, when it was superseded by EDSAC 2, which ran until 1965."
-  },
-  {
-    "objectID": "CSC4001-S04-History.html#exercise-computer-history-research",
-    "href": "CSC4001-S04-History.html#exercise-computer-history-research",
-    "title": "Evolution of the Computer",
-    "section": "Exercise: computer history research",
-    "text": "Exercise: computer history research\nIn pairs, teams, or individually…\n\nChoose a computer from history. Find out:\n\nWho created it, and when?\nWhat could it do? hardware operations\nSpecs: processing, memory, operations per second.\nHow was it programmed? Could it be programmed?\nHow did programmers / operators / scientists interact with it? Input/output mechanisms, how was it debugged?"
-  },
-  {
-    "objectID": "CSC4001-S04-History.html#exercise-play-with-the-edsac-simulator",
-    "href": "CSC4001-S04-History.html#exercise-play-with-the-edsac-simulator",
-    "title": "Evolution of the Computer",
-    "section": "Exercise: play with the EDSAC simulator",
-    "text": "Exercise: play with the EDSAC simulator\n\nMartin Campbell Kelly, University of Warwick, developed an EDSAC simulator.\nhttps://dcs.warwick.ac.uk/~edsac/\nSeveral programs and games are available.\nTry Sandy Douglas’ OXO game (a tic-tac-toe game vs the computer).\nAlthough a faithful simulation, it is still easier to use than the real thing – imagine loading the paper tape, vacuum tubes blowing frequently, and try setting the speed to EDSAC real-time."
   }
 ]
