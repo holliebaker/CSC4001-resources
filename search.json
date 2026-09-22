@@ -273,11 +273,46 @@
     "text": "Exercise: build the counter\n\nAdd one toggle switch, this will act as the clock.\nAdd a High voltage.\nAdd one \\(4\\)-bit digit, this will display the output.\nAdd four JK flip flops and connect high voltage to \\(J\\) and \\(K\\) on all of them.\nconnect the button (clock) to the Clock input of the first flip-flop.\nThe output of the first flip-flop is \\(Q_0\\), the final digit. connect this to the \\(4\\)-bit digit and to the Clock input on the next flip-flop.\nrepeat with the remaining 3 flip-flops."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "CSC4001: Systems and Architecture",
+    "objectID": "CSC4001-S02W-Logic.html",
+    "href": "CSC4001-S02W-Logic.html",
+    "title": "Building With Logic Gates - Worksheet",
     "section": "",
-    "text": "Index\n\nS00: \nS01: \nS02: \nS03: \nS04:"
+    "text": "Adapted from https://cccu-uk.github.io/U10793_FCC_Labs/Logic_Gates/Logic_Gates.html"
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#universal-logic-circuits",
+    "href": "CSC4001-S02W-Logic.html#universal-logic-circuits",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Universal Logic Circuits",
+    "text": "Universal Logic Circuits\nWe can build any of the fundamental logic gates by chaining only nand or only nor gates together.\nQuestion 1 Create the circuit as shown below.\n\n\n\n\n\nDraw its truth table. Which logic gate does it represent?\nQuestion 2 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 3 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 4 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 5 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 6 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents."
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#the-clock",
+    "href": "CSC4001-S02W-Logic.html#the-clock",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "The Clock",
+    "text": "The Clock\nUse the clock to geterate signals.\nCreate the circuit as shown below:\n\n\n\n\n\nConnecting the clock as input and adding the data graph.\n\nExperiment with different Clock Input Frequencies, what observations can you make? Discuss with the a peer or with the tutor.\nReplace the or gate with a different gate, change the frequency.\nDoes the data graph show a pattern?"
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#half-adder",
+    "href": "CSC4001-S02W-Logic.html#half-adder",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Half Adder",
+    "text": "Half Adder\nRecreate the half adder circuit as shown below. \nUse the simulator to complete the truth table\n\n\n\nA\nB\nS\nCout\n\n\n\n\n1\n1\n\n\n\n\n1\n0\n\n\n\n\n0\n1\n\n\n\n\n0\n0"
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#full-adder",
+    "href": "CSC4001-S02W-Logic.html#full-adder",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Full adder",
+    "text": "Full adder\nNow produce a full adder, simulate and complete the truth table.\n\n\n\nA\nB\nCin\nS\nCout\n\n\n\n\n1\n1\n1\n\n\n\n\n1\n1\n0\n\n\n\n\n1\n0\n1\n\n\n\n\n1\n0\n0\n\n\n\n\n1\n1\n1\n\n\n\n\n0\n1\n0\n\n\n\n\n0\n0\n1\n\n\n\n\n0\n0\n0"
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#binary-decoder",
+    "href": "CSC4001-S02W-Logic.html#binary-decoder",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Binary Decoder",
+    "text": "Binary Decoder\nResearch and implement a 2-bit binary decoder.\nA binary decoder takes \\(n\\) bits as input and can output one of \\(2^n\\) possible options, depending on the value of the input. For example, in a 2-bit decoder, there are four possible outputs, each corresponding to one of the possible assignments of bits:\n\n\\(00\\)\n\\(01\\)\n\\(10\\)\n\\(11\\)"
   },
   {
     "objectID": "CSC4001-S01-Logic.html#learning-outcomes",
@@ -418,6 +453,13 @@
     "title": "Logic Gates",
     "section": "Universal logic gates Solution",
     "text": "Universal logic gates Solution\n\nNAND and NOR"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CSC4001: Systems and Architecture",
+    "section": "",
+    "text": "Index\n\nS00: \nS01: \nCSC4001-S02W-Logic.qmd: \nS02: \nS03: \nS04:"
   },
   {
     "objectID": "CSC4001-S00-welcome.html#teaching-staff",

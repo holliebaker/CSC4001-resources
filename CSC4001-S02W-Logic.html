@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="">
 
-<title>CSC4001: Systems and Architecture – CSC4001-resources</title>
+<title>Building With Logic Gates - Worksheet – CSC4001-resources</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -73,6 +74,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -89,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CSC4001: Systems and Architecture</h1>
+<h1 class="title">Building With Logic Gates - Worksheet</h1>
 </div>
 
 
@@ -106,15 +136,187 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="index" class="level1">
-<h1>Index</h1>
+<p>Adapted from <a href="https://cccu-uk.github.io/U10793_FCC_Labs/Logic_Gates/Logic_Gates.html">https://cccu-uk.github.io/U10793_FCC_Labs/Logic_Gates/Logic_Gates.html</a></p>
+<section id="universal-logic-circuits" class="level2">
+<h2 class="anchored" data-anchor-id="universal-logic-circuits">Universal Logic Circuits</h2>
+<p>We can build any of the fundamental logic gates by chaining <strong>only nand</strong> or <strong>only nor</strong> gates together.</p>
+<p><strong>Question 1</strong> Create the circuit as shown below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./assets/02-ex1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt=""></p>
+</figure>
+</div>
+<p>Draw its truth table. Which logic gate does it represent?</p>
+<p><strong>Question 2</strong> By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./assets/02-ex2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt=""></p>
+</figure>
+</div>
+<p><strong>Question 3</strong> By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./assets/02-ex3.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt=""></p>
+</figure>
+</div>
+<p><strong>Question 4</strong> By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./assets/02-ex4.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt=""></p>
+</figure>
+</div>
+<p><strong>Question 5</strong> By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./assets/02-ex5.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt=""></p>
+</figure>
+</div>
+<p><strong>Question 6</strong> By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./assets/02-ex6.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt=""></p>
+</figure>
+</div>
+</section>
+<section id="the-clock" class="level2">
+<h2 class="anchored" data-anchor-id="the-clock">The Clock</h2>
+<p>Use the clock to geterate signals.</p>
+<p>Create the circuit as shown below:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./assets/02-ex2a.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" alt=""></p>
+</figure>
+</div>
+<p>Connecting the clock as input and adding the data graph.</p>
 <ul>
-<li>S00: <a href="./CSC4001-S00-welcome.html"></a></li>
-<li>S01: <a href="./CSC4001-S01-Logic.html"></a></li>
-<li>CSC4001-S02W-Logic.qmd: <a href="./CSC4001-S02W-Logic.html"></a></li>
-<li>S02: <a href="./CSC4001-S02-Logic.html"></a></li>
-<li>S03: <a href="./CSC4001-S03-VonNeumann.html"></a></li>
-<li>S04: <a href="./CSC4001-S04-History.html"></a></li>
+<li>Experiment with different Clock Input Frequencies, what observations can you make? Discuss with the a peer or with the tutor.</li>
+<li>Replace the or gate with a different gate, change the frequency.</li>
+<li>Does the data graph show a pattern?</li>
+</ul>
+</section>
+<section id="half-adder" class="level2">
+<h2 class="anchored" data-anchor-id="half-adder">Half Adder</h2>
+<p>Recreate the half adder circuit as shown below. <img src="./assets/02-3a.png" class="img-fluid quarto-figure quarto-figure-center" style="width:50.0%" alt=""></p>
+<p>Use the simulator to complete the truth table</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">S</th>
+<th style="text-align: center;">Cout</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="full-adder" class="level2">
+<h2 class="anchored" data-anchor-id="full-adder">Full adder</h2>
+<p>Now produce a <em>full adder</em>, simulate and complete the truth table.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">Cin</th>
+<th style="text-align: center;">S</th>
+<th style="text-align: center;">Cout</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="binary-decoder" class="level2">
+<h2 class="anchored" data-anchor-id="binary-decoder">Binary Decoder</h2>
+<p>Research and implement a 2-bit binary decoder.</p>
+<p>A binary decoder takes <span class="math inline">\(n\)</span> bits as input and can output one of <span class="math inline">\(2^n\)</span> possible options, depending on the value of the input. For example, in a 2-bit decoder, there are four possible outputs, each corresponding to one of the possible assignments of bits:</p>
+<ul>
+<li><span class="math inline">\(00\)</span></li>
+<li><span class="math inline">\(01\)</span></li>
+<li><span class="math inline">\(10\)</span></li>
+<li><span class="math inline">\(11\)</span></li>
 </ul>
 
 
