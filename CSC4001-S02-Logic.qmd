@@ -8,6 +8,16 @@ format:
     css: ./style.css
 ---
 
+## Three Body
+
+[https://www.youtube.com/embed/z2Frzt_hkQY](https://www.youtube.com/embed/z2Frzt_hkQY)
+
+## A bit more housekeeping
+
+- **Wed 20 / Fri 2**: S1 Assessment set (next week)
+- **Wed 14 / Thu 15 Oct**: Academic skills sessions
+- **Fri 20 Nov**: S1 assessment due
+
 ## Learning Outcomes
 
 - Explain why we need latches, and how flip-flops differ from latches.

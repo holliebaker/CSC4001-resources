@@ -93,15 +93,21 @@ Intended learning outcomes
 
 ## Timetable
 
-#### Computer Science
+#### Cyber Security
 
 - Tuesdays 09:30 - 11:30
 - Wednesdays 11:30 - 13:30
 
-#### Cyber Security
+#### Computer Science
 
 - Thursday 09:30 - 11:30
 - Friday 12:30 - 14:30
+
+## Important dates
+
+- **Wed 20 / Fri 2**: S1 Assessment set (next week)
+- **Wed 14 / Thu 15 Oct**: Academic skills sessions
+- **Fri 20 Nov**: S1 assessment due
 
 ## Resources
 
