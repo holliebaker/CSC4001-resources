@@ -1,0 +1,641 @@
+---
+title: "Operating Systems"
+author: "CSC4001: Computer Systems and Architecture"
+date: ""
+format:
+  revealjs:
+    theme: simple
+    css: ./style.css
+---
+
+## Learning Outcomes
+
+- Describe the **purpose** of an operating system.
+- Use a layered model to explain what is, and is not, in the scope of an
+  operating system.
+- Overview computer history in the context of operating systems, and use
+  this to explain why the functions of an operating system are
+  important.
+
+## What is an Operating System
+
+- Just another **program**.
+- Provides a **programming interface** for the computer hardware.
+- Responsible for **managing** (protecting) **resources**.
+
+## Managing resources {.smaller}
+
+- Typically **hardware**, e.g.,
+
+  CPU, memory, files on disk, peripherals.
+
+- Resources are **limited**.
+
+  - embedded devices and smart devices still have small amounts of
+    memory,
+
+  - even large supercomputers are not powerful enough for scientists,
+
+  - modern PCs have huge amounts of memory and processing power compared
+    to early computers.
+
+    Many users still want more, e.g., for smooth game performance.
+
+- Resources need **protecting**.
+
+## What protection should the OS provide? {.smaller}
+
+- **Security and integrity**
+
+  Prevent one user or program from corrupting another.
+
+- **Authorisation**
+
+  Ensures only those "allowed" have access to certain resources.
+
+- **Authentication**
+
+  Checking whether a user or program has the *authorisation* it claims
+  to have.
+
+- **Save me from myself**
+
+  Protecting the user / programmer from their own stupid mistakes.
+
+## Optimise performance
+
+- In addition, operating systems ensure resources meet certain criteria.
+
+  E.g.,:
+
+  - **responsiveness**: by prioritising certain events,
+  - **real-time**: such as machinery in a factory, actuators on an
+    aircraft,
+  - **security**: by preventing accidental or malicious tampering.
+
+## Programming interface
+
+- **Easier** access to hardware and peripherals:
+
+  hardware programming can be fiddly and complicated.
+
+- **Less repeated code**:
+
+  Common tasks, e.g., file handling, are implemented.
+
+- **Less chance of errors**
+
+  - Since the OS is written by experts.
+  - Code is used by many people, so there is more chance of errors being
+    found and fixed.
+
+---
+
+> *A good computer scientist is lazy and stupid.* 
+
+-- Russell Bradford
+
+::: notes
+- *A good computer scientist is lazy and stupid.*
+- I.e., they do not repeat code; they use libraries written by someone
+  else wherever possible; the leave complicated tasks with specific
+  domain knowledge to the experts
+:::
+
+## Written by experts
+
+- Experts understand the hardware:
+
+  - understand exactly how the hardware works,
+  - know how to get the best performance,
+  - know the intricacies and pitfalls of hardware programming,
+  - consider all the details, e.g., handling interrupts,
+
+::: notes
+- Device drivers were probably written by the hardware manufacturers
+  themselves.
+- We can safely assume that expert OS developers are better programmers,
+  and better computer scientists than us.
+- They likely already made most of the mistakes, and learnt from them,
+  that less experienced programmers are likely to make.
+:::
+
+## Layered model
+
+::::: columns-2
+::: column
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/05-layercake.jpg){fig-align="center"
+fig-alt="layered cake" width="60%"}
+:::
+::::
+
+:::
+:::column
+
+- Splits a computer system into distinct *chunks*,
+- which interact with each other through and *interface*.
+- Modelling allows us to look at the system in an appropriate level of
+  detail.
+:::
+:::::
+
+## Layered model
+
+::::: columns-2
+::: column
+- **Hardware**: warm scone,
+
+- **Cream**: user-land applications, including the GUI.
+
+- **Jam**: operating system, providing an insulating layer between the
+  scone and cream.
+
+  Protects the **hardware** from **user-land applications**.
+
+:::
+:::column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/05-scone.jpg){fig-align="center"
+fig-alt="scone with jam first, then cream on top" width="80%"}
+:::
+:::
+
+A computer, applications and its operating system is like a correctly
+constructed scone.
+::::
+:::::
+
+::: notes
+- We represent a computer, applications and operating system as a
+  3-layered model
+- Analogy: a correctly constructed scone. Note that jam is a good
+  insulator and prevents the warm scone from causing the cream to melt.
+- Thus the OS is like the jam.
+:::
+
+## Note: GUI is a user-land application
+
+- Any program the user interacts with is **not** part of the operating
+  system
+
+  this is "*user-land*".
+
+- The GUI (desktop environment, window manager, etc) is **not** part of
+  the operating system.
+
+- As computer scientists, we should not confuse
+
+  - the OS and its GUI,
+  - the OS and the hardware it is running on.
+
+::: notes
+- Many people confuse the OS and the GUI, and OS and the hardware it
+  runs on.
+
+- OS manufacturers contribute to this confusion by marketing the GUI /
+  hardware as part of the OS.
+
+  E.g., think of Windows advertisements which emphasise the GUI, or Mac
+  advertisements which emphasise the Apple hardware.
+
+- However, if you've ever used Linux, you may have come across different
+  "flavours" of the same distribution, which include different desktop
+  environments (GUIs).
+
+- You may also be familiar with the same OS running on different
+  hardware. E.g., running Windows on Mac hardware, running Linux on Mac
+  or PC hardware.
+
+- Thus, as computer scientists, we need to be clear about what the OS
+  is:
+
+  the layer between the hardware and user-land, responsible for managing
+  and protecting resources, as well as providing an interface to the
+  programmer.
+:::
+
+## Separation of concerns
+
+- Layering allows us to **decouple** software:
+
+  - device drivers (e.g., interacting with peripherals),
+  - OS code (e.g., process scheduling, memory management),
+  - and user interface
+
+  should be as **loosely coupled** as possible.
+
+::: notes
+- loose coupling: means the code of different components is intertwined
+  as little as possible.
+- in a loosely coupled system, you should be able to swap out one
+  component for another without needing to make many changes to the rest
+  of the system.
+:::
+
+## Tight coupling causes problems
+
+::::: columns-2
+::: column
+- **Huge source of bugs**,
+
+  since an error in the GUI could cause the entire system to crash.
+
+- **Security risk**
+
+  as a malicious user could gain access to OS internals through a poorly
+  programmed application.
+
+:::
+:::column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/05-bsod.jpg){fig-align="center"
+fig-alt="image of an error screen; the blue screen of death"
+width="80%"}
+:::
+::::
+
+The famous "blue screen of death".
+:::
+:::::
+
+## Loose coupling enables code re-use
+
+::::::: columns-2
+::: column
+- Loose coupling allows us to **swap out** one component,
+
+  while making **minimal changes** to the rest of the system.
+
+- This allows us to **re-use** much of the OS code, while only changing
+  hardware-specific drivers,
+
+- allowing the same OS to run on many devices.
+
+*The Android OS shares lots of code with the Linux kernel.*
+
+:::
+::: column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/05-android.png){fig-align="center"
+fig-alt="a phone, tablet, smart watch and TV all running android"
+width="60%"}
+:::
+::::
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/05-linux.jpg){fig-align="center"
+fig-alt="a collection of devices running Linux" width="60%"}
+:::
+::::
+:::
+:::::::
+
+## A good operating system should be...
+
+- **Lightweight** and **efficient**
+
+  so that as many resources as possible can be dedicated to user-land
+  applications.
+
+- **Flexible** and **easy to use**,
+
+  i.e., it should be a help, not a hindrance, to the programmer.
+
+---
+
+> "If you notice your operating system, then it's not doing it's job properly."
+
+-- Russell Bradford
+
+# History
+
+## Early computers did not have operating systems
+
+::::: columns-2
+- Programs loaded into EDSAC from paper tape,
+
+  "starting orders" helped the operator load and initialise the program.
+
+- Programmer had to know which machine they were writing code for
+
+  since each early computer was slightly different.
+
+- Had to write low-level code, interacting directly with the hardware,
+
+  e.g., each program re-implemented printing to the TTY.
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/02-edsac.jpg){fig-align="center" fig-alt="EDSAC"
+width="90%"}
+:::
+::::
+:::::
+
+## Manual scheduling
+
+::::: columns-2
+- Each program (*job*) was hung on a line,
+
+  forming a **job queue**.
+
+- A human operator manually loaded each program into the computer,
+
+- If the program ran successfully, its output would be returned to the
+  programmer,
+
+- In case of an error, the operator would write the memory address at
+  which the program failed and return this to the programmer.
+
+- Turn-around could be days, if there was an error the programmer would
+  have to restart the process.
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/05-tape.jpg){fig-align="center"
+fig-alt="5-hole paper tape" width="90%"}
+:::
+::::
+:::::
+
+::: notes
+In the 60s, there was no such thing as hacking away at a program and
+re-running it until it worked. Programmers learnt to "run" the programs
+in their heads, read machine code from paper tape, understand
+oscilloscope traces or audio cues to determine if their program was
+running correctly. At this time there were no high-level languages, and
+no debuggers.
+:::
+
+## Code re-use: libraries and device drivers
+
+- Early programmers had to re-implement everything.
+
+  - writing output,
+  - working with files,
+  - performing maths operations such as square root.
+
+- **Libraries** were soon developed, so that programmers could share
+  commonly repeated code.
+
+- To avoid low-level programming, working directly with hardware,
+  **device drivers** were developed.
+
+- **Linkers** and **loaders** were then developed to give access to this
+  shared code.
+
+## Spooling
+
+- Early computers were **expensive to run**.
+
+  So it was important to keep the CPU as busy as possible.
+
+- Manually loading programs became a bottleneck.
+
+- A *batch* of programs was loaded onto a "fast" medium (magnetic tape)
+  and run sequentially.
+
+  This process was called **spooling**.
+
+- Printing output via a teleprinter was also a bottleneck,
+
+  so this was also spooled.
+
+## The Monitor
+
+- A small program which
+
+  - loaded a program,
+  - ran it on the hardware,
+  - and wrote its output.
+
+- Directed by a special-purpose programming language called **job
+  control language**.
+
+  See e.g., IBM JCL, or SLURM.
+
+## The Monitor
+
+- Also responsible for **automatic accounting**, **prioritising** e.g.,
+  users who paid more and **killing processes** if they exceeded
+  allocated CPU or memory.
+
+- Still widely used in modern **mainframes** or time-shared
+  **supercomputers**.
+
+## Multitasking
+
+- Some operations were **slow** and needed **no CPU**,
+
+  e.g., writing output.
+
+- To best utilise the CPU, **multiple programs** were loaded at once,
+
+- When the CPU was idle, another program could make use of it.
+
+## Multitasking
+
+- The Monitor was responsible for **scheduling** the programs,
+
+  i.e., deciding which should be run and when.
+
+- Note that **exactly one** program ran at a time.
+
+- Each program had to **surrender control** back to the monitor,
+
+  there was no way for the Monitor to automatically stop a rogue
+  program.
+
+## Co-operative approach
+
+- Several programs and their data were loaded into memory.
+
+- All programs, including the Monitor, had the **same rights**.
+
+- One program was able to
+
+  - monopolise resources by not surrendering control,
+  - overwrite another program or its data,
+  - overwrite the Monitor.
+
+## Early scheduling
+
+- Monitor allowed one program to run until it surrendered control.
+
+- Problem: a malicious or erroneous program could monopolise all
+  resources.
+
+- More complicated scheduling algorithms were suggested,
+
+  but these consumed valuable resources, so simplicity was preferred.
+
+## Early scheduling
+
+- Another approach: **pre-emptive** scheduling.
+
+  The Monitor regularly *interrupted* running processes and decided what
+  to do. I.e.,
+
+  - continue running the same process,
+  - run a different process,
+  - kill the process if it had consumed too many resources.
+
+## Pre-emptive scheduling
+
+- More frequently:
+  - each program gets a small slice of CPU,
+  - appears more responsive,
+  - lots of time spent handling interrupts, less time running user
+    programs,
+  - each interrupt "wakes up" the CPU, which consumes excessive power
+    (in low-power systems where the CPU is often idle).
+
+## Pre-emptive scheduling
+
+- Less frequently:
+  - programs appear slow, do not respond to user interactions,
+  - compute intensive programs run bets, having more CPU time and less
+    context switching,
+  - less time spent running the monitor.
+
+## Thrashing
+
+- When a computer spends all its time running the Monitor and deciding
+  what to do.
+
+- This was a common problem in early operating systems.
+
+## Potential solution
+
+- Use **unequal time slices**:
+
+  - larger and less frequent slices given to compute-intensive programs.
+  - smaller and more frequent slices given to interactive programs.
+
+## Resource protection
+
+- Early programs had the same rights:
+
+  everyone had **equal access** to **all** hardware.
+
+- Protection was needed,
+
+  this required hardware support.
+
+- CPU instructions were divided into **two or more** levels:
+
+  - **Unprivileged**: "safe" instructions which all programs could run,
+  - **Privileged**: e.g., access to peripherals, scheduling a process.
+
+- Only the Monitor could run in privileged mode.
+
+## User-land programs in privileged mode
+
+- If a user-land application tries to run a privileged operation,
+
+  - CPU jumps to the Monitor,
+
+  - monitor decides what to do,
+
+    perhaps allow the instruction, or kill the process if it is not
+    allowed.
+
+- A user-land program may "politely ask" to perform a privileged
+  operation,
+
+  by raising a **system call** (`syscall`).
+
+## Memory protection
+
+- All programs had **equal access** to memory.
+
+- one program could overwrite another program or its data,
+
+  or overwrite prat of the Monitor.
+
+- Protection was needed,
+
+  and this also required hardware support.
+
+- The **Memory Management Unit** (MMU) was responsible for this.
+
+## The Memory Management Unit
+
+- Memory divided into "pages", typically *4096 bytes*, but often larger,
+  e.g., *4MB*.
+
+- For each program, MMU stores a **table of pages**,
+
+  for each address, the MMU has a flag indicating whether the program
+  can
+
+  - **read**,
+  - **write**,
+  - or **execute** (run as code)
+
+  that page.
+
+## The Memory Management Unit
+
+- It is useful to separate reading, writing and executing.
+
+  - Prevents one program overwriting another program or its data,
+  - Prevents user data being treated as code (security risk),
+
+## Fast and transparent
+
+- Each access to memory must be checked by the MMU,
+
+- If a program attempts to access memory out of bounds, an interrupt is
+  sent to the OS,
+
+  which typically **kills the process** (through raising a segmentation
+  fault *SIGSEGV*).
+
+- this is yet another overhead. MMU must be very **fast** and operate
+  **transparently**.
+
+## Late 60s to mid 90s
+
+- Pre-emptive scheduling and resource protection began to appear in
+  **mainframes** in the **late 1960s**.
+
+- DOS (Disk OS), an early "home" OS was a single program OS with **no
+  pre-emption or memory protection** due to lack of hardware support.
+
+  Windows 3.1 also had **no pre-emption or memory protection**.
+
+- Hardware support was quickly added,
+
+  by the **mid 80s**, Unix-derived OSs added pre-emption and memory
+  protection.
+
+## Summary: what have early computers taught us?
+
+- Resources need **managing**,
+
+  since they are limited, we want to get best performance otu of
+  hardware and best user experience.
+
+- Resources also need **protection**
+
+  from out or malicious programs, e.g., limiting access to memory, but
+  also files and network.
+
+- Programmers need a **convenient interface**,
+
+  to best interact with hardware, avoid repeating code, and produce
+  fewer errors.
+
+# Next time
+
+Reading week...
+
+...then Processes
