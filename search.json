@@ -161,200 +161,221 @@
     "text": "Exercise: logic gates and truth tables\nPlease find the worksheet here"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#learning-outcomes",
-    "href": "CSC4001-S03-VonNeumann.html#learning-outcomes",
-    "title": "Architecture overview",
+    "objectID": "CSC4001-S01-Logic.html#learning-outcomes",
+    "href": "CSC4001-S01-Logic.html#learning-outcomes",
+    "title": "Logic Gates",
     "section": "Learning Outcomes",
-    "text": "Learning Outcomes\n\nState the five components of a Von Neumann computer.\nDescribe the difference between the Von Neumann and Harvard architecture.\nExplain the advantages and disadvantages of the Von Neumann vs Harvard architectures.\nArgue for the “best” architecture in a given situation."
+    "text": "Learning Outcomes\n\nDraw logic gates and define them using truth tables\nCombine logic gates to create different outputs."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#architecture",
-    "href": "CSC4001-S03-VonNeumann.html#architecture",
-    "title": "Architecture overview",
-    "section": "Architecture",
-    "text": "Architecture\n\n\n\n\n\n\n\n\n\n\n\n\n“Computer architecture, like other architecture, is the art of determining the needs of the user of a structure and then designing to meet those needs as effectively as possible within economic and technological constraints.”\n– Frederick P. Brooks\n\n\nBrooks was an American computer architect, software engineer and computer scientist who managed IBM 360 series of mainframes and their accompanying software."
+    "objectID": "CSC4001-S01-Logic.html#boolean-algebra",
+    "href": "CSC4001-S01-Logic.html#boolean-algebra",
+    "title": "Logic Gates",
+    "section": "Boolean Algebra",
+    "text": "Boolean Algebra\n\nVariant of Aristottle’s Propositional Logic proposed by George Boole 1854.\nVariables can be true \\(1\\) or false \\(0\\)\nLogical operations performed on variables to produce an output.\nUsed to build digital circuits."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture",
-    "href": "CSC4001-S03-VonNeumann.html#computer-architecture",
-    "title": "Architecture overview",
-    "section": "Computer Architecture",
-    "text": "Computer Architecture\n\nA description of a computer (or computer system) which is made from component parts.\nOften a high-level description, indicating how components are linked and what each does.\nSometimes includes details such as the instruction set used and other implementation details."
+    "objectID": "CSC4001-S01-Logic.html#logic-gates-and-truth-tables",
+    "href": "CSC4001-S01-Logic.html#logic-gates-and-truth-tables",
+    "title": "Logic Gates",
+    "section": "Logic gates and truth tables",
+    "text": "Logic gates and truth tables\n\n\nWe can represent a Boolean logical operator as a logic gate\n\n\n\n\n\n\n\n\n\n\nOne or more inputs.\nOne output determined by input values.\n\n\nDefined by a truth table.\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A \\ast B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n?\n\n\n\\(1\\)\n\\(0\\)\n?\n\n\n\\(0\\)\n\\(1\\)\n?\n\n\n\\(0\\)\n\\(0\\)\n?\n\n\n\n\n\nLogic gate is a “black box” (a thing that takes in inputs, does something with it, and gives you an output), truth table is its lookup table."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-1",
-    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-1",
-    "title": "Architecture overview",
-    "section": "Computer Architecture",
-    "text": "Computer Architecture\n\nFirst documented computer architecture was in correspondence between Charles Babbage and Ada Lovelace, where Babbage described his analytical engine.\n1936, Conrad Zeus described a computer where both instructions and data are stored in the same memory: First documented instance of a “stored program” or general purpose computer."
+    "objectID": "CSC4001-S01-Logic.html#physical-computing",
+    "href": "CSC4001-S01-Logic.html#physical-computing",
+    "title": "Logic Gates",
+    "section": "Physical Computing…",
+    "text": "Physical Computing…"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-2",
-    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-2",
-    "title": "Architecture overview",
-    "section": "Computer Architecture",
-    "text": "Computer Architecture\n\n1945, John Von Neumann described the famous Von Neumann Architecture in his paper on the EDVAC computer (successor to the ENIAC)."
+    "objectID": "CSC4001-S01-Logic.html#and",
+    "href": "CSC4001-S01-Logic.html#and",
+    "title": "Logic Gates",
+    "section": "AND",
+    "text": "AND\nOutput \\(Q\\) is True only when both inputs \\(A\\) and \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{AND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nWhen building circuit diagrams, it is convenient to use symbols to represent logic gates. Here we depict the ANSI symbols (other symbels, e.g., IEC and DIN are also available, but ANSI seems to be the most widely used)."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-3",
-    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-3",
-    "title": "Architecture overview",
-    "section": "Computer Architecture",
-    "text": "Computer Architecture\n\n1946, Alan Turing wrote a detailed proposal for the electronic calculator, Automatic Computing Engine, citing Von Neumann."
+    "objectID": "CSC4001-S01-Logic.html#and-example",
+    "href": "CSC4001-S01-Logic.html#and-example",
+    "title": "Logic Gates",
+    "section": "AND: example",
+    "text": "AND: example\n\nNuclear weapons can only be activated if BOTH switches are pulled."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#von-neumann-architecture",
-    "href": "CSC4001-S03-VonNeumann.html#von-neumann-architecture",
-    "title": "Architecture overview",
-    "section": "Von Neumann Architecture",
-    "text": "Von Neumann Architecture\n\n\nArrows represent data transfer connections and directions. I.e., there is an arrow in both directions between the memory and the arithmetic logic unit, representing a “shared bus”. We will see later that this shared bus can be a bottleneck."
+    "objectID": "CSC4001-S01-Logic.html#or",
+    "href": "CSC4001-S01-Logic.html#or",
+    "title": "Logic Gates",
+    "section": "OR",
+    "text": "OR\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) or \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{OR}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nNote that this is different from the way we use “or” in everyday language. When a parent asks a child if they want chocolate “or” clrsps, they mean for the child to choose one of the other, not both. However, logical or would allow chocolate, crisps or both chocolate and crisps."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#five-components",
-    "href": "CSC4001-S03-VonNeumann.html#five-components",
-    "title": "Architecture overview",
-    "section": "Five components",
-    "text": "Five components\n\nStore\nControl Unit\nArithmetic Logic Unit\ninput\nOutput"
+    "objectID": "CSC4001-S01-Logic.html#or-example",
+    "href": "CSC4001-S01-Logic.html#or-example",
+    "title": "Logic Gates",
+    "section": "OR: example",
+    "text": "OR: example\n\nBackup power system in a hospital.\nHospital power OK if main power working, backup power working, or both."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#store",
-    "href": "CSC4001-S03-VonNeumann.html#store",
-    "title": "Architecture overview",
-    "section": "Store",
-    "text": "Store\n\nTo store data and instructions. E.g., paper tape, magnetic tape, RAM."
+    "objectID": "CSC4001-S01-Logic.html#xor",
+    "href": "CSC4001-S01-Logic.html#xor",
+    "title": "Logic Gates",
+    "section": "XOR",
+    "text": "XOR\nOutput \\(Q\\) is True only when either inputs \\(A\\) and \\(B\\) are True, but not both.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{XOR}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nXOR or exclusive or is true if either input is true, but not both, as in the use of “or” in daily life."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#control-unit",
-    "href": "CSC4001-S03-VonNeumann.html#control-unit",
-    "title": "Architecture overview",
-    "section": "Control Unit",
-    "text": "Control Unit\n\ndecides which instruction to perform next."
+    "objectID": "CSC4001-S01-Logic.html#xor-example",
+    "href": "CSC4001-S01-Logic.html#xor-example",
+    "title": "Logic Gates",
+    "section": "XOR: example",
+    "text": "XOR: example\n\nVery widely used in cryptography."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#arithmetic-logic-unit",
-    "href": "CSC4001-S03-VonNeumann.html#arithmetic-logic-unit",
-    "title": "Architecture overview",
-    "section": "Arithmetic Logic Unit",
-    "text": "Arithmetic Logic Unit\n\nPerforms calculations.\n\nTypically the ALU and control unit are combined into the CPU.\nOperations performed on the hardware, or implemented in software.\nIn early computers, electromechanical hardware was used; these days transistors are used, which require much less energy."
+    "objectID": "CSC4001-S01-Logic.html#not",
+    "href": "CSC4001-S01-Logic.html#not",
+    "title": "Logic Gates",
+    "section": "NOT",
+    "text": "NOT\nOne input; output \\(Q\\) is True only when inputs \\(A\\) is False.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(Q = \\mathrm{NOT}\\ A\\)\n\n\n\n\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#input-and-output",
-    "href": "CSC4001-S03-VonNeumann.html#input-and-output",
-    "title": "Architecture overview",
-    "section": "Input and Output",
-    "text": "Input and Output\n\nMeans for the user to interact with the computer.\n\nKeyboard, mouse, camera, sensors.\nMonitor, speakers.\nVaried and interesting ways for humans and computers to interact."
+    "objectID": "CSC4001-S01-Logic.html#not-example",
+    "href": "CSC4001-S01-Logic.html#not-example",
+    "title": "Logic Gates",
+    "section": "NOT: example",
+    "text": "NOT: example\n\nAutomatic headlights illuminate when lights sensor does not sense light."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#key-features",
-    "href": "CSC4001-S03-VonNeumann.html#key-features",
-    "title": "Architecture overview",
-    "section": "Key features",
-    "text": "Key features\n\nInstructions and data are stored in the same memory.\nSimple, cost-effective and widely used.\n\n\n\nSingle bus to transfer all data.\nThis can cause a bottleneck.\nSequential architecture Can limit speed of processing. : CPU can perform only one instruction at a time.\nThis is the architecture found in most desktop PCs today."
+    "objectID": "CSC4001-S01-Logic.html#nand",
+    "href": "CSC4001-S01-Logic.html#nand",
+    "title": "Logic Gates",
+    "section": "NAND",
+    "text": "NAND\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#harvard-architecture",
-    "href": "CSC4001-S03-VonNeumann.html#harvard-architecture",
-    "title": "Architecture overview",
-    "section": "Harvard Architecture",
-    "text": "Harvard Architecture"
+    "objectID": "CSC4001-S01-Logic.html#nand-example",
+    "href": "CSC4001-S01-Logic.html#nand-example",
+    "title": "Logic Gates",
+    "section": "NAND: example",
+    "text": "NAND: example\n\nTriggered if any section of the circuit is broken."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#harvard-architecture-1",
-    "href": "CSC4001-S03-VonNeumann.html#harvard-architecture-1",
-    "title": "Architecture overview",
-    "section": "Harvard Architecture",
-    "text": "Harvard Architecture\n\nHas separate memory for instructions and data.\nWell suited to embedded systems and main-frames.\n\n\n\nReduces the memory bottleneck found in Von Neumann machines.\n\nLess contention as there is no shared bus.\nData and instruction access can be done simultaneously.\nLess flexible than Von-Neumann. E.g., instructions cannot be modified at run-time."
+    "objectID": "CSC4001-S01-Logic.html#nor",
+    "href": "CSC4001-S01-Logic.html#nor",
+    "title": "Logic Gates",
+    "section": "NOR",
+    "text": "NOR\nOutput \\(Q\\) is True only when *both** inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#in-small-groups",
-    "href": "CSC4001-S03-VonNeumann.html#in-small-groups",
-    "title": "Architecture overview",
-    "section": "In small groups",
-    "text": "In small groups\n\nIn which situations is each architecture used?\n\nToday and historically?\nWhy is it a good choice for that situation, or why not?\n\nThings to think about:\n\nwhere are the bottlenecks?\nspecial purpose vs general purpose\ndata integrity / tampering / security"
+    "objectID": "CSC4001-S01-Logic.html#nor-example",
+    "href": "CSC4001-S01-Logic.html#nor-example",
+    "title": "Logic Gates",
+    "section": "NOR: example",
+    "text": "NOR: example\n\nOnly running if all cores are not in unsafe state.\n\nDetects Xenon buildup in each reactor in the nuclear power plant.\nIf ANY reactor registers True (unsafe condition) the safety system activates.\nAll cores are shutdown safely.\nPower station running if NONE of the cores are unsafe."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#section",
-    "href": "CSC4001-S03-VonNeumann.html#section",
-    "title": "Architecture overview",
-    "section": "1949",
-    "text": "1949\n\n“The”brain” [computer] may one day come down to our level [of the common people] and help with our income-tax and book-keeping calculations. But this is speculation and there is no sign of it so far.”\n\n– British newspaper The Star in a June 1949 news article about the EDSAC computer."
+    "objectID": "CSC4001-S01-Logic.html#exercise-logic-gate-simulator",
+    "href": "CSC4001-S01-Logic.html#exercise-logic-gate-simulator",
+    "title": "Logic Gates",
+    "section": "Exercise: logic gate simulator",
+    "text": "Exercise: logic gate simulator\n\n\n\n\n\n\n\n\n\n\n\n\nGo to https://logic.ly/demo.\nAdd two Toggle Switches as inputs and one Light Bulb as the output."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#section-1",
-    "href": "CSC4001-S03-VonNeumann.html#section-1",
-    "title": "Architecture overview",
-    "section": "1953",
-    "text": "1953\n\n“I think there is a world market for maybe five computers.”\n\n– Thomas Watson, IBM Chairman, although this is now thought to be urban legend.\n\nThe “brain” computer has now very much “come down to the level of the common people”, and does much more than just book-keeping.\nRegarding the Watson quote, it is now thought to be an urban legend. see https://geekhistory.com/content/urban-legend-i-think-there-world-market-maybe-five-computers\n“We believe the statement that you attribute to Thomas Watson is a misunderstanding of remarks made at IBM’s annual stockholders meeting on April 28, 1953. In referring specifically and only to the IBM 701 Electronic Data Processing Machine – which had been introduced the year before as the company’s first production computer designed for scientific calculations – Thomas Watson, Jr., told stockholders that “IBM had developed a paper plan for such a machine and took this paper plan across the country to some 20 concerns that we thought could use such a machine. I would like to tell you that the machine rents for between $12,000 and $18,000 a month, so it was not the type of thing that could be sold from place to place. But, as a result of our trip, on which we expected to get orders for five machines, we came home with orders for 18.” https://geekhistory.com/content/urban-legend-i-think-there-world-market-maybe-five-computers"
+    "objectID": "CSC4001-S01-Logic.html#exercise-one-gate-in-terms-of-another",
+    "href": "CSC4001-S01-Logic.html#exercise-one-gate-in-terms-of-another",
+    "title": "Logic Gates",
+    "section": "Exercise: One gate in terms of another",
+    "text": "Exercise: One gate in terms of another\nBuild the following:\n\nan AND gate using only NOT and OR;\nan OR using only NOT and AND;\na NOT gate using only NAND;\nan AND gate using only NAND;\nan OR gate using only NAND;\nNOT, AND and OR gates using only NOR.\n\n\nUse the simulator, do it on paper, of if hardware is available, could even build real circuits."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#learning-outcomes-1",
-    "href": "CSC4001-S03-VonNeumann.html#learning-outcomes-1",
-    "title": "Architecture overview",
-    "section": "Learning Outcomes",
-    "text": "Learning Outcomes\n\nGive an overview of early computers: use, specs, how they were programmed.\nCompare early and modern computers\nExplain how developments in early computing have influenced modern computer hardware."
+    "objectID": "CSC4001-S01-Logic.html#universal-logic-gates",
+    "href": "CSC4001-S01-Logic.html#universal-logic-gates",
+    "title": "Logic Gates",
+    "section": "Universal logic gates",
+    "text": "Universal logic gates\n\nA universal logic gate (or logical operator) can be used to represent any other logical operator.\nWhich of the logical operators AND, OR, NAND and NOR are universal?"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#but-first-why-are-we-doing-this",
-    "href": "CSC4001-S03-VonNeumann.html#but-first-why-are-we-doing-this",
-    "title": "Architecture overview",
-    "section": "But first, why are we doing this?",
-    "text": "But first, why are we doing this?\n\nGain perspective.\nUnderstanding of why things are the way they are today.\nLearn from previous successes and failures."
+    "objectID": "CSC4001-S01-Logic.html#universal-logic-gates-solution",
+    "href": "CSC4001-S01-Logic.html#universal-logic-gates-solution",
+    "title": "Logic Gates",
+    "section": "Universal logic gates Solution",
+    "text": "Universal logic gates Solution\n\nNAND and NOR"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#the-eniac-1945",
-    "href": "CSC4001-S03-VonNeumann.html#the-eniac-1945",
-    "title": "Architecture overview",
-    "section": "The ENIAC (1945)",
-    "text": "The ENIAC (1945)\n\n\nElectronic Numerical Integrator and Computer\n\nSpecial purpose computer for artillery firing table calculations.\nLocated at the School of Engineering and Applied Science, Pennsylvania State University\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCould be “programmed” by using the plug-board and switches, data entered via punched cards.\nLater converted into a stored program computer.\nBase-10 arithmetic instead of the usual binary.\nUsed vacuum tubes, which burnt out often – high maintenance."
+    "objectID": "CSC4001-S00-welcome.html#teaching-staff",
+    "href": "CSC4001-S00-welcome.html#teaching-staff",
+    "title": "Welcome",
+    "section": "Teaching Staff",
+    "text": "Teaching Staff\n\n\nDave Cobb\n\n\n\n\n\n\n\nModule leader. 25 years experience in the computer industry. Senior lecturer specialising in software development.\n\nHollie Baker\n\n\n\n\n\n\n\nAssociate Lecturer. PhD in computer science. Industry experience in web development and databases. Keen Braillist."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#colossus-1943-45",
-    "href": "CSC4001-S03-VonNeumann.html#colossus-1943-45",
-    "title": "Architecture overview",
-    "section": "Colossus (1943-45)",
-    "text": "Colossus (1943-45)\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecial purpose computer developed at Bletchley Park to help break the Lorenz cipher.\nDesigned by Tommy Flowers, a research engineer at the General Post Office, based on plans by Code and Cipher School mathematician Max Newman.\n\n\n\n\nUsed vacuum tubes; programmed using switches and a plug board.\nData memory was a cycling strip of paper tape.\nColossus Mk II, which used shift registers to run 6 times faster, went into operation in time for the D-day landings.\nBy the end of the war, 10 Colossi were in operation."
+    "objectID": "CSC4001-S00-welcome.html#intended-learning-outcomes",
+    "href": "CSC4001-S00-welcome.html#intended-learning-outcomes",
+    "title": "Welcome",
+    "section": "Intended Learning Outcomes",
+    "text": "Intended Learning Outcomes\nBy successful completion of the module, you will be able to:\n\nDescribe the role of the different computer system components and their interactions\nExplain how instructions are executed by a computer processor\nIllustrate key computer architecture concepts such as instruction sets, memory hierarchy and data storage\nExplain the role operating systems have in providing services and sharing\n\n\nFrom the DPD The module’s lectures provide the fundamental aspects of computer systems and architectures, covering hardware, software and networking. The practical sessions enable students to reflect on the role of each computer component and understand how design choices impact data input, process and output. Independent Learning Students are encouraged to explore and understand different approaches hardware and software system design. Independent study and formative assessment also help students to assess an appreciate the evolution of micro-processors, hardware and operating systems. Intended learning outcomes"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#general-purpose-computers-post-ww2",
-    "href": "CSC4001-S03-VonNeumann.html#general-purpose-computers-post-ww2",
-    "title": "Architecture overview",
-    "section": "General purpose computers (post WW2)",
-    "text": "General purpose computers (post WW2)\nVon Neumann arranged a 6-week summer workshop to design and build a new type of computer.\n\nGeneral purpose: many early computers were designed with a specific task in mind, which meant they were difficult to repurpose.\nVon Neumann wanted to build a stored program computer.\nElectronic:replacing electromechanical components which were brittle, hot and noisy.\nColossus and the ENIAC both consumed 150KW of power.\nUse binary, which is the easiest encoding to work with when using electronic components."
+    "objectID": "CSC4001-S00-welcome.html#topics-covered",
+    "href": "CSC4001-S00-welcome.html#topics-covered",
+    "title": "Welcome",
+    "section": "Topics covered",
+    "text": "Topics covered\n\nComputer system organisation\nMemory organisation and management\nAssembly level programs\nMicroprocessor design fundamentals (pipelined architecture, CPU)\nOperating systems architectures\nResources and resource management\nControl unit operations"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#maurice-wilkes",
-    "href": "CSC4001-S03-VonNeumann.html#maurice-wilkes",
-    "title": "Architecture overview",
-    "section": "Maurice Wilkes",
-    "text": "Maurice Wilkes\n\nCambridge mathematician, physics PhD on “radio propagation of very long radio waves in the ionosphere”.\nAttended Jon Neumann’s workshop, then returned to Cambridge to build the EDSAC machine.\nWorked in radar during WW2, which inspired the memory technology for EDSAC.\nMemory was a limitation for early electronic computers, Wilkes used “delay lines”, mercury tubes and an oscilloscope, as memory.\n\n\nMore information on mercury delay lines: Radar pulses were captured and played as sound waves. Sound waves passed through mercury, which slowed them down. Picked up by a microphone and displayed no an oscilloscope screen. Sound wave amplified and played back through the speaker so the pulse would repeat as long as needed."
+    "objectID": "CSC4001-S00-welcome.html#schedule",
+    "href": "CSC4001-S00-welcome.html#schedule",
+    "title": "Welcome",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\nWeek\nSession A\nSession B\n\n\n\n\n1\nWelcome\nLogic\n\n\n2\nVon Neumann Architecture\nComputer history\n\n\n3\nAssembler, Risc and CISC\nPipelines and More\n\n\n4\nMemory\nWorkshop activity\n\n\n5\nOperating Systems Overview\nWorkshop Activity\n\n\n6\nReading Week\n\n\n\n7\nProcess Lifecycle\nBootstrapping\n\n\n8\nScheduling\nScheduling algorithms\n\n\n9\nDeadlock\nProcess protection\n\n\n10\nInter-process communication\nWorkshop activity\n\n\n11\nMemory Management\nWorkshop activity\n\n\n12\nFiles and Filesystems\nWorkshop activity"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#edsac-6-may-1949",
-    "href": "CSC4001-S03-VonNeumann.html#edsac-6-may-1949",
-    "title": "Architecture overview",
-    "section": "EDSAC (6 May 1949)",
-    "text": "EDSAC (6 May 1949)\n\n\nElectronic Delay Storage Automatic Calculator\n\nOne of the first stored program computers which used binary.\nDeveloped by Maurice Wilkes, William Renwick (hardware engineer) and David Wheeler (first system software engineer).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCould perform 700 additions or 200 multiplications per second.\n512 18-bit words of memory for programs and data, upgraded to 1024 18-bit words in 1952.\nData and programs were loaded via 5-hole punched paper tape, initial orders instructed the computer to load the program.\nConsumed 11KW of power.\nThe delay line memory was sub-optimal, but one of the best options at the time.\nAlthough the words were 18-bits, only 17 bits were used in practice owing to unreliability of memory. ## Programming the EDSAC\nPrograms designed on paper and then punched, in assembler, onto 5-hole paper tape. Programmers became proficient at reading programs from the tape.\nProgrammers would hang their tape on a line, waiting for an operator to run them – the first “job queue”.\nOperator would load program and data and then either return the printed output or inform the programmer of the memory address at which the program failed. ## Operating EDSAC\nBuilt-in add, multiply, bus and conditional jump.\n\nNo load. Instead, Instead clear the register (set to \\(0\\)) and add the value from memory to the register.\nNo division, but it was included as a subroutine.\n\nIn case of a program error, the operator would inform the programmer at which address their program failed.\nThere was no debugger. An oscilloscope screen showed the state of the registers, and a speaker played a different note depending on the value of the accumulator register. An experienced programmer learnt the sound of a failing program, e.g., if there was an infinite loop. ## Operating EDSAC\nProgrammers had to use “bad” programming technique. E.g., to access a different array element, the code would modify itself to point to the correct address.\nNo built-in mechanism for subroutines, instead perform a Wheeler jump: Jump with return memory address, computer would modify the last instruction of the subroutine to jump back to this return address.- No recursion was possible on the EDSAC. Turing proposed the call stack in his 1945 paper, which implemented subroutines “properly” and allowed recursion."
+    "objectID": "CSC4001-S00-welcome.html#timetable",
+    "href": "CSC4001-S00-welcome.html#timetable",
+    "title": "Welcome",
+    "section": "Timetable",
+    "text": "Timetable\nCyber Security\n\nTuesdays 09:30 - 11:30\nWednesdays 11:30 - 13:30\n\nComputer Science\n\nThursday 09:30 - 11:30\nFriday 12:30 - 14:30"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#usage",
-    "href": "CSC4001-S03-VonNeumann.html#usage",
-    "title": "Architecture overview",
-    "section": "Usage",
-    "text": "Usage\nA condition for funding was that EDSAC must provide a service, as opposed to just being an engineering experiment.\n\nRonald Fisher, with Wilkes and Wheeler, used EDSAC to solve a differential equation for gene frequency – first use of computers in biology.\nIn 1951, Miller and Wheeler computed a 79-digit prime number, the largest known at its time.\nEDSAC played a role in Nobel-prize-winning research: Nobel laureates thanked EDSAC in their acceptance speech. John Kendrew and Max Perutz (Chemistry, 1962), Andrew Huxley (Medicine, 1963) and Martin Ryle (Physics, 1974)\nEDSAC remained in operation until 11 July 1958, when it was superseded by EDSAC 2, which ran until 1965."
+    "objectID": "CSC4001-S00-welcome.html#important-dates",
+    "href": "CSC4001-S00-welcome.html#important-dates",
+    "title": "Welcome",
+    "section": "Important dates",
+    "text": "Important dates\n\nWed 20 / Fri 2: S1 Assessment set (next week)\nWed 14 / Thu 15 Oct: Academic skills sessions\nFri 20 Nov: S1 assessment due"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#exercise-computer-history-research",
-    "href": "CSC4001-S03-VonNeumann.html#exercise-computer-history-research",
-    "title": "Architecture overview",
-    "section": "Exercise: computer history research",
-    "text": "Exercise: computer history research\nIn pairs, teams, or individually…\n\nChoose a computer from history. Find out:\n\nWho created it, and when?\nWhat could it do? hardware operations\nSpecs: processing, memory, operations per second.\nHow was it programmed? Could it be programmed?\nHow did programmers / operators / scientists interact with it? Input/output mechanisms, how was it debugged?"
+    "objectID": "CSC4001-S00-welcome.html#resources",
+    "href": "CSC4001-S00-welcome.html#resources",
+    "title": "Welcome",
+    "section": "Resources",
+    "text": "Resources\n\nYou’ll find everything on Ultra"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#exercise-play-with-the-edsac-simulator",
-    "href": "CSC4001-S03-VonNeumann.html#exercise-play-with-the-edsac-simulator",
-    "title": "Architecture overview",
-    "section": "Exercise: play with the EDSAC simulator",
-    "text": "Exercise: play with the EDSAC simulator\n\nMartin Campbell Kelly, University of Warwick, developed an EDSAC simulator.\nhttps://dcs.warwick.ac.uk/~edsac/\nSeveral programs and games are available.\nTry Sandy Douglas’ OXO game (a tic-tac-toe game vs the computer).\nAlthough a faithful simulation, it is still easier to use than the real thing – imagine loading the paper tape, vacuum tubes blowing frequently, and try setting the speed to EDSAC real-time."
+    "objectID": "CSC4001-S00-welcome.html#overview",
+    "href": "CSC4001-S00-welcome.html#overview",
+    "title": "Welcome",
+    "section": "Overview",
+    "text": "Overview\n\nFormative assessments\n\nWorkshop activities throughout the course\nAllows you to collaborate and get feedback\n\nSummative assessment\n\nTwo pieces of work\nMakes up your module grade"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#s1",
+    "href": "CSC4001-S00-welcome.html#s1",
+    "title": "Welcome",
+    "section": "S1",
+    "text": "S1\nReport on the role of core computer architectural components\n\nWorth 40%, 1400 word equivalent\nDiscuss the impact on computing of developments in a chosen element of computer hardware during your chosen time period\nAnalyse an LLM’s response to the same question"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#s2",
+    "href": "CSC4001-S00-welcome.html#s2",
+    "title": "Welcome",
+    "section": "S2",
+    "text": "S2\nComputer system design project (worth 60%)\n\nWorth 60%, 1600 word equivalent\nDesign an embedded computer system\nReport on the design process, elementns of hardware architecture and operating system design you have used."
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
+    "href": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
+    "title": "Welcome",
+    "section": "CSC4001 Systems and Architecture",
+    "text": "CSC4001 Systems and Architecture\nOkay, administration’s done. Let’s get started!"
   },
   {
     "objectID": "CSC4001-S02W-Logic.html",
@@ -410,7 +431,7 @@
     "href": "index.html",
     "title": "CSC4001: Systems and Architecture",
     "section": "",
-    "text": "Index\n\nS00: \nS01: \nCSC4001-S02W-Logic.qmd: \nS02: \nS03: \nS04:"
+    "text": "Index\n\nS00: \nS01: \nCSC4001-S02W-Logic.qmd: \nS02: \nS03: \nS04: \nCSC4001-S05W-GoingUp.qmd: \nS06:"
   },
   {
     "objectID": "CSC4001-S04-CPU.html#learning-outcomes",
@@ -665,220 +686,444 @@
     "text": "Exercise: Moore’s law\nDiscuss:\n\nIs Moore’s law still true today?\n\n\n\nThere have been many predictions of the death of Moore’s law.\nWe are no longer able to double the number of transistors per chip.\nTransistors are still getting smaller and more tightly packed, but progress is becoming slower."
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#teaching-staff",
-    "href": "CSC4001-S00-welcome.html#teaching-staff",
-    "title": "Welcome",
-    "section": "Teaching Staff",
-    "text": "Teaching Staff\n\n\nDave Cobb\n\n\n\n\n\n\n\nModule leader. 25 years experience in the computer industry. Senior lecturer specialising in software development.\n\nHollie Baker\n\n\n\n\n\n\n\nAssociate Lecturer. PhD in computer science. Industry experience in web development and databases. Keen Braillist."
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#intended-learning-outcomes",
-    "href": "CSC4001-S00-welcome.html#intended-learning-outcomes",
-    "title": "Welcome",
-    "section": "Intended Learning Outcomes",
-    "text": "Intended Learning Outcomes\nBy successful completion of the module, you will be able to:\n\nDescribe the role of the different computer system components and their interactions\nExplain how instructions are executed by a computer processor\nIllustrate key computer architecture concepts such as instruction sets, memory hierarchy and data storage\nExplain the role operating systems have in providing services and sharing\n\n\nFrom the DPD The module’s lectures provide the fundamental aspects of computer systems and architectures, covering hardware, software and networking. The practical sessions enable students to reflect on the role of each computer component and understand how design choices impact data input, process and output. Independent Learning Students are encouraged to explore and understand different approaches hardware and software system design. Independent study and formative assessment also help students to assess an appreciate the evolution of micro-processors, hardware and operating systems. Intended learning outcomes"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#topics-covered",
-    "href": "CSC4001-S00-welcome.html#topics-covered",
-    "title": "Welcome",
-    "section": "Topics covered",
-    "text": "Topics covered\n\nComputer system organisation\nMemory organisation and management\nAssembly level programs\nMicroprocessor design fundamentals (pipelined architecture, CPU)\nOperating systems architectures\nResources and resource management\nControl unit operations"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#schedule",
-    "href": "CSC4001-S00-welcome.html#schedule",
-    "title": "Welcome",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\nWeek\nSession A\nSession B\n\n\n\n\n1\nWelcome\nLogic\n\n\n2\nVon Neumann Architecture\nComputer history\n\n\n3\nAssembler, Risc and CISC\nPipelines and More\n\n\n4\nMemory\nWorkshop activity\n\n\n5\nOperating Systems Overview\nWorkshop Activity\n\n\n6\nReading Week\n\n\n\n7\nProcess Lifecycle\nBootstrapping\n\n\n8\nScheduling\nScheduling algorithms\n\n\n9\nDeadlock\nProcess protection\n\n\n10\nInter-process communication\nWorkshop activity\n\n\n11\nMemory Management\nWorkshop activity\n\n\n12\nFiles and Filesystems\nWorkshop activity"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#timetable",
-    "href": "CSC4001-S00-welcome.html#timetable",
-    "title": "Welcome",
-    "section": "Timetable",
-    "text": "Timetable\nCyber Security\n\nTuesdays 09:30 - 11:30\nWednesdays 11:30 - 13:30\n\nComputer Science\n\nThursday 09:30 - 11:30\nFriday 12:30 - 14:30"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#important-dates",
-    "href": "CSC4001-S00-welcome.html#important-dates",
-    "title": "Welcome",
-    "section": "Important dates",
-    "text": "Important dates\n\nWed 20 / Fri 2: S1 Assessment set (next week)\nWed 14 / Thu 15 Oct: Academic skills sessions\nFri 20 Nov: S1 assessment due"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#resources",
-    "href": "CSC4001-S00-welcome.html#resources",
-    "title": "Welcome",
-    "section": "Resources",
-    "text": "Resources\n\nYou’ll find everything on Ultra"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#overview",
-    "href": "CSC4001-S00-welcome.html#overview",
-    "title": "Welcome",
-    "section": "Overview",
-    "text": "Overview\n\nFormative assessments\n\nWorkshop activities throughout the course\nAllows you to collaborate and get feedback\n\nSummative assessment\n\nTwo pieces of work\nMakes up your module grade"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#s1",
-    "href": "CSC4001-S00-welcome.html#s1",
-    "title": "Welcome",
-    "section": "S1",
-    "text": "S1\nReport on the role of core computer architectural components\n\nWorth 40%, 1400 word equivalent\nDiscuss the impact on computing of developments in a chosen element of computer hardware during your chosen time period\nAnalyse an LLM’s response to the same question"
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#s2",
-    "href": "CSC4001-S00-welcome.html#s2",
-    "title": "Welcome",
-    "section": "S2",
-    "text": "S2\nComputer system design project (worth 60%)\n\nWorth 60%, 1600 word equivalent\nDesign an embedded computer system\nReport on the design process, elementns of hardware architecture and operating system design you have used."
-  },
-  {
-    "objectID": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
-    "href": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
-    "title": "Welcome",
-    "section": "CSC4001 Systems and Architecture",
-    "text": "CSC4001 Systems and Architecture\nOkay, administration’s done. Let’s get started!"
-  },
-  {
-    "objectID": "CSC4001-S01-Logic.html#learning-outcomes",
-    "href": "CSC4001-S01-Logic.html#learning-outcomes",
-    "title": "Logic Gates",
+    "objectID": "CSC4001-S06-CPU2.html#learning-outcomes",
+    "href": "CSC4001-S06-CPU2.html#learning-outcomes",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
     "section": "Learning Outcomes",
-    "text": "Learning Outcomes\n\nDraw logic gates and define them using truth tables\nCombine logic gates to create different outputs."
+    "text": "Learning Outcomes\n\nExplain the ideas of latency and throughput.\nDescribe pipelining, out of order execution and parallelism, and their effects on latency and throughput."
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#boolean-algebra",
-    "href": "CSC4001-S01-Logic.html#boolean-algebra",
-    "title": "Logic Gates",
-    "section": "Boolean Algebra",
-    "text": "Boolean Algebra\n\nVariant of Aristottle’s Propositional Logic proposed by George Boole 1854.\nVariables can be true \\(1\\) or false \\(0\\)\nLogical operations performed on variables to produce an output.\nUsed to build digital circuits."
+    "objectID": "CSC4001-S06-CPU2.html#optimising-the-fetch-decode-execute-store-cycle",
+    "href": "CSC4001-S06-CPU2.html#optimising-the-fetch-decode-execute-store-cycle",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Optimising the fetch-decode-execute-store cycle",
+    "text": "Optimising the fetch-decode-execute-store cycle\n\nSuppose the CPU can perform one stage per CPU cycle."
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#logic-gates-and-truth-tables",
-    "href": "CSC4001-S01-Logic.html#logic-gates-and-truth-tables",
-    "title": "Logic Gates",
-    "section": "Logic gates and truth tables",
-    "text": "Logic gates and truth tables\n\n\nWe can represent a Boolean logical operator as a logic gate\n\n\n\n\n\n\n\n\n\n\nOne or more inputs.\nOne output determined by input values.\n\n\nDefined by a truth table.\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A \\ast B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n?\n\n\n\\(1\\)\n\\(0\\)\n?\n\n\n\\(0\\)\n\\(1\\)\n?\n\n\n\\(0\\)\n\\(0\\)\n?\n\n\n\n\n\nLogic gate is a “black box” (a thing that takes in inputs, does something with it, and gives you an output), truth table is its lookup table."
+    "objectID": "CSC4001-S06-CPU2.html#von-neumann-architecture-is-sequential",
+    "href": "CSC4001-S06-CPU2.html#von-neumann-architecture-is-sequential",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Von Neumann architecture is sequential",
+    "text": "Von Neumann architecture is sequential\n\nSuppose the computer can perform one stage per CPU cycle.\nThe ALU is only working during the Execute stage.\nIt would be ideal to have the ALU doing work all the time.\nWe’ll look at three ways of getting the best use out of the hardware."
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#physical-computing",
-    "href": "CSC4001-S01-Logic.html#physical-computing",
-    "title": "Logic Gates",
-    "section": "Physical Computing…",
-    "text": "Physical Computing…"
+    "objectID": "CSC4001-S06-CPU2.html#pipelines",
+    "href": "CSC4001-S06-CPU2.html#pipelines",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Pipelines",
+    "text": "Pipelines\nOverlap stages of the fetch-decode-execute-store cycle.\n\nALU receives a constant stream of work.\n\nInstruction pipelining is a bit like a production line. Each piece of hardware has its designated job – Control unit for decoding, ALU for executing. Once an instruction is decoded, it is passed to the ALU for execution, while the ALU executes the instruction, the Control unit is decoding the next. This means the ALU is not sitting idle while the control unit decodes instructions for it."
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#and",
-    "href": "CSC4001-S01-Logic.html#and",
-    "title": "Logic Gates",
-    "section": "AND",
-    "text": "AND\nOutput \\(Q\\) is True only when both inputs \\(A\\) and \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{AND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nWhen building circuit diagrams, it is convenient to use symbols to represent logic gates. Here we depict the ANSI symbols (other symbels, e.g., IEC and DIN are also available, but ANSI seems to be the most widely used)."
+    "objectID": "CSC4001-S06-CPU2.html#speedup",
+    "href": "CSC4001-S06-CPU2.html#speedup",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Speedup",
+    "text": "Speedup\nIn a sequential fetch, decode, execute, store cycle, it takes 4 cycles for each instruction to complete.\n\n40 cycles for 10 instructions.\nIn a pipelined architecture:\n\nIt takes 4 cycles for the first instruction to exit the pipeline.\n5 cycles for the second\n6 for the third,\n… and so on …\n14 for the 10-th instruction to exit the pipeline."
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#and-example",
-    "href": "CSC4001-S01-Logic.html#and-example",
-    "title": "Logic Gates",
-    "section": "AND: example",
-    "text": "AND: example\n\nNuclear weapons can only be activated if BOTH switches are pulled."
+    "objectID": "CSC4001-S06-CPU2.html#speedup-1",
+    "href": "CSC4001-S06-CPU2.html#speedup-1",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Speedup",
+    "text": "Speedup\n\\[\nS_n = \\dfrac{\\text{Time to complete } n \\text{ tasks sequentially}}{\\text{Time to complete} n \\text{ tasks in a pipeline}}\n\\]\n\nThe speedup for 10 instructions in a 4 stage pipeline is \\[\nS_10 = \\dfrac{40}{14} \\approx 2.86\n\\]\nThe more instructions, the better! \\[\nS_100 = \\dfrac{400}{104} \\approx 3.51, S_1000 = \\dfrac{1000}{1014} = 3.94\n\\]\n\nFor a pipeline with \\(k\\) stages, speedup approaches \\(k\\) as the number of instructions grows very large.\n\nMathematical explanation:\n\nSuppose we have \\(n\\) instructions to complete.\nFor a pipeline with \\(k\\) stages:\n\nThe first operation leaves the pipeline after \\(k\\) cycles.\nThe \\(n\\)-th instruction leaves the pipeline after \\(k + n\\) cycles.\n\n\\(T_{\\mathrm{pipeline}} = k + n\\) CPU cycles.\nWithout pipelining, each stage is completed sequentially for each instruction.\n\\(T_{\\mathrm{seq}} = k \\cdot n\\) CPU cycles.\nWe can calculate speedup, a measure of how much quicker the pipelines system is: \\[S = \\dfrac{T_{\\mathrm{seq}}}{T_{\\mathrm{pipeline}}} = \\dfrac{k \\cdot n}{k + n}.\\]\nPipelines work best for a large number of tasks: \\(n \\gg k\\).\nThen \\(S = k\\)."
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#or",
-    "href": "CSC4001-S01-Logic.html#or",
-    "title": "Logic Gates",
-    "section": "OR",
-    "text": "OR\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) or \\(B\\) are True.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{OR}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nNote that this is different from the way we use “or” in everyday language. When a parent asks a child if they want chocolate “or” clrsps, they mean for the child to choose one of the other, not both. However, logical or would allow chocolate, crisps or both chocolate and crisps."
+    "objectID": "CSC4001-S06-CPU2.html#throughput-and-latency",
+    "href": "CSC4001-S06-CPU2.html#throughput-and-latency",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Throughput and latency",
+    "text": "Throughput and latency\n\nThroughput: Number of instructions completed per unit time.\n\n\\(\\text{Throughput} = \\dfrac{\\text{number of instructions}}{\\text{execution time}}\\)\nHigher throughput indicates better performance.\n\nLatency: time taken for a single instruction to complete (travel through the pipeline)\n\n\\(\\text{Latency} = \\dfrac{\\text{execution time}}{\\text{number of instructions}}\\)\nLower latency indicates better performance."
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#or-example",
-    "href": "CSC4001-S01-Logic.html#or-example",
-    "title": "Logic Gates",
-    "section": "OR: example",
-    "text": "OR: example\n\nBackup power system in a hospital.\nHospital power OK if main power working, backup power working, or both."
+    "objectID": "CSC4001-S06-CPU2.html#pipelines-1",
+    "href": "CSC4001-S06-CPU2.html#pipelines-1",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Pipelines",
+    "text": "Pipelines\n\n\nAdvantages\n\nHigher throughput: more instructions per second\nBetter hardware utilisation: reduces idle time.\nWell-suited to repetitive tasks.\n\n\nDisadvantages\n\nHigher latency: time taken to complete one instruction\nMore complex: increases design complexity, manufacture cost and, therefore, time.\nWorks most efficiently when kept full."
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#xor",
-    "href": "CSC4001-S01-Logic.html#xor",
-    "title": "Logic Gates",
-    "section": "XOR",
-    "text": "XOR\nOutput \\(Q\\) is True only when either inputs \\(A\\) and \\(B\\) are True, but not both.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{XOR}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(0\\)\n\n\n\n\nLogic gate:\n\n\n\n\n\n\n\n\n\n\n\nXOR or exclusive or is true if either input is true, but not both, as in the use of “or” in daily life."
+    "objectID": "CSC4001-S06-CPU2.html#pipeline-hazards",
+    "href": "CSC4001-S06-CPU2.html#pipeline-hazards",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Pipeline hazards",
+    "text": "Pipeline hazards\n\nSituations which cause the pipeline to stall, or have to restart.\nControl dependency: which instructions should be pipelines after a jump?\nData hazards: when data dependence affecting instructions at different stages of the pipeline.\n\nOne instruction may depend on the result of a previous instruction still in the pipeline.\nRead after write: one instruction attempts to read data which another instruction has not yet written.\nWrite after read: one instruction writes data after another instruction attempts to read it.\nWrite after write: one instruction attempts to write data after another, messing up register values.\n\n\n\n\ncontrol dependency: after a jump instruction, instructions may need to be loaded from a new location of memory. It is unknown, at the time the jump enters the pipeline, what its outcome will be, therefore the correct sequence of instructions cannot be pipelines.\n\nProcessors employ branch prediction to guess whether a jump is likely to happens or not. The “most likely” sequence of instructions are pipelined, meaning there is a high probability that the correct instructions are loaded into the pipeline. However, if branch prediction is incorrect, then the pipeline must be restarted, as different instructions need to be fetched, decoded, etc.\n\nData dependencies: one instruction may depend upon the result of another, so it must wait (stall) until its dependant has left the pipeline. Now we have a “bubble” (empty gap) in the pipeline.\n\nThere may be contention over registers wherein one instruction attempts to read or write to registers, or cache, being used by another. In this case, a calculation may have to be restarted, or at least the correct data loaded from memory (slowwww) again."
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#xor-example",
-    "href": "CSC4001-S01-Logic.html#xor-example",
-    "title": "Logic Gates",
-    "section": "XOR: example",
-    "text": "XOR: example\n\nVery widely used in cryptography."
+    "objectID": "CSC4001-S06-CPU2.html#reservation-station-and-reorder-buffer-1",
+    "href": "CSC4001-S06-CPU2.html#reservation-station-and-reorder-buffer-1",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Reservation station and reorder buffer",
+    "text": "Reservation station and reorder buffer\n\nSome CPUs have multiple ALUs, or special-purpose hardware.\nWe want all of this hardware to be working all of the time.\nHowever, we need to figure out which operations can be re-ordered or executed in parallel."
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#not",
-    "href": "CSC4001-S01-Logic.html#not",
-    "title": "Logic Gates",
-    "section": "NOT",
-    "text": "NOT\nOne input; output \\(Q\\) is True only when inputs \\(A\\) is False.\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(Q = \\mathrm{NOT}\\ A\\)\n\n\n\n\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
+    "objectID": "CSC4001-S06-CPU2.html#example-euclidean-distance",
+    "href": "CSC4001-S06-CPU2.html#example-euclidean-distance",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Example: Euclidean distance",
+    "text": "Example: Euclidean distance\n\nSuppose we have two points, \\(\\mathbf{x}\\) and \\(\\mathbf{y}\\) in 2d space, e.g., in a 2d game.\nTo calculate the distance between \\(\\mathbf{x} = (x_1,x_2)\\) and \\(\\mathbf{y} = (y_1,y_2)\\), we use Pythagoras’ theorem.\nEuclidean distance, \\(D = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\\).\nLet \\(x_1 = 4, x_2 = 9, y_1 = 20, y_2 = 11\\).\n\n\nDon’t worry about the actual formula. It’s only important to note we have a square root, two multiplications, and an addition."
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#not-example",
-    "href": "CSC4001-S01-Logic.html#not-example",
-    "title": "Logic Gates",
-    "section": "NOT: example",
-    "text": "NOT: example\n\nAutomatic headlights illuminate when lights sensor does not sense light."
+    "objectID": "CSC4001-S06-CPU2.html#sequential-calculation",
+    "href": "CSC4001-S06-CPU2.html#sequential-calculation",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Sequential calculation",
+    "text": "Sequential calculation\nLet’s assume our CPU can perform addition, subtraction, multiplication and square root in one CPU cycle.\nThen the calculation can be performed as follows.\n\nt1 = x2 - x1\nt2 = t1 * t2\nt3 = y1 - y2\nt4 = t3 * t3\n`t5 = t2 + t4\nD = sqrt( t5 )\n\n6 CPU cycles.\n\nNote: sqrt is a relatively complex operation for computers and some CPUs do not include it as an instruction. However, many CISC (complex) architectures do."
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#nand",
-    "href": "CSC4001-S01-Logic.html#nand",
-    "title": "Logic Gates",
-    "section": "NAND",
-    "text": "NAND\nOutput \\(Q\\) is True only when either (or both) inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
+    "objectID": "CSC4001-S06-CPU2.html#parallel-calculation",
+    "href": "CSC4001-S06-CPU2.html#parallel-calculation",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Parallel calculation",
+    "text": "Parallel calculation\nNow suppose we have 2 ALUs.\n\nt1 and t3 can be computed\nGiven t1 and t3, t2 and t4 respectively can be computed in parallel.\nt5 must wait for t2 and t4,\nThe result, D depends on t5.\n\n… but how can the CPU, a clump of transistors, figure this out?\n\nThe key is to make a table of instructions, and use a status flag to determine dependencies."
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#nand-example",
-    "href": "CSC4001-S01-Logic.html#nand-example",
-    "title": "Logic Gates",
-    "section": "NAND: example",
-    "text": "NAND: example\n\nTriggered if any section of the circuit is broken."
+    "objectID": "CSC4001-S06-CPU2.html#table-of-instructions",
+    "href": "CSC4001-S06-CPU2.html#table-of-instructions",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Table of instructions",
+    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\nx2\nx1\nt1\nWaiting\n\n\n2\nMUL\nt1\nt1\nt2\nWaiting\n\n\n3\nSUB\ny2\ny1\nt3\nWaiting\n\n\n4\nMUL\nt3\nt3\nt4\nWaiting\n\n\n5\nADD\nt2\nt4\nt5\nWaiting\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\nWe know the value of x1, x2, y1 and y2: fill them in.\n\nWe start by writing our instructions in a table. CPU does this as they come out of the decode stage of the pipeline (very fast) We need to know the inputs (Arg1 and Arg2) and return values to figure out dependencies. First step: fill in any variables whose values we know already."
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#nor",
-    "href": "CSC4001-S01-Logic.html#nor",
-    "title": "Logic Gates",
-    "section": "NOR",
-    "text": "NOR\nOutput \\(Q\\) is True only when *both** inputs \\(A\\) and \\(B\\) are False.\n\n\nDefining Truth Table:\n\n\n\n\\(A\\)\n\\(B\\)\n\\(Q = A\\ \\mathrm{NAND}\\ B\\)\n\n\n\n\n\\(1\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(1\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\n\nLogic gate:"
+    "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-1",
+    "href": "CSC4001-S06-CPU2.html#table-of-instructions-1",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Table of instructions",
+    "text": "Table of instructions\n\n\n\n\n\n\n\n\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\nt1\nReady\n\n\n2\nMUL\nt1\nt1\nt2\nWaiting\n\n\n3\nSUB\n11\n’20|t3| **Ready** | | 4  |MUL|t3|t3|t4| Waiting | | 5  |ADD|t2|t4|t5| Waiting | | 6  |SQRT|t5| --    |D`\nWaiting\n\n\n\n\n\nInstructions 1 and 3 are ready and can be executed in parallel."
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#nor-example",
-    "href": "CSC4001-S01-Logic.html#nor-example",
-    "title": "Logic Gates",
-    "section": "NOR: example",
-    "text": "NOR: example\n\nOnly running if all cores are not in unsafe state.\n\nDetects Xenon buildup in each reactor in the nuclear power plant.\nIf ANY reactor registers True (unsafe condition) the safety system activates.\nAll cores are shutdown safely.\nPower station running if NONE of the cores are unsafe."
+    "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-2",
+    "href": "CSC4001-S06-CPU2.html#table-of-instructions-2",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Table of instructions",
+    "text": "Table of instructions\n\n\n\n\n\n\n\n\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\nt1\nt1\nt2\nWaiting\n\n\n3\nSUB\n11\n’20|-9| Done | | 4  |MUL|t3|t3|t4| Waiting | | 5  |ADD|t2|t4|t5| Waiting | | 6  |SQRT|t5| --    |D`\nWaiting\n\n\n\n\n\nNow t1 and t3 are known, some more instructions become ready."
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#exercise-logic-gate-simulator",
-    "href": "CSC4001-S01-Logic.html#exercise-logic-gate-simulator",
-    "title": "Logic Gates",
-    "section": "Exercise: logic gate simulator",
-    "text": "Exercise: logic gate simulator\n\n\n\n\n\n\n\n\n\n\n\n\nGo to https://logic.ly/demo.\nAdd two Toggle Switches as inputs and one Light Bulb as the output."
+    "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-3",
+    "href": "CSC4001-S06-CPU2.html#table-of-instructions-3",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Table of instructions",
+    "text": "Table of instructions\n\n\n\n\n\n\n\n\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\nt2\nReady\n\n\n3\nSUB\n11\n’20|-9| Done | | 4  |MUL|-9|-9|t4| **Ready** | | 5  |ADD|t2|t4|t5| Waiting | | 6  |SQRT|t5| --    |D`\nWaiting\n\n\n\n\n\nInstructions 2 and 4 are ready and can be executed in parallel."
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#exercise-one-gate-in-terms-of-another",
-    "href": "CSC4001-S01-Logic.html#exercise-one-gate-in-terms-of-another",
-    "title": "Logic Gates",
-    "section": "Exercise: One gate in terms of another",
-    "text": "Exercise: One gate in terms of another\nBuild the following:\n\nan AND gate using only NOT and OR;\nan OR using only NOT and AND;\na NOT gate using only NAND;\nan AND gate using only NAND;\nan OR gate using only NAND;\nNOT, AND and OR gates using only NOR.\n\n\nUse the simulator, do it on paper, of if hardware is available, could even build real circuits."
+    "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-4",
+    "href": "CSC4001-S06-CPU2.html#table-of-instructions-4",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Table of instructions",
+    "text": "Table of instructions\n\n\n\n\n\n\n\n\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\n25\nDone\n\n\n3\nSUB\n11\n’20|-9| Done | | 4  |MUL|-9|-9|81| Done | | 5  |ADD|25|81|t5| **Ready** | | 6  |SQRT|t5| --    |D`\nWaiting\n\n\n\n\n\nInstruction 5, which depends on t2 and t4 can now be executed."
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#universal-logic-gates",
-    "href": "CSC4001-S01-Logic.html#universal-logic-gates",
-    "title": "Logic Gates",
-    "section": "Universal logic gates",
-    "text": "Universal logic gates\n\nA universal logic gate (or logical operator) can be used to represent any other logical operator.\nWhich of the logical operators AND, OR, NAND and NOR are universal?"
+    "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-5",
+    "href": "CSC4001-S06-CPU2.html#table-of-instructions-5",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Table of instructions",
+    "text": "Table of instructions\n\n`t5 = 105’\nD = sqrt(105)."
   },
   {
-    "objectID": "CSC4001-S01-Logic.html#universal-logic-gates-solution",
-    "href": "CSC4001-S01-Logic.html#universal-logic-gates-solution",
-    "title": "Logic Gates",
-    "section": "Universal logic gates Solution",
-    "text": "Universal logic gates Solution\n\nNAND and NOR"
+    "objectID": "CSC4001-S06-CPU2.html#next-time",
+    "href": "CSC4001-S06-CPU2.html#next-time",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Next time",
+    "text": "Next time\nMemory architecture / academic skills workshop."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#learning-outcomes",
+    "href": "CSC4001-S03-VonNeumann.html#learning-outcomes",
+    "title": "Architecture overview",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n\nState the five components of a Von Neumann computer.\nDescribe the difference between the Von Neumann and Harvard architecture.\nExplain the advantages and disadvantages of the Von Neumann vs Harvard architectures.\nArgue for the “best” architecture in a given situation."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#architecture",
+    "href": "CSC4001-S03-VonNeumann.html#architecture",
+    "title": "Architecture overview",
+    "section": "Architecture",
+    "text": "Architecture\n\n\n\n\n\n\n\n\n\n\n\n\n“Computer architecture, like other architecture, is the art of determining the needs of the user of a structure and then designing to meet those needs as effectively as possible within economic and technological constraints.”\n– Frederick P. Brooks\n\n\nBrooks was an American computer architect, software engineer and computer scientist who managed IBM 360 series of mainframes and their accompanying software."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture",
+    "href": "CSC4001-S03-VonNeumann.html#computer-architecture",
+    "title": "Architecture overview",
+    "section": "Computer Architecture",
+    "text": "Computer Architecture\n\nA description of a computer (or computer system) which is made from component parts.\nOften a high-level description, indicating how components are linked and what each does.\nSometimes includes details such as the instruction set used and other implementation details."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-1",
+    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-1",
+    "title": "Architecture overview",
+    "section": "Computer Architecture",
+    "text": "Computer Architecture\n\nFirst documented computer architecture was in correspondence between Charles Babbage and Ada Lovelace, where Babbage described his analytical engine.\n1936, Conrad Zeus described a computer where both instructions and data are stored in the same memory: First documented instance of a “stored program” or general purpose computer."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-2",
+    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-2",
+    "title": "Architecture overview",
+    "section": "Computer Architecture",
+    "text": "Computer Architecture\n\n1945, John Von Neumann described the famous Von Neumann Architecture in his paper on the EDVAC computer (successor to the ENIAC)."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-3",
+    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-3",
+    "title": "Architecture overview",
+    "section": "Computer Architecture",
+    "text": "Computer Architecture\n\n1946, Alan Turing wrote a detailed proposal for the electronic calculator, Automatic Computing Engine, citing Von Neumann."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#von-neumann-architecture",
+    "href": "CSC4001-S03-VonNeumann.html#von-neumann-architecture",
+    "title": "Architecture overview",
+    "section": "Von Neumann Architecture",
+    "text": "Von Neumann Architecture\n\n\nArrows represent data transfer connections and directions. I.e., there is an arrow in both directions between the memory and the arithmetic logic unit, representing a “shared bus”. We will see later that this shared bus can be a bottleneck."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#five-components",
+    "href": "CSC4001-S03-VonNeumann.html#five-components",
+    "title": "Architecture overview",
+    "section": "Five components",
+    "text": "Five components\n\nStore\nControl Unit\nArithmetic Logic Unit\ninput\nOutput"
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#store",
+    "href": "CSC4001-S03-VonNeumann.html#store",
+    "title": "Architecture overview",
+    "section": "Store",
+    "text": "Store\n\nTo store data and instructions. E.g., paper tape, magnetic tape, RAM."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#control-unit",
+    "href": "CSC4001-S03-VonNeumann.html#control-unit",
+    "title": "Architecture overview",
+    "section": "Control Unit",
+    "text": "Control Unit\n\ndecides which instruction to perform next."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#arithmetic-logic-unit",
+    "href": "CSC4001-S03-VonNeumann.html#arithmetic-logic-unit",
+    "title": "Architecture overview",
+    "section": "Arithmetic Logic Unit",
+    "text": "Arithmetic Logic Unit\n\nPerforms calculations.\n\nTypically the ALU and control unit are combined into the CPU.\nOperations performed on the hardware, or implemented in software.\nIn early computers, electromechanical hardware was used; these days transistors are used, which require much less energy."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#input-and-output",
+    "href": "CSC4001-S03-VonNeumann.html#input-and-output",
+    "title": "Architecture overview",
+    "section": "Input and Output",
+    "text": "Input and Output\n\nMeans for the user to interact with the computer.\n\nKeyboard, mouse, camera, sensors.\nMonitor, speakers.\nVaried and interesting ways for humans and computers to interact."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#key-features",
+    "href": "CSC4001-S03-VonNeumann.html#key-features",
+    "title": "Architecture overview",
+    "section": "Key features",
+    "text": "Key features\n\nInstructions and data are stored in the same memory.\nSimple, cost-effective and widely used.\n\n\n\nSingle bus to transfer all data.\nThis can cause a bottleneck.\nSequential architecture Can limit speed of processing. : CPU can perform only one instruction at a time.\nThis is the architecture found in most desktop PCs today."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#harvard-architecture",
+    "href": "CSC4001-S03-VonNeumann.html#harvard-architecture",
+    "title": "Architecture overview",
+    "section": "Harvard Architecture",
+    "text": "Harvard Architecture"
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#harvard-architecture-1",
+    "href": "CSC4001-S03-VonNeumann.html#harvard-architecture-1",
+    "title": "Architecture overview",
+    "section": "Harvard Architecture",
+    "text": "Harvard Architecture\n\nHas separate memory for instructions and data.\nWell suited to embedded systems and main-frames.\n\n\n\nReduces the memory bottleneck found in Von Neumann machines.\n\nLess contention as there is no shared bus.\nData and instruction access can be done simultaneously.\nLess flexible than Von-Neumann. E.g., instructions cannot be modified at run-time."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#in-small-groups",
+    "href": "CSC4001-S03-VonNeumann.html#in-small-groups",
+    "title": "Architecture overview",
+    "section": "In small groups",
+    "text": "In small groups\n\nIn which situations is each architecture used?\n\nToday and historically?\nWhy is it a good choice for that situation, or why not?\n\nThings to think about:\n\nwhere are the bottlenecks?\nspecial purpose vs general purpose\ndata integrity / tampering / security"
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#section",
+    "href": "CSC4001-S03-VonNeumann.html#section",
+    "title": "Architecture overview",
+    "section": "1949",
+    "text": "1949\n\n“The”brain” [computer] may one day come down to our level [of the common people] and help with our income-tax and book-keeping calculations. But this is speculation and there is no sign of it so far.”\n\n– British newspaper The Star in a June 1949 news article about the EDSAC computer."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#section-1",
+    "href": "CSC4001-S03-VonNeumann.html#section-1",
+    "title": "Architecture overview",
+    "section": "1953",
+    "text": "1953\n\n“I think there is a world market for maybe five computers.”\n\n– Thomas Watson, IBM Chairman, although this is now thought to be urban legend.\n\nThe “brain” computer has now very much “come down to the level of the common people”, and does much more than just book-keeping.\nRegarding the Watson quote, it is now thought to be an urban legend. see https://geekhistory.com/content/urban-legend-i-think-there-world-market-maybe-five-computers\n“We believe the statement that you attribute to Thomas Watson is a misunderstanding of remarks made at IBM’s annual stockholders meeting on April 28, 1953. In referring specifically and only to the IBM 701 Electronic Data Processing Machine – which had been introduced the year before as the company’s first production computer designed for scientific calculations – Thomas Watson, Jr., told stockholders that “IBM had developed a paper plan for such a machine and took this paper plan across the country to some 20 concerns that we thought could use such a machine. I would like to tell you that the machine rents for between $12,000 and $18,000 a month, so it was not the type of thing that could be sold from place to place. But, as a result of our trip, on which we expected to get orders for five machines, we came home with orders for 18.” https://geekhistory.com/content/urban-legend-i-think-there-world-market-maybe-five-computers"
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#learning-outcomes-1",
+    "href": "CSC4001-S03-VonNeumann.html#learning-outcomes-1",
+    "title": "Architecture overview",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n\nGive an overview of early computers: use, specs, how they were programmed.\nCompare early and modern computers\nExplain how developments in early computing have influenced modern computer hardware."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#integers",
+    "href": "CSC4001-S03-VonNeumann.html#integers",
+    "title": "Architecture overview",
+    "section": "Integers",
+    "text": "Integers\n\nWe already saw that an unsigned integer number can be represented in Binary.\nUsually the right-most bit represents the least significant digit.\nLittle-endian representation.\nSigned integers may be represented in several ways:\n\nSign+magnitude: one bit is reserved for the sign, the rest for the value.\nThis representation allows \\(+0\\) and \\(-0\\).\nOne’s complement: positive numbers represented as usual, negative numbers represented by flipping all their bits.\nAgain, we have \\(+0\\) and \\(-0\\).\nTwo’s complement: positive numbers represented as usual, negative numbers represented by adding one then flipping all their bits.\nonly one \\(0\\), no redundancy."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-numbers",
+    "href": "CSC4001-S03-VonNeumann.html#floating-point-numbers",
+    "title": "Architecture overview",
+    "section": "Floating point numbers",
+    "text": "Floating point numbers\n\nIEEE 754 defines a standard for representing and manipulating floating point numbers.\nRepresented in a similar way to scientific notation.\nE.g., \\(300,000,000 = 3 \\times 10^8\\).\n\nThe \\(3\\) is called the fraction (coefficient or mantissa).\nThe \\(8\\) (from \\(10^8\\)) is called the exponent.\n\nIEEE 754 defines:\n\nThe base, typically \\(2\\) for binary, but sometimes \\(10\\).\nPrecision (number of digits to represent the fraction).\nAn exponent range."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-numbers-1",
+    "href": "CSC4001-S03-VonNeumann.html#floating-point-numbers-1",
+    "title": "Architecture overview",
+    "section": "Floating point numbers",
+    "text": "Floating point numbers\n\nUsing \\(n\\) bits, the representation consists of\n\n\\(1\\) bit for the sign,\n\\(n - p - 1\\) bits for the exponent.\n\\(p\\) bits for the fraction (stored in Binary),\n\nAny signed number up to \\(p\\) significant digits and a maximum exponent of \\(n-p-1\\) can be defined.\nPositive and negative infinity.\nA representation for not a number, e.g., for the result of division by zero."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#bit-floating-point",
+    "href": "CSC4001-S03-VonNeumann.html#bit-floating-point",
+    "title": "Architecture overview",
+    "section": "32-bit floating point",
+    "text": "32-bit floating point\nRepresentation used for the float type in many programming languages.\n\n\n\\(32\\) bits:\n\n\\(1\\) bit for the sign,\n\\(8\\) bits for the exponent,\n\\(23\\) bits for the fraction.\n\nAround \\(7\\) decimal digits for the fraction.\nA double uses \\(64\\) bits, \\(52\\) bits (around \\(16\\) decimal digits)."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-numbers-2",
+    "href": "CSC4001-S03-VonNeumann.html#floating-point-numbers-2",
+    "title": "Architecture overview",
+    "section": "Floating point numbers",
+    "text": "Floating point numbers\nAdvantages\n\nEfficient representation of very large and very small numbers.\nFast computation due to many years of hardware development.\n\nDisadvantages\n\nFloating point errors."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#precision-and-accuracy",
+    "href": "CSC4001-S03-VonNeumann.html#precision-and-accuracy",
+    "title": "Architecture overview",
+    "section": "Precision and accuracy",
+    "text": "Precision and accuracy\n\nPrecision: how many significant digits,\nAccuracy: how close to the true value.\n\nA value may be precise but not accurate, accurate but not precise, or both inaccurate and imprecise."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-errors",
+    "href": "CSC4001-S03-VonNeumann.html#floating-point-errors",
+    "title": "Architecture overview",
+    "section": "Floating point errors",
+    "text": "Floating point errors\n\nWe know that \\(1/3 + 1/3 + 1/3 = 1\\).\nHowever, \\(0.3333333333 + 0.3333333333 + 0.3333333333 = 0.9999999999\\)!\n\\(1/10\\) is easy to represent in decimal: \\(0.1\\).\nHowever, in binary, it is \\(0.001100110011\\).\nFloating point representation is sufficient for most applications, e.g., 3D games.\nHowever, we have to take care with things like currency, which must be correct."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#but-first-why-are-we-doing-this",
+    "href": "CSC4001-S03-VonNeumann.html#but-first-why-are-we-doing-this",
+    "title": "Architecture overview",
+    "section": "But first, why are we doing this?",
+    "text": "But first, why are we doing this?\n\nGain perspective.\nUnderstanding of why things are the way they are today.\nLearn from previous successes and failures."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#the-eniac-1945",
+    "href": "CSC4001-S03-VonNeumann.html#the-eniac-1945",
+    "title": "Architecture overview",
+    "section": "The ENIAC (1945)",
+    "text": "The ENIAC (1945)\n\n\nElectronic Numerical Integrator and Computer\n\nSpecial purpose computer for artillery firing table calculations.\nLocated at the School of Engineering and Applied Science, Pennsylvania State University\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCould be “programmed” by using the plug-board and switches, data entered via punched cards.\nLater converted into a stored program computer.\nBase-10 arithmetic instead of the usual binary.\nUsed vacuum tubes, which burnt out often – high maintenance."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#colossus-1943-45",
+    "href": "CSC4001-S03-VonNeumann.html#colossus-1943-45",
+    "title": "Architecture overview",
+    "section": "Colossus (1943-45)",
+    "text": "Colossus (1943-45)\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecial purpose computer developed at Bletchley Park to help break the Lorenz cipher.\nDesigned by Tommy Flowers, a research engineer at the General Post Office, based on plans by Code and Cipher School mathematician Max Newman.\n\n\n\n\nUsed vacuum tubes; programmed using switches and a plug board.\nData memory was a cycling strip of paper tape.\nColossus Mk II, which used shift registers to run 6 times faster, went into operation in time for the D-day landings.\nBy the end of the war, 10 Colossi were in operation."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#general-purpose-computers-post-ww2",
+    "href": "CSC4001-S03-VonNeumann.html#general-purpose-computers-post-ww2",
+    "title": "Architecture overview",
+    "section": "General purpose computers (post WW2)",
+    "text": "General purpose computers (post WW2)\nVon Neumann arranged a 6-week summer workshop to design and build a new type of computer.\n\nGeneral purpose: many early computers were designed with a specific task in mind, which meant they were difficult to repurpose.\nVon Neumann wanted to build a stored program computer.\nElectronic:replacing electromechanical components which were brittle, hot and noisy.\nColossus and the ENIAC both consumed 150KW of power.\nUse binary, which is the easiest encoding to work with when using electronic components."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#maurice-wilkes",
+    "href": "CSC4001-S03-VonNeumann.html#maurice-wilkes",
+    "title": "Architecture overview",
+    "section": "Maurice Wilkes",
+    "text": "Maurice Wilkes\n\nCambridge mathematician, physics PhD on “radio propagation of very long radio waves in the ionosphere”.\nAttended Jon Neumann’s workshop, then returned to Cambridge to build the EDSAC machine.\nWorked in radar during WW2, which inspired the memory technology for EDSAC.\nMemory was a limitation for early electronic computers, Wilkes used “delay lines”, mercury tubes and an oscilloscope, as memory.\n\n\nMore information on mercury delay lines: Radar pulses were captured and played as sound waves. Sound waves passed through mercury, which slowed them down. Picked up by a microphone and displayed no an oscilloscope screen. Sound wave amplified and played back through the speaker so the pulse would repeat as long as needed."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#edsac-6-may-1949",
+    "href": "CSC4001-S03-VonNeumann.html#edsac-6-may-1949",
+    "title": "Architecture overview",
+    "section": "EDSAC (6 May 1949)",
+    "text": "EDSAC (6 May 1949)\n\n\nElectronic Delay Storage Automatic Calculator\n\nOne of the first stored program computers which used binary.\nDeveloped by Maurice Wilkes, William Renwick (hardware engineer) and David Wheeler (first system software engineer).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCould perform 700 additions or 200 multiplications per second.\n512 18-bit words of memory for programs and data, upgraded to 1024 18-bit words in 1952.\nData and programs were loaded via 5-hole punched paper tape, initial orders instructed the computer to load the program.\nConsumed 11KW of power.\nThe delay line memory was sub-optimal, but one of the best options at the time.\nAlthough the words were 18-bits, only 17 bits were used in practice owing to unreliability of memory. ## Programming the EDSAC\nPrograms designed on paper and then punched, in assembler, onto 5-hole paper tape. Programmers became proficient at reading programs from the tape.\nProgrammers would hang their tape on a line, waiting for an operator to run them – the first “job queue”.\nOperator would load program and data and then either return the printed output or inform the programmer of the memory address at which the program failed. ## Operating EDSAC\nBuilt-in add, multiply, bus and conditional jump.\n\nNo load. Instead, Instead clear the register (set to \\(0\\)) and add the value from memory to the register.\nNo division, but it was included as a subroutine.\n\nIn case of a program error, the operator would inform the programmer at which address their program failed.\nThere was no debugger. An oscilloscope screen showed the state of the registers, and a speaker played a different note depending on the value of the accumulator register. An experienced programmer learnt the sound of a failing program, e.g., if there was an infinite loop. ## Operating EDSAC\nProgrammers had to use “bad” programming technique. E.g., to access a different array element, the code would modify itself to point to the correct address.\nNo built-in mechanism for subroutines, instead perform a Wheeler jump: Jump with return memory address, computer would modify the last instruction of the subroutine to jump back to this return address.- No recursion was possible on the EDSAC. Turing proposed the call stack in his 1945 paper, which implemented subroutines “properly” and allowed recursion."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#usage",
+    "href": "CSC4001-S03-VonNeumann.html#usage",
+    "title": "Architecture overview",
+    "section": "Usage",
+    "text": "Usage\nA condition for funding was that EDSAC must provide a service, as opposed to just being an engineering experiment.\n\nRonald Fisher, with Wilkes and Wheeler, used EDSAC to solve a differential equation for gene frequency – first use of computers in biology.\nIn 1951, Miller and Wheeler computed a 79-digit prime number, the largest known at its time.\nEDSAC played a role in Nobel-prize-winning research: Nobel laureates thanked EDSAC in their acceptance speech. John Kendrew and Max Perutz (Chemistry, 1962), Andrew Huxley (Medicine, 1963) and Martin Ryle (Physics, 1974)\nEDSAC remained in operation until 11 July 1958, when it was superseded by EDSAC 2, which ran until 1965."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#exercise-computer-history-research",
+    "href": "CSC4001-S03-VonNeumann.html#exercise-computer-history-research",
+    "title": "Architecture overview",
+    "section": "Exercise: computer history research",
+    "text": "Exercise: computer history research\nIn pairs, teams, or individually…\n\nChoose a computer from history. Find out:\n\nWho created it, and when?\nWhat could it do? hardware operations\nSpecs: processing, memory, operations per second.\nHow was it programmed? Could it be programmed?\nHow did programmers / operators / scientists interact with it? Input/output mechanisms, how was it debugged?"
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#exercise-play-with-the-edsac-simulator",
+    "href": "CSC4001-S03-VonNeumann.html#exercise-play-with-the-edsac-simulator",
+    "title": "Architecture overview",
+    "section": "Exercise: play with the EDSAC simulator",
+    "text": "Exercise: play with the EDSAC simulator\n\nMartin Campbell Kelly, University of Warwick, developed an EDSAC simulator.\nhttps://dcs.warwick.ac.uk/~edsac/\nSeveral programs and games are available.\nTry Sandy Douglas’ OXO game (a tic-tac-toe game vs the computer).\nAlthough a faithful simulation, it is still easier to use than the real thing – imagine loading the paper tape, vacuum tubes blowing frequently, and try setting the speed to EDSAC real-time."
+  },
+  {
+    "objectID": "CSC4001-S05W-GoingUp.html",
+    "href": "CSC4001-S05W-GoingUp.html",
+    "title": "Workshop: Going up",
+    "section": "",
+    "text": "Every elevator you’ve ever ridden is run by a small computer following a surprisingly short list of rules. Today you’ll write those rules yourself.\nYour kit has an Arduino, a 144-LED strip standing upright as the elevator shaft, and three call buttons, one for each floor. The hardware is already wired up and a helper file draws everything on the strip for you, so all of your effort goes into the logic.\n\n\nBy the end of the session you’ll have designed a state machine (states, events and transitions), used non-blocking timing with millis() instead of delay(), used an array to remember requests, compared scheduling algorithms and argued about their trade-offs, and tested your code against scenarios and invariants.\n\nKit rules. Don’t unplug or rewire anything while the power supply is on. Don’t change BRIGHTNESS or edit ElevatorHAL.h. A full strip at full brightness draws far more power than the kit is built for. If something looks wrong with the hardware, ask a demonstrator.\n\n\n\n\n\nThe strip stands upright with LED 0 at the bottom, split into three floors of 48 LEDs each.\n\n\n\nFloor\nButton\nCar sits on LEDs\n\n\n\n\n0 (ground)\npin 2\n19–28\n\n\n1\npin 3\n67–76\n\n\n2\npin 4\n115–124\n\n\n\n\n\n\n\n\n\n\nYou see\nIt means\n\n\n\n\nA dim white pair of LEDs\nThe landing lights for a floor\n\n\nA blue pair\nSomeone is waiting at that floor (a call)\n\n\nA white–amber–white block\nThe car, doors shut\n\n\nA green gap in the middle of the car\nThe doors are open\n\n\nRed LEDs at both ends of the strip\nYour car has left the shaft. That’s a bug!\n\n\n\nThe doors are the eight middle LEDs of the car, controlled by the variable doorOpen (W = white frame, A = amber door, G = green gap):\ndoorOpen = 0   W A A A A A A A A W   shut\ndoorOpen = 1   W A A A G G A A A W\ndoorOpen = 2   W A A G G G G A A W\ndoorOpen = 3   W A G G G G G G A W\ndoorOpen = 4   W G G G G G G G G W   fully open  (DOOR_STEPS)\n\n\n\nYour sketch includes ElevatorHAL.h. You don’t edit it; you call these functions:\n\n\n\n\n\n\n\nFunction\nWhat it does\n\n\n\n\nhal_buttonPressed(f)\ntrue once for each press of floor f’s button\n\n\nhal_buttonHeld(f)\ntrue for as long as floor f’s button is held down\n\n\nhal_floorPosition(f)\nThe LED index where the bottom of the car sits at floor f\n\n\nhal_floorAt(carPos)\nThe floor the car is level with, or -1 if it’s between floors\n\n\nhal_draw(carPos, doorOpen, calls)\nDraws everything. Already the last line of loop()\n\n\n\nUseful constants: NUM_FLOORS (3), NUM_LEDS (144), DOOR_STEPS (4).\nThe starter sketch already declares the states and variables, and gives you changeState(newState). It switches state, restarts timer, and prints the change to the Serial Monitor, so you can always see what your elevator thinks it’s doing. Always change state with changeState, never with state = ....\n\n\n\n\n\n\nAt every moment, your elevator is in exactly one of five states: IDLE, MOVING, DOORS_OPENING, DOORS_OPEN or DOORS_CLOSING.\nEvery time round loop(), the code asks: what state am I in, and has anything happened that means I should act or change state? That’s the switch statement in the starter sketch.\nA transition is a move from one state to another. It’s triggered by an event (a button press) or a condition (a timer running out, the car reaching a floor).\n\n\n\ndelay(2000) freezes the whole Arduino for two seconds. No buttons are read and no LEDs are updated. An elevator that ignored everyone while its doors were open would be a pretty bad elevator.\nInstead, check the clock and only act once enough time has passed:\nif (millis() - timer &gt;= MOVE_STEP_MS) {\n  timer = millis();   // restart the timer\n  // do ONE small step, e.g. move the car by one LED\n}\nloop() runs thousands of times a second, so lots of tiny steps look like smooth movement, and the buttons get checked between every one of them.\n\nWatch out: store times in unsigned long, never int. On an Arduino Uno an int tops out at 32,767, which is only about 33 seconds’ worth of millis().\n\n\n\n\n\n\n\n\n\nOpen ElevatorStarter.ino in the Arduino IDE and check that ElevatorHAL.h appears as a second tab.\nUpload it, then open Tools → Serial Monitor and set it to 115200 baud.\nYou should see the car on the ground floor and dim landing lights on all three floors.\n\nDone when: pressing each button prints the right floor number.\n\n\n\nWhen a button is pressed and the elevator is IDLE, the car should travel to that floor and stop. Forget the doors for now.\nIn the input section, if the state is IDLE, set targetFloor, set direction to +1 (up) or -1 (down), and call changeState(MOVING).\nIn case MOVING:, use the timer pattern to add direction to carPos every MOVE_STEP_MS. When carPos equals hal_floorPosition(targetFloor), change back to IDLE.\nThink: what happens if you press the button for the floor you’re already on? What should happen?\nDone when: the car glides to whichever floor you ask for, and presses while it’s moving are ignored.\n\n\n\nBefore writing any more code, draw a state diagram. Draw all five states as circles. Draw an arrow for every possible transition and label each arrow with the event or condition that causes it.\nYour diagram should answer these questions. What must be true before the car is allowed to move? What happens when the doors finish opening, and when they finish closing? Which states need a timer?\nDone when: a demonstrator has checked your diagram.\n\n\n\nChange MOVING so that arriving at the target floor opens the doors instead of going straight to IDLE. Then fill in the three door states, following your diagram:\n\nDOORS_OPENING: every DOOR_STEP_MS, add one to doorOpen. When it reaches DOOR_STEPS, go to DOORS_OPEN.\nDOORS_OPEN: once DOOR_HOLD_MS has passed, go to DOORS_CLOSING.\nDOORS_CLOSING: every DOOR_STEP_MS, subtract one from doorOpen. When it reaches 0, go to IDLE.\n\nDone when: the car arrives, the doors slide open, wait two seconds, then slide shut, and the Serial Monitor shows the whole sequence of states.\n\n\n\nAt the moment, anyone who presses a button while the car is busy is ignored. Real elevators remember.\nReplace your Task 1 button code with a single line: calls[f] = true; (you’ll see that floor’s landing lights turn blue). Then move the decision-making into case IDLE:. Look for a floor with a call: if it’s the floor the car is already on, clear the call and open the doors; otherwise set targetFloor and direction and start moving. When the car arrives, clear that floor’s call.\nDone when: you can press all three buttons quickly and every floor gets visited, with no blue lights left behind.\n\n\n\nIf the car is travelling from floor 0 to floor 2 and someone on floor 1 presses their button in time, the car should stop at floor 1 first.\nIn MOVING, after each step, use hal_floorAt(carPos) to find out whether the car is level with a floor. If that floor has a call, stop there.\nDone when: test scenarios 3 and 4 behave as expected.\n\n\n\nWhen several floors are waiting, which should the car visit next? Write a function int chooseNextCall(int here) that returns a floor number, or -1 if nobody is waiting, and use it in IDLE.\nTry at least two of these strategies:\n\nLowest floor first. Simple, but is it fair?\nNearest floor first.\nKeep going the same way while anyone is waiting further along in that direction, and only then turn around. This is known as the elevator algorithm (or SCAN).\n\nDiscuss with your partner: can you invent a sequence of button presses where somebody waits forever under one of these strategies? Which would you want in a 50-storey building?\n\n\n\nHold the doors. If someone presses the button for the floor the car is stopped at while the doors are closing, open them again. If the doors are already fully open, restart the hold timer so they stay open longer.\nCheck your invariants. An invariant is something that must always be true, no matter what. After the switch, add checks that print a warning to the Serial Monitor if either of these ever happens: the state is MOVING but doorOpen isn’t 0, or carPos is outside the shaft.\nDone when: every scenario in the test table below passes with no warnings.\n\n\n\n\n\nPress the Arduino’s reset button before each test. A test only passes if the car does what’s described and no safety warnings appear.\n\n\n\n\n\n\n\n\n\n#\nStarting point\nDo this\nExpected result\n\n\n\n\n1\nIdle at floor 0\nPress 2\nTravels past floor 1 without stopping; doors open at 2\n\n\n2\nIdle at floor 0\nPress 0\nDoors open and close; the car doesn’t move\n\n\n3\nIdle at floor 0\nPress 2, then press 1 while the car is still below floor 1\nStops at 1, then carries on to 2\n\n\n4\nIdle at floor 0\nPress 2, then press 1 just after the car passes floor 1\nGoes to 2 first, then comes back down to 1\n\n\n5\nDoors closing at floor 1\nPress 1\nDoors open again\n\n\n6\nDoors open at floor 1, having travelled up from 0\nPress 0, then press 2\nYou decide. Write down what your algorithm does and why\n\n\n7\nIdle at floor 0\nPress 0, 1 and 2 in quick succession\nEvery floor is visited once; all blue lights clear\n\n\n8\nDoors open at floor 1\nPress 1 about once a second\nDoors stay open; the car never moves with its doors open\n\n\n9\nCar moving towards floor 2\nMash the floor 2 button\nNothing strange happens\n\n\n\n\n\n\n\n\nHome time. After 10 seconds idle with no calls, send the car back to the ground floor.\nEmergency stop. While all three buttons are held down (hal_buttonHeld), the car freezes where it is, even between floors.\nSmooth ride. Make the car speed up as it leaves a floor and slow down as it arrives by varying the step time.\nDing! Add a piezo buzzer to a spare pin and use tone() to play a chime when the doors open.\nFour floors. What would need to change? Talk it through with a demonstrator before touching ElevatorHAL.h.\nBrain and body. Move all of your decision-making into functions that never touch the hardware. How would that let you test your elevator on a laptop with no Arduino at all? Why might a real elevator company care about that?"
+  },
+  {
+    "objectID": "CSC4001-S05W-GoingUp.html#what-youll-practise",
+    "href": "CSC4001-S05W-GoingUp.html#what-youll-practise",
+    "title": "Workshop: Going up",
+    "section": "",
+    "text": "By the end of the session you’ll have designed a state machine (states, events and transitions), used non-blocking timing with millis() instead of delay(), used an array to remember requests, compared scheduling algorithms and argued about their trade-offs, and tested your code against scenarios and invariants.\n\nKit rules. Don’t unplug or rewire anything while the power supply is on. Don’t change BRIGHTNESS or edit ElevatorHAL.h. A full strip at full brightness draws far more power than the kit is built for. If something looks wrong with the hardware, ask a demonstrator."
+  },
+  {
+    "objectID": "CSC4001-S05W-GoingUp.html#reading-the-shaft",
+    "href": "CSC4001-S05W-GoingUp.html#reading-the-shaft",
+    "title": "Workshop: Going up",
+    "section": "",
+    "text": "The strip stands upright with LED 0 at the bottom, split into three floors of 48 LEDs each.\n\n\n\nFloor\nButton\nCar sits on LEDs\n\n\n\n\n0 (ground)\npin 2\n19–28\n\n\n1\npin 3\n67–76\n\n\n2\npin 4\n115–124\n\n\n\n\n\n\n\n\n\n\nYou see\nIt means\n\n\n\n\nA dim white pair of LEDs\nThe landing lights for a floor\n\n\nA blue pair\nSomeone is waiting at that floor (a call)\n\n\nA white–amber–white block\nThe car, doors shut\n\n\nA green gap in the middle of the car\nThe doors are open\n\n\nRed LEDs at both ends of the strip\nYour car has left the shaft. That’s a bug!\n\n\n\nThe doors are the eight middle LEDs of the car, controlled by the variable doorOpen (W = white frame, A = amber door, G = green gap):\ndoorOpen = 0   W A A A A A A A A W   shut\ndoorOpen = 1   W A A A G G A A A W\ndoorOpen = 2   W A A G G G G A A W\ndoorOpen = 3   W A G G G G G G A W\ndoorOpen = 4   W G G G G G G G G W   fully open  (DOOR_STEPS)"
+  },
+  {
+    "objectID": "CSC4001-S05W-GoingUp.html#your-toolkit",
+    "href": "CSC4001-S05W-GoingUp.html#your-toolkit",
+    "title": "Workshop: Going up",
+    "section": "",
+    "text": "Your sketch includes ElevatorHAL.h. You don’t edit it; you call these functions:\n\n\n\n\n\n\n\nFunction\nWhat it does\n\n\n\n\nhal_buttonPressed(f)\ntrue once for each press of floor f’s button\n\n\nhal_buttonHeld(f)\ntrue for as long as floor f’s button is held down\n\n\nhal_floorPosition(f)\nThe LED index where the bottom of the car sits at floor f\n\n\nhal_floorAt(carPos)\nThe floor the car is level with, or -1 if it’s between floors\n\n\nhal_draw(carPos, doorOpen, calls)\nDraws everything. Already the last line of loop()\n\n\n\nUseful constants: NUM_FLOORS (3), NUM_LEDS (144), DOOR_STEPS (4).\nThe starter sketch already declares the states and variables, and gives you changeState(newState). It switches state, restarts timer, and prints the change to the Serial Monitor, so you can always see what your elevator thinks it’s doing. Always change state with changeState, never with state = ...."
+  },
+  {
+    "objectID": "CSC4001-S05W-GoingUp.html#two-big-ideas-before-you-start",
+    "href": "CSC4001-S05W-GoingUp.html#two-big-ideas-before-you-start",
+    "title": "Workshop: Going up",
+    "section": "",
+    "text": "At every moment, your elevator is in exactly one of five states: IDLE, MOVING, DOORS_OPENING, DOORS_OPEN or DOORS_CLOSING.\nEvery time round loop(), the code asks: what state am I in, and has anything happened that means I should act or change state? That’s the switch statement in the starter sketch.\nA transition is a move from one state to another. It’s triggered by an event (a button press) or a condition (a timer running out, the car reaching a floor).\n\n\n\ndelay(2000) freezes the whole Arduino for two seconds. No buttons are read and no LEDs are updated. An elevator that ignored everyone while its doors were open would be a pretty bad elevator.\nInstead, check the clock and only act once enough time has passed:\nif (millis() - timer &gt;= MOVE_STEP_MS) {\n  timer = millis();   // restart the timer\n  // do ONE small step, e.g. move the car by one LED\n}\nloop() runs thousands of times a second, so lots of tiny steps look like smooth movement, and the buttons get checked between every one of them.\n\nWatch out: store times in unsigned long, never int. On an Arduino Uno an int tops out at 32,767, which is only about 33 seconds’ worth of millis()."
+  },
+  {
+    "objectID": "CSC4001-S05W-GoingUp.html#the-tasks",
+    "href": "CSC4001-S05W-GoingUp.html#the-tasks",
+    "title": "Workshop: Going up",
+    "section": "",
+    "text": "Open ElevatorStarter.ino in the Arduino IDE and check that ElevatorHAL.h appears as a second tab.\nUpload it, then open Tools → Serial Monitor and set it to 115200 baud.\nYou should see the car on the ground floor and dim landing lights on all three floors.\n\nDone when: pressing each button prints the right floor number.\n\n\n\nWhen a button is pressed and the elevator is IDLE, the car should travel to that floor and stop. Forget the doors for now.\nIn the input section, if the state is IDLE, set targetFloor, set direction to +1 (up) or -1 (down), and call changeState(MOVING).\nIn case MOVING:, use the timer pattern to add direction to carPos every MOVE_STEP_MS. When carPos equals hal_floorPosition(targetFloor), change back to IDLE.\nThink: what happens if you press the button for the floor you’re already on? What should happen?\nDone when: the car glides to whichever floor you ask for, and presses while it’s moving are ignored.\n\n\n\nBefore writing any more code, draw a state diagram. Draw all five states as circles. Draw an arrow for every possible transition and label each arrow with the event or condition that causes it.\nYour diagram should answer these questions. What must be true before the car is allowed to move? What happens when the doors finish opening, and when they finish closing? Which states need a timer?\nDone when: a demonstrator has checked your diagram.\n\n\n\nChange MOVING so that arriving at the target floor opens the doors instead of going straight to IDLE. Then fill in the three door states, following your diagram:\n\nDOORS_OPENING: every DOOR_STEP_MS, add one to doorOpen. When it reaches DOOR_STEPS, go to DOORS_OPEN.\nDOORS_OPEN: once DOOR_HOLD_MS has passed, go to DOORS_CLOSING.\nDOORS_CLOSING: every DOOR_STEP_MS, subtract one from doorOpen. When it reaches 0, go to IDLE.\n\nDone when: the car arrives, the doors slide open, wait two seconds, then slide shut, and the Serial Monitor shows the whole sequence of states.\n\n\n\nAt the moment, anyone who presses a button while the car is busy is ignored. Real elevators remember.\nReplace your Task 1 button code with a single line: calls[f] = true; (you’ll see that floor’s landing lights turn blue). Then move the decision-making into case IDLE:. Look for a floor with a call: if it’s the floor the car is already on, clear the call and open the doors; otherwise set targetFloor and direction and start moving. When the car arrives, clear that floor’s call.\nDone when: you can press all three buttons quickly and every floor gets visited, with no blue lights left behind.\n\n\n\nIf the car is travelling from floor 0 to floor 2 and someone on floor 1 presses their button in time, the car should stop at floor 1 first.\nIn MOVING, after each step, use hal_floorAt(carPos) to find out whether the car is level with a floor. If that floor has a call, stop there.\nDone when: test scenarios 3 and 4 behave as expected.\n\n\n\nWhen several floors are waiting, which should the car visit next? Write a function int chooseNextCall(int here) that returns a floor number, or -1 if nobody is waiting, and use it in IDLE.\nTry at least two of these strategies:\n\nLowest floor first. Simple, but is it fair?\nNearest floor first.\nKeep going the same way while anyone is waiting further along in that direction, and only then turn around. This is known as the elevator algorithm (or SCAN).\n\nDiscuss with your partner: can you invent a sequence of button presses where somebody waits forever under one of these strategies? Which would you want in a 50-storey building?\n\n\n\nHold the doors. If someone presses the button for the floor the car is stopped at while the doors are closing, open them again. If the doors are already fully open, restart the hold timer so they stay open longer.\nCheck your invariants. An invariant is something that must always be true, no matter what. After the switch, add checks that print a warning to the Serial Monitor if either of these ever happens: the state is MOVING but doorOpen isn’t 0, or carPos is outside the shaft.\nDone when: every scenario in the test table below passes with no warnings."
+  },
+  {
+    "objectID": "CSC4001-S05W-GoingUp.html#test-scenarios",
+    "href": "CSC4001-S05W-GoingUp.html#test-scenarios",
+    "title": "Workshop: Going up",
+    "section": "",
+    "text": "Press the Arduino’s reset button before each test. A test only passes if the car does what’s described and no safety warnings appear.\n\n\n\n\n\n\n\n\n\n#\nStarting point\nDo this\nExpected result\n\n\n\n\n1\nIdle at floor 0\nPress 2\nTravels past floor 1 without stopping; doors open at 2\n\n\n2\nIdle at floor 0\nPress 0\nDoors open and close; the car doesn’t move\n\n\n3\nIdle at floor 0\nPress 2, then press 1 while the car is still below floor 1\nStops at 1, then carries on to 2\n\n\n4\nIdle at floor 0\nPress 2, then press 1 just after the car passes floor 1\nGoes to 2 first, then comes back down to 1\n\n\n5\nDoors closing at floor 1\nPress 1\nDoors open again\n\n\n6\nDoors open at floor 1, having travelled up from 0\nPress 0, then press 2\nYou decide. Write down what your algorithm does and why\n\n\n7\nIdle at floor 0\nPress 0, 1 and 2 in quick succession\nEvery floor is visited once; all blue lights clear\n\n\n8\nDoors open at floor 1\nPress 1 about once a second\nDoors stay open; the car never moves with its doors open\n\n\n9\nCar moving towards floor 2\nMash the floor 2 button\nNothing strange happens"
+  },
+  {
+    "objectID": "CSC4001-S05W-GoingUp.html#stretch-challenges",
+    "href": "CSC4001-S05W-GoingUp.html#stretch-challenges",
+    "title": "Workshop: Going up",
+    "section": "",
+    "text": "Home time. After 10 seconds idle with no calls, send the car back to the ground floor.\nEmergency stop. While all three buttons are held down (hal_buttonHeld), the car freezes where it is, even between floors.\nSmooth ride. Make the car speed up as it leaves a floor and slow down as it arrives by varying the step time.\nDing! Add a piezo buzzer to a spare pin and use tone() to play a chime when the doors open.\nFour floors. What would need to change? Talk it through with a demonstrator before touching ElevatorHAL.h.\nBrain and body. Move all of your decision-making into functions that never touch the hardware. How would that let you test your elevator on a laptop with no Arduino at all? Why might a real elevator company care about that?"
   }
 ]

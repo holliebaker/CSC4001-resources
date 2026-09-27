@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="">
+
+<title>Workshop: Going up – CSC4001-resources</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-d76b89148f2051d413c67903796ad183.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Workshop: Going up</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="build-an-elevator-controller" class="level1">
+<h1>Build an Elevator Controller</h1>
+<p>Every elevator you’ve ever ridden is run by a small computer following a surprisingly short list of rules. Today you’ll write those rules yourself.</p>
+<p>Your kit has an Arduino, a 144-LED strip standing upright as the elevator shaft, and three call buttons, one for each floor. The hardware is already wired up and a helper file draws everything on the strip for you, so all of your effort goes into the logic.</p>
+<section id="what-youll-practise" class="level2">
+<h2 class="anchored" data-anchor-id="what-youll-practise">What you’ll practise</h2>
+<p>By the end of the session you’ll have designed a <strong>state machine</strong> (states, events and transitions), used <strong>non-blocking timing</strong> with <code>millis()</code> instead of <code>delay()</code>, used an <strong>array</strong> to remember requests, compared <strong>scheduling algorithms</strong> and argued about their trade-offs, and <strong>tested</strong> your code against scenarios and <strong>invariants</strong>.</p>
+<blockquote class="blockquote">
+<p><strong>Kit rules.</strong> Don’t unplug or rewire anything while the power supply is on. Don’t change <code>BRIGHTNESS</code> or edit <code>ElevatorHAL.h</code>. A full strip at full brightness draws far more power than the kit is built for. If something looks wrong with the hardware, ask a demonstrator.</p>
+</blockquote>
+<hr>
+</section>
+<section id="reading-the-shaft" class="level2">
+<h2 class="anchored" data-anchor-id="reading-the-shaft">Reading the shaft</h2>
+<p>The strip stands upright with LED 0 at the bottom, split into three floors of 48 LEDs each.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Floor</th>
+<th>Button</th>
+<th>Car sits on LEDs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0 (ground)</td>
+<td>pin 2</td>
+<td>19–28</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>pin 3</td>
+<td>67–76</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>pin 4</td>
+<td>115–124</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>You see</th>
+<th>It means</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A dim white pair of LEDs</td>
+<td>The landing lights for a floor</td>
+</tr>
+<tr class="even">
+<td>A <strong>blue</strong> pair</td>
+<td>Someone is waiting at that floor (a <em>call</em>)</td>
+</tr>
+<tr class="odd">
+<td>A white–amber–white block</td>
+<td>The car, doors shut</td>
+</tr>
+<tr class="even">
+<td>A <strong>green</strong> gap in the middle of the car</td>
+<td>The doors are open</td>
+</tr>
+<tr class="odd">
+<td><strong>Red</strong> LEDs at both ends of the strip</td>
+<td>Your car has left the shaft. That’s a bug!</td>
+</tr>
+</tbody>
+</table>
+<p>The doors are the eight middle LEDs of the car, controlled by the variable <code>doorOpen</code> (W = white frame, A = amber door, G = green gap):</p>
+<pre><code>doorOpen = 0   W A A A A A A A A W   shut
+doorOpen = 1   W A A A G G A A A W
+doorOpen = 2   W A A G G G G A A W
+doorOpen = 3   W A G G G G G G A W
+doorOpen = 4   W G G G G G G G G W   fully open  (DOOR_STEPS)</code></pre>
+</section>
+<section id="your-toolkit" class="level2">
+<h2 class="anchored" data-anchor-id="your-toolkit">Your toolkit</h2>
+<p>Your sketch includes <code>ElevatorHAL.h</code>. You don’t edit it; you call these functions:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>hal_buttonPressed(f)</code></td>
+<td><code>true</code> <strong>once</strong> for each press of floor <code>f</code>’s button</td>
+</tr>
+<tr class="even">
+<td><code>hal_buttonHeld(f)</code></td>
+<td><code>true</code> for as long as floor <code>f</code>’s button is held down</td>
+</tr>
+<tr class="odd">
+<td><code>hal_floorPosition(f)</code></td>
+<td>The LED index where the bottom of the car sits at floor <code>f</code></td>
+</tr>
+<tr class="even">
+<td><code>hal_floorAt(carPos)</code></td>
+<td>The floor the car is level with, or <code>-1</code> if it’s between floors</td>
+</tr>
+<tr class="odd">
+<td><code>hal_draw(carPos, doorOpen, calls)</code></td>
+<td>Draws everything. Already the last line of <code>loop()</code></td>
+</tr>
+</tbody>
+</table>
+<p>Useful constants: <code>NUM_FLOORS</code> (3), <code>NUM_LEDS</code> (144), <code>DOOR_STEPS</code> (4).</p>
+<p>The starter sketch already declares the states and variables, and gives you <code>changeState(newState)</code>. It switches state, restarts <code>timer</code>, and prints the change to the Serial Monitor, so you can always see what your elevator thinks it’s doing. <strong>Always change state with <code>changeState</code></strong>, never with <code>state = ...</code>.</p>
+<hr>
+</section>
+<section id="two-big-ideas-before-you-start" class="level2">
+<h2 class="anchored" data-anchor-id="two-big-ideas-before-you-start">Two big ideas before you start</h2>
+<section id="a-state-machine" class="level3">
+<h3 class="anchored" data-anchor-id="a-state-machine">1. A state machine</h3>
+<p>At every moment, your elevator is in exactly one of five states: <code>IDLE</code>, <code>MOVING</code>, <code>DOORS_OPENING</code>, <code>DOORS_OPEN</code> or <code>DOORS_CLOSING</code>.</p>
+<p>Every time round <code>loop()</code>, the code asks: <em>what state am I in, and has anything happened that means I should act or change state?</em> That’s the <code>switch</code> statement in the starter sketch.</p>
+<p>A <strong>transition</strong> is a move from one state to another. It’s triggered by an <strong>event</strong> (a button press) or a <strong>condition</strong> (a timer running out, the car reaching a floor).</p>
+</section>
+<section id="never-use-delay" class="level3">
+<h3 class="anchored" data-anchor-id="never-use-delay">2. Never use <code>delay()</code></h3>
+<p><code>delay(2000)</code> freezes the whole Arduino for two seconds. No buttons are read and no LEDs are updated. An elevator that ignored everyone while its doors were open would be a pretty bad elevator.</p>
+<p>Instead, check the clock and only act once enough time has passed:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>millis<span class="op">()</span> <span class="op">-</span> timer <span class="op">&gt;=</span> MOVE_STEP_MS<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  timer <span class="op">=</span> millis<span class="op">();</span>   <span class="co">// restart the timer</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">// do ONE small step, e.g. move the car by one LED</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>loop()</code> runs thousands of times a second, so lots of tiny steps look like smooth movement, and the buttons get checked between every one of them.</p>
+<blockquote class="blockquote">
+<p><strong>Watch out:</strong> store times in <code>unsigned long</code>, never <code>int</code>. On an Arduino Uno an <code>int</code> tops out at 32,767, which is only about 33 seconds’ worth of <code>millis()</code>.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="the-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="the-tasks">The tasks</h2>
+<section id="task-0-get-connected-5-min" class="level3">
+<h3 class="anchored" data-anchor-id="task-0-get-connected-5-min">Task 0: Get connected (5 min?)</h3>
+<ol type="1">
+<li>Open <code>ElevatorStarter.ino</code> in the Arduino IDE and check that <code>ElevatorHAL.h</code> appears as a second tab.</li>
+<li>Upload it, then open <strong>Tools → Serial Monitor</strong> and set it to <strong>115200 baud</strong>.</li>
+<li>You should see the car on the ground floor and dim landing lights on all three floors.</li>
+</ol>
+<p><strong>Done when:</strong> pressing each button prints the right floor number.</p>
+</section>
+<section id="task-1-make-it-move-20-min" class="level3">
+<h3 class="anchored" data-anchor-id="task-1-make-it-move-20-min">Task 1: Make it move (20 min?)</h3>
+<p>When a button is pressed and the elevator is <code>IDLE</code>, the car should travel to that floor and stop. Forget the doors for now.</p>
+<p>In the input section, if the state is <code>IDLE</code>, set <code>targetFloor</code>, set <code>direction</code> to <code>+1</code> (up) or <code>-1</code> (down), and call <code>changeState(MOVING)</code>.</p>
+<p>In <code>case MOVING:</code>, use the timer pattern to add <code>direction</code> to <code>carPos</code> every <code>MOVE_STEP_MS</code>. When <code>carPos</code> equals <code>hal_floorPosition(targetFloor)</code>, change back to <code>IDLE</code>.</p>
+<p><strong>Think:</strong> what happens if you press the button for the floor you’re already on? What <em>should</em> happen?</p>
+<p><strong>Done when:</strong> the car glides to whichever floor you ask for, and presses while it’s moving are ignored.</p>
+</section>
+<section id="task-2-design-the-doors-on-paper-10-min" class="level3">
+<h3 class="anchored" data-anchor-id="task-2-design-the-doors-on-paper-10-min">Task 2: Design the doors on paper (10 min?)</h3>
+<p>Before writing any more code, draw a <strong>state diagram</strong>. Draw all five states as circles. Draw an arrow for every possible transition and label each arrow with the event or condition that causes it.</p>
+<p>Your diagram should answer these questions. What must be true before the car is allowed to move? What happens when the doors finish opening, and when they finish closing? Which states need a timer?</p>
+<p><strong>Done when:</strong> a demonstrator has checked your diagram.</p>
+</section>
+<section id="task-3-build-the-doors-20-min" class="level3">
+<h3 class="anchored" data-anchor-id="task-3-build-the-doors-20-min">Task 3: Build the doors (20 min?)</h3>
+<p>Change <code>MOVING</code> so that arriving at the target floor opens the doors instead of going straight to <code>IDLE</code>. Then fill in the three door states, following your diagram:</p>
+<ul>
+<li><code>DOORS_OPENING</code>: every <code>DOOR_STEP_MS</code>, add one to <code>doorOpen</code>. When it reaches <code>DOOR_STEPS</code>, go to <code>DOORS_OPEN</code>.</li>
+<li><code>DOORS_OPEN</code>: once <code>DOOR_HOLD_MS</code> has passed, go to <code>DOORS_CLOSING</code>.</li>
+<li><code>DOORS_CLOSING</code>: every <code>DOOR_STEP_MS</code>, subtract one from <code>doorOpen</code>. When it reaches <code>0</code>, go to <code>IDLE</code>.</li>
+</ul>
+<p><strong>Done when:</strong> the car arrives, the doors slide open, wait two seconds, then slide shut, and the Serial Monitor shows the whole sequence of states.</p>
+</section>
+<section id="task-4-remember-every-call-15-min" class="level3">
+<h3 class="anchored" data-anchor-id="task-4-remember-every-call-15-min">Task 4: Remember every call (15 min?)</h3>
+<p>At the moment, anyone who presses a button while the car is busy is ignored. Real elevators remember.</p>
+<p>Replace your Task 1 button code with a single line: <code>calls[f] = true;</code> (you’ll see that floor’s landing lights turn blue). Then move the decision-making into <code>case IDLE:</code>. Look for a floor with a call: if it’s the floor the car is already on, clear the call and open the doors; otherwise set <code>targetFloor</code> and <code>direction</code> and start moving. When the car arrives, clear that floor’s call.</p>
+<p><strong>Done when:</strong> you can press all three buttons quickly and every floor gets visited, with no blue lights left behind.</p>
+</section>
+<section id="task-5-stop-on-the-way-10-min" class="level3">
+<h3 class="anchored" data-anchor-id="task-5-stop-on-the-way-10-min">Task 5: Stop on the way (10 min?)</h3>
+<p>If the car is travelling from floor 0 to floor 2 and someone on floor 1 presses their button in time, the car should stop at floor 1 first.</p>
+<p>In <code>MOVING</code>, after each step, use <code>hal_floorAt(carPos)</code> to find out whether the car is level with a floor. If that floor has a call, stop there.</p>
+<p><strong>Done when:</strong> test scenarios 3 and 4 behave as expected.</p>
+</section>
+<section id="task-6-choose-wisely-15-min" class="level3">
+<h3 class="anchored" data-anchor-id="task-6-choose-wisely-15-min">Task 6: Choose wisely (15 min?)</h3>
+<p>When several floors are waiting, which should the car visit next? Write a function <code>int chooseNextCall(int here)</code> that returns a floor number, or <code>-1</code> if nobody is waiting, and use it in <code>IDLE</code>.</p>
+<p>Try at least two of these strategies:</p>
+<ul>
+<li><strong>Lowest floor first.</strong> Simple, but is it fair?</li>
+<li><strong>Nearest floor first.</strong></li>
+<li><strong>Keep going the same way</strong> while anyone is waiting further along in that direction, and only then turn around. This is known as the <em>elevator algorithm</em> (or SCAN).</li>
+</ul>
+<p><strong>Discuss with your partner:</strong> can you invent a sequence of button presses where somebody waits <em>forever</em> under one of these strategies? Which would you want in a 50-storey building?</p>
+</section>
+<section id="task-7-make-it-safe-15-min" class="level3">
+<h3 class="anchored" data-anchor-id="task-7-make-it-safe-15-min">Task 7: Make it safe (15 min?)</h3>
+<p><strong>Hold the doors.</strong> If someone presses the button for the floor the car is stopped at while the doors are closing, open them again. If the doors are already fully open, restart the hold timer so they stay open longer.</p>
+<p><strong>Check your invariants.</strong> An <em>invariant</em> is something that must always be true, no matter what. After the <code>switch</code>, add checks that print a warning to the Serial Monitor if either of these ever happens: the state is <code>MOVING</code> but <code>doorOpen</code> isn’t <code>0</code>, or <code>carPos</code> is outside the shaft.</p>
+<p><strong>Done when:</strong> every scenario in the test table below passes with no warnings.</p>
+<hr>
+</section>
+</section>
+<section id="test-scenarios" class="level2">
+<h2 class="anchored" data-anchor-id="test-scenarios">Test scenarios</h2>
+<p>Press the Arduino’s reset button before each test. A test only passes if the car does what’s described <strong>and</strong> no safety warnings appear.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Starting point</th>
+<th>Do this</th>
+<th>Expected result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Idle at floor 0</td>
+<td>Press 2</td>
+<td>Travels past floor 1 without stopping; doors open at 2</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Idle at floor 0</td>
+<td>Press 0</td>
+<td>Doors open and close; the car doesn’t move</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Idle at floor 0</td>
+<td>Press 2, then press 1 while the car is still below floor 1</td>
+<td>Stops at 1, then carries on to 2</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Idle at floor 0</td>
+<td>Press 2, then press 1 just after the car passes floor 1</td>
+<td>Goes to 2 first, then comes back down to 1</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Doors closing at floor 1</td>
+<td>Press 1</td>
+<td>Doors open again</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Doors open at floor 1, having travelled up from 0</td>
+<td>Press 0, then press 2</td>
+<td><strong>You decide.</strong> Write down what your algorithm does and why</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Idle at floor 0</td>
+<td>Press 0, 1 and 2 in quick succession</td>
+<td>Every floor is visited once; all blue lights clear</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Doors open at floor 1</td>
+<td>Press 1 about once a second</td>
+<td>Doors stay open; the car never moves with its doors open</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Car moving towards floor 2</td>
+<td>Mash the floor 2 button</td>
+<td>Nothing strange happens</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="stretch-challenges" class="level2">
+<h2 class="anchored" data-anchor-id="stretch-challenges">Stretch challenges</h2>
+<ul>
+<li><strong>Home time.</strong> After 10 seconds idle with no calls, send the car back to the ground floor.</li>
+<li><strong>Emergency stop.</strong> While all three buttons are held down (<code>hal_buttonHeld</code>), the car freezes where it is, even between floors.</li>
+<li><strong>Smooth ride.</strong> Make the car speed up as it leaves a floor and slow down as it arrives by varying the step time.</li>
+<li><strong>Ding!</strong> Add a piezo buzzer to a spare pin and use <code>tone()</code> to play a chime when the doors open.</li>
+<li><strong>Four floors.</strong> What would need to change? Talk it through with a demonstrator before touching <code>ElevatorHAL.h</code>.</li>
+<li><strong>Brain and body.</strong> Move all of your decision-making into functions that never touch the hardware. How would that let you test your elevator on a laptop with no Arduino at all? Why might a real elevator company care about that?</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/holliebaker\.github\.io\/CSC4001-resources\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
