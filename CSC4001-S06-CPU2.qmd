@@ -85,7 +85,7 @@ S_10 = \dfrac{40}{14} \approx 2.86
 $$
 - The more instructions, the better!
 $$
-S_100 = \dfrac{400}{104} \approx 3.51, S_1000 = \dfrac{1000}{1014} = 3.94
+S_{100} = \dfrac{400}{104} \approx 3.51, S_{1000} = \dfrac{1000}{1014} = 3.94
 $$
 
 For a pipeline with $k$ stages, speedup approaches $k$ as the number of instructions grows very large.
@@ -154,7 +154,7 @@ Mathematical explanation:
 :::
 :::
 
-## Pipeline hazards
+## Pipeline hazards {.smaller}
 
 - Situations which cause the pipeline to stall, or have to restart.
 
@@ -222,16 +222,13 @@ Don't worry about the actual formula. It's only important to note we have a squa
 
 ## Sequential calculation
 
-Let's assume our CPU can perform **addition**, **subtraction**,
-**multiplication** and **square root** in one CPU cycle.
-
-Then the calculation can be performed as follows.
+CPU can `add`, `mul`, `sub` and `sqrt` in **a single CPU cycle**.
 
 - `t1 = x2 - x1`
-- `t2 = t1 * t2`
+- `t2 = t1 * t1`
 - `t3 = y1 - y2`
 - `t4 = t3 * t3`
-- \`t5 = t2 + t4
+- `t5 = t2 + t4'
 - `D = sqrt( t5 )`
 
 **6** CPU cycles.
@@ -254,8 +251,7 @@ Now suppose we have **2 ALUs**.
 
 ... but how can the CPU, a clump of transistors, figure this out?
 
-> The key is to make a **table** of instructions, and use a **status**
-> flag to determine dependencies.
+## The key is to make a table of instructions, and use a **status** flag to determine dependencies.
 
 ## Table of instructions {.smaller}
 
@@ -280,68 +276,71 @@ First step: fill in any variables whose values we know already.
 
 ## Table of instructions {.smaller}
 
-  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    \#       Instruction       Arg 1                                                                   Arg 2                                                                   Return       Status
-  ------ ------------------- ---------- ----------------------------------------------------------------------------------------------------------------------------------- ------------ ------------
-    1           `SUB`           `9`                                                                     `4`                                                                     `t1`      **Ready**
-
-    2           `MUL`           `t1`                                                                   `t1`                                                                     `t2`       Waiting
-
-    3           `SUB`           `11`     '20`|`t3`| **Ready** | | 4  |`MUL`|`t3`|`t3`|`t4`| Waiting | | 5  |`ADD`|`t2`|`t4`|`t5`| Waiting | | 6  |`SQRT`|`t5`| --    |`D\`    Waiting    
-  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| \#  | Instruction | Arg 1 | Arg 2 | Return | Status  |
+|:---:|:-----------:|:-----:|:-----:|:------:|:-------:|
+|  **1**  |    `SUB`    | `9`   | `4`   |  `t1`  | **Ready** |
+|  2  |    `MUL`    | `t1`  | `t1`  |  `t2`  | Waiting |
+|  **3**  |    `SUB`    | `11`  | `20`  |  `t3`  | **Ready** |
+|  4  |    `MUL`    | `t3`  | `t3`  |  `t4`  | Waiting |
+|  5  |    `ADD`    | `t2`  | `t4`  |  `t5`  | Waiting |
+|  6  |   `SQRT`    | `t5`  |  --   |  `D`   | Waiting |
 
 > Instructions **1** and **3** are *ready* and can be executed **in
 > parallel**.
 
 ## Table of instructions {.smaller}
 
-  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    \#       Instruction       Arg 1                                                                Arg 2                                                                 Return       Status
-  ------ ------------------- ---------- ------------------------------------------------------------------------------------------------------------------------------ ------------ ------------
-    1           `SUB`           `9`                                                                  `4`                                                                   `5`          Done
-
-    2           `MUL`           `t1`                                                                 `t1`                                                                  `t2`       Waiting
-
-    3           `SUB`           `11`     '20`|`-9`| Done | | 4  |`MUL`|`t3`|`t3`|`t4`| Waiting | | 5  |`ADD`|`t2`|`t4`|`t5`| Waiting | | 6  |`SQRT`|`t5`| --    |`D\`    Waiting    
-  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| \#  | Instruction | Arg 1 | Arg 2 | Return | Status  |
+|:---:|:-----------:|:-----:|:-----:|:------:|:-------:|
+|  1  |    `SUB`    | `9`   | `4`   |  `5`  | Done |
+|  2  |    `MUL`    | `5`  | `5`  |  `t2`  | Waiting |
+|  3  |    `SUB`    | `11`  | `20`  |  `-9`  | Done |
+|  4  |    `MUL`    | `-9`  | `-9`  |  `t4`  | Waiting |
+|  5  |    `ADD`    | `t2`  | `t4`  |  `t5`  | Waiting |
+|  6  |   `SQRT`    | `t5`  |  --   |  `D`   | Waiting |
 
 > Now `t1` and `t3` are known, some more instructions become **ready**.
 
 ## Table of instructions {.smaller}
 
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    \#       Instruction       Arg 1                                                                 Arg 2                                                                  Return       Status
-  ------ ------------------- ---------- -------------------------------------------------------------------------------------------------------------------------------- ------------ ------------
-    1           `SUB`           `9`                                                                   `4`                                                                    `5`          Done
-
-    2           `MUL`           `5`                                                                   `5`                                                                    `t2`      **Ready**
-
-    3           `SUB`           `11`     '20`|`-9`| Done | | 4  |`MUL`|`-9`|`-9`|`t4`| **Ready** | | 5  |`ADD`|`t2`|`t4`|`t5`| Waiting | | 6  |`SQRT`|`t5`| --    |`D\`    Waiting    
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| \#  | Instruction | Arg 1 | Arg 2 | Return | Status  |
+|:---:|:-----------:|:-----:|:-----:|:------:|:-------:|
+|  1  |    `SUB`    | `9`   | `4`   |  `5`  | Done |
+|  **2**  |    `MUL`    | `5`  | `5`  |  `t2`  | **Ready** |
+|  3  |    `SUB`    | `11`  | `20`  |  `-9`  | Done |
+|  **4**  |    `MUL`    | `-9`  | `-9`  |  `t4`  | **Ready** |
+|  5  |    `ADD`    | `t2`  | `t4`  |  `t5`  | Waiting |
+|  6  |   `SQRT`    | `t5`  |  --   |  `D`   | Waiting |
 
 > Instructions **2** and **4** are ready and can be executed **in
 > parallel**.
 
 ## Table of instructions {.smaller}
 
-  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    \#       Instruction       Arg 1                                                                Arg 2                                                                Return       Status
-  ------ ------------------- ---------- ----------------------------------------------------------------------------------------------------------------------------- ------------ ------------
-    1           `SUB`           `9`                                                                  `4`                                                                  `5`          Done
-
-    2           `MUL`           `5`                                                                  `5`                                                                  `25`         Done
-
-    3           `SUB`           `11`     '20`|`-9`| Done | | 4  |`MUL`|`-9`|`-9`|`81`| Done | | 5  |`ADD`|`25`|`81`|`t5`| **Ready** | | 6  |`SQRT`|`t5`| --    |`D\`    Waiting    
-  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| \#  | Instruction | Arg 1 | Arg 2 | Return | Status  |
+|:---:|:-----------:|:-----:|:-----:|:------:|:-------:|
+|  1  |    `SUB`    | `9`   | `4`   |  `5`  | Done |
+|  2  |    `MUL`    | `5`  | `5`  |  `25`  | Done |
+|  3  |    `SUB`    | `11`  | `20`  |  `-9`  | Done |
+|  4  |    `MUL`    | `-9`  | `-9`  |  `81`  | Done |
+|  **5**  |    `ADD`    | `25`  | `81`  |  `t5`  | **Ready** |
+|  6  |   `SQRT`    | `t5`  |  --   |  `D`   | Waiting |
 
 > Instruction **5**, which depends on `t2` and `t4` can now be executed.
 
 ## Table of instructions {.smaller}
 
+| \#  | Instruction | Arg 1 | Arg 2 | Return | Status  |
+|:---:|:-----------:|:-----:|:-----:|:------:|:-------:|
+|  1  |    `SUB`    | `9`   | `4`   |  `5`  | Done |
+|  2  |    `MUL`    | `5`  | `5`  |  `25`  | Done |
+|  3  |    `SUB`    | `11`  | `20`  |  `-9`  | Done |
+|  4  |    `MUL`    | `-9`  | `-9`  |  `81`  | Done |
+|  5  |    `ADD`    | `25`  | `81`  |  `106`  | Done |
+|  **6**  |   `SQRT`    | `106`  |  --   |  `D`   | **Ready** |
 
-- \`t5 = 105'
-- `D = sqrt(105)`.
+`D = sqrt(105)`.
 
-## Next time
+# Next time
 
 Memory architecture / academic skills workshop.
