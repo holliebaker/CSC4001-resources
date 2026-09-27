@@ -1,0 +1,714 @@
+---
+title: "The CPU"
+author: "CSC4001: Computer Systems and Architecture"
+date: ""
+format:
+  revealjs:
+    theme: simple
+    css: ./style.css
+---
+
+## Learning Outcomes
+
+- Explain what happens at each stage of the **fetch, decode,
+  execute, store** cycle.
+
+- Use a simple **instruction set** to write some assembler programs for
+  a toy computer.
+
+- Give the main difference between RICS and CISC architecture, stating their advantages and disadvantages as well as situations in which each is best used.
+
+- State **Moore's law** and discuss whether it is still relevant today.
+
+## Recap: Harvard architecture
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/02-harvard.svg){fig-align="center"
+fig-alt="diagram of Harvard architecture showing the same components as Von Neumann, but with separate memory and separate buses for instructions and data"
+width="60%"}
+:::
+::::
+
+::: notes
+Recall the control unit, arithmetic logic unit, input and output.
+Harvard architecture has separate memory for programs and data, and a
+separate bus. This meant there was less contention as instructions and
+data could be accessed simultaneously, but the machine was less
+flexible, e.g., the program memory may not be full when data memory is,
+but we cannot use the free space in the program memory for additional
+data. This architecture commonly used in embedded systems, and
+mainframes.
+:::
+
+## The Von Neumann Architecture
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/02-vna.svg){fig-align="center"
+fig-alt="diagram of Von Neumann architecture showing five components"
+width="55%"}
+:::
+::::
+
+::: notes
+Same components: control unit, arithmetic logic unit, input and output.
+In the Harvard architecture, data and instructions are stored in the
+**same** memory. A single memory bus can be a bottleneck, and concerns
+were raised about security (e.g., a program can write to any location in
+memory, including modifying the instructions. Simpler and more flexible.
+This is the architecture found in most desktop computers today.
+:::
+
+# The CPU
+
+## Components
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/03-cpu.svg){fig-align="center"
+fig-alt="diagram of Von Neumann architecture showing five components described on the next page"
+width="50%"}
+:::
+::::
+
+## The CPU
+
+- A program, written in assembler, is a sequence of **instructions**.
+
+- The program is loaded into *main memory* so that the next instruction
+  is in the next memory address:
+
+## The CPU
+
+  the **program counter (PC)** points to the memory location of the
+  current instruction.
+
+## The CPU
+
+- The current instruction itself is stored in the **instruction register
+  (IR)**.
+
+## The CPU
+
+- The **control unit** decodes the instruction and tells the
+  **arithmetic logic unit (ALU)** which operations to perform.
+
+## The CPU
+
+- The CPU has a small number of **registers** (R1, R2, and R3 on the
+  picture) to store intermediate values.
+
+- There is also a small amount of very fast memory, the **cache**,
+  located either on or very near the CPU.
+
+## The Fetch, decode, execute store Cycle
+
+A CPU goes through **four stages** to run an instruction:
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/03-fetch.svg){fig-align="center"
+fig-alt="shows four stages, fetch decode execute and store, linked in a loop"
+width="30%"}
+:::
+::::
+
+## Fetch
+
+::::: columns
+::: column
+- First stage of the cycle.
+
+- **Program counter** points to the memory address of the next
+  instruction.
+
+- Retrieve the next instruction from memory and store it in the
+  **instruction register**.
+
+- Increment the **program counter** to point to the next instruction.
+
+:::
+::: column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/03-fetch-f.svg){fig-align="center"
+fig-alt="shows four stages, fetch decode execute and store, linked in a loop"
+width="60%"}
+:::
+::::
+:::
+:::::
+
+## Decode
+
+::::: columns
+::: column
+
+- The **control unit** reads the current instruction in the
+  **instruction register**.
+
+- The **control unit** determines which operation(s) to perform.
+
+- If the instruction has *operands* the **control unit** initiates
+  additional fetches to retrieve these from memory.
+
+:::
+::: column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/03-fetch-d.svg){fig-align="center"
+fig-alt="shows four stages, fetch decode execute and store, linked in a loop"
+width="60%"}
+:::
+::::
+:::
+
+The CPU is now **ready to execute the instruction**.
+:::::
+
+## Execute
+
+::::: columns
+::: column
+
+- The stage at which **operations are performed**.
+
+- The ALU performs the decoded operation with its operands.
+
+  In more advanced CPUs may have special-purpose hardware, e.g., a
+  **floating point unit**.
+
+- Instruction may *load* data from memory into a **register**.
+
+- May perform a *jump* (e.g., conditional or loop) -- **program
+  counter** is set to point to a different instruction.
+
+:::
+::: column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/03-fetch-e.svg){fig-align="center"
+fig-alt="shows four stages, fetch decode execute and store, linked in a loop"
+width="60%"}
+:::
+::::
+
+Any return value is stored in a **register**.
+Ready for the next stage...
+:::
+:::::
+
+
+# Execute
+
+::::: columns
+::: column
+
+- Any computed values currently saved in a **register** are *stored* in
+  the **main memory**.
+
+- Final stage in the cycle.
+
+- The cycle is now repeated.
+
+:::
+::: column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/03-fetch-s.svg){fig-align="center"
+fig-alt="shows four stages, fetch decode execute and store, linked in a loop"
+width="60%"}
+:::
+::::
+:::
+:::::
+
+## Interrupt
+
+- Occasionally, the CPU receives an **interrupt signal**.
+
+- The CPU immediately stops executing the current instruction and
+  **jumps** to an *interrupt service routine*.
+
+- The *interrupt service routine* is just another set of instructions
+  stored in memory.
+
+- The CPU executes these instructions as usual, then jumps back to the
+  instruction it was previously working on.
+
+- If the instruction was interrupted halfway through, then the CPU must
+  restart it from the beginning.
+
+## The Little man Computer
+
+::: columns
+::: column
+
+- Simple model of a **Von Neumann architecture** computer.
+
+- Imagine a "Little Man" trapped inside a locked mail room.
+
+- The mail room has **100 mailboxes** labelled 00-99, each of which can
+  hold a 3 decimal digit *instruction* or *data*.
+
+:::
+::: column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/03-mailroom.jpg){fig-align="center"
+fig-alt="photograph of a mailroom with mailboxes on the wall"
+width="60%"}
+:::
+::::
+
+- Input is received via an **inbox** and output returned via an
+  **outbox**.
+
+- There is a work area with a simple addition and subtraction, the
+  **accumulator**.
+
+- There is a **program counter** which tells the *Little Man* from which
+  address to fetch the next instruction.
+
+:::
+::::
+
+## How it works
+
+1.  The Little Man checks the **program counter** and retrieves the
+    instruction at the specified address.
+
+2.  The **program counter** is incremented so that it points to the
+    address (mailbox) containing the next instruction.
+
+3.  Little Man **decodes** the instruction.
+
+- **Op-code**: number from 000-999 which tells the Little Man what
+  operation to perform.
+- If data is required, its mailbox **address** is included in the
+  instruction.
+
+1.  If required, data is **fetched** from the mailbox referred in the
+    instruction.
+
+2.  **Execute** the instruction.
+
+3.  *Branch* (change the value in the program counter) or *store* the
+    result of the instruction.
+
+4.  **Repeat** or **halt**.
+
+## Instructions {.smaller}
+
+::: columns
+::: column
+
+  ------------------------------------------------------------------------
+        Name              Code                    Description
+  ----------------- ----------------- ------------------------------------
+        `ADD`             $1XX$       **Add** value in mailbox $XX$ to the
+                                          value in the *accumulator*.
+
+        `SUB`             $2XX$        **Subtract** value in mailbox $XX$
+                                      fro the value in the *accumulator*.
+
+        `STA`             $3XX$       **Store** value in *accumulator* in
+                                                  mailbox $XX$
+
+        `LDA`             $5XX$       **Load** value in mailbox $XX$ into
+                                               the *accumulator*
+
+        `BRA`             $6XX$            **Unconditionally go to**
+                                          instruction in mailbox $XX$
+  ------------------------------------------------------------------------
+
+:::
+::: column
+
+  ------------------------------------------------------------------------
+        Name              Code                    Description
+  ----------------- ----------------- ------------------------------------
+        `BRZ`             $7XX$       **Conditionally go to** instruction
+                                           in mailbox $XX$ **if** the
+                                              *accumulator* is $0$
+
+        `BRP`             $8XX$       **Conditionally go to** instruction
+                                           in mailbox $XX$ **if** the
+                                             *accumulator* is $> 0$
+
+        `INP`             $901$         Read **input** from the *inbox*,
+                                         store it in the *accumulator*.
+
+        `OUT`             $902$            Write **output** from the
+                                         *accumulator* to the *outbox*.
+
+        `HLT`             $000$          **Halt** -- stop the program.
+  ------------------------------------------------------------------------
+:::
+:::
+
+## Assembler {.smaller}
+
+::: columns
+::: column
+
+- **Mnemonics** (3-letter codes) are often used, e.g., `ADD`,
+
+  Instead of the 3-digit **op-code**, e.g., $1XX$, since they are easier
+  for the programmer to remember.
+
+- A program is a sequence of instructions, which are executed in order
+  -- *imperative programming*.
+
+- **Labels** (similar to variables) are used instead of memory address
+  numbers.
+
+:::
+::: column
+
+### Add two numbers
+
+    INP # store value from inbox in accumulator
+    STA FIRST # store accumulator value in FIRST mailbox
+    INP
+    STA SECOND
+    LDA FIRST # load first number into accumulator
+    ADD SECOND # ADD SECOND value to accumulator
+    OUT # output the value of accumulator
+    FIRST DAT # reserves a data mailbox
+    SECOND DAT
+
+- `DAT` reserves a *labelled* mailbox for data.
+
+:::
+:::
+
+## Labels, constants and jumps {.smaller}
+
+::: columns
+::: column
+
+- **Labels** are used to refer to *mailbox locations*.
+
+- Since instructions are stored in mailboxes, they can be labelled, too.
+
+  E.g., `loop OUT` labels the location of the `OUT` instruction as
+  `loop`.
+
+- **Branches** need the memory address of the instruction to go to -- we
+  can use labels.
+
+  E.g., `BNP loop` goes to `loop` as long as the *accumulator* value is
+  positive.
+
+- A labelled mailbox can be **initialised** to a constant.
+
+  E.g., `one DAT 1` initialises the mailbox labelled `one` to $1$.
+
+:::
+::: column
+
+         INP
+    loop OUT
+         SUB one
+         STA count
+         BRP loop
+         HLT
+    1
+    one DAT 1
+    count DAT
+
+:::
+:::
+
+## Exercise: little man programming {.smaller}
+
+- Go to <https://www.101computing.net/LMC/>
+
+  Play with the simulator, try some of the example programs.
+
+- Code the following programs:
+
+  - **Difference**: User *inputs* two numbers, $A$ and $B$. Program
+    calculates their *difference*, $A - B$.
+  - **Count up**: User *inputs* a number, $N$, program should count up
+    from $0$ to $N$.
+  - **Multiplication**: There is no multiplication instruction, but
+    $A \cdot B = \underbrace{A \cdot A \cdots A}_{B \text{ times}}$.
+    Implement multiplication.
+
+  You may want to plan your code on paper, like the EDSAC programmers.
+
+# Instruction set architectures
+
+
+## Instruction set architectures
+
+- Each processor architecture has its own **instruction set**:
+
+  A set of *op-codes* which the control unit interprets as instructions.
+
+- There are two main types of instruction set architecture
+
+  - **RISC**: reduced instruction set computer, and
+  - **CISC**: complex instruction set computer.
+
+## History
+
+- Up to the early 80's, more instructions were being added to
+  processors.
+
+- Designers wanted to **mimic high-level programming languages**.
+
+  One CPU instruction should be one line of source code.
+
+- Offload more work onto the hardware.
+
+- Produce shorter programs (fewer total instructions) to conserve
+  memory.
+
+## History
+
+- In the early 80's, the idea of creating a smaller and simple set of
+  instructions was proposed.
+
+- Aim was to make designing and building a CPU **easier**, **cheaper**
+  and, therefore, **faster**.
+
+- Term **RISC** coined by David Patterson, a researcher at UC Berkeley.
+
+## RISC: reduced instruction set computer
+
+Small, simple set of instructions, e.g., as found in the Little Man
+computer.
+
+- Processor can execute **exactly one** instruction per cycle.
+
+- Instructions are a **fixed length** (fixed number of bits).
+
+- Can only manipulate values **stored in CPU registers**.
+
+- RISC chips are simple to design and cheap to build.
+
+- Used in ARM-based chips, found in microcontrollers (Arduino, Raspberry
+  Pi) and smartphones.
+
+  Also used in IBM Power processors (used in mainframes and servers).
+
+## CISC: complex instruction set computing
+
+Large number of instructions, some performing more complicated
+operations -- intended to correspond to statements in a high-level
+programming language.
+
+- **Variable-length** instructions.
+
+- May take **multiple clock cycles** to execute an instruction.
+
+- Able to manipulate values **directly in main memory**.
+
+- CISC chips are complex, with special-purpose hardware, and are more
+  expensive to build.
+
+- Found in most PCs -- the x86 architecture.
+
+## Simple example: RISC vs CISC
+
+Suppose we want to *increment* a value stored in *main memory*.
+
+::: columns-2
+## CISC architecture
+
+- A **single instruction**:
+
+  `ADD mem one`
+
+  - Retrieves the value from memory,
+  - Adds one to it,
+  - Writes back to memory.
+
+### CISC architecture
+
+- **Three separate instructions**:
+
+      LDA mem
+      ADD one
+      STA mem
+:::
+
+# A little more history
+
+## Second-generation of computers
+
+- Recall that early computers, e.g., EDSAC, used vacuum tubes
+  (thermionic valves).
+
+- These were **bulky**, **unreliable**, **generated lots of heat** and
+  **required lots of energy** to run.
+
+- In the late 1950s, computers began to use **electronic circuit
+  boards** made out of transistors instead.
+
+- These computers were popular until the late 1960s.
+
+## First transistor computer
+
+::::: columns
+::: column
+
+- Developed at the University of Manchester
+
+- Working prototype in November **1953**,
+
+  had **92 transistors** and **950 diodes**.
+
+- Full-size version was operational in **1955**
+
+  had **200 transistors**, **1300 diodes** and consumed **150W** of
+  power.
+
+- Early transistors were unreliable. Average error-free runtime was
+  **1.5 hours**.
+
+- **Not fully transistorised** as it still used vacuum tubes in its
+  clock.
+
+:::
+::: column
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/03-tradic.jpg){fig-align="center"
+fig-alt="TRADIC computer" width="30%"}
+:::
+::::
+
+- **TRADIC** transistor computer, developed at Bell Labs, released
+  January 1954.
+
+  Used a single high-power output vacuum tube amplifier to obtain a
+  **1MHz clock speed**.
+
+:::
+:::::
+
+## Fully transistorised computer
+
+- Harwell Cadet, 1955. **58KHz** clock speed.
+
+- Prototype IBM 604 Transistor calculator.
+
+- IBM 608, released April 1955 is considered to be the first
+  **commercial fully solid-state** transistor computer.
+
+## Third generation computers
+
+- Widely used from the mid 60s to early 70s.
+
+- Used **integrated circuits** (ICs)
+
+- An IC is a single *chip* containing all transistors, resistors,
+  capacitors, diodes and connections needed to operate.
+
+- Invented by Jack Kilby in 1958, an electrical engineer working at
+  Texas Instruments.
+
+  Awarded the Nobel Prize in Physics in 2000.
+
+- Faster and more reliable than second generation.
+
+- Reduced computing time from **micro** seconds to **nano** seconds.
+
+- Computers were becoming more **compact**, **affordable** and **easy to
+  use** with high-level programming languages and mouse and keyboard
+  instead of punched cards.
+
+# Moore's Law
+
+## Moore's "Law"
+
+- Prediction made by Gordon Moore, co-founder of Intel, in 1965:
+
+  "Number of transistors per chip doubles every two years."
+
+::: notes
+Note that it's not a "law" as in "law of physics". More of a prediction
+which has remained (mostly) true.
+:::
+
+## Moore's Law Graph
+
+:::: {.cell fag.align="center"}
+::: cell-output-display
+![](../assets/03-moore.png){fig-alt="A semi-log plot of transistor counts for microprocessors against dates of introduction, nearly doubling every two years"
+width="95%"}
+:::
+::::
+
+## Dennard scaling
+
+- Stated in a 1974 paper co-authored by Robert H. Dennard:
+
+  "As transistors get smaller, their power density stays constant --
+  power use stays in proportion with area."
+
+- If a transistor is **30%** smaller, then its power consumption is
+  **30%** less.
+
+- An IC of fixed size with **twice** the number of transistors consumes
+  **the same power**.
+
+- Allowed manufacturers to **significantly increase clock speed**
+  without increase power consumption.
+
+## Dennard scaling
+
+::::: columns
+::: column 
+
+- Appears to have broken down since 2006.
+
+- Since 2016 the number of transistors per chip is still growing, but
+  more slowly.
+
+- As transistors get smaller, current leakage and heat production is
+  more problematic.
+
+:::
+::: column
+
+:::: {.cell fag.align="center"}
+::: cell-output-display
+![](../assets/03-powerwall.png){fig-alt="graph illustrating power wall"
+width="95%"}
+:::
+::::
+
+- We see clock speed plateau -- as clack speed increases it becomes more
+  difficult to cool the chip.
+
+  This is called the *power wall*.
+:::
+:::::
+
+## Exercise: Moore's law
+
+Discuss:
+
+- Is Moore's law still true today?
+
+::: notes
+- There have been many predictions of the death of Moore's law.
+
+- We are no longer able to **double** the number of transistors per
+  chip.
+
+- Transistors are still getting smaller and more tightly packed, but
+  progress is becoming slower.
+
+:::
+
+# Next time
+
+Embedded systems workshop!
