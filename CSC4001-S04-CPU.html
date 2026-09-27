@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
+
+  <meta name="author" content="CSC4001: Computer Systems and Architecture">
+  <title>CSC4001-resources – The CPU</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
+  <link rel="stylesheet" href="./style.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">The CPU</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+CSC4001: Computer Systems and Architecture
+</div>
+</div>
+</div>
+
+</section>
+<section id="learning-outcomes" class="slide level2">
+<h2>Learning Outcomes</h2>
+<ul>
+<li><p>Explain what happens at each stage of the <strong>fetch, decode, execute, store</strong> cycle.</p></li>
+<li><p>Use a simple <strong>instruction set</strong> to write some assembler programs for a toy computer.</p></li>
+<li><p>Give the main difference between RICS and CISC architecture, stating their advantages and disadvantages as well as situations in which each is best used.</p></li>
+<li><p>State <strong>Moore’s law</strong> and discuss whether it is still relevant today.</p></li>
+</ul>
+</section>
+<section id="recap-harvard-architecture" class="slide level2">
+<h2>Recap: Harvard architecture</h2>
+
+<img data-src="../assets/02-harvard.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%" alt="diagram of Harvard architecture showing the same components as Von Neumann, but with separate memory and separate buses for instructions and data"><aside class="notes">
+<p>Recall the control unit, arithmetic logic unit, input and output. Harvard architecture has separate memory for programs and data, and a separate bus. This meant there was less contention as instructions and data could be accessed simultaneously, but the machine was less flexible, e.g., the program memory may not be full when data memory is, but we cannot use the free space in the program memory for additional data. This architecture commonly used in embedded systems, and mainframes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-von-neumann-architecture" class="slide level2">
+<h2>The Von Neumann Architecture</h2>
+
+<img data-src="../assets/02-vna.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:55.0%" alt="diagram of Von Neumann architecture showing five components"><aside class="notes">
+<p>Same components: control unit, arithmetic logic unit, input and output. In the Harvard architecture, data and instructions are stored in the <strong>same</strong> memory. A single memory bus can be a bottleneck, and concerns were raised about security (e.g., a program can write to any location in memory, including modifying the instructions. Simpler and more flexible. This is the architecture found in most desktop computers today.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section>
+<section id="the-cpu" class="title-slide slide level1 center">
+<h1>The CPU</h1>
+
+</section>
+<section id="components" class="slide level2">
+<h2>Components</h2>
+
+<img data-src="../assets/03-cpu.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%" alt="diagram of Von Neumann architecture showing five components described on the next page"></section>
+<section id="the-cpu-1" class="slide level2">
+<h2>The CPU</h2>
+<ul>
+<li><p>A program, written in assembler, is a sequence of <strong>instructions</strong>.</p></li>
+<li><p>The program is loaded into <em>main memory</em> so that the next instruction is in the next memory address:</p></li>
+</ul>
+</section>
+<section id="the-cpu-2" class="slide level2">
+<h2>The CPU</h2>
+<p>the <strong>program counter (PC)</strong> points to the memory location of the current instruction.</p>
+</section>
+<section id="the-cpu-3" class="slide level2">
+<h2>The CPU</h2>
+<ul>
+<li>The current instruction itself is stored in the <strong>instruction register (IR)</strong>.</li>
+</ul>
+</section>
+<section id="the-cpu-4" class="slide level2">
+<h2>The CPU</h2>
+<ul>
+<li>The <strong>control unit</strong> decodes the instruction and tells the <strong>arithmetic logic unit (ALU)</strong> which operations to perform.</li>
+</ul>
+</section>
+<section id="the-cpu-5" class="slide level2">
+<h2>The CPU</h2>
+<ul>
+<li><p>The CPU has a small number of <strong>registers</strong> (R1, R2, and R3 on the picture) to store intermediate values.</p></li>
+<li><p>There is also a small amount of very fast memory, the <strong>cache</strong>, located either on or very near the CPU.</p></li>
+</ul>
+</section>
+<section id="the-fetch-decode-execute-store-cycle" class="slide level2">
+<h2>The Fetch, decode, execute store Cycle</h2>
+<p>A CPU goes through <strong>four stages</strong> to run an instruction:</p>
+
+<img data-src="../assets/03-fetch.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%" alt="shows four stages, fetch decode execute and store, linked in a loop"></section>
+<section id="fetch" class="slide level2">
+<h2>Fetch</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>First stage of the cycle.</p></li>
+<li><p><strong>Program counter</strong> points to the memory address of the next instruction.</p></li>
+<li><p>Retrieve the next instruction from memory and store it in the <strong>instruction register</strong>.</p></li>
+<li><p>Increment the <strong>program counter</strong> to point to the next instruction.</p></li>
+</ul>
+</div><div class="column">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/03-fetch-f.svg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="shows four stages, fetch decode execute and store, linked in a loop"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="decode" class="slide level2">
+<h2>Decode</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>The <strong>control unit</strong> reads the current instruction in the <strong>instruction register</strong>.</p></li>
+<li><p>The <strong>control unit</strong> determines which operation(s) to perform.</p></li>
+<li><p>If the instruction has <em>operands</em> the <strong>control unit</strong> initiates additional fetches to retrieve these from memory.</p></li>
+</ul>
+</div><div class="column">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/03-fetch-d.svg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="shows four stages, fetch decode execute and store, linked in a loop"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><p>The CPU is now <strong>ready to execute the instruction</strong>.</p>
+</div>
+</section>
+<section id="execute" class="slide level2">
+<h2>Execute</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>The stage at which <strong>operations are performed</strong>.</p></li>
+<li><p>The ALU performs the decoded operation with its operands.</p>
+<p>In more advanced CPUs may have special-purpose hardware, e.g., a <strong>floating point unit</strong>.</p></li>
+<li><p>Instruction may <em>load</em> data from memory into a <strong>register</strong>.</p></li>
+<li><p>May perform a <em>jump</em> (e.g., conditional or loop) – <strong>program counter</strong> is set to point to a different instruction.</p></li>
+</ul>
+</div><div class="column">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/03-fetch-e.svg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="shows four stages, fetch decode execute and store, linked in a loop"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Any return value is stored in a <strong>register</strong>. Ready for the next stage…</p>
+</div></div>
+</section></section>
+<section>
+<section id="execute-1" class="title-slide slide level1 center">
+<h1>Execute</h1>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>Any computed values currently saved in a <strong>register</strong> are <em>stored</em> in the <strong>main memory</strong>.</p></li>
+<li><p>Final stage in the cycle.</p></li>
+<li><p>The cycle is now repeated.</p></li>
+</ul>
+</div><div class="column">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/03-fetch-s.svg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="shows four stages, fetch decode execute and store, linked in a loop"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="interrupt" class="slide level2">
+<h2>Interrupt</h2>
+<ul>
+<li><p>Occasionally, the CPU receives an <strong>interrupt signal</strong>.</p></li>
+<li><p>The CPU immediately stops executing the current instruction and <strong>jumps</strong> to an <em>interrupt service routine</em>.</p></li>
+<li><p>The <em>interrupt service routine</em> is just another set of instructions stored in memory.</p></li>
+<li><p>The CPU executes these instructions as usual, then jumps back to the instruction it was previously working on.</p></li>
+<li><p>If the instruction was interrupted halfway through, then the CPU must restart it from the beginning.</p></li>
+</ul>
+</section>
+<section id="the-little-man-computer" class="slide level2">
+<h2>The Little man Computer</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>Simple model of a <strong>Von Neumann architecture</strong> computer.</p></li>
+<li><p>Imagine a “Little Man” trapped inside a locked mail room.</p></li>
+<li><p>The mail room has <strong>100 mailboxes</strong> labelled 00-99, each of which can hold a 3 decimal digit <em>instruction</em> or <em>data</em>.</p></li>
+</ul>
+</div><div class="column">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/03-mailroom.jpg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="photograph of a mailroom with mailboxes on the wall"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p>Input is received via an <strong>inbox</strong> and output returned via an <strong>outbox</strong>.</p></li>
+<li><p>There is a work area with a simple addition and subtraction, the <strong>accumulator</strong>.</p></li>
+<li><p>There is a <strong>program counter</strong> which tells the <em>Little Man</em> from which address to fetch the next instruction.</p></li>
+</ul>
+</div></div>
+</section>
+<section id="how-it-works" class="slide level2">
+<h2>How it works</h2>
+<ol type="1">
+<li><p>The Little Man checks the <strong>program counter</strong> and retrieves the instruction at the specified address.</p></li>
+<li><p>The <strong>program counter</strong> is incremented so that it points to the address (mailbox) containing the next instruction.</p></li>
+<li><p>Little Man <strong>decodes</strong> the instruction.</p></li>
+</ol>
+<ul>
+<li><strong>Op-code</strong>: number from 000-999 which tells the Little Man what operation to perform.</li>
+<li>If data is required, its mailbox <strong>address</strong> is included in the instruction.</li>
+</ul>
+<ol type="1">
+<li><p>If required, data is <strong>fetched</strong> from the mailbox referred in the instruction.</p></li>
+<li><p><strong>Execute</strong> the instruction.</p></li>
+<li><p><em>Branch</em> (change the value in the program counter) or <em>store</em> the result of the instruction.</p></li>
+<li><p><strong>Repeat</strong> or <strong>halt</strong>.</p></li>
+</ol>
+</section>
+<section id="instructions" class="slide level2 smaller">
+<h2>Instructions</h2>
+<div class="columns">
+<div class="column">
+<table class="caption-top" style="width:97%;">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Code</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>ADD</code></td>
+<td style="text-align: center;"><span class="math inline">\(1XX\)</span></td>
+<td style="text-align: center;"><strong>Add</strong> value in mailbox <span class="math inline">\(XX\)</span> to the value in the <em>accumulator</em>.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>SUB</code></td>
+<td style="text-align: center;"><span class="math inline">\(2XX\)</span></td>
+<td style="text-align: center;"><strong>Subtract</strong> value in mailbox <span class="math inline">\(XX\)</span> fro the value in the <em>accumulator</em>.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>STA</code></td>
+<td style="text-align: center;"><span class="math inline">\(3XX\)</span></td>
+<td style="text-align: center;"><strong>Store</strong> value in <em>accumulator</em> in mailbox <span class="math inline">\(XX\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>LDA</code></td>
+<td style="text-align: center;"><span class="math inline">\(5XX\)</span></td>
+<td style="text-align: center;"><strong>Load</strong> value in mailbox <span class="math inline">\(XX\)</span> into the <em>accumulator</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>BRA</code></td>
+<td style="text-align: center;"><span class="math inline">\(6XX\)</span></td>
+<td style="text-align: center;"><strong>Unconditionally go to</strong> instruction in mailbox <span class="math inline">\(XX\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column">
+<table class="caption-top" style="width:97%;">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Name</th>
+<th style="text-align: center;">Code</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>BRZ</code></td>
+<td style="text-align: center;"><span class="math inline">\(7XX\)</span></td>
+<td style="text-align: center;"><strong>Conditionally go to</strong> instruction in mailbox <span class="math inline">\(XX\)</span> <strong>if</strong> the <em>accumulator</em> is <span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>BRP</code></td>
+<td style="text-align: center;"><span class="math inline">\(8XX\)</span></td>
+<td style="text-align: center;"><strong>Conditionally go to</strong> instruction in mailbox <span class="math inline">\(XX\)</span> <strong>if</strong> the <em>accumulator</em> is <span class="math inline">\(&gt; 0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>INP</code></td>
+<td style="text-align: center;"><span class="math inline">\(901\)</span></td>
+<td style="text-align: center;">Read <strong>input</strong> from the <em>inbox</em>, store it in the <em>accumulator</em>.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>OUT</code></td>
+<td style="text-align: center;"><span class="math inline">\(902\)</span></td>
+<td style="text-align: center;">Write <strong>output</strong> from the <em>accumulator</em> to the <em>outbox</em>.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>HLT</code></td>
+<td style="text-align: center;"><span class="math inline">\(000\)</span></td>
+<td style="text-align: center;"><strong>Halt</strong> – stop the program.</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+</section>
+<section id="assembler" class="slide level2 smaller">
+<h2>Assembler</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p><strong>Mnemonics</strong> (3-letter codes) are often used, e.g., <code>ADD</code>,</p>
+<p>Instead of the 3-digit <strong>op-code</strong>, e.g., <span class="math inline">\(1XX\)</span>, since they are easier for the programmer to remember.</p></li>
+<li><p>A program is a sequence of instructions, which are executed in order – <em>imperative programming</em>.</p></li>
+<li><p><strong>Labels</strong> (similar to variables) are used instead of memory address numbers.</p></li>
+</ul>
+</div><div class="column">
+<h3 id="add-two-numbers">Add two numbers</h3>
+<pre><code>INP # store value from inbox in accumulator
+STA FIRST # store accumulator value in FIRST mailbox
+INP
+STA SECOND
+LDA FIRST # load first number into accumulator
+ADD SECOND # ADD SECOND value to accumulator
+OUT # output the value of accumulator
+FIRST DAT # reserves a data mailbox
+SECOND DAT</code></pre>
+<ul>
+<li><code>DAT</code> reserves a <em>labelled</em> mailbox for data.</li>
+</ul>
+</div></div>
+</section>
+<section id="labels-constants-and-jumps" class="slide level2 smaller">
+<h2>Labels, constants and jumps</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p><strong>Labels</strong> are used to refer to <em>mailbox locations</em>.</p></li>
+<li><p>Since instructions are stored in mailboxes, they can be labelled, too.</p>
+<p>E.g., <code>loop OUT</code> labels the location of the <code>OUT</code> instruction as <code>loop</code>.</p></li>
+<li><p><strong>Branches</strong> need the memory address of the instruction to go to – we can use labels.</p>
+<p>E.g., <code>BNP loop</code> goes to <code>loop</code> as long as the <em>accumulator</em> value is positive.</p></li>
+<li><p>A labelled mailbox can be <strong>initialised</strong> to a constant.</p>
+<p>E.g., <code>one DAT 1</code> initialises the mailbox labelled <code>one</code> to <span class="math inline">\(1\)</span>.</p></li>
+</ul>
+</div><div class="column">
+<pre><code>     INP
+loop OUT
+     SUB one
+     STA count
+     BRP loop
+     HLT
+1
+one DAT 1
+count DAT</code></pre>
+</div></div>
+</section>
+<section id="exercise-little-man-programming" class="slide level2 smaller">
+<h2>Exercise: little man programming</h2>
+<ul>
+<li><p>Go to <a href="https://www.101computing.net/LMC/" class="uri">https://www.101computing.net/LMC/</a></p>
+<p>Play with the simulator, try some of the example programs.</p></li>
+<li><p>Code the following programs:</p>
+<ul>
+<li><strong>Difference</strong>: User <em>inputs</em> two numbers, <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. Program calculates their <em>difference</em>, <span class="math inline">\(A - B\)</span>.</li>
+<li><strong>Count up</strong>: User <em>inputs</em> a number, <span class="math inline">\(N\)</span>, program should count up from <span class="math inline">\(0\)</span> to <span class="math inline">\(N\)</span>.</li>
+<li><strong>Multiplication</strong>: There is no multiplication instruction, but <span class="math inline">\(A \cdot B = \underbrace{A \cdot A \cdots A}_{B \text{ times}}\)</span>. Implement multiplication.</li>
+</ul>
+<p>You may want to plan your code on paper, like the EDSAC programmers.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="instruction-set-architectures" class="title-slide slide level1 center">
+<h1>Instruction set architectures</h1>
+
+</section>
+<section id="instruction-set-architectures-1" class="slide level2">
+<h2>Instruction set architectures</h2>
+<ul>
+<li><p>Each processor architecture has its own <strong>instruction set</strong>:</p>
+<p>A set of <em>op-codes</em> which the control unit interprets as instructions.</p></li>
+<li><p>There are two main types of instruction set architecture</p>
+<ul>
+<li><strong>RISC</strong>: reduced instruction set computer, and</li>
+<li><strong>CISC</strong>: complex instruction set computer.</li>
+</ul></li>
+</ul>
+</section>
+<section id="history" class="slide level2">
+<h2>History</h2>
+<ul>
+<li><p>Up to the early 80’s, more instructions were being added to processors.</p></li>
+<li><p>Designers wanted to <strong>mimic high-level programming languages</strong>.</p>
+<p>One CPU instruction should be one line of source code.</p></li>
+<li><p>Offload more work onto the hardware.</p></li>
+<li><p>Produce shorter programs (fewer total instructions) to conserve memory.</p></li>
+</ul>
+</section>
+<section id="history-1" class="slide level2">
+<h2>History</h2>
+<ul>
+<li><p>In the early 80’s, the idea of creating a smaller and simple set of instructions was proposed.</p></li>
+<li><p>Aim was to make designing and building a CPU <strong>easier</strong>, <strong>cheaper</strong> and, therefore, <strong>faster</strong>.</p></li>
+<li><p>Term <strong>RISC</strong> coined by David Patterson, a researcher at UC Berkeley.</p></li>
+</ul>
+</section>
+<section id="risc-reduced-instruction-set-computer" class="slide level2">
+<h2>RISC: reduced instruction set computer</h2>
+<p>Small, simple set of instructions, e.g., as found in the Little Man computer.</p>
+<ul>
+<li><p>Processor can execute <strong>exactly one</strong> instruction per cycle.</p></li>
+<li><p>Instructions are a <strong>fixed length</strong> (fixed number of bits).</p></li>
+<li><p>Can only manipulate values <strong>stored in CPU registers</strong>.</p></li>
+<li><p>RISC chips are simple to design and cheap to build.</p></li>
+<li><p>Used in ARM-based chips, found in microcontrollers (Arduino, Raspberry Pi) and smartphones.</p>
+<p>Also used in IBM Power processors (used in mainframes and servers).</p></li>
+</ul>
+</section>
+<section id="cisc-complex-instruction-set-computing" class="slide level2">
+<h2>CISC: complex instruction set computing</h2>
+<p>Large number of instructions, some performing more complicated operations – intended to correspond to statements in a high-level programming language.</p>
+<ul>
+<li><p><strong>Variable-length</strong> instructions.</p></li>
+<li><p>May take <strong>multiple clock cycles</strong> to execute an instruction.</p></li>
+<li><p>Able to manipulate values <strong>directly in main memory</strong>.</p></li>
+<li><p>CISC chips are complex, with special-purpose hardware, and are more expensive to build.</p></li>
+<li><p>Found in most PCs – the x86 architecture.</p></li>
+</ul>
+</section>
+<section id="simple-example-risc-vs-cisc" class="slide level2">
+<h2>Simple example: RISC vs CISC</h2>
+<p>Suppose we want to <em>increment</em> a value stored in <em>main memory</em>.</p>
+</section>
+<section id="cisc-architecture" class="slide level2 columns-2">
+<h2>CISC architecture</h2>
+<ul>
+<li><p>A <strong>single instruction</strong>:</p>
+<p><code>ADD mem one</code></p>
+<ul>
+<li>Retrieves the value from memory,</li>
+<li>Adds one to it,</li>
+<li>Writes back to memory.</li>
+</ul></li>
+</ul>
+<h3 id="cisc-architecture-1">CISC architecture</h3>
+<ul>
+<li><p><strong>Three separate instructions</strong>:</p>
+<pre><code>LDA mem
+ADD one
+STA mem</code></pre></li>
+</ul>
+</section></section>
+<section>
+<section id="a-little-more-history" class="title-slide slide level1 center">
+<h1>A little more history</h1>
+
+</section>
+<section id="second-generation-of-computers" class="slide level2">
+<h2>Second-generation of computers</h2>
+<ul>
+<li><p>Recall that early computers, e.g., EDSAC, used vacuum tubes (thermionic valves).</p></li>
+<li><p>These were <strong>bulky</strong>, <strong>unreliable</strong>, <strong>generated lots of heat</strong> and <strong>required lots of energy</strong> to run.</p></li>
+<li><p>In the late 1950s, computers began to use <strong>electronic circuit boards</strong> made out of transistors instead.</p></li>
+<li><p>These computers were popular until the late 1960s.</p></li>
+</ul>
+</section>
+<section id="first-transistor-computer" class="slide level2">
+<h2>First transistor computer</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>Developed at the University of Manchester</p></li>
+<li><p>Working prototype in November <strong>1953</strong>,</p>
+<p>had <strong>92 transistors</strong> and <strong>950 diodes</strong>.</p></li>
+<li><p>Full-size version was operational in <strong>1955</strong></p>
+<p>had <strong>200 transistors</strong>, <strong>1300 diodes</strong> and consumed <strong>150W</strong> of power.</p></li>
+<li><p>Early transistors were unreliable. Average error-free runtime was <strong>1.5 hours</strong>.</p></li>
+<li><p><strong>Not fully transistorised</strong> as it still used vacuum tubes in its clock.</p></li>
+</ul>
+</div><div class="column">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/03-tradic.jpg" class="quarto-figure quarto-figure-center" style="width:30.0%" alt="TRADIC computer"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p><strong>TRADIC</strong> transistor computer, developed at Bell Labs, released January 1954.</p>
+<p>Used a single high-power output vacuum tube amplifier to obtain a <strong>1MHz clock speed</strong>.</p></li>
+</ul>
+</div></div>
+</section>
+<section id="fully-transistorised-computer" class="slide level2">
+<h2>Fully transistorised computer</h2>
+<ul>
+<li><p>Harwell Cadet, 1955. <strong>58KHz</strong> clock speed.</p></li>
+<li><p>Prototype IBM 604 Transistor calculator.</p></li>
+<li><p>IBM 608, released April 1955 is considered to be the first <strong>commercial fully solid-state</strong> transistor computer.</p></li>
+</ul>
+</section>
+<section id="third-generation-computers" class="slide level2">
+<h2>Third generation computers</h2>
+<ul>
+<li><p>Widely used from the mid 60s to early 70s.</p></li>
+<li><p>Used <strong>integrated circuits</strong> (ICs)</p></li>
+<li><p>An IC is a single <em>chip</em> containing all transistors, resistors, capacitors, diodes and connections needed to operate.</p></li>
+<li><p>Invented by Jack Kilby in 1958, an electrical engineer working at Texas Instruments.</p>
+<p>Awarded the Nobel Prize in Physics in 2000.</p></li>
+<li><p>Faster and more reliable than second generation.</p></li>
+<li><p>Reduced computing time from <strong>micro</strong> seconds to <strong>nano</strong> seconds.</p></li>
+<li><p>Computers were becoming more <strong>compact</strong>, <strong>affordable</strong> and <strong>easy to use</strong> with high-level programming languages and mouse and keyboard instead of punched cards.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="moores-law" class="title-slide slide level1 center">
+<h1>Moore’s Law</h1>
+
+</section>
+<section id="moores-law-1" class="slide level2">
+<h2>Moore’s “Law”</h2>
+<ul>
+<li><p>Prediction made by Gordon Moore, co-founder of Intel, in 1965:</p>
+<p>“Number of transistors per chip doubles every two years.”</p></li>
+</ul>
+<aside class="notes">
+<p>Note that it’s not a “law” as in “law of physics”. More of a prediction which has remained (mostly) true.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="moores-law-graph" class="slide level2">
+<h2>Moore’s Law Graph</h2>
+
+<img data-src="../assets/03-moore.png" style="width:95.0%" alt="A semi-log plot of transistor counts for microprocessors against dates of introduction, nearly doubling every two years" class="r-stretch"></section>
+<section id="dennard-scaling" class="slide level2">
+<h2>Dennard scaling</h2>
+<ul>
+<li><p>Stated in a 1974 paper co-authored by Robert H. Dennard:</p>
+<p>“As transistors get smaller, their power density stays constant – power use stays in proportion with area.”</p></li>
+<li><p>If a transistor is <strong>30%</strong> smaller, then its power consumption is <strong>30%</strong> less.</p></li>
+<li><p>An IC of fixed size with <strong>twice</strong> the number of transistors consumes <strong>the same power</strong>.</p></li>
+<li><p>Allowed manufacturers to <strong>significantly increase clock speed</strong> without increase power consumption.</p></li>
+</ul>
+</section>
+<section id="dennard-scaling-1" class="slide level2">
+<h2>Dennard scaling</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>Appears to have broken down since 2006.</p></li>
+<li><p>Since 2016 the number of transistors per chip is still growing, but more slowly.</p></li>
+<li><p>As transistors get smaller, current leakage and heat production is more problematic.</p></li>
+</ul>
+</div><div class="column">
+<div class="cell" data-fag.align="center">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="../assets/03-powerwall.png" style="width:95.0%" alt="graph illustrating power wall"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p>We see clock speed plateau – as clack speed increases it becomes more difficult to cool the chip.</p>
+<p>This is called the <em>power wall</em>.</p></li>
+</ul>
+</div></div>
+</section>
+<section id="exercise-moores-law" class="slide level2">
+<h2>Exercise: Moore’s law</h2>
+<p>Discuss:</p>
+<ul>
+<li>Is Moore’s law still true today?</li>
+</ul>
+<aside class="notes">
+<ul>
+<li><p>There have been many predictions of the death of Moore’s law.</p></li>
+<li><p>We are no longer able to <strong>double</strong> the number of transistors per chip.</p></li>
+<li><p>Transistors are still getting smaller and more tightly packed, but progress is becoming slower.</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section id="next-time" class="title-slide slide level1 center">
+<h1>Next time</h1>
+<p>Embedded systems workshop!</p>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/holliebaker\.github\.io\/CSC4001-resources\/");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

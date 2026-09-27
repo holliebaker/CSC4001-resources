@@ -212,9 +212,6 @@ CSC4001: Computer Systems and Architecture
 <li>1946, Alan Turing wrote a detailed proposal for the electronic calculator, Automatic Computing Engine, citing Von Neumann.</li>
 </ul>
 </section>
-<section id="computer-architecture-4" class="slide level2">
-<h2>Computer Architecture</h2>
-</section>
 <section>
 <section id="von-neumann-vs-harvard" class="title-slide slide level1 center">
 <h1>Von Neumann vs Harvard</h1>
@@ -391,10 +388,243 @@ CSC4001: Computer Systems and Architecture
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section>
+<section id="learning-outcomes-1" class="slide level2">
+<h2>Learning Outcomes</h2>
+<ul>
+<li>Give an overview of early computers: use, specs, how they were programmed.</li>
+<li>Compare early and modern computers</li>
+<li>Explain how developments in early computing have influenced modern computer hardware.</li>
+</ul>
+</section></section>
+<section>
+<section id="history" class="title-slide slide level1 center">
+<h1>History</h1>
+
+</section>
+<section id="but-first-why-are-we-doing-this" class="slide level2">
+<h2>But first, why are we doing this?</h2>
+<ul>
+<li>Gain perspective.</li>
+<li>Understanding of why things are the way they are today.</li>
+<li>Learn from previous successes and failures.</li>
+</ul>
+</section></section>
+<section>
+<section id="early-computers" class="title-slide slide level1 center">
+<h1>Early computers</h1>
+
+</section>
+<section id="the-eniac-1945" class="slide level2">
+<h2>The ENIAC (1945)</h2>
+<div class="columns">
+<div class="column">
+<p><strong>Electronic Numerical Integrator and Computer</strong></p>
+<ul>
+<li><p>Special purpose computer for artillery firing table calculations.</p></li>
+<li><p>Located at the School of Engineering and Applied Science, Pennsylvania State University</p></li>
+</ul>
+</div><div class="column">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./assets/02-eniac.jpg" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="ENIAC"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<ul>
+<li><p>Could be “programmed” by using the plug-board and switches, data entered via punched cards.</p></li>
+<li><p>Later converted into a stored program computer.</p></li>
+<li><p>Base-10 arithmetic instead of the usual binary.</p></li>
+<li><p>Used vacuum tubes, which burnt out often – high maintenance.</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="colossus-1943-45" class="slide level2">
+<h2>Colossus (1943-45)</h2>
+<div class="columns">
+<div class="column">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./assets/02-colossus.jpg" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="Colossus"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column">
+<ul>
+<li>Special purpose computer developed at Bletchley Park to help break the Lorenz cipher.</li>
+<li>Designed by Tommy Flowers, a research engineer at the General Post Office, based on plans by Code and Cipher School mathematician Max Newman.</li>
+</ul>
+</div></div>
+<aside class="notes">
+<ul>
+<li>Used vacuum tubes; programmed using switches and a plug board.</li>
+<li>Data memory was a cycling strip of paper tape.</li>
+<li>Colossus Mk II, which used shift registers to run 6 times faster, went into operation in time for the D-day landings.</li>
+<li>By the end of the war, 10 Colossi were in operation.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="general-purpose-computers-post-ww2" class="slide level2">
+<h2>General purpose computers (post WW2)</h2>
+<p>Von Neumann arranged a 6-week summer workshop to design and build a new type of computer.</p>
+<ul>
+<li><p><strong>General purpose</strong>: many early computers were designed with a specific task in mind, which meant they were difficult to repurpose.</p>
+<p>Von Neumann wanted to build a stored program computer.</p></li>
+<li><p><strong>Electronic</strong>:replacing electromechanical components which were brittle, hot and noisy.</p>
+<p>Colossus and the ENIAC both consumed <strong>150KW</strong> of power.</p></li>
+<li><p><strong>Use binary</strong>, which is the easiest encoding to work with when using electronic components.</p></li>
+</ul>
+</section>
+<section id="maurice-wilkes" class="slide level2">
+<h2>Maurice Wilkes</h2>
+<ul>
+<li><p>Cambridge mathematician, physics PhD on “radio propagation of very long radio waves in the ionosphere”.</p></li>
+<li><p>Attended Jon Neumann’s workshop, then returned to Cambridge to build the EDSAC machine.</p></li>
+<li><p>Worked in radar during WW2, which inspired the memory technology for EDSAC.</p></li>
+<li><p>Memory was a limitation for early electronic computers, Wilkes used “delay lines”, mercury tubes and an oscilloscope, as memory.</p></li>
+</ul>
+<aside class="notes">
+<p>More information on mercury delay lines: Radar pulses were captured and played as sound waves. Sound waves passed through mercury, which slowed them down. Picked up by a microphone and displayed no an oscilloscope screen. Sound wave amplified and played back through the speaker so the pulse would repeat as long as needed.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="edsac-6-may-1949" class="slide level2">
+<h2>EDSAC (6 May 1949)</h2>
+<div class="columns">
+<div class="column">
+<p><strong>Electronic Delay Storage Automatic Calculator</strong></p>
+<ul>
+<li><p>One of the first <strong>stored program computers</strong> which used <strong>binary</strong>.</p></li>
+<li><p>Developed by Maurice Wilkes, William Renwick (hardware engineer) and David Wheeler (first system software engineer).</p></li>
+</ul>
+</div><div class="column">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./assets/02-edsac.jpg" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="EDSAC"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<aside class="notes">
+<ul>
+<li>Could perform 700 additions or 200 multiplications per second.</li>
+<li>512 18-bit words of memory for programs and data, upgraded to 1024 18-bit words in 1952.</li>
+<li>Data <strong>and programs</strong> were loaded via 5-hole punched paper tape, <em>initial orders</em> instructed the computer to load the program.</li>
+<li>Consumed <strong>11KW</strong> of power.</li>
+<li>The delay line memory was sub-optimal, but one of the best options at the time.</li>
+<li>Although the words were 18-bits, only 17 bits were used in practice owing to unreliability of memory. ## Programming the EDSAC</li>
+<li>Programs designed on paper and then punched, in assembler, onto 5-hole paper tape. Programmers became proficient at reading programs from the tape.</li>
+<li>Programmers would hang their tape on a line, waiting for an operator to run them – the first “job queue”.</li>
+<li>Operator would load program and data and then either return the printed output or inform the programmer of the memory address at which the program failed. ## Operating EDSAC</li>
+<li>Built-in <strong>add</strong>, <strong>multiply</strong>, <strong>bus</strong> and <strong>conditional jump</strong>.
+<ul>
+<li>No <strong>load</strong>. Instead, Instead clear the register (set to <span class="math inline">\(0\)</span>) and add the value from memory to the register.</li>
+<li>No <strong>division</strong>, but it was included as a subroutine.</li>
+</ul></li>
+<li>In case of a program error, the operator would inform the programmer at which address their program failed.</li>
+<li>There was no debugger. An oscilloscope screen showed the state of the registers, and a speaker played a different note depending on the value of the accumulator register. An experienced programmer learnt the sound of a failing program, e.g., if there was an infinite loop. ## Operating EDSAC</li>
+<li>Programmers had to use “bad” programming technique. E.g., to access a different array element, the code would <strong>modify itself</strong> to point to the correct address.</li>
+<li>No built-in mechanism for subroutines, instead perform a <strong>Wheeler jump</strong>: Jump with return memory address, computer would modify the last instruction of the subroutine to jump back to this return address.- No recursion was possible on the EDSAC. Turing proposed the <strong>call stack</strong> in his 1945 paper, which implemented subroutines “properly” and allowed recursion.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="usage" class="slide level2 smaller">
+<h2>Usage</h2>
+<p>A condition for funding was that EDSAC must provide a service, as opposed to just being an engineering experiment.</p>
+<ul>
+<li><p>Ronald Fisher, with Wilkes and Wheeler, used EDSAC to solve a differential equation for gene frequency – first use of computers in biology.</p></li>
+<li><p>In 1951, Miller and Wheeler computed a 79-digit prime number, the largest known at its time.</p></li>
+<li><p>EDSAC played a role in Nobel-prize-winning research: Nobel laureates thanked EDSAC in their acceptance speech. John Kendrew and Max Perutz (Chemistry, 1962), Andrew Huxley (Medicine, 1963) and Martin Ryle (Physics, 1974)</p></li>
+<li><p>EDSAC remained in operation until 11 July 1958, when it was superseded by EDSAC 2, which ran until 1965.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="over-to-you" class="title-slide slide level1 center">
+<h1>Over to you…</h1>
+
+</section>
+<section id="exercise-computer-history-research" class="slide level2">
+<h2>Exercise: computer history research</h2>
+<p>In pairs, teams, or individually…</p>
+<ul>
+<li>Choose a computer from history. Find out:
+<ul>
+<li>Who created it, and when?</li>
+<li>What could it do? hardware operations</li>
+<li>Specs: processing, memory, operations per second.</li>
+<li>How was it programmed? Could it be programmed?</li>
+<li>How did programmers / operators / scientists interact with it? Input/output mechanisms, how was it debugged?</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="edsac-simulator" class="title-slide slide level1 center">
+<h1>EDSAC Simulator</h1>
+
+</section>
+<section id="exercise-play-with-the-edsac-simulator" class="slide level2">
+<h2>Exercise: play with the EDSAC simulator</h2>
+<ul>
+<li><p>Martin Campbell Kelly, University of Warwick, developed an EDSAC simulator.</p>
+<p><a href="https://dcs.warwick.ac.uk/~edsac/" class="uri">https://dcs.warwick.ac.uk/~edsac/</a></p></li>
+<li><p>Several programs and games are available.</p>
+<p>Try Sandy Douglas’ OXO game (a tic-tac-toe game vs the computer).</p></li>
+<li><p>Although a faithful simulation, it is still easier to use than the real thing – imagine loading the paper tape, vacuum tubes blowing frequently, and try setting the speed to EDSAC real-time.</p></li>
+</ul>
 </section></section>
 <section id="next-time" class="title-slide slide level1 center">
 <h1>Next time</h1>
-<p>Evolution of the computer</p>
+<p>The CPU</p>
 
 
 </section>
