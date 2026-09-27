@@ -459,7 +459,7 @@
     "href": "CSC4001-S06-CPU2.html#speedup-1",
     "title": "Pipelines, Out Of Order Execution, and Parallelism",
     "section": "Speedup",
-    "text": "Speedup\n\\[\nS_n = \\dfrac{\\text{Time to complete } n \\text{ tasks sequentially}}{\\text{Time to complete} n \\text{ tasks in a pipeline}}\n\\]\n\nThe speedup for 10 instructions in a 4 stage pipeline is \\[\nS_10 = \\dfrac{40}{14} \\approx 2.86\n\\]\nThe more instructions, the better! \\[\nS_100 = \\dfrac{400}{104} \\approx 3.51, S_1000 = \\dfrac{1000}{1014} = 3.94\n\\]\n\nFor a pipeline with \\(k\\) stages, speedup approaches \\(k\\) as the number of instructions grows very large.\n\nMathematical explanation:\n\nSuppose we have \\(n\\) instructions to complete.\nFor a pipeline with \\(k\\) stages:\n\nThe first operation leaves the pipeline after \\(k\\) cycles.\nThe \\(n\\)-th instruction leaves the pipeline after \\(k + n\\) cycles.\n\n\\(T_{\\mathrm{pipeline}} = k + n\\) CPU cycles.\nWithout pipelining, each stage is completed sequentially for each instruction.\n\\(T_{\\mathrm{seq}} = k \\cdot n\\) CPU cycles.\nWe can calculate speedup, a measure of how much quicker the pipelines system is: \\[S = \\dfrac{T_{\\mathrm{seq}}}{T_{\\mathrm{pipeline}}} = \\dfrac{k \\cdot n}{k + n}.\\]\nPipelines work best for a large number of tasks: \\(n \\gg k\\).\nThen \\(S = k\\)."
+    "text": "Speedup\n\\[\nS_n = \\dfrac{\\text{Time to complete } n \\text{ tasks sequentially}}{\\text{Time to complete} n \\text{ tasks in a pipeline}}\n\\]\n\nThe speedup for 10 instructions in a 4 stage pipeline is \\[\nS_10 = \\dfrac{40}{14} \\approx 2.86\n\\]\nThe more instructions, the better! \\[\nS_{100} = \\dfrac{400}{104} \\approx 3.51, S_{1000} = \\dfrac{1000}{1014} = 3.94\n\\]\n\nFor a pipeline with \\(k\\) stages, speedup approaches \\(k\\) as the number of instructions grows very large.\n\nMathematical explanation:\n\nSuppose we have \\(n\\) instructions to complete.\nFor a pipeline with \\(k\\) stages:\n\nThe first operation leaves the pipeline after \\(k\\) cycles.\nThe \\(n\\)-th instruction leaves the pipeline after \\(k + n\\) cycles.\n\n\\(T_{\\mathrm{pipeline}} = k + n\\) CPU cycles.\nWithout pipelining, each stage is completed sequentially for each instruction.\n\\(T_{\\mathrm{seq}} = k \\cdot n\\) CPU cycles.\nWe can calculate speedup, a measure of how much quicker the pipelines system is: \\[S = \\dfrac{T_{\\mathrm{seq}}}{T_{\\mathrm{pipeline}}} = \\dfrac{k \\cdot n}{k + n}.\\]\nPipelines work best for a large number of tasks: \\(n \\gg k\\).\nThen \\(S = k\\)."
   },
   {
     "objectID": "CSC4001-S06-CPU2.html#throughput-and-latency",
@@ -501,14 +501,21 @@
     "href": "CSC4001-S06-CPU2.html#sequential-calculation",
     "title": "Pipelines, Out Of Order Execution, and Parallelism",
     "section": "Sequential calculation",
-    "text": "Sequential calculation\nLet’s assume our CPU can perform addition, subtraction, multiplication and square root in one CPU cycle.\nThen the calculation can be performed as follows.\n\nt1 = x2 - x1\nt2 = t1 * t2\nt3 = y1 - y2\nt4 = t3 * t3\n`t5 = t2 + t4\nD = sqrt( t5 )\n\n6 CPU cycles.\n\nNote: sqrt is a relatively complex operation for computers and some CPUs do not include it as an instruction. However, many CISC (complex) architectures do."
+    "text": "Sequential calculation\nCPU can add, mul, sub and sqrt in a single CPU cycle.\n\nt1 = x2 - x1\nt2 = t1 * t1\nt3 = y1 - y2\nt4 = t3 * t3\n`t5 = t2 + t4’\nD = sqrt( t5 )\n\n6 CPU cycles.\n\nNote: sqrt is a relatively complex operation for computers and some CPUs do not include it as an instruction. However, many CISC (complex) architectures do."
   },
   {
     "objectID": "CSC4001-S06-CPU2.html#parallel-calculation",
     "href": "CSC4001-S06-CPU2.html#parallel-calculation",
     "title": "Pipelines, Out Of Order Execution, and Parallelism",
     "section": "Parallel calculation",
-    "text": "Parallel calculation\nNow suppose we have 2 ALUs.\n\nt1 and t3 can be computed\nGiven t1 and t3, t2 and t4 respectively can be computed in parallel.\nt5 must wait for t2 and t4,\nThe result, D depends on t5.\n\n… but how can the CPU, a clump of transistors, figure this out?\n\nThe key is to make a table of instructions, and use a status flag to determine dependencies."
+    "text": "Parallel calculation\nNow suppose we have 2 ALUs.\n\nt1 and t3 can be computed\nGiven t1 and t3, t2 and t4 respectively can be computed in parallel.\nt5 must wait for t2 and t4,\nThe result, D depends on t5.\n\n… but how can the CPU, a clump of transistors, figure this out?"
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#the-key-is-to-make-a-table-of-instructions-and-use-a-status-flag-to-determine-dependencies.",
+    "href": "CSC4001-S06-CPU2.html#the-key-is-to-make-a-table-of-instructions-and-use-a-status-flag-to-determine-dependencies.",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "The key is to make a table of instructions, and use a status flag to determine dependencies.",
+    "text": "The key is to make a table of instructions, and use a status flag to determine dependencies."
   },
   {
     "objectID": "CSC4001-S06-CPU2.html#table-of-instructions",
@@ -522,42 +529,35 @@
     "href": "CSC4001-S06-CPU2.html#table-of-instructions-1",
     "title": "Pipelines, Out Of Order Execution, and Parallelism",
     "section": "Table of instructions",
-    "text": "Table of instructions\n\n\n\n\n\n\n\n\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\nt1\nReady\n\n\n2\nMUL\nt1\nt1\nt2\nWaiting\n\n\n3\nSUB\n11\n’20|t3| **Ready** | | 4  |MUL|t3|t3|t4| Waiting | | 5  |ADD|t2|t4|t5| Waiting | | 6  |SQRT|t5| --    |D`\nWaiting\n\n\n\n\n\nInstructions 1 and 3 are ready and can be executed in parallel."
+    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\nt1\nReady\n\n\n2\nMUL\nt1\nt1\nt2\nWaiting\n\n\n3\nSUB\n11\n20\nt3\nReady\n\n\n4\nMUL\nt3\nt3\nt4\nWaiting\n\n\n5\nADD\nt2\nt4\nt5\nWaiting\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n\nInstructions 1 and 3 are ready and can be executed in parallel."
   },
   {
     "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-2",
     "href": "CSC4001-S06-CPU2.html#table-of-instructions-2",
     "title": "Pipelines, Out Of Order Execution, and Parallelism",
     "section": "Table of instructions",
-    "text": "Table of instructions\n\n\n\n\n\n\n\n\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\nt1\nt1\nt2\nWaiting\n\n\n3\nSUB\n11\n’20|-9| Done | | 4  |MUL|t3|t3|t4| Waiting | | 5  |ADD|t2|t4|t5| Waiting | | 6  |SQRT|t5| --    |D`\nWaiting\n\n\n\n\n\nNow t1 and t3 are known, some more instructions become ready."
+    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\nt2\nWaiting\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\nt4\nWaiting\n\n\n5\nADD\nt2\nt4\nt5\nWaiting\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n\nNow t1 and t3 are known, some more instructions become ready."
   },
   {
     "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-3",
     "href": "CSC4001-S06-CPU2.html#table-of-instructions-3",
     "title": "Pipelines, Out Of Order Execution, and Parallelism",
     "section": "Table of instructions",
-    "text": "Table of instructions\n\n\n\n\n\n\n\n\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\nt2\nReady\n\n\n3\nSUB\n11\n’20|-9| Done | | 4  |MUL|-9|-9|t4| **Ready** | | 5  |ADD|t2|t4|t5| Waiting | | 6  |SQRT|t5| --    |D`\nWaiting\n\n\n\n\n\nInstructions 2 and 4 are ready and can be executed in parallel."
+    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\nt2\nReady\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\nt4\nReady\n\n\n5\nADD\nt2\nt4\nt5\nWaiting\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n\nInstructions 2 and 4 are ready and can be executed in parallel."
   },
   {
     "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-4",
     "href": "CSC4001-S06-CPU2.html#table-of-instructions-4",
     "title": "Pipelines, Out Of Order Execution, and Parallelism",
     "section": "Table of instructions",
-    "text": "Table of instructions\n\n\n\n\n\n\n\n\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\n25\nDone\n\n\n3\nSUB\n11\n’20|-9| Done | | 4  |MUL|-9|-9|81| Done | | 5  |ADD|25|81|t5| **Ready** | | 6  |SQRT|t5| --    |D`\nWaiting\n\n\n\n\n\nInstruction 5, which depends on t2 and t4 can now be executed."
+    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\n25\nDone\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\n81\nDone\n\n\n5\nADD\n25\n81\nt5\nReady\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n\nInstruction 5, which depends on t2 and t4 can now be executed."
   },
   {
     "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-5",
     "href": "CSC4001-S06-CPU2.html#table-of-instructions-5",
     "title": "Pipelines, Out Of Order Execution, and Parallelism",
     "section": "Table of instructions",
-    "text": "Table of instructions\n\n`t5 = 105’\nD = sqrt(105)."
-  },
-  {
-    "objectID": "CSC4001-S06-CPU2.html#next-time",
-    "href": "CSC4001-S06-CPU2.html#next-time",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Next time",
-    "text": "Next time\nMemory architecture / academic skills workshop."
+    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\n25\nDone\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\n81\nDone\n\n\n5\nADD\n25\n81\n106\nDone\n\n\n6\nSQRT\n106\n–\nD\nReady\n\n\n\nD = sqrt(105)."
   },
   {
     "objectID": "CSC4001-S04-CPU.html#learning-outcomes",
@@ -812,11 +812,270 @@
     "text": "Exercise: Moore’s law\nDiscuss:\n\nIs Moore’s law still true today?\n\n\n\nThere have been many predictions of the death of Moore’s law.\nWe are no longer able to double the number of transistors per chip.\nTransistors are still getting smaller and more tightly packed, but progress is becoming slower."
   },
   {
+    "objectID": "CSC4001-S10-OS.html#learning-outcomes",
+    "href": "CSC4001-S10-OS.html#learning-outcomes",
+    "title": "Operating Systems",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n\nDescribe the purpose of an operating system.\nUse a layered model to explain what is, and is not, in the scope of an operating system.\nOverview computer history in the context of operating systems, and use this to explain why the functions of an operating system are important."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#what-is-an-operating-system",
+    "href": "CSC4001-S10-OS.html#what-is-an-operating-system",
+    "title": "Operating Systems",
+    "section": "What is an Operating System",
+    "text": "What is an Operating System\n\nJust another program.\nProvides a programming interface for the computer hardware.\nResponsible for managing (protecting) resources."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#managing-resources",
+    "href": "CSC4001-S10-OS.html#managing-resources",
+    "title": "Operating Systems",
+    "section": "Managing resources",
+    "text": "Managing resources\n\nTypically hardware, e.g.,\nCPU, memory, files on disk, peripherals.\nResources are limited.\n\nembedded devices and smart devices still have small amounts of memory,\neven large supercomputers are not powerful enough for scientists,\nmodern PCs have huge amounts of memory and processing power compared to early computers.\nMany users still want more, e.g., for smooth game performance.\n\nResources need protecting."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#what-protection-should-the-os-provide",
+    "href": "CSC4001-S10-OS.html#what-protection-should-the-os-provide",
+    "title": "Operating Systems",
+    "section": "What protection should the OS provide?",
+    "text": "What protection should the OS provide?\n\nSecurity and integrity\nPrevent one user or program from corrupting another.\nAuthorisation\nEnsures only those “allowed” have access to certain resources.\nAuthentication\nChecking whether a user or program has the authorisation it claims to have.\nSave me from myself\nProtecting the user / programmer from their own stupid mistakes."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#optimise-performance",
+    "href": "CSC4001-S10-OS.html#optimise-performance",
+    "title": "Operating Systems",
+    "section": "Optimise performance",
+    "text": "Optimise performance\n\nIn addition, operating systems ensure resources meet certain criteria.\nE.g.,:\n\nresponsiveness: by prioritising certain events,\nreal-time: such as machinery in a factory, actuators on an aircraft,\nsecurity: by preventing accidental or malicious tampering."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#programming-interface",
+    "href": "CSC4001-S10-OS.html#programming-interface",
+    "title": "Operating Systems",
+    "section": "Programming interface",
+    "text": "Programming interface\n\nEasier access to hardware and peripherals:\nhardware programming can be fiddly and complicated.\nLess repeated code:\nCommon tasks, e.g., file handling, are implemented.\nLess chance of errors\n\nSince the OS is written by experts.\nCode is used by many people, so there is more chance of errors being found and fixed."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#written-by-experts",
+    "href": "CSC4001-S10-OS.html#written-by-experts",
+    "title": "Operating Systems",
+    "section": "Written by experts",
+    "text": "Written by experts\n\nExperts understand the hardware:\n\nunderstand exactly how the hardware works,\nknow how to get the best performance,\nknow the intricacies and pitfalls of hardware programming,\nconsider all the details, e.g., handling interrupts,\n\n\n\n\nDevice drivers were probably written by the hardware manufacturers themselves.\nWe can safely assume that expert OS developers are better programmers, and better computer scientists than us.\nThey likely already made most of the mistakes, and learnt from them, that less experienced programmers are likely to make."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#layered-model",
+    "href": "CSC4001-S10-OS.html#layered-model",
+    "title": "Operating Systems",
+    "section": "Layered model",
+    "text": "Layered model\n\n\n\n\n\n\n\n\n\n\n\n\n\nSplits a computer system into distinct chunks,\nwhich interact with each other through and interface.\nModelling allows us to look at the system in an appropriate level of detail."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#layered-model-1",
+    "href": "CSC4001-S10-OS.html#layered-model-1",
+    "title": "Operating Systems",
+    "section": "Layered model",
+    "text": "Layered model\n\n\n\nHardware: warm scone,\nCream: user-land applications, including the GUI.\nJam: operating system, providing an insulating layer between the scone and cream.\nProtects the hardware from user-land applications.\n\n\n\n\n\n\n\n\n\n\n\nA computer, applications and its operating system is like a correctly constructed scone.\n\n\n\nWe represent a computer, applications and operating system as a 3-layered model\nAnalogy: a correctly constructed scone. Note that jam is a good insulator and prevents the warm scone from causing the cream to melt.\nThus the OS is like the jam."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#note-gui-is-a-user-land-application",
+    "href": "CSC4001-S10-OS.html#note-gui-is-a-user-land-application",
+    "title": "Operating Systems",
+    "section": "Note: GUI is a user-land application",
+    "text": "Note: GUI is a user-land application\n\nAny program the user interacts with is not part of the operating system\nthis is “user-land”.\nThe GUI (desktop environment, window manager, etc) is not part of the operating system.\nAs computer scientists, we should not confuse\n\nthe OS and its GUI,\nthe OS and the hardware it is running on.\n\n\n\n\nMany people confuse the OS and the GUI, and OS and the hardware it runs on.\nOS manufacturers contribute to this confusion by marketing the GUI / hardware as part of the OS.\nE.g., think of Windows advertisements which emphasise the GUI, or Mac advertisements which emphasise the Apple hardware.\nHowever, if you’ve ever used Linux, you may have come across different “flavours” of the same distribution, which include different desktop environments (GUIs).\nYou may also be familiar with the same OS running on different hardware. E.g., running Windows on Mac hardware, running Linux on Mac or PC hardware.\nThus, as computer scientists, we need to be clear about what the OS is:\nthe layer between the hardware and user-land, responsible for managing and protecting resources, as well as providing an interface to the programmer."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#separation-of-concerns",
+    "href": "CSC4001-S10-OS.html#separation-of-concerns",
+    "title": "Operating Systems",
+    "section": "Separation of concerns",
+    "text": "Separation of concerns\n\nLayering allows us to decouple software:\n\ndevice drivers (e.g., interacting with peripherals),\nOS code (e.g., process scheduling, memory management),\nand user interface\n\nshould be as loosely coupled as possible.\n\n\n\nloose coupling: means the code of different components is intertwined as little as possible.\nin a loosely coupled system, you should be able to swap out one component for another without needing to make many changes to the rest of the system."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#tight-coupling-causes-problems",
+    "href": "CSC4001-S10-OS.html#tight-coupling-causes-problems",
+    "title": "Operating Systems",
+    "section": "Tight coupling causes problems",
+    "text": "Tight coupling causes problems\n\n\n\nHuge source of bugs,\nsince an error in the GUI could cause the entire system to crash.\nSecurity risk\nas a malicious user could gain access to OS internals through a poorly programmed application.\n\n\n\n\n\n\n\n\n\n\n\nThe famous “blue screen of death”."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#loose-coupling-enables-code-re-use",
+    "href": "CSC4001-S10-OS.html#loose-coupling-enables-code-re-use",
+    "title": "Operating Systems",
+    "section": "Loose coupling enables code re-use",
+    "text": "Loose coupling enables code re-use\n\n\n\nLoose coupling allows us to swap out one component,\nwhile making minimal changes to the rest of the system.\nThis allows us to re-use much of the OS code, while only changing hardware-specific drivers,\nallowing the same OS to run on many devices.\n\nThe Android OS shares lots of code with the Linux kernel."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#a-good-operating-system-should-be",
+    "href": "CSC4001-S10-OS.html#a-good-operating-system-should-be",
+    "title": "Operating Systems",
+    "section": "A good operating system should be…",
+    "text": "A good operating system should be…\n\nLightweight and efficient\nso that as many resources as possible can be dedicated to user-land applications.\nFlexible and easy to use,\ni.e., it should be a help, not a hindrance, to the programmer."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#early-computers-did-not-have-operating-systems",
+    "href": "CSC4001-S10-OS.html#early-computers-did-not-have-operating-systems",
+    "title": "Operating Systems",
+    "section": "Early computers did not have operating systems",
+    "text": "Early computers did not have operating systems\n\n\nPrograms loaded into EDSAC from paper tape,\n“starting orders” helped the operator load and initialise the program.\nProgrammer had to know which machine they were writing code for\nsince each early computer was slightly different.\nHad to write low-level code, interacting directly with the hardware,\ne.g., each program re-implemented printing to the TTY."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#manual-scheduling",
+    "href": "CSC4001-S10-OS.html#manual-scheduling",
+    "title": "Operating Systems",
+    "section": "Manual scheduling",
+    "text": "Manual scheduling\n\n\nEach program (job) was hung on a line,\nforming a job queue.\nA human operator manually loaded each program into the computer,\nIf the program ran successfully, its output would be returned to the programmer,\nIn case of an error, the operator would write the memory address at which the program failed and return this to the programmer.\nTurn-around could be days, if there was an error the programmer would have to restart the process.\n\n\n\n\n\n\n\n\n\n\n\n\nIn the 60s, there was no such thing as hacking away at a program and re-running it until it worked. Programmers learnt to “run” the programs in their heads, read machine code from paper tape, understand oscilloscope traces or audio cues to determine if their program was running correctly. At this time there were no high-level languages, and no debuggers."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#code-re-use-libraries-and-device-drivers",
+    "href": "CSC4001-S10-OS.html#code-re-use-libraries-and-device-drivers",
+    "title": "Operating Systems",
+    "section": "Code re-use: libraries and device drivers",
+    "text": "Code re-use: libraries and device drivers\n\nEarly programmers had to re-implement everything.\n\nwriting output,\nworking with files,\nperforming maths operations such as square root.\n\nLibraries were soon developed, so that programmers could share commonly repeated code.\nTo avoid low-level programming, working directly with hardware, device drivers were developed.\nLinkers and loaders were then developed to give access to this shared code."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#spooling",
+    "href": "CSC4001-S10-OS.html#spooling",
+    "title": "Operating Systems",
+    "section": "Spooling",
+    "text": "Spooling\n\nEarly computers were expensive to run.\nSo it was important to keep the CPU as busy as possible.\nManually loading programs became a bottleneck.\nA batch of programs was loaded onto a “fast” medium (magnetic tape) and run sequentially.\nThis process was called spooling.\nPrinting output via a teleprinter was also a bottleneck,\nso this was also spooled."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#the-monitor",
+    "href": "CSC4001-S10-OS.html#the-monitor",
+    "title": "Operating Systems",
+    "section": "The Monitor",
+    "text": "The Monitor\n\nA small program which\n\nloaded a program,\nran it on the hardware,\nand wrote its output.\n\nDirected by a special-purpose programming language called job control language.\nSee e.g., IBM JCL, or SLURM."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#the-monitor-1",
+    "href": "CSC4001-S10-OS.html#the-monitor-1",
+    "title": "Operating Systems",
+    "section": "The Monitor",
+    "text": "The Monitor\n\nAlso responsible for automatic accounting, prioritising e.g., users who paid more and killing processes if they exceeded allocated CPU or memory.\nStill widely used in modern mainframes or time-shared supercomputers."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#multitasking",
+    "href": "CSC4001-S10-OS.html#multitasking",
+    "title": "Operating Systems",
+    "section": "Multitasking",
+    "text": "Multitasking\n\nSome operations were slow and needed no CPU,\ne.g., writing output.\nTo best utilise the CPU, multiple programs were loaded at once,\nWhen the CPU was idle, another program could make use of it."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#multitasking-1",
+    "href": "CSC4001-S10-OS.html#multitasking-1",
+    "title": "Operating Systems",
+    "section": "Multitasking",
+    "text": "Multitasking\n\nThe Monitor was responsible for scheduling the programs,\ni.e., deciding which should be run and when.\nNote that exactly one program ran at a time.\nEach program had to surrender control back to the monitor,\nthere was no way for the Monitor to automatically stop a rogue program."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#co-operative-approach",
+    "href": "CSC4001-S10-OS.html#co-operative-approach",
+    "title": "Operating Systems",
+    "section": "Co-operative approach",
+    "text": "Co-operative approach\n\nSeveral programs and their data were loaded into memory.\nAll programs, including the Monitor, had the same rights.\nOne program was able to\n\nmonopolise resources by not surrendering control,\noverwrite another program or its data,\noverwrite the Monitor."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#early-scheduling",
+    "href": "CSC4001-S10-OS.html#early-scheduling",
+    "title": "Operating Systems",
+    "section": "Early scheduling",
+    "text": "Early scheduling\n\nMonitor allowed one program to run until it surrendered control.\nProblem: a malicious or erroneous program could monopolise all resources.\nMore complicated scheduling algorithms were suggested,\nbut these consumed valuable resources, so simplicity was preferred."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#early-scheduling-1",
+    "href": "CSC4001-S10-OS.html#early-scheduling-1",
+    "title": "Operating Systems",
+    "section": "Early scheduling",
+    "text": "Early scheduling\n\nAnother approach: pre-emptive scheduling.\nThe Monitor regularly interrupted running processes and decided what to do. I.e.,\n\ncontinue running the same process,\nrun a different process,\nkill the process if it had consumed too many resources."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#pre-emptive-scheduling",
+    "href": "CSC4001-S10-OS.html#pre-emptive-scheduling",
+    "title": "Operating Systems",
+    "section": "Pre-emptive scheduling",
+    "text": "Pre-emptive scheduling\n\nMore frequently:\n\neach program gets a small slice of CPU,\nappears more responsive,\nlots of time spent handling interrupts, less time running user programs,\neach interrupt “wakes up” the CPU, which consumes excessive power (in low-power systems where the CPU is often idle)."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#pre-emptive-scheduling-1",
+    "href": "CSC4001-S10-OS.html#pre-emptive-scheduling-1",
+    "title": "Operating Systems",
+    "section": "Pre-emptive scheduling",
+    "text": "Pre-emptive scheduling\n\nLess frequently:\n\nprograms appear slow, do not respond to user interactions,\ncompute intensive programs run bets, having more CPU time and less context switching,\nless time spent running the monitor."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#thrashing",
+    "href": "CSC4001-S10-OS.html#thrashing",
+    "title": "Operating Systems",
+    "section": "Thrashing",
+    "text": "Thrashing\n\nWhen a computer spends all its time running the Monitor and deciding what to do.\nThis was a common problem in early operating systems."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#potential-solution",
+    "href": "CSC4001-S10-OS.html#potential-solution",
+    "title": "Operating Systems",
+    "section": "Potential solution",
+    "text": "Potential solution\n\nUse unequal time slices:\n\nlarger and less frequent slices given to compute-intensive programs.\nsmaller and more frequent slices given to interactive programs."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#resource-protection",
+    "href": "CSC4001-S10-OS.html#resource-protection",
+    "title": "Operating Systems",
+    "section": "Resource protection",
+    "text": "Resource protection\n\nEarly programs had the same rights:\neveryone had equal access to all hardware.\nProtection was needed,\nthis required hardware support.\nCPU instructions were divided into two or more levels:\n\nUnprivileged: “safe” instructions which all programs could run,\nPrivileged: e.g., access to peripherals, scheduling a process.\n\nOnly the Monitor could run in privileged mode."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#user-land-programs-in-privileged-mode",
+    "href": "CSC4001-S10-OS.html#user-land-programs-in-privileged-mode",
+    "title": "Operating Systems",
+    "section": "User-land programs in privileged mode",
+    "text": "User-land programs in privileged mode\n\nIf a user-land application tries to run a privileged operation,\n\nCPU jumps to the Monitor,\nmonitor decides what to do,\nperhaps allow the instruction, or kill the process if it is not allowed.\n\nA user-land program may “politely ask” to perform a privileged operation,\nby raising a system call (syscall)."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#memory-protection",
+    "href": "CSC4001-S10-OS.html#memory-protection",
+    "title": "Operating Systems",
+    "section": "Memory protection",
+    "text": "Memory protection\n\nAll programs had equal access to memory.\none program could overwrite another program or its data,\nor overwrite prat of the Monitor.\nProtection was needed,\nand this also required hardware support.\nThe Memory Management Unit (MMU) was responsible for this."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#the-memory-management-unit",
+    "href": "CSC4001-S10-OS.html#the-memory-management-unit",
+    "title": "Operating Systems",
+    "section": "The Memory Management Unit",
+    "text": "The Memory Management Unit\n\nMemory divided into “pages”, typically 4096 bytes, but often larger, e.g., 4MB.\nFor each program, MMU stores a table of pages,\nfor each address, the MMU has a flag indicating whether the program can\n\nread,\nwrite,\nor execute (run as code)\n\nthat page."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#the-memory-management-unit-1",
+    "href": "CSC4001-S10-OS.html#the-memory-management-unit-1",
+    "title": "Operating Systems",
+    "section": "The Memory Management Unit",
+    "text": "The Memory Management Unit\n\nIt is useful to separate reading, writing and executing.\n\nPrevents one program overwriting another program or its data,\nPrevents user data being treated as code (security risk),"
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#fast-and-transparent",
+    "href": "CSC4001-S10-OS.html#fast-and-transparent",
+    "title": "Operating Systems",
+    "section": "Fast and transparent",
+    "text": "Fast and transparent\n\nEach access to memory must be checked by the MMU,\nIf a program attempts to access memory out of bounds, an interrupt is sent to the OS,\nwhich typically kills the process (through raising a segmentation fault SIGSEGV).\nthis is yet another overhead. MMU must be very fast and operate transparently."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#late-60s-to-mid-90s",
+    "href": "CSC4001-S10-OS.html#late-60s-to-mid-90s",
+    "title": "Operating Systems",
+    "section": "Late 60s to mid 90s",
+    "text": "Late 60s to mid 90s\n\nPre-emptive scheduling and resource protection began to appear in mainframes in the late 1960s.\nDOS (Disk OS), an early “home” OS was a single program OS with no pre-emption or memory protection due to lack of hardware support.\nWindows 3.1 also had no pre-emption or memory protection.\nHardware support was quickly added,\nby the mid 80s, Unix-derived OSs added pre-emption and memory protection."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#summary-what-have-early-computers-taught-us",
+    "href": "CSC4001-S10-OS.html#summary-what-have-early-computers-taught-us",
+    "title": "Operating Systems",
+    "section": "Summary: what have early computers taught us?",
+    "text": "Summary: what have early computers taught us?\n\nResources need managing,\nsince they are limited, we want to get best performance otu of hardware and best user experience.\nResources also need protection\nfrom out or malicious programs, e.g., limiting access to memory, but also files and network.\nProgrammers need a convenient interface,\nto best interact with hardware, avoid repeating code, and produce fewer errors."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "CSC4001: Systems and Architecture",
     "section": "",
-    "text": "Index\n\nS00: \nS01: \nCSC4001-S02W-Logic.qmd: \nS02: \nS03: \nS04: \nCSC4001-S05W-GoingUp.qmd: \nS05: \nS06:"
+    "text": "Index\n\nS00: \nS01: \nCSC4001-S02W-Logic.qmd: \nS02: \nS03: \nS04: \nCSC4001-S05W-GoingUp.qmd: \nS05: \nS06: \nS10:"
   },
   {
     "objectID": "CSC4001-S02W-Logic.html",

@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
+
+  <meta name="author" content="CSC4001: Computer Systems and Architecture">
+  <title>CSC4001-resources – Operating Systems</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
+  <link rel="stylesheet" href="./style.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Operating Systems</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+CSC4001: Computer Systems and Architecture
+</div>
+</div>
+</div>
+
+</section>
+<section id="learning-outcomes" class="slide level2">
+<h2>Learning Outcomes</h2>
+<ul>
+<li>Describe the <strong>purpose</strong> of an operating system.</li>
+<li>Use a layered model to explain what is, and is not, in the scope of an operating system.</li>
+<li>Overview computer history in the context of operating systems, and use this to explain why the functions of an operating system are important.</li>
+</ul>
+</section>
+<section id="what-is-an-operating-system" class="slide level2">
+<h2>What is an Operating System</h2>
+<ul>
+<li>Just another <strong>program</strong>.</li>
+<li>Provides a <strong>programming interface</strong> for the computer hardware.</li>
+<li>Responsible for <strong>managing</strong> (protecting) <strong>resources</strong>.</li>
+</ul>
+</section>
+<section id="managing-resources" class="slide level2 smaller">
+<h2>Managing resources</h2>
+<ul>
+<li><p>Typically <strong>hardware</strong>, e.g.,</p>
+<p>CPU, memory, files on disk, peripherals.</p></li>
+<li><p>Resources are <strong>limited</strong>.</p>
+<ul>
+<li><p>embedded devices and smart devices still have small amounts of memory,</p></li>
+<li><p>even large supercomputers are not powerful enough for scientists,</p></li>
+<li><p>modern PCs have huge amounts of memory and processing power compared to early computers.</p>
+<p>Many users still want more, e.g., for smooth game performance.</p></li>
+</ul></li>
+<li><p>Resources need <strong>protecting</strong>.</p></li>
+</ul>
+</section>
+<section id="what-protection-should-the-os-provide" class="slide level2 smaller">
+<h2>What protection should the OS provide?</h2>
+<ul>
+<li><p><strong>Security and integrity</strong></p>
+<p>Prevent one user or program from corrupting another.</p></li>
+<li><p><strong>Authorisation</strong></p>
+<p>Ensures only those “allowed” have access to certain resources.</p></li>
+<li><p><strong>Authentication</strong></p>
+<p>Checking whether a user or program has the <em>authorisation</em> it claims to have.</p></li>
+<li><p><strong>Save me from myself</strong></p>
+<p>Protecting the user / programmer from their own stupid mistakes.</p></li>
+</ul>
+</section>
+<section id="optimise-performance" class="slide level2">
+<h2>Optimise performance</h2>
+<ul>
+<li><p>In addition, operating systems ensure resources meet certain criteria.</p>
+<p>E.g.,:</p>
+<ul>
+<li><strong>responsiveness</strong>: by prioritising certain events,</li>
+<li><strong>real-time</strong>: such as machinery in a factory, actuators on an aircraft,</li>
+<li><strong>security</strong>: by preventing accidental or malicious tampering.</li>
+</ul></li>
+</ul>
+</section>
+<section id="programming-interface" class="slide level2">
+<h2>Programming interface</h2>
+<ul>
+<li><p><strong>Easier</strong> access to hardware and peripherals:</p>
+<p>hardware programming can be fiddly and complicated.</p></li>
+<li><p><strong>Less repeated code</strong>:</p>
+<p>Common tasks, e.g., file handling, are implemented.</p></li>
+<li><p><strong>Less chance of errors</strong></p>
+<ul>
+<li>Since the OS is written by experts.</li>
+<li>Code is used by many people, so there is more chance of errors being found and fixed.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<blockquote>
+<p><em>A good computer scientist is lazy and stupid.</em></p>
+</blockquote>
+<p>– Russell Bradford</p>
+<aside class="notes">
+<ul>
+<li><em>A good computer scientist is lazy and stupid.</em></li>
+<li>I.e., they do not repeat code; they use libraries written by someone else wherever possible; the leave complicated tasks with specific domain knowledge to the experts</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="written-by-experts" class="slide level2">
+<h2>Written by experts</h2>
+<ul>
+<li><p>Experts understand the hardware:</p>
+<ul>
+<li>understand exactly how the hardware works,</li>
+<li>know how to get the best performance,</li>
+<li>know the intricacies and pitfalls of hardware programming,</li>
+<li>consider all the details, e.g., handling interrupts,</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Device drivers were probably written by the hardware manufacturers themselves.</li>
+<li>We can safely assume that expert OS developers are better programmers, and better computer scientists than us.</li>
+<li>They likely already made most of the mistakes, and learnt from them, that less experienced programmers are likely to make.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="layered-model" class="slide level2">
+<h2>Layered model</h2>
+<div class="columns-2">
+<div class="column">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/05-layercake.jpg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="layered cake"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column">
+<ul>
+<li>Splits a computer system into distinct <em>chunks</em>,</li>
+<li>which interact with each other through and <em>interface</em>.</li>
+<li>Modelling allows us to look at the system in an appropriate level of detail.</li>
+</ul>
+</div></div>
+</section>
+<section id="layered-model-1" class="slide level2">
+<h2>Layered model</h2>
+<div class="columns-2">
+<div class="column">
+<ul>
+<li><p><strong>Hardware</strong>: warm scone,</p></li>
+<li><p><strong>Cream</strong>: user-land applications, including the GUI.</p></li>
+<li><p><strong>Jam</strong>: operating system, providing an insulating layer between the scone and cream.</p>
+<p>Protects the <strong>hardware</strong> from <strong>user-land applications</strong>.</p></li>
+</ul>
+</div><div class="column">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/05-scone.jpg" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="scone with jam first, then cream on top"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A computer, applications and its operating system is like a correctly constructed scone.</p>
+</div></div>
+<aside class="notes">
+<ul>
+<li>We represent a computer, applications and operating system as a 3-layered model</li>
+<li>Analogy: a correctly constructed scone. Note that jam is a good insulator and prevents the warm scone from causing the cream to melt.</li>
+<li>Thus the OS is like the jam.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="note-gui-is-a-user-land-application" class="slide level2">
+<h2>Note: GUI is a user-land application</h2>
+<ul>
+<li><p>Any program the user interacts with is <strong>not</strong> part of the operating system</p>
+<p>this is “<em>user-land</em>”.</p></li>
+<li><p>The GUI (desktop environment, window manager, etc) is <strong>not</strong> part of the operating system.</p></li>
+<li><p>As computer scientists, we should not confuse</p>
+<ul>
+<li>the OS and its GUI,</li>
+<li>the OS and the hardware it is running on.</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<ul>
+<li><p>Many people confuse the OS and the GUI, and OS and the hardware it runs on.</p></li>
+<li><p>OS manufacturers contribute to this confusion by marketing the GUI / hardware as part of the OS.</p>
+<p>E.g., think of Windows advertisements which emphasise the GUI, or Mac advertisements which emphasise the Apple hardware.</p></li>
+<li><p>However, if you’ve ever used Linux, you may have come across different “flavours” of the same distribution, which include different desktop environments (GUIs).</p></li>
+<li><p>You may also be familiar with the same OS running on different hardware. E.g., running Windows on Mac hardware, running Linux on Mac or PC hardware.</p></li>
+<li><p>Thus, as computer scientists, we need to be clear about what the OS is:</p>
+<p>the layer between the hardware and user-land, responsible for managing and protecting resources, as well as providing an interface to the programmer.</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="separation-of-concerns" class="slide level2">
+<h2>Separation of concerns</h2>
+<ul>
+<li><p>Layering allows us to <strong>decouple</strong> software:</p>
+<ul>
+<li>device drivers (e.g., interacting with peripherals),</li>
+<li>OS code (e.g., process scheduling, memory management),</li>
+<li>and user interface</li>
+</ul>
+<p>should be as <strong>loosely coupled</strong> as possible.</p></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>loose coupling: means the code of different components is intertwined as little as possible.</li>
+<li>in a loosely coupled system, you should be able to swap out one component for another without needing to make many changes to the rest of the system.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="tight-coupling-causes-problems" class="slide level2">
+<h2>Tight coupling causes problems</h2>
+<div class="columns-2">
+<div class="column">
+<ul>
+<li><p><strong>Huge source of bugs</strong>,</p>
+<p>since an error in the GUI could cause the entire system to crash.</p></li>
+<li><p><strong>Security risk</strong></p>
+<p>as a malicious user could gain access to OS internals through a poorly programmed application.</p></li>
+</ul>
+</div><div class="column">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/05-bsod.jpg" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="image of an error screen; the blue screen of death"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The famous “blue screen of death”.</p>
+</div></div>
+</section>
+<section id="loose-coupling-enables-code-re-use" class="slide level2">
+<h2>Loose coupling enables code re-use</h2>
+<div class="columns-2">
+<div class="column">
+<ul>
+<li><p>Loose coupling allows us to <strong>swap out</strong> one component,</p>
+<p>while making <strong>minimal changes</strong> to the rest of the system.</p></li>
+<li><p>This allows us to <strong>re-use</strong> much of the OS code, while only changing hardware-specific drivers,</p></li>
+<li><p>allowing the same OS to run on many devices.</p></li>
+</ul>
+<p><em>The Android OS shares lots of code with the Linux kernel.</em></p>
+</div><div class="column">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/05-android.png" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="a phone, tablet, smart watch and TV all running android"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/05-linux.jpg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="a collection of devices running Linux"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="a-good-operating-system-should-be" class="slide level2">
+<h2>A good operating system should be…</h2>
+<ul>
+<li><p><strong>Lightweight</strong> and <strong>efficient</strong></p>
+<p>so that as many resources as possible can be dedicated to user-land applications.</p></li>
+<li><p><strong>Flexible</strong> and <strong>easy to use</strong>,</p>
+<p>i.e., it should be a help, not a hindrance, to the programmer.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<blockquote>
+<p>“If you notice your operating system, then it’s not doing it’s job properly.”</p>
+</blockquote>
+<p>– Russell Bradford</p>
+</section>
+<section>
+<section id="history" class="title-slide slide level1 center">
+<h1>History</h1>
+
+</section>
+<section id="early-computers-did-not-have-operating-systems" class="slide level2">
+<h2>Early computers did not have operating systems</h2>
+<div class="columns-2">
+<ul>
+<li><p>Programs loaded into EDSAC from paper tape,</p>
+<p>“starting orders” helped the operator load and initialise the program.</p></li>
+<li><p>Programmer had to know which machine they were writing code for</p>
+<p>since each early computer was slightly different.</p></li>
+<li><p>Had to write low-level code, interacting directly with the hardware,</p>
+<p>e.g., each program re-implemented printing to the TTY.</p></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/02-edsac.jpg" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="EDSAC"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="manual-scheduling" class="slide level2">
+<h2>Manual scheduling</h2>
+<div class="columns-2">
+<ul>
+<li><p>Each program (<em>job</em>) was hung on a line,</p>
+<p>forming a <strong>job queue</strong>.</p></li>
+<li><p>A human operator manually loaded each program into the computer,</p></li>
+<li><p>If the program ran successfully, its output would be returned to the programmer,</p></li>
+<li><p>In case of an error, the operator would write the memory address at which the program failed and return this to the programmer.</p></li>
+<li><p>Turn-around could be days, if there was an error the programmer would have to restart the process.</p></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/05-tape.jpg" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="5-hole paper tape"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>In the 60s, there was no such thing as hacking away at a program and re-running it until it worked. Programmers learnt to “run” the programs in their heads, read machine code from paper tape, understand oscilloscope traces or audio cues to determine if their program was running correctly. At this time there were no high-level languages, and no debuggers.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="code-re-use-libraries-and-device-drivers" class="slide level2">
+<h2>Code re-use: libraries and device drivers</h2>
+<ul>
+<li><p>Early programmers had to re-implement everything.</p>
+<ul>
+<li>writing output,</li>
+<li>working with files,</li>
+<li>performing maths operations such as square root.</li>
+</ul></li>
+<li><p><strong>Libraries</strong> were soon developed, so that programmers could share commonly repeated code.</p></li>
+<li><p>To avoid low-level programming, working directly with hardware, <strong>device drivers</strong> were developed.</p></li>
+<li><p><strong>Linkers</strong> and <strong>loaders</strong> were then developed to give access to this shared code.</p></li>
+</ul>
+</section>
+<section id="spooling" class="slide level2">
+<h2>Spooling</h2>
+<ul>
+<li><p>Early computers were <strong>expensive to run</strong>.</p>
+<p>So it was important to keep the CPU as busy as possible.</p></li>
+<li><p>Manually loading programs became a bottleneck.</p></li>
+<li><p>A <em>batch</em> of programs was loaded onto a “fast” medium (magnetic tape) and run sequentially.</p>
+<p>This process was called <strong>spooling</strong>.</p></li>
+<li><p>Printing output via a teleprinter was also a bottleneck,</p>
+<p>so this was also spooled.</p></li>
+</ul>
+</section>
+<section id="the-monitor" class="slide level2">
+<h2>The Monitor</h2>
+<ul>
+<li><p>A small program which</p>
+<ul>
+<li>loaded a program,</li>
+<li>ran it on the hardware,</li>
+<li>and wrote its output.</li>
+</ul></li>
+<li><p>Directed by a special-purpose programming language called <strong>job control language</strong>.</p>
+<p>See e.g., IBM JCL, or SLURM.</p></li>
+</ul>
+</section>
+<section id="the-monitor-1" class="slide level2">
+<h2>The Monitor</h2>
+<ul>
+<li><p>Also responsible for <strong>automatic accounting</strong>, <strong>prioritising</strong> e.g., users who paid more and <strong>killing processes</strong> if they exceeded allocated CPU or memory.</p></li>
+<li><p>Still widely used in modern <strong>mainframes</strong> or time-shared <strong>supercomputers</strong>.</p></li>
+</ul>
+</section>
+<section id="multitasking" class="slide level2">
+<h2>Multitasking</h2>
+<ul>
+<li><p>Some operations were <strong>slow</strong> and needed <strong>no CPU</strong>,</p>
+<p>e.g., writing output.</p></li>
+<li><p>To best utilise the CPU, <strong>multiple programs</strong> were loaded at once,</p></li>
+<li><p>When the CPU was idle, another program could make use of it.</p></li>
+</ul>
+</section>
+<section id="multitasking-1" class="slide level2">
+<h2>Multitasking</h2>
+<ul>
+<li><p>The Monitor was responsible for <strong>scheduling</strong> the programs,</p>
+<p>i.e., deciding which should be run and when.</p></li>
+<li><p>Note that <strong>exactly one</strong> program ran at a time.</p></li>
+<li><p>Each program had to <strong>surrender control</strong> back to the monitor,</p>
+<p>there was no way for the Monitor to automatically stop a rogue program.</p></li>
+</ul>
+</section>
+<section id="co-operative-approach" class="slide level2">
+<h2>Co-operative approach</h2>
+<ul>
+<li><p>Several programs and their data were loaded into memory.</p></li>
+<li><p>All programs, including the Monitor, had the <strong>same rights</strong>.</p></li>
+<li><p>One program was able to</p>
+<ul>
+<li>monopolise resources by not surrendering control,</li>
+<li>overwrite another program or its data,</li>
+<li>overwrite the Monitor.</li>
+</ul></li>
+</ul>
+</section>
+<section id="early-scheduling" class="slide level2">
+<h2>Early scheduling</h2>
+<ul>
+<li><p>Monitor allowed one program to run until it surrendered control.</p></li>
+<li><p>Problem: a malicious or erroneous program could monopolise all resources.</p></li>
+<li><p>More complicated scheduling algorithms were suggested,</p>
+<p>but these consumed valuable resources, so simplicity was preferred.</p></li>
+</ul>
+</section>
+<section id="early-scheduling-1" class="slide level2">
+<h2>Early scheduling</h2>
+<ul>
+<li><p>Another approach: <strong>pre-emptive</strong> scheduling.</p>
+<p>The Monitor regularly <em>interrupted</em> running processes and decided what to do. I.e.,</p>
+<ul>
+<li>continue running the same process,</li>
+<li>run a different process,</li>
+<li>kill the process if it had consumed too many resources.</li>
+</ul></li>
+</ul>
+</section>
+<section id="pre-emptive-scheduling" class="slide level2">
+<h2>Pre-emptive scheduling</h2>
+<ul>
+<li>More frequently:
+<ul>
+<li>each program gets a small slice of CPU,</li>
+<li>appears more responsive,</li>
+<li>lots of time spent handling interrupts, less time running user programs,</li>
+<li>each interrupt “wakes up” the CPU, which consumes excessive power (in low-power systems where the CPU is often idle).</li>
+</ul></li>
+</ul>
+</section>
+<section id="pre-emptive-scheduling-1" class="slide level2">
+<h2>Pre-emptive scheduling</h2>
+<ul>
+<li>Less frequently:
+<ul>
+<li>programs appear slow, do not respond to user interactions,</li>
+<li>compute intensive programs run bets, having more CPU time and less context switching,</li>
+<li>less time spent running the monitor.</li>
+</ul></li>
+</ul>
+</section>
+<section id="thrashing" class="slide level2">
+<h2>Thrashing</h2>
+<ul>
+<li><p>When a computer spends all its time running the Monitor and deciding what to do.</p></li>
+<li><p>This was a common problem in early operating systems.</p></li>
+</ul>
+</section>
+<section id="potential-solution" class="slide level2">
+<h2>Potential solution</h2>
+<ul>
+<li><p>Use <strong>unequal time slices</strong>:</p>
+<ul>
+<li>larger and less frequent slices given to compute-intensive programs.</li>
+<li>smaller and more frequent slices given to interactive programs.</li>
+</ul></li>
+</ul>
+</section>
+<section id="resource-protection" class="slide level2">
+<h2>Resource protection</h2>
+<ul>
+<li><p>Early programs had the same rights:</p>
+<p>everyone had <strong>equal access</strong> to <strong>all</strong> hardware.</p></li>
+<li><p>Protection was needed,</p>
+<p>this required hardware support.</p></li>
+<li><p>CPU instructions were divided into <strong>two or more</strong> levels:</p>
+<ul>
+<li><strong>Unprivileged</strong>: “safe” instructions which all programs could run,</li>
+<li><strong>Privileged</strong>: e.g., access to peripherals, scheduling a process.</li>
+</ul></li>
+<li><p>Only the Monitor could run in privileged mode.</p></li>
+</ul>
+</section>
+<section id="user-land-programs-in-privileged-mode" class="slide level2">
+<h2>User-land programs in privileged mode</h2>
+<ul>
+<li><p>If a user-land application tries to run a privileged operation,</p>
+<ul>
+<li><p>CPU jumps to the Monitor,</p></li>
+<li><p>monitor decides what to do,</p>
+<p>perhaps allow the instruction, or kill the process if it is not allowed.</p></li>
+</ul></li>
+<li><p>A user-land program may “politely ask” to perform a privileged operation,</p>
+<p>by raising a <strong>system call</strong> (<code>syscall</code>).</p></li>
+</ul>
+</section>
+<section id="memory-protection" class="slide level2">
+<h2>Memory protection</h2>
+<ul>
+<li><p>All programs had <strong>equal access</strong> to memory.</p></li>
+<li><p>one program could overwrite another program or its data,</p>
+<p>or overwrite prat of the Monitor.</p></li>
+<li><p>Protection was needed,</p>
+<p>and this also required hardware support.</p></li>
+<li><p>The <strong>Memory Management Unit</strong> (MMU) was responsible for this.</p></li>
+</ul>
+</section>
+<section id="the-memory-management-unit" class="slide level2">
+<h2>The Memory Management Unit</h2>
+<ul>
+<li><p>Memory divided into “pages”, typically <em>4096 bytes</em>, but often larger, e.g., <em>4MB</em>.</p></li>
+<li><p>For each program, MMU stores a <strong>table of pages</strong>,</p>
+<p>for each address, the MMU has a flag indicating whether the program can</p>
+<ul>
+<li><strong>read</strong>,</li>
+<li><strong>write</strong>,</li>
+<li>or <strong>execute</strong> (run as code)</li>
+</ul>
+<p>that page.</p></li>
+</ul>
+</section>
+<section id="the-memory-management-unit-1" class="slide level2">
+<h2>The Memory Management Unit</h2>
+<ul>
+<li><p>It is useful to separate reading, writing and executing.</p>
+<ul>
+<li>Prevents one program overwriting another program or its data,</li>
+<li>Prevents user data being treated as code (security risk),</li>
+</ul></li>
+</ul>
+</section>
+<section id="fast-and-transparent" class="slide level2">
+<h2>Fast and transparent</h2>
+<ul>
+<li><p>Each access to memory must be checked by the MMU,</p></li>
+<li><p>If a program attempts to access memory out of bounds, an interrupt is sent to the OS,</p>
+<p>which typically <strong>kills the process</strong> (through raising a segmentation fault <em>SIGSEGV</em>).</p></li>
+<li><p>this is yet another overhead. MMU must be very <strong>fast</strong> and operate <strong>transparently</strong>.</p></li>
+</ul>
+</section>
+<section id="late-60s-to-mid-90s" class="slide level2">
+<h2>Late 60s to mid 90s</h2>
+<ul>
+<li><p>Pre-emptive scheduling and resource protection began to appear in <strong>mainframes</strong> in the <strong>late 1960s</strong>.</p></li>
+<li><p>DOS (Disk OS), an early “home” OS was a single program OS with <strong>no pre-emption or memory protection</strong> due to lack of hardware support.</p>
+<p>Windows 3.1 also had <strong>no pre-emption or memory protection</strong>.</p></li>
+<li><p>Hardware support was quickly added,</p>
+<p>by the <strong>mid 80s</strong>, Unix-derived OSs added pre-emption and memory protection.</p></li>
+</ul>
+</section>
+<section id="summary-what-have-early-computers-taught-us" class="slide level2">
+<h2>Summary: what have early computers taught us?</h2>
+<ul>
+<li><p>Resources need <strong>managing</strong>,</p>
+<p>since they are limited, we want to get best performance otu of hardware and best user experience.</p></li>
+<li><p>Resources also need <strong>protection</strong></p>
+<p>from out or malicious programs, e.g., limiting access to memory, but also files and network.</p></li>
+<li><p>Programmers need a <strong>convenient interface</strong>,</p>
+<p>to best interact with hardware, avoid repeating code, and produce fewer errors.</p></li>
+</ul>
+</section></section>
+<section id="next-time" class="title-slide slide level1 center">
+<h1>Next time</h1>
+<p>Reading week…</p>
+<p>…then Processes</p>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/holliebaker\.github\.io\/CSC4001-resources\/");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
