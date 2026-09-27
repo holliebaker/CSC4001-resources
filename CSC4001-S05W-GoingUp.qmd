@@ -1,0 +1,199 @@
+---
+title: "Workshop: Going up"
+author: ""
+date: ""
+---
+
+# Build an Elevator Controller
+
+Every elevator you've ever ridden is run by a small computer following a surprisingly short list of rules. Today you'll write those rules yourself.
+
+Your kit has an Arduino, a 144-LED strip standing upright as the elevator shaft, and three call buttons, one for each floor. The hardware is already wired up and a helper file draws everything on the strip for you, so all of your effort goes into the logic.
+
+## What you'll practise
+
+By the end of the session you'll have designed a **state machine** (states, events and transitions), used **non-blocking timing** with `millis()` instead of `delay()`, used an **array** to remember requests, compared **scheduling algorithms** and argued about their trade-offs, and **tested** your code against scenarios and **invariants**.
+
+> **Kit rules.** Don't unplug or rewire anything while the power supply is on. Don't change `BRIGHTNESS` or edit `ElevatorHAL.h`. A full strip at full brightness draws far more power than the kit is built for. If something looks wrong with the hardware, ask a demonstrator.
+
+---
+
+## Reading the shaft
+
+The strip stands upright with LED 0 at the bottom, split into three floors of 48 LEDs each.
+
+| Floor | Button | Car sits on LEDs |
+|---|---|---|
+| 0 (ground) | pin 2 | 19–28 |
+| 1 | pin 3 | 67–76 |
+| 2 | pin 4 | 115–124 |
+
+| You see | It means |
+|---|---|
+| A dim white pair of LEDs | The landing lights for a floor |
+| A **blue** pair | Someone is waiting at that floor (a *call*) |
+| A white–amber–white block | The car, doors shut |
+| A **green** gap in the middle of the car | The doors are open |
+| **Red** LEDs at both ends of the strip | Your car has left the shaft. That's a bug! |
+
+The doors are the eight middle LEDs of the car, controlled by the variable `doorOpen` (W = white frame, A = amber door, G = green gap):
+
+```
+doorOpen = 0   W A A A A A A A A W   shut
+doorOpen = 1   W A A A G G A A A W
+doorOpen = 2   W A A G G G G A A W
+doorOpen = 3   W A G G G G G G A W
+doorOpen = 4   W G G G G G G G G W   fully open  (DOOR_STEPS)
+```
+
+## Your toolkit
+
+Your sketch includes `ElevatorHAL.h`. You don't edit it; you call these functions:
+
+| Function | What it does |
+|---|---|
+| `hal_buttonPressed(f)` | `true` **once** for each press of floor `f`'s button |
+| `hal_buttonHeld(f)` | `true` for as long as floor `f`'s button is held down |
+| `hal_floorPosition(f)` | The LED index where the bottom of the car sits at floor `f` |
+| `hal_floorAt(carPos)` | The floor the car is level with, or `-1` if it's between floors |
+| `hal_draw(carPos, doorOpen, calls)` | Draws everything. Already the last line of `loop()` |
+
+Useful constants: `NUM_FLOORS` (3), `NUM_LEDS` (144), `DOOR_STEPS` (4).
+
+The starter sketch already declares the states and variables, and gives you `changeState(newState)`. It switches state, restarts `timer`, and prints the change to the Serial Monitor, so you can always see what your elevator thinks it's doing. **Always change state with `changeState`**, never with `state = ...`.
+
+---
+
+## Two big ideas before you start
+
+### 1. A state machine
+
+At every moment, your elevator is in exactly one of five states: `IDLE`, `MOVING`, `DOORS_OPENING`, `DOORS_OPEN` or `DOORS_CLOSING`.
+
+Every time round `loop()`, the code asks: *what state am I in, and has anything happened that means I should act or change state?* That's the `switch` statement in the starter sketch.
+
+A **transition** is a move from one state to another. It's triggered by an **event** (a button press) or a **condition** (a timer running out, the car reaching a floor).
+
+### 2. Never use `delay()`
+
+`delay(2000)` freezes the whole Arduino for two seconds. No buttons are read and no LEDs are updated. An elevator that ignored everyone while its doors were open would be a pretty bad elevator.
+
+Instead, check the clock and only act once enough time has passed:
+
+```cpp
+if (millis() - timer >= MOVE_STEP_MS) {
+  timer = millis();   // restart the timer
+  // do ONE small step, e.g. move the car by one LED
+}
+```
+
+`loop()` runs thousands of times a second, so lots of tiny steps look like smooth movement, and the buttons get checked between every one of them.
+
+> **Watch out:** store times in `unsigned long`, never `int`. On an Arduino Uno an `int` tops out at 32,767, which is only about 33 seconds' worth of `millis()`.
+
+---
+
+## The tasks
+
+### Task 0: Get connected (5 min?)
+
+1. Open `ElevatorStarter.ino` in the Arduino IDE and check that `ElevatorHAL.h` appears as a second tab.
+2. Upload it, then open **Tools → Serial Monitor** and set it to **115200 baud**.
+3. You should see the car on the ground floor and dim landing lights on all three floors.
+
+**Done when:** pressing each button prints the right floor number.
+
+### Task 1: Make it move (20 min?)
+
+When a button is pressed and the elevator is `IDLE`, the car should travel to that floor and stop. Forget the doors for now.
+
+In the input section, if the state is `IDLE`, set `targetFloor`, set `direction` to `+1` (up) or `-1` (down), and call `changeState(MOVING)`.
+
+In `case MOVING:`, use the timer pattern to add `direction` to `carPos` every `MOVE_STEP_MS`. When `carPos` equals `hal_floorPosition(targetFloor)`, change back to `IDLE`.
+
+**Think:** what happens if you press the button for the floor you're already on? What *should* happen?
+
+**Done when:** the car glides to whichever floor you ask for, and presses while it's moving are ignored.
+
+### Task 2: Design the doors on paper (10 min?)
+
+Before writing any more code, draw a **state diagram**. Draw all five states as circles. Draw an arrow for every possible transition and label each arrow with the event or condition that causes it.
+
+Your diagram should answer these questions. What must be true before the car is allowed to move? What happens when the doors finish opening, and when they finish closing? Which states need a timer?
+
+**Done when:** a demonstrator has checked your diagram.
+
+### Task 3: Build the doors (20 min?)
+
+Change `MOVING` so that arriving at the target floor opens the doors instead of going straight to `IDLE`. Then fill in the three door states, following your diagram:
+
+- `DOORS_OPENING`: every `DOOR_STEP_MS`, add one to `doorOpen`. When it reaches `DOOR_STEPS`, go to `DOORS_OPEN`.
+- `DOORS_OPEN`: once `DOOR_HOLD_MS` has passed, go to `DOORS_CLOSING`.
+- `DOORS_CLOSING`: every `DOOR_STEP_MS`, subtract one from `doorOpen`. When it reaches `0`, go to `IDLE`.
+
+**Done when:** the car arrives, the doors slide open, wait two seconds, then slide shut, and the Serial Monitor shows the whole sequence of states.
+
+### Task 4: Remember every call (15 min?)
+
+At the moment, anyone who presses a button while the car is busy is ignored. Real elevators remember.
+
+Replace your Task 1 button code with a single line: `calls[f] = true;` (you'll see that floor's landing lights turn blue). Then move the decision-making into `case IDLE:`. Look for a floor with a call: if it's the floor the car is already on, clear the call and open the doors; otherwise set `targetFloor` and `direction` and start moving. When the car arrives, clear that floor's call.
+
+**Done when:** you can press all three buttons quickly and every floor gets visited, with no blue lights left behind.
+
+### Task 5: Stop on the way (10 min?)
+
+If the car is travelling from floor 0 to floor 2 and someone on floor 1 presses their button in time, the car should stop at floor 1 first.
+
+In `MOVING`, after each step, use `hal_floorAt(carPos)` to find out whether the car is level with a floor. If that floor has a call, stop there.
+
+**Done when:** test scenarios 3 and 4 behave as expected.
+
+### Task 6: Choose wisely (15 min?)
+
+When several floors are waiting, which should the car visit next? Write a function `int chooseNextCall(int here)` that returns a floor number, or `-1` if nobody is waiting, and use it in `IDLE`.
+
+Try at least two of these strategies:
+
+- **Lowest floor first.** Simple, but is it fair?
+- **Nearest floor first.**
+- **Keep going the same way** while anyone is waiting further along in that direction, and only then turn around. This is known as the *elevator algorithm* (or SCAN).
+
+**Discuss with your partner:** can you invent a sequence of button presses where somebody waits *forever* under one of these strategies? Which would you want in a 50-storey building?
+
+### Task 7: Make it safe (15 min?)
+
+**Hold the doors.** If someone presses the button for the floor the car is stopped at while the doors are closing, open them again. If the doors are already fully open, restart the hold timer so they stay open longer.
+
+**Check your invariants.** An *invariant* is something that must always be true, no matter what. After the `switch`, add checks that print a warning to the Serial Monitor if either of these ever happens: the state is `MOVING` but `doorOpen` isn't `0`, or `carPos` is outside the shaft.
+
+**Done when:** every scenario in the test table below passes with no warnings.
+
+---
+
+## Test scenarios
+
+Press the Arduino's reset button before each test. A test only passes if the car does what's described **and** no safety warnings appear.
+
+| # | Starting point | Do this | Expected result |
+|---|---|---|---|
+| 1 | Idle at floor 0 | Press 2 | Travels past floor 1 without stopping; doors open at 2 |
+| 2 | Idle at floor 0 | Press 0 | Doors open and close; the car doesn't move |
+| 3 | Idle at floor 0 | Press 2, then press 1 while the car is still below floor 1 | Stops at 1, then carries on to 2 |
+| 4 | Idle at floor 0 | Press 2, then press 1 just after the car passes floor 1 | Goes to 2 first, then comes back down to 1 |
+| 5 | Doors closing at floor 1 | Press 1 | Doors open again |
+| 6 | Doors open at floor 1, having travelled up from 0 | Press 0, then press 2 | **You decide.** Write down what your algorithm does and why |
+| 7 | Idle at floor 0 | Press 0, 1 and 2 in quick succession | Every floor is visited once; all blue lights clear |
+| 8 | Doors open at floor 1 | Press 1 about once a second | Doors stay open; the car never moves with its doors open |
+| 9 | Car moving towards floor 2 | Mash the floor 2 button | Nothing strange happens |
+
+---
+
+## Stretch challenges
+
+- **Home time.** After 10 seconds idle with no calls, send the car back to the ground floor.
+- **Emergency stop.** While all three buttons are held down (`hal_buttonHeld`), the car freezes where it is, even between floors.
+- **Smooth ride.** Make the car speed up as it leaves a floor and slow down as it arrives by varying the step time.
+- **Ding!** Add a piezo buzzer to a spare pin and use `tone()` to play a chime when the doors open.
+- **Four floors.** What would need to change? Talk it through with a demonstrator before touching `ElevatorHAL.h`.
+- **Brain and body.** Move all of your decision-making into functions that never touch the hardware. How would that let you test your elevator on a laptop with no Arduino at all? Why might a real elevator company care about that?
