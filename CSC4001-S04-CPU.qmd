@@ -709,6 +709,30 @@ Discuss:
 
 :::
 
+# S1: Report on core computer architectural components
+
+## Part 1: research
+
+- Choose a time period of 15-20 years, and an element of computer hardware.
+- Consider the following prompt: explain the impact of your chosen element of computer architecture during your chosen time period. 
+- Without using an LLM, but with reference to at least three academic sources, answer the above prompt. Focus on why evolutions in your chosen component had the impact they did, 
+800 words approx, not including refgerences and citations
+
+::: notes
+Why did the developments succeed or fail at the time? If they failed, has there been a comeback in more recent years, and why (or why not)? Have these developments changed how we interact with computers, and if so, how (for instance, consider how computers are used in business, academia, and at home, and how programming languages and operating systems have evolved to take advantage of the developments you discussed, for better or for worse)? 
+:::
+
+## Part 2: LLM analysis
+
+-     Use an LLM to generate a response to the above prompt.
+- Analyse the LLM’s response: validate the claims it has made, with reference to a range of academic sources. 
+- Conclude whether you are able to accept or reject its claims.
+- 800 words approx
+
+:::notes
+Comment on the accuracy and relevance of its response, checking its claims against academic sources. Has the LLM committed any falacies, made any assumptions or generated its answer based on any biases? Has the LLM’s response made you reconsider your own answer?
+:::
+
 # Next time
 
 Embedded systems workshop!

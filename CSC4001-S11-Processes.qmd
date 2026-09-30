@@ -1,0 +1,529 @@
+---
+title: "Processes"
+author: "CSC4001: Computer Systems and Architecture"
+date: ""
+format:
+  revealjs:
+    theme: simple
+    css: ./style.css
+---
+
+
+## Learning Outcomes
+
+- Define a **process** in the context of operating systems, stating the
+  information the operating system needs to manage a process.
+- Summarise the basic states in the **process lifecycle** and draw a
+  diagram illustrating the state transitions the OS can make.
+- Explain how a computer is **booted**.
+
+## Recap: operating systems
+
+::::: columns-2
+::: column
+Early computers such as EDSAC had no operating system.
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/02-edsac.jpg){fig-align="center" fig-alt="EDSAC"
+width="90%"}
+:::
+::::
+
+:::
+::: column
+
+- Programmers had to write their programs for the hardware,
+
+- Lots of low-level, repeated code,
+
+- programs manually loaded by an operator.
+:::
+:::::
+
+## Recap: operating systems
+
+- Later, a program called the Monitor was introduced.
+
+- Allowed scheduling of multiple programs.
+
+- All programs had equal access:
+
+  possible for one program to overwrite another, even the monitor.
+
+- Co-operative multitasking:
+
+  a program had to surrender control back to the monitor.
+
+- Meant erroneous or malicious programs could crash the whole system.
+
+## Recap: operating systems
+
+- Hardware support was later added to protect resources:
+
+  - **Instruction levels**:
+
+    only the Monitor could run *privileged* instructions.
+
+  - **Memory management unit**:
+
+    kept track of which areas of memory each process could read, write
+    or execute.
+
+## Recap: operating systems
+
+- Device drivers to interface with hardware were written,
+
+- along with code libraries for common operations.
+
+- Linkers and loaders build to allow programs to access external code,
+
+  enabling **code re-use**.
+
+## Recap: operating systems
+
+- A program responsible for
+
+  - **Managing** and **protecting** resources
+
+    e.g., CPU, memory, disk, network.
+
+    - prevents accidental or malicious damage,
+    - provides efficient use of limited resources.
+
+  - Providing a **programming interface**:
+
+    - written by experts to get best performance out of hardware,
+    - less chance of errors as experts understand the pitfalls,
+    - prevents repeating low-level code.
+
+## Recap: operating systems
+
+Desirable attributes:
+
+- **Lightweight** and **efficient**
+
+  so that as many resources as possible can be dedicated to user-land
+  applications.
+
+- **Flexible** and **easy to use**,
+
+  i.e., it should be a help, not a hindrance, to the programmer.
+
+*A good operating system is the one you do not notice is there.*
+
+# Processes
+
+## Process
+
+Collection of data held by the operating system:
+
+- Code (machine instructions),
+
+- Data,
+
+- Metadata required by the operating system.
+
+- Also known as
+
+  *task*, *job*.
+
+- Not to be confused with
+
+  *processor*, *program*.
+
+## Process vs program
+
+- A program may consist of **several processes**.
+
+- E.g., one process builds an image, a different process renders it.
+
+- Another design pattern enabling separation of concerns,
+
+  called **structure by process**.
+
+- Less common in modern computers, which use threads,
+
+  although one process is still used for each browser tab, to provide
+  security.
+
+## Process metadata
+
+OS requires some information in order to run a process:
+
+- where in memory to find the code and data,
+- memory permissions (i.e., the MMU flags),
+- allocation (how much CPU time, memory, I/O it is allocated),
+- usage statistics (how many CPU cycles, how much time),
+- saved CPU state (e.g., contents of registers).
+
+This allows the OS to **manage** and **protect** resources.
+
+## Process states
+
+- OS keeps track of the state of each process -- basic states are
+
+  - **New**: a process which has just been created,
+
+    OS needs to do some setup,
+
+  - **Running**: currently being executed on the CPU,
+  - **Ready**: waiting to be scheduled, can be run immediately,
+  - **blocked**: cannot be run because it is waiting for something,
+
+    e.g., data to be read from disk,
+
+  - **Exit**: process has finished,
+
+    OS needs to clean up.
+
+## Scheduling
+
+::::: columns-2
+::: column
+Deciding which process should run next.
+
+- I.e., OS moves processes from one state to another.
+
+:::
+::: column
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/06-pickme.jpg){fig-align="center"
+fig-alt="cartoon saying pick me pick me" width="70%"}
+:::
+::::
+:::
+:::::
+
+## Process lifecycle
+
+- Typically, one process requests creation of another,
+
+  called *forking* or *spawning*.
+
+  - E.g., user clicks the web browser icon on their desktop.
+
+  - Desktop GUI program makes a **syscall** to the OS,
+
+    requesting creation of a new process, running the web browser
+    program.
+
+  - If allowed, OS creates the new process.
+
+    Syscall returns an exit code indicating success or reason for
+    failure.
+
+    - E.g., no permission to create processes,
+    - Insufficient resources -- too many processes running already.
+
+## Process lifecycle
+
+- All processes start in the **new** state.
+
+  metadata needed to run the process is called the **process control
+  block** (PCB).
+
+  - OS initialises process PCB datastructures,
+  - allocates memory,
+  - allocates a **process ID** (unique identifier for each process),
+  - sets initial **priority** importance, used by the scheduler),
+  - adds the process to the scheduler's list,
+  - then moves process to the **ready** state.
+
+- From the **ready** state,
+
+  process can be moved to **running** when the OS decides to schedule
+  it.
+
+## Process lifecycle
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/06-lifecycle.svg){fig-align="center"
+fig-alt="diagram showing possible process state transitions"
+width="90%"}
+:::
+::::
+
+## Process lifecycle
+
+- When the OS decides to schedule a process, it is **dispatched**.
+
+- *Jump and drop* CPU instruction is performed,
+
+  - *Jump* to the memory location containing process instructions,
+  - *Drop* from privileged (only allowed by the OS) mode to unprivileged
+    mode.
+
+- A process may voluntarily surrender control,
+
+  i.e., **relinquish**,
+
+  - save state (of CPU registers, MMU etc),
+  - process moved to **ready**.
+
+- Same happens if the process is **interrupted**, or its timeslice is
+  over.
+
+## Process lifecycle
+
+- If the process requires I/O, e.g., read from / write to disk,
+
+  it makes a **syscall**, asking the OS to perform the operation.
+
+  - state saved, process moved to **blocked**,
+
+- When the operation is complete,
+
+  - process moved to **ready**,
+  - will not be **running** until the OS schedules it.
+
+## Process lifecycle
+
+- Every process finishes in the **exit** state.
+
+  OS does some cleanup
+
+  - deallocating memory,
+  - releasing resources (e.g., closing files),
+  - deallocating the process control block.
+  - remove the process from the scheduler's list.
+
+## Process hierarchy
+
+- A basic list is not an efficient datastructure for the scheduler.
+
+  other representations are preferred, e.g.,
+
+  - priority queue
+  - process tree.
+
+## Process hierarchy
+
+- Unix uses a **process tree**,
+
+  - first process created, called *init* is the root of the tree.
+
+  - new processes become the *children* of the process which requested
+    their creation,
+
+  - allows processes to be **grouped**,
+
+  - Each group of processes has a **process leader**.
+
+  - Processes can be treated as a group,
+
+    E.g., killing the *process leader* causes all processes in its group
+    to be killed, too.
+
+## Process tree, example
+
+    $ pstree
+    systemd─┬─ModemManager───3*[{ModemManager}]
+            ├─NetworkManager───3*[{NetworkManager}]
+            ├─accounts-daemon───3*[{accounts-daemon}]
+            ├─acpid
+            ├─atd
+            ├─avahi-daemon───avahi-daemon
+            ├─bluetoothd
+            ├─colord───3*[{colord}]
+            ├─cron
+            ├─cups-browsed───3*[{cups-browsed}]
+            ├─cupsd
+            ├─daemon.start─┬─daemon.start───sleep
+            │              ├─lxd───22*[{lxd}]
+            │              └─lxd───13*[{lxd}]
+            ├─dbus-daemon
+            ├─fwupd───5*[{fwupd}]
+            ├─gdm3─┬─gdm-session-wor─┬─gdm-x-session─┬─Xorg───14*[{Xorg}]
+            │      │                 │               ├─gnome-session-b───3*[{gnome-session-b}]
+            │      │                 │               └─3*[{gdm-x-session}]
+            │      │                 └─3*[{gdm-session-wor}]
+            │      └─3*[{gdm3}]
+            ├─gnome-remote-de───3*[{gnome-remote-de}]
+            ├─2*[kerneloops]
+            ├─lxcfs───2*[{lxcfs}]
+            ├─nmbd
+            ├─polkitd───3*[{polkitd}]
+            ├─power-profiles-───3*[{power-profiles-}]
+            ├─rsyslogd───3*[{rsyslogd}]
+            ├─rtkit-daemon───2*[{rtkit-daemon}]
+            ├─run-cups-browse───run-cups-browse───sleep
+            ├─run-cupsd─┬─cups-proxyd───3*[{cups-proxyd}]
+            │           └─cupsd
+            ├─smbd─┬─smbd-cleanupd
+            │      └─smbd-notifyd
+            ├─snapd───18*[{snapd}]
+            ├─starter───charon───16*[{charon}]
+            ├─switcheroo-cont───3*[{switcheroo-cont}]
+            ├─systemd─┬─(sd-pam)
+            │         ├─at-spi-bus-laun─┬─dbus-daemon
+            │         │                 └─4*[{at-spi-bus-laun}]
+            │         ├─at-spi2-registr───3*[{at-spi2-registr}]
+            │         ├─catatonit
+            │         ├─chrome_crashpad───2*[{chrome_crashpad}]
+            │         ├─dbus-daemon
+            │         ├─dconf-service───3*[{dconf-service}]
+            │         ├─evince───7*[{evince}]
+            │         ├─evinced───3*[{evinced}]
+            │         ├─evolution-addre───6*[{evolution-addre}]
+            │         ├─evolution-calen───9*[{evolution-calen}]
+            │         ├─evolution-sourc───4*[{evolution-sourc}]
+            │         ├─gcr-ssh-agent───2*[{gcr-ssh-agent}]
+            │         ├─gedit───6*[{gedit}]
+            │         ├─2*[gjs───11*[{gjs}]]
+            │         ├─gnome-calendar───16*[{gnome-calendar}]
+            │         ├─gnome-keyring-d─┬─ssh-agent
+            │         │                 └─4*[{gnome-keyring-d}]
+            │         ├─gnome-session-b─┬─evolution-alarm───7*[{evolution-alarm}]
+            │         │                 ├─gsd-disk-utilit───3*[{gsd-disk-utilit}]
+            │         │                 ├─kdeconnectd───6*[{kdeconnectd}]
+            │         │                 ├─update-notifier───5*[{update-notifier}]
+            │         │                 └─4*[{gnome-session-b}]
+            │         ├─gnome-session-c───{gnome-session-c}
+            │         ├─gnome-shell─┬─Discord─┬─Discord───Discord───25*[{Discord}]
+            │         │             │         ├─Discord
+            │         │             │         ├─Discord───14*[{Discord}]
+            │         │             │         ├─Discord───41*[{Discord}]
+            │         │             │         ├─Discord───5*[{Discord}]
+            │         │             │         └─36*[{Discord}]
+            │         │             ├─firefox─┬─5*[Isolated Web Co───28*[{Isolated Web Co}]]
+            │         │             │         ├─Isolated Web Co───27*[{Isolated Web Co}]
+            │         │             │         ├─Privileged Cont───27*[{Privileged Cont}]
+            │         │             │         ├─RDD Process───4*[{RDD Process}]
+            │         │             │         ├─Socket Process───5*[{Socket Process}]
+            │         │             │         ├─Utility Process───4*[{Utility Process}]
+            │         │             │         ├─3*[Web Content───18*[{Web Content}]]
+            │         │             │         ├─WebExtensions───27*[{WebExtensions}]
+            │         │             │         ├─crashhelper───{crashhelper}
+            │         │             │         ├─file:// Content───29*[{file:// Content}]
+            │         │             │         └─121*[{firefox}]
+            │         │             ├─gnome-control-c───174*[{gnome-control-c}]
+            │         │             ├─lyx───11*[{lyx}]
+            │         │             ├─mutter-x11-fram───14*[{mutter-x11-fram}]
+            │         │             └─28*[{gnome-shell}]
+            │         ├─gnome-shell-cal───6*[{gnome-shell-cal}]
+            │         ├─gnome-terminal-─┬─bash───pstree
+            │         │                 ├─bash───R───12*[{R}]
+            │         │                 └─6*[{gnome-terminal-}]
+            │         ├─goa-daemon───4*[{goa-daemon}]
+            │         ├─goa-identity-se───3*[{goa-identity-se}]
+            │         ├─gpg-agent───{gpg-agent}
+            │         ├─gsd-a11y-settin───4*[{gsd-a11y-settin}]
+            │         ├─gsd-color───4*[{gsd-color}]
+            │         ├─gsd-datetime───4*[{gsd-datetime}]
+            │         ├─gsd-housekeepin───4*[{gsd-housekeepin}]
+            │         ├─gsd-keyboard───4*[{gsd-keyboard}]
+            │         ├─gsd-media-keys───5*[{gsd-media-keys}]
+            │         ├─gsd-power───5*[{gsd-power}]
+            │         ├─gsd-print-notif───3*[{gsd-print-notif}]
+            │         ├─gsd-printer───3*[{gsd-printer}]
+            │         ├─gsd-rfkill───3*[{gsd-rfkill}]
+            │         ├─gsd-screensaver───3*[{gsd-screensaver}]
+            │         ├─gsd-sharing───4*[{gsd-sharing}]
+            │         ├─gsd-smartcard───4*[{gsd-smartcard}]
+            │         ├─gsd-sound───4*[{gsd-sound}]
+            │         ├─gsd-wacom───3*[{gsd-wacom}]
+            │         ├─gsd-xsettings───4*[{gsd-xsettings}]
+            │         ├─gvfs-afc-volume───4*[{gvfs-afc-volume}]
+            │         ├─gvfs-goa-volume───3*[{gvfs-goa-volume}]
+            │         ├─gvfs-gphoto2-vo───3*[{gvfs-gphoto2-vo}]
+            │         ├─gvfs-mtp-volume───3*[{gvfs-mtp-volume}]
+            │         ├─gvfs-udisks2-vo───4*[{gvfs-udisks2-vo}]
+            │         ├─gvfsd─┬─gvfsd-dnssd───3*[{gvfsd-dnssd}]
+            │         │       ├─gvfsd-network───4*[{gvfsd-network}]
+            │         │       ├─gvfsd-trash───4*[{gvfsd-trash}]
+            │         │       └─3*[{gvfsd}]
+            │         ├─gvfsd-fuse───6*[{gvfsd-fuse}]
+            │         ├─gvfsd-metadata───3*[{gvfsd-metadata}]
+            │         ├─ibus-daemon─┬─ibus-dconf───4*[{ibus-dconf}]
+            │         │             ├─ibus-engine-sim───3*[{ibus-engine-sim}]
+            │         │             ├─ibus-extension-───4*[{ibus-extension-}]
+            │         │             └─3*[{ibus-daemon}]
+            │         ├─ibus-portal───3*[{ibus-portal}]
+            │         ├─ibus-x11───3*[{ibus-x11}]
+            │         ├─obexd
+            │         ├─2*[pipewire───2*[{pipewire}]]
+            │         ├─pipewire-pulse───2*[{pipewire-pulse}]
+            │         ├─seahorse───4*[{seahorse}]
+            │         ├─snap───9*[{snap}]
+            │         ├─snap-store───76*[{snap-store}]
+            │         ├─speech-dispatch─┬─sd_dummy───2*[{sd_dummy}]
+            │         │                 ├─sd_espeak-ng───{sd_espeak-ng}
+            │         │                 ├─sd_espeak-ng-mb
+            │         │                 ├─sd_openjtalk
+            │         │                 └─5*[{speech-dispatch}]
+            │         ├─tracker-miner-f───7*[{tracker-miner-f}]
+            │         ├─wireplumber───5*[{wireplumber}]
+            │         ├─xdg-desktop-por───5*[{xdg-desktop-por}]
+            │         ├─xdg-desktop-por───7*[{xdg-desktop-por}]
+            │         ├─xdg-document-po─┬─fusermount3
+            │         │                 └─6*[{xdg-document-po}]
+            │         └─xdg-permission-───3*[{xdg-permission-}]
+            ├─systemd-journal
+            ├─systemd-logind
+            ├─systemd-resolve
+            ├─systemd-timesyn───{systemd-timesyn}
+            ├─systemd-udevd───(udev-worker)
+            ├─udisksd───5*[{udisksd}]
+            ├─unattended-upgr───{unattended-upgr}
+            ├─upowerd───3*[{upowerd}]
+            └─wpa_supplicant
+
+# Bootstrapping
+
+## How to get started?
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/06-bootstraps.jpg){fig-align="center"
+fig-alt="cartoon of someone trying to lift themself up by their bootstraps"
+width="70%"}
+:::
+::::
+
+**"Pull yourself up by your bootstraps!"**
+
+## Booting a computer
+
+- Process of starting the OS.
+
+- Complicated process: needs to **identify** and **set up** hardware,
+  **load** and **initialise** the OS, start the **initial process**.
+
+  Only then can user-land programs be started.
+
+## Booting a computer
+
+- Each computer has a small amount of **non volatile memory**,
+
+  flash memory whose data remains saved when there is no power.
+
+- On startup, CPU is configured to *jump* to this memory and begin
+  running instructions.
+
+- Tiny program called the **bootstrap loader**, to load a larger program
+  from other memory
+
+- Several rounds of bootstrapping may be needed until we have a program
+  large enough to read from disk.
+
+## Bootloader
+
+- Program loaded after initial bootstrapping,
+
+- Contains instructions to start the OS
+
+  - may ask the user to choose which OS to start,
+  - knows how to start the OS, and
+  - where to find it, e.g., hard disk or network.
+
+- On Linux, e.g., raspberry pi, boot instructions can be found in
+
+  `etc/init.d/`
+
+## Next time
+
+Scheduling algorithms
