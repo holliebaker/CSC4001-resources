@@ -1,0 +1,610 @@
+---
+title: "Processes"
+author: "CSC4001: Computer Systems and Architecture"
+date: ""
+format:
+  revealjs:
+    theme: simple
+    css: ./style.css
+---
+
+## Learning Outcomes
+
+- Recall what is meant by **scheduling** in operating systems.
+- Overview the considerations the OS must make when deciding which process to schedule.
+- Compare and contrast various simple **scheduling algorithms** by giving their advantages, disadvantages and situations to which they are best and worst suited.
+
+## Recap: operating systems
+
+- A program responsible for
+
+  - **Managing** and **protecting** resources
+
+    e.g., CPU, memory, disk, network.
+
+    - prevents accidental or malicious damage,
+    - provides efficient use of limited resources.
+
+  - Providing a **programming interface**:
+
+    - written by experts to get best performance out of hardware,
+    - less change of errors as experts understand the pitfalls,
+    - prevents repeating low-level code.
+
+## Recap: operating systems
+
+Desirable attributes:
+
+- **Lightweight** and **efficient**
+
+  so that as many resources as possible can be dedicated to user-land applications.
+
+- **Flexible** and **easy to use**,
+
+  i.e., it should be a help, not a hindrance, to the programmer.
+
+*A good operating system is tho one you do not notice is there.*
+
+## Recap: Processes
+
+Collection of data held by the operating system:
+
+- Code (machine instructions),
+
+- Data,
+
+- Metadata required by the operating system.
+
+- Not to be confused with a **program**,
+
+  which may consist of several processes.
+
+## Recap: processes
+
+OS requires some information in order to run a process:
+
+- where in memory to find the code and data,
+- memory permissions (i.e., the MMU flags),
+- allocation (how much CPU time, memory, I/O it is allocated),
+- usage statistics (how many CPU cycles, how much time),
+- some other information, used for scheduling,
+- saved CPU state (e.g., contents of registers).
+
+This allows the OS to **manage** and **protect** resources.
+
+::: notes
+along with state information, e.g., MMU flags and CPU registers, the OS keeps statistics used by the scheduler. We will discuss these in more detail shortly.
+:::
+
+## Recap: processes
+
+- in Unix, processes are represented as a **tree**,
+
+- an initial process, called *init* is at the root,
+
+- when a new process is created, its parent is usually the process which requested its creation.
+
+- tree structure allows processes to be grouped, and managed as groups.
+
+## Recap: bootstrapping
+
+- Starting the OS and creating the initial process.
+
+- Has to identify and initialise hardware,
+
+- locate and load the operating system.
+
+- requires a small amount of non-volatile memory to store a bootstrapping program.
+
+- may take several rounds of bootstrapping before the OS is loaded from disk.
+
+## Recap: processes
+
+- One process may ask the OS to create a new one (fork or spawn),
+
+  OS creates a process in the **new** state.
+
+- When a process is initialised, the OS moves it to the **ready** state.
+
+- The OS may decide to schedule (dispatch) a **ready** process,
+
+  its state is changed to **running** and any saved data is restored (MMU, registers).
+
+- if a process requires I/O, it requests this from the OS via a **syscall**,
+
+  OS sets its state to **blocked** until the I/O is done, then its state i set to **ready**.
+
+## Recap: processes
+
+- A **running** process may be interrupted or pre-empted,
+
+  then its data is saved and state changed to **ready**.
+
+- When a process is finished, its state is set to **exit**,
+
+  the OS does some cleanup before the process is deleted.
+
+# Scheduling
+
+## Scheduling
+
+::::: columns-2
+::: column
+Deciding which process should run next.
+
+- I.e., OS moves processes from one state to another.
+
+:::
+:::column
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/06-pickme.jpg){fig-align="center" fig-alt="cartoon saying pick me pick me" width="70%"}
+:::
+::::
+:::
+:::::
+
+## Scheduling
+
+- A hard problem!
+
+- People are still searching for a solution to satisfy everyone.
+
+- Lots of requirements, some of them are conflicting.
+
+- Many solutions proposed so far,
+
+  we'll look at some **scheduling algorithms** shortly.
+
+## A scheduler should
+
+1.  not give any process too much CPU, but
+
+    not give any process too little, either (*starvation*).
+
+2.  Give compute-heavy processes longer, larger slices of CPU time, but
+
+    give interactive processes small slices of CPU time very often.
+
+3.  Ensure real-time (safety-critical) processes run immediately.
+
+4.  Ensure optimum use of hardware,
+
+    everything should be busy, nothing should be waiting.
+
+5.  Optimise for different types of hardware, e.g.,
+
+    mice and printers are slow, network and disk is (comparatively) fast.
+
+## A scheduler should
+
+6.  Provide **predictable** behaviour, and
+
+7.  degrade gracefully under excessive load.
+
+8.  Run **fast**, so as to maximise time spent running user-land applications
+
+    and **avoid thrashing**.
+
+## A scheduler should
+
+- Note that other other resources, e.g., I/O, need scheduling, too.
+
+  The different resource schedulers may disagree about which process to run next.
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/07-tug.jpg){fig-align="center" fig-alt="cartoon tug of war" width="60%"}
+:::
+::::
+
+## Long, medium and short-term scheduling
+
+We can divide scheduling up into three categories:
+
+- **long-term**: which processes can be admitted
+
+  (e.g., is there enough memory),
+
+- **Medium**: what to load into memory, ready to run,
+
+- **Short**: what process to run next.
+
+## Long, medium and short-term scheduling
+
+::::: columns-2
+::: column
+
+- **Short-term** scheduler is given a list of processes to choose from
+
+  by the **medium term scheduler**.
+
+- **Medium-term** scheduler is given a list of processes by the **short-term** scheduler.
+
+:::
+:::column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/07-sml.svg){fig-align="center" fig-alt="short, medium and long-term scheduling" width="60%"}
+:::
+::::
+:::
+:::::
+
+## Long, medium and short-term scheduling
+
+- Long-term scheduling was important in the 60s, when resources were scarce.
+
+  It is becoming less relevant now, particularly as we have virtual resources.
+
+- Medium-term scheduling is still important, involves deciding what to load into memory.
+
+  We will study this when we look at **memory management**.
+
+- Short-term scheduling decides which, of a list of **ready** processes, to execute on the CPU next.
+
+  We will now study some simple scheduling algorithms.
+
+## Collecting information about processes
+
+- We need to give each process a **score** to help decide which to run next.
+
+- Score may be calculated based on:
+
+  - resources used (CPU, memory),
+  - outcomes, e.g., throughput, turnaround,
+  - real-time, e.g., in control systems,
+  - money, e.g., in time-sharing clusters.
+
+  all this information is stored in the PCB.
+
+::: notes
+- reminder: throughput is how many jobs done per unit time.
+- turnaround is a measure of how quickly something responds.
+- keep track of money in time-sharing systems: some users may pay more for more resources of a faster turnaround time.
+- reminder: PCB is process control block.
+:::
+
+## Collecting information about processes
+
+::::: columns-2
+::: column
+- Early computers were shared resources,
+
+  users would pay for time.
+
+- Less relevant with PCs,
+
+- However, still important in cloud computing,
+
+  e.g., AWS, Azure bill for processing time, network / storage / memory used.
+
+:::
+::: column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/07-genie.jpg){fig-align="center" fig-alt="Genie: I'll give you a billion dollars if you can spend 100M in a month. There are three rules: no gifting, no gambling, no throwing it away. SRE: Can I use AWS?" width="80%"}
+:::
+::::
+:::
+:::::
+
+::: notes
+Replace AWS with Claude / Gemini / ChatGPT.
+:::
+
+## Exercise: to reflect on
+
+**"There is nothing new in computer science, just recurring fashions."**
+
+- Think about, and discuss the above.
+
+- Other than early time-sharing computers vs cloud computing services, can you think of any other examples of recurring fashions?
+
+- Are there any completely new trends?
+
+# Some Scheduling Algorithms
+
+## Scheduling algorithms
+
+- There are many, many different algorithms.
+
+- Being a complicated task, some of these are complicated algorithms.
+
+- Let's take a look at some of the simplest.
+
+## Run Until Completion
+
+Run every program until finished, programs wait in a **queue**.
+
+- best for large, compute-intensive tasks,
+
+- no scheduling overheads (OS does not have to decide what to do),
+
+- poor utilisation of resources, i.e., no **spooling**.
+
+  Cannot process while printing; cannot print while processing.
+
+- No interactivity.
+
+- Poorly suited to desktops,
+
+  but still widely used in large time-sharing (often distributed) clusters, e.g., to run jobs for scientific research.
+
+::: notes
+- queue in computer science is a first-in-first-out datastructure.
+:::
+
+## Shortest Job First
+
+Shortest (estimated) time to finish goes next.
+
+- No pre-emption, same as RTC.
+- Good throughput, with a similar performance to RTC.
+- Large jobs (long time remaining) become starved,
+- May be hard (difficult to get right, and computationally intensive) to estimate time remaining.
+
+::: notes
+- RTC: run (un)til completion
+:::
+
+## Run Until Completion + Co-operative Multitasking
+
+Same as RTC, but processes can **voluntarily relinquish** control back to the OS.
+
+- when a process relinquishes, another process is scheduled.
+
+  Maybe in a round-robin fashion, or something more sophisticated, e.g., shortest time remaining.
+
+- Poor utilisation of hardware, as parallelism is still not possible.
+
+- Poor interactivity.
+
+- Voluntary nature causes many problems,
+
+  e.g., one program may monopolise all resource (either accidentally or on purpose).
+
+::: notes
+- as we discussed in the history section, cooperative programming is difficult.
+- it's hard to write a "good citizen" program, which treats others fairly, and it's also easy to be selfish and monopolise all resources.
+- interactivity and good use of hardware (parallelism) is difficult as the programmer has no knowledge what others are doing, e.g., "I'd have let you go now if I had known your disk read is done."
+:::
+
+## Pre-emptive Round Robin
+
+Each process given a **timeslice** in **round-robin** fashion.
+
+- Early form of multitasking,
+
+- better interactivity.
+
+- Each process gets a turn, so no starvation,
+
+- Compute intensive and I/O intensive processes both have the same amount of time,
+
+  although we know this is not optimal.
+
+- Unsuitable for real-time processes, which cannot wait their turn.
+
+Works best when all processes have **the same priority**, e.g., in network routing devices.
+
+## Tweaking round-robin
+
+- Pre-emptive scheduling is a good idea,
+
+  so maybe we just need to improve upon **round robin**?
+
+- When tweaking, it is important to understand what you are doing.
+
+- It is easy to write a **large**, **slow** scheduler which is **impossible to understand**.
+
+  Then it's **impossible to fix** when you find an inefficiency.
+
+We can improve upon round robin by taking **priority**, **interactivity** and **real-time** into account.
+
+## Computing priority
+
+- **Static priority**: computed at creation-time, remains the same until Exit.
+
+  Easy to compute, does not reflect changes in process behaviour.
+
+- We can score **interactivity** by measuring how long waiting for I/O.
+
+  Longer wait means more interactivity.
+
+- Interactivity score can change during process lifetime.
+
+- **Dynamic priority**: recomputed regularly based on collected data.
+
+  More expensive to compute, but better reflects changing behaviour.
+
+## Shortest Remaining Time
+
+process with shortest (estimated) time remaining runs next.
+
+- A round-robin version of STF.
+
+- Difficult to estimate remaining time.
+
+- Works well for short jobs,
+
+  but long jobs may still be starved.
+
+::: notes
+- sft: shortest time first
+- as we discussed with stf, estimating time remaining may be computationally expensive or just hard to do.
+:::
+
+## Least completed next
+
+Process which has used the least number of CPU cycles goes next.
+
+- Gives each process an equal share of CPU time.
+- Interactive processes get lots of attention, since they use little CPU.
+- Starvation of long jobs.
+
+## Highest response ratio next
+
+Dynamic priority is computed based on the proportion of its lifetime it has spent running, i.e.,
+$$\text{Priority} = \dfrac{\text{Total CPU cycles elapsed since creation}}{\text{Number of CPU cycles used}}.$$
+
+- Result: one process is scheduled repeatedly until priority drops below that of another.
+- An attempt to avoid starvation, since long jobs will (eventually) get a timeslice.
+- Small timeslices and frequent re-computations of priority, therefore lots of overhead.
+
+Now we look at an algorithm which does not require estimating time remaining.
+
+## Multilevel Feedback Queue
+
+::::: columns-Multiple
+2
+::: columnFIFO queues,
+$$Q_0,Q_1,\ldots,Q_n,$$
+where
+
+- $Q_0$ has the **highest priority**
+- and $Q_n$ the lowest.
+
+:::
+::: notes
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/07-mfq.svg){fig-align="center" fig-alt="diagram of mfq with 3 queues, one process running on the CPU." width="90%"}
+:::
+::::
+:::
+:::::
+
+## Multilevel Feedback Queue
+
+::::: columns-2
+::: column
+Run processes in priority queue order.
+
+- I.e., no process in $Q_1$ can run until $Q_0$ is empty.
+
+- New process, $P$, added to $Q_0$, $P$ is given a timeslice.
+
+:::
+::: column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/07-mfq2.svg){fig-align="center" fig-alt="diagram of mfq with 3 queue, Q0 is empty, so yellow process at the front of Q1 is scheduled" width="90%"}
+:::
+::::
+:::
+:::::
+
+## Multilevel Feedback Queue
+
+Suppose $P$ is in $Q_i$.
+
+- If $P$ uses all of its timeslice, it is **demoted** to $Q_{i+1}$,
+- If $P$ voluntarily relinquishes before its timeslice is over, it **remains** in $Q_i$.
+- If $P$ blocks for I/O, it is **promoted** to $Q_{i-1}$.
+
+:::
+::: column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/07-mfq3.svg){fig-align="center" fig-alt="yellow proc is now running, shows three possibilities (same queue, promotion or demotion) as above." width="70%"}
+:::
+:::
+::::
+
+## Multilevel Feedback Queue
+
+- Newer, less compute-intensive processes get **higher priority** than older, more compute-intensive ones.
+
+- Good for **responsiveness**, since I/O intensive processes tend to rise.
+
+- Bad for **compute-intensive** processes, which tend to fall and get starved.
+
+- To avoid this, the timeslice is doubled each time a process is demoted.
+
+  Older, longer running processes occasionally get a large slice of CPU time.
+
+Used by Windows NT and some Unix derivatives
+
+## Traditional Unix Scheduling
+
+- used by older Unix systems,
+
+  modern UNIX schedulers are much more advanced.
+
+- A pre-emptive scheduler,
+
+  with a timer interrupt every $1/60^{\mathrm{th}}$ of a second (about 16ms).
+
+- priority-based system.
+
+  Priority of each process based on
+
+  - Base priority (more for system processes, less for user processes),
+  - CPU usage (lower usage gives more priority),
+  - Modifier to increase / decrease priority, called *nice* value.
+
+## Traditional Unix Scheduling
+
+- Priority is a whole number: **lower** number means **more** priority.
+
+- Processes with the same priority are scheduled in a **round-robin** fashion.
+
+  Similar to MFQ, where each priority value is a queue level.
+
+- Processes start with a **base** priority, smaller number for system process, larger for user processes.
+
+- Priority can be modified by adding a *nice* value, a number from $-20$ to $+19$,
+
+  only root can set *nice* $< 0$. *Nice* $=-20$ can lock up the system.
+
+- Every $1/2$ second (500ms), CPU used is halved so that it decays over time:
+
+  priority value represents only **recent CPU usage**.
+
+## Drawbacks
+
+- All priorities are **recomputed at once, every second**.
+
+  - This took a significant length of time, especially on older computers.
+  - Priorities are not updated frequently enough to respond to changes in behaviour.
+  - Does not scale well to systems with a large number of processes.
+
+- Modern systems have **1000s** of processes,
+
+  so Traditional Unix Scheduling is no longer practical.
+
+::: notes
+MFQ: multilevel feedback queue note: tied priorities and MFQ, similar but with lots more queues.
+:::
+
+## Multi-user systems
+
+- What to do if there are multiple users?
+
+- 2 users: *User1* has **100** processes, *User2* has **only 2**.
+
+  Should we give each **user** or each **process** the same amount of CPU time?
+
+- *Fair Share Scheduling* gives each user, group, or other entity the **same mount of CPU time**.
+
+## Exercise: modern scheduling algorithms
+
+Investigate how modern schedulers work. E.g.,
+
+- *O(1) Scheduler*,
+- *Completely Fair Scheduler*.
+
+## Summary
+
+- Scheduling is a difficult talk;
+
+  we need to balance many priorities.
+
+- Schedulers need to gather and analyse many statistics about the process.
+
+## Next time
+
+Deadlock and Process Protection
