@@ -175,641 +175,606 @@
     "text": "Home time. After 10 seconds idle with no calls, send the car back to the ground floor.\nEmergency stop. While all three buttons are held down (hal_buttonHeld), the car freezes where it is, even between floors.\nSmooth ride. Make the car speed up as it leaves a floor and slow down as it arrives by varying the step time.\nDing! Add a piezo buzzer to a spare pin and use tone() to play a chime when the doors open.\nFour floors. What would need to change? Talk it through with a demonstrator before touching ElevatorHAL.h.\nBrain and body. Move all of your decision-making into functions that never touch the hardware. How would that let you test your elevator on a laptop with no Arduino at all? Why might a real elevator company care about that?"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#learning-outcomes",
-    "href": "CSC4001-S03-VonNeumann.html#learning-outcomes",
-    "title": "Architecture overview",
+    "objectID": "CSC4001-S11-Processes.html#learning-outcomes",
+    "href": "CSC4001-S11-Processes.html#learning-outcomes",
+    "title": "Processes",
     "section": "Learning Outcomes",
-    "text": "Learning Outcomes\n\nState the five components of a Von Neumann computer.\nDescribe the difference between the Von Neumann and Harvard architecture.\nExplain the advantages and disadvantages of the Von Neumann vs Harvard architectures.\nArgue for the “best” architecture in a given situation."
+    "text": "Learning Outcomes\n\nDefine a process in the context of operating systems, stating the information the operating system needs to manage a process.\nSummarise the basic states in the process lifecycle and draw a diagram illustrating the state transitions the OS can make.\nExplain how a computer is booted."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#architecture",
-    "href": "CSC4001-S03-VonNeumann.html#architecture",
-    "title": "Architecture overview",
-    "section": "Architecture",
-    "text": "Architecture\n\n\n\n\n\n\n\n\n\n\n\n\n“Computer architecture, like other architecture, is the art of determining the needs of the user of a structure and then designing to meet those needs as effectively as possible within economic and technological constraints.”\n– Frederick P. Brooks\n\n\nBrooks was an American computer architect, software engineer and computer scientist who managed IBM 360 series of mainframes and their accompanying software."
+    "objectID": "CSC4001-S11-Processes.html#recap-operating-systems",
+    "href": "CSC4001-S11-Processes.html#recap-operating-systems",
+    "title": "Processes",
+    "section": "Recap: operating systems",
+    "text": "Recap: operating systems\n\n\nEarly computers such as EDSAC had no operating system.\n\n\n\n\n\n\n\n\n\n\n\nProgrammers had to write their programs for the hardware,\nLots of low-level, repeated code,\nprograms manually loaded by an operator."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture",
-    "href": "CSC4001-S03-VonNeumann.html#computer-architecture",
-    "title": "Architecture overview",
-    "section": "Computer Architecture",
-    "text": "Computer Architecture\n\nA description of a computer (or computer system) which is made from component parts.\nOften a high-level description, indicating how components are linked and what each does.\nSometimes includes details such as the instruction set used and other implementation details."
+    "objectID": "CSC4001-S11-Processes.html#recap-operating-systems-1",
+    "href": "CSC4001-S11-Processes.html#recap-operating-systems-1",
+    "title": "Processes",
+    "section": "Recap: operating systems",
+    "text": "Recap: operating systems\n\nLater, a program called the Monitor was introduced.\nAllowed scheduling of multiple programs.\nAll programs had equal access:\npossible for one program to overwrite another, even the monitor.\nCo-operative multitasking:\na program had to surrender control back to the monitor.\nMeant erroneous or malicious programs could crash the whole system."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-1",
-    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-1",
-    "title": "Architecture overview",
-    "section": "Computer Architecture",
-    "text": "Computer Architecture\n\nFirst documented computer architecture was in correspondence between Charles Babbage and Ada Lovelace, where Babbage described his analytical engine.\n1936, Conrad Zeus described a computer where both instructions and data are stored in the same memory: First documented instance of a “stored program” or general purpose computer."
+    "objectID": "CSC4001-S11-Processes.html#recap-operating-systems-2",
+    "href": "CSC4001-S11-Processes.html#recap-operating-systems-2",
+    "title": "Processes",
+    "section": "Recap: operating systems",
+    "text": "Recap: operating systems\n\nHardware support was later added to protect resources:\n\nInstruction levels:\nonly the Monitor could run privileged instructions.\nMemory management unit:\nkept track of which areas of memory each process could read, write or execute."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-2",
-    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-2",
-    "title": "Architecture overview",
-    "section": "Computer Architecture",
-    "text": "Computer Architecture\n\n1945, John Von Neumann described the famous Von Neumann Architecture in his paper on the EDVAC computer (successor to the ENIAC)."
+    "objectID": "CSC4001-S11-Processes.html#recap-operating-systems-3",
+    "href": "CSC4001-S11-Processes.html#recap-operating-systems-3",
+    "title": "Processes",
+    "section": "Recap: operating systems",
+    "text": "Recap: operating systems\n\nDevice drivers to interface with hardware were written,\nalong with code libraries for common operations.\nLinkers and loaders build to allow programs to access external code,\nenabling code re-use."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-3",
-    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-3",
-    "title": "Architecture overview",
-    "section": "Computer Architecture",
-    "text": "Computer Architecture\n\n1946, Alan Turing wrote a detailed proposal for the electronic calculator, Automatic Computing Engine, citing Von Neumann."
+    "objectID": "CSC4001-S11-Processes.html#recap-operating-systems-4",
+    "href": "CSC4001-S11-Processes.html#recap-operating-systems-4",
+    "title": "Processes",
+    "section": "Recap: operating systems",
+    "text": "Recap: operating systems\n\nA program responsible for\n\nManaging and protecting resources\ne.g., CPU, memory, disk, network.\n\nprevents accidental or malicious damage,\nprovides efficient use of limited resources.\n\nProviding a programming interface:\n\nwritten by experts to get best performance out of hardware,\nless chance of errors as experts understand the pitfalls,\nprevents repeating low-level code."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#von-neumann-architecture",
-    "href": "CSC4001-S03-VonNeumann.html#von-neumann-architecture",
-    "title": "Architecture overview",
-    "section": "Von Neumann Architecture",
-    "text": "Von Neumann Architecture\n\n\nArrows represent data transfer connections and directions. I.e., there is an arrow in both directions between the memory and the arithmetic logic unit, representing a “shared bus”. We will see later that this shared bus can be a bottleneck."
+    "objectID": "CSC4001-S11-Processes.html#recap-operating-systems-5",
+    "href": "CSC4001-S11-Processes.html#recap-operating-systems-5",
+    "title": "Processes",
+    "section": "Recap: operating systems",
+    "text": "Recap: operating systems\nDesirable attributes:\n\nLightweight and efficient\nso that as many resources as possible can be dedicated to user-land applications.\nFlexible and easy to use,\ni.e., it should be a help, not a hindrance, to the programmer.\n\nA good operating system is the one you do not notice is there."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#five-components",
-    "href": "CSC4001-S03-VonNeumann.html#five-components",
-    "title": "Architecture overview",
-    "section": "Five components",
-    "text": "Five components\n\nStore\nControl Unit\nArithmetic Logic Unit\ninput\nOutput"
+    "objectID": "CSC4001-S11-Processes.html#process",
+    "href": "CSC4001-S11-Processes.html#process",
+    "title": "Processes",
+    "section": "Process",
+    "text": "Process\nCollection of data held by the operating system:\n\nCode (machine instructions),\nData,\nMetadata required by the operating system.\nAlso known as\ntask, job.\nNot to be confused with\nprocessor, program."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#store",
-    "href": "CSC4001-S03-VonNeumann.html#store",
-    "title": "Architecture overview",
-    "section": "Store",
-    "text": "Store\n\nTo store data and instructions. E.g., paper tape, magnetic tape, RAM."
+    "objectID": "CSC4001-S11-Processes.html#process-vs-program",
+    "href": "CSC4001-S11-Processes.html#process-vs-program",
+    "title": "Processes",
+    "section": "Process vs program",
+    "text": "Process vs program\n\nA program may consist of several processes.\nE.g., one process builds an image, a different process renders it.\nAnother design pattern enabling separation of concerns,\ncalled structure by process.\nLess common in modern computers, which use threads,\nalthough one process is still used for each browser tab, to provide security."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#control-unit",
-    "href": "CSC4001-S03-VonNeumann.html#control-unit",
-    "title": "Architecture overview",
-    "section": "Control Unit",
-    "text": "Control Unit\n\ndecides which instruction to perform next."
+    "objectID": "CSC4001-S11-Processes.html#process-metadata",
+    "href": "CSC4001-S11-Processes.html#process-metadata",
+    "title": "Processes",
+    "section": "Process metadata",
+    "text": "Process metadata\nOS requires some information in order to run a process:\n\nwhere in memory to find the code and data,\nmemory permissions (i.e., the MMU flags),\nallocation (how much CPU time, memory, I/O it is allocated),\nusage statistics (how many CPU cycles, how much time),\nsaved CPU state (e.g., contents of registers).\n\nThis allows the OS to manage and protect resources."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#arithmetic-logic-unit",
-    "href": "CSC4001-S03-VonNeumann.html#arithmetic-logic-unit",
-    "title": "Architecture overview",
-    "section": "Arithmetic Logic Unit",
-    "text": "Arithmetic Logic Unit\n\nPerforms calculations.\n\nTypically the ALU and control unit are combined into the CPU.\nOperations performed on the hardware, or implemented in software.\nIn early computers, electromechanical hardware was used; these days transistors are used, which require much less energy."
+    "objectID": "CSC4001-S11-Processes.html#process-states",
+    "href": "CSC4001-S11-Processes.html#process-states",
+    "title": "Processes",
+    "section": "Process states",
+    "text": "Process states\n\nOS keeps track of the state of each process – basic states are\n\nNew: a process which has just been created,\nOS needs to do some setup,\nRunning: currently being executed on the CPU,\nReady: waiting to be scheduled, can be run immediately,\nblocked: cannot be run because it is waiting for something,\ne.g., data to be read from disk,\nExit: process has finished,\nOS needs to clean up."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#input-and-output",
-    "href": "CSC4001-S03-VonNeumann.html#input-and-output",
-    "title": "Architecture overview",
-    "section": "Input and Output",
-    "text": "Input and Output\n\nMeans for the user to interact with the computer.\n\nKeyboard, mouse, camera, sensors.\nMonitor, speakers.\nVaried and interesting ways for humans and computers to interact."
+    "objectID": "CSC4001-S11-Processes.html#scheduling",
+    "href": "CSC4001-S11-Processes.html#scheduling",
+    "title": "Processes",
+    "section": "Scheduling",
+    "text": "Scheduling\n\n\nDeciding which process should run next.\n\nI.e., OS moves processes from one state to another."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#key-features",
-    "href": "CSC4001-S03-VonNeumann.html#key-features",
-    "title": "Architecture overview",
-    "section": "Key features",
-    "text": "Key features\n\nInstructions and data are stored in the same memory.\nSimple, cost-effective and widely used.\n\n\n\nSingle bus to transfer all data.\nThis can cause a bottleneck.\nSequential architecture Can limit speed of processing. : CPU can perform only one instruction at a time.\nThis is the architecture found in most desktop PCs today."
+    "objectID": "CSC4001-S11-Processes.html#process-lifecycle",
+    "href": "CSC4001-S11-Processes.html#process-lifecycle",
+    "title": "Processes",
+    "section": "Process lifecycle",
+    "text": "Process lifecycle\n\nTypically, one process requests creation of another,\ncalled forking or spawning.\n\nE.g., user clicks the web browser icon on their desktop.\nDesktop GUI program makes a syscall to the OS,\nrequesting creation of a new process, running the web browser program.\nIf allowed, OS creates the new process.\nSyscall returns an exit code indicating success or reason for failure.\n\nE.g., no permission to create processes,\nInsufficient resources – too many processes running already."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#harvard-architecture",
-    "href": "CSC4001-S03-VonNeumann.html#harvard-architecture",
-    "title": "Architecture overview",
-    "section": "Harvard Architecture",
-    "text": "Harvard Architecture"
+    "objectID": "CSC4001-S11-Processes.html#process-lifecycle-1",
+    "href": "CSC4001-S11-Processes.html#process-lifecycle-1",
+    "title": "Processes",
+    "section": "Process lifecycle",
+    "text": "Process lifecycle\n\nAll processes start in the new state.\nmetadata needed to run the process is called the process control block (PCB).\n\nOS initialises process PCB datastructures,\nallocates memory,\nallocates a process ID (unique identifier for each process),\nsets initial priority importance, used by the scheduler),\nadds the process to the scheduler’s list,\nthen moves process to the ready state.\n\nFrom the ready state,\nprocess can be moved to running when the OS decides to schedule it."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#harvard-architecture-1",
-    "href": "CSC4001-S03-VonNeumann.html#harvard-architecture-1",
-    "title": "Architecture overview",
-    "section": "Harvard Architecture",
-    "text": "Harvard Architecture\n\nHas separate memory for instructions and data.\nWell suited to embedded systems and main-frames.\n\n\n\nReduces the memory bottleneck found in Von Neumann machines.\n\nLess contention as there is no shared bus.\nData and instruction access can be done simultaneously.\nLess flexible than Von-Neumann. E.g., instructions cannot be modified at run-time."
+    "objectID": "CSC4001-S11-Processes.html#process-lifecycle-2",
+    "href": "CSC4001-S11-Processes.html#process-lifecycle-2",
+    "title": "Processes",
+    "section": "Process lifecycle",
+    "text": "Process lifecycle"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#in-small-groups",
-    "href": "CSC4001-S03-VonNeumann.html#in-small-groups",
-    "title": "Architecture overview",
-    "section": "In small groups",
-    "text": "In small groups\n\nIn which situations is each architecture used?\n\nToday and historically?\nWhy is it a good choice for that situation, or why not?\n\nThings to think about:\n\nwhere are the bottlenecks?\nspecial purpose vs general purpose\ndata integrity / tampering / security"
+    "objectID": "CSC4001-S11-Processes.html#process-lifecycle-3",
+    "href": "CSC4001-S11-Processes.html#process-lifecycle-3",
+    "title": "Processes",
+    "section": "Process lifecycle",
+    "text": "Process lifecycle\n\nWhen the OS decides to schedule a process, it is dispatched.\nJump and drop CPU instruction is performed,\n\nJump to the memory location containing process instructions,\nDrop from privileged (only allowed by the OS) mode to unprivileged mode.\n\nA process may voluntarily surrender control,\ni.e., relinquish,\n\nsave state (of CPU registers, MMU etc),\nprocess moved to ready.\n\nSame happens if the process is interrupted, or its timeslice is over."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#section",
-    "href": "CSC4001-S03-VonNeumann.html#section",
-    "title": "Architecture overview",
-    "section": "1949",
-    "text": "1949\n\n“The”brain” [computer] may one day come down to our level [of the common people] and help with our income-tax and book-keeping calculations. But this is speculation and there is no sign of it so far.”\n\n– British newspaper The Star in a June 1949 news article about the EDSAC computer."
+    "objectID": "CSC4001-S11-Processes.html#process-lifecycle-4",
+    "href": "CSC4001-S11-Processes.html#process-lifecycle-4",
+    "title": "Processes",
+    "section": "Process lifecycle",
+    "text": "Process lifecycle\n\nIf the process requires I/O, e.g., read from / write to disk,\nit makes a syscall, asking the OS to perform the operation.\n\nstate saved, process moved to blocked,\n\nWhen the operation is complete,\n\nprocess moved to ready,\nwill not be running until the OS schedules it."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#section-1",
-    "href": "CSC4001-S03-VonNeumann.html#section-1",
-    "title": "Architecture overview",
-    "section": "1953",
-    "text": "1953\n\n“I think there is a world market for maybe five computers.”\n\n– Thomas Watson, IBM Chairman, although this is now thought to be urban legend.\n\nThe “brain” computer has now very much “come down to the level of the common people”, and does much more than just book-keeping.\nRegarding the Watson quote, it is now thought to be an urban legend. see https://geekhistory.com/content/urban-legend-i-think-there-world-market-maybe-five-computers\n“We believe the statement that you attribute to Thomas Watson is a misunderstanding of remarks made at IBM’s annual stockholders meeting on April 28, 1953. In referring specifically and only to the IBM 701 Electronic Data Processing Machine – which had been introduced the year before as the company’s first production computer designed for scientific calculations – Thomas Watson, Jr., told stockholders that “IBM had developed a paper plan for such a machine and took this paper plan across the country to some 20 concerns that we thought could use such a machine. I would like to tell you that the machine rents for between $12,000 and $18,000 a month, so it was not the type of thing that could be sold from place to place. But, as a result of our trip, on which we expected to get orders for five machines, we came home with orders for 18.” https://geekhistory.com/content/urban-legend-i-think-there-world-market-maybe-five-computers"
+    "objectID": "CSC4001-S11-Processes.html#process-lifecycle-5",
+    "href": "CSC4001-S11-Processes.html#process-lifecycle-5",
+    "title": "Processes",
+    "section": "Process lifecycle",
+    "text": "Process lifecycle\n\nEvery process finishes in the exit state.\nOS does some cleanup\n\ndeallocating memory,\nreleasing resources (e.g., closing files),\ndeallocating the process control block.\nremove the process from the scheduler’s list."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#learning-outcomes-1",
-    "href": "CSC4001-S03-VonNeumann.html#learning-outcomes-1",
-    "title": "Architecture overview",
+    "objectID": "CSC4001-S11-Processes.html#process-hierarchy",
+    "href": "CSC4001-S11-Processes.html#process-hierarchy",
+    "title": "Processes",
+    "section": "Process hierarchy",
+    "text": "Process hierarchy\n\nA basic list is not an efficient datastructure for the scheduler.\nother representations are preferred, e.g.,\n\npriority queue\nprocess tree."
+  },
+  {
+    "objectID": "CSC4001-S11-Processes.html#process-hierarchy-1",
+    "href": "CSC4001-S11-Processes.html#process-hierarchy-1",
+    "title": "Processes",
+    "section": "Process hierarchy",
+    "text": "Process hierarchy\n\nUnix uses a process tree,\n\nfirst process created, called init is the root of the tree.\nnew processes become the children of the process which requested their creation,\nallows processes to be grouped,\nEach group of processes has a process leader.\nProcesses can be treated as a group,\nE.g., killing the process leader causes all processes in its group to be killed, too."
+  },
+  {
+    "objectID": "CSC4001-S11-Processes.html#process-tree-example",
+    "href": "CSC4001-S11-Processes.html#process-tree-example",
+    "title": "Processes",
+    "section": "Process tree, example",
+    "text": "Process tree, example\n$ pstree\nsystemd─┬─ModemManager───3*[{ModemManager}]\n        ├─NetworkManager───3*[{NetworkManager}]\n        ├─accounts-daemon───3*[{accounts-daemon}]\n        ├─acpid\n        ├─atd\n        ├─avahi-daemon───avahi-daemon\n        ├─bluetoothd\n        ├─colord───3*[{colord}]\n        ├─cron\n        ├─cups-browsed───3*[{cups-browsed}]\n        ├─cupsd\n        ├─daemon.start─┬─daemon.start───sleep\n        │              ├─lxd───22*[{lxd}]\n        │              └─lxd───13*[{lxd}]\n        ├─dbus-daemon\n        ├─fwupd───5*[{fwupd}]\n        ├─gdm3─┬─gdm-session-wor─┬─gdm-x-session─┬─Xorg───14*[{Xorg}]\n        │      │                 │               ├─gnome-session-b───3*[{gnome-session-b}]\n        │      │                 │               └─3*[{gdm-x-session}]\n        │      │                 └─3*[{gdm-session-wor}]\n        │      └─3*[{gdm3}]\n        ├─gnome-remote-de───3*[{gnome-remote-de}]\n        ├─2*[kerneloops]\n        ├─lxcfs───2*[{lxcfs}]\n        ├─nmbd\n        ├─polkitd───3*[{polkitd}]\n        ├─power-profiles-───3*[{power-profiles-}]\n        ├─rsyslogd───3*[{rsyslogd}]\n        ├─rtkit-daemon───2*[{rtkit-daemon}]\n        ├─run-cups-browse───run-cups-browse───sleep\n        ├─run-cupsd─┬─cups-proxyd───3*[{cups-proxyd}]\n        │           └─cupsd\n        ├─smbd─┬─smbd-cleanupd\n        │      └─smbd-notifyd\n        ├─snapd───18*[{snapd}]\n        ├─starter───charon───16*[{charon}]\n        ├─switcheroo-cont───3*[{switcheroo-cont}]\n        ├─systemd─┬─(sd-pam)\n        │         ├─at-spi-bus-laun─┬─dbus-daemon\n        │         │                 └─4*[{at-spi-bus-laun}]\n        │         ├─at-spi2-registr───3*[{at-spi2-registr}]\n        │         ├─catatonit\n        │         ├─chrome_crashpad───2*[{chrome_crashpad}]\n        │         ├─dbus-daemon\n        │         ├─dconf-service───3*[{dconf-service}]\n        │         ├─evince───7*[{evince}]\n        │         ├─evinced───3*[{evinced}]\n        │         ├─evolution-addre───6*[{evolution-addre}]\n        │         ├─evolution-calen───9*[{evolution-calen}]\n        │         ├─evolution-sourc───4*[{evolution-sourc}]\n        │         ├─gcr-ssh-agent───2*[{gcr-ssh-agent}]\n        │         ├─gedit───6*[{gedit}]\n        │         ├─2*[gjs───11*[{gjs}]]\n        │         ├─gnome-calendar───16*[{gnome-calendar}]\n        │         ├─gnome-keyring-d─┬─ssh-agent\n        │         │                 └─4*[{gnome-keyring-d}]\n        │         ├─gnome-session-b─┬─evolution-alarm───7*[{evolution-alarm}]\n        │         │                 ├─gsd-disk-utilit───3*[{gsd-disk-utilit}]\n        │         │                 ├─kdeconnectd───6*[{kdeconnectd}]\n        │         │                 ├─update-notifier───5*[{update-notifier}]\n        │         │                 └─4*[{gnome-session-b}]\n        │         ├─gnome-session-c───{gnome-session-c}\n        │         ├─gnome-shell─┬─Discord─┬─Discord───Discord───25*[{Discord}]\n        │         │             │         ├─Discord\n        │         │             │         ├─Discord───14*[{Discord}]\n        │         │             │         ├─Discord───41*[{Discord}]\n        │         │             │         ├─Discord───5*[{Discord}]\n        │         │             │         └─36*[{Discord}]\n        │         │             ├─firefox─┬─5*[Isolated Web Co───28*[{Isolated Web Co}]]\n        │         │             │         ├─Isolated Web Co───27*[{Isolated Web Co}]\n        │         │             │         ├─Privileged Cont───27*[{Privileged Cont}]\n        │         │             │         ├─RDD Process───4*[{RDD Process}]\n        │         │             │         ├─Socket Process───5*[{Socket Process}]\n        │         │             │         ├─Utility Process───4*[{Utility Process}]\n        │         │             │         ├─3*[Web Content───18*[{Web Content}]]\n        │         │             │         ├─WebExtensions───27*[{WebExtensions}]\n        │         │             │         ├─crashhelper───{crashhelper}\n        │         │             │         ├─file:// Content───29*[{file:// Content}]\n        │         │             │         └─121*[{firefox}]\n        │         │             ├─gnome-control-c───174*[{gnome-control-c}]\n        │         │             ├─lyx───11*[{lyx}]\n        │         │             ├─mutter-x11-fram───14*[{mutter-x11-fram}]\n        │         │             └─28*[{gnome-shell}]\n        │         ├─gnome-shell-cal───6*[{gnome-shell-cal}]\n        │         ├─gnome-terminal-─┬─bash───pstree\n        │         │                 ├─bash───R───12*[{R}]\n        │         │                 └─6*[{gnome-terminal-}]\n        │         ├─goa-daemon───4*[{goa-daemon}]\n        │         ├─goa-identity-se───3*[{goa-identity-se}]\n        │         ├─gpg-agent───{gpg-agent}\n        │         ├─gsd-a11y-settin───4*[{gsd-a11y-settin}]\n        │         ├─gsd-color───4*[{gsd-color}]\n        │         ├─gsd-datetime───4*[{gsd-datetime}]\n        │         ├─gsd-housekeepin───4*[{gsd-housekeepin}]\n        │         ├─gsd-keyboard───4*[{gsd-keyboard}]\n        │         ├─gsd-media-keys───5*[{gsd-media-keys}]\n        │         ├─gsd-power───5*[{gsd-power}]\n        │         ├─gsd-print-notif───3*[{gsd-print-notif}]\n        │         ├─gsd-printer───3*[{gsd-printer}]\n        │         ├─gsd-rfkill───3*[{gsd-rfkill}]\n        │         ├─gsd-screensaver───3*[{gsd-screensaver}]\n        │         ├─gsd-sharing───4*[{gsd-sharing}]\n        │         ├─gsd-smartcard───4*[{gsd-smartcard}]\n        │         ├─gsd-sound───4*[{gsd-sound}]\n        │         ├─gsd-wacom───3*[{gsd-wacom}]\n        │         ├─gsd-xsettings───4*[{gsd-xsettings}]\n        │         ├─gvfs-afc-volume───4*[{gvfs-afc-volume}]\n        │         ├─gvfs-goa-volume───3*[{gvfs-goa-volume}]\n        │         ├─gvfs-gphoto2-vo───3*[{gvfs-gphoto2-vo}]\n        │         ├─gvfs-mtp-volume───3*[{gvfs-mtp-volume}]\n        │         ├─gvfs-udisks2-vo───4*[{gvfs-udisks2-vo}]\n        │         ├─gvfsd─┬─gvfsd-dnssd───3*[{gvfsd-dnssd}]\n        │         │       ├─gvfsd-network───4*[{gvfsd-network}]\n        │         │       ├─gvfsd-trash───4*[{gvfsd-trash}]\n        │         │       └─3*[{gvfsd}]\n        │         ├─gvfsd-fuse───6*[{gvfsd-fuse}]\n        │         ├─gvfsd-metadata───3*[{gvfsd-metadata}]\n        │         ├─ibus-daemon─┬─ibus-dconf───4*[{ibus-dconf}]\n        │         │             ├─ibus-engine-sim───3*[{ibus-engine-sim}]\n        │         │             ├─ibus-extension-───4*[{ibus-extension-}]\n        │         │             └─3*[{ibus-daemon}]\n        │         ├─ibus-portal───3*[{ibus-portal}]\n        │         ├─ibus-x11───3*[{ibus-x11}]\n        │         ├─obexd\n        │         ├─2*[pipewire───2*[{pipewire}]]\n        │         ├─pipewire-pulse───2*[{pipewire-pulse}]\n        │         ├─seahorse───4*[{seahorse}]\n        │         ├─snap───9*[{snap}]\n        │         ├─snap-store───76*[{snap-store}]\n        │         ├─speech-dispatch─┬─sd_dummy───2*[{sd_dummy}]\n        │         │                 ├─sd_espeak-ng───{sd_espeak-ng}\n        │         │                 ├─sd_espeak-ng-mb\n        │         │                 ├─sd_openjtalk\n        │         │                 └─5*[{speech-dispatch}]\n        │         ├─tracker-miner-f───7*[{tracker-miner-f}]\n        │         ├─wireplumber───5*[{wireplumber}]\n        │         ├─xdg-desktop-por───5*[{xdg-desktop-por}]\n        │         ├─xdg-desktop-por───7*[{xdg-desktop-por}]\n        │         ├─xdg-document-po─┬─fusermount3\n        │         │                 └─6*[{xdg-document-po}]\n        │         └─xdg-permission-───3*[{xdg-permission-}]\n        ├─systemd-journal\n        ├─systemd-logind\n        ├─systemd-resolve\n        ├─systemd-timesyn───{systemd-timesyn}\n        ├─systemd-udevd───(udev-worker)\n        ├─udisksd───5*[{udisksd}]\n        ├─unattended-upgr───{unattended-upgr}\n        ├─upowerd───3*[{upowerd}]\n        └─wpa_supplicant"
+  },
+  {
+    "objectID": "CSC4001-S11-Processes.html#how-to-get-started",
+    "href": "CSC4001-S11-Processes.html#how-to-get-started",
+    "title": "Processes",
+    "section": "How to get started?",
+    "text": "How to get started?\n\n“Pull yourself up by your bootstraps!”"
+  },
+  {
+    "objectID": "CSC4001-S11-Processes.html#booting-a-computer",
+    "href": "CSC4001-S11-Processes.html#booting-a-computer",
+    "title": "Processes",
+    "section": "Booting a computer",
+    "text": "Booting a computer\n\nProcess of starting the OS.\nComplicated process: needs to identify and set up hardware, load and initialise the OS, start the initial process.\nOnly then can user-land programs be started."
+  },
+  {
+    "objectID": "CSC4001-S11-Processes.html#booting-a-computer-1",
+    "href": "CSC4001-S11-Processes.html#booting-a-computer-1",
+    "title": "Processes",
+    "section": "Booting a computer",
+    "text": "Booting a computer\n\nEach computer has a small amount of non volatile memory,\nflash memory whose data remains saved when there is no power.\nOn startup, CPU is configured to jump to this memory and begin running instructions.\nTiny program called the bootstrap loader, to load a larger program from other memory\nSeveral rounds of bootstrapping may be needed until we have a program large enough to read from disk."
+  },
+  {
+    "objectID": "CSC4001-S11-Processes.html#bootloader",
+    "href": "CSC4001-S11-Processes.html#bootloader",
+    "title": "Processes",
+    "section": "Bootloader",
+    "text": "Bootloader\n\nProgram loaded after initial bootstrapping,\nContains instructions to start the OS\n\nmay ask the user to choose which OS to start,\nknows how to start the OS, and\nwhere to find it, e.g., hard disk or network.\n\nOn Linux, e.g., raspberry pi, boot instructions can be found in\netc/init.d/"
+  },
+  {
+    "objectID": "CSC4001-S11-Processes.html#next-time",
+    "href": "CSC4001-S11-Processes.html#next-time",
+    "title": "Processes",
+    "section": "Next time",
+    "text": "Next time\nScheduling algorithms"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#teaching-staff",
+    "href": "CSC4001-S00-welcome.html#teaching-staff",
+    "title": "Welcome",
+    "section": "Teaching Staff",
+    "text": "Teaching Staff\n\n\nDave Cobb\n\n\n\n\n\n\n\nModule leader. 25 years experience in the computer industry. Senior lecturer specialising in software development.\n\nHollie Baker\n\n\n\n\n\n\n\nAssociate Lecturer. PhD in computer science. Industry experience in web development and databases. Keen Braillist."
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#intended-learning-outcomes",
+    "href": "CSC4001-S00-welcome.html#intended-learning-outcomes",
+    "title": "Welcome",
+    "section": "Intended Learning Outcomes",
+    "text": "Intended Learning Outcomes\nBy successful completion of the module, you will be able to:\n\nDescribe the role of the different computer system components and their interactions\nExplain how instructions are executed by a computer processor\nIllustrate key computer architecture concepts such as instruction sets, memory hierarchy and data storage\nExplain the role operating systems have in providing services and sharing\n\n\nFrom the DPD The module’s lectures provide the fundamental aspects of computer systems and architectures, covering hardware, software and networking. The practical sessions enable students to reflect on the role of each computer component and understand how design choices impact data input, process and output. Independent Learning Students are encouraged to explore and understand different approaches hardware and software system design. Independent study and formative assessment also help students to assess an appreciate the evolution of micro-processors, hardware and operating systems. Intended learning outcomes"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#topics-covered",
+    "href": "CSC4001-S00-welcome.html#topics-covered",
+    "title": "Welcome",
+    "section": "Topics covered",
+    "text": "Topics covered\n\nComputer system organisation\nMemory organisation and management\nAssembly level programs\nMicroprocessor design fundamentals (pipelined architecture, CPU)\nOperating systems architectures\nResources and resource management\nControl unit operations"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#schedule",
+    "href": "CSC4001-S00-welcome.html#schedule",
+    "title": "Welcome",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\nWeek\nSession A\nSession B\n\n\n\n\n1\nWelcome\nLogic\n\n\n2\nVon Neumann Architecture\nComputer history\n\n\n3\nAssembler, Risc and CISC\nPipelines and More\n\n\n4\nMemory\nWorkshop activity\n\n\n5\nOperating Systems Overview\nWorkshop Activity\n\n\n6\nReading Week\n\n\n\n7\nProcess Lifecycle\nBootstrapping\n\n\n8\nScheduling\nScheduling algorithms\n\n\n9\nDeadlock\nProcess protection\n\n\n10\nInter-process communication\nWorkshop activity\n\n\n11\nMemory Management\nWorkshop activity\n\n\n12\nFiles and Filesystems\nWorkshop activity"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#timetable",
+    "href": "CSC4001-S00-welcome.html#timetable",
+    "title": "Welcome",
+    "section": "Timetable",
+    "text": "Timetable\nCyber Security\n\nTuesdays 09:30 - 11:30\nWednesdays 11:30 - 13:30\n\nComputer Science\n\nThursday 09:30 - 11:30\nFriday 12:30 - 14:30"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#important-dates",
+    "href": "CSC4001-S00-welcome.html#important-dates",
+    "title": "Welcome",
+    "section": "Important dates",
+    "text": "Important dates\n\nWed 20 / Fri 2: S1 Assessment set (next week)\nWed 14 / Thu 15 Oct: Academic skills sessions\nFri 20 Nov: S1 assessment due"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#resources",
+    "href": "CSC4001-S00-welcome.html#resources",
+    "title": "Welcome",
+    "section": "Resources",
+    "text": "Resources\n\nYou’ll find everything on Ultra"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#overview",
+    "href": "CSC4001-S00-welcome.html#overview",
+    "title": "Welcome",
+    "section": "Overview",
+    "text": "Overview\n\nFormative assessments\n\nWorkshop activities throughout the course\nAllows you to collaborate and get feedback\n\nSummative assessment\n\nTwo pieces of work\nMakes up your module grade"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#s1",
+    "href": "CSC4001-S00-welcome.html#s1",
+    "title": "Welcome",
+    "section": "S1",
+    "text": "S1\nReport on the role of core computer architectural components\n\nWorth 40%, 1400 word equivalent\nDiscuss the impact on computing of developments in a chosen element of computer hardware during your chosen time period\nAnalyse an LLM’s response to the same question"
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#s2",
+    "href": "CSC4001-S00-welcome.html#s2",
+    "title": "Welcome",
+    "section": "S2",
+    "text": "S2\nComputer system design project (worth 60%)\n\nWorth 60%, 1600 word equivalent\nDesign an embedded computer system\nReport on the design process, elementns of hardware architecture and operating system design you have used."
+  },
+  {
+    "objectID": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
+    "href": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
+    "title": "Welcome",
+    "section": "CSC4001 Systems and Architecture",
+    "text": "CSC4001 Systems and Architecture\nOkay, administration’s done. Let’s get started!"
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html",
+    "href": "CSC4001-S02W-Logic.html",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "",
+    "text": "Adapted from https://cccu-uk.github.io/U10793_FCC_Labs/Logic_Gates/Logic_Gates.html"
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#universal-logic-circuits",
+    "href": "CSC4001-S02W-Logic.html#universal-logic-circuits",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Universal Logic Circuits",
+    "text": "Universal Logic Circuits\nWe can build any of the fundamental logic gates by chaining only nand or only nor gates together.\nQuestion 1 Create the circuit as shown below.\n\n\n\n\n\nDraw its truth table. Which logic gate does it represent?\nQuestion 2 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 3 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 4 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 5 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 6 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents."
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#sr-latch-with-only-nand-gates",
+    "href": "CSC4001-S02W-Logic.html#sr-latch-with-only-nand-gates",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "SR Latch with only NAND gates",
+    "text": "SR Latch with only NAND gates\nQuestion 1 Rebuild the below SR latch with only NAND gates.\n\n\n\n\n\n\n\n\n\nQuestion 2 Rebuild the below gated SR latch with only NAND gates."
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#the-clock",
+    "href": "CSC4001-S02W-Logic.html#the-clock",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "The Clock",
+    "text": "The Clock\nUse the clock to generate signals.\nCreate the circuit as shown below:\n\n\n\n\n\nConnecting the clock as input and adding the data graph.\n\nExperiment with different Clock Input Frequencies, what observations can you make? Discuss with the a peer or with the tutor.\nReplace the or gate with a different gate, change the frequency.\nDoes the data graph show a pattern?"
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#half-adder",
+    "href": "CSC4001-S02W-Logic.html#half-adder",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Half Adder",
+    "text": "Half Adder\nRecreate the half adder circuit as shown below. \nUse the simulator to complete the truth table\n\n\n\nA\nB\nS\nCout\n\n\n\n\n1\n1\n\n\n\n\n1\n0\n\n\n\n\n0\n1\n\n\n\n\n0\n0"
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#full-adder",
+    "href": "CSC4001-S02W-Logic.html#full-adder",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Full adder",
+    "text": "Full adder\nNow produce a full adder, simulate and complete the truth table.\n\n\n\nA\nB\nCin\nS\nCout\n\n\n\n\n1\n1\n1\n\n\n\n\n1\n1\n0\n\n\n\n\n1\n0\n1\n\n\n\n\n1\n0\n0\n\n\n\n\n1\n1\n1\n\n\n\n\n0\n1\n0\n\n\n\n\n0\n0\n1\n\n\n\n\n0\n0\n0"
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#binary-decoder",
+    "href": "CSC4001-S02W-Logic.html#binary-decoder",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Binary Decoder",
+    "text": "Binary Decoder\nResearch and implement a 2-bit binary decoder.\nA binary decoder takes \\(n\\) bits as input and can output one of \\(2^n\\) possible options, depending on the value of the input. For example, in a 2-bit decoder, there are four possible outputs, each corresponding to one of the possible assignments of bits:\n\n\\(00\\)\n\\(01\\)\n\\(10\\)\n\\(11\\)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CSC4001: Systems and Architecture",
+    "section": "",
+    "text": "Index\n\nS00: \nS01: \nCSC4001-S02W-Logic.qmd: \nS02: \nS03: \nS04: \nCSC4001-S05W-GoingUp.qmd: \nS05: \nS06: \nS10: \nS11: \nS13:"
+  },
+  {
+    "objectID": "CSC4001-S13-Scheduling.html#learning-outcomes",
+    "href": "CSC4001-S13-Scheduling.html#learning-outcomes",
+    "title": "Processes",
     "section": "Learning Outcomes",
-    "text": "Learning Outcomes\n\nGive an overview of early computers: use, specs, how they were programmed.\nCompare early and modern computers\nExplain how developments in early computing have influenced modern computer hardware."
+    "text": "Learning Outcomes\n\nRecall what is meant by scheduling in operating systems.\nOverview the considerations the OS must make when deciding which process to schedule.\nCompare and contrast various simple scheduling algorithms by giving their advantages, disadvantages and situations to which they are best and worst suited."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#integers",
-    "href": "CSC4001-S03-VonNeumann.html#integers",
-    "title": "Architecture overview",
-    "section": "Integers",
-    "text": "Integers\n\nWe already saw that an unsigned integer number can be represented in Binary.\nUsually the right-most bit represents the least significant digit.\nLittle-endian representation.\nSigned integers may be represented in several ways:\n\nSign+magnitude: one bit is reserved for the sign, the rest for the value.\nThis representation allows \\(+0\\) and \\(-0\\).\nOne’s complement: positive numbers represented as usual, negative numbers represented by flipping all their bits.\nAgain, we have \\(+0\\) and \\(-0\\).\nTwo’s complement: positive numbers represented as usual, negative numbers represented by adding one then flipping all their bits.\nonly one \\(0\\), no redundancy."
+    "objectID": "CSC4001-S13-Scheduling.html#recap-operating-systems",
+    "href": "CSC4001-S13-Scheduling.html#recap-operating-systems",
+    "title": "Processes",
+    "section": "Recap: operating systems",
+    "text": "Recap: operating systems\n\nA program responsible for\n\nManaging and protecting resources\ne.g., CPU, memory, disk, network.\n\nprevents accidental or malicious damage,\nprovides efficient use of limited resources.\n\nProviding a programming interface:\n\nwritten by experts to get best performance out of hardware,\nless change of errors as experts understand the pitfalls,\nprevents repeating low-level code."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-numbers",
-    "href": "CSC4001-S03-VonNeumann.html#floating-point-numbers",
-    "title": "Architecture overview",
-    "section": "Floating point numbers",
-    "text": "Floating point numbers\n\nIEEE 754 defines a standard for representing and manipulating floating point numbers.\nRepresented in a similar way to scientific notation.\nE.g., \\(300,000,000 = 3 \\times 10^8\\).\n\nThe \\(3\\) is called the fraction (coefficient or mantissa).\nThe \\(8\\) (from \\(10^8\\)) is called the exponent.\n\nIEEE 754 defines:\n\nThe base, typically \\(2\\) for binary, but sometimes \\(10\\).\nPrecision (number of digits to represent the fraction).\nAn exponent range."
+    "objectID": "CSC4001-S13-Scheduling.html#recap-operating-systems-1",
+    "href": "CSC4001-S13-Scheduling.html#recap-operating-systems-1",
+    "title": "Processes",
+    "section": "Recap: operating systems",
+    "text": "Recap: operating systems\nDesirable attributes:\n\nLightweight and efficient\nso that as many resources as possible can be dedicated to user-land applications.\nFlexible and easy to use,\ni.e., it should be a help, not a hindrance, to the programmer.\n\nA good operating system is tho one you do not notice is there."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-numbers-1",
-    "href": "CSC4001-S03-VonNeumann.html#floating-point-numbers-1",
-    "title": "Architecture overview",
-    "section": "Floating point numbers",
-    "text": "Floating point numbers\n\nUsing \\(n\\) bits, the representation consists of\n\n\\(1\\) bit for the sign,\n\\(n - p - 1\\) bits for the exponent.\n\\(p\\) bits for the fraction (stored in Binary),\n\nAny signed number up to \\(p\\) significant digits and a maximum exponent of \\(n-p-1\\) can be defined.\nPositive and negative infinity.\nA representation for not a number, e.g., for the result of division by zero."
+    "objectID": "CSC4001-S13-Scheduling.html#recap-processes",
+    "href": "CSC4001-S13-Scheduling.html#recap-processes",
+    "title": "Processes",
+    "section": "Recap: Processes",
+    "text": "Recap: Processes\nCollection of data held by the operating system:\n\nCode (machine instructions),\nData,\nMetadata required by the operating system.\nNot to be confused with a program,\nwhich may consist of several processes."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#bit-floating-point",
-    "href": "CSC4001-S03-VonNeumann.html#bit-floating-point",
-    "title": "Architecture overview",
-    "section": "32-bit floating point",
-    "text": "32-bit floating point\nRepresentation used for the float type in many programming languages.\n\n\n\\(32\\) bits:\n\n\\(1\\) bit for the sign,\n\\(8\\) bits for the exponent,\n\\(23\\) bits for the fraction.\n\nAround \\(7\\) decimal digits for the fraction.\nA double uses \\(64\\) bits, \\(52\\) bits (around \\(16\\) decimal digits)."
+    "objectID": "CSC4001-S13-Scheduling.html#recap-processes-1",
+    "href": "CSC4001-S13-Scheduling.html#recap-processes-1",
+    "title": "Processes",
+    "section": "Recap: processes",
+    "text": "Recap: processes\nOS requires some information in order to run a process:\n\nwhere in memory to find the code and data,\nmemory permissions (i.e., the MMU flags),\nallocation (how much CPU time, memory, I/O it is allocated),\nusage statistics (how many CPU cycles, how much time),\nsome other information, used for scheduling,\nsaved CPU state (e.g., contents of registers).\n\nThis allows the OS to manage and protect resources.\n\nalong with state information, e.g., MMU flags and CPU registers, the OS keeps statistics used by the scheduler. We will discuss these in more detail shortly."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-numbers-2",
-    "href": "CSC4001-S03-VonNeumann.html#floating-point-numbers-2",
-    "title": "Architecture overview",
-    "section": "Floating point numbers",
-    "text": "Floating point numbers\nAdvantages\n\nEfficient representation of very large and very small numbers.\nFast computation due to many years of hardware development.\n\nDisadvantages\n\nFloating point errors."
+    "objectID": "CSC4001-S13-Scheduling.html#recap-processes-2",
+    "href": "CSC4001-S13-Scheduling.html#recap-processes-2",
+    "title": "Processes",
+    "section": "Recap: processes",
+    "text": "Recap: processes\n\nin Unix, processes are represented as a tree,\nan initial process, called init is at the root,\nwhen a new process is created, its parent is usually the process which requested its creation.\ntree structure allows processes to be grouped, and managed as groups."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#precision-and-accuracy",
-    "href": "CSC4001-S03-VonNeumann.html#precision-and-accuracy",
-    "title": "Architecture overview",
-    "section": "Precision and accuracy",
-    "text": "Precision and accuracy\n\nPrecision: how many significant digits,\nAccuracy: how close to the true value.\n\nA value may be precise but not accurate, accurate but not precise, or both inaccurate and imprecise."
+    "objectID": "CSC4001-S13-Scheduling.html#recap-bootstrapping",
+    "href": "CSC4001-S13-Scheduling.html#recap-bootstrapping",
+    "title": "Processes",
+    "section": "Recap: bootstrapping",
+    "text": "Recap: bootstrapping\n\nStarting the OS and creating the initial process.\nHas to identify and initialise hardware,\nlocate and load the operating system.\nrequires a small amount of non-volatile memory to store a bootstrapping program.\nmay take several rounds of bootstrapping before the OS is loaded from disk."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-errors",
-    "href": "CSC4001-S03-VonNeumann.html#floating-point-errors",
-    "title": "Architecture overview",
-    "section": "Floating point errors",
-    "text": "Floating point errors\n\nWe know that \\(1/3 + 1/3 + 1/3 = 1\\).\nHowever, \\(0.3333333333 + 0.3333333333 + 0.3333333333 = 0.9999999999\\)!\n\\(1/10\\) is easy to represent in decimal: \\(0.1\\).\nHowever, in binary, it is \\(0.001100110011\\).\nFloating point representation is sufficient for most applications, e.g., 3D games.\nHowever, we have to take care with things like currency, which must be correct."
+    "objectID": "CSC4001-S13-Scheduling.html#recap-processes-3",
+    "href": "CSC4001-S13-Scheduling.html#recap-processes-3",
+    "title": "Processes",
+    "section": "Recap: processes",
+    "text": "Recap: processes\n\nOne process may ask the OS to create a new one (fork or spawn),\nOS creates a process in the new state.\nWhen a process is initialised, the OS moves it to the ready state.\nThe OS may decide to schedule (dispatch) a ready process,\nits state is changed to running and any saved data is restored (MMU, registers).\nif a process requires I/O, it requests this from the OS via a syscall,\nOS sets its state to blocked until the I/O is done, then its state i set to ready."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#but-first-why-are-we-doing-this",
-    "href": "CSC4001-S03-VonNeumann.html#but-first-why-are-we-doing-this",
-    "title": "Architecture overview",
-    "section": "But first, why are we doing this?",
-    "text": "But first, why are we doing this?\n\nGain perspective.\nUnderstanding of why things are the way they are today.\nLearn from previous successes and failures."
+    "objectID": "CSC4001-S13-Scheduling.html#recap-processes-4",
+    "href": "CSC4001-S13-Scheduling.html#recap-processes-4",
+    "title": "Processes",
+    "section": "Recap: processes",
+    "text": "Recap: processes\n\nA running process may be interrupted or pre-empted,\nthen its data is saved and state changed to ready.\nWhen a process is finished, its state is set to exit,\nthe OS does some cleanup before the process is deleted."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#the-eniac-1945",
-    "href": "CSC4001-S03-VonNeumann.html#the-eniac-1945",
-    "title": "Architecture overview",
-    "section": "The ENIAC (1945)",
-    "text": "The ENIAC (1945)\n\n\nElectronic Numerical Integrator and Computer\n\nSpecial purpose computer for artillery firing table calculations.\nLocated at the School of Engineering and Applied Science, Pennsylvania State University\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCould be “programmed” by using the plug-board and switches, data entered via punched cards.\nLater converted into a stored program computer.\nBase-10 arithmetic instead of the usual binary.\nUsed vacuum tubes, which burnt out often – high maintenance."
+    "objectID": "CSC4001-S13-Scheduling.html#scheduling-1",
+    "href": "CSC4001-S13-Scheduling.html#scheduling-1",
+    "title": "Processes",
+    "section": "Scheduling",
+    "text": "Scheduling\n\n\nDeciding which process should run next.\n\nI.e., OS moves processes from one state to another."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#colossus-1943-45",
-    "href": "CSC4001-S03-VonNeumann.html#colossus-1943-45",
-    "title": "Architecture overview",
-    "section": "Colossus (1943-45)",
-    "text": "Colossus (1943-45)\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecial purpose computer developed at Bletchley Park to help break the Lorenz cipher.\nDesigned by Tommy Flowers, a research engineer at the General Post Office, based on plans by Code and Cipher School mathematician Max Newman.\n\n\n\n\nUsed vacuum tubes; programmed using switches and a plug board.\nData memory was a cycling strip of paper tape.\nColossus Mk II, which used shift registers to run 6 times faster, went into operation in time for the D-day landings.\nBy the end of the war, 10 Colossi were in operation."
+    "objectID": "CSC4001-S13-Scheduling.html#scheduling-2",
+    "href": "CSC4001-S13-Scheduling.html#scheduling-2",
+    "title": "Processes",
+    "section": "Scheduling",
+    "text": "Scheduling\n\nA hard problem!\nPeople are still searching for a solution to satisfy everyone.\nLots of requirements, some of them are conflicting.\nMany solutions proposed so far,\nwe’ll look at some scheduling algorithms shortly."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#general-purpose-computers-post-ww2",
-    "href": "CSC4001-S03-VonNeumann.html#general-purpose-computers-post-ww2",
-    "title": "Architecture overview",
-    "section": "General purpose computers (post WW2)",
-    "text": "General purpose computers (post WW2)\nVon Neumann arranged a 6-week summer workshop to design and build a new type of computer.\n\nGeneral purpose: many early computers were designed with a specific task in mind, which meant they were difficult to repurpose.\nVon Neumann wanted to build a stored program computer.\nElectronic:replacing electromechanical components which were brittle, hot and noisy.\nColossus and the ENIAC both consumed 150KW of power.\nUse binary, which is the easiest encoding to work with when using electronic components."
+    "objectID": "CSC4001-S13-Scheduling.html#a-scheduler-should",
+    "href": "CSC4001-S13-Scheduling.html#a-scheduler-should",
+    "title": "Processes",
+    "section": "A scheduler should",
+    "text": "A scheduler should\n\nnot give any process too much CPU, but\nnot give any process too little, either (starvation).\nGive compute-heavy processes longer, larger slices of CPU time, but\ngive interactive processes small slices of CPU time very often.\nEnsure real-time (safety-critical) processes run immediately.\nEnsure optimum use of hardware,\neverything should be busy, nothing should be waiting.\nOptimise for different types of hardware, e.g.,\nmice and printers are slow, network and disk is (comparatively) fast."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#maurice-wilkes",
-    "href": "CSC4001-S03-VonNeumann.html#maurice-wilkes",
-    "title": "Architecture overview",
-    "section": "Maurice Wilkes",
-    "text": "Maurice Wilkes\n\nCambridge mathematician, physics PhD on “radio propagation of very long radio waves in the ionosphere”.\nAttended Jon Neumann’s workshop, then returned to Cambridge to build the EDSAC machine.\nWorked in radar during WW2, which inspired the memory technology for EDSAC.\nMemory was a limitation for early electronic computers, Wilkes used “delay lines”, mercury tubes and an oscilloscope, as memory.\n\n\nMore information on mercury delay lines: Radar pulses were captured and played as sound waves. Sound waves passed through mercury, which slowed them down. Picked up by a microphone and displayed no an oscilloscope screen. Sound wave amplified and played back through the speaker so the pulse would repeat as long as needed."
+    "objectID": "CSC4001-S13-Scheduling.html#a-scheduler-should-1",
+    "href": "CSC4001-S13-Scheduling.html#a-scheduler-should-1",
+    "title": "Processes",
+    "section": "A scheduler should",
+    "text": "A scheduler should\n\nProvide predictable behaviour, and\ndegrade gracefully under excessive load.\nRun fast, so as to maximise time spent running user-land applications\nand avoid thrashing."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#edsac-6-may-1949",
-    "href": "CSC4001-S03-VonNeumann.html#edsac-6-may-1949",
-    "title": "Architecture overview",
-    "section": "EDSAC (6 May 1949)",
-    "text": "EDSAC (6 May 1949)\n\n\nElectronic Delay Storage Automatic Calculator\n\nOne of the first stored program computers which used binary.\nDeveloped by Maurice Wilkes, William Renwick (hardware engineer) and David Wheeler (first system software engineer).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCould perform 700 additions or 200 multiplications per second.\n512 18-bit words of memory for programs and data, upgraded to 1024 18-bit words in 1952.\nData and programs were loaded via 5-hole punched paper tape, initial orders instructed the computer to load the program.\nConsumed 11KW of power.\nThe delay line memory was sub-optimal, but one of the best options at the time.\nAlthough the words were 18-bits, only 17 bits were used in practice owing to unreliability of memory. ## Programming the EDSAC\nPrograms designed on paper and then punched, in assembler, onto 5-hole paper tape. Programmers became proficient at reading programs from the tape.\nProgrammers would hang their tape on a line, waiting for an operator to run them – the first “job queue”.\nOperator would load program and data and then either return the printed output or inform the programmer of the memory address at which the program failed. ## Operating EDSAC\nBuilt-in add, multiply, bus and conditional jump.\n\nNo load. Instead, Instead clear the register (set to \\(0\\)) and add the value from memory to the register.\nNo division, but it was included as a subroutine.\n\nIn case of a program error, the operator would inform the programmer at which address their program failed.\nThere was no debugger. An oscilloscope screen showed the state of the registers, and a speaker played a different note depending on the value of the accumulator register. An experienced programmer learnt the sound of a failing program, e.g., if there was an infinite loop. ## Operating EDSAC\nProgrammers had to use “bad” programming technique. E.g., to access a different array element, the code would modify itself to point to the correct address.\nNo built-in mechanism for subroutines, instead perform a Wheeler jump: Jump with return memory address, computer would modify the last instruction of the subroutine to jump back to this return address.- No recursion was possible on the EDSAC. Turing proposed the call stack in his 1945 paper, which implemented subroutines “properly” and allowed recursion."
+    "objectID": "CSC4001-S13-Scheduling.html#a-scheduler-should-2",
+    "href": "CSC4001-S13-Scheduling.html#a-scheduler-should-2",
+    "title": "Processes",
+    "section": "A scheduler should",
+    "text": "A scheduler should\n\nNote that other other resources, e.g., I/O, need scheduling, too.\nThe different resource schedulers may disagree about which process to run next."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#usage",
-    "href": "CSC4001-S03-VonNeumann.html#usage",
-    "title": "Architecture overview",
-    "section": "Usage",
-    "text": "Usage\nA condition for funding was that EDSAC must provide a service, as opposed to just being an engineering experiment.\n\nRonald Fisher, with Wilkes and Wheeler, used EDSAC to solve a differential equation for gene frequency – first use of computers in biology.\nIn 1951, Miller and Wheeler computed a 79-digit prime number, the largest known at its time.\nEDSAC played a role in Nobel-prize-winning research: Nobel laureates thanked EDSAC in their acceptance speech. John Kendrew and Max Perutz (Chemistry, 1962), Andrew Huxley (Medicine, 1963) and Martin Ryle (Physics, 1974)\nEDSAC remained in operation until 11 July 1958, when it was superseded by EDSAC 2, which ran until 1965."
+    "objectID": "CSC4001-S13-Scheduling.html#long-medium-and-short-term-scheduling",
+    "href": "CSC4001-S13-Scheduling.html#long-medium-and-short-term-scheduling",
+    "title": "Processes",
+    "section": "Long, medium and short-term scheduling",
+    "text": "Long, medium and short-term scheduling\nWe can divide scheduling up into three categories:\n\nlong-term: which processes can be admitted\n(e.g., is there enough memory),\nMedium: what to load into memory, ready to run,\nShort: what process to run next."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#exercise-computer-history-research",
-    "href": "CSC4001-S03-VonNeumann.html#exercise-computer-history-research",
-    "title": "Architecture overview",
-    "section": "Exercise: computer history research",
-    "text": "Exercise: computer history research\nIn pairs, teams, or individually…\n\nChoose a computer from history. Find out:\n\nWho created it, and when?\nWhat could it do? hardware operations\nSpecs: processing, memory, operations per second.\nHow was it programmed? Could it be programmed?\nHow did programmers / operators / scientists interact with it? Input/output mechanisms, how was it debugged?"
+    "objectID": "CSC4001-S13-Scheduling.html#long-medium-and-short-term-scheduling-1",
+    "href": "CSC4001-S13-Scheduling.html#long-medium-and-short-term-scheduling-1",
+    "title": "Processes",
+    "section": "Long, medium and short-term scheduling",
+    "text": "Long, medium and short-term scheduling\n\n\n\nShort-term scheduler is given a list of processes to choose from\nby the medium term scheduler.\nMedium-term scheduler is given a list of processes by the short-term scheduler."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#exercise-play-with-the-edsac-simulator",
-    "href": "CSC4001-S03-VonNeumann.html#exercise-play-with-the-edsac-simulator",
-    "title": "Architecture overview",
-    "section": "Exercise: play with the EDSAC simulator",
-    "text": "Exercise: play with the EDSAC simulator\n\nMartin Campbell Kelly, University of Warwick, developed an EDSAC simulator.\nhttps://dcs.warwick.ac.uk/~edsac/\nSeveral programs and games are available.\nTry Sandy Douglas’ OXO game (a tic-tac-toe game vs the computer).\nAlthough a faithful simulation, it is still easier to use than the real thing – imagine loading the paper tape, vacuum tubes blowing frequently, and try setting the speed to EDSAC real-time."
+    "objectID": "CSC4001-S13-Scheduling.html#long-medium-and-short-term-scheduling-2",
+    "href": "CSC4001-S13-Scheduling.html#long-medium-and-short-term-scheduling-2",
+    "title": "Processes",
+    "section": "Long, medium and short-term scheduling",
+    "text": "Long, medium and short-term scheduling\n\nLong-term scheduling was important in the 60s, when resources were scarce.\nIt is becoming less relevant now, particularly as we have virtual resources.\nMedium-term scheduling is still important, involves deciding what to load into memory.\nWe will study this when we look at memory management.\nShort-term scheduling decides which, of a list of ready processes, to execute on the CPU next.\nWe will now study some simple scheduling algorithms."
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#learning-outcomes",
-    "href": "CSC4001-S06-CPU2.html#learning-outcomes",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Learning Outcomes",
-    "text": "Learning Outcomes\n\nExplain the ideas of latency and throughput.\nDescribe pipelining, out of order execution and parallelism, and their effects on latency and throughput."
+    "objectID": "CSC4001-S13-Scheduling.html#collecting-information-about-processes",
+    "href": "CSC4001-S13-Scheduling.html#collecting-information-about-processes",
+    "title": "Processes",
+    "section": "Collecting information about processes",
+    "text": "Collecting information about processes\n\nWe need to give each process a score to help decide which to run next.\nScore may be calculated based on:\n\nresources used (CPU, memory),\noutcomes, e.g., throughput, turnaround,\nreal-time, e.g., in control systems,\nmoney, e.g., in time-sharing clusters.\n\nall this information is stored in the PCB.\n\n\n\nreminder: throughput is how many jobs done per unit time.\nturnaround is a measure of how quickly something responds.\nkeep track of money in time-sharing systems: some users may pay more for more resources of a faster turnaround time.\nreminder: PCB is process control block."
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#optimising-the-fetch-decode-execute-store-cycle",
-    "href": "CSC4001-S06-CPU2.html#optimising-the-fetch-decode-execute-store-cycle",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Optimising the fetch-decode-execute-store cycle",
-    "text": "Optimising the fetch-decode-execute-store cycle\n\nSuppose the CPU can perform one stage per CPU cycle."
+    "objectID": "CSC4001-S13-Scheduling.html#collecting-information-about-processes-1",
+    "href": "CSC4001-S13-Scheduling.html#collecting-information-about-processes-1",
+    "title": "Processes",
+    "section": "Collecting information about processes",
+    "text": "Collecting information about processes\n\n\n\nEarly computers were shared resources,\nusers would pay for time.\nLess relevant with PCs,\nHowever, still important in cloud computing,\ne.g., AWS, Azure bill for processing time, network / storage / memory used.\n\n\n\n\n\n\n\n\n\n\n\n\n\nReplace AWS with Claude / Gemini / ChatGPT."
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#von-neumann-architecture-is-sequential",
-    "href": "CSC4001-S06-CPU2.html#von-neumann-architecture-is-sequential",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Von Neumann architecture is sequential",
-    "text": "Von Neumann architecture is sequential\n\nSuppose the computer can perform one stage per CPU cycle.\nThe ALU is only working during the Execute stage.\nIt would be ideal to have the ALU doing work all the time.\nWe’ll look at three ways of getting the best use out of the hardware."
+    "objectID": "CSC4001-S13-Scheduling.html#exercise-to-reflect-on",
+    "href": "CSC4001-S13-Scheduling.html#exercise-to-reflect-on",
+    "title": "Processes",
+    "section": "Exercise: to reflect on",
+    "text": "Exercise: to reflect on\n“There is nothing new in computer science, just recurring fashions.”\n\nThink about, and discuss the above.\nOther than early time-sharing computers vs cloud computing services, can you think of any other examples of recurring fashions?\nAre there any completely new trends?"
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#pipelines",
-    "href": "CSC4001-S06-CPU2.html#pipelines",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Pipelines",
-    "text": "Pipelines\nOverlap stages of the fetch-decode-execute-store cycle.\n\nALU receives a constant stream of work.\n\nInstruction pipelining is a bit like a production line. Each piece of hardware has its designated job – Control unit for decoding, ALU for executing. Once an instruction is decoded, it is passed to the ALU for execution, while the ALU executes the instruction, the Control unit is decoding the next. This means the ALU is not sitting idle while the control unit decodes instructions for it."
+    "objectID": "CSC4001-S13-Scheduling.html#scheduling-algorithms",
+    "href": "CSC4001-S13-Scheduling.html#scheduling-algorithms",
+    "title": "Processes",
+    "section": "Scheduling algorithms",
+    "text": "Scheduling algorithms\n\nThere are many, many different algorithms.\nBeing a complicated task, some of these are complicated algorithms.\nLet’s take a look at some of the simplest."
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#speedup",
-    "href": "CSC4001-S06-CPU2.html#speedup",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Speedup",
-    "text": "Speedup\nIn a sequential fetch, decode, execute, store cycle, it takes 4 cycles for each instruction to complete.\n\n40 cycles for 10 instructions.\nIn a pipelined architecture:\n\nIt takes 4 cycles for the first instruction to exit the pipeline.\n5 cycles for the second\n6 for the third,\n… and so on …\n14 for the 10-th instruction to exit the pipeline."
+    "objectID": "CSC4001-S13-Scheduling.html#run-until-completion",
+    "href": "CSC4001-S13-Scheduling.html#run-until-completion",
+    "title": "Processes",
+    "section": "Run Until Completion",
+    "text": "Run Until Completion\nRun every program until finished, programs wait in a queue.\n\nbest for large, compute-intensive tasks,\nno scheduling overheads (OS does not have to decide what to do),\npoor utilisation of resources, i.e., no spooling.\nCannot process while printing; cannot print while processing.\nNo interactivity.\nPoorly suited to desktops,\nbut still widely used in large time-sharing (often distributed) clusters, e.g., to run jobs for scientific research.\n\n\n\nqueue in computer science is a first-in-first-out datastructure."
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#speedup-1",
-    "href": "CSC4001-S06-CPU2.html#speedup-1",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Speedup",
-    "text": "Speedup\n\\[\nS_n = \\dfrac{\\text{Time to complete } n \\text{ tasks sequentially}}{\\text{Time to complete} n \\text{ tasks in a pipeline}}\n\\]\n\nThe speedup for 10 instructions in a 4 stage pipeline is \\[\nS_10 = \\dfrac{40}{14} \\approx 2.86\n\\]\nThe more instructions, the better! \\[\nS_{100} = \\dfrac{400}{104} \\approx 3.51, S_{1000} = \\dfrac{1000}{1014} = 3.94\n\\]\n\nFor a pipeline with \\(k\\) stages, speedup approaches \\(k\\) as the number of instructions grows very large.\n\nMathematical explanation:\n\nSuppose we have \\(n\\) instructions to complete.\nFor a pipeline with \\(k\\) stages:\n\nThe first operation leaves the pipeline after \\(k\\) cycles.\nThe \\(n\\)-th instruction leaves the pipeline after \\(k + n\\) cycles.\n\n\\(T_{\\mathrm{pipeline}} = k + n\\) CPU cycles.\nWithout pipelining, each stage is completed sequentially for each instruction.\n\\(T_{\\mathrm{seq}} = k \\cdot n\\) CPU cycles.\nWe can calculate speedup, a measure of how much quicker the pipelines system is: \\[S = \\dfrac{T_{\\mathrm{seq}}}{T_{\\mathrm{pipeline}}} = \\dfrac{k \\cdot n}{k + n}.\\]\nPipelines work best for a large number of tasks: \\(n \\gg k\\).\nThen \\(S = k\\)."
+    "objectID": "CSC4001-S13-Scheduling.html#shortest-job-first",
+    "href": "CSC4001-S13-Scheduling.html#shortest-job-first",
+    "title": "Processes",
+    "section": "Shortest Job First",
+    "text": "Shortest Job First\nShortest (estimated) time to finish goes next.\n\nNo pre-emption, same as RTC.\nGood throughput, with a similar performance to RTC.\nLarge jobs (long time remaining) become starved,\nMay be hard (difficult to get right, and computationally intensive) to estimate time remaining.\n\n\n\nRTC: run (un)til completion"
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#throughput-and-latency",
-    "href": "CSC4001-S06-CPU2.html#throughput-and-latency",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Throughput and latency",
-    "text": "Throughput and latency\n\nThroughput: Number of instructions completed per unit time.\n\n\\(\\text{Throughput} = \\dfrac{\\text{number of instructions}}{\\text{execution time}}\\)\nHigher throughput indicates better performance.\n\nLatency: time taken for a single instruction to complete (travel through the pipeline)\n\n\\(\\text{Latency} = \\dfrac{\\text{execution time}}{\\text{number of instructions}}\\)\nLower latency indicates better performance."
+    "objectID": "CSC4001-S13-Scheduling.html#run-until-completion-co-operative-multitasking",
+    "href": "CSC4001-S13-Scheduling.html#run-until-completion-co-operative-multitasking",
+    "title": "Processes",
+    "section": "Run Until Completion + Co-operative Multitasking",
+    "text": "Run Until Completion + Co-operative Multitasking\nSame as RTC, but processes can voluntarily relinquish control back to the OS.\n\nwhen a process relinquishes, another process is scheduled.\nMaybe in a round-robin fashion, or something more sophisticated, e.g., shortest time remaining.\nPoor utilisation of hardware, as parallelism is still not possible.\nPoor interactivity.\nVoluntary nature causes many problems,\ne.g., one program may monopolise all resource (either accidentally or on purpose).\n\n\n\nas we discussed in the history section, cooperative programming is difficult.\nit’s hard to write a “good citizen” program, which treats others fairly, and it’s also easy to be selfish and monopolise all resources.\ninteractivity and good use of hardware (parallelism) is difficult as the programmer has no knowledge what others are doing, e.g., “I’d have let you go now if I had known your disk read is done.”"
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#pipelines-1",
-    "href": "CSC4001-S06-CPU2.html#pipelines-1",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Pipelines",
-    "text": "Pipelines\n\n\nAdvantages\n\nHigher throughput: more instructions per second\nBetter hardware utilisation: reduces idle time.\nWell-suited to repetitive tasks.\n\n\nDisadvantages\n\nHigher latency: time taken to complete one instruction\nMore complex: increases design complexity, manufacture cost and, therefore, time.\nWorks most efficiently when kept full."
+    "objectID": "CSC4001-S13-Scheduling.html#pre-emptive-round-robin",
+    "href": "CSC4001-S13-Scheduling.html#pre-emptive-round-robin",
+    "title": "Processes",
+    "section": "Pre-emptive Round Robin",
+    "text": "Pre-emptive Round Robin\nEach process given a timeslice in round-robin fashion.\n\nEarly form of multitasking,\nbetter interactivity.\nEach process gets a turn, so no starvation,\nCompute intensive and I/O intensive processes both have the same amount of time,\nalthough we know this is not optimal.\nUnsuitable for real-time processes, which cannot wait their turn.\n\nWorks best when all processes have the same priority, e.g., in network routing devices."
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#pipeline-hazards",
-    "href": "CSC4001-S06-CPU2.html#pipeline-hazards",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Pipeline hazards",
-    "text": "Pipeline hazards\n\nSituations which cause the pipeline to stall, or have to restart.\nControl dependency: which instructions should be pipelines after a jump?\nData hazards: when data dependence affecting instructions at different stages of the pipeline.\n\nOne instruction may depend on the result of a previous instruction still in the pipeline.\nRead after write: one instruction attempts to read data which another instruction has not yet written.\nWrite after read: one instruction writes data after another instruction attempts to read it.\nWrite after write: one instruction attempts to write data after another, messing up register values.\n\n\n\n\ncontrol dependency: after a jump instruction, instructions may need to be loaded from a new location of memory. It is unknown, at the time the jump enters the pipeline, what its outcome will be, therefore the correct sequence of instructions cannot be pipelines.\n\nProcessors employ branch prediction to guess whether a jump is likely to happens or not. The “most likely” sequence of instructions are pipelined, meaning there is a high probability that the correct instructions are loaded into the pipeline. However, if branch prediction is incorrect, then the pipeline must be restarted, as different instructions need to be fetched, decoded, etc.\n\nData dependencies: one instruction may depend upon the result of another, so it must wait (stall) until its dependant has left the pipeline. Now we have a “bubble” (empty gap) in the pipeline.\n\nThere may be contention over registers wherein one instruction attempts to read or write to registers, or cache, being used by another. In this case, a calculation may have to be restarted, or at least the correct data loaded from memory (slowwww) again."
+    "objectID": "CSC4001-S13-Scheduling.html#tweaking-round-robin",
+    "href": "CSC4001-S13-Scheduling.html#tweaking-round-robin",
+    "title": "Processes",
+    "section": "Tweaking round-robin",
+    "text": "Tweaking round-robin\n\nPre-emptive scheduling is a good idea,\nso maybe we just need to improve upon round robin?\nWhen tweaking, it is important to understand what you are doing.\nIt is easy to write a large, slow scheduler which is impossible to understand.\nThen it’s impossible to fix when you find an inefficiency.\n\nWe can improve upon round robin by taking priority, interactivity and real-time into account."
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#reservation-station-and-reorder-buffer-1",
-    "href": "CSC4001-S06-CPU2.html#reservation-station-and-reorder-buffer-1",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Reservation station and reorder buffer",
-    "text": "Reservation station and reorder buffer\n\nSome CPUs have multiple ALUs, or special-purpose hardware.\nWe want all of this hardware to be working all of the time.\nHowever, we need to figure out which operations can be re-ordered or executed in parallel."
+    "objectID": "CSC4001-S13-Scheduling.html#computing-priority",
+    "href": "CSC4001-S13-Scheduling.html#computing-priority",
+    "title": "Processes",
+    "section": "Computing priority",
+    "text": "Computing priority\n\nStatic priority: computed at creation-time, remains the same until Exit.\nEasy to compute, does not reflect changes in process behaviour.\nWe can score interactivity by measuring how long waiting for I/O.\nLonger wait means more interactivity.\nInteractivity score can change during process lifetime.\nDynamic priority: recomputed regularly based on collected data.\nMore expensive to compute, but better reflects changing behaviour."
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#example-euclidean-distance",
-    "href": "CSC4001-S06-CPU2.html#example-euclidean-distance",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Example: Euclidean distance",
-    "text": "Example: Euclidean distance\n\nSuppose we have two points, \\(\\mathbf{x}\\) and \\(\\mathbf{y}\\) in 2d space, e.g., in a 2d game.\nTo calculate the distance between \\(\\mathbf{x} = (x_1,x_2)\\) and \\(\\mathbf{y} = (y_1,y_2)\\), we use Pythagoras’ theorem.\nEuclidean distance, \\(D = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\\).\nLet \\(x_1 = 4, x_2 = 9, y_1 = 20, y_2 = 11\\).\n\n\nDon’t worry about the actual formula. It’s only important to note we have a square root, two multiplications, and an addition."
+    "objectID": "CSC4001-S13-Scheduling.html#shortest-remaining-time",
+    "href": "CSC4001-S13-Scheduling.html#shortest-remaining-time",
+    "title": "Processes",
+    "section": "Shortest Remaining Time",
+    "text": "Shortest Remaining Time\nprocess with shortest (estimated) time remaining runs next.\n\nA round-robin version of STF.\nDifficult to estimate remaining time.\nWorks well for short jobs,\nbut long jobs may still be starved.\n\n\n\nsft: shortest time first\nas we discussed with stf, estimating time remaining may be computationally expensive or just hard to do."
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#sequential-calculation",
-    "href": "CSC4001-S06-CPU2.html#sequential-calculation",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Sequential calculation",
-    "text": "Sequential calculation\nCPU can add, mul, sub and sqrt in a single CPU cycle.\n\nt1 = x2 - x1\nt2 = t1 * t1\nt3 = y1 - y2\nt4 = t3 * t3\n`t5 = t2 + t4’\nD = sqrt( t5 )\n\n6 CPU cycles.\n\nNote: sqrt is a relatively complex operation for computers and some CPUs do not include it as an instruction. However, many CISC (complex) architectures do."
+    "objectID": "CSC4001-S13-Scheduling.html#least-completed-next",
+    "href": "CSC4001-S13-Scheduling.html#least-completed-next",
+    "title": "Processes",
+    "section": "Least completed next",
+    "text": "Least completed next\nProcess which has used the least number of CPU cycles goes next.\n\nGives each process an equal share of CPU time.\nInteractive processes get lots of attention, since they use little CPU.\nStarvation of long jobs."
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#parallel-calculation",
-    "href": "CSC4001-S06-CPU2.html#parallel-calculation",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Parallel calculation",
-    "text": "Parallel calculation\nNow suppose we have 2 ALUs.\n\nt1 and t3 can be computed\nGiven t1 and t3, t2 and t4 respectively can be computed in parallel.\nt5 must wait for t2 and t4,\nThe result, D depends on t5.\n\n… but how can the CPU, a clump of transistors, figure this out?"
+    "objectID": "CSC4001-S13-Scheduling.html#highest-response-ratio-next",
+    "href": "CSC4001-S13-Scheduling.html#highest-response-ratio-next",
+    "title": "Processes",
+    "section": "Highest response ratio next",
+    "text": "Highest response ratio next\nDynamic priority is computed based on the proportion of its lifetime it has spent running, i.e., \\[\\text{Priority} = \\dfrac{\\text{Total CPU cycles elapsed since creation}}{\\text{Number of CPU cycles used}}.\\]\n\nResult: one process is scheduled repeatedly until priority drops below that of another.\nAn attempt to avoid starvation, since long jobs will (eventually) get a timeslice.\nSmall timeslices and frequent re-computations of priority, therefore lots of overhead.\n\nNow we look at an algorithm which does not require estimating time remaining."
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#the-key-is-to-make-a-table-of-instructions-and-use-a-status-flag-to-determine-dependencies.",
-    "href": "CSC4001-S06-CPU2.html#the-key-is-to-make-a-table-of-instructions-and-use-a-status-flag-to-determine-dependencies.",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "The key is to make a table of instructions, and use a status flag to determine dependencies.",
-    "text": "The key is to make a table of instructions, and use a status flag to determine dependencies."
+    "objectID": "CSC4001-S13-Scheduling.html#multilevel-feedback-queue",
+    "href": "CSC4001-S13-Scheduling.html#multilevel-feedback-queue",
+    "title": "Processes",
+    "section": "Multilevel Feedback Queue",
+    "text": "Multilevel Feedback Queue\n\n2 ::: columnFIFO queues, \\[Q_0,Q_1,\\ldots,Q_n,\\] where\n\n\\(Q_0\\) has the highest priority\nand \\(Q_n\\) the lowest.\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::::"
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#table-of-instructions",
-    "href": "CSC4001-S06-CPU2.html#table-of-instructions",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Table of instructions",
-    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\nx2\nx1\nt1\nWaiting\n\n\n2\nMUL\nt1\nt1\nt2\nWaiting\n\n\n3\nSUB\ny2\ny1\nt3\nWaiting\n\n\n4\nMUL\nt3\nt3\nt4\nWaiting\n\n\n5\nADD\nt2\nt4\nt5\nWaiting\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\nWe know the value of x1, x2, y1 and y2: fill them in.\n\nWe start by writing our instructions in a table. CPU does this as they come out of the decode stage of the pipeline (very fast) We need to know the inputs (Arg1 and Arg2) and return values to figure out dependencies. First step: fill in any variables whose values we know already."
+    "objectID": "CSC4001-S13-Scheduling.html#multilevel-feedback-queue-1",
+    "href": "CSC4001-S13-Scheduling.html#multilevel-feedback-queue-1",
+    "title": "Processes",
+    "section": "Multilevel Feedback Queue",
+    "text": "Multilevel Feedback Queue\n\n\nRun processes in priority queue order.\n\nI.e., no process in \\(Q_1\\) can run until \\(Q_0\\) is empty.\nNew process, \\(P\\), added to \\(Q_0\\), \\(P\\) is given a timeslice."
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-1",
-    "href": "CSC4001-S06-CPU2.html#table-of-instructions-1",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Table of instructions",
-    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\nt1\nReady\n\n\n2\nMUL\nt1\nt1\nt2\nWaiting\n\n\n3\nSUB\n11\n20\nt3\nReady\n\n\n4\nMUL\nt3\nt3\nt4\nWaiting\n\n\n5\nADD\nt2\nt4\nt5\nWaiting\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n\nInstructions 1 and 3 are ready and can be executed in parallel."
+    "objectID": "CSC4001-S13-Scheduling.html#multilevel-feedback-queue-2",
+    "href": "CSC4001-S13-Scheduling.html#multilevel-feedback-queue-2",
+    "title": "Processes",
+    "section": "Multilevel Feedback Queue",
+    "text": "Multilevel Feedback Queue\nSuppose \\(P\\) is in \\(Q_i\\).\n\nIf \\(P\\) uses all of its timeslice, it is demoted to \\(Q_{i+1}\\),\nIf \\(P\\) voluntarily relinquishes before its timeslice is over, it remains in \\(Q_i\\).\nIf \\(P\\) blocks for I/O, it is promoted to \\(Q_{i-1}\\).\n\n::: ::: column :::: {.cell layout-align=“center”} ::: cell-output-display  ::: ::: ::::"
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-2",
-    "href": "CSC4001-S06-CPU2.html#table-of-instructions-2",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Table of instructions",
-    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\nt2\nWaiting\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\nt4\nWaiting\n\n\n5\nADD\nt2\nt4\nt5\nWaiting\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n\nNow t1 and t3 are known, some more instructions become ready."
+    "objectID": "CSC4001-S13-Scheduling.html#multilevel-feedback-queue-3",
+    "href": "CSC4001-S13-Scheduling.html#multilevel-feedback-queue-3",
+    "title": "Processes",
+    "section": "Multilevel Feedback Queue",
+    "text": "Multilevel Feedback Queue\n\nNewer, less compute-intensive processes get higher priority than older, more compute-intensive ones.\nGood for responsiveness, since I/O intensive processes tend to rise.\nBad for compute-intensive processes, which tend to fall and get starved.\nTo avoid this, the timeslice is doubled each time a process is demoted.\nOlder, longer running processes occasionally get a large slice of CPU time.\n\nUsed by Windows NT and some Unix derivatives"
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-3",
-    "href": "CSC4001-S06-CPU2.html#table-of-instructions-3",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Table of instructions",
-    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\nt2\nReady\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\nt4\nReady\n\n\n5\nADD\nt2\nt4\nt5\nWaiting\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n\nInstructions 2 and 4 are ready and can be executed in parallel."
+    "objectID": "CSC4001-S13-Scheduling.html#traditional-unix-scheduling",
+    "href": "CSC4001-S13-Scheduling.html#traditional-unix-scheduling",
+    "title": "Processes",
+    "section": "Traditional Unix Scheduling",
+    "text": "Traditional Unix Scheduling\n\nused by older Unix systems,\nmodern UNIX schedulers are much more advanced.\nA pre-emptive scheduler,\nwith a timer interrupt every \\(1/60^{\\mathrm{th}}\\) of a second (about 16ms).\npriority-based system.\nPriority of each process based on\n\nBase priority (more for system processes, less for user processes),\nCPU usage (lower usage gives more priority),\nModifier to increase / decrease priority, called nice value."
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-4",
-    "href": "CSC4001-S06-CPU2.html#table-of-instructions-4",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Table of instructions",
-    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\n25\nDone\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\n81\nDone\n\n\n5\nADD\n25\n81\nt5\nReady\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n\nInstruction 5, which depends on t2 and t4 can now be executed."
+    "objectID": "CSC4001-S13-Scheduling.html#traditional-unix-scheduling-1",
+    "href": "CSC4001-S13-Scheduling.html#traditional-unix-scheduling-1",
+    "title": "Processes",
+    "section": "Traditional Unix Scheduling",
+    "text": "Traditional Unix Scheduling\n\nPriority is a whole number: lower number means more priority.\nProcesses with the same priority are scheduled in a round-robin fashion.\nSimilar to MFQ, where each priority value is a queue level.\nProcesses start with a base priority, smaller number for system process, larger for user processes.\nPriority can be modified by adding a nice value, a number from \\(-20\\) to \\(+19\\),\nonly root can set nice \\(&lt; 0\\). Nice \\(=-20\\) can lock up the system.\nEvery \\(1/2\\) second (500ms), CPU used is halved so that it decays over time:\npriority value represents only recent CPU usage."
   },
   {
-    "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-5",
-    "href": "CSC4001-S06-CPU2.html#table-of-instructions-5",
-    "title": "Pipelines, Out Of Order Execution, and Parallelism",
-    "section": "Table of instructions",
-    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\n25\nDone\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\n81\nDone\n\n\n5\nADD\n25\n81\n106\nDone\n\n\n6\nSQRT\n106\n–\nD\nReady\n\n\n\nD = sqrt(105)."
+    "objectID": "CSC4001-S13-Scheduling.html#drawbacks",
+    "href": "CSC4001-S13-Scheduling.html#drawbacks",
+    "title": "Processes",
+    "section": "Drawbacks",
+    "text": "Drawbacks\n\nAll priorities are recomputed at once, every second.\n\nThis took a significant length of time, especially on older computers.\nPriorities are not updated frequently enough to respond to changes in behaviour.\nDoes not scale well to systems with a large number of processes.\n\nModern systems have 1000s of processes,\nso Traditional Unix Scheduling is no longer practical.\n\n\nMFQ: multilevel feedback queue note: tied priorities and MFQ, similar but with lots more queues."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#learning-outcomes",
-    "href": "CSC4001-S04-CPU.html#learning-outcomes",
-    "title": "The CPU",
-    "section": "Learning Outcomes",
-    "text": "Learning Outcomes\n\nExplain what happens at each stage of the fetch, decode, execute, store cycle.\nUse a simple instruction set to write some assembler programs for a toy computer.\nGive the main difference between RICS and CISC architecture, stating their advantages and disadvantages as well as situations in which each is best used.\nState Moore’s law and discuss whether it is still relevant today."
+    "objectID": "CSC4001-S13-Scheduling.html#multi-user-systems",
+    "href": "CSC4001-S13-Scheduling.html#multi-user-systems",
+    "title": "Processes",
+    "section": "Multi-user systems",
+    "text": "Multi-user systems\n\nWhat to do if there are multiple users?\n2 users: User1 has 100 processes, User2 has only 2.\nShould we give each user or each process the same amount of CPU time?\nFair Share Scheduling gives each user, group, or other entity the same mount of CPU time."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#recap-harvard-architecture",
-    "href": "CSC4001-S04-CPU.html#recap-harvard-architecture",
-    "title": "The CPU",
-    "section": "Recap: Harvard architecture",
-    "text": "Recap: Harvard architecture\n\n\nRecall the control unit, arithmetic logic unit, input and output. Harvard architecture has separate memory for programs and data, and a separate bus. This meant there was less contention as instructions and data could be accessed simultaneously, but the machine was less flexible, e.g., the program memory may not be full when data memory is, but we cannot use the free space in the program memory for additional data. This architecture commonly used in embedded systems, and mainframes."
+    "objectID": "CSC4001-S13-Scheduling.html#exercise-modern-scheduling-algorithms",
+    "href": "CSC4001-S13-Scheduling.html#exercise-modern-scheduling-algorithms",
+    "title": "Processes",
+    "section": "Exercise: modern scheduling algorithms",
+    "text": "Exercise: modern scheduling algorithms\nInvestigate how modern schedulers work. E.g.,\n\nO(1) Scheduler,\nCompletely Fair Scheduler."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#the-von-neumann-architecture",
-    "href": "CSC4001-S04-CPU.html#the-von-neumann-architecture",
-    "title": "The CPU",
-    "section": "The Von Neumann Architecture",
-    "text": "The Von Neumann Architecture\n\n\nSame components: control unit, arithmetic logic unit, input and output. In the Harvard architecture, data and instructions are stored in the same memory. A single memory bus can be a bottleneck, and concerns were raised about security (e.g., a program can write to any location in memory, including modifying the instructions. Simpler and more flexible. This is the architecture found in most desktop computers today."
+    "objectID": "CSC4001-S13-Scheduling.html#summary",
+    "href": "CSC4001-S13-Scheduling.html#summary",
+    "title": "Processes",
+    "section": "Summary",
+    "text": "Summary\n\nScheduling is a difficult talk;\nwe need to balance many priorities.\nSchedulers need to gather and analyse many statistics about the process."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#components",
-    "href": "CSC4001-S04-CPU.html#components",
-    "title": "The CPU",
-    "section": "Components",
-    "text": "Components"
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#the-cpu-1",
-    "href": "CSC4001-S04-CPU.html#the-cpu-1",
-    "title": "The CPU",
-    "section": "The CPU",
-    "text": "The CPU\n\nA program, written in assembler, is a sequence of instructions.\nThe program is loaded into main memory so that the next instruction is in the next memory address:"
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#the-cpu-2",
-    "href": "CSC4001-S04-CPU.html#the-cpu-2",
-    "title": "The CPU",
-    "section": "The CPU",
-    "text": "The CPU\nthe program counter (PC) points to the memory location of the current instruction."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#the-cpu-3",
-    "href": "CSC4001-S04-CPU.html#the-cpu-3",
-    "title": "The CPU",
-    "section": "The CPU",
-    "text": "The CPU\n\nThe current instruction itself is stored in the instruction register (IR)."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#the-cpu-4",
-    "href": "CSC4001-S04-CPU.html#the-cpu-4",
-    "title": "The CPU",
-    "section": "The CPU",
-    "text": "The CPU\n\nThe control unit decodes the instruction and tells the arithmetic logic unit (ALU) which operations to perform."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#the-cpu-5",
-    "href": "CSC4001-S04-CPU.html#the-cpu-5",
-    "title": "The CPU",
-    "section": "The CPU",
-    "text": "The CPU\n\nThe CPU has a small number of registers (R1, R2, and R3 on the picture) to store intermediate values.\nThere is also a small amount of very fast memory, the cache, located either on or very near the CPU."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#the-fetch-decode-execute-store-cycle",
-    "href": "CSC4001-S04-CPU.html#the-fetch-decode-execute-store-cycle",
-    "title": "The CPU",
-    "section": "The Fetch, decode, execute store Cycle",
-    "text": "The Fetch, decode, execute store Cycle\nA CPU goes through four stages to run an instruction:"
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#fetch",
-    "href": "CSC4001-S04-CPU.html#fetch",
-    "title": "The CPU",
-    "section": "Fetch",
-    "text": "Fetch\n\n\n\nFirst stage of the cycle.\nProgram counter points to the memory address of the next instruction.\nRetrieve the next instruction from memory and store it in the instruction register.\nIncrement the program counter to point to the next instruction."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#decode",
-    "href": "CSC4001-S04-CPU.html#decode",
-    "title": "The CPU",
-    "section": "Decode",
-    "text": "Decode\n\n\n\nThe control unit reads the current instruction in the instruction register.\nThe control unit determines which operation(s) to perform.\nIf the instruction has operands the control unit initiates additional fetches to retrieve these from memory.\n\n\n\n\n\n\n\n\n\n\n\nThe CPU is now ready to execute the instruction."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#execute",
-    "href": "CSC4001-S04-CPU.html#execute",
-    "title": "The CPU",
-    "section": "Execute",
-    "text": "Execute\n\n\n\nThe stage at which operations are performed.\nThe ALU performs the decoded operation with its operands.\nIn more advanced CPUs may have special-purpose hardware, e.g., a floating point unit.\nInstruction may load data from memory into a register.\nMay perform a jump (e.g., conditional or loop) – program counter is set to point to a different instruction.\n\n\n\n\n\n\n\n\n\n\n\nAny return value is stored in a register. Ready for the next stage…"
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#interrupt",
-    "href": "CSC4001-S04-CPU.html#interrupt",
-    "title": "The CPU",
-    "section": "Interrupt",
-    "text": "Interrupt\n\nOccasionally, the CPU receives an interrupt signal.\nThe CPU immediately stops executing the current instruction and jumps to an interrupt service routine.\nThe interrupt service routine is just another set of instructions stored in memory.\nThe CPU executes these instructions as usual, then jumps back to the instruction it was previously working on.\nIf the instruction was interrupted halfway through, then the CPU must restart it from the beginning."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#the-little-man-computer",
-    "href": "CSC4001-S04-CPU.html#the-little-man-computer",
-    "title": "The CPU",
-    "section": "The Little man Computer",
-    "text": "The Little man Computer\n\n\n\nSimple model of a Von Neumann architecture computer.\nImagine a “Little Man” trapped inside a locked mail room.\nThe mail room has 100 mailboxes labelled 00-99, each of which can hold a 3 decimal digit instruction or data.\n\n\n\n\n\n\n\n\n\n\n\n\nInput is received via an inbox and output returned via an outbox.\nThere is a work area with a simple addition and subtraction, the accumulator.\nThere is a program counter which tells the Little Man from which address to fetch the next instruction."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#how-it-works",
-    "href": "CSC4001-S04-CPU.html#how-it-works",
-    "title": "The CPU",
-    "section": "How it works",
-    "text": "How it works\n\nThe Little Man checks the program counter and retrieves the instruction at the specified address.\nThe program counter is incremented so that it points to the address (mailbox) containing the next instruction.\nLittle Man decodes the instruction.\n\n\nOp-code: number from 000-999 which tells the Little Man what operation to perform.\nIf data is required, its mailbox address is included in the instruction.\n\n\nIf required, data is fetched from the mailbox referred in the instruction.\nExecute the instruction.\nBranch (change the value in the program counter) or store the result of the instruction.\nRepeat or halt."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#instructions",
-    "href": "CSC4001-S04-CPU.html#instructions",
-    "title": "The CPU",
-    "section": "Instructions",
-    "text": "Instructions\n\n\n\n\n\n\n\n\n\n\nName\nCode\nDescription\n\n\n\n\nADD\n\\(1XX\\)\nAdd value in mailbox \\(XX\\) to the value in the accumulator.\n\n\nSUB\n\\(2XX\\)\nSubtract value in mailbox \\(XX\\) fro the value in the accumulator.\n\n\nSTA\n\\(3XX\\)\nStore value in accumulator in mailbox \\(XX\\)\n\n\nLDA\n\\(5XX\\)\nLoad value in mailbox \\(XX\\) into the accumulator\n\n\nBRA\n\\(6XX\\)\nUnconditionally go to instruction in mailbox \\(XX\\)\n\n\n\n\n\n\n\n\n\n\n\n\nName\nCode\nDescription\n\n\n\n\nBRZ\n\\(7XX\\)\nConditionally go to instruction in mailbox \\(XX\\) if the accumulator is \\(0\\)\n\n\nBRP\n\\(8XX\\)\nConditionally go to instruction in mailbox \\(XX\\) if the accumulator is \\(&gt; 0\\)\n\n\nINP\n\\(901\\)\nRead input from the inbox, store it in the accumulator.\n\n\nOUT\n\\(902\\)\nWrite output from the accumulator to the outbox.\n\n\nHLT\n\\(000\\)\nHalt – stop the program."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#assembler",
-    "href": "CSC4001-S04-CPU.html#assembler",
-    "title": "The CPU",
-    "section": "Assembler",
-    "text": "Assembler\n\n\n\nMnemonics (3-letter codes) are often used, e.g., ADD,\nInstead of the 3-digit op-code, e.g., \\(1XX\\), since they are easier for the programmer to remember.\nA program is a sequence of instructions, which are executed in order – imperative programming.\nLabels (similar to variables) are used instead of memory address numbers.\n\n\nAdd two numbers\nINP # store value from inbox in accumulator\nSTA FIRST # store accumulator value in FIRST mailbox\nINP\nSTA SECOND\nLDA FIRST # load first number into accumulator\nADD SECOND # ADD SECOND value to accumulator\nOUT # output the value of accumulator\nFIRST DAT # reserves a data mailbox\nSECOND DAT\n\nDAT reserves a labelled mailbox for data."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#labels-constants-and-jumps",
-    "href": "CSC4001-S04-CPU.html#labels-constants-and-jumps",
-    "title": "The CPU",
-    "section": "Labels, constants and jumps",
-    "text": "Labels, constants and jumps\n\n\n\nLabels are used to refer to mailbox locations.\nSince instructions are stored in mailboxes, they can be labelled, too.\nE.g., loop OUT labels the location of the OUT instruction as loop.\nBranches need the memory address of the instruction to go to – we can use labels.\nE.g., BNP loop goes to loop as long as the accumulator value is positive.\nA labelled mailbox can be initialised to a constant.\nE.g., one DAT 1 initialises the mailbox labelled one to \\(1\\).\n\n\n     INP\nloop OUT\n     SUB one\n     STA count\n     BRP loop\n     HLT\n1\none DAT 1\ncount DAT"
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#exercise-little-man-programming",
-    "href": "CSC4001-S04-CPU.html#exercise-little-man-programming",
-    "title": "The CPU",
-    "section": "Exercise: little man programming",
-    "text": "Exercise: little man programming\n\nGo to https://www.101computing.net/LMC/\nPlay with the simulator, try some of the example programs.\nCode the following programs:\n\nDifference: User inputs two numbers, \\(A\\) and \\(B\\). Program calculates their difference, \\(A - B\\).\nCount up: User inputs a number, \\(N\\), program should count up from \\(0\\) to \\(N\\).\nMultiplication: There is no multiplication instruction, but \\(A \\cdot B = \\underbrace{A \\cdot A \\cdots A}_{B \\text{ times}}\\). Implement multiplication.\n\nYou may want to plan your code on paper, like the EDSAC programmers."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#instruction-set-architectures-1",
-    "href": "CSC4001-S04-CPU.html#instruction-set-architectures-1",
-    "title": "The CPU",
-    "section": "Instruction set architectures",
-    "text": "Instruction set architectures\n\nEach processor architecture has its own instruction set:\nA set of op-codes which the control unit interprets as instructions.\nThere are two main types of instruction set architecture\n\nRISC: reduced instruction set computer, and\nCISC: complex instruction set computer."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#history",
-    "href": "CSC4001-S04-CPU.html#history",
-    "title": "The CPU",
-    "section": "History",
-    "text": "History\n\nUp to the early 80’s, more instructions were being added to processors.\nDesigners wanted to mimic high-level programming languages.\nOne CPU instruction should be one line of source code.\nOffload more work onto the hardware.\nProduce shorter programs (fewer total instructions) to conserve memory."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#history-1",
-    "href": "CSC4001-S04-CPU.html#history-1",
-    "title": "The CPU",
-    "section": "History",
-    "text": "History\n\nIn the early 80’s, the idea of creating a smaller and simple set of instructions was proposed.\nAim was to make designing and building a CPU easier, cheaper and, therefore, faster.\nTerm RISC coined by David Patterson, a researcher at UC Berkeley."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#risc-reduced-instruction-set-computer",
-    "href": "CSC4001-S04-CPU.html#risc-reduced-instruction-set-computer",
-    "title": "The CPU",
-    "section": "RISC: reduced instruction set computer",
-    "text": "RISC: reduced instruction set computer\nSmall, simple set of instructions, e.g., as found in the Little Man computer.\n\nProcessor can execute exactly one instruction per cycle.\nInstructions are a fixed length (fixed number of bits).\nCan only manipulate values stored in CPU registers.\nRISC chips are simple to design and cheap to build.\nUsed in ARM-based chips, found in microcontrollers (Arduino, Raspberry Pi) and smartphones.\nAlso used in IBM Power processors (used in mainframes and servers)."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#cisc-complex-instruction-set-computing",
-    "href": "CSC4001-S04-CPU.html#cisc-complex-instruction-set-computing",
-    "title": "The CPU",
-    "section": "CISC: complex instruction set computing",
-    "text": "CISC: complex instruction set computing\nLarge number of instructions, some performing more complicated operations – intended to correspond to statements in a high-level programming language.\n\nVariable-length instructions.\nMay take multiple clock cycles to execute an instruction.\nAble to manipulate values directly in main memory.\nCISC chips are complex, with special-purpose hardware, and are more expensive to build.\nFound in most PCs – the x86 architecture."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#simple-example-risc-vs-cisc",
-    "href": "CSC4001-S04-CPU.html#simple-example-risc-vs-cisc",
-    "title": "The CPU",
-    "section": "Simple example: RISC vs CISC",
-    "text": "Simple example: RISC vs CISC\nSuppose we want to increment a value stored in main memory."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#cisc-architecture",
-    "href": "CSC4001-S04-CPU.html#cisc-architecture",
-    "title": "The CPU",
-    "section": "CISC architecture",
-    "text": "CISC architecture\n\nA single instruction:\nADD mem one\n\nRetrieves the value from memory,\nAdds one to it,\nWrites back to memory.\n\n\nCISC architecture\n\nThree separate instructions:\nLDA mem\nADD one\nSTA mem"
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#second-generation-of-computers",
-    "href": "CSC4001-S04-CPU.html#second-generation-of-computers",
-    "title": "The CPU",
-    "section": "Second-generation of computers",
-    "text": "Second-generation of computers\n\nRecall that early computers, e.g., EDSAC, used vacuum tubes (thermionic valves).\nThese were bulky, unreliable, generated lots of heat and required lots of energy to run.\nIn the late 1950s, computers began to use electronic circuit boards made out of transistors instead.\nThese computers were popular until the late 1960s."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#first-transistor-computer",
-    "href": "CSC4001-S04-CPU.html#first-transistor-computer",
-    "title": "The CPU",
-    "section": "First transistor computer",
-    "text": "First transistor computer\n\n\n\nDeveloped at the University of Manchester\nWorking prototype in November 1953,\nhad 92 transistors and 950 diodes.\nFull-size version was operational in 1955\nhad 200 transistors, 1300 diodes and consumed 150W of power.\nEarly transistors were unreliable. Average error-free runtime was 1.5 hours.\nNot fully transistorised as it still used vacuum tubes in its clock.\n\n\n\n\n\n\n\n\n\n\n\n\nTRADIC transistor computer, developed at Bell Labs, released January 1954.\nUsed a single high-power output vacuum tube amplifier to obtain a 1MHz clock speed."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#fully-transistorised-computer",
-    "href": "CSC4001-S04-CPU.html#fully-transistorised-computer",
-    "title": "The CPU",
-    "section": "Fully transistorised computer",
-    "text": "Fully transistorised computer\n\nHarwell Cadet, 1955. 58KHz clock speed.\nPrototype IBM 604 Transistor calculator.\nIBM 608, released April 1955 is considered to be the first commercial fully solid-state transistor computer."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#third-generation-computers",
-    "href": "CSC4001-S04-CPU.html#third-generation-computers",
-    "title": "The CPU",
-    "section": "Third generation computers",
-    "text": "Third generation computers\n\nWidely used from the mid 60s to early 70s.\nUsed integrated circuits (ICs)\nAn IC is a single chip containing all transistors, resistors, capacitors, diodes and connections needed to operate.\nInvented by Jack Kilby in 1958, an electrical engineer working at Texas Instruments.\nAwarded the Nobel Prize in Physics in 2000.\nFaster and more reliable than second generation.\nReduced computing time from micro seconds to nano seconds.\nComputers were becoming more compact, affordable and easy to use with high-level programming languages and mouse and keyboard instead of punched cards."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#moores-law-1",
-    "href": "CSC4001-S04-CPU.html#moores-law-1",
-    "title": "The CPU",
-    "section": "Moore’s “Law”",
-    "text": "Moore’s “Law”\n\nPrediction made by Gordon Moore, co-founder of Intel, in 1965:\n“Number of transistors per chip doubles every two years.”\n\n\nNote that it’s not a “law” as in “law of physics”. More of a prediction which has remained (mostly) true."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#moores-law-graph",
-    "href": "CSC4001-S04-CPU.html#moores-law-graph",
-    "title": "The CPU",
-    "section": "Moore’s Law Graph",
-    "text": "Moore’s Law Graph"
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#dennard-scaling",
-    "href": "CSC4001-S04-CPU.html#dennard-scaling",
-    "title": "The CPU",
-    "section": "Dennard scaling",
-    "text": "Dennard scaling\n\nStated in a 1974 paper co-authored by Robert H. Dennard:\n“As transistors get smaller, their power density stays constant – power use stays in proportion with area.”\nIf a transistor is 30% smaller, then its power consumption is 30% less.\nAn IC of fixed size with twice the number of transistors consumes the same power.\nAllowed manufacturers to significantly increase clock speed without increase power consumption."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#dennard-scaling-1",
-    "href": "CSC4001-S04-CPU.html#dennard-scaling-1",
-    "title": "The CPU",
-    "section": "Dennard scaling",
-    "text": "Dennard scaling\n\n\n\nAppears to have broken down since 2006.\nSince 2016 the number of transistors per chip is still growing, but more slowly.\nAs transistors get smaller, current leakage and heat production is more problematic.\n\n\n\n\n\n\n\n\n\n\n\n\nWe see clock speed plateau – as clack speed increases it becomes more difficult to cool the chip.\nThis is called the power wall."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#exercise-moores-law",
-    "href": "CSC4001-S04-CPU.html#exercise-moores-law",
-    "title": "The CPU",
-    "section": "Exercise: Moore’s law",
-    "text": "Exercise: Moore’s law\nDiscuss:\n\nIs Moore’s law still true today?\n\n\n\nThere have been many predictions of the death of Moore’s law.\nWe are no longer able to double the number of transistors per chip.\nTransistors are still getting smaller and more tightly packed, but progress is becoming slower."
+    "objectID": "CSC4001-S13-Scheduling.html#next-time",
+    "href": "CSC4001-S13-Scheduling.html#next-time",
+    "title": "Processes",
+    "section": "Next time",
+    "text": "Next time\nDeadlock and Process Protection"
   },
   {
     "objectID": "CSC4001-S10-OS.html#learning-outcomes",
@@ -1071,137 +1036,655 @@
     "text": "Summary: what have early computers taught us?\n\nResources need managing,\nsince they are limited, we want to get best performance otu of hardware and best user experience.\nResources also need protection\nfrom out or malicious programs, e.g., limiting access to memory, but also files and network.\nProgrammers need a convenient interface,\nto best interact with hardware, avoid repeating code, and produce fewer errors."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "CSC4001: Systems and Architecture",
-    "section": "",
-    "text": "Index\n\nS00: \nS01: \nCSC4001-S02W-Logic.qmd: \nS02: \nS03: \nS04: \nCSC4001-S05W-GoingUp.qmd: \nS05: \nS06: \nS10:"
+    "objectID": "CSC4001-S04-CPU.html#learning-outcomes",
+    "href": "CSC4001-S04-CPU.html#learning-outcomes",
+    "title": "The CPU",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n\nExplain what happens at each stage of the fetch, decode, execute, store cycle.\nUse a simple instruction set to write some assembler programs for a toy computer.\nGive the main difference between RICS and CISC architecture, stating their advantages and disadvantages as well as situations in which each is best used.\nState Moore’s law and discuss whether it is still relevant today."
   },
   {
-    "objectID": "CSC4001-S02W-Logic.html",
-    "href": "CSC4001-S02W-Logic.html",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "",
-    "text": "Adapted from https://cccu-uk.github.io/U10793_FCC_Labs/Logic_Gates/Logic_Gates.html"
+    "objectID": "CSC4001-S04-CPU.html#recap-harvard-architecture",
+    "href": "CSC4001-S04-CPU.html#recap-harvard-architecture",
+    "title": "The CPU",
+    "section": "Recap: Harvard architecture",
+    "text": "Recap: Harvard architecture\n\n\nRecall the control unit, arithmetic logic unit, input and output. Harvard architecture has separate memory for programs and data, and a separate bus. This meant there was less contention as instructions and data could be accessed simultaneously, but the machine was less flexible, e.g., the program memory may not be full when data memory is, but we cannot use the free space in the program memory for additional data. This architecture commonly used in embedded systems, and mainframes."
   },
   {
-    "objectID": "CSC4001-S02W-Logic.html#universal-logic-circuits",
-    "href": "CSC4001-S02W-Logic.html#universal-logic-circuits",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "Universal Logic Circuits",
-    "text": "Universal Logic Circuits\nWe can build any of the fundamental logic gates by chaining only nand or only nor gates together.\nQuestion 1 Create the circuit as shown below.\n\n\n\n\n\nDraw its truth table. Which logic gate does it represent?\nQuestion 2 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 3 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 4 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 5 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 6 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents."
+    "objectID": "CSC4001-S04-CPU.html#the-von-neumann-architecture",
+    "href": "CSC4001-S04-CPU.html#the-von-neumann-architecture",
+    "title": "The CPU",
+    "section": "The Von Neumann Architecture",
+    "text": "The Von Neumann Architecture\n\n\nSame components: control unit, arithmetic logic unit, input and output. In the Harvard architecture, data and instructions are stored in the same memory. A single memory bus can be a bottleneck, and concerns were raised about security (e.g., a program can write to any location in memory, including modifying the instructions. Simpler and more flexible. This is the architecture found in most desktop computers today."
   },
   {
-    "objectID": "CSC4001-S02W-Logic.html#sr-latch-with-only-nand-gates",
-    "href": "CSC4001-S02W-Logic.html#sr-latch-with-only-nand-gates",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "SR Latch with only NAND gates",
-    "text": "SR Latch with only NAND gates\nQuestion 1 Rebuild the below SR latch with only NAND gates.\n\n\n\n\n\n\n\n\n\nQuestion 2 Rebuild the below gated SR latch with only NAND gates."
+    "objectID": "CSC4001-S04-CPU.html#components",
+    "href": "CSC4001-S04-CPU.html#components",
+    "title": "The CPU",
+    "section": "Components",
+    "text": "Components"
   },
   {
-    "objectID": "CSC4001-S02W-Logic.html#the-clock",
-    "href": "CSC4001-S02W-Logic.html#the-clock",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "The Clock",
-    "text": "The Clock\nUse the clock to generate signals.\nCreate the circuit as shown below:\n\n\n\n\n\nConnecting the clock as input and adding the data graph.\n\nExperiment with different Clock Input Frequencies, what observations can you make? Discuss with the a peer or with the tutor.\nReplace the or gate with a different gate, change the frequency.\nDoes the data graph show a pattern?"
+    "objectID": "CSC4001-S04-CPU.html#the-cpu-1",
+    "href": "CSC4001-S04-CPU.html#the-cpu-1",
+    "title": "The CPU",
+    "section": "The CPU",
+    "text": "The CPU\n\nA program, written in assembler, is a sequence of instructions.\nThe program is loaded into main memory so that the next instruction is in the next memory address:"
   },
   {
-    "objectID": "CSC4001-S02W-Logic.html#half-adder",
-    "href": "CSC4001-S02W-Logic.html#half-adder",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "Half Adder",
-    "text": "Half Adder\nRecreate the half adder circuit as shown below. \nUse the simulator to complete the truth table\n\n\n\nA\nB\nS\nCout\n\n\n\n\n1\n1\n\n\n\n\n1\n0\n\n\n\n\n0\n1\n\n\n\n\n0\n0"
+    "objectID": "CSC4001-S04-CPU.html#the-cpu-2",
+    "href": "CSC4001-S04-CPU.html#the-cpu-2",
+    "title": "The CPU",
+    "section": "The CPU",
+    "text": "The CPU\nthe program counter (PC) points to the memory location of the current instruction."
   },
   {
-    "objectID": "CSC4001-S02W-Logic.html#full-adder",
-    "href": "CSC4001-S02W-Logic.html#full-adder",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "Full adder",
-    "text": "Full adder\nNow produce a full adder, simulate and complete the truth table.\n\n\n\nA\nB\nCin\nS\nCout\n\n\n\n\n1\n1\n1\n\n\n\n\n1\n1\n0\n\n\n\n\n1\n0\n1\n\n\n\n\n1\n0\n0\n\n\n\n\n1\n1\n1\n\n\n\n\n0\n1\n0\n\n\n\n\n0\n0\n1\n\n\n\n\n0\n0\n0"
+    "objectID": "CSC4001-S04-CPU.html#the-cpu-3",
+    "href": "CSC4001-S04-CPU.html#the-cpu-3",
+    "title": "The CPU",
+    "section": "The CPU",
+    "text": "The CPU\n\nThe current instruction itself is stored in the instruction register (IR)."
   },
   {
-    "objectID": "CSC4001-S02W-Logic.html#binary-decoder",
-    "href": "CSC4001-S02W-Logic.html#binary-decoder",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "Binary Decoder",
-    "text": "Binary Decoder\nResearch and implement a 2-bit binary decoder.\nA binary decoder takes \\(n\\) bits as input and can output one of \\(2^n\\) possible options, depending on the value of the input. For example, in a 2-bit decoder, there are four possible outputs, each corresponding to one of the possible assignments of bits:\n\n\\(00\\)\n\\(01\\)\n\\(10\\)\n\\(11\\)"
+    "objectID": "CSC4001-S04-CPU.html#the-cpu-4",
+    "href": "CSC4001-S04-CPU.html#the-cpu-4",
+    "title": "The CPU",
+    "section": "The CPU",
+    "text": "The CPU\n\nThe control unit decodes the instruction and tells the arithmetic logic unit (ALU) which operations to perform."
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#teaching-staff",
-    "href": "CSC4001-S00-welcome.html#teaching-staff",
-    "title": "Welcome",
-    "section": "Teaching Staff",
-    "text": "Teaching Staff\n\n\nDave Cobb\n\n\n\n\n\n\n\nModule leader. 25 years experience in the computer industry. Senior lecturer specialising in software development.\n\nHollie Baker\n\n\n\n\n\n\n\nAssociate Lecturer. PhD in computer science. Industry experience in web development and databases. Keen Braillist."
+    "objectID": "CSC4001-S04-CPU.html#the-cpu-5",
+    "href": "CSC4001-S04-CPU.html#the-cpu-5",
+    "title": "The CPU",
+    "section": "The CPU",
+    "text": "The CPU\n\nThe CPU has a small number of registers (R1, R2, and R3 on the picture) to store intermediate values.\nThere is also a small amount of very fast memory, the cache, located either on or very near the CPU."
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#intended-learning-outcomes",
-    "href": "CSC4001-S00-welcome.html#intended-learning-outcomes",
-    "title": "Welcome",
-    "section": "Intended Learning Outcomes",
-    "text": "Intended Learning Outcomes\nBy successful completion of the module, you will be able to:\n\nDescribe the role of the different computer system components and their interactions\nExplain how instructions are executed by a computer processor\nIllustrate key computer architecture concepts such as instruction sets, memory hierarchy and data storage\nExplain the role operating systems have in providing services and sharing\n\n\nFrom the DPD The module’s lectures provide the fundamental aspects of computer systems and architectures, covering hardware, software and networking. The practical sessions enable students to reflect on the role of each computer component and understand how design choices impact data input, process and output. Independent Learning Students are encouraged to explore and understand different approaches hardware and software system design. Independent study and formative assessment also help students to assess an appreciate the evolution of micro-processors, hardware and operating systems. Intended learning outcomes"
+    "objectID": "CSC4001-S04-CPU.html#the-fetch-decode-execute-store-cycle",
+    "href": "CSC4001-S04-CPU.html#the-fetch-decode-execute-store-cycle",
+    "title": "The CPU",
+    "section": "The Fetch, decode, execute store Cycle",
+    "text": "The Fetch, decode, execute store Cycle\nA CPU goes through four stages to run an instruction:"
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#topics-covered",
-    "href": "CSC4001-S00-welcome.html#topics-covered",
-    "title": "Welcome",
-    "section": "Topics covered",
-    "text": "Topics covered\n\nComputer system organisation\nMemory organisation and management\nAssembly level programs\nMicroprocessor design fundamentals (pipelined architecture, CPU)\nOperating systems architectures\nResources and resource management\nControl unit operations"
+    "objectID": "CSC4001-S04-CPU.html#fetch",
+    "href": "CSC4001-S04-CPU.html#fetch",
+    "title": "The CPU",
+    "section": "Fetch",
+    "text": "Fetch\n\n\n\nFirst stage of the cycle.\nProgram counter points to the memory address of the next instruction.\nRetrieve the next instruction from memory and store it in the instruction register.\nIncrement the program counter to point to the next instruction."
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#schedule",
-    "href": "CSC4001-S00-welcome.html#schedule",
-    "title": "Welcome",
-    "section": "Schedule",
-    "text": "Schedule\n\n\n\nWeek\nSession A\nSession B\n\n\n\n\n1\nWelcome\nLogic\n\n\n2\nVon Neumann Architecture\nComputer history\n\n\n3\nAssembler, Risc and CISC\nPipelines and More\n\n\n4\nMemory\nWorkshop activity\n\n\n5\nOperating Systems Overview\nWorkshop Activity\n\n\n6\nReading Week\n\n\n\n7\nProcess Lifecycle\nBootstrapping\n\n\n8\nScheduling\nScheduling algorithms\n\n\n9\nDeadlock\nProcess protection\n\n\n10\nInter-process communication\nWorkshop activity\n\n\n11\nMemory Management\nWorkshop activity\n\n\n12\nFiles and Filesystems\nWorkshop activity"
+    "objectID": "CSC4001-S04-CPU.html#decode",
+    "href": "CSC4001-S04-CPU.html#decode",
+    "title": "The CPU",
+    "section": "Decode",
+    "text": "Decode\n\n\n\nThe control unit reads the current instruction in the instruction register.\nThe control unit determines which operation(s) to perform.\nIf the instruction has operands the control unit initiates additional fetches to retrieve these from memory.\n\n\n\n\n\n\n\n\n\n\n\nThe CPU is now ready to execute the instruction."
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#timetable",
-    "href": "CSC4001-S00-welcome.html#timetable",
-    "title": "Welcome",
-    "section": "Timetable",
-    "text": "Timetable\nCyber Security\n\nTuesdays 09:30 - 11:30\nWednesdays 11:30 - 13:30\n\nComputer Science\n\nThursday 09:30 - 11:30\nFriday 12:30 - 14:30"
+    "objectID": "CSC4001-S04-CPU.html#execute",
+    "href": "CSC4001-S04-CPU.html#execute",
+    "title": "The CPU",
+    "section": "Execute",
+    "text": "Execute\n\n\n\nThe stage at which operations are performed.\nThe ALU performs the decoded operation with its operands.\nIn more advanced CPUs may have special-purpose hardware, e.g., a floating point unit.\nInstruction may load data from memory into a register.\nMay perform a jump (e.g., conditional or loop) – program counter is set to point to a different instruction.\n\n\n\n\n\n\n\n\n\n\n\nAny return value is stored in a register. Ready for the next stage…"
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#important-dates",
-    "href": "CSC4001-S00-welcome.html#important-dates",
-    "title": "Welcome",
-    "section": "Important dates",
-    "text": "Important dates\n\nWed 20 / Fri 2: S1 Assessment set (next week)\nWed 14 / Thu 15 Oct: Academic skills sessions\nFri 20 Nov: S1 assessment due"
+    "objectID": "CSC4001-S04-CPU.html#interrupt",
+    "href": "CSC4001-S04-CPU.html#interrupt",
+    "title": "The CPU",
+    "section": "Interrupt",
+    "text": "Interrupt\n\nOccasionally, the CPU receives an interrupt signal.\nThe CPU immediately stops executing the current instruction and jumps to an interrupt service routine.\nThe interrupt service routine is just another set of instructions stored in memory.\nThe CPU executes these instructions as usual, then jumps back to the instruction it was previously working on.\nIf the instruction was interrupted halfway through, then the CPU must restart it from the beginning."
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#resources",
-    "href": "CSC4001-S00-welcome.html#resources",
-    "title": "Welcome",
-    "section": "Resources",
-    "text": "Resources\n\nYou’ll find everything on Ultra"
+    "objectID": "CSC4001-S04-CPU.html#the-little-man-computer",
+    "href": "CSC4001-S04-CPU.html#the-little-man-computer",
+    "title": "The CPU",
+    "section": "The Little man Computer",
+    "text": "The Little man Computer\n\n\n\nSimple model of a Von Neumann architecture computer.\nImagine a “Little Man” trapped inside a locked mail room.\nThe mail room has 100 mailboxes labelled 00-99, each of which can hold a 3 decimal digit instruction or data.\n\n\n\n\n\n\n\n\n\n\n\n\nInput is received via an inbox and output returned via an outbox.\nThere is a work area with a simple addition and subtraction, the accumulator.\nThere is a program counter which tells the Little Man from which address to fetch the next instruction."
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#overview",
-    "href": "CSC4001-S00-welcome.html#overview",
-    "title": "Welcome",
-    "section": "Overview",
-    "text": "Overview\n\nFormative assessments\n\nWorkshop activities throughout the course\nAllows you to collaborate and get feedback\n\nSummative assessment\n\nTwo pieces of work\nMakes up your module grade"
+    "objectID": "CSC4001-S04-CPU.html#how-it-works",
+    "href": "CSC4001-S04-CPU.html#how-it-works",
+    "title": "The CPU",
+    "section": "How it works",
+    "text": "How it works\n\nThe Little Man checks the program counter and retrieves the instruction at the specified address.\nThe program counter is incremented so that it points to the address (mailbox) containing the next instruction.\nLittle Man decodes the instruction.\n\n\nOp-code: number from 000-999 which tells the Little Man what operation to perform.\nIf data is required, its mailbox address is included in the instruction.\n\n\nIf required, data is fetched from the mailbox referred in the instruction.\nExecute the instruction.\nBranch (change the value in the program counter) or store the result of the instruction.\nRepeat or halt."
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#s1",
-    "href": "CSC4001-S00-welcome.html#s1",
-    "title": "Welcome",
-    "section": "S1",
-    "text": "S1\nReport on the role of core computer architectural components\n\nWorth 40%, 1400 word equivalent\nDiscuss the impact on computing of developments in a chosen element of computer hardware during your chosen time period\nAnalyse an LLM’s response to the same question"
+    "objectID": "CSC4001-S04-CPU.html#instructions",
+    "href": "CSC4001-S04-CPU.html#instructions",
+    "title": "The CPU",
+    "section": "Instructions",
+    "text": "Instructions\n\n\n\n\n\n\n\n\n\n\nName\nCode\nDescription\n\n\n\n\nADD\n\\(1XX\\)\nAdd value in mailbox \\(XX\\) to the value in the accumulator.\n\n\nSUB\n\\(2XX\\)\nSubtract value in mailbox \\(XX\\) fro the value in the accumulator.\n\n\nSTA\n\\(3XX\\)\nStore value in accumulator in mailbox \\(XX\\)\n\n\nLDA\n\\(5XX\\)\nLoad value in mailbox \\(XX\\) into the accumulator\n\n\nBRA\n\\(6XX\\)\nUnconditionally go to instruction in mailbox \\(XX\\)\n\n\n\n\n\n\n\n\n\n\n\n\nName\nCode\nDescription\n\n\n\n\nBRZ\n\\(7XX\\)\nConditionally go to instruction in mailbox \\(XX\\) if the accumulator is \\(0\\)\n\n\nBRP\n\\(8XX\\)\nConditionally go to instruction in mailbox \\(XX\\) if the accumulator is \\(&gt; 0\\)\n\n\nINP\n\\(901\\)\nRead input from the inbox, store it in the accumulator.\n\n\nOUT\n\\(902\\)\nWrite output from the accumulator to the outbox.\n\n\nHLT\n\\(000\\)\nHalt – stop the program."
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#s2",
-    "href": "CSC4001-S00-welcome.html#s2",
-    "title": "Welcome",
-    "section": "S2",
-    "text": "S2\nComputer system design project (worth 60%)\n\nWorth 60%, 1600 word equivalent\nDesign an embedded computer system\nReport on the design process, elementns of hardware architecture and operating system design you have used."
+    "objectID": "CSC4001-S04-CPU.html#assembler",
+    "href": "CSC4001-S04-CPU.html#assembler",
+    "title": "The CPU",
+    "section": "Assembler",
+    "text": "Assembler\n\n\n\nMnemonics (3-letter codes) are often used, e.g., ADD,\nInstead of the 3-digit op-code, e.g., \\(1XX\\), since they are easier for the programmer to remember.\nA program is a sequence of instructions, which are executed in order – imperative programming.\nLabels (similar to variables) are used instead of memory address numbers.\n\n\nAdd two numbers\nINP # store value from inbox in accumulator\nSTA FIRST # store accumulator value in FIRST mailbox\nINP\nSTA SECOND\nLDA FIRST # load first number into accumulator\nADD SECOND # ADD SECOND value to accumulator\nOUT # output the value of accumulator\nFIRST DAT # reserves a data mailbox\nSECOND DAT\n\nDAT reserves a labelled mailbox for data."
   },
   {
-    "objectID": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
-    "href": "CSC4001-S00-welcome.html#csc4001-systems-and-architecture",
-    "title": "Welcome",
-    "section": "CSC4001 Systems and Architecture",
-    "text": "CSC4001 Systems and Architecture\nOkay, administration’s done. Let’s get started!"
+    "objectID": "CSC4001-S04-CPU.html#labels-constants-and-jumps",
+    "href": "CSC4001-S04-CPU.html#labels-constants-and-jumps",
+    "title": "The CPU",
+    "section": "Labels, constants and jumps",
+    "text": "Labels, constants and jumps\n\n\n\nLabels are used to refer to mailbox locations.\nSince instructions are stored in mailboxes, they can be labelled, too.\nE.g., loop OUT labels the location of the OUT instruction as loop.\nBranches need the memory address of the instruction to go to – we can use labels.\nE.g., BNP loop goes to loop as long as the accumulator value is positive.\nA labelled mailbox can be initialised to a constant.\nE.g., one DAT 1 initialises the mailbox labelled one to \\(1\\).\n\n\n     INP\nloop OUT\n     SUB one\n     STA count\n     BRP loop\n     HLT\n1\none DAT 1\ncount DAT"
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#exercise-little-man-programming",
+    "href": "CSC4001-S04-CPU.html#exercise-little-man-programming",
+    "title": "The CPU",
+    "section": "Exercise: little man programming",
+    "text": "Exercise: little man programming\n\nGo to https://www.101computing.net/LMC/\nPlay with the simulator, try some of the example programs.\nCode the following programs:\n\nDifference: User inputs two numbers, \\(A\\) and \\(B\\). Program calculates their difference, \\(A - B\\).\nCount up: User inputs a number, \\(N\\), program should count up from \\(0\\) to \\(N\\).\nMultiplication: There is no multiplication instruction, but \\(A \\cdot B = \\underbrace{A \\cdot A \\cdots A}_{B \\text{ times}}\\). Implement multiplication.\n\nYou may want to plan your code on paper, like the EDSAC programmers."
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#instruction-set-architectures-1",
+    "href": "CSC4001-S04-CPU.html#instruction-set-architectures-1",
+    "title": "The CPU",
+    "section": "Instruction set architectures",
+    "text": "Instruction set architectures\n\nEach processor architecture has its own instruction set:\nA set of op-codes which the control unit interprets as instructions.\nThere are two main types of instruction set architecture\n\nRISC: reduced instruction set computer, and\nCISC: complex instruction set computer."
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#history",
+    "href": "CSC4001-S04-CPU.html#history",
+    "title": "The CPU",
+    "section": "History",
+    "text": "History\n\nUp to the early 80’s, more instructions were being added to processors.\nDesigners wanted to mimic high-level programming languages.\nOne CPU instruction should be one line of source code.\nOffload more work onto the hardware.\nProduce shorter programs (fewer total instructions) to conserve memory."
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#history-1",
+    "href": "CSC4001-S04-CPU.html#history-1",
+    "title": "The CPU",
+    "section": "History",
+    "text": "History\n\nIn the early 80’s, the idea of creating a smaller and simple set of instructions was proposed.\nAim was to make designing and building a CPU easier, cheaper and, therefore, faster.\nTerm RISC coined by David Patterson, a researcher at UC Berkeley."
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#risc-reduced-instruction-set-computer",
+    "href": "CSC4001-S04-CPU.html#risc-reduced-instruction-set-computer",
+    "title": "The CPU",
+    "section": "RISC: reduced instruction set computer",
+    "text": "RISC: reduced instruction set computer\nSmall, simple set of instructions, e.g., as found in the Little Man computer.\n\nProcessor can execute exactly one instruction per cycle.\nInstructions are a fixed length (fixed number of bits).\nCan only manipulate values stored in CPU registers.\nRISC chips are simple to design and cheap to build.\nUsed in ARM-based chips, found in microcontrollers (Arduino, Raspberry Pi) and smartphones.\nAlso used in IBM Power processors (used in mainframes and servers)."
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#cisc-complex-instruction-set-computing",
+    "href": "CSC4001-S04-CPU.html#cisc-complex-instruction-set-computing",
+    "title": "The CPU",
+    "section": "CISC: complex instruction set computing",
+    "text": "CISC: complex instruction set computing\nLarge number of instructions, some performing more complicated operations – intended to correspond to statements in a high-level programming language.\n\nVariable-length instructions.\nMay take multiple clock cycles to execute an instruction.\nAble to manipulate values directly in main memory.\nCISC chips are complex, with special-purpose hardware, and are more expensive to build.\nFound in most PCs – the x86 architecture."
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#simple-example-risc-vs-cisc",
+    "href": "CSC4001-S04-CPU.html#simple-example-risc-vs-cisc",
+    "title": "The CPU",
+    "section": "Simple example: RISC vs CISC",
+    "text": "Simple example: RISC vs CISC\nSuppose we want to increment a value stored in main memory."
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#cisc-architecture",
+    "href": "CSC4001-S04-CPU.html#cisc-architecture",
+    "title": "The CPU",
+    "section": "CISC architecture",
+    "text": "CISC architecture\n\nA single instruction:\nADD mem one\n\nRetrieves the value from memory,\nAdds one to it,\nWrites back to memory.\n\n\nCISC architecture\n\nThree separate instructions:\nLDA mem\nADD one\nSTA mem"
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#second-generation-of-computers",
+    "href": "CSC4001-S04-CPU.html#second-generation-of-computers",
+    "title": "The CPU",
+    "section": "Second-generation of computers",
+    "text": "Second-generation of computers\n\nRecall that early computers, e.g., EDSAC, used vacuum tubes (thermionic valves).\nThese were bulky, unreliable, generated lots of heat and required lots of energy to run.\nIn the late 1950s, computers began to use electronic circuit boards made out of transistors instead.\nThese computers were popular until the late 1960s."
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#first-transistor-computer",
+    "href": "CSC4001-S04-CPU.html#first-transistor-computer",
+    "title": "The CPU",
+    "section": "First transistor computer",
+    "text": "First transistor computer\n\n\n\nDeveloped at the University of Manchester\nWorking prototype in November 1953,\nhad 92 transistors and 950 diodes.\nFull-size version was operational in 1955\nhad 200 transistors, 1300 diodes and consumed 150W of power.\nEarly transistors were unreliable. Average error-free runtime was 1.5 hours.\nNot fully transistorised as it still used vacuum tubes in its clock.\n\n\n\n\n\n\n\n\n\n\n\n\nTRADIC transistor computer, developed at Bell Labs, released January 1954.\nUsed a single high-power output vacuum tube amplifier to obtain a 1MHz clock speed."
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#fully-transistorised-computer",
+    "href": "CSC4001-S04-CPU.html#fully-transistorised-computer",
+    "title": "The CPU",
+    "section": "Fully transistorised computer",
+    "text": "Fully transistorised computer\n\nHarwell Cadet, 1955. 58KHz clock speed.\nPrototype IBM 604 Transistor calculator.\nIBM 608, released April 1955 is considered to be the first commercial fully solid-state transistor computer."
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#third-generation-computers",
+    "href": "CSC4001-S04-CPU.html#third-generation-computers",
+    "title": "The CPU",
+    "section": "Third generation computers",
+    "text": "Third generation computers\n\nWidely used from the mid 60s to early 70s.\nUsed integrated circuits (ICs)\nAn IC is a single chip containing all transistors, resistors, capacitors, diodes and connections needed to operate.\nInvented by Jack Kilby in 1958, an electrical engineer working at Texas Instruments.\nAwarded the Nobel Prize in Physics in 2000.\nFaster and more reliable than second generation.\nReduced computing time from micro seconds to nano seconds.\nComputers were becoming more compact, affordable and easy to use with high-level programming languages and mouse and keyboard instead of punched cards."
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#moores-law-1",
+    "href": "CSC4001-S04-CPU.html#moores-law-1",
+    "title": "The CPU",
+    "section": "Moore’s “Law”",
+    "text": "Moore’s “Law”\n\nPrediction made by Gordon Moore, co-founder of Intel, in 1965:\n“Number of transistors per chip doubles every two years.”\n\n\nNote that it’s not a “law” as in “law of physics”. More of a prediction which has remained (mostly) true."
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#moores-law-graph",
+    "href": "CSC4001-S04-CPU.html#moores-law-graph",
+    "title": "The CPU",
+    "section": "Moore’s Law Graph",
+    "text": "Moore’s Law Graph"
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#dennard-scaling",
+    "href": "CSC4001-S04-CPU.html#dennard-scaling",
+    "title": "The CPU",
+    "section": "Dennard scaling",
+    "text": "Dennard scaling\n\nStated in a 1974 paper co-authored by Robert H. Dennard:\n“As transistors get smaller, their power density stays constant – power use stays in proportion with area.”\nIf a transistor is 30% smaller, then its power consumption is 30% less.\nAn IC of fixed size with twice the number of transistors consumes the same power.\nAllowed manufacturers to significantly increase clock speed without increase power consumption."
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#dennard-scaling-1",
+    "href": "CSC4001-S04-CPU.html#dennard-scaling-1",
+    "title": "The CPU",
+    "section": "Dennard scaling",
+    "text": "Dennard scaling\n\n\n\nAppears to have broken down since 2006.\nSince 2016 the number of transistors per chip is still growing, but more slowly.\nAs transistors get smaller, current leakage and heat production is more problematic.\n\n\n\n\n\n\n\n\n\n\n\n\nWe see clock speed plateau – as clack speed increases it becomes more difficult to cool the chip.\nThis is called the power wall."
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#exercise-moores-law",
+    "href": "CSC4001-S04-CPU.html#exercise-moores-law",
+    "title": "The CPU",
+    "section": "Exercise: Moore’s law",
+    "text": "Exercise: Moore’s law\nDiscuss:\n\nIs Moore’s law still true today?\n\n\n\nThere have been many predictions of the death of Moore’s law.\nWe are no longer able to double the number of transistors per chip.\nTransistors are still getting smaller and more tightly packed, but progress is becoming slower."
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#part-1-research",
+    "href": "CSC4001-S04-CPU.html#part-1-research",
+    "title": "The CPU",
+    "section": "Part 1: research",
+    "text": "Part 1: research\n\nChoose a time period of 15-20 years, and an element of computer hardware.\nConsider the following prompt: explain the impact of your chosen element of computer architecture during your chosen time period.\nWithout using an LLM, but with reference to at least three academic sources, answer the above prompt. Focus on why evolutions in your chosen component had the impact they did, 800 words approx, not including refgerences and citations\n\n\nWhy did the developments succeed or fail at the time? If they failed, has there been a comeback in more recent years, and why (or why not)? Have these developments changed how we interact with computers, and if so, how (for instance, consider how computers are used in business, academia, and at home, and how programming languages and operating systems have evolved to take advantage of the developments you discussed, for better or for worse)?"
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#part-2-llm-analysis",
+    "href": "CSC4001-S04-CPU.html#part-2-llm-analysis",
+    "title": "The CPU",
+    "section": "Part 2: LLM analysis",
+    "text": "Part 2: LLM analysis\n\nUse an LLM to generate a response to the above prompt.\nAnalyse the LLM’s response: validate the claims it has made, with reference to a range of academic sources.\nConclude whether you are able to accept or reject its claims.\n800 words approx\n\n\nComment on the accuracy and relevance of its response, checking its claims against academic sources. Has the LLM committed any falacies, made any assumptions or generated its answer based on any biases? Has the LLM’s response made you reconsider your own answer?"
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#learning-outcomes",
+    "href": "CSC4001-S06-CPU2.html#learning-outcomes",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n\nExplain the ideas of latency and throughput.\nDescribe pipelining, out of order execution and parallelism, and their effects on latency and throughput."
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#optimising-the-fetch-decode-execute-store-cycle",
+    "href": "CSC4001-S06-CPU2.html#optimising-the-fetch-decode-execute-store-cycle",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Optimising the fetch-decode-execute-store cycle",
+    "text": "Optimising the fetch-decode-execute-store cycle\n\nSuppose the CPU can perform one stage per CPU cycle."
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#von-neumann-architecture-is-sequential",
+    "href": "CSC4001-S06-CPU2.html#von-neumann-architecture-is-sequential",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Von Neumann architecture is sequential",
+    "text": "Von Neumann architecture is sequential\n\nSuppose the computer can perform one stage per CPU cycle.\nThe ALU is only working during the Execute stage.\nIt would be ideal to have the ALU doing work all the time.\nWe’ll look at three ways of getting the best use out of the hardware."
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#pipelines",
+    "href": "CSC4001-S06-CPU2.html#pipelines",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Pipelines",
+    "text": "Pipelines\nOverlap stages of the fetch-decode-execute-store cycle.\n\nALU receives a constant stream of work.\n\nInstruction pipelining is a bit like a production line. Each piece of hardware has its designated job – Control unit for decoding, ALU for executing. Once an instruction is decoded, it is passed to the ALU for execution, while the ALU executes the instruction, the Control unit is decoding the next. This means the ALU is not sitting idle while the control unit decodes instructions for it."
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#speedup",
+    "href": "CSC4001-S06-CPU2.html#speedup",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Speedup",
+    "text": "Speedup\nIn a sequential fetch, decode, execute, store cycle, it takes 4 cycles for each instruction to complete.\n\n40 cycles for 10 instructions.\nIn a pipelined architecture:\n\nIt takes 4 cycles for the first instruction to exit the pipeline.\n5 cycles for the second\n6 for the third,\n… and so on …\n14 for the 10-th instruction to exit the pipeline."
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#speedup-1",
+    "href": "CSC4001-S06-CPU2.html#speedup-1",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Speedup",
+    "text": "Speedup\n\\[\nS_n = \\dfrac{\\text{Time to complete } n \\text{ tasks sequentially}}{\\text{Time to complete} n \\text{ tasks in a pipeline}}\n\\]\n\nThe speedup for 10 instructions in a 4 stage pipeline is \\[\nS_10 = \\dfrac{40}{14} \\approx 2.86\n\\]\nThe more instructions, the better! \\[\nS_{100} = \\dfrac{400}{104} \\approx 3.51, S_{1000} = \\dfrac{1000}{1014} = 3.94\n\\]\n\nFor a pipeline with \\(k\\) stages, speedup approaches \\(k\\) as the number of instructions grows very large.\n\nMathematical explanation:\n\nSuppose we have \\(n\\) instructions to complete.\nFor a pipeline with \\(k\\) stages:\n\nThe first operation leaves the pipeline after \\(k\\) cycles.\nThe \\(n\\)-th instruction leaves the pipeline after \\(k + n\\) cycles.\n\n\\(T_{\\mathrm{pipeline}} = k + n\\) CPU cycles.\nWithout pipelining, each stage is completed sequentially for each instruction.\n\\(T_{\\mathrm{seq}} = k \\cdot n\\) CPU cycles.\nWe can calculate speedup, a measure of how much quicker the pipelines system is: \\[S = \\dfrac{T_{\\mathrm{seq}}}{T_{\\mathrm{pipeline}}} = \\dfrac{k \\cdot n}{k + n}.\\]\nPipelines work best for a large number of tasks: \\(n \\gg k\\).\nThen \\(S = k\\)."
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#throughput-and-latency",
+    "href": "CSC4001-S06-CPU2.html#throughput-and-latency",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Throughput and latency",
+    "text": "Throughput and latency\n\nThroughput: Number of instructions completed per unit time.\n\n\\(\\text{Throughput} = \\dfrac{\\text{number of instructions}}{\\text{execution time}}\\)\nHigher throughput indicates better performance.\n\nLatency: time taken for a single instruction to complete (travel through the pipeline)\n\n\\(\\text{Latency} = \\dfrac{\\text{execution time}}{\\text{number of instructions}}\\)\nLower latency indicates better performance."
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#pipelines-1",
+    "href": "CSC4001-S06-CPU2.html#pipelines-1",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Pipelines",
+    "text": "Pipelines\n\n\nAdvantages\n\nHigher throughput: more instructions per second\nBetter hardware utilisation: reduces idle time.\nWell-suited to repetitive tasks.\n\n\nDisadvantages\n\nHigher latency: time taken to complete one instruction\nMore complex: increases design complexity, manufacture cost and, therefore, time.\nWorks most efficiently when kept full."
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#pipeline-hazards",
+    "href": "CSC4001-S06-CPU2.html#pipeline-hazards",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Pipeline hazards",
+    "text": "Pipeline hazards\n\nSituations which cause the pipeline to stall, or have to restart.\nControl dependency: which instructions should be pipelines after a jump?\nData hazards: when data dependence affecting instructions at different stages of the pipeline.\n\nOne instruction may depend on the result of a previous instruction still in the pipeline.\nRead after write: one instruction attempts to read data which another instruction has not yet written.\nWrite after read: one instruction writes data after another instruction attempts to read it.\nWrite after write: one instruction attempts to write data after another, messing up register values.\n\n\n\n\ncontrol dependency: after a jump instruction, instructions may need to be loaded from a new location of memory. It is unknown, at the time the jump enters the pipeline, what its outcome will be, therefore the correct sequence of instructions cannot be pipelines.\n\nProcessors employ branch prediction to guess whether a jump is likely to happens or not. The “most likely” sequence of instructions are pipelined, meaning there is a high probability that the correct instructions are loaded into the pipeline. However, if branch prediction is incorrect, then the pipeline must be restarted, as different instructions need to be fetched, decoded, etc.\n\nData dependencies: one instruction may depend upon the result of another, so it must wait (stall) until its dependant has left the pipeline. Now we have a “bubble” (empty gap) in the pipeline.\n\nThere may be contention over registers wherein one instruction attempts to read or write to registers, or cache, being used by another. In this case, a calculation may have to be restarted, or at least the correct data loaded from memory (slowwww) again."
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#reservation-station-and-reorder-buffer-1",
+    "href": "CSC4001-S06-CPU2.html#reservation-station-and-reorder-buffer-1",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Reservation station and reorder buffer",
+    "text": "Reservation station and reorder buffer\n\nSome CPUs have multiple ALUs, or special-purpose hardware.\nWe want all of this hardware to be working all of the time.\nHowever, we need to figure out which operations can be re-ordered or executed in parallel."
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#example-euclidean-distance",
+    "href": "CSC4001-S06-CPU2.html#example-euclidean-distance",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Example: Euclidean distance",
+    "text": "Example: Euclidean distance\n\nSuppose we have two points, \\(\\mathbf{x}\\) and \\(\\mathbf{y}\\) in 2d space, e.g., in a 2d game.\nTo calculate the distance between \\(\\mathbf{x} = (x_1,x_2)\\) and \\(\\mathbf{y} = (y_1,y_2)\\), we use Pythagoras’ theorem.\nEuclidean distance, \\(D = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\\).\nLet \\(x_1 = 4, x_2 = 9, y_1 = 20, y_2 = 11\\).\n\n\nDon’t worry about the actual formula. It’s only important to note we have a square root, two multiplications, and an addition."
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#sequential-calculation",
+    "href": "CSC4001-S06-CPU2.html#sequential-calculation",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Sequential calculation",
+    "text": "Sequential calculation\nCPU can add, mul, sub and sqrt in a single CPU cycle.\n\nt1 = x2 - x1\nt2 = t1 * t1\nt3 = y1 - y2\nt4 = t3 * t3\n`t5 = t2 + t4’\nD = sqrt( t5 )\n\n6 CPU cycles.\n\nNote: sqrt is a relatively complex operation for computers and some CPUs do not include it as an instruction. However, many CISC (complex) architectures do."
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#parallel-calculation",
+    "href": "CSC4001-S06-CPU2.html#parallel-calculation",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Parallel calculation",
+    "text": "Parallel calculation\nNow suppose we have 2 ALUs.\n\nt1 and t3 can be computed\nGiven t1 and t3, t2 and t4 respectively can be computed in parallel.\nt5 must wait for t2 and t4,\nThe result, D depends on t5.\n\n… but how can the CPU, a clump of transistors, figure this out?"
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#the-key-is-to-make-a-table-of-instructions-and-use-a-status-flag-to-determine-dependencies.",
+    "href": "CSC4001-S06-CPU2.html#the-key-is-to-make-a-table-of-instructions-and-use-a-status-flag-to-determine-dependencies.",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "The key is to make a table of instructions, and use a status flag to determine dependencies.",
+    "text": "The key is to make a table of instructions, and use a status flag to determine dependencies."
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#table-of-instructions",
+    "href": "CSC4001-S06-CPU2.html#table-of-instructions",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Table of instructions",
+    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\nx2\nx1\nt1\nWaiting\n\n\n2\nMUL\nt1\nt1\nt2\nWaiting\n\n\n3\nSUB\ny2\ny1\nt3\nWaiting\n\n\n4\nMUL\nt3\nt3\nt4\nWaiting\n\n\n5\nADD\nt2\nt4\nt5\nWaiting\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\nWe know the value of x1, x2, y1 and y2: fill them in.\n\nWe start by writing our instructions in a table. CPU does this as they come out of the decode stage of the pipeline (very fast) We need to know the inputs (Arg1 and Arg2) and return values to figure out dependencies. First step: fill in any variables whose values we know already."
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-1",
+    "href": "CSC4001-S06-CPU2.html#table-of-instructions-1",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Table of instructions",
+    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\nt1\nReady\n\n\n2\nMUL\nt1\nt1\nt2\nWaiting\n\n\n3\nSUB\n11\n20\nt3\nReady\n\n\n4\nMUL\nt3\nt3\nt4\nWaiting\n\n\n5\nADD\nt2\nt4\nt5\nWaiting\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n\nInstructions 1 and 3 are ready and can be executed in parallel."
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-2",
+    "href": "CSC4001-S06-CPU2.html#table-of-instructions-2",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Table of instructions",
+    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\nt2\nWaiting\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\nt4\nWaiting\n\n\n5\nADD\nt2\nt4\nt5\nWaiting\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n\nNow t1 and t3 are known, some more instructions become ready."
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-3",
+    "href": "CSC4001-S06-CPU2.html#table-of-instructions-3",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Table of instructions",
+    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\nt2\nReady\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\nt4\nReady\n\n\n5\nADD\nt2\nt4\nt5\nWaiting\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n\nInstructions 2 and 4 are ready and can be executed in parallel."
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-4",
+    "href": "CSC4001-S06-CPU2.html#table-of-instructions-4",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Table of instructions",
+    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\n25\nDone\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\n81\nDone\n\n\n5\nADD\n25\n81\nt5\nReady\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n\nInstruction 5, which depends on t2 and t4 can now be executed."
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-5",
+    "href": "CSC4001-S06-CPU2.html#table-of-instructions-5",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Table of instructions",
+    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\n25\nDone\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\n81\nDone\n\n\n5\nADD\n25\n81\n106\nDone\n\n\n6\nSQRT\n106\n–\nD\nReady\n\n\n\nD = sqrt(105)."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#learning-outcomes",
+    "href": "CSC4001-S03-VonNeumann.html#learning-outcomes",
+    "title": "Architecture overview",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n\nState the five components of a Von Neumann computer.\nDescribe the difference between the Von Neumann and Harvard architecture.\nExplain the advantages and disadvantages of the Von Neumann vs Harvard architectures.\nArgue for the “best” architecture in a given situation."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#architecture",
+    "href": "CSC4001-S03-VonNeumann.html#architecture",
+    "title": "Architecture overview",
+    "section": "Architecture",
+    "text": "Architecture\n\n\n\n\n\n\n\n\n\n\n\n\n“Computer architecture, like other architecture, is the art of determining the needs of the user of a structure and then designing to meet those needs as effectively as possible within economic and technological constraints.”\n– Frederick P. Brooks\n\n\nBrooks was an American computer architect, software engineer and computer scientist who managed IBM 360 series of mainframes and their accompanying software."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture",
+    "href": "CSC4001-S03-VonNeumann.html#computer-architecture",
+    "title": "Architecture overview",
+    "section": "Computer Architecture",
+    "text": "Computer Architecture\n\nA description of a computer (or computer system) which is made from component parts.\nOften a high-level description, indicating how components are linked and what each does.\nSometimes includes details such as the instruction set used and other implementation details."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-1",
+    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-1",
+    "title": "Architecture overview",
+    "section": "Computer Architecture",
+    "text": "Computer Architecture\n\nFirst documented computer architecture was in correspondence between Charles Babbage and Ada Lovelace, where Babbage described his analytical engine.\n1936, Conrad Zeus described a computer where both instructions and data are stored in the same memory: First documented instance of a “stored program” or general purpose computer."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-2",
+    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-2",
+    "title": "Architecture overview",
+    "section": "Computer Architecture",
+    "text": "Computer Architecture\n\n1945, John Von Neumann described the famous Von Neumann Architecture in his paper on the EDVAC computer (successor to the ENIAC)."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-3",
+    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-3",
+    "title": "Architecture overview",
+    "section": "Computer Architecture",
+    "text": "Computer Architecture\n\n1946, Alan Turing wrote a detailed proposal for the electronic calculator, Automatic Computing Engine, citing Von Neumann."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#von-neumann-architecture",
+    "href": "CSC4001-S03-VonNeumann.html#von-neumann-architecture",
+    "title": "Architecture overview",
+    "section": "Von Neumann Architecture",
+    "text": "Von Neumann Architecture\n\n\nArrows represent data transfer connections and directions. I.e., there is an arrow in both directions between the memory and the arithmetic logic unit, representing a “shared bus”. We will see later that this shared bus can be a bottleneck."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#five-components",
+    "href": "CSC4001-S03-VonNeumann.html#five-components",
+    "title": "Architecture overview",
+    "section": "Five components",
+    "text": "Five components\n\nStore\nControl Unit\nArithmetic Logic Unit\ninput\nOutput"
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#store",
+    "href": "CSC4001-S03-VonNeumann.html#store",
+    "title": "Architecture overview",
+    "section": "Store",
+    "text": "Store\n\nTo store data and instructions. E.g., paper tape, magnetic tape, RAM."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#control-unit",
+    "href": "CSC4001-S03-VonNeumann.html#control-unit",
+    "title": "Architecture overview",
+    "section": "Control Unit",
+    "text": "Control Unit\n\ndecides which instruction to perform next."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#arithmetic-logic-unit",
+    "href": "CSC4001-S03-VonNeumann.html#arithmetic-logic-unit",
+    "title": "Architecture overview",
+    "section": "Arithmetic Logic Unit",
+    "text": "Arithmetic Logic Unit\n\nPerforms calculations.\n\nTypically the ALU and control unit are combined into the CPU.\nOperations performed on the hardware, or implemented in software.\nIn early computers, electromechanical hardware was used; these days transistors are used, which require much less energy."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#input-and-output",
+    "href": "CSC4001-S03-VonNeumann.html#input-and-output",
+    "title": "Architecture overview",
+    "section": "Input and Output",
+    "text": "Input and Output\n\nMeans for the user to interact with the computer.\n\nKeyboard, mouse, camera, sensors.\nMonitor, speakers.\nVaried and interesting ways for humans and computers to interact."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#key-features",
+    "href": "CSC4001-S03-VonNeumann.html#key-features",
+    "title": "Architecture overview",
+    "section": "Key features",
+    "text": "Key features\n\nInstructions and data are stored in the same memory.\nSimple, cost-effective and widely used.\n\n\n\nSingle bus to transfer all data.\nThis can cause a bottleneck.\nSequential architecture Can limit speed of processing. : CPU can perform only one instruction at a time.\nThis is the architecture found in most desktop PCs today."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#harvard-architecture",
+    "href": "CSC4001-S03-VonNeumann.html#harvard-architecture",
+    "title": "Architecture overview",
+    "section": "Harvard Architecture",
+    "text": "Harvard Architecture"
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#harvard-architecture-1",
+    "href": "CSC4001-S03-VonNeumann.html#harvard-architecture-1",
+    "title": "Architecture overview",
+    "section": "Harvard Architecture",
+    "text": "Harvard Architecture\n\nHas separate memory for instructions and data.\nWell suited to embedded systems and main-frames.\n\n\n\nReduces the memory bottleneck found in Von Neumann machines.\n\nLess contention as there is no shared bus.\nData and instruction access can be done simultaneously.\nLess flexible than Von-Neumann. E.g., instructions cannot be modified at run-time."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#in-small-groups",
+    "href": "CSC4001-S03-VonNeumann.html#in-small-groups",
+    "title": "Architecture overview",
+    "section": "In small groups",
+    "text": "In small groups\n\nIn which situations is each architecture used?\n\nToday and historically?\nWhy is it a good choice for that situation, or why not?\n\nThings to think about:\n\nwhere are the bottlenecks?\nspecial purpose vs general purpose\ndata integrity / tampering / security"
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#section",
+    "href": "CSC4001-S03-VonNeumann.html#section",
+    "title": "Architecture overview",
+    "section": "1949",
+    "text": "1949\n\n“The”brain” [computer] may one day come down to our level [of the common people] and help with our income-tax and book-keeping calculations. But this is speculation and there is no sign of it so far.”\n\n– British newspaper The Star in a June 1949 news article about the EDSAC computer."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#section-1",
+    "href": "CSC4001-S03-VonNeumann.html#section-1",
+    "title": "Architecture overview",
+    "section": "1953",
+    "text": "1953\n\n“I think there is a world market for maybe five computers.”\n\n– Thomas Watson, IBM Chairman, although this is now thought to be urban legend.\n\nThe “brain” computer has now very much “come down to the level of the common people”, and does much more than just book-keeping.\nRegarding the Watson quote, it is now thought to be an urban legend. see https://geekhistory.com/content/urban-legend-i-think-there-world-market-maybe-five-computers\n“We believe the statement that you attribute to Thomas Watson is a misunderstanding of remarks made at IBM’s annual stockholders meeting on April 28, 1953. In referring specifically and only to the IBM 701 Electronic Data Processing Machine – which had been introduced the year before as the company’s first production computer designed for scientific calculations – Thomas Watson, Jr., told stockholders that “IBM had developed a paper plan for such a machine and took this paper plan across the country to some 20 concerns that we thought could use such a machine. I would like to tell you that the machine rents for between $12,000 and $18,000 a month, so it was not the type of thing that could be sold from place to place. But, as a result of our trip, on which we expected to get orders for five machines, we came home with orders for 18.” https://geekhistory.com/content/urban-legend-i-think-there-world-market-maybe-five-computers"
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#learning-outcomes-1",
+    "href": "CSC4001-S03-VonNeumann.html#learning-outcomes-1",
+    "title": "Architecture overview",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n\nGive an overview of early computers: use, specs, how they were programmed.\nCompare early and modern computers\nExplain how developments in early computing have influenced modern computer hardware."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#integers",
+    "href": "CSC4001-S03-VonNeumann.html#integers",
+    "title": "Architecture overview",
+    "section": "Integers",
+    "text": "Integers\n\nWe already saw that an unsigned integer number can be represented in Binary.\nUsually the right-most bit represents the least significant digit.\nLittle-endian representation.\nSigned integers may be represented in several ways:\n\nSign+magnitude: one bit is reserved for the sign, the rest for the value.\nThis representation allows \\(+0\\) and \\(-0\\).\nOne’s complement: positive numbers represented as usual, negative numbers represented by flipping all their bits.\nAgain, we have \\(+0\\) and \\(-0\\).\nTwo’s complement: positive numbers represented as usual, negative numbers represented by adding one then flipping all their bits.\nonly one \\(0\\), no redundancy."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-numbers",
+    "href": "CSC4001-S03-VonNeumann.html#floating-point-numbers",
+    "title": "Architecture overview",
+    "section": "Floating point numbers",
+    "text": "Floating point numbers\n\nIEEE 754 defines a standard for representing and manipulating floating point numbers.\nRepresented in a similar way to scientific notation.\nE.g., \\(300,000,000 = 3 \\times 10^8\\).\n\nThe \\(3\\) is called the fraction (coefficient or mantissa).\nThe \\(8\\) (from \\(10^8\\)) is called the exponent.\n\nIEEE 754 defines:\n\nThe base, typically \\(2\\) for binary, but sometimes \\(10\\).\nPrecision (number of digits to represent the fraction).\nAn exponent range."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-numbers-1",
+    "href": "CSC4001-S03-VonNeumann.html#floating-point-numbers-1",
+    "title": "Architecture overview",
+    "section": "Floating point numbers",
+    "text": "Floating point numbers\n\nUsing \\(n\\) bits, the representation consists of\n\n\\(1\\) bit for the sign,\n\\(n - p - 1\\) bits for the exponent.\n\\(p\\) bits for the fraction (stored in Binary),\n\nAny signed number up to \\(p\\) significant digits and a maximum exponent of \\(n-p-1\\) can be defined.\nPositive and negative infinity.\nA representation for not a number, e.g., for the result of division by zero."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#bit-floating-point",
+    "href": "CSC4001-S03-VonNeumann.html#bit-floating-point",
+    "title": "Architecture overview",
+    "section": "32-bit floating point",
+    "text": "32-bit floating point\nRepresentation used for the float type in many programming languages.\n\n\n\\(32\\) bits:\n\n\\(1\\) bit for the sign,\n\\(8\\) bits for the exponent,\n\\(23\\) bits for the fraction.\n\nAround \\(7\\) decimal digits for the fraction.\nA double uses \\(64\\) bits, \\(52\\) bits (around \\(16\\) decimal digits)."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-numbers-2",
+    "href": "CSC4001-S03-VonNeumann.html#floating-point-numbers-2",
+    "title": "Architecture overview",
+    "section": "Floating point numbers",
+    "text": "Floating point numbers\nAdvantages\n\nEfficient representation of very large and very small numbers.\nFast computation due to many years of hardware development.\n\nDisadvantages\n\nFloating point errors."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#precision-and-accuracy",
+    "href": "CSC4001-S03-VonNeumann.html#precision-and-accuracy",
+    "title": "Architecture overview",
+    "section": "Precision and accuracy",
+    "text": "Precision and accuracy\n\nPrecision: how many significant digits,\nAccuracy: how close to the true value.\n\nA value may be precise but not accurate, accurate but not precise, or both inaccurate and imprecise."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-errors",
+    "href": "CSC4001-S03-VonNeumann.html#floating-point-errors",
+    "title": "Architecture overview",
+    "section": "Floating point errors",
+    "text": "Floating point errors\n\nWe know that \\(1/3 + 1/3 + 1/3 = 1\\).\nHowever, \\(0.3333333333 + 0.3333333333 + 0.3333333333 = 0.9999999999\\)!\n\\(1/10\\) is easy to represent in decimal: \\(0.1\\).\nHowever, in binary, it is \\(0.001100110011\\).\nFloating point representation is sufficient for most applications, e.g., 3D games.\nHowever, we have to take care with things like currency, which must be correct."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#but-first-why-are-we-doing-this",
+    "href": "CSC4001-S03-VonNeumann.html#but-first-why-are-we-doing-this",
+    "title": "Architecture overview",
+    "section": "But first, why are we doing this?",
+    "text": "But first, why are we doing this?\n\nGain perspective.\nUnderstanding of why things are the way they are today.\nLearn from previous successes and failures."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#the-eniac-1945",
+    "href": "CSC4001-S03-VonNeumann.html#the-eniac-1945",
+    "title": "Architecture overview",
+    "section": "The ENIAC (1945)",
+    "text": "The ENIAC (1945)\n\n\nElectronic Numerical Integrator and Computer\n\nSpecial purpose computer for artillery firing table calculations.\nLocated at the School of Engineering and Applied Science, Pennsylvania State University\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCould be “programmed” by using the plug-board and switches, data entered via punched cards.\nLater converted into a stored program computer.\nBase-10 arithmetic instead of the usual binary.\nUsed vacuum tubes, which burnt out often – high maintenance."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#colossus-1943-45",
+    "href": "CSC4001-S03-VonNeumann.html#colossus-1943-45",
+    "title": "Architecture overview",
+    "section": "Colossus (1943-45)",
+    "text": "Colossus (1943-45)\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecial purpose computer developed at Bletchley Park to help break the Lorenz cipher.\nDesigned by Tommy Flowers, a research engineer at the General Post Office, based on plans by Code and Cipher School mathematician Max Newman.\n\n\n\n\nUsed vacuum tubes; programmed using switches and a plug board.\nData memory was a cycling strip of paper tape.\nColossus Mk II, which used shift registers to run 6 times faster, went into operation in time for the D-day landings.\nBy the end of the war, 10 Colossi were in operation."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#general-purpose-computers-post-ww2",
+    "href": "CSC4001-S03-VonNeumann.html#general-purpose-computers-post-ww2",
+    "title": "Architecture overview",
+    "section": "General purpose computers (post WW2)",
+    "text": "General purpose computers (post WW2)\nVon Neumann arranged a 6-week summer workshop to design and build a new type of computer.\n\nGeneral purpose: many early computers were designed with a specific task in mind, which meant they were difficult to repurpose.\nVon Neumann wanted to build a stored program computer.\nElectronic:replacing electromechanical components which were brittle, hot and noisy.\nColossus and the ENIAC both consumed 150KW of power.\nUse binary, which is the easiest encoding to work with when using electronic components."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#maurice-wilkes",
+    "href": "CSC4001-S03-VonNeumann.html#maurice-wilkes",
+    "title": "Architecture overview",
+    "section": "Maurice Wilkes",
+    "text": "Maurice Wilkes\n\nCambridge mathematician, physics PhD on “radio propagation of very long radio waves in the ionosphere”.\nAttended Jon Neumann’s workshop, then returned to Cambridge to build the EDSAC machine.\nWorked in radar during WW2, which inspired the memory technology for EDSAC.\nMemory was a limitation for early electronic computers, Wilkes used “delay lines”, mercury tubes and an oscilloscope, as memory.\n\n\nMore information on mercury delay lines: Radar pulses were captured and played as sound waves. Sound waves passed through mercury, which slowed them down. Picked up by a microphone and displayed no an oscilloscope screen. Sound wave amplified and played back through the speaker so the pulse would repeat as long as needed."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#edsac-6-may-1949",
+    "href": "CSC4001-S03-VonNeumann.html#edsac-6-may-1949",
+    "title": "Architecture overview",
+    "section": "EDSAC (6 May 1949)",
+    "text": "EDSAC (6 May 1949)\n\n\nElectronic Delay Storage Automatic Calculator\n\nOne of the first stored program computers which used binary.\nDeveloped by Maurice Wilkes, William Renwick (hardware engineer) and David Wheeler (first system software engineer).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCould perform 700 additions or 200 multiplications per second.\n512 18-bit words of memory for programs and data, upgraded to 1024 18-bit words in 1952.\nData and programs were loaded via 5-hole punched paper tape, initial orders instructed the computer to load the program.\nConsumed 11KW of power.\nThe delay line memory was sub-optimal, but one of the best options at the time.\nAlthough the words were 18-bits, only 17 bits were used in practice owing to unreliability of memory. ## Programming the EDSAC\nPrograms designed on paper and then punched, in assembler, onto 5-hole paper tape. Programmers became proficient at reading programs from the tape.\nProgrammers would hang their tape on a line, waiting for an operator to run them – the first “job queue”.\nOperator would load program and data and then either return the printed output or inform the programmer of the memory address at which the program failed. ## Operating EDSAC\nBuilt-in add, multiply, bus and conditional jump.\n\nNo load. Instead, Instead clear the register (set to \\(0\\)) and add the value from memory to the register.\nNo division, but it was included as a subroutine.\n\nIn case of a program error, the operator would inform the programmer at which address their program failed.\nThere was no debugger. An oscilloscope screen showed the state of the registers, and a speaker played a different note depending on the value of the accumulator register. An experienced programmer learnt the sound of a failing program, e.g., if there was an infinite loop. ## Operating EDSAC\nProgrammers had to use “bad” programming technique. E.g., to access a different array element, the code would modify itself to point to the correct address.\nNo built-in mechanism for subroutines, instead perform a Wheeler jump: Jump with return memory address, computer would modify the last instruction of the subroutine to jump back to this return address.- No recursion was possible on the EDSAC. Turing proposed the call stack in his 1945 paper, which implemented subroutines “properly” and allowed recursion."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#usage",
+    "href": "CSC4001-S03-VonNeumann.html#usage",
+    "title": "Architecture overview",
+    "section": "Usage",
+    "text": "Usage\nA condition for funding was that EDSAC must provide a service, as opposed to just being an engineering experiment.\n\nRonald Fisher, with Wilkes and Wheeler, used EDSAC to solve a differential equation for gene frequency – first use of computers in biology.\nIn 1951, Miller and Wheeler computed a 79-digit prime number, the largest known at its time.\nEDSAC played a role in Nobel-prize-winning research: Nobel laureates thanked EDSAC in their acceptance speech. John Kendrew and Max Perutz (Chemistry, 1962), Andrew Huxley (Medicine, 1963) and Martin Ryle (Physics, 1974)\nEDSAC remained in operation until 11 July 1958, when it was superseded by EDSAC 2, which ran until 1965."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#exercise-computer-history-research",
+    "href": "CSC4001-S03-VonNeumann.html#exercise-computer-history-research",
+    "title": "Architecture overview",
+    "section": "Exercise: computer history research",
+    "text": "Exercise: computer history research\nIn pairs, teams, or individually…\n\nChoose a computer from history. Find out:\n\nWho created it, and when?\nWhat could it do? hardware operations\nSpecs: processing, memory, operations per second.\nHow was it programmed? Could it be programmed?\nHow did programmers / operators / scientists interact with it? Input/output mechanisms, how was it debugged?"
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#exercise-play-with-the-edsac-simulator",
+    "href": "CSC4001-S03-VonNeumann.html#exercise-play-with-the-edsac-simulator",
+    "title": "Architecture overview",
+    "section": "Exercise: play with the EDSAC simulator",
+    "text": "Exercise: play with the EDSAC simulator\n\nMartin Campbell Kelly, University of Warwick, developed an EDSAC simulator.\nhttps://dcs.warwick.ac.uk/~edsac/\nSeveral programs and games are available.\nTry Sandy Douglas’ OXO game (a tic-tac-toe game vs the computer).\nAlthough a faithful simulation, it is still easier to use than the real thing – imagine loading the paper tape, vacuum tubes blowing frequently, and try setting the speed to EDSAC real-time."
   },
   {
     "objectID": "CSC4001-S01-Logic.html#learning-outcomes",
