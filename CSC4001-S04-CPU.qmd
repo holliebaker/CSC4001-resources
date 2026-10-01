@@ -200,7 +200,7 @@ Ready for the next stage...
 :::::
 
 
-# Execute
+# Store
 
 ::::: columns
 ::: column
@@ -732,6 +732,8 @@ Why did the developments succeed or fail at the time? If they failed, has there 
 :::notes
 Comment on the accuracy and relevance of its response, checking its claims against academic sources. Has the LLM committed any falacies, made any assumptions or generated its answer based on any biases? Has the LLM’s response made you reconsider your own answer?
 :::
+
+# Deadline: 27 November 2026
 
 # Next time
 
