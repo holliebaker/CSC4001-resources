@@ -1467,7 +1467,7 @@
     "href": "CSC4001-S03-VonNeumann.html#computer-architecture-1",
     "title": "Architecture overview",
     "section": "Computer Architecture",
-    "text": "Computer Architecture\n\nFirst documented computer architecture was in correspondence between Charles Babbage and Ada Lovelace, where Babbage described his analytical engine.\n1936, Conrad Zeus described a computer where both instructions and data are stored in the same memory: First documented instance of a “stored program” or general purpose computer."
+    "text": "Computer Architecture\n\n1837: First documented computer architecture was in correspondence between Charles Babbage and Ada Lovelace, where Babbage described his analytical engine.\n1890: Herman electromechanical tabulating machine used to analyse census data stored on punched cards.\n1936, Conrad Zeus described a computer where both instructions and data are stored in the same memory: First documented instance of a “stored program” or general purpose computer."
   },
   {
     "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-2",
@@ -1685,6 +1685,20 @@
     "title": "Architecture overview",
     "section": "Exercise: play with the EDSAC simulator",
     "text": "Exercise: play with the EDSAC simulator\n\nMartin Campbell Kelly, University of Warwick, developed an EDSAC simulator.\nhttps://dcs.warwick.ac.uk/~edsac/\nSeveral programs and games are available.\nTry Sandy Douglas’ OXO game (a tic-tac-toe game vs the computer).\nAlthough a faithful simulation, it is still easier to use than the real thing – imagine loading the paper tape, vacuum tubes blowing frequently, and try setting the speed to EDSAC real-time."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#part-1-research",
+    "href": "CSC4001-S03-VonNeumann.html#part-1-research",
+    "title": "Architecture overview",
+    "section": "Part 1: research",
+    "text": "Part 1: research\n\nChoose a time period of 15-20 years, and an element of computer hardware.\nConsider the following prompt: explain the impact of your chosen element of computer architecture during your chosen time period.\nWithout using an LLM, but with reference to at least three academic sources, answer the above prompt. Focus on why evolutions in your chosen component had the impact they did, 800 words approx, not including refgerences and citations\n\n\nWhy did the developments succeed or fail at the time? If they failed, has there been a comeback in more recent years, and why (or why not)? Have these developments changed how we interact with computers, and if so, how (for instance, consider how computers are used in business, academia, and at home, and how programming languages and operating systems have evolved to take advantage of the developments you discussed, for better or for worse)?"
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#part-2-llm-analysis",
+    "href": "CSC4001-S03-VonNeumann.html#part-2-llm-analysis",
+    "title": "Architecture overview",
+    "section": "Part 2: LLM analysis",
+    "text": "Part 2: LLM analysis\n\nUse an LLM to generate a response to the above prompt.\nAnalyse the LLM’s response: validate the claims it has made, with reference to a range of academic sources.\nConclude whether you are able to accept or reject its claims.\n800 words approx\n\n\nComment on the accuracy and relevance of its response, checking its claims against academic sources. Has the LLM committed any falacies, made any assumptions or generated its answer based on any biases? Has the LLM’s response made you reconsider your own answer?"
   },
   {
     "objectID": "CSC4001-S01-Logic.html#learning-outcomes",
