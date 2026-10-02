@@ -16,6 +16,8 @@ format:
 - Use a simple **instruction set** to write some assembler programs for
   a toy computer.
 
+- Go further: write some assembler programs for a real instruction set!
+
 - Give the main difference between RICS and CISC architecture, stating their advantages and disadvantages as well as situations in which each is best used.
 
 - State **Moore's law** and discuss whether it is still relevant today.
@@ -442,7 +444,6 @@ width="60%"}
 
 # Instruction set architectures
 
-
 ## Instruction set architectures
 
 - Each processor architecture has its own **instruction set**:
@@ -709,31 +710,31 @@ Discuss:
 
 :::
 
-# S1: Report on core computer architectural components
 
-## Part 1: research
+# RISC V
 
-- Choose a time period of 15-20 years, and an element of computer hardware.
-- Consider the following prompt: explain the impact of your chosen element of computer architecture during your chosen time period. 
-- Without using an LLM, but with reference to at least three academic sources, answer the above prompt. Focus on why evolutions in your chosen component had the impact they did, 
-800 words approx, not including refgerences and citations
+## RISC V
 
-::: notes
-Why did the developments succeed or fail at the time? If they failed, has there been a comeback in more recent years, and why (or why not)? Have these developments changed how we interact with computers, and if so, how (for instance, consider how computers are used in business, academia, and at home, and how programming languages and operating systems have evolved to take advantage of the developments you discussed, for better or for worse)? 
-:::
+- Open source instruction set architecture, open standard for processor design.
+- Reduced Instruction Set Architecture version 5
+- Load --- store architecture, using IEEE 754 for floating point.
+- 32 and 64 bit address spaces, wip 128 bit
 
-## Part 2: LLM analysis
+## Exercise: RISC-V Assembler
 
--     Use an LLM to generate a response to the above prompt.
-- Analyse the LLM’s response: validate the claims it has made, with reference to a range of academic sources. 
-- Conclude whether you are able to accept or reject its claims.
-- 800 words approx
+- Work through the challenges at
 
-:::notes
-Comment on the accuracy and relevance of its response, checking its claims against academic sources. Has the LLM committed any falacies, made any assumptions or generated its answer based on any biases? Has the LLM’s response made you reconsider your own answer?
-:::
+  [https://studyriscv.com/problems/](https://studyriscv.com/problems/)
 
-# Deadline: 27 November 2026
+
+  - Use *studyriscv.com/simulator*, although this requires login, 
+  - install *riscvsim* on your own PC,
+  - try an online simulator, e.g., [https://riscv-simulator-five.vercel.app/](https://riscv-simulator-five.vercel.app/)
+
+- Resources to get started:
+  - Cheat sheet [https://projectf.io/posts/riscv-cheat-sheet/](https://projectf.io/posts/riscv-cheat-sheet/)
+  - Study RISC-V installation [https://studyriscv.com/docs/#instruction-blt](https://studyriscv.com/docs/#instruction-blt)
+  - RISC-V is an open standard. There is a plethora of resources out theer. Do some research!
 
 # Next time
 
