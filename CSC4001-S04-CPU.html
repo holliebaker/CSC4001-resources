@@ -150,6 +150,7 @@ CSC4001: Computer Systems and Architecture
 <ul>
 <li><p>Explain what happens at each stage of the <strong>fetch, decode, execute, store</strong> cycle.</p></li>
 <li><p>Use a simple <strong>instruction set</strong> to write some assembler programs for a toy computer.</p></li>
+<li><p>Go further: write some assembler programs for a real instruction set!</p></li>
 <li><p>Give the main difference between RICS and CISC architecture, stating their advantages and disadvantages as well as situations in which each is best used.</p></li>
 <li><p>State <strong>Moore’s law</strong> and discuss whether it is still relevant today.</p></li>
 </ul>
@@ -764,58 +765,37 @@ STA mem</code></pre></li>
       }</style></aside>
 </section></section>
 <section>
-<section id="s1-report-on-core-computer-architectural-components" class="title-slide slide level1 center">
-<h1>S1: Report on core computer architectural components</h1>
+<section id="risc-v" class="title-slide slide level1 center">
+<h1>RISC V</h1>
 
 </section>
-<section id="part-1-research" class="slide level2">
-<h2>Part 1: research</h2>
+<section id="risc-v-1" class="slide level2">
+<h2>RISC V</h2>
 <ul>
-<li>Choose a time period of 15-20 years, and an element of computer hardware.</li>
-<li>Consider the following prompt: explain the impact of your chosen element of computer architecture during your chosen time period.</li>
-<li>Without using an LLM, but with reference to at least three academic sources, answer the above prompt. Focus on why evolutions in your chosen component had the impact they did, 800 words approx, not including refgerences and citations</li>
+<li>Open source instruction set architecture, open standard for processor design.</li>
+<li>Reduced Instruction Set Architecture version 5</li>
+<li>Load — store architecture, using IEEE 754 for floating point.</li>
+<li>32 and 64 bit address spaces, wip 128 bit</li>
 </ul>
-<aside class="notes">
-<p>Why did the developments succeed or fail at the time? If they failed, has there been a comeback in more recent years, and why (or why not)? Have these developments changed how we interact with computers, and if so, how (for instance, consider how computers are used in business, academia, and at home, and how programming languages and operating systems have evolved to take advantage of the developments you discussed, for better or for worse)?</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="part-2-llm-analysis" class="slide level2">
-<h2>Part 2: LLM analysis</h2>
+<section id="exercise-risc-v-assembler" class="slide level2">
+<h2>Exercise: RISC-V Assembler</h2>
 <ul>
-<li><pre><code>Use an LLM to generate a response to the above prompt.</code></pre></li>
-<li>Analyse the LLM’s response: validate the claims it has made, with reference to a range of academic sources.</li>
-<li>Conclude whether you are able to accept or reject its claims.</li>
-<li>800 words approx</li>
+<li><p>Work through the challenges at</p>
+<p><a href="https://studyriscv.com/problems/">https://studyriscv.com/problems/</a></p>
+<ul>
+<li>Use <em>studyriscv.com/simulator</em>, although this requires login,</li>
+<li>install <em>riscvsim</em> on your own PC,</li>
+<li>try an online simulator, e.g., <a href="https://riscv-simulator-five.vercel.app/">https://riscv-simulator-five.vercel.app/</a></li>
+</ul></li>
+<li><p>Resources to get started:</p>
+<ul>
+<li>Cheat sheet <a href="https://projectf.io/posts/riscv-cheat-sheet/">https://projectf.io/posts/riscv-cheat-sheet/</a></li>
+<li>Study RISC-V installation <a href="https://studyriscv.com/docs/#instruction-blt">https://studyriscv.com/docs/#instruction-blt</a></li>
+<li>RISC-V is an open standard. There is a plethora of resources out theer. Do some research!</li>
+</ul></li>
 </ul>
-<aside class="notes">
-<p>Comment on the accuracy and relevance of its response, checking its claims against academic sources. Has the LLM committed any falacies, made any assumptions or generated its answer based on any biases? Has the LLM’s response made you reconsider your own answer?</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section></section>
-<section id="deadline-27-november-2026" class="title-slide slide level1 center">
-<h1>Deadline: 27 November 2026</h1>
-
-</section>
-
 <section id="next-time" class="title-slide slide level1 center">
 <h1>Next time</h1>
 <p>Embedded systems workshop!</p>
