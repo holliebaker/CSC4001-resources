@@ -1,0 +1,17 @@
+digraph G {
+  rankdir=LR;
+  node [shape=circle, style=filled, fillcolor=cyan];
+  O [label="Open"];
+  R [label="Ready"];
+  P [label="Running"];
+  S [label="Complete"];
+  E [label="Emergency\nStop"];
+
+  O -> R [label="Close door"];
+  R -> P [label="Start"];
+  P -> S [label="Complete"] 
+  S -> R;
+  P -> E [label="Open Door"] 
+  E -> O;
+  R -> O [label="Open Door"];
+}

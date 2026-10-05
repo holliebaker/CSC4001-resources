@@ -107,6 +107,20 @@ fig-alt="Finite state machine representing a turnstyle. Two states, locked and o
 ::::
 
 :::
+:::
+
+## Microwave
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](./assets/05-microwave.svg){fig-align="center"
+fig-alt="Showing state transitions for a microwave oven." width="60%"}
+:::
+::::
+
+::: notes
+see assets/05-microwave.dot
+:::
 
 ## Elevator State Machine
 
