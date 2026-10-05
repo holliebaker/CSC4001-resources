@@ -95,10 +95,10 @@ Show the code and demonstrate how to flash it onto your arduino board.
 - Finite set of **states**.
 - **transitions** moving from one state to another
 
+We can draw finite state machines representing states as circles and transitions as arrows between them.
 :::
 ::: column
 
-We can draw finite state machines representing states as circles and transitions as arrows between them.
 :::: {.cell layout-align="center"}
 ::: cell-output-display
 ![](./assets/05-turnstyle.svg){fig-align="center"
