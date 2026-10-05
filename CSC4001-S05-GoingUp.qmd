@@ -84,7 +84,31 @@ Show the code and demonstrate how to flash it onto your arduino board.
 
 # Two big ideas before you start
 
-## 1. A state machine
+1. State Machines
+2. `millis`
+
+## 1. State machines
+
+::: columns-2
+::: column
+
+- Finite set of **states**.
+- **transitions** moving from one state to another
+
+:::
+::: column
+
+We can draw finite state machines representing states as circles and transitions as arrows between them.
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](./assets/05-turnstyle.svg){fig-align="center"
+fig-alt="Finite state machine representing a turnstyle. Two states, locked and open, transition from locked to open when a coin is inserted, transition from open to locked when the bar is pushed." width="60%"}
+:::
+::::
+
+:::
+
+## Elevator State Machine
 
 - At every moment, your elevator is in exactly one of five states: `IDLE`, `MOVING`, `DOORS_OPENING`, `DOORS_OPEN` or `DOORS_CLOSING`.
 
