@@ -448,319 +448,494 @@
     "text": "CSC4001 Systems and Architecture\nOkay, administration’s done. Let’s get started!"
   },
   {
-    "objectID": "CSC4001-S02W-Logic.html",
-    "href": "CSC4001-S02W-Logic.html",
-    "title": "Building With Logic Gates - Worksheet",
+    "objectID": "CSC4001-S06W-riscv.html",
+    "href": "CSC4001-S06W-riscv.html",
+    "title": "RISC-V, Let’s Assemble",
     "section": "",
-    "text": "Adapted from https://cccu-uk.github.io/U10793_FCC_Labs/Logic_Gates/Logic_Gates.html"
+    "text": "RISC-V is an open-source CPU hardware instruction set architecture. As the name suggests, it is a Reduced Instruction Set Computing architecture. In this tutorial, we’ll study a very minimal instruction set — it doesn’t even have multiplication! In real life, RISC-V extensions to implement, in software, more complex operations, are used."
   },
   {
-    "objectID": "CSC4001-S02W-Logic.html#universal-logic-circuits",
-    "href": "CSC4001-S02W-Logic.html#universal-logic-circuits",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "Universal Logic Circuits",
-    "text": "Universal Logic Circuits\nWe can build any of the fundamental logic gates by chaining only nand or only nor gates together.\nQuestion 1 Create the circuit as shown below.\n\n\n\n\n\nDraw its truth table. Which logic gate does it represent?\nQuestion 2 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 3 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 4 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 5 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 6 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents."
+    "objectID": "CSC4001-S06W-riscv.html#getting-set-up",
+    "href": "CSC4001-S06W-riscv.html#getting-set-up",
+    "title": "RISC-V, Let’s Assemble",
+    "section": "Getting set up",
+    "text": "Getting set up\nTry an online simulator, e.g., https://riscv-simulator-five.vercel.app/\nAlternatively, install riscvsim on your own PC: https://studyriscv.com/docs/"
   },
   {
-    "objectID": "CSC4001-S02W-Logic.html#sr-latch-with-only-nand-gates",
-    "href": "CSC4001-S02W-Logic.html#sr-latch-with-only-nand-gates",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "SR Latch with only NAND gates",
-    "text": "SR Latch with only NAND gates\nQuestion 1 Rebuild the below SR latch with only NAND gates.\n\n\n\n\n\n\n\n\n\nQuestion 2 Rebuild the below gated SR latch with only NAND gates."
+    "objectID": "CSC4001-S06W-riscv.html#instructions",
+    "href": "CSC4001-S06W-riscv.html#instructions",
+    "title": "RISC-V, Let’s Assemble",
+    "section": "Instructions",
+    "text": "Instructions\nCPU instructions are just numbers. In assembler we represent them by nmemonics: (more) human friendly keywords.\nebreak is an instruction that ends the program. It has no operands, i.e., it doesn’t need any input or output values.\nThe following instruction\naddi x10, x0, 100\nAdds the value in register x0 to the constant 100 stores the result in x10. addi stands for “add immediate”."
   },
   {
-    "objectID": "CSC4001-S02W-Logic.html#the-clock",
-    "href": "CSC4001-S02W-Logic.html#the-clock",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "The Clock",
-    "text": "The Clock\nUse the clock to generate signals.\nCreate the circuit as shown below:\n\n\n\n\n\nConnecting the clock as input and adding the data graph.\n\nExperiment with different Clock Input Frequencies, what observations can you make? Discuss with the a peer or with the tutor.\nReplace the or gate with a different gate, change the frequency.\nDoes the data graph show a pattern?"
+    "objectID": "CSC4001-S06W-riscv.html#registers",
+    "href": "CSC4001-S06W-riscv.html#registers",
+    "title": "RISC-V, Let’s Assemble",
+    "section": "Registers",
+    "text": "Registers\nRegisters are the CPU’s “working memory”, to store intermediate values. In RISC-V, we have \\(32\\) registers: x0 to x31. x0 is a special register which always store \\(0\\), writing doesn’t change its value.\naddi x10, x0, 100 # x10 holds 100\naddi x11, x0, 20\nadd x10, x10, x11 # adds the contents of x10 and x11, stores the result in x10"
   },
   {
-    "objectID": "CSC4001-S02W-Logic.html#half-adder",
-    "href": "CSC4001-S02W-Logic.html#half-adder",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "Half Adder",
-    "text": "Half Adder\nRecreate the half adder circuit as shown below. \nUse the simulator to complete the truth table\n\n\n\nA\nB\nS\nCout\n\n\n\n\n1\n1\n\n\n\n\n1\n0\n\n\n\n\n0\n1\n\n\n\n\n0\n0"
+    "objectID": "CSC4001-S06W-riscv.html#example-arithmetic",
+    "href": "CSC4001-S06W-riscv.html#example-arithmetic",
+    "title": "RISC-V, Let’s Assemble",
+    "section": "Example: arithmetic",
+    "text": "Example: arithmetic\naddi x10, x0, 0x123\naddi x11, x0, 0x555\n\naddi x12, x10, 0x765\nadd x13, x10, x11\nsub x14, x11, x10\n\naddi x10, x10, 1\naddi x10, x10, 1\naddi x10, x10, -1\naddi x10, x10, -1\n\nebreak\nNote: 0x123 means 123 in hexadecimal (base 16), i.e., 291.\n\nRead through the code. What values are stored in x10 and x11?\nStep through the code in the interpreter. Were your predictions correct?\n\n\nPseudo-instructions\nShorthand, similar to the C++ pre-processor directives.\nli x10, 100 # load immediate: store 100 in x10\naddi x10, x0, 100\nmv x11, x12 # copy value from x12 and store in x11\naddi x11, x0, 0 # clear the register first\nadd x11, x0, x12 # add the value stored in x12 to 0"
   },
   {
-    "objectID": "CSC4001-S02W-Logic.html#full-adder",
-    "href": "CSC4001-S02W-Logic.html#full-adder",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "Full adder",
-    "text": "Full adder\nNow produce a full adder, simulate and complete the truth table.\n\n\n\nA\nB\nCin\nS\nCout\n\n\n\n\n1\n1\n1\n\n\n\n\n1\n1\n0\n\n\n\n\n1\n0\n1\n\n\n\n\n1\n0\n0\n\n\n\n\n1\n1\n1\n\n\n\n\n0\n1\n0\n\n\n\n\n0\n0\n1\n\n\n\n\n0\n0\n0"
+    "objectID": "CSC4001-S06W-riscv.html#example-doubling",
+    "href": "CSC4001-S06W-riscv.html#example-doubling",
+    "title": "RISC-V, Let’s Assemble",
+    "section": "Example: doubling",
+    "text": "Example: doubling\nli x10, 0x123\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x1\n0, x10, x10\nebreak"
   },
   {
-    "objectID": "CSC4001-S02W-Logic.html#binary-decoder",
-    "href": "CSC4001-S02W-Logic.html#binary-decoder",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "Binary Decoder",
-    "text": "Binary Decoder\nResearch and implement a 2-bit binary decoder.\nA binary decoder takes \\(n\\) bits as input and can output one of \\(2^n\\) possible options, depending on the value of the input. For example, in a 2-bit decoder, there are four possible outputs, each corresponding to one of the possible assignments of bits:\n\n\\(00\\)\n\\(01\\)\n\\(10\\)\n\\(11\\)"
+    "objectID": "CSC4001-S06W-riscv.html#comparison-operators",
+    "href": "CSC4001-S06W-riscv.html#comparison-operators",
+    "title": "RISC-V, Let’s Assemble",
+    "section": "Comparison operators",
+    "text": "Comparison operators\nli x10, 0x3\nli x11, 0x5\n\nslt x12, x10, x11   # x10 &lt; x11\nslt x13, x11, x10   # x10 &gt; x11\n\nxori x14, x12, 1    # not ( x10 &lt; x11 )\nxori x15, x13, 1    # what is this comparison?\n\n# sltu performs unsigned comparison\nsltu x11, x0, x10   # 0 &lt;u x10  i.e.  x10 != 0\nsltiu x12, x10, 1   # what comparison operator does this implement?\n\n# we have done == 0 and != 0, how do we do x == y and x != y?"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "CSC4001: Systems and Architecture",
-    "section": "",
-    "text": "Index\n\nS00: \nS01: \nCSC4001-S02W-Logic.qmd: \nS02: \nS03: \nS04: \nCSC4001-S05W-GoingUp.qmd: \nS05: \nS06: \nS08: \nS10: \nS11: \nS13:"
+    "objectID": "CSC4001-S06W-riscv.html#branches",
+    "href": "CSC4001-S06W-riscv.html#branches",
+    "title": "RISC-V, Let’s Assemble",
+    "section": "Branches",
+    "text": "Branches\nThis is how we can implement loops and conditional statements.\n    li x10, 100\n    li x11, 0\n\nloop: # this is a label, \n    add x11, x11, x10\n    addi x10, x10, -1\n    blt x0, x10, loop # branch less than\n    # blt 0, x10, label # if 0 &lt; x10 go to the instruction pointed to by label\n    ebreak\n\n# what does this code do?\n\nWhat does the above code do? What value is stored in x10 and x11 at the end?\nStep through the code, examining the values stored in registers.\nModify the code to implement multiplication.\nFinally, using the ideas of labels, branching and addition, implement integer division."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#learning-outcomes",
-    "href": "CSC4001-S10-OS.html#learning-outcomes",
-    "title": "Operating Systems",
+    "objectID": "CSC4001-S06W-riscv.html#keep-going",
+    "href": "CSC4001-S06W-riscv.html#keep-going",
+    "title": "RISC-V, Let’s Assemble",
+    "section": "Keep going!",
+    "text": "Keep going!\nWork through the challenges at https://studyriscv.com/problems/"
+  },
+  {
+    "objectID": "CSC4001-S06W-riscv.html#resources",
+    "href": "CSC4001-S06W-riscv.html#resources",
+    "title": "RISC-V, Let’s Assemble",
+    "section": "Resources",
+    "text": "Resources\n\nhttps://projectf.io/posts/riscv-cheat-sheet/\nhttps://easyriscv.dram.page/ this was heavily based on that tutorial."
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#learning-outcomes",
+    "href": "CSC4001-S04-CPU.html#learning-outcomes",
+    "title": "The CPU",
     "section": "Learning Outcomes",
-    "text": "Learning Outcomes\n\nDescribe the purpose of an operating system.\nUse a layered model to explain what is, and is not, in the scope of an operating system.\nOverview computer history in the context of operating systems, and use this to explain why the functions of an operating system are important."
+    "text": "Learning Outcomes\n\nExplain what happens at each stage of the fetch, decode, execute, store cycle.\nUse a simple instruction set to write some assembler programs for a toy computer.\nGo further: write some assembler programs for a real instruction set!\nGive the main difference between RICS and CISC architecture, stating their advantages and disadvantages as well as situations in which each is best used.\nState Moore’s law and discuss whether it is still relevant today."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#what-is-an-operating-system",
-    "href": "CSC4001-S10-OS.html#what-is-an-operating-system",
-    "title": "Operating Systems",
-    "section": "What is an Operating System",
-    "text": "What is an Operating System\n\nJust another program.\nProvides a programming interface for the computer hardware.\nResponsible for managing (protecting) resources."
+    "objectID": "CSC4001-S04-CPU.html#recap-harvard-architecture",
+    "href": "CSC4001-S04-CPU.html#recap-harvard-architecture",
+    "title": "The CPU",
+    "section": "Recap: Harvard architecture",
+    "text": "Recap: Harvard architecture\n\n\nRecall the control unit, arithmetic logic unit, input and output. Harvard architecture has separate memory for programs and data, and a separate bus. This meant there was less contention as instructions and data could be accessed simultaneously, but the machine was less flexible, e.g., the program memory may not be full when data memory is, but we cannot use the free space in the program memory for additional data. This architecture commonly used in embedded systems, and mainframes."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#managing-resources",
-    "href": "CSC4001-S10-OS.html#managing-resources",
-    "title": "Operating Systems",
-    "section": "Managing resources",
-    "text": "Managing resources\n\nTypically hardware, e.g.,\nCPU, memory, files on disk, peripherals.\nResources are limited.\n\nembedded devices and smart devices still have small amounts of memory,\neven large supercomputers are not powerful enough for scientists,\nmodern PCs have huge amounts of memory and processing power compared to early computers.\nMany users still want more, e.g., for smooth game performance.\n\nResources need protecting."
+    "objectID": "CSC4001-S04-CPU.html#the-von-neumann-architecture",
+    "href": "CSC4001-S04-CPU.html#the-von-neumann-architecture",
+    "title": "The CPU",
+    "section": "The Von Neumann Architecture",
+    "text": "The Von Neumann Architecture\n\n\nSame components: control unit, arithmetic logic unit, input and output. In the Harvard architecture, data and instructions are stored in the same memory. A single memory bus can be a bottleneck, and concerns were raised about security (e.g., a program can write to any location in memory, including modifying the instructions. Simpler and more flexible. This is the architecture found in most desktop computers today."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#what-protection-should-the-os-provide",
-    "href": "CSC4001-S10-OS.html#what-protection-should-the-os-provide",
-    "title": "Operating Systems",
-    "section": "What protection should the OS provide?",
-    "text": "What protection should the OS provide?\n\nSecurity and integrity\nPrevent one user or program from corrupting another.\nAuthorisation\nEnsures only those “allowed” have access to certain resources.\nAuthentication\nChecking whether a user or program has the authorisation it claims to have.\nSave me from myself\nProtecting the user / programmer from their own stupid mistakes."
+    "objectID": "CSC4001-S04-CPU.html#components",
+    "href": "CSC4001-S04-CPU.html#components",
+    "title": "The CPU",
+    "section": "Components",
+    "text": "Components"
   },
   {
-    "objectID": "CSC4001-S10-OS.html#optimise-performance",
-    "href": "CSC4001-S10-OS.html#optimise-performance",
-    "title": "Operating Systems",
-    "section": "Optimise performance",
-    "text": "Optimise performance\n\nIn addition, operating systems ensure resources meet certain criteria.\nE.g.,:\n\nresponsiveness: by prioritising certain events,\nreal-time: such as machinery in a factory, actuators on an aircraft,\nsecurity: by preventing accidental or malicious tampering."
+    "objectID": "CSC4001-S04-CPU.html#the-cpu-1",
+    "href": "CSC4001-S04-CPU.html#the-cpu-1",
+    "title": "The CPU",
+    "section": "The CPU",
+    "text": "The CPU\n\nA program, written in assembler, is a sequence of instructions.\nThe program is loaded into main memory so that the next instruction is in the next memory address:"
   },
   {
-    "objectID": "CSC4001-S10-OS.html#programming-interface",
-    "href": "CSC4001-S10-OS.html#programming-interface",
-    "title": "Operating Systems",
-    "section": "Programming interface",
-    "text": "Programming interface\n\nEasier access to hardware and peripherals:\nhardware programming can be fiddly and complicated.\nLess repeated code:\nCommon tasks, e.g., file handling, are implemented.\nLess chance of errors\n\nSince the OS is written by experts.\nCode is used by many people, so there is more chance of errors being found and fixed."
+    "objectID": "CSC4001-S04-CPU.html#the-cpu-2",
+    "href": "CSC4001-S04-CPU.html#the-cpu-2",
+    "title": "The CPU",
+    "section": "The CPU",
+    "text": "The CPU\nthe program counter (PC) points to the memory location of the current instruction."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#written-by-experts",
-    "href": "CSC4001-S10-OS.html#written-by-experts",
-    "title": "Operating Systems",
-    "section": "Written by experts",
-    "text": "Written by experts\n\nExperts understand the hardware:\n\nunderstand exactly how the hardware works,\nknow how to get the best performance,\nknow the intricacies and pitfalls of hardware programming,\nconsider all the details, e.g., handling interrupts,\n\n\n\n\nDevice drivers were probably written by the hardware manufacturers themselves.\nWe can safely assume that expert OS developers are better programmers, and better computer scientists than us.\nThey likely already made most of the mistakes, and learnt from them, that less experienced programmers are likely to make."
+    "objectID": "CSC4001-S04-CPU.html#the-cpu-3",
+    "href": "CSC4001-S04-CPU.html#the-cpu-3",
+    "title": "The CPU",
+    "section": "The CPU",
+    "text": "The CPU\n\nThe current instruction itself is stored in the instruction register (IR)."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#layered-model",
-    "href": "CSC4001-S10-OS.html#layered-model",
-    "title": "Operating Systems",
-    "section": "Layered model",
-    "text": "Layered model\n\n\n\n\n\n\n\n\n\n\n\n\n\nSplits a computer system into distinct chunks,\nwhich interact with each other through and interface.\nModelling allows us to look at the system in an appropriate level of detail."
+    "objectID": "CSC4001-S04-CPU.html#the-cpu-4",
+    "href": "CSC4001-S04-CPU.html#the-cpu-4",
+    "title": "The CPU",
+    "section": "The CPU",
+    "text": "The CPU\n\nThe control unit decodes the instruction and tells the arithmetic logic unit (ALU) which operations to perform."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#layered-model-1",
-    "href": "CSC4001-S10-OS.html#layered-model-1",
-    "title": "Operating Systems",
-    "section": "Layered model",
-    "text": "Layered model\n\n\n\nHardware: warm scone,\nCream: user-land applications, including the GUI.\nJam: operating system, providing an insulating layer between the scone and cream.\nProtects the hardware from user-land applications.\n\n\n\n\n\n\n\n\n\n\n\nA computer, applications and its operating system is like a correctly constructed scone.\n\n\n\nWe represent a computer, applications and operating system as a 3-layered model\nAnalogy: a correctly constructed scone. Note that jam is a good insulator and prevents the warm scone from causing the cream to melt.\nThus the OS is like the jam."
+    "objectID": "CSC4001-S04-CPU.html#the-cpu-5",
+    "href": "CSC4001-S04-CPU.html#the-cpu-5",
+    "title": "The CPU",
+    "section": "The CPU",
+    "text": "The CPU\n\nThe CPU has a small number of registers (R1, R2, and R3 on the picture) to store intermediate values.\nThere is also a small amount of very fast memory, the cache, located either on or very near the CPU."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#note-gui-is-a-user-land-application",
-    "href": "CSC4001-S10-OS.html#note-gui-is-a-user-land-application",
-    "title": "Operating Systems",
-    "section": "Note: GUI is a user-land application",
-    "text": "Note: GUI is a user-land application\n\nAny program the user interacts with is not part of the operating system\nthis is “user-land”.\nThe GUI (desktop environment, window manager, etc) is not part of the operating system.\nAs computer scientists, we should not confuse\n\nthe OS and its GUI,\nthe OS and the hardware it is running on.\n\n\n\n\nMany people confuse the OS and the GUI, and OS and the hardware it runs on.\nOS manufacturers contribute to this confusion by marketing the GUI / hardware as part of the OS.\nE.g., think of Windows advertisements which emphasise the GUI, or Mac advertisements which emphasise the Apple hardware.\nHowever, if you’ve ever used Linux, you may have come across different “flavours” of the same distribution, which include different desktop environments (GUIs).\nYou may also be familiar with the same OS running on different hardware. E.g., running Windows on Mac hardware, running Linux on Mac or PC hardware.\nThus, as computer scientists, we need to be clear about what the OS is:\nthe layer between the hardware and user-land, responsible for managing and protecting resources, as well as providing an interface to the programmer."
+    "objectID": "CSC4001-S04-CPU.html#the-fetch-decode-execute-store-cycle",
+    "href": "CSC4001-S04-CPU.html#the-fetch-decode-execute-store-cycle",
+    "title": "The CPU",
+    "section": "The Fetch, decode, execute store Cycle",
+    "text": "The Fetch, decode, execute store Cycle\nA CPU goes through four stages to run an instruction:"
   },
   {
-    "objectID": "CSC4001-S10-OS.html#separation-of-concerns",
-    "href": "CSC4001-S10-OS.html#separation-of-concerns",
-    "title": "Operating Systems",
-    "section": "Separation of concerns",
-    "text": "Separation of concerns\n\nLayering allows us to decouple software:\n\ndevice drivers (e.g., interacting with peripherals),\nOS code (e.g., process scheduling, memory management),\nand user interface\n\nshould be as loosely coupled as possible.\n\n\n\nloose coupling: means the code of different components is intertwined as little as possible.\nin a loosely coupled system, you should be able to swap out one component for another without needing to make many changes to the rest of the system."
+    "objectID": "CSC4001-S04-CPU.html#fetch",
+    "href": "CSC4001-S04-CPU.html#fetch",
+    "title": "The CPU",
+    "section": "Fetch",
+    "text": "Fetch\n\n\n\nFirst stage of the cycle.\nProgram counter points to the memory address of the next instruction.\nRetrieve the next instruction from memory and store it in the instruction register.\nIncrement the program counter to point to the next instruction."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#tight-coupling-causes-problems",
-    "href": "CSC4001-S10-OS.html#tight-coupling-causes-problems",
-    "title": "Operating Systems",
-    "section": "Tight coupling causes problems",
-    "text": "Tight coupling causes problems\n\n\n\nHuge source of bugs,\nsince an error in the GUI could cause the entire system to crash.\nSecurity risk\nas a malicious user could gain access to OS internals through a poorly programmed application.\n\n\n\n\n\n\n\n\n\n\n\nThe famous “blue screen of death”."
+    "objectID": "CSC4001-S04-CPU.html#decode",
+    "href": "CSC4001-S04-CPU.html#decode",
+    "title": "The CPU",
+    "section": "Decode",
+    "text": "Decode\n\n\n\nThe control unit reads the current instruction in the instruction register.\nThe control unit determines which operation(s) to perform.\nIf the instruction has operands the control unit initiates additional fetches to retrieve these from memory.\n\n\n\n\n\n\n\n\n\n\n\nThe CPU is now ready to execute the instruction."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#loose-coupling-enables-code-re-use",
-    "href": "CSC4001-S10-OS.html#loose-coupling-enables-code-re-use",
-    "title": "Operating Systems",
-    "section": "Loose coupling enables code re-use",
-    "text": "Loose coupling enables code re-use\n\n\n\nLoose coupling allows us to swap out one component,\nwhile making minimal changes to the rest of the system.\nThis allows us to re-use much of the OS code, while only changing hardware-specific drivers,\nallowing the same OS to run on many devices.\n\nThe Android OS shares lots of code with the Linux kernel."
+    "objectID": "CSC4001-S04-CPU.html#execute",
+    "href": "CSC4001-S04-CPU.html#execute",
+    "title": "The CPU",
+    "section": "Execute",
+    "text": "Execute\n\n\n\nThe stage at which operations are performed.\nThe ALU performs the decoded operation with its operands.\nIn more advanced CPUs may have special-purpose hardware, e.g., a floating point unit.\nInstruction may load data from memory into a register.\nMay perform a jump (e.g., conditional or loop) – program counter is set to point to a different instruction.\n\n\n\n\n\n\n\n\n\n\n\nAny return value is stored in a register. Ready for the next stage…"
   },
   {
-    "objectID": "CSC4001-S10-OS.html#a-good-operating-system-should-be",
-    "href": "CSC4001-S10-OS.html#a-good-operating-system-should-be",
-    "title": "Operating Systems",
-    "section": "A good operating system should be…",
-    "text": "A good operating system should be…\n\nLightweight and efficient\nso that as many resources as possible can be dedicated to user-land applications.\nFlexible and easy to use,\ni.e., it should be a help, not a hindrance, to the programmer."
+    "objectID": "CSC4001-S04-CPU.html#interrupt",
+    "href": "CSC4001-S04-CPU.html#interrupt",
+    "title": "The CPU",
+    "section": "Interrupt",
+    "text": "Interrupt\n\nOccasionally, the CPU receives an interrupt signal.\nThe CPU immediately stops executing the current instruction and jumps to an interrupt service routine.\nThe interrupt service routine is just another set of instructions stored in memory.\nThe CPU executes these instructions as usual, then jumps back to the instruction it was previously working on.\nIf the instruction was interrupted halfway through, then the CPU must restart it from the beginning."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#early-computers-did-not-have-operating-systems",
-    "href": "CSC4001-S10-OS.html#early-computers-did-not-have-operating-systems",
-    "title": "Operating Systems",
-    "section": "Early computers did not have operating systems",
-    "text": "Early computers did not have operating systems\n\n\nPrograms loaded into EDSAC from paper tape,\n“starting orders” helped the operator load and initialise the program.\nProgrammer had to know which machine they were writing code for\nsince each early computer was slightly different.\nHad to write low-level code, interacting directly with the hardware,\ne.g., each program re-implemented printing to the TTY."
+    "objectID": "CSC4001-S04-CPU.html#the-little-man-computer",
+    "href": "CSC4001-S04-CPU.html#the-little-man-computer",
+    "title": "The CPU",
+    "section": "The Little man Computer",
+    "text": "The Little man Computer\n\n\n\nSimple model of a Von Neumann architecture computer.\nImagine a “Little Man” trapped inside a locked mail room.\nThe mail room has 100 mailboxes labelled 00-99, each of which can hold a 3 decimal digit instruction or data.\n\n\n\n\n\n\n\n\n\n\n\n\nInput is received via an inbox and output returned via an outbox.\nThere is a work area with a simple addition and subtraction, the accumulator.\nThere is a program counter which tells the Little Man from which address to fetch the next instruction."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#manual-scheduling",
-    "href": "CSC4001-S10-OS.html#manual-scheduling",
-    "title": "Operating Systems",
-    "section": "Manual scheduling",
-    "text": "Manual scheduling\n\n\nEach program (job) was hung on a line,\nforming a job queue.\nA human operator manually loaded each program into the computer,\nIf the program ran successfully, its output would be returned to the programmer,\nIn case of an error, the operator would write the memory address at which the program failed and return this to the programmer.\nTurn-around could be days, if there was an error the programmer would have to restart the process.\n\n\n\n\n\n\n\n\n\n\n\n\nIn the 60s, there was no such thing as hacking away at a program and re-running it until it worked. Programmers learnt to “run” the programs in their heads, read machine code from paper tape, understand oscilloscope traces or audio cues to determine if their program was running correctly. At this time there were no high-level languages, and no debuggers."
+    "objectID": "CSC4001-S04-CPU.html#how-it-works",
+    "href": "CSC4001-S04-CPU.html#how-it-works",
+    "title": "The CPU",
+    "section": "How it works",
+    "text": "How it works\n\nThe Little Man checks the program counter and retrieves the instruction at the specified address.\nThe program counter is incremented so that it points to the address (mailbox) containing the next instruction.\nLittle Man decodes the instruction.\n\n\nOp-code: number from 000-999 which tells the Little Man what operation to perform.\nIf data is required, its mailbox address is included in the instruction.\n\n\nIf required, data is fetched from the mailbox referred in the instruction.\nExecute the instruction.\nBranch (change the value in the program counter) or store the result of the instruction.\nRepeat or halt."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#code-re-use-libraries-and-device-drivers",
-    "href": "CSC4001-S10-OS.html#code-re-use-libraries-and-device-drivers",
-    "title": "Operating Systems",
-    "section": "Code re-use: libraries and device drivers",
-    "text": "Code re-use: libraries and device drivers\n\nEarly programmers had to re-implement everything.\n\nwriting output,\nworking with files,\nperforming maths operations such as square root.\n\nLibraries were soon developed, so that programmers could share commonly repeated code.\nTo avoid low-level programming, working directly with hardware, device drivers were developed.\nLinkers and loaders were then developed to give access to this shared code."
+    "objectID": "CSC4001-S04-CPU.html#instructions",
+    "href": "CSC4001-S04-CPU.html#instructions",
+    "title": "The CPU",
+    "section": "Instructions",
+    "text": "Instructions\n\n\n\n\n\n\n\n\n\n\nName\nCode\nDescription\n\n\n\n\nADD\n\\(1XX\\)\nAdd value in mailbox \\(XX\\) to the value in the accumulator.\n\n\nSUB\n\\(2XX\\)\nSubtract value in mailbox \\(XX\\) fro the value in the accumulator.\n\n\nSTA\n\\(3XX\\)\nStore value in accumulator in mailbox \\(XX\\)\n\n\nLDA\n\\(5XX\\)\nLoad value in mailbox \\(XX\\) into the accumulator\n\n\nBRA\n\\(6XX\\)\nUnconditionally go to instruction in mailbox \\(XX\\)\n\n\n\n\n\n\n\n\n\n\n\n\nName\nCode\nDescription\n\n\n\n\nBRZ\n\\(7XX\\)\nConditionally go to instruction in mailbox \\(XX\\) if the accumulator is \\(0\\)\n\n\nBRP\n\\(8XX\\)\nConditionally go to instruction in mailbox \\(XX\\) if the accumulator is \\(&gt; 0\\)\n\n\nINP\n\\(901\\)\nRead input from the inbox, store it in the accumulator.\n\n\nOUT\n\\(902\\)\nWrite output from the accumulator to the outbox.\n\n\nHLT\n\\(000\\)\nHalt – stop the program."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#spooling",
-    "href": "CSC4001-S10-OS.html#spooling",
-    "title": "Operating Systems",
-    "section": "Spooling",
-    "text": "Spooling\n\nEarly computers were expensive to run.\nSo it was important to keep the CPU as busy as possible.\nManually loading programs became a bottleneck.\nA batch of programs was loaded onto a “fast” medium (magnetic tape) and run sequentially.\nThis process was called spooling.\nPrinting output via a teleprinter was also a bottleneck,\nso this was also spooled."
+    "objectID": "CSC4001-S04-CPU.html#assembler",
+    "href": "CSC4001-S04-CPU.html#assembler",
+    "title": "The CPU",
+    "section": "Assembler",
+    "text": "Assembler\n\n\n\nMnemonics (3-letter codes) are often used, e.g., ADD,\nInstead of the 3-digit op-code, e.g., \\(1XX\\), since they are easier for the programmer to remember.\nA program is a sequence of instructions, which are executed in order – imperative programming.\nLabels (similar to variables) are used instead of memory address numbers.\n\n\nAdd two numbers\nINP # store value from inbox in accumulator\nSTA FIRST # store accumulator value in FIRST mailbox\nINP\nSTA SECOND\nLDA FIRST # load first number into accumulator\nADD SECOND # ADD SECOND value to accumulator\nOUT # output the value of accumulator\nFIRST DAT # reserves a data mailbox\nSECOND DAT\n\nDAT reserves a labelled mailbox for data."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#the-monitor",
-    "href": "CSC4001-S10-OS.html#the-monitor",
-    "title": "Operating Systems",
-    "section": "The Monitor",
-    "text": "The Monitor\n\nA small program which\n\nloaded a program,\nran it on the hardware,\nand wrote its output.\n\nDirected by a special-purpose programming language called job control language.\nSee e.g., IBM JCL, or SLURM."
+    "objectID": "CSC4001-S04-CPU.html#labels-constants-and-jumps",
+    "href": "CSC4001-S04-CPU.html#labels-constants-and-jumps",
+    "title": "The CPU",
+    "section": "Labels, constants and jumps",
+    "text": "Labels, constants and jumps\n\n\n\nLabels are used to refer to mailbox locations.\nSince instructions are stored in mailboxes, they can be labelled, too.\nE.g., loop OUT labels the location of the OUT instruction as loop.\nBranches need the memory address of the instruction to go to – we can use labels.\nE.g., BNP loop goes to loop as long as the accumulator value is positive.\nA labelled mailbox can be initialised to a constant.\nE.g., one DAT 1 initialises the mailbox labelled one to \\(1\\).\n\n\n     INP\nloop OUT\n     SUB one\n     STA count\n     BRP loop\n     HLT\n1\none DAT 1\ncount DAT"
   },
   {
-    "objectID": "CSC4001-S10-OS.html#the-monitor-1",
-    "href": "CSC4001-S10-OS.html#the-monitor-1",
-    "title": "Operating Systems",
-    "section": "The Monitor",
-    "text": "The Monitor\n\nAlso responsible for automatic accounting, prioritising e.g., users who paid more and killing processes if they exceeded allocated CPU or memory.\nStill widely used in modern mainframes or time-shared supercomputers."
+    "objectID": "CSC4001-S04-CPU.html#exercise-little-man-programming",
+    "href": "CSC4001-S04-CPU.html#exercise-little-man-programming",
+    "title": "The CPU",
+    "section": "Exercise: little man programming",
+    "text": "Exercise: little man programming\n\nGo to https://www.101computing.net/LMC/\nPlay with the simulator, try some of the example programs.\nCode the following programs:\n\nDifference: User inputs two numbers, \\(A\\) and \\(B\\). Program calculates their difference, \\(A - B\\).\nCount up: User inputs a number, \\(N\\), program should count up from \\(0\\) to \\(N\\).\nMultiplication: There is no multiplication instruction, but \\(A \\cdot B = \\underbrace{A \\cdot A \\cdots A}_{B \\text{ times}}\\). Implement multiplication.\n\nYou may want to plan your code on paper, like the EDSAC programmers."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#multitasking",
-    "href": "CSC4001-S10-OS.html#multitasking",
-    "title": "Operating Systems",
-    "section": "Multitasking",
-    "text": "Multitasking\n\nSome operations were slow and needed no CPU,\ne.g., writing output.\nTo best utilise the CPU, multiple programs were loaded at once,\nWhen the CPU was idle, another program could make use of it."
+    "objectID": "CSC4001-S04-CPU.html#instruction-set-architectures-1",
+    "href": "CSC4001-S04-CPU.html#instruction-set-architectures-1",
+    "title": "The CPU",
+    "section": "Instruction set architectures",
+    "text": "Instruction set architectures\n\nEach processor architecture has its own instruction set:\nA set of op-codes which the control unit interprets as instructions.\nThere are two main types of instruction set architecture\n\nRISC: reduced instruction set computer, and\nCISC: complex instruction set computer."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#multitasking-1",
-    "href": "CSC4001-S10-OS.html#multitasking-1",
-    "title": "Operating Systems",
-    "section": "Multitasking",
-    "text": "Multitasking\n\nThe Monitor was responsible for scheduling the programs,\ni.e., deciding which should be run and when.\nNote that exactly one program ran at a time.\nEach program had to surrender control back to the monitor,\nthere was no way for the Monitor to automatically stop a rogue program."
+    "objectID": "CSC4001-S04-CPU.html#history",
+    "href": "CSC4001-S04-CPU.html#history",
+    "title": "The CPU",
+    "section": "History",
+    "text": "History\n\nUp to the early 80’s, more instructions were being added to processors.\nDesigners wanted to mimic high-level programming languages.\nOne CPU instruction should be one line of source code.\nOffload more work onto the hardware.\nProduce shorter programs (fewer total instructions) to conserve memory."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#co-operative-approach",
-    "href": "CSC4001-S10-OS.html#co-operative-approach",
-    "title": "Operating Systems",
-    "section": "Co-operative approach",
-    "text": "Co-operative approach\n\nSeveral programs and their data were loaded into memory.\nAll programs, including the Monitor, had the same rights.\nOne program was able to\n\nmonopolise resources by not surrendering control,\noverwrite another program or its data,\noverwrite the Monitor."
+    "objectID": "CSC4001-S04-CPU.html#history-1",
+    "href": "CSC4001-S04-CPU.html#history-1",
+    "title": "The CPU",
+    "section": "History",
+    "text": "History\n\nIn the early 80’s, the idea of creating a smaller and simple set of instructions was proposed.\nAim was to make designing and building a CPU easier, cheaper and, therefore, faster.\nTerm RISC coined by David Patterson, a researcher at UC Berkeley."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#early-scheduling",
-    "href": "CSC4001-S10-OS.html#early-scheduling",
-    "title": "Operating Systems",
-    "section": "Early scheduling",
-    "text": "Early scheduling\n\nMonitor allowed one program to run until it surrendered control.\nProblem: a malicious or erroneous program could monopolise all resources.\nMore complicated scheduling algorithms were suggested,\nbut these consumed valuable resources, so simplicity was preferred."
+    "objectID": "CSC4001-S04-CPU.html#risc-reduced-instruction-set-computer",
+    "href": "CSC4001-S04-CPU.html#risc-reduced-instruction-set-computer",
+    "title": "The CPU",
+    "section": "RISC: reduced instruction set computer",
+    "text": "RISC: reduced instruction set computer\nSmall, simple set of instructions, e.g., as found in the Little Man computer.\n\nProcessor can execute exactly one instruction per cycle.\nInstructions are a fixed length (fixed number of bits).\nCan only manipulate values stored in CPU registers.\nRISC chips are simple to design and cheap to build.\nUsed in ARM-based chips, found in microcontrollers (Arduino, Raspberry Pi) and smartphones.\nAlso used in IBM Power processors (used in mainframes and servers)."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#early-scheduling-1",
-    "href": "CSC4001-S10-OS.html#early-scheduling-1",
-    "title": "Operating Systems",
-    "section": "Early scheduling",
-    "text": "Early scheduling\n\nAnother approach: pre-emptive scheduling.\nThe Monitor regularly interrupted running processes and decided what to do. I.e.,\n\ncontinue running the same process,\nrun a different process,\nkill the process if it had consumed too many resources."
+    "objectID": "CSC4001-S04-CPU.html#cisc-complex-instruction-set-computing",
+    "href": "CSC4001-S04-CPU.html#cisc-complex-instruction-set-computing",
+    "title": "The CPU",
+    "section": "CISC: complex instruction set computing",
+    "text": "CISC: complex instruction set computing\nLarge number of instructions, some performing more complicated operations – intended to correspond to statements in a high-level programming language.\n\nVariable-length instructions.\nMay take multiple clock cycles to execute an instruction.\nAble to manipulate values directly in main memory.\nCISC chips are complex, with special-purpose hardware, and are more expensive to build.\nFound in most PCs – the x86 architecture."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#pre-emptive-scheduling",
-    "href": "CSC4001-S10-OS.html#pre-emptive-scheduling",
-    "title": "Operating Systems",
-    "section": "Pre-emptive scheduling",
-    "text": "Pre-emptive scheduling\n\nMore frequently:\n\neach program gets a small slice of CPU,\nappears more responsive,\nlots of time spent handling interrupts, less time running user programs,\neach interrupt “wakes up” the CPU, which consumes excessive power (in low-power systems where the CPU is often idle)."
+    "objectID": "CSC4001-S04-CPU.html#simple-example-risc-vs-cisc",
+    "href": "CSC4001-S04-CPU.html#simple-example-risc-vs-cisc",
+    "title": "The CPU",
+    "section": "Simple example: RISC vs CISC",
+    "text": "Simple example: RISC vs CISC\nSuppose we want to increment a value stored in main memory."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#pre-emptive-scheduling-1",
-    "href": "CSC4001-S10-OS.html#pre-emptive-scheduling-1",
-    "title": "Operating Systems",
-    "section": "Pre-emptive scheduling",
-    "text": "Pre-emptive scheduling\n\nLess frequently:\n\nprograms appear slow, do not respond to user interactions,\ncompute intensive programs run bets, having more CPU time and less context switching,\nless time spent running the monitor."
+    "objectID": "CSC4001-S04-CPU.html#cisc-architecture",
+    "href": "CSC4001-S04-CPU.html#cisc-architecture",
+    "title": "The CPU",
+    "section": "CISC architecture",
+    "text": "CISC architecture\n\nA single instruction:\nADD mem one\n\nRetrieves the value from memory,\nAdds one to it,\nWrites back to memory.\n\n\nCISC architecture\n\nThree separate instructions:\nLDA mem\nADD one\nSTA mem"
   },
   {
-    "objectID": "CSC4001-S10-OS.html#thrashing",
-    "href": "CSC4001-S10-OS.html#thrashing",
-    "title": "Operating Systems",
-    "section": "Thrashing",
-    "text": "Thrashing\n\nWhen a computer spends all its time running the Monitor and deciding what to do.\nThis was a common problem in early operating systems."
+    "objectID": "CSC4001-S04-CPU.html#second-generation-of-computers",
+    "href": "CSC4001-S04-CPU.html#second-generation-of-computers",
+    "title": "The CPU",
+    "section": "Second-generation of computers",
+    "text": "Second-generation of computers\n\nRecall that early computers, e.g., EDSAC, used vacuum tubes (thermionic valves).\nThese were bulky, unreliable, generated lots of heat and required lots of energy to run.\nIn the late 1950s, computers began to use electronic circuit boards made out of transistors instead.\nThese computers were popular until the late 1960s."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#potential-solution",
-    "href": "CSC4001-S10-OS.html#potential-solution",
-    "title": "Operating Systems",
-    "section": "Potential solution",
-    "text": "Potential solution\n\nUse unequal time slices:\n\nlarger and less frequent slices given to compute-intensive programs.\nsmaller and more frequent slices given to interactive programs."
+    "objectID": "CSC4001-S04-CPU.html#first-transistor-computer",
+    "href": "CSC4001-S04-CPU.html#first-transistor-computer",
+    "title": "The CPU",
+    "section": "First transistor computer",
+    "text": "First transistor computer\n\n\n\nDeveloped at the University of Manchester\nWorking prototype in November 1953,\nhad 92 transistors and 950 diodes.\nFull-size version was operational in 1955\nhad 200 transistors, 1300 diodes and consumed 150W of power.\nEarly transistors were unreliable. Average error-free runtime was 1.5 hours.\nNot fully transistorised as it still used vacuum tubes in its clock.\n\n\n\n\n\n\n\n\n\n\n\n\nTRADIC transistor computer, developed at Bell Labs, released January 1954.\nUsed a single high-power output vacuum tube amplifier to obtain a 1MHz clock speed."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#resource-protection",
-    "href": "CSC4001-S10-OS.html#resource-protection",
-    "title": "Operating Systems",
-    "section": "Resource protection",
-    "text": "Resource protection\n\nEarly programs had the same rights:\neveryone had equal access to all hardware.\nProtection was needed,\nthis required hardware support.\nCPU instructions were divided into two or more levels:\n\nUnprivileged: “safe” instructions which all programs could run,\nPrivileged: e.g., access to peripherals, scheduling a process.\n\nOnly the Monitor could run in privileged mode."
+    "objectID": "CSC4001-S04-CPU.html#fully-transistorised-computer",
+    "href": "CSC4001-S04-CPU.html#fully-transistorised-computer",
+    "title": "The CPU",
+    "section": "Fully transistorised computer",
+    "text": "Fully transistorised computer\n\nHarwell Cadet, 1955. 58KHz clock speed.\nPrototype IBM 604 Transistor calculator.\nIBM 608, released April 1955 is considered to be the first commercial fully solid-state transistor computer."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#user-land-programs-in-privileged-mode",
-    "href": "CSC4001-S10-OS.html#user-land-programs-in-privileged-mode",
-    "title": "Operating Systems",
-    "section": "User-land programs in privileged mode",
-    "text": "User-land programs in privileged mode\n\nIf a user-land application tries to run a privileged operation,\n\nCPU jumps to the Monitor,\nmonitor decides what to do,\nperhaps allow the instruction, or kill the process if it is not allowed.\n\nA user-land program may “politely ask” to perform a privileged operation,\nby raising a system call (syscall)."
+    "objectID": "CSC4001-S04-CPU.html#third-generation-computers",
+    "href": "CSC4001-S04-CPU.html#third-generation-computers",
+    "title": "The CPU",
+    "section": "Third generation computers",
+    "text": "Third generation computers\n\nWidely used from the mid 60s to early 70s.\nUsed integrated circuits (ICs)\nAn IC is a single chip containing all transistors, resistors, capacitors, diodes and connections needed to operate.\nInvented by Jack Kilby in 1958, an electrical engineer working at Texas Instruments.\nAwarded the Nobel Prize in Physics in 2000.\nFaster and more reliable than second generation.\nReduced computing time from micro seconds to nano seconds.\nComputers were becoming more compact, affordable and easy to use with high-level programming languages and mouse and keyboard instead of punched cards."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#memory-protection",
-    "href": "CSC4001-S10-OS.html#memory-protection",
-    "title": "Operating Systems",
-    "section": "Memory protection",
-    "text": "Memory protection\n\nAll programs had equal access to memory.\none program could overwrite another program or its data,\nor overwrite prat of the Monitor.\nProtection was needed,\nand this also required hardware support.\nThe Memory Management Unit (MMU) was responsible for this."
+    "objectID": "CSC4001-S04-CPU.html#moores-law-1",
+    "href": "CSC4001-S04-CPU.html#moores-law-1",
+    "title": "The CPU",
+    "section": "Moore’s “Law”",
+    "text": "Moore’s “Law”\n\nPrediction made by Gordon Moore, co-founder of Intel, in 1965:\n“Number of transistors per chip doubles every two years.”\n\n\nNote that it’s not a “law” as in “law of physics”. More of a prediction which has remained (mostly) true."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#the-memory-management-unit",
-    "href": "CSC4001-S10-OS.html#the-memory-management-unit",
-    "title": "Operating Systems",
-    "section": "The Memory Management Unit",
-    "text": "The Memory Management Unit\n\nMemory divided into “pages”, typically 4096 bytes, but often larger, e.g., 4MB.\nFor each program, MMU stores a table of pages,\nfor each address, the MMU has a flag indicating whether the program can\n\nread,\nwrite,\nor execute (run as code)\n\nthat page."
+    "objectID": "CSC4001-S04-CPU.html#moores-law-graph",
+    "href": "CSC4001-S04-CPU.html#moores-law-graph",
+    "title": "The CPU",
+    "section": "Moore’s Law Graph",
+    "text": "Moore’s Law Graph"
   },
   {
-    "objectID": "CSC4001-S10-OS.html#the-memory-management-unit-1",
-    "href": "CSC4001-S10-OS.html#the-memory-management-unit-1",
-    "title": "Operating Systems",
-    "section": "The Memory Management Unit",
-    "text": "The Memory Management Unit\n\nIt is useful to separate reading, writing and executing.\n\nPrevents one program overwriting another program or its data,\nPrevents user data being treated as code (security risk),"
+    "objectID": "CSC4001-S04-CPU.html#dennard-scaling",
+    "href": "CSC4001-S04-CPU.html#dennard-scaling",
+    "title": "The CPU",
+    "section": "Dennard scaling",
+    "text": "Dennard scaling\n\nStated in a 1974 paper co-authored by Robert H. Dennard:\n“As transistors get smaller, their power density stays constant – power use stays in proportion with area.”\nIf a transistor is 30% smaller, then its power consumption is 30% less.\nAn IC of fixed size with twice the number of transistors consumes the same power.\nAllowed manufacturers to significantly increase clock speed without increase power consumption."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#fast-and-transparent",
-    "href": "CSC4001-S10-OS.html#fast-and-transparent",
-    "title": "Operating Systems",
-    "section": "Fast and transparent",
-    "text": "Fast and transparent\n\nEach access to memory must be checked by the MMU,\nIf a program attempts to access memory out of bounds, an interrupt is sent to the OS,\nwhich typically kills the process (through raising a segmentation fault SIGSEGV).\nthis is yet another overhead. MMU must be very fast and operate transparently."
+    "objectID": "CSC4001-S04-CPU.html#dennard-scaling-1",
+    "href": "CSC4001-S04-CPU.html#dennard-scaling-1",
+    "title": "The CPU",
+    "section": "Dennard scaling",
+    "text": "Dennard scaling\n\n\n\nAppears to have broken down since 2006.\nSince 2016 the number of transistors per chip is still growing, but more slowly.\nAs transistors get smaller, current leakage and heat production is more problematic.\n\n\n\n\n\n\n\n\n\n\n\n\nWe see clock speed plateau – as clack speed increases it becomes more difficult to cool the chip.\nThis is called the power wall."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#late-60s-to-mid-90s",
-    "href": "CSC4001-S10-OS.html#late-60s-to-mid-90s",
-    "title": "Operating Systems",
-    "section": "Late 60s to mid 90s",
-    "text": "Late 60s to mid 90s\n\nPre-emptive scheduling and resource protection began to appear in mainframes in the late 1960s.\nDOS (Disk OS), an early “home” OS was a single program OS with no pre-emption or memory protection due to lack of hardware support.\nWindows 3.1 also had no pre-emption or memory protection.\nHardware support was quickly added,\nby the mid 80s, Unix-derived OSs added pre-emption and memory protection."
+    "objectID": "CSC4001-S04-CPU.html#exercise-moores-law",
+    "href": "CSC4001-S04-CPU.html#exercise-moores-law",
+    "title": "The CPU",
+    "section": "Exercise: Moore’s law",
+    "text": "Exercise: Moore’s law\nDiscuss:\n\nIs Moore’s law still true today?\n\n\n\nThere have been many predictions of the death of Moore’s law.\nWe are no longer able to double the number of transistors per chip.\nTransistors are still getting smaller and more tightly packed, but progress is becoming slower."
   },
   {
-    "objectID": "CSC4001-S10-OS.html#summary-what-have-early-computers-taught-us",
-    "href": "CSC4001-S10-OS.html#summary-what-have-early-computers-taught-us",
-    "title": "Operating Systems",
-    "section": "Summary: what have early computers taught us?",
-    "text": "Summary: what have early computers taught us?\n\nResources need managing,\nsince they are limited, we want to get best performance otu of hardware and best user experience.\nResources also need protection\nfrom out or malicious programs, e.g., limiting access to memory, but also files and network.\nProgrammers need a convenient interface,\nto best interact with hardware, avoid repeating code, and produce fewer errors."
+    "objectID": "CSC4001-S04-CPU.html#risc-v-1",
+    "href": "CSC4001-S04-CPU.html#risc-v-1",
+    "title": "The CPU",
+    "section": "RISC V",
+    "text": "RISC V\n\nOpen source instruction set architecture, open standard for processor design.\nReduced Instruction Set Architecture version 5\nLoad — store architecture, using IEEE 754 for floating point.\n32 and 64 bit address spaces, wip 128 bit"
+  },
+  {
+    "objectID": "CSC4001-S04-CPU.html#exercise-risc-v-assembler",
+    "href": "CSC4001-S04-CPU.html#exercise-risc-v-assembler",
+    "title": "The CPU",
+    "section": "Exercise: RISC-V Assembler",
+    "text": "Exercise: RISC-V Assembler\n\nWork through the challenges at\nhttps://studyriscv.com/problems/\n\nUse studyriscv.com/simulator, although this requires login,\ninstall riscvsim on your own PC,\ntry an online simulator, e.g., https://riscv-simulator-five.vercel.app/\n\nResources to get started:\n\nCheat sheet https://projectf.io/posts/riscv-cheat-sheet/\nStudy RISC-V installation https://studyriscv.com/docs/#instruction-blt\nRISC-V is an open standard. There is a plethora of resources out theer. Do some research!"
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#learning-outcomes",
+    "href": "CSC4001-S08-Memory.html#learning-outcomes",
+    "title": "Memory Architecture",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n\nState the different types of computer memory — registers, cache, main memory, disk.\nRecall the memory hierarchy.\nState the differences in size and speed of the different types of memory, and the reasons behind this."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#recap-the-cpu",
+    "href": "CSC4001-S08-Memory.html#recap-the-cpu",
+    "title": "Memory Architecture",
+    "section": "Recap: the CPU",
+    "text": "Recap: the CPU"
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#memory-structure",
+    "href": "CSC4001-S08-Memory.html#memory-structure",
+    "title": "Memory Architecture",
+    "section": "Memory structure",
+    "text": "Memory structure"
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#memory-structure-1",
+    "href": "CSC4001-S08-Memory.html#memory-structure-1",
+    "title": "Memory Architecture",
+    "section": "Memory structure",
+    "text": "Memory structure"
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#registers",
+    "href": "CSC4001-S08-Memory.html#registers",
+    "title": "Memory Architecture",
+    "section": "Registers",
+    "text": "Registers\n\nSmall blocks of memory located on the CPU itself.\nUsed to store intermediate values as the CPU works on them.\nVery fast, direct access by the CPU with no latency.\nExamples: IR, PC, accumulator.\nModern CPUs often have severaal registers.\nFastest and most expensive type of memory\nVery limited capacity – in the order of bytes."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#cache",
+    "href": "CSC4001-S08-Memory.html#cache",
+    "title": "Memory Architecture",
+    "section": "Cache",
+    "text": "Cache\n\nSmall, fast memory located claso to the CPU.\nIntermediate storage between CPU and main memory:\nsmaller and faster than main memory, slower and larger than registers.\nMultiple levels of cache:\nL1 is the fastest, smallest and closest to the CPU.\nStill expensive, therefore limited size – in the order of kilo to mega-bytes."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#main-memory",
+    "href": "CSC4001-S08-Memory.html#main-memory",
+    "title": "Memory Architecture",
+    "section": "Main memory",
+    "text": "Main memory\n\nRandom access memory — each byte can be accessed with the same latency.\nVery slow in comparison to cache.\nComparatively large capacity – in the order of giga-bytes.\nData and programs are loaded into memory from disk."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#volatile-memory",
+    "href": "CSC4001-S08-Memory.html#volatile-memory",
+    "title": "Memory Architecture",
+    "section": "Volatile Memory",
+    "text": "Volatile Memory\n\nRegisters, cache and main memory are volatile:\ndata is lost when power is lost."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#disk",
+    "href": "CSC4001-S08-Memory.html#disk",
+    "title": "Memory Architecture",
+    "section": "Disk",
+    "text": "Disk\n\nThe slowest and largest type of memory.\nMuch slower than main memory.\nPersistent storage: data is preserved if power is lost.\nPunched cards, then magnetic tape were used in early computers.\nLater, magnetic spinning disks, hard disk drives (HDDs), were used.\nModern computers use flash memory: solid state drives (SSDs)."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#network",
+    "href": "CSC4001-S08-Memory.html#network",
+    "title": "Memory Architecture",
+    "section": "Network",
+    "text": "Network\n\nAllows access to data on other computers.\nEarly machines used coaxial cable, later twisted pair Ethernet.\nModern computers use fibre-optic cable or radio waves Wi-Fi.\nOrders of magnitude slower than disk."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#laptops-desktops",
+    "href": "CSC4001-S08-Memory.html#laptops-desktops",
+    "title": "Memory Architecture",
+    "section": "Laptops, desktops",
+    "text": "Laptops, desktops\n\nIntel Core I5:\n\nFirst released in 2010.\nClock speed of 2.5GHz, turbo-boost of 3.2Ghz.\n8MB of cache.\n\nIntel Core 7 250U:\n\nFirst released in Quarter 1, 2025.\nMaximum clock speed of 5.40GHz.\n12M of cache."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis",
+    "href": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis",
+    "title": "Memory Architecture",
+    "section": "Phones, microcontrollers and Raspberry Pis",
+    "text": "Phones, microcontrollers and Raspberry Pis\n\nComplex instruction set architecture (CISC), consumes around 20-80W of power.\nMemory (RAM) is becoming cheaper (that was written before the LLM explosion):\n\nBetween 2GB and 4GB in the 2010s,\nCommon to see 16GB in modern laptops.\nDDR4 (dourbe data random access memory): high bandwidth with synchronous access for read and write, released in 2014.\n\nSSDs are commonplace, unlikely to find a spinning HDD in a modern computer."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-1",
+    "href": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-1",
+    "title": "Memory Architecture",
+    "section": "Phones, microcontrollers and Raspberry Pis",
+    "text": "Phones, microcontrollers and Raspberry Pis\n\nTypically ARM processors with lower power consumption.\nMotorola Moto G:\n\n8 cores: 2 x 2.0GHz Cortex-A78 plus 6 x 1.8GHz Cortex-A55\n32KB of L1 Instruction cache plus 32KB L1 Data cache.\n250-512 KiB of L2 cache.\n4GB of memory."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-2",
+    "href": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-2",
+    "title": "Memory Architecture",
+    "section": "Phones, microcontrollers and Raspberry Pis",
+    "text": "Phones, microcontrollers and Raspberry Pis\n\nGalaxy S21:\n\n4 cores 1 x 2.9GHz Cortex-X1 plus 3 x 2.8GHz Cortex-A78\n8GB memory."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-3",
+    "href": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-3",
+    "title": "Memory Architecture",
+    "section": "Phones, microcontrollers and Raspberry Pis",
+    "text": "Phones, microcontrollers and Raspberry Pis\n\nRaspberry Pi 4:\n\nBroadcom BCM2711; 4 cores, Cortex-A72 (ARM v8) 64-bit SoC @ 1.8GHz.\n80KiB of L1 cache, 512KiB of L2 cache.\n4GB memory."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-4",
+    "href": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-4",
+    "title": "Memory Architecture",
+    "section": "Phones, microcontrollers and Raspberry Pis",
+    "text": "Phones, microcontrollers and Raspberry Pis\n\nArduino Uno:\n\nATmega328P – 8 bit AVR family microcontroller.\n16MHz clock speed.\nHarvard architecture (separate, 32KB program memory).\n3KB program memory.\n2KB of SRAM.\n1KB of EEPROM (persistent storage)."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#analogy-lets-bake-a-cake",
+    "href": "CSC4001-S08-Memory.html#analogy-lets-bake-a-cake",
+    "title": "Memory Architecture",
+    "section": "Analogy: let’s bake a cake",
+    "text": "Analogy: let’s bake a cake\n\n\nImagine you’re plannning to bake a cake.\n\n\n\n\n\n\n\n\n\n\nYou have a limited number of bowls to weigh and mix ingredients,\n\n\n\nA moderate amount of work surface to place items on,\nand storage cupboards where large bags of ingredients are kept.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe will build a real-world analogy of computer memory by talking about making a cake.\nMixing bowls, spoons, measuring jug con be used to model CPU registers.\nThe work surface can be thought of as the cache – items can be easily accessed.\nThe storage cupboard can be veiwed as main memory, where items can be readily accessed, but more time and effort is needed to locate the item than simply picking it up from the work surface."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#load-from-memory-into-registers",
+    "href": "CSC4001-S08-Memory.html#load-from-memory-into-registers",
+    "title": "Memory Architecture",
+    "section": "Load from memory into registers",
+    "text": "Load from memory into registers\n\n\n\nFetch the butter from the fridge\nand sugar from the cupboard.\nMeasure butter and sugar into a mixing bowl.\nCream together butter and sugar.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFetching ingredients from cupboard / fridge is the same idea as loading data from main memory into the cache (work sorface).\nMeasuring out ingredients is similar to loading values from cache into CPU registers (the mixing bowl).\nThe process of creaming together butter and sugar is something like the CPU operating on its data in registers."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#add-eggs",
+    "href": "CSC4001-S08-Memory.html#add-eggs",
+    "title": "Memory Architecture",
+    "section": "Add eggs",
+    "text": "Add eggs\n\n\n\nFetch eggs from the fridge…\nBut you realise there are no eggs left.\nFortunately, you keep chickens and they are laying well.\nGo to the end of the garden and collect some eggs.\nReturning from the shop, you place the eggs on the work surface.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRather than fetching from the comparatively quick main memory (cupboard / fridge), you have to do a “read from disk” – walk down the garden, go into the chicken coop and locate the eggs. This is comparatively much slower than retrieving something from the nearby cupboard.\n\nLittle aside on pre-fetching. - Had you known in advance there were no eggs in main memory, you could have optimised: - Ask your friend to collect eggs while you are mixing butter and sugar. You will be ready for the eggs, which they loaded into cache (put on the worktop), or better still, cracked straight into the mixing bowl as they return (load directly into registers), for your use."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#add-flour-and-bake",
+    "href": "CSC4001-S08-Memory.html#add-flour-and-bake",
+    "title": "Memory Architecture",
+    "section": "Add flour and bake",
+    "text": "Add flour and bake\n\n\n\nFortunately, there is plenty of flour in the store cupboard.\nFetch the sack of flour, weigh it into the mixing bowl and fold it into the mixture.\nScoop the mixture into cake tins and bake in the oven.\n\n\n\n\n\n\n\n\n\n\n\n\n\n7, 8. Similar to the butter and sugar situation, a relatively quick read from memory. 9. The oven is a bit like a co-processor. You can offload a particular task onto it and use the main CPU to do other things (you can prepare the butter cream / frosting while the cake bakes)."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#cream-and-jam",
+    "href": "CSC4001-S08-Memory.html#cream-and-jam",
+    "title": "Memory Architecture",
+    "section": "Cream and jam",
+    "text": "Cream and jam\n\n\n\nWhile the cake is cooling, you decide to whip the cream.\nThere is no cream or jam in the fridge.\nYou need to go to the shop.\n\n\nThis takes much longer even than fetching eggs from the garden.\nSo long that the cake is already cool.\n\n\n\n\n\n\n\n\n\n\n\n\nYou return from the shop and place the cream and jam on the work surface.\n\n\n\n\nis analogous to fetching data from the network.\n\n\nfetch from disk: go to the garden to retrieve eggs, stays “within the house” and while it takes much longer than going to the fridge / cupboard, it only takes a few minutes.\ngoing to the shop, on the other hand, is much farther and takes much longer. it also requires a different protocol (choosing items, paying for items) than fetching something locally.\nit also takes substantially longer."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#exercise-memory-analogies",
+    "href": "CSC4001-S08-Memory.html#exercise-memory-analogies",
+    "title": "Memory Architecture",
+    "section": "Exercise: memory analogies",
+    "text": "Exercise: memory analogies\n\nDiscuss whether this was a good analogy.\nWhat does it represent well, what does it represent poorly.\nCome up with your own analogy, indicating what represents the registirs, cache, disk and network.\nShare analogies and discuss what reflects computer memory well / not so well."
   },
   {
     "objectID": "CSC4001-S13-Scheduling.html#learning-outcomes",
@@ -1050,424 +1225,319 @@
     "text": "Next time\nDeadlock and Process Protection"
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#learning-outcomes",
-    "href": "CSC4001-S08-Memory.html#learning-outcomes",
-    "title": "Memory Architecture",
+    "objectID": "CSC4001-S10-OS.html#learning-outcomes",
+    "href": "CSC4001-S10-OS.html#learning-outcomes",
+    "title": "Operating Systems",
     "section": "Learning Outcomes",
-    "text": "Learning Outcomes\n\nState the different types of computer memory — registers, cache, main memory, disk.\nRecall the memory hierarchy.\nState the differences in size and speed of the different types of memory, and the reasons behind this."
+    "text": "Learning Outcomes\n\nDescribe the purpose of an operating system.\nUse a layered model to explain what is, and is not, in the scope of an operating system.\nOverview computer history in the context of operating systems, and use this to explain why the functions of an operating system are important."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#recap-the-cpu",
-    "href": "CSC4001-S08-Memory.html#recap-the-cpu",
-    "title": "Memory Architecture",
-    "section": "Recap: the CPU",
-    "text": "Recap: the CPU"
+    "objectID": "CSC4001-S10-OS.html#what-is-an-operating-system",
+    "href": "CSC4001-S10-OS.html#what-is-an-operating-system",
+    "title": "Operating Systems",
+    "section": "What is an Operating System",
+    "text": "What is an Operating System\n\nJust another program.\nProvides a programming interface for the computer hardware.\nResponsible for managing (protecting) resources."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#memory-structure",
-    "href": "CSC4001-S08-Memory.html#memory-structure",
-    "title": "Memory Architecture",
-    "section": "Memory structure",
-    "text": "Memory structure"
+    "objectID": "CSC4001-S10-OS.html#managing-resources",
+    "href": "CSC4001-S10-OS.html#managing-resources",
+    "title": "Operating Systems",
+    "section": "Managing resources",
+    "text": "Managing resources\n\nTypically hardware, e.g.,\nCPU, memory, files on disk, peripherals.\nResources are limited.\n\nembedded devices and smart devices still have small amounts of memory,\neven large supercomputers are not powerful enough for scientists,\nmodern PCs have huge amounts of memory and processing power compared to early computers.\nMany users still want more, e.g., for smooth game performance.\n\nResources need protecting."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#memory-structure-1",
-    "href": "CSC4001-S08-Memory.html#memory-structure-1",
-    "title": "Memory Architecture",
-    "section": "Memory structure",
-    "text": "Memory structure"
+    "objectID": "CSC4001-S10-OS.html#what-protection-should-the-os-provide",
+    "href": "CSC4001-S10-OS.html#what-protection-should-the-os-provide",
+    "title": "Operating Systems",
+    "section": "What protection should the OS provide?",
+    "text": "What protection should the OS provide?\n\nSecurity and integrity\nPrevent one user or program from corrupting another.\nAuthorisation\nEnsures only those “allowed” have access to certain resources.\nAuthentication\nChecking whether a user or program has the authorisation it claims to have.\nSave me from myself\nProtecting the user / programmer from their own stupid mistakes."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#registers",
-    "href": "CSC4001-S08-Memory.html#registers",
-    "title": "Memory Architecture",
-    "section": "Registers",
-    "text": "Registers\n\nSmall blocks of memory located on the CPU itself.\nUsed to store intermediate values as the CPU works on them.\nVery fast, direct access by the CPU with no latency.\nExamples: IR, PC, accumulator.\nModern CPUs often have severaal registers.\nFastest and most expensive type of memory\nVery limited capacity – in the order of bytes."
+    "objectID": "CSC4001-S10-OS.html#optimise-performance",
+    "href": "CSC4001-S10-OS.html#optimise-performance",
+    "title": "Operating Systems",
+    "section": "Optimise performance",
+    "text": "Optimise performance\n\nIn addition, operating systems ensure resources meet certain criteria.\nE.g.,:\n\nresponsiveness: by prioritising certain events,\nreal-time: such as machinery in a factory, actuators on an aircraft,\nsecurity: by preventing accidental or malicious tampering."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#cache",
-    "href": "CSC4001-S08-Memory.html#cache",
-    "title": "Memory Architecture",
-    "section": "Cache",
-    "text": "Cache\n\nSmall, fast memory located claso to the CPU.\nIntermediate storage between CPU and main memory:\nsmaller and faster than main memory, slower and larger than registers.\nMultiple levels of cache:\nL1 is the fastest, smallest and closest to the CPU.\nStill expensive, therefore limited size – in the order of kilo to mega-bytes."
+    "objectID": "CSC4001-S10-OS.html#programming-interface",
+    "href": "CSC4001-S10-OS.html#programming-interface",
+    "title": "Operating Systems",
+    "section": "Programming interface",
+    "text": "Programming interface\n\nEasier access to hardware and peripherals:\nhardware programming can be fiddly and complicated.\nLess repeated code:\nCommon tasks, e.g., file handling, are implemented.\nLess chance of errors\n\nSince the OS is written by experts.\nCode is used by many people, so there is more chance of errors being found and fixed."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#main-memory",
-    "href": "CSC4001-S08-Memory.html#main-memory",
-    "title": "Memory Architecture",
-    "section": "Main memory",
-    "text": "Main memory\n\nRandom access memory — each byte can be accessed with the same latency.\nVery slow in comparison to cache.\nComparatively large capacity – in the order of giga-bytes.\nData and programs are loaded into memory from disk."
+    "objectID": "CSC4001-S10-OS.html#written-by-experts",
+    "href": "CSC4001-S10-OS.html#written-by-experts",
+    "title": "Operating Systems",
+    "section": "Written by experts",
+    "text": "Written by experts\n\nExperts understand the hardware:\n\nunderstand exactly how the hardware works,\nknow how to get the best performance,\nknow the intricacies and pitfalls of hardware programming,\nconsider all the details, e.g., handling interrupts,\n\n\n\n\nDevice drivers were probably written by the hardware manufacturers themselves.\nWe can safely assume that expert OS developers are better programmers, and better computer scientists than us.\nThey likely already made most of the mistakes, and learnt from them, that less experienced programmers are likely to make."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#volatile-memory",
-    "href": "CSC4001-S08-Memory.html#volatile-memory",
-    "title": "Memory Architecture",
-    "section": "Volatile Memory",
-    "text": "Volatile Memory\n\nRegisters, cache and main memory are volatile:\ndata is lost when power is lost."
+    "objectID": "CSC4001-S10-OS.html#layered-model",
+    "href": "CSC4001-S10-OS.html#layered-model",
+    "title": "Operating Systems",
+    "section": "Layered model",
+    "text": "Layered model\n\n\n\n\n\n\n\n\n\n\n\n\n\nSplits a computer system into distinct chunks,\nwhich interact with each other through and interface.\nModelling allows us to look at the system in an appropriate level of detail."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#disk",
-    "href": "CSC4001-S08-Memory.html#disk",
-    "title": "Memory Architecture",
-    "section": "Disk",
-    "text": "Disk\n\nThe slowest and largest type of memory.\nMuch slower than main memory.\nPersistent storage: data is preserved if power is lost.\nPunched cards, then magnetic tape were used in early computers.\nLater, magnetic spinning disks, hard disk drives (HDDs), were used.\nModern computers use flash memory: solid state drives (SSDs)."
+    "objectID": "CSC4001-S10-OS.html#layered-model-1",
+    "href": "CSC4001-S10-OS.html#layered-model-1",
+    "title": "Operating Systems",
+    "section": "Layered model",
+    "text": "Layered model\n\n\n\nHardware: warm scone,\nCream: user-land applications, including the GUI.\nJam: operating system, providing an insulating layer between the scone and cream.\nProtects the hardware from user-land applications.\n\n\n\n\n\n\n\n\n\n\n\nA computer, applications and its operating system is like a correctly constructed scone.\n\n\n\nWe represent a computer, applications and operating system as a 3-layered model\nAnalogy: a correctly constructed scone. Note that jam is a good insulator and prevents the warm scone from causing the cream to melt.\nThus the OS is like the jam."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#network",
-    "href": "CSC4001-S08-Memory.html#network",
-    "title": "Memory Architecture",
-    "section": "Network",
-    "text": "Network\n\nAllows access to data on other computers.\nEarly machines used coaxial cable, later twisted pair Ethernet.\nModern computers use fibre-optic cable or radio waves Wi-Fi.\nOrders of magnitude slower than disk."
+    "objectID": "CSC4001-S10-OS.html#note-gui-is-a-user-land-application",
+    "href": "CSC4001-S10-OS.html#note-gui-is-a-user-land-application",
+    "title": "Operating Systems",
+    "section": "Note: GUI is a user-land application",
+    "text": "Note: GUI is a user-land application\n\nAny program the user interacts with is not part of the operating system\nthis is “user-land”.\nThe GUI (desktop environment, window manager, etc) is not part of the operating system.\nAs computer scientists, we should not confuse\n\nthe OS and its GUI,\nthe OS and the hardware it is running on.\n\n\n\n\nMany people confuse the OS and the GUI, and OS and the hardware it runs on.\nOS manufacturers contribute to this confusion by marketing the GUI / hardware as part of the OS.\nE.g., think of Windows advertisements which emphasise the GUI, or Mac advertisements which emphasise the Apple hardware.\nHowever, if you’ve ever used Linux, you may have come across different “flavours” of the same distribution, which include different desktop environments (GUIs).\nYou may also be familiar with the same OS running on different hardware. E.g., running Windows on Mac hardware, running Linux on Mac or PC hardware.\nThus, as computer scientists, we need to be clear about what the OS is:\nthe layer between the hardware and user-land, responsible for managing and protecting resources, as well as providing an interface to the programmer."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#laptops-desktops",
-    "href": "CSC4001-S08-Memory.html#laptops-desktops",
-    "title": "Memory Architecture",
-    "section": "Laptops, desktops",
-    "text": "Laptops, desktops\n\nIntel Core I5:\n\nFirst released in 2010.\nClock speed of 2.5GHz, turbo-boost of 3.2Ghz.\n8MB of cache.\n\nIntel Core 7 250U:\n\nFirst released in Quarter 1, 2025.\nMaximum clock speed of 5.40GHz.\n12M of cache."
+    "objectID": "CSC4001-S10-OS.html#separation-of-concerns",
+    "href": "CSC4001-S10-OS.html#separation-of-concerns",
+    "title": "Operating Systems",
+    "section": "Separation of concerns",
+    "text": "Separation of concerns\n\nLayering allows us to decouple software:\n\ndevice drivers (e.g., interacting with peripherals),\nOS code (e.g., process scheduling, memory management),\nand user interface\n\nshould be as loosely coupled as possible.\n\n\n\nloose coupling: means the code of different components is intertwined as little as possible.\nin a loosely coupled system, you should be able to swap out one component for another without needing to make many changes to the rest of the system."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis",
-    "href": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis",
-    "title": "Memory Architecture",
-    "section": "Phones, microcontrollers and Raspberry Pis",
-    "text": "Phones, microcontrollers and Raspberry Pis\n\nComplex instruction set architecture (CISC), consumes around 20-80W of power.\nMemory (RAM) is becoming cheaper (that was written before the LLM explosion):\n\nBetween 2GB and 4GB in the 2010s,\nCommon to see 16GB in modern laptops.\nDDR4 (dourbe data random access memory): high bandwidth with synchronous access for read and write, released in 2014.\n\nSSDs are commonplace, unlikely to find a spinning HDD in a modern computer."
+    "objectID": "CSC4001-S10-OS.html#tight-coupling-causes-problems",
+    "href": "CSC4001-S10-OS.html#tight-coupling-causes-problems",
+    "title": "Operating Systems",
+    "section": "Tight coupling causes problems",
+    "text": "Tight coupling causes problems\n\n\n\nHuge source of bugs,\nsince an error in the GUI could cause the entire system to crash.\nSecurity risk\nas a malicious user could gain access to OS internals through a poorly programmed application.\n\n\n\n\n\n\n\n\n\n\n\nThe famous “blue screen of death”."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-1",
-    "href": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-1",
-    "title": "Memory Architecture",
-    "section": "Phones, microcontrollers and Raspberry Pis",
-    "text": "Phones, microcontrollers and Raspberry Pis\n\nTypically ARM processors with lower power consumption.\nMotorola Moto G:\n\n8 cores: 2 x 2.0GHz Cortex-A78 plus 6 x 1.8GHz Cortex-A55\n32KB of L1 Instruction cache plus 32KB L1 Data cache.\n250-512 KiB of L2 cache.\n4GB of memory."
+    "objectID": "CSC4001-S10-OS.html#loose-coupling-enables-code-re-use",
+    "href": "CSC4001-S10-OS.html#loose-coupling-enables-code-re-use",
+    "title": "Operating Systems",
+    "section": "Loose coupling enables code re-use",
+    "text": "Loose coupling enables code re-use\n\n\n\nLoose coupling allows us to swap out one component,\nwhile making minimal changes to the rest of the system.\nThis allows us to re-use much of the OS code, while only changing hardware-specific drivers,\nallowing the same OS to run on many devices.\n\nThe Android OS shares lots of code with the Linux kernel."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-2",
-    "href": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-2",
-    "title": "Memory Architecture",
-    "section": "Phones, microcontrollers and Raspberry Pis",
-    "text": "Phones, microcontrollers and Raspberry Pis\n\nGalaxy S21:\n\n4 cores 1 x 2.9GHz Cortex-X1 plus 3 x 2.8GHz Cortex-A78\n8GB memory."
+    "objectID": "CSC4001-S10-OS.html#a-good-operating-system-should-be",
+    "href": "CSC4001-S10-OS.html#a-good-operating-system-should-be",
+    "title": "Operating Systems",
+    "section": "A good operating system should be…",
+    "text": "A good operating system should be…\n\nLightweight and efficient\nso that as many resources as possible can be dedicated to user-land applications.\nFlexible and easy to use,\ni.e., it should be a help, not a hindrance, to the programmer."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-3",
-    "href": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-3",
-    "title": "Memory Architecture",
-    "section": "Phones, microcontrollers and Raspberry Pis",
-    "text": "Phones, microcontrollers and Raspberry Pis\n\nRaspberry Pi 4:\n\nBroadcom BCM2711; 4 cores, Cortex-A72 (ARM v8) 64-bit SoC @ 1.8GHz.\n80KiB of L1 cache, 512KiB of L2 cache.\n4GB memory."
+    "objectID": "CSC4001-S10-OS.html#early-computers-did-not-have-operating-systems",
+    "href": "CSC4001-S10-OS.html#early-computers-did-not-have-operating-systems",
+    "title": "Operating Systems",
+    "section": "Early computers did not have operating systems",
+    "text": "Early computers did not have operating systems\n\n\nPrograms loaded into EDSAC from paper tape,\n“starting orders” helped the operator load and initialise the program.\nProgrammer had to know which machine they were writing code for\nsince each early computer was slightly different.\nHad to write low-level code, interacting directly with the hardware,\ne.g., each program re-implemented printing to the TTY."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-4",
-    "href": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-4",
-    "title": "Memory Architecture",
-    "section": "Phones, microcontrollers and Raspberry Pis",
-    "text": "Phones, microcontrollers and Raspberry Pis\n\nArduino Uno:\n\nATmega328P – 8 bit AVR family microcontroller.\n16MHz clock speed.\nHarvard architecture (separate, 32KB program memory).\n3KB program memory.\n2KB of SRAM.\n1KB of EEPROM (persistent storage)."
+    "objectID": "CSC4001-S10-OS.html#manual-scheduling",
+    "href": "CSC4001-S10-OS.html#manual-scheduling",
+    "title": "Operating Systems",
+    "section": "Manual scheduling",
+    "text": "Manual scheduling\n\n\nEach program (job) was hung on a line,\nforming a job queue.\nA human operator manually loaded each program into the computer,\nIf the program ran successfully, its output would be returned to the programmer,\nIn case of an error, the operator would write the memory address at which the program failed and return this to the programmer.\nTurn-around could be days, if there was an error the programmer would have to restart the process.\n\n\n\n\n\n\n\n\n\n\n\n\nIn the 60s, there was no such thing as hacking away at a program and re-running it until it worked. Programmers learnt to “run” the programs in their heads, read machine code from paper tape, understand oscilloscope traces or audio cues to determine if their program was running correctly. At this time there were no high-level languages, and no debuggers."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#analogy-lets-bake-a-cake",
-    "href": "CSC4001-S08-Memory.html#analogy-lets-bake-a-cake",
-    "title": "Memory Architecture",
-    "section": "Analogy: let’s bake a cake",
-    "text": "Analogy: let’s bake a cake\n\n\nImagine you’re plannning to bake a cake.\n\n\n\n\n\n\n\n\n\n\nYou have a limited number of bowls to weigh and mix ingredients,\n\n\n\nA moderate amount of work surface to place items on,\nand storage cupboards where large bags of ingredients are kept.\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe will build a real-world analogy of computer memory by talking about making a cake.\nMixing bowls, spoons, measuring jug con be used to model CPU registers.\nThe work surface can be thought of as the cache – items can be easily accessed.\nThe storage cupboard can be veiwed as main memory, where items can be readily accessed, but more time and effort is needed to locate the item than simply picking it up from the work surface."
+    "objectID": "CSC4001-S10-OS.html#code-re-use-libraries-and-device-drivers",
+    "href": "CSC4001-S10-OS.html#code-re-use-libraries-and-device-drivers",
+    "title": "Operating Systems",
+    "section": "Code re-use: libraries and device drivers",
+    "text": "Code re-use: libraries and device drivers\n\nEarly programmers had to re-implement everything.\n\nwriting output,\nworking with files,\nperforming maths operations such as square root.\n\nLibraries were soon developed, so that programmers could share commonly repeated code.\nTo avoid low-level programming, working directly with hardware, device drivers were developed.\nLinkers and loaders were then developed to give access to this shared code."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#load-from-memory-into-registers",
-    "href": "CSC4001-S08-Memory.html#load-from-memory-into-registers",
-    "title": "Memory Architecture",
-    "section": "Load from memory into registers",
-    "text": "Load from memory into registers\n\n\n\nFetch the butter from the fridge\nand sugar from the cupboard.\nMeasure butter and sugar into a mixing bowl.\nCream together butter and sugar.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFetching ingredients from cupboard / fridge is the same idea as loading data from main memory into the cache (work sorface).\nMeasuring out ingredients is similar to loading values from cache into CPU registers (the mixing bowl).\nThe process of creaming together butter and sugar is something like the CPU operating on its data in registers."
+    "objectID": "CSC4001-S10-OS.html#spooling",
+    "href": "CSC4001-S10-OS.html#spooling",
+    "title": "Operating Systems",
+    "section": "Spooling",
+    "text": "Spooling\n\nEarly computers were expensive to run.\nSo it was important to keep the CPU as busy as possible.\nManually loading programs became a bottleneck.\nA batch of programs was loaded onto a “fast” medium (magnetic tape) and run sequentially.\nThis process was called spooling.\nPrinting output via a teleprinter was also a bottleneck,\nso this was also spooled."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#add-eggs",
-    "href": "CSC4001-S08-Memory.html#add-eggs",
-    "title": "Memory Architecture",
-    "section": "Add eggs",
-    "text": "Add eggs\n\n\n\nFetch eggs from the fridge…\nBut you realise there are no eggs left.\nFortunately, you keep chickens and they are laying well.\nGo to the end of the garden and collect some eggs.\nReturning from the shop, you place the eggs on the work surface.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRather than fetching from the comparatively quick main memory (cupboard / fridge), you have to do a “read from disk” – walk down the garden, go into the chicken coop and locate the eggs. This is comparatively much slower than retrieving something from the nearby cupboard.\n\nLittle aside on pre-fetching. - Had you known in advance there were no eggs in main memory, you could have optimised: - Ask your friend to collect eggs while you are mixing butter and sugar. You will be ready for the eggs, which they loaded into cache (put on the worktop), or better still, cracked straight into the mixing bowl as they return (load directly into registers), for your use."
+    "objectID": "CSC4001-S10-OS.html#the-monitor",
+    "href": "CSC4001-S10-OS.html#the-monitor",
+    "title": "Operating Systems",
+    "section": "The Monitor",
+    "text": "The Monitor\n\nA small program which\n\nloaded a program,\nran it on the hardware,\nand wrote its output.\n\nDirected by a special-purpose programming language called job control language.\nSee e.g., IBM JCL, or SLURM."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#add-flour-and-bake",
-    "href": "CSC4001-S08-Memory.html#add-flour-and-bake",
-    "title": "Memory Architecture",
-    "section": "Add flour and bake",
-    "text": "Add flour and bake\n\n\n\nFortunately, there is plenty of flour in the store cupboard.\nFetch the sack of flour, weigh it into the mixing bowl and fold it into the mixture.\nScoop the mixture into cake tins and bake in the oven.\n\n\n\n\n\n\n\n\n\n\n\n\n\n7, 8. Similar to the butter and sugar situation, a relatively quick read from memory. 9. The oven is a bit like a co-processor. You can offload a particular task onto it and use the main CPU to do other things (you can prepare the butter cream / frosting while the cake bakes)."
+    "objectID": "CSC4001-S10-OS.html#the-monitor-1",
+    "href": "CSC4001-S10-OS.html#the-monitor-1",
+    "title": "Operating Systems",
+    "section": "The Monitor",
+    "text": "The Monitor\n\nAlso responsible for automatic accounting, prioritising e.g., users who paid more and killing processes if they exceeded allocated CPU or memory.\nStill widely used in modern mainframes or time-shared supercomputers."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#cream-and-jam",
-    "href": "CSC4001-S08-Memory.html#cream-and-jam",
-    "title": "Memory Architecture",
-    "section": "Cream and jam",
-    "text": "Cream and jam\n\n\n\nWhile the cake is cooling, you decide to whip the cream.\nThere is no cream or jam in the fridge.\nYou need to go to the shop.\n\n\nThis takes much longer even than fetching eggs from the garden.\nSo long that the cake is already cool.\n\n\n\n\n\n\n\n\n\n\n\n\nYou return from the shop and place the cream and jam on the work surface.\n\n\n\n\nis analogous to fetching data from the network.\n\n\nfetch from disk: go to the garden to retrieve eggs, stays “within the house” and while it takes much longer than going to the fridge / cupboard, it only takes a few minutes.\ngoing to the shop, on the other hand, is much farther and takes much longer. it also requires a different protocol (choosing items, paying for items) than fetching something locally.\nit also takes substantially longer."
+    "objectID": "CSC4001-S10-OS.html#multitasking",
+    "href": "CSC4001-S10-OS.html#multitasking",
+    "title": "Operating Systems",
+    "section": "Multitasking",
+    "text": "Multitasking\n\nSome operations were slow and needed no CPU,\ne.g., writing output.\nTo best utilise the CPU, multiple programs were loaded at once,\nWhen the CPU was idle, another program could make use of it."
   },
   {
-    "objectID": "CSC4001-S08-Memory.html#exercise-memory-analogies",
-    "href": "CSC4001-S08-Memory.html#exercise-memory-analogies",
-    "title": "Memory Architecture",
-    "section": "Exercise: memory analogies",
-    "text": "Exercise: memory analogies\n\nDiscuss whether this was a good analogy.\nWhat does it represent well, what does it represent poorly.\nCome up with your own analogy, indicating what represents the registirs, cache, disk and network.\nShare analogies and discuss what reflects computer memory well / not so well."
+    "objectID": "CSC4001-S10-OS.html#multitasking-1",
+    "href": "CSC4001-S10-OS.html#multitasking-1",
+    "title": "Operating Systems",
+    "section": "Multitasking",
+    "text": "Multitasking\n\nThe Monitor was responsible for scheduling the programs,\ni.e., deciding which should be run and when.\nNote that exactly one program ran at a time.\nEach program had to surrender control back to the monitor,\nthere was no way for the Monitor to automatically stop a rogue program."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#learning-outcomes",
-    "href": "CSC4001-S04-CPU.html#learning-outcomes",
-    "title": "The CPU",
-    "section": "Learning Outcomes",
-    "text": "Learning Outcomes\n\nExplain what happens at each stage of the fetch, decode, execute, store cycle.\nUse a simple instruction set to write some assembler programs for a toy computer.\nGo further: write some assembler programs for a real instruction set!\nGive the main difference between RICS and CISC architecture, stating their advantages and disadvantages as well as situations in which each is best used.\nState Moore’s law and discuss whether it is still relevant today."
+    "objectID": "CSC4001-S10-OS.html#co-operative-approach",
+    "href": "CSC4001-S10-OS.html#co-operative-approach",
+    "title": "Operating Systems",
+    "section": "Co-operative approach",
+    "text": "Co-operative approach\n\nSeveral programs and their data were loaded into memory.\nAll programs, including the Monitor, had the same rights.\nOne program was able to\n\nmonopolise resources by not surrendering control,\noverwrite another program or its data,\noverwrite the Monitor."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#recap-harvard-architecture",
-    "href": "CSC4001-S04-CPU.html#recap-harvard-architecture",
-    "title": "The CPU",
-    "section": "Recap: Harvard architecture",
-    "text": "Recap: Harvard architecture\n\n\nRecall the control unit, arithmetic logic unit, input and output. Harvard architecture has separate memory for programs and data, and a separate bus. This meant there was less contention as instructions and data could be accessed simultaneously, but the machine was less flexible, e.g., the program memory may not be full when data memory is, but we cannot use the free space in the program memory for additional data. This architecture commonly used in embedded systems, and mainframes."
+    "objectID": "CSC4001-S10-OS.html#early-scheduling",
+    "href": "CSC4001-S10-OS.html#early-scheduling",
+    "title": "Operating Systems",
+    "section": "Early scheduling",
+    "text": "Early scheduling\n\nMonitor allowed one program to run until it surrendered control.\nProblem: a malicious or erroneous program could monopolise all resources.\nMore complicated scheduling algorithms were suggested,\nbut these consumed valuable resources, so simplicity was preferred."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#the-von-neumann-architecture",
-    "href": "CSC4001-S04-CPU.html#the-von-neumann-architecture",
-    "title": "The CPU",
-    "section": "The Von Neumann Architecture",
-    "text": "The Von Neumann Architecture\n\n\nSame components: control unit, arithmetic logic unit, input and output. In the Harvard architecture, data and instructions are stored in the same memory. A single memory bus can be a bottleneck, and concerns were raised about security (e.g., a program can write to any location in memory, including modifying the instructions. Simpler and more flexible. This is the architecture found in most desktop computers today."
+    "objectID": "CSC4001-S10-OS.html#early-scheduling-1",
+    "href": "CSC4001-S10-OS.html#early-scheduling-1",
+    "title": "Operating Systems",
+    "section": "Early scheduling",
+    "text": "Early scheduling\n\nAnother approach: pre-emptive scheduling.\nThe Monitor regularly interrupted running processes and decided what to do. I.e.,\n\ncontinue running the same process,\nrun a different process,\nkill the process if it had consumed too many resources."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#components",
-    "href": "CSC4001-S04-CPU.html#components",
-    "title": "The CPU",
-    "section": "Components",
-    "text": "Components"
+    "objectID": "CSC4001-S10-OS.html#pre-emptive-scheduling",
+    "href": "CSC4001-S10-OS.html#pre-emptive-scheduling",
+    "title": "Operating Systems",
+    "section": "Pre-emptive scheduling",
+    "text": "Pre-emptive scheduling\n\nMore frequently:\n\neach program gets a small slice of CPU,\nappears more responsive,\nlots of time spent handling interrupts, less time running user programs,\neach interrupt “wakes up” the CPU, which consumes excessive power (in low-power systems where the CPU is often idle)."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#the-cpu-1",
-    "href": "CSC4001-S04-CPU.html#the-cpu-1",
-    "title": "The CPU",
-    "section": "The CPU",
-    "text": "The CPU\n\nA program, written in assembler, is a sequence of instructions.\nThe program is loaded into main memory so that the next instruction is in the next memory address:"
+    "objectID": "CSC4001-S10-OS.html#pre-emptive-scheduling-1",
+    "href": "CSC4001-S10-OS.html#pre-emptive-scheduling-1",
+    "title": "Operating Systems",
+    "section": "Pre-emptive scheduling",
+    "text": "Pre-emptive scheduling\n\nLess frequently:\n\nprograms appear slow, do not respond to user interactions,\ncompute intensive programs run bets, having more CPU time and less context switching,\nless time spent running the monitor."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#the-cpu-2",
-    "href": "CSC4001-S04-CPU.html#the-cpu-2",
-    "title": "The CPU",
-    "section": "The CPU",
-    "text": "The CPU\nthe program counter (PC) points to the memory location of the current instruction."
+    "objectID": "CSC4001-S10-OS.html#thrashing",
+    "href": "CSC4001-S10-OS.html#thrashing",
+    "title": "Operating Systems",
+    "section": "Thrashing",
+    "text": "Thrashing\n\nWhen a computer spends all its time running the Monitor and deciding what to do.\nThis was a common problem in early operating systems."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#the-cpu-3",
-    "href": "CSC4001-S04-CPU.html#the-cpu-3",
-    "title": "The CPU",
-    "section": "The CPU",
-    "text": "The CPU\n\nThe current instruction itself is stored in the instruction register (IR)."
+    "objectID": "CSC4001-S10-OS.html#potential-solution",
+    "href": "CSC4001-S10-OS.html#potential-solution",
+    "title": "Operating Systems",
+    "section": "Potential solution",
+    "text": "Potential solution\n\nUse unequal time slices:\n\nlarger and less frequent slices given to compute-intensive programs.\nsmaller and more frequent slices given to interactive programs."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#the-cpu-4",
-    "href": "CSC4001-S04-CPU.html#the-cpu-4",
-    "title": "The CPU",
-    "section": "The CPU",
-    "text": "The CPU\n\nThe control unit decodes the instruction and tells the arithmetic logic unit (ALU) which operations to perform."
+    "objectID": "CSC4001-S10-OS.html#resource-protection",
+    "href": "CSC4001-S10-OS.html#resource-protection",
+    "title": "Operating Systems",
+    "section": "Resource protection",
+    "text": "Resource protection\n\nEarly programs had the same rights:\neveryone had equal access to all hardware.\nProtection was needed,\nthis required hardware support.\nCPU instructions were divided into two or more levels:\n\nUnprivileged: “safe” instructions which all programs could run,\nPrivileged: e.g., access to peripherals, scheduling a process.\n\nOnly the Monitor could run in privileged mode."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#the-cpu-5",
-    "href": "CSC4001-S04-CPU.html#the-cpu-5",
-    "title": "The CPU",
-    "section": "The CPU",
-    "text": "The CPU\n\nThe CPU has a small number of registers (R1, R2, and R3 on the picture) to store intermediate values.\nThere is also a small amount of very fast memory, the cache, located either on or very near the CPU."
+    "objectID": "CSC4001-S10-OS.html#user-land-programs-in-privileged-mode",
+    "href": "CSC4001-S10-OS.html#user-land-programs-in-privileged-mode",
+    "title": "Operating Systems",
+    "section": "User-land programs in privileged mode",
+    "text": "User-land programs in privileged mode\n\nIf a user-land application tries to run a privileged operation,\n\nCPU jumps to the Monitor,\nmonitor decides what to do,\nperhaps allow the instruction, or kill the process if it is not allowed.\n\nA user-land program may “politely ask” to perform a privileged operation,\nby raising a system call (syscall)."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#the-fetch-decode-execute-store-cycle",
-    "href": "CSC4001-S04-CPU.html#the-fetch-decode-execute-store-cycle",
-    "title": "The CPU",
-    "section": "The Fetch, decode, execute store Cycle",
-    "text": "The Fetch, decode, execute store Cycle\nA CPU goes through four stages to run an instruction:"
+    "objectID": "CSC4001-S10-OS.html#memory-protection",
+    "href": "CSC4001-S10-OS.html#memory-protection",
+    "title": "Operating Systems",
+    "section": "Memory protection",
+    "text": "Memory protection\n\nAll programs had equal access to memory.\none program could overwrite another program or its data,\nor overwrite prat of the Monitor.\nProtection was needed,\nand this also required hardware support.\nThe Memory Management Unit (MMU) was responsible for this."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#fetch",
-    "href": "CSC4001-S04-CPU.html#fetch",
-    "title": "The CPU",
-    "section": "Fetch",
-    "text": "Fetch\n\n\n\nFirst stage of the cycle.\nProgram counter points to the memory address of the next instruction.\nRetrieve the next instruction from memory and store it in the instruction register.\nIncrement the program counter to point to the next instruction."
+    "objectID": "CSC4001-S10-OS.html#the-memory-management-unit",
+    "href": "CSC4001-S10-OS.html#the-memory-management-unit",
+    "title": "Operating Systems",
+    "section": "The Memory Management Unit",
+    "text": "The Memory Management Unit\n\nMemory divided into “pages”, typically 4096 bytes, but often larger, e.g., 4MB.\nFor each program, MMU stores a table of pages,\nfor each address, the MMU has a flag indicating whether the program can\n\nread,\nwrite,\nor execute (run as code)\n\nthat page."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#decode",
-    "href": "CSC4001-S04-CPU.html#decode",
-    "title": "The CPU",
-    "section": "Decode",
-    "text": "Decode\n\n\n\nThe control unit reads the current instruction in the instruction register.\nThe control unit determines which operation(s) to perform.\nIf the instruction has operands the control unit initiates additional fetches to retrieve these from memory.\n\n\n\n\n\n\n\n\n\n\n\nThe CPU is now ready to execute the instruction."
+    "objectID": "CSC4001-S10-OS.html#the-memory-management-unit-1",
+    "href": "CSC4001-S10-OS.html#the-memory-management-unit-1",
+    "title": "Operating Systems",
+    "section": "The Memory Management Unit",
+    "text": "The Memory Management Unit\n\nIt is useful to separate reading, writing and executing.\n\nPrevents one program overwriting another program or its data,\nPrevents user data being treated as code (security risk),"
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#execute",
-    "href": "CSC4001-S04-CPU.html#execute",
-    "title": "The CPU",
-    "section": "Execute",
-    "text": "Execute\n\n\n\nThe stage at which operations are performed.\nThe ALU performs the decoded operation with its operands.\nIn more advanced CPUs may have special-purpose hardware, e.g., a floating point unit.\nInstruction may load data from memory into a register.\nMay perform a jump (e.g., conditional or loop) – program counter is set to point to a different instruction.\n\n\n\n\n\n\n\n\n\n\n\nAny return value is stored in a register. Ready for the next stage…"
+    "objectID": "CSC4001-S10-OS.html#fast-and-transparent",
+    "href": "CSC4001-S10-OS.html#fast-and-transparent",
+    "title": "Operating Systems",
+    "section": "Fast and transparent",
+    "text": "Fast and transparent\n\nEach access to memory must be checked by the MMU,\nIf a program attempts to access memory out of bounds, an interrupt is sent to the OS,\nwhich typically kills the process (through raising a segmentation fault SIGSEGV).\nthis is yet another overhead. MMU must be very fast and operate transparently."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#interrupt",
-    "href": "CSC4001-S04-CPU.html#interrupt",
-    "title": "The CPU",
-    "section": "Interrupt",
-    "text": "Interrupt\n\nOccasionally, the CPU receives an interrupt signal.\nThe CPU immediately stops executing the current instruction and jumps to an interrupt service routine.\nThe interrupt service routine is just another set of instructions stored in memory.\nThe CPU executes these instructions as usual, then jumps back to the instruction it was previously working on.\nIf the instruction was interrupted halfway through, then the CPU must restart it from the beginning."
+    "objectID": "CSC4001-S10-OS.html#late-60s-to-mid-90s",
+    "href": "CSC4001-S10-OS.html#late-60s-to-mid-90s",
+    "title": "Operating Systems",
+    "section": "Late 60s to mid 90s",
+    "text": "Late 60s to mid 90s\n\nPre-emptive scheduling and resource protection began to appear in mainframes in the late 1960s.\nDOS (Disk OS), an early “home” OS was a single program OS with no pre-emption or memory protection due to lack of hardware support.\nWindows 3.1 also had no pre-emption or memory protection.\nHardware support was quickly added,\nby the mid 80s, Unix-derived OSs added pre-emption and memory protection."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#the-little-man-computer",
-    "href": "CSC4001-S04-CPU.html#the-little-man-computer",
-    "title": "The CPU",
-    "section": "The Little man Computer",
-    "text": "The Little man Computer\n\n\n\nSimple model of a Von Neumann architecture computer.\nImagine a “Little Man” trapped inside a locked mail room.\nThe mail room has 100 mailboxes labelled 00-99, each of which can hold a 3 decimal digit instruction or data.\n\n\n\n\n\n\n\n\n\n\n\n\nInput is received via an inbox and output returned via an outbox.\nThere is a work area with a simple addition and subtraction, the accumulator.\nThere is a program counter which tells the Little Man from which address to fetch the next instruction."
+    "objectID": "CSC4001-S10-OS.html#summary-what-have-early-computers-taught-us",
+    "href": "CSC4001-S10-OS.html#summary-what-have-early-computers-taught-us",
+    "title": "Operating Systems",
+    "section": "Summary: what have early computers taught us?",
+    "text": "Summary: what have early computers taught us?\n\nResources need managing,\nsince they are limited, we want to get best performance otu of hardware and best user experience.\nResources also need protection\nfrom out or malicious programs, e.g., limiting access to memory, but also files and network.\nProgrammers need a convenient interface,\nto best interact with hardware, avoid repeating code, and produce fewer errors."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#how-it-works",
-    "href": "CSC4001-S04-CPU.html#how-it-works",
-    "title": "The CPU",
-    "section": "How it works",
-    "text": "How it works\n\nThe Little Man checks the program counter and retrieves the instruction at the specified address.\nThe program counter is incremented so that it points to the address (mailbox) containing the next instruction.\nLittle Man decodes the instruction.\n\n\nOp-code: number from 000-999 which tells the Little Man what operation to perform.\nIf data is required, its mailbox address is included in the instruction.\n\n\nIf required, data is fetched from the mailbox referred in the instruction.\nExecute the instruction.\nBranch (change the value in the program counter) or store the result of the instruction.\nRepeat or halt."
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CSC4001: Systems and Architecture",
+    "section": "",
+    "text": "Index\n\nS00: \nS01: \nCSC4001-S02W-Logic.qmd: \nS02: \nS03: \nS04: \nCSC4001-S05W-GoingUp.qmd: \nS05: \nCSC4001-S06W-riscv.qmd: \nS06: \nS08: \nS10: \nS11: \nS13:"
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#instructions",
-    "href": "CSC4001-S04-CPU.html#instructions",
-    "title": "The CPU",
-    "section": "Instructions",
-    "text": "Instructions\n\n\n\n\n\n\n\n\n\n\nName\nCode\nDescription\n\n\n\n\nADD\n\\(1XX\\)\nAdd value in mailbox \\(XX\\) to the value in the accumulator.\n\n\nSUB\n\\(2XX\\)\nSubtract value in mailbox \\(XX\\) fro the value in the accumulator.\n\n\nSTA\n\\(3XX\\)\nStore value in accumulator in mailbox \\(XX\\)\n\n\nLDA\n\\(5XX\\)\nLoad value in mailbox \\(XX\\) into the accumulator\n\n\nBRA\n\\(6XX\\)\nUnconditionally go to instruction in mailbox \\(XX\\)\n\n\n\n\n\n\n\n\n\n\n\n\nName\nCode\nDescription\n\n\n\n\nBRZ\n\\(7XX\\)\nConditionally go to instruction in mailbox \\(XX\\) if the accumulator is \\(0\\)\n\n\nBRP\n\\(8XX\\)\nConditionally go to instruction in mailbox \\(XX\\) if the accumulator is \\(&gt; 0\\)\n\n\nINP\n\\(901\\)\nRead input from the inbox, store it in the accumulator.\n\n\nOUT\n\\(902\\)\nWrite output from the accumulator to the outbox.\n\n\nHLT\n\\(000\\)\nHalt – stop the program."
+    "objectID": "CSC4001-S02W-Logic.html",
+    "href": "CSC4001-S02W-Logic.html",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "",
+    "text": "Adapted from https://cccu-uk.github.io/U10793_FCC_Labs/Logic_Gates/Logic_Gates.html"
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#assembler",
-    "href": "CSC4001-S04-CPU.html#assembler",
-    "title": "The CPU",
-    "section": "Assembler",
-    "text": "Assembler\n\n\n\nMnemonics (3-letter codes) are often used, e.g., ADD,\nInstead of the 3-digit op-code, e.g., \\(1XX\\), since they are easier for the programmer to remember.\nA program is a sequence of instructions, which are executed in order – imperative programming.\nLabels (similar to variables) are used instead of memory address numbers.\n\n\nAdd two numbers\nINP # store value from inbox in accumulator\nSTA FIRST # store accumulator value in FIRST mailbox\nINP\nSTA SECOND\nLDA FIRST # load first number into accumulator\nADD SECOND # ADD SECOND value to accumulator\nOUT # output the value of accumulator\nFIRST DAT # reserves a data mailbox\nSECOND DAT\n\nDAT reserves a labelled mailbox for data."
+    "objectID": "CSC4001-S02W-Logic.html#universal-logic-circuits",
+    "href": "CSC4001-S02W-Logic.html#universal-logic-circuits",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Universal Logic Circuits",
+    "text": "Universal Logic Circuits\nWe can build any of the fundamental logic gates by chaining only nand or only nor gates together.\nQuestion 1 Create the circuit as shown below.\n\n\n\n\n\nDraw its truth table. Which logic gate does it represent?\nQuestion 2 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 3 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 4 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 5 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 6 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#labels-constants-and-jumps",
-    "href": "CSC4001-S04-CPU.html#labels-constants-and-jumps",
-    "title": "The CPU",
-    "section": "Labels, constants and jumps",
-    "text": "Labels, constants and jumps\n\n\n\nLabels are used to refer to mailbox locations.\nSince instructions are stored in mailboxes, they can be labelled, too.\nE.g., loop OUT labels the location of the OUT instruction as loop.\nBranches need the memory address of the instruction to go to – we can use labels.\nE.g., BNP loop goes to loop as long as the accumulator value is positive.\nA labelled mailbox can be initialised to a constant.\nE.g., one DAT 1 initialises the mailbox labelled one to \\(1\\).\n\n\n     INP\nloop OUT\n     SUB one\n     STA count\n     BRP loop\n     HLT\n1\none DAT 1\ncount DAT"
+    "objectID": "CSC4001-S02W-Logic.html#sr-latch-with-only-nand-gates",
+    "href": "CSC4001-S02W-Logic.html#sr-latch-with-only-nand-gates",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "SR Latch with only NAND gates",
+    "text": "SR Latch with only NAND gates\nQuestion 1 Rebuild the below SR latch with only NAND gates.\n\n\n\n\n\n\n\n\n\nQuestion 2 Rebuild the below gated SR latch with only NAND gates."
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#exercise-little-man-programming",
-    "href": "CSC4001-S04-CPU.html#exercise-little-man-programming",
-    "title": "The CPU",
-    "section": "Exercise: little man programming",
-    "text": "Exercise: little man programming\n\nGo to https://www.101computing.net/LMC/\nPlay with the simulator, try some of the example programs.\nCode the following programs:\n\nDifference: User inputs two numbers, \\(A\\) and \\(B\\). Program calculates their difference, \\(A - B\\).\nCount up: User inputs a number, \\(N\\), program should count up from \\(0\\) to \\(N\\).\nMultiplication: There is no multiplication instruction, but \\(A \\cdot B = \\underbrace{A \\cdot A \\cdots A}_{B \\text{ times}}\\). Implement multiplication.\n\nYou may want to plan your code on paper, like the EDSAC programmers."
+    "objectID": "CSC4001-S02W-Logic.html#the-clock",
+    "href": "CSC4001-S02W-Logic.html#the-clock",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "The Clock",
+    "text": "The Clock\nUse the clock to generate signals.\nCreate the circuit as shown below:\n\n\n\n\n\nConnecting the clock as input and adding the data graph.\n\nExperiment with different Clock Input Frequencies, what observations can you make? Discuss with the a peer or with the tutor.\nReplace the or gate with a different gate, change the frequency.\nDoes the data graph show a pattern?"
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#instruction-set-architectures-1",
-    "href": "CSC4001-S04-CPU.html#instruction-set-architectures-1",
-    "title": "The CPU",
-    "section": "Instruction set architectures",
-    "text": "Instruction set architectures\n\nEach processor architecture has its own instruction set:\nA set of op-codes which the control unit interprets as instructions.\nThere are two main types of instruction set architecture\n\nRISC: reduced instruction set computer, and\nCISC: complex instruction set computer."
+    "objectID": "CSC4001-S02W-Logic.html#half-adder",
+    "href": "CSC4001-S02W-Logic.html#half-adder",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Half Adder",
+    "text": "Half Adder\nRecreate the half adder circuit as shown below. \nUse the simulator to complete the truth table\n\n\n\nA\nB\nS\nCout\n\n\n\n\n1\n1\n\n\n\n\n1\n0\n\n\n\n\n0\n1\n\n\n\n\n0\n0"
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#history",
-    "href": "CSC4001-S04-CPU.html#history",
-    "title": "The CPU",
-    "section": "History",
-    "text": "History\n\nUp to the early 80’s, more instructions were being added to processors.\nDesigners wanted to mimic high-level programming languages.\nOne CPU instruction should be one line of source code.\nOffload more work onto the hardware.\nProduce shorter programs (fewer total instructions) to conserve memory."
+    "objectID": "CSC4001-S02W-Logic.html#full-adder",
+    "href": "CSC4001-S02W-Logic.html#full-adder",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Full adder",
+    "text": "Full adder\nNow produce a full adder, simulate and complete the truth table.\n\n\n\nA\nB\nCin\nS\nCout\n\n\n\n\n1\n1\n1\n\n\n\n\n1\n1\n0\n\n\n\n\n1\n0\n1\n\n\n\n\n1\n0\n0\n\n\n\n\n1\n1\n1\n\n\n\n\n0\n1\n0\n\n\n\n\n0\n0\n1\n\n\n\n\n0\n0\n0"
   },
   {
-    "objectID": "CSC4001-S04-CPU.html#history-1",
-    "href": "CSC4001-S04-CPU.html#history-1",
-    "title": "The CPU",
-    "section": "History",
-    "text": "History\n\nIn the early 80’s, the idea of creating a smaller and simple set of instructions was proposed.\nAim was to make designing and building a CPU easier, cheaper and, therefore, faster.\nTerm RISC coined by David Patterson, a researcher at UC Berkeley."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#risc-reduced-instruction-set-computer",
-    "href": "CSC4001-S04-CPU.html#risc-reduced-instruction-set-computer",
-    "title": "The CPU",
-    "section": "RISC: reduced instruction set computer",
-    "text": "RISC: reduced instruction set computer\nSmall, simple set of instructions, e.g., as found in the Little Man computer.\n\nProcessor can execute exactly one instruction per cycle.\nInstructions are a fixed length (fixed number of bits).\nCan only manipulate values stored in CPU registers.\nRISC chips are simple to design and cheap to build.\nUsed in ARM-based chips, found in microcontrollers (Arduino, Raspberry Pi) and smartphones.\nAlso used in IBM Power processors (used in mainframes and servers)."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#cisc-complex-instruction-set-computing",
-    "href": "CSC4001-S04-CPU.html#cisc-complex-instruction-set-computing",
-    "title": "The CPU",
-    "section": "CISC: complex instruction set computing",
-    "text": "CISC: complex instruction set computing\nLarge number of instructions, some performing more complicated operations – intended to correspond to statements in a high-level programming language.\n\nVariable-length instructions.\nMay take multiple clock cycles to execute an instruction.\nAble to manipulate values directly in main memory.\nCISC chips are complex, with special-purpose hardware, and are more expensive to build.\nFound in most PCs – the x86 architecture."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#simple-example-risc-vs-cisc",
-    "href": "CSC4001-S04-CPU.html#simple-example-risc-vs-cisc",
-    "title": "The CPU",
-    "section": "Simple example: RISC vs CISC",
-    "text": "Simple example: RISC vs CISC\nSuppose we want to increment a value stored in main memory."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#cisc-architecture",
-    "href": "CSC4001-S04-CPU.html#cisc-architecture",
-    "title": "The CPU",
-    "section": "CISC architecture",
-    "text": "CISC architecture\n\nA single instruction:\nADD mem one\n\nRetrieves the value from memory,\nAdds one to it,\nWrites back to memory.\n\n\nCISC architecture\n\nThree separate instructions:\nLDA mem\nADD one\nSTA mem"
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#second-generation-of-computers",
-    "href": "CSC4001-S04-CPU.html#second-generation-of-computers",
-    "title": "The CPU",
-    "section": "Second-generation of computers",
-    "text": "Second-generation of computers\n\nRecall that early computers, e.g., EDSAC, used vacuum tubes (thermionic valves).\nThese were bulky, unreliable, generated lots of heat and required lots of energy to run.\nIn the late 1950s, computers began to use electronic circuit boards made out of transistors instead.\nThese computers were popular until the late 1960s."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#first-transistor-computer",
-    "href": "CSC4001-S04-CPU.html#first-transistor-computer",
-    "title": "The CPU",
-    "section": "First transistor computer",
-    "text": "First transistor computer\n\n\n\nDeveloped at the University of Manchester\nWorking prototype in November 1953,\nhad 92 transistors and 950 diodes.\nFull-size version was operational in 1955\nhad 200 transistors, 1300 diodes and consumed 150W of power.\nEarly transistors were unreliable. Average error-free runtime was 1.5 hours.\nNot fully transistorised as it still used vacuum tubes in its clock.\n\n\n\n\n\n\n\n\n\n\n\n\nTRADIC transistor computer, developed at Bell Labs, released January 1954.\nUsed a single high-power output vacuum tube amplifier to obtain a 1MHz clock speed."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#fully-transistorised-computer",
-    "href": "CSC4001-S04-CPU.html#fully-transistorised-computer",
-    "title": "The CPU",
-    "section": "Fully transistorised computer",
-    "text": "Fully transistorised computer\n\nHarwell Cadet, 1955. 58KHz clock speed.\nPrototype IBM 604 Transistor calculator.\nIBM 608, released April 1955 is considered to be the first commercial fully solid-state transistor computer."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#third-generation-computers",
-    "href": "CSC4001-S04-CPU.html#third-generation-computers",
-    "title": "The CPU",
-    "section": "Third generation computers",
-    "text": "Third generation computers\n\nWidely used from the mid 60s to early 70s.\nUsed integrated circuits (ICs)\nAn IC is a single chip containing all transistors, resistors, capacitors, diodes and connections needed to operate.\nInvented by Jack Kilby in 1958, an electrical engineer working at Texas Instruments.\nAwarded the Nobel Prize in Physics in 2000.\nFaster and more reliable than second generation.\nReduced computing time from micro seconds to nano seconds.\nComputers were becoming more compact, affordable and easy to use with high-level programming languages and mouse and keyboard instead of punched cards."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#moores-law-1",
-    "href": "CSC4001-S04-CPU.html#moores-law-1",
-    "title": "The CPU",
-    "section": "Moore’s “Law”",
-    "text": "Moore’s “Law”\n\nPrediction made by Gordon Moore, co-founder of Intel, in 1965:\n“Number of transistors per chip doubles every two years.”\n\n\nNote that it’s not a “law” as in “law of physics”. More of a prediction which has remained (mostly) true."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#moores-law-graph",
-    "href": "CSC4001-S04-CPU.html#moores-law-graph",
-    "title": "The CPU",
-    "section": "Moore’s Law Graph",
-    "text": "Moore’s Law Graph"
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#dennard-scaling",
-    "href": "CSC4001-S04-CPU.html#dennard-scaling",
-    "title": "The CPU",
-    "section": "Dennard scaling",
-    "text": "Dennard scaling\n\nStated in a 1974 paper co-authored by Robert H. Dennard:\n“As transistors get smaller, their power density stays constant – power use stays in proportion with area.”\nIf a transistor is 30% smaller, then its power consumption is 30% less.\nAn IC of fixed size with twice the number of transistors consumes the same power.\nAllowed manufacturers to significantly increase clock speed without increase power consumption."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#dennard-scaling-1",
-    "href": "CSC4001-S04-CPU.html#dennard-scaling-1",
-    "title": "The CPU",
-    "section": "Dennard scaling",
-    "text": "Dennard scaling\n\n\n\nAppears to have broken down since 2006.\nSince 2016 the number of transistors per chip is still growing, but more slowly.\nAs transistors get smaller, current leakage and heat production is more problematic.\n\n\n\n\n\n\n\n\n\n\n\n\nWe see clock speed plateau – as clack speed increases it becomes more difficult to cool the chip.\nThis is called the power wall."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#exercise-moores-law",
-    "href": "CSC4001-S04-CPU.html#exercise-moores-law",
-    "title": "The CPU",
-    "section": "Exercise: Moore’s law",
-    "text": "Exercise: Moore’s law\nDiscuss:\n\nIs Moore’s law still true today?\n\n\n\nThere have been many predictions of the death of Moore’s law.\nWe are no longer able to double the number of transistors per chip.\nTransistors are still getting smaller and more tightly packed, but progress is becoming slower."
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#risc-v-1",
-    "href": "CSC4001-S04-CPU.html#risc-v-1",
-    "title": "The CPU",
-    "section": "RISC V",
-    "text": "RISC V\n\nOpen source instruction set architecture, open standard for processor design.\nReduced Instruction Set Architecture version 5\nLoad — store architecture, using IEEE 754 for floating point.\n32 and 64 bit address spaces, wip 128 bit"
-  },
-  {
-    "objectID": "CSC4001-S04-CPU.html#exercise-risc-v-assembler",
-    "href": "CSC4001-S04-CPU.html#exercise-risc-v-assembler",
-    "title": "The CPU",
-    "section": "Exercise: RISC-V Assembler",
-    "text": "Exercise: RISC-V Assembler\n\nWork through the challenges at\nhttps://studyriscv.com/problems/\n\nUse studyriscv.com/simulator, although this requires login,\ninstall riscvsim on your own PC,\ntry an online simulator, e.g., https://riscv-simulator-five.vercel.app/\n\nResources to get started:\n\nCheat sheet https://projectf.io/posts/riscv-cheat-sheet/\nStudy RISC-V installation https://studyriscv.com/docs/#instruction-blt\nRISC-V is an open standard. There is a plethora of resources out theer. Do some research!"
+    "objectID": "CSC4001-S02W-Logic.html#binary-decoder",
+    "href": "CSC4001-S02W-Logic.html#binary-decoder",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Binary Decoder",
+    "text": "Binary Decoder\nResearch and implement a 2-bit binary decoder.\nA binary decoder takes \\(n\\) bits as input and can output one of \\(2^n\\) possible options, depending on the value of the input. For example, in a 2-bit decoder, there are four possible outputs, each corresponding to one of the possible assignments of bits:\n\n\\(00\\)\n\\(01\\)\n\\(10\\)\n\\(11\\)"
   },
   {
     "objectID": "CSC4001-S06-CPU2.html#learning-outcomes",
@@ -1608,6 +1678,69 @@
     "title": "Pipelines, Out Of Order Execution, and Parallelism",
     "section": "Table of instructions",
     "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\n25\nDone\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\n81\nDone\n\n\n5\nADD\n25\n81\n106\nDone\n\n\n6\nSQRT\n106\n–\nD\nReady\n\n\n\nD = sqrt(105)."
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#risc-v",
+    "href": "CSC4001-S06-CPU2.html#risc-v",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Risc-V",
+    "text": "Risc-V\n\nOpen source instruction set architecture, open standard for processor design.\nReduced Instruction Set Architecture version 5\nIt its simplest form, it has a very minimal set of instructions, but there are extensions.\nLoad — store architecture, using IEEE 754 for floating point.\n32 and 64 bit address spaces, wip 128 bit"
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#registers",
+    "href": "CSC4001-S06-CPU2.html#registers",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Registers",
+    "text": "Registers\n\nCPU’s “working memory”, to store intermediate values.\n\\(32\\) registers.\n\nx0 to x31\nx0 is a special register which always stores \\(0\\), writing doesn’t change its value.\n\n\naddi x10, x0, 100\n\ni means immediate (for small numbers) also sub no mul or div. simplest form is very minimal, but extensions exist"
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#arithmetic",
+    "href": "CSC4001-S06-CPU2.html#arithmetic",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Arithmetic",
+    "text": "Arithmetic\n# Simple arithmetic\n# at the end of the program, what value is stored in each register\naddi x10, x0, 0x123\naddi x11, x0, 0x555\n\naddi x12, x10, 0x765\nadd x13, x10, x11\nsub x14, x11, x10\n\naddi x10, x10, 1\naddi x10, x10, 1\naddi x10, x10, -1\naddi x10, x10, -1\n\nebreak"
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#pseudo-instructions",
+    "href": "CSC4001-S06-CPU2.html#pseudo-instructions",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Pseudo-instructions",
+    "text": "Pseudo-instructions\n\nSimilar to the C++ preprocessor directives (think find / replace)\nShorthand for common instructions\n\nli x10, 100 # load immediate: store 100 in x10\nmv x11, x12 # copy value from x12 and store in x11\n# what do they expand to, using add / addi ?"
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#what-does-this-code-output",
+    "href": "CSC4001-S06-CPU2.html#what-does-this-code-output",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "What does this code output?",
+    "text": "What does this code output?\nli x10, 0x123\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x10, x10, x10\nadd x1\n0, x10, x10\nebreak\n\ndoubled 23 times note the 0x means hex"
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#less-than-and-less-than-or-equal-to",
+    "href": "CSC4001-S06-CPU2.html#less-than-and-less-than-or-equal-to",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Less than and less than or equal to",
+    "text": "Less than and less than or equal to\nli x10, 0x3\nli x11, 0x5\n\nslt x12, x10, x11   # x10 &lt; x11\nslt x13, x11, x10   # x10 &gt; x11\n\nxori x14, x12, 1    # not ( x10 &lt; x11 )\nxori x15, x13, 1    # what is this comparison?"
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#equality",
+    "href": "CSC4001-S06-CPU2.html#equality",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Equality",
+    "text": "Equality\n# sltu performs unsigned comparison\nsltu x11, x0, x10   # 0 &lt;u x10  i.e.  x10 != 0\nsltiu x12, x10, 1   # what comparison operator does this implement?\n\n# we have done == 0 and != 0, how do we do x == y and x != y?"
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#branches",
+    "href": "CSC4001-S06-CPU2.html#branches",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Branches",
+    "text": "Branches\n    li x10, 100\n    li x11, 0\n\nloop: # this is a label, \n    add x11, x11, x10\n    addi x10, x10, -1\n    blt x0, x10, loop # branch less than\n    # blt 0, x10, label # if 0 &lt; x10 go to the instruction pointed to by label\n    ebreak\n\n# what does this code"
+  },
+  {
+    "objectID": "CSC4001-S06-CPU2.html#putting-it-all-together",
+    "href": "CSC4001-S06-CPU2.html#putting-it-all-together",
+    "title": "Pipelines, Out Of Order Execution, and Parallelism",
+    "section": "Putting it all together",
+    "text": "Putting it all together\n\nWhat does the code on the previous slide do?\nStep through the code, examining the values stored in registers.\nModify the code to implement multiplication.\nFinally, using the ideas of labels, branching and addition, implement integer division."
   },
   {
     "objectID": "CSC4001-S03-VonNeumann.html#learning-outcomes",

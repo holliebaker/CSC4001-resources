@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="">
 
-<title>CSC4001: Systems and Architecture – CSC4001-resources</title>
+<title>RISC-V, Let’s Assemble – CSC4001-resources</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -73,6 +74,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -89,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CSC4001: Systems and Architecture</h1>
+<h1 class="title">RISC-V, Let’s Assemble</h1>
 </div>
 
 
@@ -106,23 +136,133 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="index" class="level1">
-<h1>Index</h1>
+<p>RISC-V is an open-source CPU hardware instruction set architecture. As the name suggests, it is a Reduced Instruction Set Computing architecture. In this tutorial, we’ll study a very minimal instruction set — it doesn’t even have multiplication! In real life, RISC-V extensions to implement, in software, more complex operations, are used.</p>
+<section id="getting-set-up" class="level2">
+<h2 class="anchored" data-anchor-id="getting-set-up">Getting set up</h2>
+<p>Try an online simulator, e.g., <a href="https://riscv-simulator-five.vercel.app/">https://riscv-simulator-five.vercel.app/</a></p>
+<p>Alternatively, install <em>riscvsim</em> on your own PC: <a href="https://studyriscv.com/docs/">https://studyriscv.com/docs/</a></p>
+</section>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<p>CPU instructions are just numbers. In assembler we represent them by nmemonics: (more) human friendly keywords.</p>
+<p><code>ebreak</code> is an instruction that ends the program. It has no operands, i.e., it doesn’t need any input or output values.</p>
+<p>The following instruction</p>
+<pre><code>addi x10, x0, 100</code></pre>
+<p>Adds the value in register <code>x0</code> to the constant <code>100</code> stores the result in <code>x10</code>. <code>addi</code> stands for “add immediate”.</p>
+</section>
+<section id="registers" class="level2">
+<h2 class="anchored" data-anchor-id="registers">Registers</h2>
+<p>Registers are the CPU’s “working memory”, to store intermediate values. In RISC-V, we have <span class="math inline">\(32\)</span> registers: <code>x0</code> to <code>x31</code>. <code>x0</code> is a special register which always store <span class="math inline">\(0\)</span>, writing doesn’t change its value.</p>
+<pre><code>addi x10, x0, 100 # x10 holds 100
+addi x11, x0, 20
+add x10, x10, x11 # adds the contents of x10 and x11, stores the result in x10</code></pre>
+</section>
+<section id="example-arithmetic" class="level2">
+<h2 class="anchored" data-anchor-id="example-arithmetic">Example: arithmetic</h2>
+<pre><code>addi x10, x0, 0x123
+addi x11, x0, 0x555
+
+addi x12, x10, 0x765
+add x13, x10, x11
+sub x14, x11, x10
+
+addi x10, x10, 1
+addi x10, x10, 1
+addi x10, x10, -1
+addi x10, x10, -1
+
+ebreak</code></pre>
+<p>Note: <code>0x123</code> means <code>123</code> in hexadecimal (base 16), i.e., 291.</p>
+<ol type="1">
+<li><strong>Read through the code. What values are stored in <code>x10</code> and <code>x11</code>?</strong></li>
+<li><strong>Step through the code in the interpreter. Were your predictions correct?</strong></li>
+</ol>
+<section id="pseudo-instructions" class="level3">
+<h3 class="anchored" data-anchor-id="pseudo-instructions">Pseudo-instructions</h3>
+<p>Shorthand, similar to the C++ pre-processor directives.</p>
+<pre><code>li x10, 100 # load immediate: store 100 in x10
+addi x10, x0, 100</code></pre>
+<pre><code>mv x11, x12 # copy value from x12 and store in x11
+addi x11, x0, 0 # clear the register first
+add x11, x0, x12 # add the value stored in x12 to 0</code></pre>
+</section>
+</section>
+<section id="example-doubling" class="level2">
+<h2 class="anchored" data-anchor-id="example-doubling">Example: doubling</h2>
+<pre><code>li x10, 0x123
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x1
+0, x10, x10
+ebreak</code></pre>
+</section>
+<section id="comparison-operators" class="level2">
+<h2 class="anchored" data-anchor-id="comparison-operators">Comparison operators</h2>
+<pre><code>li x10, 0x3
+li x11, 0x5
+
+slt x12, x10, x11   # x10 &lt; x11
+slt x13, x11, x10   # x10 &gt; x11
+
+xori x14, x12, 1    # not ( x10 &lt; x11 )
+xori x15, x13, 1    # what is this comparison?
+
+# sltu performs unsigned comparison
+sltu x11, x0, x10   # 0 &lt;u x10  i.e.  x10 != 0
+sltiu x12, x10, 1   # what comparison operator does this implement?
+
+# we have done == 0 and != 0, how do we do x == y and x != y?</code></pre>
+</section>
+<section id="branches" class="level2">
+<h2 class="anchored" data-anchor-id="branches">Branches</h2>
+<p>This is how we can implement loops and conditional statements.</p>
+<pre><code>    li x10, 100
+    li x11, 0
+
+loop: # this is a label, 
+    add x11, x11, x10
+    addi x10, x10, -1
+    blt x0, x10, loop # branch less than
+    # blt 0, x10, label # if 0 &lt; x10 go to the instruction pointed to by label
+    ebreak
+
+# what does this code do?</code></pre>
+<ol type="1">
+<li><strong>What does the above code do? What value is stored in <code>x10</code> and <code>x11</code> at the end?</strong></li>
+<li><strong>Step through the code, examining the values stored in registers.</strong></li>
+<li><strong>Modify the code to implement multiplication.</strong></li>
+<li><strong>Finally, using the ideas of labels, branching and addition, implement integer division.</strong></li>
+</ol>
+</section>
+<section id="keep-going" class="level2">
+<h2 class="anchored" data-anchor-id="keep-going">Keep going!</h2>
+<p>Work through the challenges at <a href="https://studyriscv.com/problems/">https://studyriscv.com/problems/</a></p>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
 <ul>
-<li>S00: <a href="./CSC4001-S00-welcome.html"></a></li>
-<li>S01: <a href="./CSC4001-S01-Logic.html"></a></li>
-<li>CSC4001-S02W-Logic.qmd: <a href="./CSC4001-S02W-Logic.html"></a></li>
-<li>S02: <a href="./CSC4001-S02-Logic.html"></a></li>
-<li>S03: <a href="./CSC4001-S03-VonNeumann.html"></a></li>
-<li>S04: <a href="./CSC4001-S04-CPU.html"></a></li>
-<li>CSC4001-S05W-GoingUp.qmd: <a href="./CSC4001-S05W-GoingUp.html"></a></li>
-<li>S05: <a href="./CSC4001-S05-GoingUp.html"></a></li>
-<li>CSC4001-S06W-riscv.qmd: <a href="./CSC4001-S06W-riscv.html"></a></li>
-<li>S06: <a href="./CSC4001-S06-CPU2.html"></a></li>
-<li>S08: <a href="./CSC4001-S08-Memory.html"></a></li>
-<li>S10: <a href="./CSC4001-S10-OS.html"></a></li>
-<li>S11: <a href="./CSC4001-S11-Processes.html"></a></li>
-<li>S13: <a href="./CSC4001-S13-Scheduling.html"></a></li>
+<li><a href="https://projectf.io/posts/riscv-cheat-sheet/">https://projectf.io/posts/riscv-cheat-sheet/</a></li>
+<li><a href="https://easyriscv.dram.page/">https://easyriscv.dram.page/</a> this was heavily based on that tutorial.</li>
 </ul>
 
 
