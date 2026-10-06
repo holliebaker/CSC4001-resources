@@ -1,0 +1,156 @@
+---
+title: "RISC-V, Let's Assemble"
+author: ""
+date: ""
+---
+
+RISC-V is an open-source CPU hardware instruction set architecture. As the name suggests, it is a Reduced Instruction Set Computing architecture. In this tutorial, we'll study a very minimal instruction set --- it doesn't even have multiplication! In real life, RISC-V extensions to implement, in software, more complex operations, are used. 
+
+## Getting set up
+
+Try an online simulator, e.g., [https://riscv-simulator-five.vercel.app/](https://riscv-simulator-five.vercel.app/)
+
+Alternatively, install *riscvsim* on your own PC: [https://studyriscv.com/docs/](https://studyriscv.com/docs/)
+
+## Instructions
+
+CPU instructions are just numbers. In assembler we represent them by nmemonics: (more) human friendly keywords.
+
+```ebreak```
+is an instruction that ends the program. It has no operands, i.e., it doesn't need any input or output values.
+
+The following instruction
+```
+addi x10, x0, 100
+```
+
+Adds the value in register `x0` to the constant `100` stores the result in `x10`. `addi` stands for "add immediate". 
+
+## Registers
+
+Registers are the CPU's "working memory", to store intermediate values.
+In RISC-V, we have $32$ registers: `x0` to `x31`. `x0` is a special register which always store $0$, writing doesn't change its value.
+
+```
+addi x10, x0, 100 # x10 holds 100
+addi x11, x0, 20
+add x10, x10, x11 # adds the contents of x10 and x11, stores the result in x10
+```
+
+## Example: arithmetic
+
+```
+addi x10, x0, 0x123
+addi x11, x0, 0x555
+
+addi x12, x10, 0x765
+add x13, x10, x11
+sub x14, x11, x10
+
+addi x10, x10, 1
+addi x10, x10, 1
+addi x10, x10, -1
+addi x10, x10, -1
+
+ebreak
+```
+Note: `0x123` means `123` in hexadecimal (base 16), i.e., 291.
+
+1. **Read through the code. What values are stored in `x10` and `x11`?**
+2. **Step through the code in the interpreter. Were your predictions correct?**
+
+### Pseudo-instructions
+
+Shorthand, similar to the C++ pre-processor directives. 
+```
+li x10, 100 # load immediate: store 100 in x10
+addi x10, x0, 100
+```
+
+```
+mv x11, x12 # copy value from x12 and store in x11
+addi x11, x0, 0 # clear the register first
+add x11, x0, x12 # add the value stored in x12 to 0
+```
+
+## Example: doubling
+
+```
+li x10, 0x123
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x1
+0, x10, x10
+ebreak
+```
+
+## Comparison operators
+
+```
+li x10, 0x3
+li x11, 0x5
+
+slt x12, x10, x11   # x10 < x11
+slt x13, x11, x10   # x10 > x11
+
+xori x14, x12, 1    # not ( x10 < x11 )
+xori x15, x13, 1    # what is this comparison?
+
+# sltu performs unsigned comparison
+sltu x11, x0, x10   # 0 <u x10  i.e.  x10 != 0
+sltiu x12, x10, 1   # what comparison operator does this implement?
+
+# we have done == 0 and != 0, how do we do x == y and x != y?
+```
+
+## Branches
+
+This is how we can implement loops and conditional statements.
+
+```
+    li x10, 100
+    li x11, 0
+
+loop: # this is a label, 
+    add x11, x11, x10
+    addi x10, x10, -1
+    blt x0, x10, loop # branch less than
+    # blt 0, x10, label # if 0 < x10 go to the instruction pointed to by label
+    ebreak
+
+# what does this code do?
+```
+
+1. **What does the above code do? What value is stored in `x10` and `x11` at the end?**
+2. **Step through the code, examining the values stored in registers.**
+3. **Modify the code to implement multiplication.**
+4. **Finally, using the ideas of labels, branching and addition, implement integer division.**
+
+## Keep going!
+
+Work through the challenges at [https://studyriscv.com/problems/](https://studyriscv.com/problems/)
+
+## Resources
+
+- [https://projectf.io/posts/riscv-cheat-sheet/](https://projectf.io/posts/riscv-cheat-sheet/)
+- [https://easyriscv.dram.page/](https://easyriscv.dram.page/) this was heavily based on that tutorial.

@@ -341,6 +341,175 @@ First step: fill in any variables whose values we know already.
 
 `D = sqrt(105)`.
 
+# And now...
+
+The moment you've all been waiting for...
+
+# It's Assembler Time!
+
+## Risc-V
+
+- Open source instruction set architecture, open standard for processor design.
+- Reduced Instruction Set Architecture version 5
+- It its simplest form, it has a very minimal set of instructions, but there are extensions.
+- Load --- store architecture, using IEEE 754 for floating point.
+- 32 and 64 bit address spaces, wip 128 bit
+
+# Live Demo
+
+# Instructions
+
+::: columns-2
+::: column
+
+- Remember: instructions are just numbers.
+- In assembler, instructions are represented by nmemonics
+- instructions may have operands (values to work with), as a comma-separated list
+
+:::
+::: column
+
+```
+addi x10, x0, 100
+```
+
+- Adds the value in register `x0` 
+- to the constant `100`
+- stores the result in `x10`
+
+:::
+:::
+
+## Registers
+
+- CPU's "working memory", to store intermediate values.
+- $32$ registers.
+  - `x0` to `x31`
+  - `x0` is a special register which always stores $0$, writing doesn't change its value.
+
+```
+addi x10, x0, 100
+```
+
+::: notes
+i means immediate (for small numbers)
+also sub
+no mul or div. simplest form is very minimal, but extensions exist
+:::
+
+## Arithmetic
+
+```
+# Simple arithmetic
+# at the end of the program, what value is stored in each register
+addi x10, x0, 0x123
+addi x11, x0, 0x555
+
+addi x12, x10, 0x765
+add x13, x10, x11
+sub x14, x11, x10
+
+addi x10, x10, 1
+addi x10, x10, 1
+addi x10, x10, -1
+addi x10, x10, -1
+
+ebreak
+```
+
+## Pseudo-instructions
+
+- Similar to the C++ preprocessor directives (think find / replace)
+- Shorthand for common instructions
+
+```
+li x10, 100 # load immediate: store 100 in x10
+mv x11, x12 # copy value from x12 and store in x11
+# what do they expand to, using add / addi ?
+```
+
+## What does this code output? {.smaller}
+
+```
+li x10, 0x123
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x10, x10, x10
+add x1
+0, x10, x10
+ebreak
+```
+
+::: notes
+doubled 23 times
+note the 0x means hex
+:::
+
+## Less than and less than or equal to
+
+```
+li x10, 0x3
+li x11, 0x5
+
+slt x12, x10, x11   # x10 < x11
+slt x13, x11, x10   # x10 > x11
+
+xori x14, x12, 1    # not ( x10 < x11 )
+xori x15, x13, 1    # what is this comparison?
+```
+
+## Equality
+
+```
+# sltu performs unsigned comparison
+sltu x11, x0, x10   # 0 <u x10  i.e.  x10 != 0
+sltiu x12, x10, 1   # what comparison operator does this implement?
+
+# we have done == 0 and != 0, how do we do x == y and x != y?
+```
+
+## Branches
+
+```
+    li x10, 100
+    li x11, 0
+
+loop: # this is a label, 
+    add x11, x11, x10
+    addi x10, x10, -1
+    blt x0, x10, loop # branch less than
+    # blt 0, x10, label # if 0 < x10 go to the instruction pointed to by label
+    ebreak
+
+# what does this code 
+```
+
+## Putting it all together
+
+1. What does the code on the previous slide do?
+2. Step through the code, examining the values stored in registers.
+3. Modify the code to implement multiplication.
+4. Finally, using the ideas of labels, branching and addition, implement integer division.
+
 # Next time
 
 Memory architecture / academic skills workshop.
