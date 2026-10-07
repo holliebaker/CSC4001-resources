@@ -539,4 +539,4 @@ loop: # this is a label,
 
 # Next time
 
-Memory architecture / academic skills workshop.
+Memory architecture / academic skills workshop. :)
