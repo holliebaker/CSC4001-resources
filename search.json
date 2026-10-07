@@ -1649,35 +1649,35 @@
     "href": "CSC4001-S06-CPU2.html#table-of-instructions-1",
     "title": "Pipelines, Out Of Order Execution, and Parallelism",
     "section": "Table of instructions",
-    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\nt1\nReady\n\n\n2\nMUL\nt1\nt1\nt2\nWaiting\n\n\n3\nSUB\n11\n20\nt3\nReady\n\n\n4\nMUL\nt3\nt3\nt4\nWaiting\n\n\n5\nADD\nt2\nt4\nt5\nWaiting\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n\nInstructions 1 and 3 are ready and can be executed in parallel."
+    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\nt1\nReady\n\n\n2\nMUL\nt1\nt1\nt2\nWaiting\n\n\n3\nSUB\n11\n20\nt3\nReady\n\n\n4\nMUL\nt3\nt3\nt4\nWaiting\n\n\n5\nADD\nt2\nt4\nt5\nWaiting\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n\nInstructions 1 and 3 are ready and can be executed in parallel.\n\n\nstep 1: instructions 1 nd 3 are ready. run in parallel"
   },
   {
     "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-2",
     "href": "CSC4001-S06-CPU2.html#table-of-instructions-2",
     "title": "Pipelines, Out Of Order Execution, and Parallelism",
     "section": "Table of instructions",
-    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\nt2\nWaiting\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\nt4\nWaiting\n\n\n5\nADD\nt2\nt4\nt5\nWaiting\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n\nNow t1 and t3 are known, some more instructions become ready."
+    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\nt2\nWaiting\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\nt4\nWaiting\n\n\n5\nADD\nt2\nt4\nt5\nWaiting\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n\nNow t1 and t3 are known, some more instructions become ready.\n\n\nwith these values known, more instructions become ready. Which ones? t2 and t4"
   },
   {
     "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-3",
     "href": "CSC4001-S06-CPU2.html#table-of-instructions-3",
     "title": "Pipelines, Out Of Order Execution, and Parallelism",
     "section": "Table of instructions",
-    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\nt2\nReady\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\nt4\nReady\n\n\n5\nADD\nt2\nt4\nt5\nWaiting\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n\nInstructions 2 and 4 are ready and can be executed in parallel."
+    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\nt2\nReady\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\nt4\nReady\n\n\n5\nADD\nt2\nt4\nt5\nWaiting\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n6&gt; Instructions 2 and 4 are ready and can be executed in &gt; parallel.\n\nstep 2: with t2 and t4 ready"
   },
   {
     "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-4",
     "href": "CSC4001-S06-CPU2.html#table-of-instructions-4",
     "title": "Pipelines, Out Of Order Execution, and Parallelism",
     "section": "Table of instructions",
-    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\n25\nDone\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\n81\nDone\n\n\n5\nADD\n25\n81\nt5\nReady\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n\nInstruction 5, which depends on t2 and t4 can now be executed."
+    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\n25\nDone\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\n81\nDone\n\n\n5\nADD\n25\n81\nt5\nReady\n\n\n6\nSQRT\nt5\n–\nD\nWaiting\n\n\n\n\nInstruction 5, which depends on t2 and t4 can now be executed.\n\n\nStep 3: t5, depending on t2 and t4 is now ready"
   },
   {
     "objectID": "CSC4001-S06-CPU2.html#table-of-instructions-5",
     "href": "CSC4001-S06-CPU2.html#table-of-instructions-5",
     "title": "Pipelines, Out Of Order Execution, and Parallelism",
     "section": "Table of instructions",
-    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\n25\nDone\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\n81\nDone\n\n\n5\nADD\n25\n81\n106\nDone\n\n\n6\nSQRT\n106\n–\nD\nReady\n\n\n\nD = sqrt(105)."
+    "text": "Table of instructions\n\n\n\n#\nInstruction\nArg 1\nArg 2\nReturn\nStatus\n\n\n\n\n1\nSUB\n9\n4\n5\nDone\n\n\n2\nMUL\n5\n5\n25\nDone\n\n\n3\nSUB\n11\n20\n-9\nDone\n\n\n4\nMUL\n-9\n-9\n81\nDone\n\n\n5\nADD\n25\n81\n106\nDone\n\n\n6\nSQRT\n106\n–\nD\nReady\n\n\n\nD = sqrt(105).\n\nstep 4: finally, t6, depending on t5, is ready.\nWe were able to parallel some, but not all, of the instructions. Executing 6 in 4 steps. giving a speed up of 6/4 = 1.5. Parallel computing is a whole module. no a whole degree, and multiple PhD’s, and it takes clever programming to get the best speedup while maintaining proper synchronisation."
   },
   {
     "objectID": "CSC4001-S06-CPU2.html#risc-v",
