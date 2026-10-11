@@ -249,12 +249,12 @@ CSC4001: Computer Systems and Architecture
 <section id="phones-microcontrollers-and-raspberry-pis" class="slide level2 smaller">
 <h2>Phones, microcontrollers and Raspberry Pis</h2>
 <ul>
-<li><p>Complex instruction set architecture (CISC), consumes around <strong>20-80W</strong> of power.</p></li>
+<li><p>Reduced instruction set architecture (CISC), consumes around <strong>20-80W</strong> of power.</p></li>
 <li><p>Memory (RAM) <del>is becoming cheaper</del> (that was written before the LLM explosion):</p>
 <ul>
 <li>Between <strong>2GB</strong> and <strong>4GB</strong> in the 2010s,</li>
-<li>Common to see <strong>16GB</strong> in modern laptops.</li>
-<li><strong>DDR4</strong> (<em>dourbe data random access memory</em>): high bandwidth with synchronous access for read and write, released in 2014.</li>
+<li>Common to see <strong>16GB+</strong> in modern laptops.</li>
+<li><strong>DDR4</strong> (<em>double data random access memory</em>): high bandwidth with synchronous access for read and write, released in 2014.</li>
 </ul></li>
 <li><p>SSDs are commonplace, unlikely to find a spinning HDD in a modern computer.</p></li>
 </ul>
@@ -306,6 +306,38 @@ CSC4001: Computer Systems and Architecture
 <li><strong>1KB</strong> of EEPROM (persistent storage).</li>
 </ul></li>
 </ul>
+</section>
+<section id="s-and-a-brought-to-you-by" class="slide level2">
+<h2>S and A brought to you by…</h2>
+<div class="columns-2">
+<div class="column">
+<ul>
+<li><p>2x Arduino Leonardo’s</p></li>
+<li><p>32 KB flash memory for program</p></li>
+<li><p>2.5 KB SRAM for data</p></li>
+<li><p>16 MHz clock speed</p></li>
+</ul>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./assets/08-leonardo.webp"></p>
+<figcaption>Pinout diagram for Arduino Leonardo</figcaption>
+</figure>
+</div>
+</div></div>
+<aside class="notes">
+<p>Canute 360 prototype was originally developed on the Arduino Leonardo Originally had one ATMega, using threading to handle input/output and control the motors Lots of problems with multithreading, dev team printed out the code and laid it along the floor to debug. Decided to run the i/o and motor thread on its own microcontroller.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
 <section id="comparison-of-memory" class="title-slide slide level1 center">
@@ -530,6 +562,72 @@ CSC4001: Computer Systems and Architecture
 <p>What does it represent well, what does it represent poorly.</p></li>
 <li><p>Come up with your own analogy, indicating what represents the <strong>registirs</strong>, <strong>cache</strong>, <strong>disk</strong> and <strong>network</strong>.</p></li>
 <li><p>Share analogies and discuss what reflects computer memory well / not so well.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="ram-in-pcs" class="title-slide slide level1 center">
+<h1>RAM in PC’s</h1>
+<p><img data-src="./assets/08-passmark1.png" alt="Amount of RAM installed in the 2 million x86 PCs which ran passmark benchmark between 2009 and 2018"> {fig.align=“center” fig.width=“95%” fig.alt=“RAM increasing over time, 8 and 16 GB most common, less than 1GB starting about 50% and tailing off to nothing by the end.”}</p>
+<aside class="notes">
+<p>Would you / have you used a PC with 1GB or less? Which OS, and how was your experience?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="ram-in-pcs-1" class="slide level2">
+<h2>RAM in PCs</h2>
+
+<img data-src="./assets/08-passmark2.png" class="r-stretch"><aside class="notes">
+<p>16 and 32 becoming more commonplace. If you were buying a PC how much memory would you want / need? Why?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="ram-prices" class="slide level2">
+<h2>RAM prices</h2>
+
+<img data-src="./assets/08-ramprice.png" class="r-stretch"><aside class="notes">
+<p>Prices are for the United Kingdom region and are shown in GBP. Prices are 19.3% higher than they were 30 days ago. The current price is 17% above the 90-day average of £379. Price history covers the period from July 2023 to October 2026. The data was last updated on October 10, 2026. Please note that prices are shown without shipping costs, unless otherwise noted by the retailer.</p>
+<p>from https://pangoly.com/en/price-trends/ram/32gb-ddr5</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="exercise-alternative-random-access-memory" class="slide level2">
+<h2>Exercise: alternative random access memory</h2>
+<ul>
+<li>RAM prices are skyrocketing</li>
+<li>Come up with a creative alternative to RAM
+<ul>
+<li>It must be able to store 0’s and 1’s</li>
+<li>think about speed of access, does it take the same length of time to access every bit</li>
+<li>power, size, heat, cost</li>
+</ul></li>
+<li>If a technical solution is not possible, come up with a strategy to reduce RAM prices.</li>
 </ul>
 </section></section>
 <section id="next-time" class="title-slide slide level1 center">

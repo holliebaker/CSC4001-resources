@@ -368,7 +368,266 @@
     "href": "CSC4001-S11-Processes.html#next-time",
     "title": "Processes",
     "section": "Next time",
-    "text": "Next time\nScheduling algorithms"
+    "text": "Next time\nScheduling"
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#learning-outcomes",
+    "href": "CSC4001-S03-VonNeumann.html#learning-outcomes",
+    "title": "Architecture overview",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n\nState the five components of a Von Neumann computer.\nDescribe the difference between the Von Neumann and Harvard architecture.\nExplain the advantages and disadvantages of the Von Neumann vs Harvard architectures.\nArgue for the “best” architecture in a given situation."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#architecture",
+    "href": "CSC4001-S03-VonNeumann.html#architecture",
+    "title": "Architecture overview",
+    "section": "Architecture",
+    "text": "Architecture\n\n\n\n\n\n\n\n\n\n\n\n\n“Computer architecture, like other architecture, is the art of determining the needs of the user of a structure and then designing to meet those needs as effectively as possible within economic and technological constraints.”\n– Frederick P. Brooks\n\n\nBrooks was an American computer architect, software engineer and computer scientist who managed IBM 360 series of mainframes and their accompanying software."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture",
+    "href": "CSC4001-S03-VonNeumann.html#computer-architecture",
+    "title": "Architecture overview",
+    "section": "Computer Architecture",
+    "text": "Computer Architecture\n\nA description of a computer (or computer system) which is made from component parts.\nOften a high-level description, indicating how components are linked and what each does.\nSometimes includes details such as the instruction set used and other implementation details."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-1",
+    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-1",
+    "title": "Architecture overview",
+    "section": "Computer Architecture",
+    "text": "Computer Architecture\n\n1837: First documented computer architecture was in correspondence between Charles Babbage and Ada Lovelace, where Babbage described his analytical engine.\n1890: Herman electromechanical tabulating machine used to analyse census data stored on punched cards.\n1936, Conrad Zeus described a computer where both instructions and data are stored in the same memory: First documented instance of a “stored program” or general purpose computer."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-2",
+    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-2",
+    "title": "Architecture overview",
+    "section": "Computer Architecture",
+    "text": "Computer Architecture\n\n1945, John Von Neumann described the famous Von Neumann Architecture in his paper on the EDVAC computer (successor to the ENIAC)."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-3",
+    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-3",
+    "title": "Architecture overview",
+    "section": "Computer Architecture",
+    "text": "Computer Architecture\n\n1946, Alan Turing wrote a detailed proposal for the electronic calculator, Automatic Computing Engine, citing Von Neumann."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#von-neumann-architecture",
+    "href": "CSC4001-S03-VonNeumann.html#von-neumann-architecture",
+    "title": "Architecture overview",
+    "section": "Von Neumann Architecture",
+    "text": "Von Neumann Architecture\n\n\nArrows represent data transfer connections and directions. I.e., there is an arrow in both directions between the memory and the arithmetic logic unit, representing a “shared bus”. We will see later that this shared bus can be a bottleneck."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#five-components",
+    "href": "CSC4001-S03-VonNeumann.html#five-components",
+    "title": "Architecture overview",
+    "section": "Five components",
+    "text": "Five components\n\nStore\nControl Unit\nArithmetic Logic Unit\ninput\nOutput"
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#store",
+    "href": "CSC4001-S03-VonNeumann.html#store",
+    "title": "Architecture overview",
+    "section": "Store",
+    "text": "Store\n\nTo store data and instructions. E.g., paper tape, magnetic tape, RAM."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#control-unit",
+    "href": "CSC4001-S03-VonNeumann.html#control-unit",
+    "title": "Architecture overview",
+    "section": "Control Unit",
+    "text": "Control Unit\n\ndecides which instruction to perform next."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#arithmetic-logic-unit",
+    "href": "CSC4001-S03-VonNeumann.html#arithmetic-logic-unit",
+    "title": "Architecture overview",
+    "section": "Arithmetic Logic Unit",
+    "text": "Arithmetic Logic Unit\n\nPerforms calculations.\n\nTypically the ALU and control unit are combined into the CPU.\nOperations performed on the hardware, or implemented in software.\nIn early computers, electromechanical hardware was used; these days transistors are used, which require much less energy."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#input-and-output",
+    "href": "CSC4001-S03-VonNeumann.html#input-and-output",
+    "title": "Architecture overview",
+    "section": "Input and Output",
+    "text": "Input and Output\n\nMeans for the user to interact with the computer.\n\nKeyboard, mouse, camera, sensors.\nMonitor, speakers.\nVaried and interesting ways for humans and computers to interact."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#key-features",
+    "href": "CSC4001-S03-VonNeumann.html#key-features",
+    "title": "Architecture overview",
+    "section": "Key features",
+    "text": "Key features\n\nInstructions and data are stored in the same memory.\nSimple, cost-effective and widely used.\n\n\n\nSingle bus to transfer all data.\nThis can cause a bottleneck.\nSequential architecture Can limit speed of processing. : CPU can perform only one instruction at a time.\nThis is the architecture found in most desktop PCs today."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#harvard-architecture",
+    "href": "CSC4001-S03-VonNeumann.html#harvard-architecture",
+    "title": "Architecture overview",
+    "section": "Harvard Architecture",
+    "text": "Harvard Architecture"
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#harvard-architecture-1",
+    "href": "CSC4001-S03-VonNeumann.html#harvard-architecture-1",
+    "title": "Architecture overview",
+    "section": "Harvard Architecture",
+    "text": "Harvard Architecture\n\nHas separate memory for instructions and data.\nWell suited to embedded systems and main-frames.\n\n\n\nReduces the memory bottleneck found in Von Neumann machines.\n\nLess contention as there is no shared bus.\nData and instruction access can be done simultaneously.\nLess flexible than Von-Neumann. E.g., instructions cannot be modified at run-time."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#in-small-groups",
+    "href": "CSC4001-S03-VonNeumann.html#in-small-groups",
+    "title": "Architecture overview",
+    "section": "In small groups",
+    "text": "In small groups\n\nIn which situations is each architecture used?\n\nToday and historically?\nWhy is it a good choice for that situation, or why not?\n\nThings to think about:\n\nwhere are the bottlenecks?\nspecial purpose vs general purpose\ndata integrity / tampering / security"
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#section",
+    "href": "CSC4001-S03-VonNeumann.html#section",
+    "title": "Architecture overview",
+    "section": "1949",
+    "text": "1949\n\n“The”brain” [computer] may one day come down to our level [of the common people] and help with our income-tax and book-keeping calculations. But this is speculation and there is no sign of it so far.”\n\n– British newspaper The Star in a June 1949 news article about the EDSAC computer."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#section-1",
+    "href": "CSC4001-S03-VonNeumann.html#section-1",
+    "title": "Architecture overview",
+    "section": "1953",
+    "text": "1953\n\n“I think there is a world market for maybe five computers.”\n\n– Thomas Watson, IBM Chairman, although this is now thought to be urban legend.\n\nThe “brain” computer has now very much “come down to the level of the common people”, and does much more than just book-keeping.\nRegarding the Watson quote, it is now thought to be an urban legend. see https://geekhistory.com/content/urban-legend-i-think-there-world-market-maybe-five-computers\n“We believe the statement that you attribute to Thomas Watson is a misunderstanding of remarks made at IBM’s annual stockholders meeting on April 28, 1953. In referring specifically and only to the IBM 701 Electronic Data Processing Machine – which had been introduced the year before as the company’s first production computer designed for scientific calculations – Thomas Watson, Jr., told stockholders that “IBM had developed a paper plan for such a machine and took this paper plan across the country to some 20 concerns that we thought could use such a machine. I would like to tell you that the machine rents for between $12,000 and $18,000 a month, so it was not the type of thing that could be sold from place to place. But, as a result of our trip, on which we expected to get orders for five machines, we came home with orders for 18.” https://geekhistory.com/content/urban-legend-i-think-there-world-market-maybe-five-computers"
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#learning-outcomes-1",
+    "href": "CSC4001-S03-VonNeumann.html#learning-outcomes-1",
+    "title": "Architecture overview",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n\nGive an overview of early computers: use, specs, how they were programmed.\nCompare early and modern computers\nExplain how developments in early computing have influenced modern computer hardware."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#integers",
+    "href": "CSC4001-S03-VonNeumann.html#integers",
+    "title": "Architecture overview",
+    "section": "Integers",
+    "text": "Integers\n\nWe already saw that an unsigned integer number can be represented in Binary.\nUsually the right-most bit represents the least significant digit.\nLittle-endian representation.\nSigned integers may be represented in several ways:\n\nSign+magnitude: one bit is reserved for the sign, the rest for the value.\nThis representation allows \\(+0\\) and \\(-0\\).\nOne’s complement: positive numbers represented as usual, negative numbers represented by flipping all their bits.\nAgain, we have \\(+0\\) and \\(-0\\).\nTwo’s complement: positive numbers represented as usual, negative numbers represented by adding one then flipping all their bits.\nonly one \\(0\\), no redundancy."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-numbers",
+    "href": "CSC4001-S03-VonNeumann.html#floating-point-numbers",
+    "title": "Architecture overview",
+    "section": "Floating point numbers",
+    "text": "Floating point numbers\n\nIEEE 754 defines a standard for representing and manipulating floating point numbers.\nRepresented in a similar way to scientific notation.\nE.g., \\(300,000,000 = 3 \\times 10^8\\).\n\nThe \\(3\\) is called the fraction (coefficient or mantissa).\nThe \\(8\\) (from \\(10^8\\)) is called the exponent.\n\nIEEE 754 defines:\n\nThe base, typically \\(2\\) for binary, but sometimes \\(10\\).\nPrecision (number of digits to represent the fraction).\nAn exponent range."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-numbers-1",
+    "href": "CSC4001-S03-VonNeumann.html#floating-point-numbers-1",
+    "title": "Architecture overview",
+    "section": "Floating point numbers",
+    "text": "Floating point numbers\n\nUsing \\(n\\) bits, the representation consists of\n\n\\(1\\) bit for the sign,\n\\(n - p - 1\\) bits for the exponent.\n\\(p\\) bits for the fraction (stored in Binary),\n\nAny signed number up to \\(p\\) significant digits and a maximum exponent of \\(n-p-1\\) can be defined.\nPositive and negative infinity.\nA representation for not a number, e.g., for the result of division by zero."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#bit-floating-point",
+    "href": "CSC4001-S03-VonNeumann.html#bit-floating-point",
+    "title": "Architecture overview",
+    "section": "32-bit floating point",
+    "text": "32-bit floating point\nRepresentation used for the float type in many programming languages.\n\n\n\\(32\\) bits:\n\n\\(1\\) bit for the sign,\n\\(8\\) bits for the exponent,\n\\(23\\) bits for the fraction.\n\nAround \\(7\\) decimal digits for the fraction.\nA double uses \\(64\\) bits, \\(52\\) bits (around \\(16\\) decimal digits)."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-numbers-2",
+    "href": "CSC4001-S03-VonNeumann.html#floating-point-numbers-2",
+    "title": "Architecture overview",
+    "section": "Floating point numbers",
+    "text": "Floating point numbers\nAdvantages\n\nEfficient representation of very large and very small numbers.\nFast computation due to many years of hardware development.\n\nDisadvantages\n\nFloating point errors."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#precision-and-accuracy",
+    "href": "CSC4001-S03-VonNeumann.html#precision-and-accuracy",
+    "title": "Architecture overview",
+    "section": "Precision and accuracy",
+    "text": "Precision and accuracy\n\nPrecision: how many significant digits,\nAccuracy: how close to the true value.\n\nA value may be precise but not accurate, accurate but not precise, or both inaccurate and imprecise."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-errors",
+    "href": "CSC4001-S03-VonNeumann.html#floating-point-errors",
+    "title": "Architecture overview",
+    "section": "Floating point errors",
+    "text": "Floating point errors\n\nWe know that \\(1/3 + 1/3 + 1/3 = 1\\).\nHowever, \\(0.3333333333 + 0.3333333333 + 0.3333333333 = 0.9999999999\\)!\n\\(1/10\\) is easy to represent in decimal: \\(0.1\\).\nHowever, in binary, it is \\(0.001100110011\\).\nFloating point representation is sufficient for most applications, e.g., 3D games.\nHowever, we have to take care with things like currency, which must be correct."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#but-first-why-are-we-doing-this",
+    "href": "CSC4001-S03-VonNeumann.html#but-first-why-are-we-doing-this",
+    "title": "Architecture overview",
+    "section": "But first, why are we doing this?",
+    "text": "But first, why are we doing this?\n\nGain perspective.\nUnderstanding of why things are the way they are today.\nLearn from previous successes and failures."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#the-eniac-1945",
+    "href": "CSC4001-S03-VonNeumann.html#the-eniac-1945",
+    "title": "Architecture overview",
+    "section": "The ENIAC (1945)",
+    "text": "The ENIAC (1945)\n\n\nElectronic Numerical Integrator and Computer\n\nSpecial purpose computer for artillery firing table calculations.\nLocated at the School of Engineering and Applied Science, Pennsylvania State University\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCould be “programmed” by using the plug-board and switches, data entered via punched cards.\nLater converted into a stored program computer.\nBase-10 arithmetic instead of the usual binary.\nUsed vacuum tubes, which burnt out often – high maintenance."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#colossus-1943-45",
+    "href": "CSC4001-S03-VonNeumann.html#colossus-1943-45",
+    "title": "Architecture overview",
+    "section": "Colossus (1943-45)",
+    "text": "Colossus (1943-45)\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecial purpose computer developed at Bletchley Park to help break the Lorenz cipher.\nDesigned by Tommy Flowers, a research engineer at the General Post Office, based on plans by Code and Cipher School mathematician Max Newman.\n\n\n\n\nUsed vacuum tubes; programmed using switches and a plug board.\nData memory was a cycling strip of paper tape.\nColossus Mk II, which used shift registers to run 6 times faster, went into operation in time for the D-day landings.\nBy the end of the war, 10 Colossi were in operation."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#general-purpose-computers-post-ww2",
+    "href": "CSC4001-S03-VonNeumann.html#general-purpose-computers-post-ww2",
+    "title": "Architecture overview",
+    "section": "General purpose computers (post WW2)",
+    "text": "General purpose computers (post WW2)\nVon Neumann arranged a 6-week summer workshop to design and build a new type of computer.\n\nGeneral purpose: many early computers were designed with a specific task in mind, which meant they were difficult to repurpose.\nVon Neumann wanted to build a stored program computer.\nElectronic:replacing electromechanical components which were brittle, hot and noisy.\nColossus and the ENIAC both consumed 150KW of power.\nUse binary, which is the easiest encoding to work with when using electronic components."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#maurice-wilkes",
+    "href": "CSC4001-S03-VonNeumann.html#maurice-wilkes",
+    "title": "Architecture overview",
+    "section": "Maurice Wilkes",
+    "text": "Maurice Wilkes\n\nCambridge mathematician, physics PhD on “radio propagation of very long radio waves in the ionosphere”.\nAttended Jon Neumann’s workshop, then returned to Cambridge to build the EDSAC machine.\nWorked in radar during WW2, which inspired the memory technology for EDSAC.\nMemory was a limitation for early electronic computers, Wilkes used “delay lines”, mercury tubes and an oscilloscope, as memory.\n\n\nMore information on mercury delay lines: Radar pulses were captured and played as sound waves. Sound waves passed through mercury, which slowed them down. Picked up by a microphone and displayed no an oscilloscope screen. Sound wave amplified and played back through the speaker so the pulse would repeat as long as needed."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#edsac-6-may-1949",
+    "href": "CSC4001-S03-VonNeumann.html#edsac-6-may-1949",
+    "title": "Architecture overview",
+    "section": "EDSAC (6 May 1949)",
+    "text": "EDSAC (6 May 1949)\n\n\nElectronic Delay Storage Automatic Calculator\n\nOne of the first stored program computers which used binary.\nDeveloped by Maurice Wilkes, William Renwick (hardware engineer) and David Wheeler (first system software engineer).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCould perform 700 additions or 200 multiplications per second.\n512 18-bit words of memory for programs and data, upgraded to 1024 18-bit words in 1952.\nData and programs were loaded via 5-hole punched paper tape, initial orders instructed the computer to load the program.\nConsumed 11KW of power.\nThe delay line memory was sub-optimal, but one of the best options at the time.\nAlthough the words were 18-bits, only 17 bits were used in practice owing to unreliability of memory. ## Programming the EDSAC\nPrograms designed on paper and then punched, in assembler, onto 5-hole paper tape. Programmers became proficient at reading programs from the tape.\nProgrammers would hang their tape on a line, waiting for an operator to run them – the first “job queue”.\nOperator would load program and data and then either return the printed output or inform the programmer of the memory address at which the program failed. ## Operating EDSAC\nBuilt-in add, multiply, bus and conditional jump.\n\nNo load. Instead, Instead clear the register (set to \\(0\\)) and add the value from memory to the register.\nNo division, but it was included as a subroutine.\n\nIn case of a program error, the operator would inform the programmer at which address their program failed.\nThere was no debugger. An oscilloscope screen showed the state of the registers, and a speaker played a different note depending on the value of the accumulator register. An experienced programmer learnt the sound of a failing program, e.g., if there was an infinite loop. ## Operating EDSAC\nProgrammers had to use “bad” programming technique. E.g., to access a different array element, the code would modify itself to point to the correct address.\nNo built-in mechanism for subroutines, instead perform a Wheeler jump: Jump with return memory address, computer would modify the last instruction of the subroutine to jump back to this return address.- No recursion was possible on the EDSAC. Turing proposed the call stack in his 1945 paper, which implemented subroutines “properly” and allowed recursion."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#usage",
+    "href": "CSC4001-S03-VonNeumann.html#usage",
+    "title": "Architecture overview",
+    "section": "Usage",
+    "text": "Usage\nA condition for funding was that EDSAC must provide a service, as opposed to just being an engineering experiment.\n\nRonald Fisher, with Wilkes and Wheeler, used EDSAC to solve a differential equation for gene frequency – first use of computers in biology.\nIn 1951, Miller and Wheeler computed a 79-digit prime number, the largest known at its time.\nEDSAC played a role in Nobel-prize-winning research: Nobel laureates thanked EDSAC in their acceptance speech. John Kendrew and Max Perutz (Chemistry, 1962), Andrew Huxley (Medicine, 1963) and Martin Ryle (Physics, 1974)\nEDSAC remained in operation until 11 July 1958, when it was superseded by EDSAC 2, which ran until 1965."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#exercise-computer-history-research",
+    "href": "CSC4001-S03-VonNeumann.html#exercise-computer-history-research",
+    "title": "Architecture overview",
+    "section": "Exercise: computer history research",
+    "text": "Exercise: computer history research\nIn pairs, teams, or individually…\n\nChoose a computer from history. Find out:\n\nWho created it, and when?\nWhat could it do? hardware operations\nSpecs: processing, memory, operations per second.\nHow was it programmed? Could it be programmed?\nHow did programmers / operators / scientists interact with it? Input/output mechanisms, how was it debugged?"
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#exercise-play-with-the-edsac-simulator",
+    "href": "CSC4001-S03-VonNeumann.html#exercise-play-with-the-edsac-simulator",
+    "title": "Architecture overview",
+    "section": "Exercise: play with the EDSAC simulator",
+    "text": "Exercise: play with the EDSAC simulator\n\nMartin Campbell Kelly, University of Warwick, developed an EDSAC simulator.\nhttps://dcs.warwick.ac.uk/~edsac/\nSeveral programs and games are available.\nTry Sandy Douglas’ OXO game (a tic-tac-toe game vs the computer).\nAlthough a faithful simulation, it is still easier to use than the real thing – imagine loading the paper tape, vacuum tubes blowing frequently, and try setting the speed to EDSAC real-time."
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#part-1-research",
+    "href": "CSC4001-S03-VonNeumann.html#part-1-research",
+    "title": "Architecture overview",
+    "section": "Part 1: research",
+    "text": "Part 1: research\n\nChoose a time period of 15-20 years, and an element of computer hardware.\nConsider the following prompt: explain the impact of your chosen element of computer architecture during your chosen time period.\nWithout using an LLM, but with reference to at least three academic sources, answer the above prompt. Focus on why evolutions in your chosen component had the impact they did, 800 words approx, not including refgerences and citations\n\n\nWhy did the developments succeed or fail at the time? If they failed, has there been a comeback in more recent years, and why (or why not)? Have these developments changed how we interact with computers, and if so, how (for instance, consider how computers are used in business, academia, and at home, and how programming languages and operating systems have evolved to take advantage of the developments you discussed, for better or for worse)?"
+  },
+  {
+    "objectID": "CSC4001-S03-VonNeumann.html#part-2-llm-analysis",
+    "href": "CSC4001-S03-VonNeumann.html#part-2-llm-analysis",
+    "title": "Architecture overview",
+    "section": "Part 2: LLM analysis",
+    "text": "Part 2: LLM analysis\n\nUse an LLM to generate a response to the above prompt.\nAnalyse the LLM’s response: validate the claims it has made, with reference to a range of academic sources.\nConclude whether you are able to accept or reject its claims.\n800 words approx\n\n\nComment on the accuracy and relevance of its response, checking its claims against academic sources. Has the LLM committed any falacies, made any assumptions or generated its answer based on any biases? Has the LLM’s response made you reconsider your own answer?"
   },
   {
     "objectID": "CSC4001-S00-welcome.html#teaching-staff",
@@ -784,6 +1043,209 @@
     "text": "Exercise: RISC-V Assembler\n\nWork through the challenges at\nhttps://studyriscv.com/problems/\n\nUse studyriscv.com/simulator, although this requires login,\ninstall riscvsim on your own PC,\ntry an online simulator, e.g., https://riscv-simulator-five.vercel.app/\n\nResources to get started:\n\nCheat sheet https://projectf.io/posts/riscv-cheat-sheet/\nStudy RISC-V installation https://studyriscv.com/docs/#instruction-blt\nRISC-V is an open standard. There is a plethora of resources out theer. Do some research!"
   },
   {
+    "objectID": "CSC4001-S17-IPC.html#learning-outcomes",
+    "href": "CSC4001-S17-IPC.html#learning-outcomes",
+    "title": "Intr-Process Communication",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\n\nExplain why inter-process communication is nedeed, and why it must be facilitated by the OS.\nGive an overview of IPC mechanisms, including how they work and their advantages and disadvantages.\nDescribe what POSIX is, and state some of the things it defines.\nUse POSIX pipes to give the output from one process as the input of another."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#recap-scheduling",
+    "href": "CSC4001-S17-IPC.html#recap-scheduling",
+    "title": "Intr-Process Communication",
+    "section": "Recap: scheduling",
+    "text": "Recap: scheduling\n\nDeciding which process should run next.\nWe studied many scheduling algorithms, the most complex of which was\nTraditional Unix Scheduling.\nA pre-emptive scheduler.\nProcess priority computed every second from a\nbase value, CPU used and optional nice value.\nSystem processes have more base priority.\nCPU usage decays every 500ms so\nprocesses which used less CPU recently are prioritised."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#recap-scheduling-1",
+    "href": "CSC4001-S17-IPC.html#recap-scheduling-1",
+    "title": "Intr-Process Communication",
+    "section": "Recap: scheduling",
+    "text": "Recap: scheduling\n\nUsed in early Unix systems and Windows NT.\nHowever, not suitable for modern operating systems,\nsince it does not scale well to large numbers of processes.\nPriorities are recalculated all at once, every second.\n\nTakes a significant amount of CPU time,\nIs not done often enough to reflect changes in behaviour."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#recap-pitfalls-of-processes",
+    "href": "CSC4001-S17-IPC.html#recap-pitfalls-of-processes",
+    "title": "Intr-Process Communication",
+    "section": "Recap: pitfalls of processes",
+    "text": "Recap: pitfalls of processes\nAs well as scheduling processes, the OS also has to:\n\nPrevent deadlocks,\nall processes waiting for one of their number to do something.\nProcess protection:\ninsuring that processes cannot interfere with one another."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#recap-process-protection",
+    "href": "CSC4001-S17-IPC.html#recap-process-protection",
+    "title": "Intr-Process Communication",
+    "section": "Recap: process protection",
+    "text": "Recap: process protection\n\nRecall that each process is owned by a user.\nA user can mess with their own processes, but not the processes of other users.\nProvides security.\nA special user, called root can mess with the processes of all users.\nThe MMU also provides a hardware solution to prevent one process from accessing another process’s memory."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#inter-process-communication-1",
+    "href": "CSC4001-S17-IPC.html#inter-process-communication-1",
+    "title": "Intr-Process Communication",
+    "section": "Inter-process communication",
+    "text": "Inter-process communication\n\nThe OS works hard to isolate processes from each another.\nWhat happens if one process needs to communicate with another?\nE.g., one process may need to tell another that a particular job, e.g., disk write, is done.\nOr a new process may need to tell the Window Manager to make a new GUI window."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#inter-process-communication-2",
+    "href": "CSC4001-S17-IPC.html#inter-process-communication-2",
+    "title": "Intr-Process Communication",
+    "section": "Inter-process communication",
+    "text": "Inter-process communication\n\nOS facilitates communication between processes,\nbut takes care to do this safely.\nMany methods of IPC, we will study a few:\n\nFiles,\nPipes,\nShared Memory,\nSignals,\nSemaphores."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#files",
+    "href": "CSC4001-S17-IPC.html#files",
+    "title": "Intr-Process Communication",
+    "section": "Files",
+    "text": "Files\n\n\n\nPossibly the simplest method of IPC,\nsince it uses an existing mechanism.\n\nProcess \\(A\\) writes data to a file,\nProcess \\(B\\) reads the data."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#files-1",
+    "href": "CSC4001-S17-IPC.html#files-1",
+    "title": "Intr-Process Communication",
+    "section": "Files",
+    "text": "Files\n\nWhich file should be used?\n\nCommunal IPC file,\nbut if more than two processes are sharing data, how do we tell which bytes are meant for which process.\nThen use one file per pair of processes,\nbut some prior communication is needed to agree on a file.\n\nHow does process \\(B\\) know when process \\(A\\) is finished writing?\nFile permissions must be set correctly,\nso that the OS will allow both processes to access the file.\nUseful for sharing large amounts of data."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#pipes",
+    "href": "CSC4001-S17-IPC.html#pipes",
+    "title": "Intr-Process Communication",
+    "section": "Pipes",
+    "text": "Pipes\n\nTwo-ended, FIFO data structure.\nAllows output of one process to be used as input of another.\n\n\n\n\nFIFO: first in, first out. Queue.\nYou mau would have encountered this in a queue (real world and the datastructure), also pipelines."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#pipes-1",
+    "href": "CSC4001-S17-IPC.html#pipes-1",
+    "title": "Intr-Process Communication",
+    "section": "Pipes",
+    "text": "Pipes\n\nAllow sharing data, similar to files,\nbut provide synchronisation, too.\n\nProcess \\(A\\) writes to the pipe,\nPipe becomes full (pipe can usually hold 4096 bytes)\nProcess \\(A\\) is blocked, process \\(B\\) is scheduled,\nProcess \\(B\\) reads data from the pipe,\nWhen the pipe is empty, process \\(B\\) is blocked."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#pipes-2",
+    "href": "CSC4001-S17-IPC.html#pipes-2",
+    "title": "Intr-Process Communication",
+    "section": "Pipes",
+    "text": "Pipes\n\nFIFO: data is read in the same order as it is written.\nPipes are unidirectional (data flows in one direction), but two-way communication can be achieved with two pipes.\nPipes affect scheduling, as they can block processes:\nit’s possible to cause a circular wait with two pipes.\nImplemented as a buffer (block of memory managed by the OS)."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#exercise-posix-pipes",
+    "href": "CSC4001-S17-IPC.html#exercise-posix-pipes",
+    "title": "Intr-Process Communication",
+    "section": "Exercise: POSIX pipes",
+    "text": "Exercise: POSIX pipes\n\nIn Unix, the | character creates a pipe between two processes.\nE.g., on the command line, $ ls -1 | grep foo\n\n$ is the shell prompt.\nls -1 lists all files in the current directory, one per line,\n| takes this list of files (output of ls -1) and passes it to the next process,\ngrep foo filters the input, returning only lines containing foo – in this case, it filters the files.\n\nplay with pipes!\nCheck out this article on processes and pipes."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#shared-memory",
+    "href": "CSC4001-S17-IPC.html#shared-memory",
+    "title": "Intr-Process Communication",
+    "section": "Shared Memory",
+    "text": "Shared Memory\n\n\n\nSimilar to files, multiple processes read from / write to the same chunk of memory.\nModern OSs prevent usually prevent this, so it has to be set up and managed by the OS.\nBut shared memory is much faster than files."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#shared-memory-1",
+    "href": "CSC4001-S17-IPC.html#shared-memory-1",
+    "title": "Intr-Process Communication",
+    "section": "Shared Memory",
+    "text": "Shared Memory\n\nSame drawbacks as with files:\n\nWhere is the shared memory,\nWhen should process \\(B\\) start reading,\nI.e., how does it know that process \\(A\\) has finished writing.\nAuthorisation: \\(A\\), \\(B\\) and no other processes should have access to the shared memory.\n\nDespite the drawbacks, it is still widely used due to its speed,\nbut it is used alongside other synchronisation mechanisms.\n\n\n\nneeds synchronisation mechanisms, e.g., semaphores, which we’ll talk about shortly."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#signals",
+    "href": "CSC4001-S17-IPC.html#signals",
+    "title": "Intr-Process Communication",
+    "section": "Signals",
+    "text": "Signals\n\nSoftware equivalent of hardware interrupts, i.e.,\n\nprocess receives a signal,\nstops what it is doing, saves its state, and\njumps to a signal handler.\n\nThe signal handler is a piece of code, written by the programmer.\n\n\n\nWe said “the program stops what it’s doing, saves it’s state and jumps…” but really the OS manages all of this.\n\nOS is responsible for sending, receiving and handling (either doing something or passing on to the process) all signals.\nWhat really happens:\nSignal dispatched (raised) via a syscall to the OS.\nSignal is flagged in the receiving processes PCB (process control block).\nNext time the receiving process is scheduled, the OS observes the signal flag and jumps to the signal handling code.\nOnce the signal is handled, the flag is removed so that next time the process is scheduled it runs from where it left off, before the signal was handled.\nnote that this means the programmer has to be careful when writing their code as signals can come at any time, so their program could be interrupted at any moment, and they have to be aware of any changes the signal handler has made.\nconcurrent programming is difficult and should be a module in its own right!"
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#signals-1",
+    "href": "CSC4001-S17-IPC.html#signals-1",
+    "title": "Intr-Process Communication",
+    "section": "Signals",
+    "text": "Signals\n\nThe OS only allows signals to be sent to processes with the same user ID.\nAdmin (the root user) can send signals to any process.\nThe OS itself can send signals, too,\ne.g., to indicate that a peripheral is ready.\n\n\n\nremember that signals are handled by the OS, so when we say “process sends a signal”, we mean it makes a syscall and the OS handles the signal. OS performs user ID checking to see if the signal is permitted."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#signals-2",
+    "href": "CSC4001-S17-IPC.html#signals-2",
+    "title": "Intr-Process Communication",
+    "section": "Signals",
+    "text": "Signals\n\nAll signals must go through the OS.\n\nProvides protection:\ne.g., user ID checking.\nSome signals have specific behaviour which cannot be overridden,\ne.g., KILL signal causes a process to be terminated immediately.\nSignals are used by the OS if a process has done something bad, e.g.,\n\naccessed memory it is not allowed to (SIGSEGV, segmentation fault),\ntried to run a privileged operation (SIGILL, illegal instruction),\n\n\n\n\n\nNote that some signals can be handled, or ignored, by the program.\nOthers, e.g., KILL, SEGV, are handled by the operating system and usually result in the process being terminated.\nIt is clear that one user shouldn’t be able to signal other users’ processes.\nThis would allow one user to terminate another user’s processes.\nIt’s also a reminder not to run as root unless you really need to, since you could accidentally do this!"
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#exercise-signals",
+    "href": "CSC4001-S17-IPC.html#exercise-signals",
+    "title": "Intr-Process Communication",
+    "section": "Exercise: signals",
+    "text": "Exercise: signals\n\nHow many signals do you know?\nIf you’ve ever managed your own memory, you’ve probably seen a SIGSEGV. What does it mean?\nLook up the different signals and find out\n\nwhat they mean,\ntheir default behaviour,\nwhether the default behaviour can be overridden by the programmer."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#signals-3",
+    "href": "CSC4001-S17-IPC.html#signals-3",
+    "title": "Intr-Process Communication",
+    "section": "Signals",
+    "text": "Signals\n\nWidely used,\nThey are fast and efficient,\nOnly send a small amount of data,\nAsynchronous (can be sent / received at any time),\nwhich means they can be fiddly to program.\nOften used in conjunction with other IPC techniques,"
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#semaphores",
+    "href": "CSC4001-S17-IPC.html#semaphores",
+    "title": "Intr-Process Communication",
+    "section": "Semaphores",
+    "text": "Semaphores\n\n\n\nA flag (variable) allowing synchronisation of processes.\nAnother great invention of Dijkstra, who wrote\n“Go to sleep, we’ll wake you up again when you need to continue.”\nTwo actions:\n\nWait (P) (also signal, post, raise, up and unlock),\nSignal (V) (also lower, down, lock).\n\nExercise: find out what P and V stand for – Dijkstra is Dutch.\n\n\n\n\n\n\n\n\n\n\n\n\nLikely unrelated to the flag language;\nprobably from the Greek “apparatus for signalling”.*\n\n\n\n\nDijkstra, very famous Dutch computer scientist. We met him already when discussing the Bankers algorithm, but he’s perhaps most famous for his shortest path algorithm.\nUnfortunately, it’s probably not related to the flag language, a better analogy might be a railway signal. I.e., the train waits until they are signalled to go."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#semaphores-1",
+    "href": "CSC4001-S17-IPC.html#semaphores-1",
+    "title": "Intr-Process Communication",
+    "section": "Semaphores",
+    "text": "Semaphores\n\nOne process often needs to tell another that it has finished a task,\nsemaphores allow this.\nE.g., \\(A\\) writes to an area of shared memory, then signals process \\(B\\) using a semaphore,\nprocess \\(B\\) waits for the semaphore, which opens when \\(A\\) has finished with the memory.\n\n\n\nsignal with a semaphore means “do the raise, up, or V operation”, and is not related to OS signals."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#semaphores-2",
+    "href": "CSC4001-S17-IPC.html#semaphores-2",
+    "title": "Intr-Process Communication",
+    "section": "Semaphores",
+    "text": "Semaphores\n\nProvide synchronisation and mutual exclusion.\nE.g., a train arrives at a Railway Semaphore,\n\n\n\n\nAttempts to lower (wait) for the Semaphore,\nAnother train is using the track, so the operation is blacked and the train must wait.\nWhen track becomes free, semaphore is raised (signalled),\nTrain lowers the semaphore and use the track,\nWhen finished, semaphore is raises."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#semaphores-vs-signals",
+    "href": "CSC4001-S17-IPC.html#semaphores-vs-signals",
+    "title": "Intr-Process Communication",
+    "section": "Semaphores vs signals",
+    "text": "Semaphores vs signals\n\nOS signals are designed to alert a process of a specific event,\ne.g., a key press, or invalid memory access.\nSemaphores are specifically designed to implement\nsynchronisation and mutual exclusion.\nA semaphore allows the process to “wait” for a certain event,\ne.g., a write to shared memory.\nSemaphores are atomic,\n\nI.e., no scheduling happens between checking and setting the value of a semaphore.\nEnsures no changes happen between checking and setting."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#exercise-counting-semaphore",
+    "href": "CSC4001-S17-IPC.html#exercise-counting-semaphore",
+    "title": "Intr-Process Communication",
+    "section": "Exercise: counting semaphore",
+    "text": "Exercise: counting semaphore\n\n\n\nCounting semaphore:\n\nThe semaphore can be raised (or signalled) \\(N\\) times,\nThen it can be lowered (or waited on) \\(N\\) times.\n\nSolve the dining philosophers problem using a counting semaphore."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#semaphores-3",
+    "href": "CSC4001-S17-IPC.html#semaphores-3",
+    "title": "Intr-Process Communication",
+    "section": "Semaphores",
+    "text": "Semaphores\n\nCan be implemented in hardware or software.\nE.g., there are specific CPU instructions.\nVery fast with hardware support.\nCan be used to protect shared resources,\nboth in the OS and in user-land.\nThey are low-level and easy to get wrong:\nit’s easy to cause accidental deadlock."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#synchronisation-mechanisms",
+    "href": "CSC4001-S17-IPC.html#synchronisation-mechanisms",
+    "title": "Intr-Process Communication",
+    "section": "Synchronisation mechanisms",
+    "text": "Synchronisation mechanisms\n\nSome consider semaphores to be too low-level and complicated and proposed alternative approaches:\n\nCondition variables can be used to tell a process when to proceed,\nBarriers ensure all processes reach the same point in the code before any of them can continue (a synchronisation point),\nMonitors are an object-orientated approach for indicating critical regions of code.\n\n\n\n\na critical region is a block of code which must be run all at once, with no scheduling, or multi-threading."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#exercise-posix",
+    "href": "CSC4001-S17-IPC.html#exercise-posix",
+    "title": "Intr-Process Communication",
+    "section": "Exercise: POSIX",
+    "text": "Exercise: POSIX\nPOSIX is a set of standard libraries implemented by some OS’s.\n\nWhat does POSIX stand for?\nPipes are part of POSIX, find five other things included in the POSIX standard that we’ve discussed in this module.\nIs the OS you are running POSIX compliant (or partially POSIX compliant)?"
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#next-time",
+    "href": "CSC4001-S17-IPC.html#next-time",
+    "title": "Intr-Process Communication",
+    "section": "Next time",
+    "text": "Next time\nMemory Management"
+  },
+  {
     "objectID": "CSC4001-S08-Memory.html#learning-outcomes",
     "href": "CSC4001-S08-Memory.html#learning-outcomes",
     "title": "Memory Architecture",
@@ -865,7 +1327,7 @@
     "href": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis",
     "title": "Memory Architecture",
     "section": "Phones, microcontrollers and Raspberry Pis",
-    "text": "Phones, microcontrollers and Raspberry Pis\n\nComplex instruction set architecture (CISC), consumes around 20-80W of power.\nMemory (RAM) is becoming cheaper (that was written before the LLM explosion):\n\nBetween 2GB and 4GB in the 2010s,\nCommon to see 16GB in modern laptops.\nDDR4 (dourbe data random access memory): high bandwidth with synchronous access for read and write, released in 2014.\n\nSSDs are commonplace, unlikely to find a spinning HDD in a modern computer."
+    "text": "Phones, microcontrollers and Raspberry Pis\n\nReduced instruction set architecture (CISC), consumes around 20-80W of power.\nMemory (RAM) is becoming cheaper (that was written before the LLM explosion):\n\nBetween 2GB and 4GB in the 2010s,\nCommon to see 16GB+ in modern laptops.\nDDR4 (double data random access memory): high bandwidth with synchronous access for read and write, released in 2014.\n\nSSDs are commonplace, unlikely to find a spinning HDD in a modern computer."
   },
   {
     "objectID": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-1",
@@ -894,6 +1356,13 @@
     "title": "Memory Architecture",
     "section": "Phones, microcontrollers and Raspberry Pis",
     "text": "Phones, microcontrollers and Raspberry Pis\n\nArduino Uno:\n\nATmega328P – 8 bit AVR family microcontroller.\n16MHz clock speed.\nHarvard architecture (separate, 32KB program memory).\n3KB program memory.\n2KB of SRAM.\n1KB of EEPROM (persistent storage)."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#s-and-a-brought-to-you-by",
+    "href": "CSC4001-S08-Memory.html#s-and-a-brought-to-you-by",
+    "title": "Memory Architecture",
+    "section": "S and A brought to you by…",
+    "text": "S and A brought to you by…\n\n\n\n2x Arduino Leonardo’s\n32 KB flash memory for program\n2.5 KB SRAM for data\n16 MHz clock speed\n\n\n\n\n\nPinout diagram for Arduino Leonardo\n\n\n\n\nCanute 360 prototype was originally developed on the Arduino Leonardo Originally had one ATMega, using threading to handle input/output and control the motors Lots of problems with multithreading, dev team printed out the code and laid it along the floor to debug. Decided to run the i/o and motor thread on its own microcontroller."
   },
   {
     "objectID": "CSC4001-S08-Memory.html#analogy-lets-bake-a-cake",
@@ -936,6 +1405,27 @@
     "title": "Memory Architecture",
     "section": "Exercise: memory analogies",
     "text": "Exercise: memory analogies\n\nDiscuss whether this was a good analogy.\nWhat does it represent well, what does it represent poorly.\nCome up with your own analogy, indicating what represents the registirs, cache, disk and network.\nShare analogies and discuss what reflects computer memory well / not so well."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#ram-in-pcs-1",
+    "href": "CSC4001-S08-Memory.html#ram-in-pcs-1",
+    "title": "Memory Architecture",
+    "section": "RAM in PCs",
+    "text": "RAM in PCs\n\n\n16 and 32 becoming more commonplace. If you were buying a PC how much memory would you want / need? Why?"
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#ram-prices",
+    "href": "CSC4001-S08-Memory.html#ram-prices",
+    "title": "Memory Architecture",
+    "section": "RAM prices",
+    "text": "RAM prices\n\n\nPrices are for the United Kingdom region and are shown in GBP. Prices are 19.3% higher than they were 30 days ago. The current price is 17% above the 90-day average of £379. Price history covers the period from July 2023 to October 2026. The data was last updated on October 10, 2026. Please note that prices are shown without shipping costs, unless otherwise noted by the retailer.\nfrom https://pangoly.com/en/price-trends/ram/32gb-ddr5"
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#exercise-alternative-random-access-memory",
+    "href": "CSC4001-S08-Memory.html#exercise-alternative-random-access-memory",
+    "title": "Memory Architecture",
+    "section": "Exercise: alternative random access memory",
+    "text": "Exercise: alternative random access memory\n\nRAM prices are skyrocketing\nCome up with a creative alternative to RAM\n\nIt must be able to store 0’s and 1’s\nthink about speed of access, does it take the same length of time to access every bit\npower, size, heat, cost\n\nIf a technical solution is not possible, come up with a strategy to reduce RAM prices."
   },
   {
     "objectID": "CSC4001-S13-Scheduling.html#learning-outcomes",
@@ -1033,7 +1523,7 @@
     "href": "CSC4001-S13-Scheduling.html#a-scheduler-should-2",
     "title": "Processes",
     "section": "A scheduler should",
-    "text": "A scheduler should\n\nNote that other other resources, e.g., I/O, need scheduling, too.\nThe different resource schedulers may disagree about which process to run next."
+    "text": "A scheduler should\n\n\n\nNote that other resources, e.g., I/O, need scheduling, too.\nThe different resource schedulers may disagree about which process to run next."
   },
   {
     "objectID": "CSC4001-S13-Scheduling.html#long-medium-and-short-term-scheduling",
@@ -1152,7 +1642,7 @@
     "href": "CSC4001-S13-Scheduling.html#multilevel-feedback-queue",
     "title": "Processes",
     "section": "Multilevel Feedback Queue",
-    "text": "Multilevel Feedback Queue\n\n2 ::: columnFIFO queues, \\[Q_0,Q_1,\\ldots,Q_n,\\] where\n\n\\(Q_0\\) has the highest priority\nand \\(Q_n\\) the lowest.\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::::"
+    "text": "Multilevel Feedback Queue\n\n\nMultiple FIFO queues, \\[Q_0,Q_1,\\ldots,Q_n,\\] where\n\n\\(Q_0\\) has the highest priority\nand \\(Q_n\\) the lowest."
   },
   {
     "objectID": "CSC4001-S13-Scheduling.html#multilevel-feedback-queue-1",
@@ -1166,7 +1656,7 @@
     "href": "CSC4001-S13-Scheduling.html#multilevel-feedback-queue-2",
     "title": "Processes",
     "section": "Multilevel Feedback Queue",
-    "text": "Multilevel Feedback Queue\nSuppose \\(P\\) is in \\(Q_i\\).\n\nIf \\(P\\) uses all of its timeslice, it is demoted to \\(Q_{i+1}\\),\nIf \\(P\\) voluntarily relinquishes before its timeslice is over, it remains in \\(Q_i\\).\nIf \\(P\\) blocks for I/O, it is promoted to \\(Q_{i-1}\\).\n\n::: ::: column :::: {.cell layout-align=“center”} ::: cell-output-display  ::: ::: ::::"
+    "text": "Multilevel Feedback Queue\n\n\nSuppose \\(P\\) is in \\(Q_i\\).\n\nIf \\(P\\) uses all of its timeslice, it is demoted to \\(Q_{i+1}\\),\nIf \\(P\\) voluntarily relinquishes before its timeslice is over, it remains in \\(Q_i\\).\nIf \\(P\\) blocks for I/O, it is promoted to \\(Q_{i-1}\\)."
   },
   {
     "objectID": "CSC4001-S13-Scheduling.html#multilevel-feedback-queue-3",
@@ -1484,11 +1974,340 @@
     "text": "Summary: what have early computers taught us?\n\nResources need managing,\nsince they are limited, we want to get best performance otu of hardware and best user experience.\nResources also need protection\nfrom out or malicious programs, e.g., limiting access to memory, but also files and network.\nProgrammers need a convenient interface,\nto best interact with hardware, avoid repeating code, and produce fewer errors."
   },
   {
+    "objectID": "CSC4001-S19-Memory.html#objectives",
+    "href": "CSC4001-S19-Memory.html#objectives",
+    "title": "Memory",
+    "section": "Objectives",
+    "text": "Objectives\n\nExplain why the OS needs to manage memory.\nSummarise the history of memory management and state the problem each evolution solved.\nExplain what is meant by virtual memory and state its benefits.\nExplain why, although conveniently managed by the OS, programmers still need to understand how memory works."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#recap-operating-systems",
+    "href": "CSC4001-S19-Memory.html#recap-operating-systems",
+    "title": "Memory",
+    "section": "Recap: operating systems",
+    "text": "Recap: operating systems\nPurpose:\n\nto manage resources\nand provide a convenient interface to the programmer."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#recap-operating-systems-1",
+    "href": "CSC4001-S19-Memory.html#recap-operating-systems-1",
+    "title": "Memory",
+    "section": "Recap: operating systems",
+    "text": "Recap: operating systems\n\nSo far, we have looked at processes:\ncode, data and metadata held by the operating system.\nTypically operating systems run several (dozen, hundred) processes\nOS manages processes:\n\nScheduling: deciding which process should run when,\nProtection: ensuring that one user’s processes cannot interfere with another user’s processes,\nIPC: facilitating safe communication (allowing synchronisation and data sharing between processes)."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#recap-hardware-components",
+    "href": "CSC4001-S19-Memory.html#recap-hardware-components",
+    "title": "Memory",
+    "section": "Recap: hardware components",
+    "text": "Recap: hardware components\nAs well as managing processes, the OS must look after other hardware.\n\nVon Neumann architecture is used in many modern computers.\nNext, we will look at memory management."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#purpose",
+    "href": "CSC4001-S19-Memory.html#purpose",
+    "title": "Memory",
+    "section": "Purpose",
+    "text": "Purpose\n\nProtection and management:\n\nshare out a limited resource,\nensure processes cannot interfere with each other’s memory,\n\nprogramming interface:\n\nallow processes to safely request and access memory,\ndo as much low-level work for the programmer as possible."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#limited-resource",
+    "href": "CSC4001-S19-Memory.html#limited-resource",
+    "title": "Memory",
+    "section": "Limited resource?",
+    "text": "Limited resource?\n\nWe have already discussed that everything is limited,\neven in modern computers where memory is plentiful.\nWirth’s law: software is decelerating faster than hardware is accelerating.\nGates’ law: programs double in size every 18 months.\n\nPC software such as games performs best with as many resources as possible,\nSome problems in scientific computation are still to big for even the largest mainframes.\n\nGenerative AI.\n\n\n\nWirth’s law. as computers get faster, software can afford to run slower (be less efficient) and still run at the same speed as before. Wirth’s law states that it’s actually worse: software is slowing down more than hardware is speeding up."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#processes-and-memory",
+    "href": "CSC4001-S19-Memory.html#processes-and-memory",
+    "title": "Memory",
+    "section": "Processes and memory",
+    "text": "Processes and memory\n\nEach process requires some memory\n\nto store its code (instructions),\ndata, and OS metadata.\n\nA process may request memory either at startup or while it is running.\nLikewise, it may reallocate memory at any point while it is running, or when it exits."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#memory-layout",
+    "href": "CSC4001-S19-Memory.html#memory-layout",
+    "title": "Memory",
+    "section": "Memory layout",
+    "text": "Memory layout\n\n\n\nThe CPU expects instructions to appear in order,\ni.e., so the next one can be found by incrementing the program counter,\nProgram expects data to appear in one contiguous block.\nEarly computers allocated contiguous blocks of memory for each process.\n\n\n\n\n\nOS (kernel)\n\n\nP1\n\n\nP2\n\n\nP3"
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#evolution-static-memory",
+    "href": "CSC4001-S19-Memory.html#evolution-static-memory",
+    "title": "Memory",
+    "section": "Evolution: static memory",
+    "text": "Evolution: static memory\n\nThe OS splits memory up into contiguous blocks called partitions.\nEarly machines were static,\ni.e., they had a fixed number of partitions.\nEach process could be a fixed size,\nwhich the programmer would estimate at startup.\nIf memory was needed while the process was running, the programmer would usually over-estimate its needs."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#evolution-static-memory-1",
+    "href": "CSC4001-S19-Memory.html#evolution-static-memory-1",
+    "title": "Memory",
+    "section": "Evolution: static memory",
+    "text": "Evolution: static memory\n\nPartitions may be all the same size or different sizes.\n\nSame size could be inefficient as a big and a small process got the same allocation,\nDynamic was better, but it could be hard to find a partition to fit the upcoming process."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#dynamic-allocation",
+    "href": "CSC4001-S19-Memory.html#dynamic-allocation",
+    "title": "Memory",
+    "section": "Dynamic allocation",
+    "text": "Dynamic allocation\n\nQuickly added to OS’s, then, later to high-level programming languages.\nMemory is allocated as needed.\nMany programming languages use implicit dynamic allocation, where memory is allocated automatically.\nE.g., Java, Python, C++ strings (which are not primitive types).\nOther languages use explicit dynamic allocation, where the programmer must ask the OS for a certain number of bytes,\nE.g., C/C++ malloc() and free().\nBoth approaches have pros and cons…"
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#dynamic-allocation-1",
+    "href": "CSC4001-S19-Memory.html#dynamic-allocation-1",
+    "title": "Memory",
+    "section": "Dynamic allocation",
+    "text": "Dynamic allocation\n\n\n\nOS implicitly allocates memory when a new process is created.\nAgain, contiguous blocks are needed and the size must be known at startup.\nProgrammers used clever tricks to squeeze more into a smaller chunk of memory.\nWhen a process exits, it leaves a gap in memory.\n\nA tricky problem became how best to fill the gaps.\nThis is known as fragmentation, and is a common problem.\n\n\n\n\n\n\nOS (kernel)\n\n\nP1\n\n\nP2\n\n\nP3\n\n\nFree memory\n\n\n\n\n\n\nprogramming trick: overlays\nif all code, or all data did not fit into memory, a programmer would manually copy parts of it to / from main memory.\ni.e., if some code needs to be copied, the programmer must be aware, keep track of this, and explicitly load it from disk.\nextremely fiddly and easy to get wrong – required excellent programmers to do it right.\nfragmentation: you’ve likely heard of this in relation to data on a hard disk drive, where the same thing happens – as files are deleted, new ones get spread out across lots of small chunks of memory."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#exercise-fragmentation",
+    "href": "CSC4001-S19-Memory.html#exercise-fragmentation",
+    "title": "Memory",
+    "section": "Exercise: fragmentation",
+    "text": "Exercise: fragmentation\n\nCheck out the following exercise from Advent of Code 2024.\nYou will fragment data on a hard disk.\nFeel free to use a language of our choice, or write pseudo-code if you prefer."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#gaps-in-memory",
+    "href": "CSC4001-S19-Memory.html#gaps-in-memory",
+    "title": "Memory",
+    "section": "Gaps in memory",
+    "text": "Gaps in memory\n\n\n\nWhen processes end, they leave gaps in memory.\nA tricky problem became how to fill the gaps…\n\nFirst fit: first large enough gap found.\nBest fit: smallest gap large enough to accommodate it,\nWorst fit: largest gap available.\n\nSurprisingly, worst fit is the best option, since it leaves gaps large enough to be used by other processes.\nWhereas the gaps left by best fit are too small for anything useful.\n\n\n\n\n\nOS (kernel)\n\n\nP1\n\n\nGap left by P2\n\n\nP3\n\n\nFree memory"
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#garbage-collection",
+    "href": "CSC4001-S19-Memory.html#garbage-collection",
+    "title": "Memory",
+    "section": "Garbage collection",
+    "text": "Garbage collection\n\nAll data can periodically be compacted into a contiguous block.\nGarbage collection periodically\n\nDeletes data which is no longer needed,\nre-organises data to get best use of space.\n\nThe operation is performed for all of memory and runs relatively often.\n\nTakes a significant amount of time, since it’s expensive to move blocks of data around.\nMore overheads, less time for user processes.\nGarbage collection pause is unsuitable for real-time software.\n\nBetter solutions exist (with hardware support)."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#gaps-in-memory-1",
+    "href": "CSC4001-S19-Memory.html#gaps-in-memory-1",
+    "title": "Memory",
+    "section": "Gaps in memory",
+    "text": "Gaps in memory\n\nWhat should the OS do if there is not a big enough gap?\n\nRefuse to admit the process,\nIf the new process is sufficiently important, kill other processes.\nPre-empt memory – take it away from other processes."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#swapping",
+    "href": "CSC4001-S19-Memory.html#swapping",
+    "title": "Memory",
+    "section": "Swapping",
+    "text": "Swapping\n\nMove some data from memory to disk to free up space.\nAllow other processes to use the freed memory,\ncopy data back from disk to memory the next time the process is scheduled.\nNote that other processes may need to be swapped to allow the original one back in.\nTypically, a process which is already blocked is swapped."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#another-cooking-analogy",
+    "href": "CSC4001-S19-Memory.html#another-cooking-analogy",
+    "title": "Memory",
+    "section": "Another cooking analogy",
+    "text": "Another cooking analogy\n\n\n\nSuppose you’re cooking, but your really finicky housemate comes in.\nThey demand to cook immediately, but claim that there is not enough space in the kitchen.\nYou reluctantly pack all of your ingredients back into the fridge and your cupboard.\nYour housemate uses the now free work surface to cook an elaborate meal which they do not share."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#convenient-programming-interface",
+    "href": "CSC4001-S19-Memory.html#convenient-programming-interface",
+    "title": "Memory",
+    "section": "Convenient programming interface",
+    "text": "Convenient programming interface\n\nSimilar idea to overlays,\nThis time, copying code and data to and from memory is handled by the OS.\nProgrammers should still be aware,\nsince they should try to avoid swapping."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#swapping-1",
+    "href": "CSC4001-S19-Memory.html#swapping-1",
+    "title": "Memory",
+    "section": "Swapping",
+    "text": "Swapping\n\nThe OS must decide which process(es) to swap.\nE.g., several small ones, or one large one.\nPart of the problem of medium-term scheduling:\ndeciding what to load into memory for the short-term scheduler to consider."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#swapping-2",
+    "href": "CSC4001-S19-Memory.html#swapping-2",
+    "title": "Memory",
+    "section": "Swapping",
+    "text": "Swapping\n\nI/O vs compute intensive?\n\nI/O processes require occasional small timeslices but a fast response,\ntherefore waiting for a swap may be unacceptable.\nCompute processes require longer timeslices and want to be run now,\nthe swap time is less critical, but these processes want to be run immediately.\n\nAnother trade-off for the OS to consider."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#pages",
+    "href": "CSC4001-S19-Memory.html#pages",
+    "title": "Memory",
+    "section": "Pages",
+    "text": "Pages\n\nWe tend to swap collections of pages rather than collections of bytes.\nA page is a contiguous block of memory,\nHardware can copy pages to and from memory very quickly and efficiently.\nRecall that processes require a contiguous block of memory.\nSometimes there is sufficient memory, but it is fragmented.\nRandom Access Memory means any byte can be accessed in a constant time,\nunlike mechanical hard disk drives, where data far apart takes longer to read."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#pages-1",
+    "href": "CSC4001-S19-Memory.html#pages-1",
+    "title": "Memory",
+    "section": "Pages",
+    "text": "Pages\n\nWe can solve the problem of fragmentation by making it look like the process has a contiguous block even if it does not:\nvirtual memory.\nThe OS creates a mapping from physical page addresses to virtual page addresses,\nEvery process gets a virtual contiguous block, regardless of the physical location of pages."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#page-tables",
+    "href": "CSC4001-S19-Memory.html#page-tables",
+    "title": "Memory",
+    "section": "Page tables",
+    "text": "Page tables\n\n\n\nA page table maps virtual pages currently in use by each process to their physical memory addresses.\nProvides isolation and memory protection:\nsince each process gets its own virtual page space, it can only access memory the OS allows it to.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nthe page table contains page mappings, i.e., virtual address x ==&gt; physical address y, rather than pages themselves.\ntables consume memory, so should be kept as small as possible. this is why only memory in current use is tracked.\nproviding each process with its own set of virtual pages gives the illusion that each process has exclusive access to all of memory. the OS can then enforce memory protection (if a process tries to access memory out of bounds) and isolation (since it can ensure virtual addresses for each process point to different areas of memory)."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#overheads",
+    "href": "CSC4001-S19-Memory.html#overheads",
+    "title": "Memory",
+    "section": "Overheads?",
+    "text": "Overheads?\n\nSuppose a process wants to read a value from memory, increment it and then write the result to a different location.\nThe OS must:\n\nLook up the physical address of data in the page table,\nFetch the value,\nPerform the increment,\nLook up the physical address of the new location in tho page table,\nWrite the value to memory.\nSince instructions are stored in memory, too, the page table must be checked for every instruction fetch as well!\n\nWe’ve now doubled the number of slow memory accesses!"
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#hardware-support-the-tlb",
+    "href": "CSC4001-S19-Memory.html#hardware-support-the-tlb",
+    "title": "Memory",
+    "section": "Hardware support: the TLB",
+    "text": "Hardware support: the TLB\n\n\n\nVery fast area of memory which stores a section of the page table.\nFast memory is expensive so it can only hold a small number of mappings.\nSits between the CPU and main memory and automatically translates virtual to physical addresses."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#hit-or-miss",
+    "href": "CSC4001-S19-Memory.html#hit-or-miss",
+    "title": "Memory",
+    "section": "Hit or Miss",
+    "text": "Hit or Miss\n\nSuppose the CPU does a fetch from memory.\nThe TLB attempts to translate virtual to physical address.\n\nHit: mapping found, fetch from physical address,\nMiss: need to search the page table (another read from memory) for the mapping.\nNew mapping is loaded into the TLB and the fetch continues.\n\nThis can be done entirely in hardware, which is fast and transparent to the OS.\nIf there is no hardware support, a TLB miss interrupt is raised and the OS must implement and manage this process."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#tlb-misses",
+    "href": "CSC4001-S19-Memory.html#tlb-misses",
+    "title": "Memory",
+    "section": "TLB misses",
+    "text": "TLB misses\n\nA search through the page table to find a mapping which is missing from the TLB is called a page walk.\nIf there is a TLB miss and no mapping in the page table, the OS may\n\nallocate a new page, storing its mapping in the page table,\nrefuse to allocate the new page: raises a segmentation violation (SIGSEGV)\n\n\n\n\nwhen no mapping is found, this is called a “page fault”.\na TLB miss is often called a “minor” page fault. With hardware support, this can be handled independently from the OS.\na TLB miss plus no mapping in the page table cannot be handled in hardware, and needs intervention by the OS. This is called a “major” page fault, and an interrupt is always sent to the OS.\nwhat really happens in the OS?\n\nprocess instruction says read from memory address x.\nTLB checks for a mapping, but none is found. minor page fault is raised.\nwith hardware support, automatic page walk is performed. if the mapping is found in the page table, then it is placed in the TLB and the fetch continues.\nif no mapping is found in the page table, a major page fault interrupt is raised.\ncurrent process is de-scheduled, and OS code begins to run.\nIf the OS decides not to allocate a new page, it sens a SIGSEGV (segmentation violation signal) to the process. Next time the process is scheduled, this signal will be handled and the process will be terminated.\nif the OS decides it will allocate a new page, the mapping is placed in the page table. next time the process is scheduled, the pgae walk is repeated, but this time the mapping will be fonud and the fetch will go ahead."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#exercise-hardware-support",
+    "href": "CSC4001-S19-Memory.html#exercise-hardware-support",
+    "title": "Memory",
+    "section": "Exercise: hardware support",
+    "text": "Exercise: hardware support\n\nx86 processors have hardware support,\nSpark and MIPS processors do not.\nFind out whether the processor in…\n\nthe computer you’re currently using, your smartphone, and\nany other smart devices you have (e.g., watch, TV, speaker)\n\nhas hardware support for handling minor page faults."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#tlb-misses-1",
+    "href": "CSC4001-S19-Memory.html#tlb-misses-1",
+    "title": "Memory",
+    "section": "TLB misses",
+    "text": "TLB misses\n\nA search through the page table to find a mapping which is missing from the TLB is called a page walk.\nIf there is a TLB miss and no mapping in the page table,\na page fault interrupt is raised.\nThe OS may decide to allocate a new page or send a segmentation violation signal to the process.\nEven with hardware support, a page walk is expensive.\nA major page fault, causing an interrupt, is even more so.\nWe want to have as few TLB misses as possible!"
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#paging-swapping-pages",
+    "href": "CSC4001-S19-Memory.html#paging-swapping-pages",
+    "title": "Memory",
+    "section": "Paging: swapping pages",
+    "text": "Paging: swapping pages\n\nPage tables give us a convenient way of providing\ncontiguous blocks of memory as well as memory protection and process isolation.\nPages can also be swapped to disk.\nAll done automatically by the OS,\nbut the OS has to decide which pages to throw out."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#paging-strategies",
+    "href": "CSC4001-S19-Memory.html#paging-strategies",
+    "title": "Memory",
+    "section": "Paging strategies",
+    "text": "Paging strategies\n\nWhich pages should the OS throw out?\n\nRandom: pick any."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#paging-strategies-1",
+    "href": "CSC4001-S19-Memory.html#paging-strategies-1",
+    "title": "Memory",
+    "section": "Paging strategies",
+    "text": "Paging strategies\n\nRandom:\nSimple, surprisingly effective.\nFIFO: first page loaded is first thrown out."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#paging-strategies-2",
+    "href": "CSC4001-S19-Memory.html#paging-strategies-2",
+    "title": "Memory",
+    "section": "Paging strategies",
+    "text": "Paging strategies\n\n(FIFO:\nPoor, since pages which have been around for a long time tend to be needed.\nLeast recently used: throw out the page accessed the longest time ago."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#paging-strategies-3",
+    "href": "CSC4001-S19-Memory.html#paging-strategies-3",
+    "title": "Memory",
+    "section": "Paging strategies",
+    "text": "Paging strategies\n\nLeast Recently used\nWorks well, but needs hardware support.\nLeast frequently used: keep a count of accesses, the page with fewest accesses is thrown out."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#paging-strategies-4",
+    "href": "CSC4001-S19-Memory.html#paging-strategies-4",
+    "title": "Memory",
+    "section": "Paging strategies",
+    "text": "Paging strategies\n\nLeast frequently used\nPoor because newly loaded pages tend to get thrown out immediately.\n\n\n\nthe most efficient option is least recently used.\nTLB and page table now needs an extra storage space to track last access time.\n“pages which have been around the longest tend to be most used” - most programs tend to declare some variables and use them throughout. A program which creates lots of variables and accesses memory all over the place can cause lots of TLB misses and run more slowly than a conventionally written program."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#lazy-allocation-and-contiguous-blocks",
+    "href": "CSC4001-S19-Memory.html#lazy-allocation-and-contiguous-blocks",
+    "title": "Memory",
+    "section": "Lazy allocation and contiguous blocks",
+    "text": "Lazy allocation and contiguous blocks\n\nEach time a process requests a new page,\nthe OS simply takes the next available in memory.\nVirtual mapping takes care of creating a contiguous block.\nPages are only allocated when needed – lazy allocation,\nonly memory used is allocated, solves the problem of over-allocation.\nUnlike with overlays, which were completely manual,\npaging has abstracted all the complexity away from the programmer.\nProgrammers should still be aware of how things work,\nand write programs accordingly (e.g., to avoid swapping)."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#context-switching",
+    "href": "CSC4001-S19-Memory.html#context-switching",
+    "title": "Memory",
+    "section": "Context-switching",
+    "text": "Context-switching\n\nEach process has its own page table.\nWhen a context-switch happens, the TLB should be cleared.\nMost of the cost in context-switching comes from repopulating the TLB.\nMore sophisticated TLB also store the process ID,\nlookup is based on virtual address and process ID, no longer needs clearing."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#shared-memory",
+    "href": "CSC4001-S19-Memory.html#shared-memory",
+    "title": "Memory",
+    "section": "Shared memory",
+    "text": "Shared memory\n\nShared memory can easily be set up:\nsimply map virtual addresses for multiple processes to the same physical locations.\nCode can be shared, too – shared libraries.\nE.g., the printf function is likely used by lots of processes.\n\nEach process maps to the same printf instructions.\nReduces overall memory use,\nalso reduces TLB misses as it is often looked up."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#shared-memory-1",
+    "href": "CSC4001-S19-Memory.html#shared-memory-1",
+    "title": "Memory",
+    "section": "Shared memory",
+    "text": "Shared memory\n\nCopy-on-write: if several processes share data, but few of them modify it.\n\nMap to the shared data,\nIf modified, write back to a new location in memory, reserved for that process.\nEfficient, but adds complexity.\n\n\n\n\na clever copy-on-write trick: zeros\nmany programs request a large chunk of fresh memory, initialised with zeros (can be done using the calloc function).\nThus, the OS keeps a large chuck of memory full of zeros ready for this purpose.\nrather than setting aside all the memory at once, the process is simply given a reference to this huge pool of zeros.\ndue to copy-on-write, if the program modifies any of the memory, they are allocated their own copy, but only of the parts it has changed.\nthis can be really efficient, e.g., when working with sparse matrices (2d arrays in which most of the values are zero)."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#spooling",
+    "href": "CSC4001-S19-Memory.html#spooling",
+    "title": "Memory",
+    "section": "Spooling",
+    "text": "Spooling\n\nSpooling: early computers would write data to memory, and the OS would schedule printing later.\nVirtual memory can be mapped to anything:\nfiles, I/O devices, e.g., sound cards.\nProcess accesses the devices by “writing to memory”,\nOS can handle this in the most efficient way.\n\n\n\nnote: this is more convenience for the programmer as they don’t have to worry about hardware or technicalities of writing to different devices or files, they only need to know how to access memory."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#memory-discrepancy",
+    "href": "CSC4001-S19-Memory.html#memory-discrepancy",
+    "title": "Memory",
+    "section": "Memory discrepancy",
+    "text": "Memory discrepancy\n\nThe CPU runs at 1000s of MHz (GHz),\nMemory may run at a few 100s of MHz,\nAccessing memory is orders of magnitude slower than the CPU can run.\nThe time taken to access memory is also very long (latency).\nWe could add many parallel channels connecting the CPU and memory,\nthis allows more throughput, but doesn’t fix the latency."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#registers-and-cache",
+    "href": "CSC4001-S19-Memory.html#registers-and-cache",
+    "title": "Memory",
+    "section": "Registers and cache",
+    "text": "Registers and cache\n\nRegisters are small chunks of memory on the CPU itself,\ntypically used to store intermediate values.\nA cache is a small, fast chunk of memory which sits between the CPU and main memory,\nused to store frequently used values.\nAccess to memory goes through the cache:\n\nif the data is in the cache, it is returned very quickly,\notherwise, it is fetched from memory,\ndone automatically, transparent from the OS."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#memory-hierarchy",
+    "href": "CSC4001-S19-Memory.html#memory-hierarchy",
+    "title": "Memory",
+    "section": "Memory hierarchy",
+    "text": "Memory hierarchy\n\nSince faster memory is more expensive, we often have multiple levels of cache,\neach level, further from the CPU, is larger and slower."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#recap",
+    "href": "CSC4001-S19-Memory.html#recap",
+    "title": "Memory",
+    "section": "Recap",
+    "text": "Recap\n\nComputer architecture broken down into 5 components: ALU, Control Unit, Memory, Input and Output.\nVNA has shared memory for instructions and data\nHarvard has separate memory for instructions and data."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#multi-processor-architecture",
+    "href": "CSC4001-S19-Memory.html#multi-processor-architecture",
+    "title": "Memory",
+    "section": "Multi-processor architecture",
+    "text": "Multi-processor architecture\n\nSo far we have considered only single-processor architectures,\nbut almost all modern computers include multiple processors (or multiple cores).\nEach processor may have its own cache, but we need to keep cached values consistent across CPUs.\nA shared cache solves this problem, but causes a bottleneck."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#next-time",
+    "href": "CSC4001-S19-Memory.html#next-time",
+    "title": "Memory",
+    "section": "Next time",
+    "text": "Next time\nFiles and filesystems"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "CSC4001: Systems and Architecture",
     "section": "",
-    "text": "Index\n\nS00: \nS01: \nCSC4001-S02W-Logic.qmd: \nS02: \nS03: \nS04: \nCSC4001-S05W-GoingUp.qmd: \nS05: \nCSC4001-S06W-riscv.qmd: \nS06: \nS08: \nS10: \nS11: \nS13:"
+    "text": "Index\n\nS00: \nS01: \nCSC4001-S02W-Logic.qmd: \nS02: \nS03: \nS04: \nCSC4001-S05W-GoingUp.qmd: \nS05: \nCSC4001-S06W-riscv.qmd: \nS06: \nS08: \nS10: \nS11: \nS13: \nS15: \nS17: \nS19: \nS21:"
   },
   {
     "objectID": "CSC4001-S02W-Logic.html",
@@ -1743,263 +2562,627 @@
     "text": "Putting it all together\n\nWhat does the code on the previous slide do?\nStep through the code, examining the values stored in registers.\nModify the code to implement multiplication.\nFinally, using the ideas of labels, branching and addition, implement integer division."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#learning-outcomes",
-    "href": "CSC4001-S03-VonNeumann.html#learning-outcomes",
-    "title": "Architecture overview",
+    "objectID": "CSC4001-S21-Files.html#objectives",
+    "href": "CSC4001-S21-Files.html#objectives",
+    "title": "Files and Filesystems",
+    "section": "Objectives",
+    "text": "Objectives\n\nState the difference between a file and a filesystem.\nRecognise the actions a filesystem must be able to perform, and the proporties it should have.\nWork with files in a Unix-based operating system: know how to perform the filesystem operations on the command line.\nExplain how the directory structure and Inodes are used in the Traditional unix Filesystem,\nand explain some of the implications, e.g., to uniqueness of files, and what happens when a file is deleted.\nState the principles of the Unix philosophy and give examples of how Unix-based operating systems embrace them.\n\n33 Recap: operating systems\n\nJust another program.\nProvides a programming interface for the computer hardware.\nResponsible for managing (protecting) resources."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#recap-resources",
+    "href": "CSC4001-S21-Files.html#recap-resources",
+    "title": "Files and Filesystems",
+    "section": "Recap: resources",
+    "text": "Recap: resources\nSo far, we have looked at\n\nThe CPU: process scheduling.\nWhich process should be run next.\nAlso provides protection – processes should not interfere with one another.\nFacilitates inter-process communication, allowing processes to coordinate and share data safely.\nPrevents or breaks deadlocks."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#recap-resources-1",
+    "href": "CSC4001-S21-Files.html#recap-resources-1",
+    "title": "Files and Filesystems",
+    "section": "Recap: resources",
+    "text": "Recap: resources\nSo far, we have looked at\n\nManages memory, by ensuring each process is allocated a contiguous block and isolating one process’s memory from that of another.\nVirtual memory:\n\nblock appears contiguous even though physical memory may not be,\nisolation, since process appears to have exclusive access to memory, but all accesses are translated by the OS or hardware.\nshared data and code, simply by mapping the same areas of physical memory to different processes."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#persistent-storage",
+    "href": "CSC4001-S21-Files.html#persistent-storage",
+    "title": "Files and Filesystems",
+    "section": "Persistent storage",
+    "text": "Persistent storage\n\n\n\nMain memory is volatile, meaning data is lost when the computer is switched off.\nWe need a means of persistently storing data.\nPersistent storage should be much larger than main memory,\nit should therefore be cheap, but this makes it slow.\n\n\n\n\n\n\n\n\n\n\n\n\nHistorically magnetic tape, then spinning hard disk drives, now solid state storage is commonplace."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#filesystems",
+    "href": "CSC4001-S21-Files.html#filesystems",
+    "title": "Files and Filesystems",
+    "section": "Filesystems",
+    "text": "Filesystems\n\nA means of organising data,\ndifferent from disks, which are a place to store data.\nSome applications benefited from direct access to disk,\ne.g., database software can work optimally if it has direct access to the hardware.\nFilesystems can also be used to organise main memory, and can be used to organise data other than files."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#files",
+    "href": "CSC4001-S21-Files.html#files",
+    "title": "Files and Filesystems",
+    "section": "Files",
+    "text": "Files\n\n\n\nA collection of bytes stored on disk.\nHumans like memorable names,\nso we like to give each collection of bytes a name.\nWe also like to organise our names,\nthis is done using directories.\n\n\n\n\n\n\n\n\n\n\n\nMuch easier to find things when they are well-organised."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#data-and-names",
+    "href": "CSC4001-S21-Files.html#data-and-names",
+    "title": "Files and Filesystems",
+    "section": "Data and names",
+    "text": "Data and names\n\n\n\nThe same chunk of data may have multiple names.\nI.e., multiple pointers to the same file.\nE.g., Lewis Carole and Charles Dodgson are two different names for the same person.\n\n\n\n\n\n\n\n\n\n\n\nAuthor (of Alice Through The Looking Glass, The Jabberwocky and others), also a mathematician."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#directories-a-recursive-datastructure",
+    "href": "CSC4001-S21-Files.html#directories-a-recursive-datastructure",
+    "title": "Files and Filesystems",
+    "section": "Directories; a recursive datastructure",
+    "text": "Directories; a recursive datastructure\n\n\n\nFiles are organised into directories.\nA directory may contain files or other directories.\nDirectory structure is a directed acyclic graph.\n\n\n\n\n\n\n\n\n\n\n\n\n##POSIX paths\n\n\n\nRoot directory: unique node at the top of the tree,\nRepresented as /.\nThe same filename can appear in multiple directories.\nA directory name may appear in exactly one directory.\nPOSIX paths separate directories by /,\nother Filesystems may use different separators, e.g., \\."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#exercise-directed-acyclic-graph",
+    "href": "CSC4001-S21-Files.html#exercise-directed-acyclic-graph",
+    "title": "Files and Filesystems",
+    "section": "Exercise: directed acyclic graph",
+    "text": "Exercise: directed acyclic graph\n\n\n\nWhy is a directed acyclic graph a good representation for file hierarchy.\nHint:\n\nAcyclic means no loops,"
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#trees",
+    "href": "CSC4001-S21-Files.html#trees",
+    "title": "Files and Filesystems",
+    "section": "Trees",
+    "text": "Trees\n\nA tree structure is similar, but does not allow two links to the same node.\nWhy can Filesystems not be represented as a tree?\n\n\n\ndirected acyclic graph.\n\ndirected: can only go in direction of arrows. i.e., defines the hierarchy.\nacyclic: no loops allows us to traverse the filesystem and always end up somewhere. i.e., cannot get stuck in a loop searching for a file.\nnot a tree: since the same name can exist in multiple directories."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#capabilities",
+    "href": "CSC4001-S21-Files.html#capabilities",
+    "title": "Files and Filesystems",
+    "section": "Capabilities",
+    "text": "Capabilities\nEvery filesystem must be able to:\n\n\nFiles\n\ncreate a new file,\ndelete a file,\nopen a file,\nread data from a file,\nwrite data to a file,\nclose an open file,\n\n\nDirectories\n\ncreate a new directory,\ndelete a directory,\nfind a directory / file name within a directory,\nadd a file to a directory,\nremove a file from a directory,\nrename a file.\n\n\n\n\nnote that renaming a file is a directory operation, not a file operation."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#capabilities-1",
+    "href": "CSC4001-S21-Files.html#capabilities-1",
+    "title": "Files and Filesystems",
+    "section": "Capabilities",
+    "text": "Capabilities\n\nSpeed of access and speed of update,\nScale well to large numbers of files,\nUse disk space efficiently,\nWork reliably (ensure integrity of data),\nProvide protection and security,\nFacilitate backup and recovery.\n\nRemember, as with operating systems\n\nA good filesystem is the one you forget is there.\n\n\n\nremember that Filesystems, like operating systems, must be fast, efficient and helpful (i.e., they should take fiddly work away from the programmer and give them a simple interface). Same philosophy applies: a good filesystem is the one you forget is there."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#byte-orientated",
+    "href": "CSC4001-S21-Files.html#byte-orientated",
+    "title": "Files and Filesystems",
+    "section": "Byte-orientated",
+    "text": "Byte-orientated\n\nEarly Filesystems used records,\nfixed size objects with some structure.\nHangover from the days of index cards / punched cards.\nModern files have no structure and arbitrary size.\nFiles are simply arrays of bytes stored on disk,\ni.e., can be defined by data locations on disk."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#traditional-unix-filesystem",
+    "href": "CSC4001-S21-Files.html#traditional-unix-filesystem",
+    "title": "Files and Filesystems",
+    "section": "Traditional Unix Filesystem",
+    "text": "Traditional Unix Filesystem\n\nA file is just an array of bytes,\nso we need to know where to find the bytes on disk.\nBut the OS also needs some other information.\nStored in a datastructure called an Inode."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#inodes",
+    "href": "CSC4001-S21-Files.html#inodes",
+    "title": "Files and Filesystems",
+    "section": "Inodes",
+    "text": "Inodes\nInodes store:\n\nsize,\ntimestamps (date created / last modified),\ntype (file, directory, or something else),\nownership (user ID),\npermissions (which users can read, write, and run the file),\nreference count (how many names does the file have),\narray of bytes where file content can be found.\n\n\n\nis anything important missing from the Inode data structure?\nfile names? (they do not belong in the Inode, as we will see shortly)"
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#file-names",
+    "href": "CSC4001-S21-Files.html#file-names",
+    "title": "Files and Filesystems",
+    "section": "File names",
+    "text": "File names\n\nInode are a fixed size and can be stored as a simple array on disk.\nEach Inode can be uniquely identified by its position in the array (Inode number).\nInodes do not include filenames.\nInstead, filenames are stored in directories:\neach entry is a pair: name, Inode_number.\nEvery directory contains two special entries:\n\n.. refers to the parent directory,\n. refers to the directory itself."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#locating-a-file",
+    "href": "CSC4001-S21-Files.html#locating-a-file",
+    "title": "Files and Filesystems",
+    "section": "Locating a file",
+    "text": "Locating a file\n/home/me/Documents/foo.txt\n\nRoot: /, 0\nInode 0 is a directory:\nbin, 1\nboot, 2\ndev, 3\netc, 4\nhome, 5\nlib, 6\ntmp, 7\nusr, 8\nvar, 9"
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#locating-a-file-1",
+    "href": "CSC4001-S21-Files.html#locating-a-file-1",
+    "title": "Files and Filesystems",
+    "section": "Locating a file",
+    "text": "Locating a file\n\nLocate the home Inode:\nindex 5.\nIt is another directory:\n  Desktop 10\n  Documents 11\n  Downloads 12\n  Dev 13\nLocate the Documents Inode:\nindex 11."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#locating-a-file-2",
+    "href": "CSC4001-S21-Files.html#locating-a-file-2",
+    "title": "Files and Filesystems",
+    "section": "Locating a file",
+    "text": "Locating a file\n\nIt is another directory:\n  Coursework 14\n  data.csv 15\n  foo.txt 16\n  notes.txt 17\n  prog.c 18\nLocate the foo.txt Inode:\nindex 16."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#locating-a-file-3",
+    "href": "CSC4001-S21-Files.html#locating-a-file-3",
+    "title": "Files and Filesystems",
+    "section": "Locating a file",
+    "text": "Locating a file\n\nIt is a file:\n  size: 4KB,\n  timestamps: created at Jun 22 06:58,\n  type: file,\n  ownership: 2001 (me),\n  permissions: -rw-rw-r--,\n  reference count: 1,\n  content: 1024, 1025, 1026, 1027, ...\nGiven the inode, any file operation can be performed.\nNote: we can also traverse upwards using ..."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#linux-full-stops-and-hidden-fgiles",
+    "href": "CSC4001-S21-Files.html#linux-full-stops-and-hidden-fgiles",
+    "title": "Files and Filesystems",
+    "section": "Linux, full stops and hidden fgiles",
+    "text": "Linux, full stops and hidden fgiles\n\nThe . and .. are hidden when listing files on the command-line and by default in most file managers.\nActually, any file that begins with a ‘.’ is hidden.\nPeople use this to their advantage, and often name configuration files / directories so that they will be hidden\n\n‘.bashrc’\n‘.ssh’."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#ed-rogers-side-rant",
+    "href": "CSC4001-S21-Files.html#ed-rogers-side-rant",
+    "title": "Files and Filesystems",
+    "section": "Ed Rogers’ side rant",
+    "text": "Ed Rogers’ side rant\n\nThe notion that filenames preceded by a . should be hidden is the result of a software bug in the early days of Unix. When the special . and .. directory entries were added to the filesystem, it was decided that the ls command should not display them. However, the program was mistakenly written to exclude any file whose name started with a .\n\nOr was it just lazy programming?\n\nsource:https://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory"
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#filenames",
+    "href": "CSC4001-S21-Files.html#filenames",
+    "title": "Files and Filesystems",
+    "section": "8.3 Filenames",
+    "text": "8.3 Filenames\n\nFilename rules from CP/M, old versions of DOS and pre Windows 95 / Windows NT 3.I\nStill implemented in modern Windows for compatibility with old apps.\nAccording to OS News, modern Windows still generates 8.3 filename aliases, has a negative impact on performance."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#filename-specification",
+    "href": "CSC4001-S21-Files.html#filename-specification",
+    "title": "Files and Filesystems",
+    "section": "8.3 filename specification",
+    "text": "8.3 filename specification\n\nOnly uppercase\nAt most 8 characters after the directory specifier\noptional dot plus up to three character file extension\nE.g., MYFILE.TXT\nSimilar to ISO9660 usef for CD-ROMs"
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#windows-path-name-length-limit",
+    "href": "CSC4001-S21-Files.html#windows-path-name-length-limit",
+    "title": "Files and Filesystems",
+    "section": "Windows Path Name Length Limit",
+    "text": "Windows Path Name Length Limit\n\nMAX_PATH_LENGTH in the Windows API is \\(260\\) characters.\nIt seems long, but this can quickly get used up with an organised directory hierarchy.\nHas caused problems with Google Drive and similar failing to sync to Windows machines because names were too long. Now G Drive enforces this limit to avoid the problem."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#reserved-filenames",
+    "href": "CSC4001-S21-Files.html#reserved-filenames",
+    "title": "Files and Filesystems",
+    "section": "Reserved filenames",
+    "text": "Reserved filenames\n\nIn early DOS, devices were exposed as special filenames\nFor backwards compatibility, Windows won’t let you name a file\nCON, PRN (default printer), AUX, NUL (discard everything written)\nCOM0 through COM9 (serial ports)\nLPT0 through LPT9 (parallel ports(\nTrying to name, e.g., NUL.txt also fails, but you can bypass WIN32 path parsing with, e.g., WSL."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#deleting-a-file",
+    "href": "CSC4001-S21-Files.html#deleting-a-file",
+    "title": "Files and Filesystems",
+    "section": "Deleting a file",
+    "text": "Deleting a file\n\nA file can be removed from a directory.\n\nDecrease the reference count,\nRemove the name from the directory.\n\nIf reference count reaches \\(0\\):\n\nfree the Inode,\nfree the disk space.\n\nNote that deleting a file may not remove its content from the disk.\n\n\n\nwhen reference count drops to zero, the disk space is simply “freed” so that it can be overwritten by another file.\nthe files bytes may hang around on disk for a while.\nthis is how data recovery tools work, but also has implications for cyber security."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#disk-blocks",
+    "href": "CSC4001-S21-Files.html#disk-blocks",
+    "title": "Files and Filesystems",
+    "section": "Disk blocks",
+    "text": "Disk blocks\n\nAnalogous to a page of memory,\ni.e., a bunch of bytes on disk.\nIt is sensible to group all data in the same file together on a hard-disk-drive.\nThis minimises movement of the read/write head.\nExercise: is this still necessary (or beneficial) on solid state drives?"
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#caching",
+    "href": "CSC4001-S21-Files.html#caching",
+    "title": "Files and Filesystems",
+    "section": "Caching",
+    "text": "Caching\n\nRemember: main memory is very slow compared to CPU.\nDisks are orders of magnitude slower than main memory.\nThus OS’s cache Inodes, and even data in main memory to increase speed.\nSometimes data is not written to disk immediately,\nthis is why it is best not to pull out a USB drive unless OS says “safe to remove”."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#exercise-the-linux-command-line",
+    "href": "CSC4001-S21-Files.html#exercise-the-linux-command-line",
+    "title": "Files and Filesystems",
+    "section": "Exercise: the linux command line",
+    "text": "Exercise: the linux command line"
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#the-unix-philosophy-1",
+    "href": "CSC4001-S21-Files.html#the-unix-philosophy-1",
+    "title": "Files and Filesystems",
+    "section": "The Unix Philosophy",
+    "text": "The Unix Philosophy\n\n\nPrinciples on which the UNIX OS was built:\n\nProposed by Ken Thompson.\nPromotes minimalist, modular software development.\n\n\n\n\n\n\n\n\n\n\n\nKen Thompson developed the original Unix OS at Bell Labs."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#the-unix-philosophy-2",
+    "href": "CSC4001-S21-Files.html#the-unix-philosophy-2",
+    "title": "Files and Filesystems",
+    "section": "The Unix Philosophy",
+    "text": "The Unix Philosophy\nFour principles:\n\nMake each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new “features”.\nExpect the output of every program to become the input to another, as yet unknown, program. Don’t clutter output with extraneous information. Avoid stringently columnar or binary input formats. Don’t insist on interactive input.\nDesign and build software, even operating systems, to be tried early, ideally within weeks. Don’t hesitate to throw away the clumsy parts and rebuild them.\nUse tools in preference to unskilled help to lighten a programming task, even if you have to detour to build the tools and expect to throw some of them out after you’ve finished using them."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#the-unix-philosophy-3",
+    "href": "CSC4001-S21-Files.html#the-unix-philosophy-3",
+    "title": "Files and Filesystems",
+    "section": "The UNIX philosophy",
+    "text": "The UNIX philosophy\nIn their Unix paper of 1974, Ritchie and Thompson quote the following design considerations:[3]\n\nMake it easy to write, test, and run programs.\nInteractive use instead of batch processing.\nEconomy and elegance of design due to size constraints (“salvation through suffering”).\nSelf-supporting system: all Unix software is maintained under Unix."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#pipes-and-the-unix-philosophy",
+    "href": "CSC4001-S21-Files.html#pipes-and-the-unix-philosophy",
+    "title": "Files and Filesystems",
+    "section": "Pipes and the Unix Philosophy",
+    "text": "Pipes and the Unix Philosophy\n\nUnix philosophy as summarised by Peter H sallus:\n\nWrite programs that do one thing and do it well.\nWrite programs to work together.\nWrite programs to handle text streams, because that is a universal interface.\n\nEarlier, we explored pipes’\nA way of using the output of one process as the input of another.\nPipes allow us to combine several programs which do one thing very well.\nText streams are used as the output and input of most unix programs, meaning they can work well together.\nWe will see shortly that everything in Unix is a file, another common interface."
+  },
+  {
+    "objectID": "CSC4001-S21-Files.html#exercise-everything-is-a-file",
+    "href": "CSC4001-S21-Files.html#exercise-everything-is-a-file",
+    "title": "Files and Filesystems",
+    "section": "Exercise: everything is a file",
+    "text": "Exercise: everything is a file\n\nFile redirection.\nSpecial files (which aren’t really files),\n\nstdin, stdout and stderr,\n/dev/null, /dev/zero, /dev/random."
+  },
+  {
+    "objectID": "CSC4001-S15-Deadlock.html#objectives",
+    "href": "CSC4001-S15-Deadlock.html#objectives",
+    "title": "Deadlock",
+    "section": "Objectives",
+    "text": "Objectives"
+  },
+  {
+    "objectID": "CSC4001-S15-Deadlock.html#learning-outcomes",
+    "href": "CSC4001-S15-Deadlock.html#learning-outcomes",
+    "title": "Deadlock",
     "section": "Learning Outcomes",
-    "text": "Learning Outcomes\n\nState the five components of a Von Neumann computer.\nDescribe the difference between the Von Neumann and Harvard architecture.\nExplain the advantages and disadvantages of the Von Neumann vs Harvard architectures.\nArgue for the “best” architecture in a given situation."
+    "text": "Learning Outcomes\n\nState the formal definition of deadlock and give an example of a situation where deadlock occurs.\nGive the three Coffman conditions required for deadlock to be possible.\nOverview the ways in which an OS may prevent or detect and break deadlock.\nExplain why processes require protection.\nDescribe the measures the OS uses to provide process protection."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#architecture",
-    "href": "CSC4001-S03-VonNeumann.html#architecture",
-    "title": "Architecture overview",
-    "section": "Architecture",
-    "text": "Architecture\n\n\n\n\n\n\n\n\n\n\n\n\n“Computer architecture, like other architecture, is the art of determining the needs of the user of a structure and then designing to meet those needs as effectively as possible within economic and technological constraints.”\n– Frederick P. Brooks\n\n\nBrooks was an American computer architect, software engineer and computer scientist who managed IBM 360 series of mainframes and their accompanying software."
+    "objectID": "CSC4001-S15-Deadlock.html#recap-the-process-lifecycle",
+    "href": "CSC4001-S15-Deadlock.html#recap-the-process-lifecycle",
+    "title": "Deadlock",
+    "section": "Recap: the process lifecycle",
+    "text": "Recap: the process lifecycle\n\nOne process may ask the OS to create a new one (fork or spawn),\nOS creates a process in the new state.\nWhen a process is initialised, the OS moves it to the ready state.\nThe OS may decide to schedule (dispatch) a ready process,\nits state is changed to running and any saved data is restored (MMU, registers).\nif a process requires I/O, it requests this from the OS via a syscall,\nOS sets its state to blocked until the I/O is done, then its state i set to ready."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture",
-    "href": "CSC4001-S03-VonNeumann.html#computer-architecture",
-    "title": "Architecture overview",
-    "section": "Computer Architecture",
-    "text": "Computer Architecture\n\nA description of a computer (or computer system) which is made from component parts.\nOften a high-level description, indicating how components are linked and what each does.\nSometimes includes details such as the instruction set used and other implementation details."
+    "objectID": "CSC4001-S15-Deadlock.html#recap-the-process-lifecycle-1",
+    "href": "CSC4001-S15-Deadlock.html#recap-the-process-lifecycle-1",
+    "title": "Deadlock",
+    "section": "Recap: the process lifecycle",
+    "text": "Recap: the process lifecycle\n\nA running process may be interrupted or pre-empted,\nthen its data is saved and state changed to ready.\nWhen a process is finished, its state is set to exit,\nthe OS does some cleanup before the process is deleted."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-1",
-    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-1",
-    "title": "Architecture overview",
-    "section": "Computer Architecture",
-    "text": "Computer Architecture\n\n1837: First documented computer architecture was in correspondence between Charles Babbage and Ada Lovelace, where Babbage described his analytical engine.\n1890: Herman electromechanical tabulating machine used to analyse census data stored on punched cards.\n1936, Conrad Zeus described a computer where both instructions and data are stored in the same memory: First documented instance of a “stored program” or general purpose computer."
+    "objectID": "CSC4001-S15-Deadlock.html#recap-process-lifecycle",
+    "href": "CSC4001-S15-Deadlock.html#recap-process-lifecycle",
+    "title": "Deadlock",
+    "section": "Recap: process lifecycle",
+    "text": "Recap: process lifecycle"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-2",
-    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-2",
-    "title": "Architecture overview",
-    "section": "Computer Architecture",
-    "text": "Computer Architecture\n\n1945, John Von Neumann described the famous Von Neumann Architecture in his paper on the EDVAC computer (successor to the ENIAC)."
+    "objectID": "CSC4001-S15-Deadlock.html#example-blocking-on-io",
+    "href": "CSC4001-S15-Deadlock.html#example-blocking-on-io",
+    "title": "Deadlock",
+    "section": "Example: blocking on I/O",
+    "text": "Example: blocking on I/O\nProcess is running.\n\nMakes a syscall, requesting I/O."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#computer-architecture-3",
-    "href": "CSC4001-S03-VonNeumann.html#computer-architecture-3",
-    "title": "Architecture overview",
-    "section": "Computer Architecture",
-    "text": "Computer Architecture\n\n1946, Alan Turing wrote a detailed proposal for the electronic calculator, Automatic Computing Engine, citing Von Neumann."
+    "objectID": "CSC4001-S15-Deadlock.html#example-blocking-on-io-1",
+    "href": "CSC4001-S15-Deadlock.html#example-blocking-on-io-1",
+    "title": "Deadlock",
+    "section": "Example: blocking on I/O",
+    "text": "Example: blocking on I/O\nOS moves the process to blocked.\n\nProcess remains blocked until I/O request has been completed."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#von-neumann-architecture",
-    "href": "CSC4001-S03-VonNeumann.html#von-neumann-architecture",
-    "title": "Architecture overview",
-    "section": "Von Neumann Architecture",
-    "text": "Von Neumann Architecture\n\n\nArrows represent data transfer connections and directions. I.e., there is an arrow in both directions between the memory and the arithmetic logic unit, representing a “shared bus”. We will see later that this shared bus can be a bottleneck."
+    "objectID": "CSC4001-S15-Deadlock.html#example-blocking-on-io-2",
+    "href": "CSC4001-S15-Deadlock.html#example-blocking-on-io-2",
+    "title": "Deadlock",
+    "section": "Example: blocking on I/O",
+    "text": "Example: blocking on I/O\nWhen the I/O request is done, OS moves the process to ready.\n\nOS Will move the process to running when it is scheduled.\n\nNote that this may not happen immediately."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#five-components",
-    "href": "CSC4001-S03-VonNeumann.html#five-components",
-    "title": "Architecture overview",
-    "section": "Five components",
-    "text": "Five components\n\nStore\nControl Unit\nArithmetic Logic Unit\ninput\nOutput"
+    "objectID": "CSC4001-S15-Deadlock.html#recap-scheduling",
+    "href": "CSC4001-S15-Deadlock.html#recap-scheduling",
+    "title": "Deadlock",
+    "section": "Recap: scheduling",
+    "text": "Recap: scheduling\nDeciding what to do next.\nA good scheduler should:\n\nnot give any process too much CPU, but\nnot give any process too little, either (starvation).\nGive compute-heavy processes longer, larger slices of CPU time, but\ngive interactive processes small slices of CPU time very often.\nEnsure real-time (safety-critical) processes run immediately.\nEnsure optimum use of hardware,\neverything should be busy, nothing should be waiting."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#store",
-    "href": "CSC4001-S03-VonNeumann.html#store",
-    "title": "Architecture overview",
-    "section": "Store",
-    "text": "Store\n\nTo store data and instructions. E.g., paper tape, magnetic tape, RAM."
+    "objectID": "CSC4001-S15-Deadlock.html#recap-scheduling-1",
+    "href": "CSC4001-S15-Deadlock.html#recap-scheduling-1",
+    "title": "Deadlock",
+    "section": "Recap: scheduling",
+    "text": "Recap: scheduling\n\nOptimise for different types of hardware, e.g.,\nmice and printers are slow, network and disk is (comparatively) fast.\nProvide predictable behaviour, and\ndegrade gracefully under excessive load.\nRun fast, so as to maximise time spent running user-land applications\nand avoid thrashing.\n\n\nNote that other other resources, e.g., I/O, need scheduling, too.\nDifferent resource schedulers may disagree about which process to run next."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#control-unit",
-    "href": "CSC4001-S03-VonNeumann.html#control-unit",
-    "title": "Architecture overview",
-    "section": "Control Unit",
-    "text": "Control Unit\n\ndecides which instruction to perform next."
+    "objectID": "CSC4001-S15-Deadlock.html#the-os-also-needs-to",
+    "href": "CSC4001-S15-Deadlock.html#the-os-also-needs-to",
+    "title": "Deadlock",
+    "section": "The OS also needs to",
+    "text": "The OS also needs to\n\nprevent deadlocks,\na group of processes all waiting for one of their number to do something.\nProcess protection:\ninsuring that processes cannot interfere with one another."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#arithmetic-logic-unit",
-    "href": "CSC4001-S03-VonNeumann.html#arithmetic-logic-unit",
-    "title": "Architecture overview",
-    "section": "Arithmetic Logic Unit",
-    "text": "Arithmetic Logic Unit\n\nPerforms calculations.\n\nTypically the ALU and control unit are combined into the CPU.\nOperations performed on the hardware, or implemented in software.\nIn early computers, electromechanical hardware was used; these days transistors are used, which require much less energy."
+    "objectID": "CSC4001-S15-Deadlock.html#example",
+    "href": "CSC4001-S15-Deadlock.html#example",
+    "title": "Deadlock",
+    "section": "Example",
+    "text": "Example\n\n\n\nProcess \\(P_1\\) wants copy to a file from disk \\(A\\) to disk \\(B\\).\nProcess \\(P_2\\) wants to copy a file from disk \\(B\\) to disk \\(A\\).\nOnly one process can access the disk at any one time.\n\nWhat happens?\n\n\n\n\n\n\n\n\n\n\n\nExample\n\n\n\n\\(P_1\\) is scheduled.\n\\(P_1\\) is given disk \\(A\\),\nNow \\(P_2\\) is scheduled.\nIt is given access to disk \\(B\\).\n\\(P_2\\) is still running.\nIt requests access to disk \\(A\\).\nRequest is denied since \\(P_1\\) has disk \\(A\\).\n\\(P_2\\) blocks, waiting for disk \\(A\\).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExample\n\n\\(P_1\\) is scheduled.\nIt requests access to disk \\(B\\).\nThe request is denied since \\(P_2\\) has disk \\(B\\) already.\n\\(P_1\\) blocks waiting for disk \\(B\\).\nNow both \\(P_1\\) and \\(P_2\\) are blocked.\nOnly \\(P_1\\) can unblock \\(P_2\\), and only \\(P_2\\) can unblock \\(P_1\\).\n\nWe have a deadlock.\n\n\nFormal definition: deadlock\nA group of processes, \\(D = \\{P_1,\\ldots,P_k\\}\\) is deadlocked if\n\nevery process \\(P_i\\) is blocked, waiting for an event \\(E_i\\),\nbut the event \\(E_i\\) can only be caused by a process in \\(D\\).\n\n\nSkip the maths\n\n\n\nDefinition: Deadlock\nA group of processes is deadlockd if:\n\nEvery process is waiting for an event to happen\nBut only another process in the group can trigger the event.\n\n\n\nCoffman conditions\n\nMutual exclusion:\nexclusive access to a resource is required.j\nHold and wait:\na process holds onto a resource while waiting for another.\nNo pre-emption:\nonce a process has a resource, it cannot be taken away.\n\nA deadlock is only possible if all three conditions are met.\n\n\nExercise\nHow are the three conditions met in the disk writing example we considered earlier?\n\nProcess \\(P_1\\) wants to copy a file from disk \\(A\\) to disk \\(B\\).\nProcess \\(P_2\\) wants to copy a file from disk \\(B\\) to disk \\(A\\).\nOnly one process can access the disk at any one time.\n\n\n\n“Only one process can access the disk”: mutual exclusion. Usually it’s hard to break this one.\nIn the example, both processes grab the disks and hang onto them while they wait for the other to let it go.\nNo pre-emption: there is no mechanism to force either process to drop the disk.\n\n\n\n\nDeadlock prevention\n\nIf we break at least one Coffman condition, deadlock is impossible.\nSeems possible, but maybe harder than it looks…\n\n\n\nPrevent hold and wait\n\nHold and wait\nprocess holds onto a resource while waiting for another.\nSolution:\neach time a process blocks on a resource, they must drop all other resources.\nDrawback\nprocess has to request all resources again.\nIt may never be possible to grab all resources at once.\n\n\n\nPrevent hold and wait\n\nWhy not block until all resources become available?\n\nInefficient, since the process could have been doing useful work in the meantime.\nProcess may not need all resources at the same time – some other process could have been using them.\nA process may not know what resources it needs at startup, so this could be impossible.\n\nan even stricter approach: start the process only when resources are available.\nProcess releases resources when it exits.\n\n\n\nnot knowing resource needs at startup. a word processor may always need disk access, but might only need printer access sometimes, and for a short period of the time it spends open.\nan even stricter solution: don’t even allow the process to start until all resources are available. process then grabs resources and releases them when completed.\n\nwhat are the potential drawbacks of this solution?\nsimilar to previous, also\n2hr computation plus 20s write to disk. process has exclusive access to the disk for its entire 2:00:20 running time (during which, of course, no other process can access the disk).\n\n\n\n\n\nPrevent mutual exclusion\n\n\n\nMutual exclusion:\na process requires exclusive access to a resource.\nSolution:\nallow multiple devices to access the same resource at the same time.\nDrawback often impossible.\nE.g., printer, mechanical hard disk drive with one read/write head.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nprevent mutual exclusion\n\nAlternative solution: virtual resources.\n\nProcess appears to have exclusive access to a resource, while OS is storing the operations to be performed later.\nEarly example: spooling – process writes to magnetic tape, later OS prints out paper tape. Process does not have to wait for [access to] the printer.\n\n\n\n\nPrevent No pre-emption\n\nNo Pre-emption\nonce a process has a resource, it cannot be taken away.\nSolution:\ntake resources away as needed.\nDrawback\nprocess expects the resource to be in the same state as when it was taken away.\nWe need to take care to save and restore the state or resources,\nso that the process can resume working on them as before.\n\n\n\nsometimes easy, as we will see with memory\nsometimes difficult or impossible, e.g., with a printer.\n\n\n\n\nDining philosophers and the circular wait\n\n\n\n12 philosophers sit around a table,\nThey want to share a bowl of noodles, eaten with chopsticks.\nEach philosopher has one chopstick to the left and one chopstick to the right of their plate:\na philosopher needs two chopsticks to eat.\n\nThere are not enough chopsticks to go around.\n\n\n\n\n\n\n\n\n\n\n\n\n\nDining philosophers and the circular wait\nThe Coffman conditions all hold!\n\nMutual exclusion: one chopstick can be used by at most one philosopher at a time.\nHold and wait: a greedy philosopher will not put down a chopstick once they have picked it up.\nNo pre-emption: no waiter has ever been brave enough to take a chopstick from a hungry philosopher!\n\nThe disk writing deadlock was an example of circular wait.\n\n\nPreventing Circular Wait\n\nCircular wait\neach process in a circle is waiting for a resource that the next process has.\nSolution\n\nPut an order on resources, e.g., \\(\\underbrace{M_{1}&lt;\\cdots&lt;M_{k}}_{\\text{memory}}&lt;\\underbrace{D_{1}&lt;\\ldots&lt;D_{\\ell}}_{\\text{disks}}&lt;\\underbrace{P_{1}&lt;\\cdots&lt;P_{m}}_{\\text{printers}}\\).\nA process can only access resources greater than the ones it already has.\n\n\n\n\nHow does this prevent circular wait?\n\nSuppose \\(P_1\\) has \\(D_1\\) and wants \\(D_2\\).\nIt requests and gets access to $D_1 &lt; \\(D_2\\).\nIt is impossible, if \\(P_2\\) has \\(D_2\\) for it to get \\(D_1\\), since \\(D_1 &lt; D_2\\).\n\nCircular dependencies are no longer possible.\n\nSame problems as with preventing hold-and-wait.\n\nInefficient use of hardware,\nresources unknown so cannot request in ascending order,\nsometimes degrades to “request all resources at once”.\n\n\n\n\nAvoidance\n\nDon’t let a situation arise where deadlock is possible.\nI.e., a request is refused if granting it could cause deadlock now or later.\nThis is hard to do, since it’s impossible to predict the future.\n\n\n\nDijkstra’s Banker Algorithm\n\nDeadlock prevention algorithm based on the idea of a banker lending money.\nEach request must be\n\nfeasible: can be granted,\ne.g., it is impossible to allocate 100GB of memory if the computer has only 16GB.\nSafe: there is no chance of deadlock if the request is granted.\n\nA very cautious approach:\nMaybe we get lucky 9/10 times and no deadlock happens, but the Banker will never grant the request.\n\n\n\nLimitations\nThe algorithm requires\n\nA fixed number of resources, which is often, but not always, true,\nA fixed number of processes, which is rare in a modern PC (no new processes, no processes can exit),\nEach process needs to know its maximum needs in advance.\nSafety decision is computationally intensive, and gets harder as more resources are added.\nPotentially inefficient use of resources due to the cautious approach.\n\n\n\nDetection and breaking\n\nIt seems almost impossible to break the Coffman Conditions,\nPrevention, e.g., using the banker’s algorithm, is limited and computationally difficult,\nMaybe it’s easier and cheaper to spot deadlocks an fix them when they happen.\n\n\n\nDeadlock detection\nEarliest method:\n\nDetection by operator,\ni.e., the operator notices the computer is hanging.\nEDSAC had an audio output, experienced operators could “hear” an infinite loop.\n\n\n\nResource Request and Allocation Graphs RRAGs\nA visual representation of requests and allocations or resources,\nallows us to easily spot deadlocks.\n\nProcesses are represented by squares,\n\n\n\n\n\n\n\n\n\n\n\n\nRRAGs\n\nResources are represented by squares (number represents how many of this resource there are),\n\n\n\n\n\n\n\n\n\n\n\n\nRRAGs\n\nRequests by arrows from process to resource,\n\n\n\n\n\n\n\n\n\n\n\n\nRRAGs\n\nAllocations by arrows from resources to processes,"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#input-and-output",
-    "href": "CSC4001-S03-VonNeumann.html#input-and-output",
-    "title": "Architecture overview",
-    "section": "Input and Output",
-    "text": "Input and Output\n\nMeans for the user to interact with the computer.\n\nKeyboard, mouse, camera, sensors.\nMonitor, speakers.\nVaried and interesting ways for humans and computers to interact."
+    "objectID": "CSC4001-S15-Deadlock.html#example-1",
+    "href": "CSC4001-S15-Deadlock.html#example-1",
+    "title": "Deadlock",
+    "section": "Example",
+    "text": "Example\n\n\n\n\\(P_1\\) is scheduled.\n\\(P_1\\) is given disk \\(A\\),\nNow \\(P_2\\) is scheduled.\nIt is given access to disk \\(B\\).\n\\(P_2\\) is still running.\nIt requests access to disk \\(A\\).\nRequest is denied since \\(P_1\\) has disk \\(A\\).\n\\(P_2\\) blocks, waiting for disk \\(A\\)."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#key-features",
-    "href": "CSC4001-S03-VonNeumann.html#key-features",
-    "title": "Architecture overview",
-    "section": "Key features",
-    "text": "Key features\n\nInstructions and data are stored in the same memory.\nSimple, cost-effective and widely used.\n\n\n\nSingle bus to transfer all data.\nThis can cause a bottleneck.\nSequential architecture Can limit speed of processing. : CPU can perform only one instruction at a time.\nThis is the architecture found in most desktop PCs today."
+    "objectID": "CSC4001-S15-Deadlock.html#example-2",
+    "href": "CSC4001-S15-Deadlock.html#example-2",
+    "title": "Deadlock",
+    "section": "Example",
+    "text": "Example\n\n\\(P_1\\) is scheduled.\nIt requests access to disk \\(B\\).\nThe request is denied since \\(P_2\\) has disk \\(B\\) already.\n\\(P_1\\) blocks waiting for disk \\(B\\).\nNow both \\(P_1\\) and \\(P_2\\) are blocked.\nOnly \\(P_1\\) can unblock \\(P_2\\), and only \\(P_2\\) can unblock \\(P_1\\).\n\nWe have a deadlock."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#harvard-architecture",
-    "href": "CSC4001-S03-VonNeumann.html#harvard-architecture",
-    "title": "Architecture overview",
-    "section": "Harvard Architecture",
-    "text": "Harvard Architecture"
+    "objectID": "CSC4001-S15-Deadlock.html#formal-definition-deadlock",
+    "href": "CSC4001-S15-Deadlock.html#formal-definition-deadlock",
+    "title": "Deadlock",
+    "section": "Formal definition: deadlock",
+    "text": "Formal definition: deadlock\nA group of processes, \\(D = \\{P_1,\\ldots,P_k\\}\\) is deadlocked if\n\nevery process \\(P_i\\) is blocked, waiting for an event \\(E_i\\),\nbut the event \\(E_i\\) can only be caused by a process in \\(D\\).\n\n\nSkip the maths"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#harvard-architecture-1",
-    "href": "CSC4001-S03-VonNeumann.html#harvard-architecture-1",
-    "title": "Architecture overview",
-    "section": "Harvard Architecture",
-    "text": "Harvard Architecture\n\nHas separate memory for instructions and data.\nWell suited to embedded systems and main-frames.\n\n\n\nReduces the memory bottleneck found in Von Neumann machines.\n\nLess contention as there is no shared bus.\nData and instruction access can be done simultaneously.\nLess flexible than Von-Neumann. E.g., instructions cannot be modified at run-time."
+    "objectID": "CSC4001-S15-Deadlock.html#definition-deadlock",
+    "href": "CSC4001-S15-Deadlock.html#definition-deadlock",
+    "title": "Deadlock",
+    "section": "Definition: Deadlock",
+    "text": "Definition: Deadlock\nA group of processes is deadlockd if:\n\nEvery process is waiting for an event to happen\nBut only another process in the group can trigger the event."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#in-small-groups",
-    "href": "CSC4001-S03-VonNeumann.html#in-small-groups",
-    "title": "Architecture overview",
-    "section": "In small groups",
-    "text": "In small groups\n\nIn which situations is each architecture used?\n\nToday and historically?\nWhy is it a good choice for that situation, or why not?\n\nThings to think about:\n\nwhere are the bottlenecks?\nspecial purpose vs general purpose\ndata integrity / tampering / security"
+    "objectID": "CSC4001-S15-Deadlock.html#coffman-conditions",
+    "href": "CSC4001-S15-Deadlock.html#coffman-conditions",
+    "title": "Deadlock",
+    "section": "Coffman conditions",
+    "text": "Coffman conditions\n\nMutual exclusion:\nexclusive access to a resource is required.j\nHold and wait:\na process holds onto a resource while waiting for another.\nNo pre-emption:\nonce a process has a resource, it cannot be taken away.\n\nA deadlock is only possible if all three conditions are met."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#section",
-    "href": "CSC4001-S03-VonNeumann.html#section",
-    "title": "Architecture overview",
-    "section": "1949",
-    "text": "1949\n\n“The”brain” [computer] may one day come down to our level [of the common people] and help with our income-tax and book-keeping calculations. But this is speculation and there is no sign of it so far.”\n\n– British newspaper The Star in a June 1949 news article about the EDSAC computer."
+    "objectID": "CSC4001-S15-Deadlock.html#exercise",
+    "href": "CSC4001-S15-Deadlock.html#exercise",
+    "title": "Deadlock",
+    "section": "Exercise",
+    "text": "Exercise\nHow are the three conditions met in the disk writing example we considered earlier?\n\nProcess \\(P_1\\) wants to copy a file from disk \\(A\\) to disk \\(B\\).\nProcess \\(P_2\\) wants to copy a file from disk \\(B\\) to disk \\(A\\).\nOnly one process can access the disk at any one time.\n\n\n\n“Only one process can access the disk”: mutual exclusion. Usually it’s hard to break this one.\nIn the example, both processes grab the disks and hang onto them while they wait for the other to let it go.\nNo pre-emption: there is no mechanism to force either process to drop the disk."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#section-1",
-    "href": "CSC4001-S03-VonNeumann.html#section-1",
-    "title": "Architecture overview",
-    "section": "1953",
-    "text": "1953\n\n“I think there is a world market for maybe five computers.”\n\n– Thomas Watson, IBM Chairman, although this is now thought to be urban legend.\n\nThe “brain” computer has now very much “come down to the level of the common people”, and does much more than just book-keeping.\nRegarding the Watson quote, it is now thought to be an urban legend. see https://geekhistory.com/content/urban-legend-i-think-there-world-market-maybe-five-computers\n“We believe the statement that you attribute to Thomas Watson is a misunderstanding of remarks made at IBM’s annual stockholders meeting on April 28, 1953. In referring specifically and only to the IBM 701 Electronic Data Processing Machine – which had been introduced the year before as the company’s first production computer designed for scientific calculations – Thomas Watson, Jr., told stockholders that “IBM had developed a paper plan for such a machine and took this paper plan across the country to some 20 concerns that we thought could use such a machine. I would like to tell you that the machine rents for between $12,000 and $18,000 a month, so it was not the type of thing that could be sold from place to place. But, as a result of our trip, on which we expected to get orders for five machines, we came home with orders for 18.” https://geekhistory.com/content/urban-legend-i-think-there-world-market-maybe-five-computers"
+    "objectID": "CSC4001-S15-Deadlock.html#deadlock-prevention",
+    "href": "CSC4001-S15-Deadlock.html#deadlock-prevention",
+    "title": "Deadlock",
+    "section": "Deadlock prevention",
+    "text": "Deadlock prevention\n\nIf we break at least one Coffman condition, deadlock is impossible.\nSeems possible, but maybe harder than it looks…"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#learning-outcomes-1",
-    "href": "CSC4001-S03-VonNeumann.html#learning-outcomes-1",
-    "title": "Architecture overview",
-    "section": "Learning Outcomes",
-    "text": "Learning Outcomes\n\nGive an overview of early computers: use, specs, how they were programmed.\nCompare early and modern computers\nExplain how developments in early computing have influenced modern computer hardware."
+    "objectID": "CSC4001-S15-Deadlock.html#prevent-hold-and-wait",
+    "href": "CSC4001-S15-Deadlock.html#prevent-hold-and-wait",
+    "title": "Deadlock",
+    "section": "Prevent hold and wait",
+    "text": "Prevent hold and wait\n\nHold and wait\nprocess holds onto a resource while waiting for another.\nSolution:\neach time a process blocks on a resource, they must drop all other resources.\nDrawback\nprocess has to request all resources again.\nIt may never be possible to grab all resources at once."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#integers",
-    "href": "CSC4001-S03-VonNeumann.html#integers",
-    "title": "Architecture overview",
-    "section": "Integers",
-    "text": "Integers\n\nWe already saw that an unsigned integer number can be represented in Binary.\nUsually the right-most bit represents the least significant digit.\nLittle-endian representation.\nSigned integers may be represented in several ways:\n\nSign+magnitude: one bit is reserved for the sign, the rest for the value.\nThis representation allows \\(+0\\) and \\(-0\\).\nOne’s complement: positive numbers represented as usual, negative numbers represented by flipping all their bits.\nAgain, we have \\(+0\\) and \\(-0\\).\nTwo’s complement: positive numbers represented as usual, negative numbers represented by adding one then flipping all their bits.\nonly one \\(0\\), no redundancy."
+    "objectID": "CSC4001-S15-Deadlock.html#prevent-hold-and-wait-1",
+    "href": "CSC4001-S15-Deadlock.html#prevent-hold-and-wait-1",
+    "title": "Deadlock",
+    "section": "Prevent hold and wait",
+    "text": "Prevent hold and wait\n\nWhy not block until all resources become available?\n\nInefficient, since the process could have been doing useful work in the meantime.\nProcess may not need all resources at the same time – some other process could have been using them.\nA process may not know what resources it needs at startup, so this could be impossible.\n\nan even stricter approach: start the process only when resources are available.\nProcess releases resources when it exits.\n\n\n\nnot knowing resource needs at startup. a word processor may always need disk access, but might only need printer access sometimes, and for a short period of the time it spends open.\nan even stricter solution: don’t even allow the process to start until all resources are available. process then grabs resources and releases them when completed.\n\nwhat are the potential drawbacks of this solution?\nsimilar to previous, also\n2hr computation plus 20s write to disk. process has exclusive access to the disk for its entire 2:00:20 running time (during which, of course, no other process can access the disk)."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-numbers",
-    "href": "CSC4001-S03-VonNeumann.html#floating-point-numbers",
-    "title": "Architecture overview",
-    "section": "Floating point numbers",
-    "text": "Floating point numbers\n\nIEEE 754 defines a standard for representing and manipulating floating point numbers.\nRepresented in a similar way to scientific notation.\nE.g., \\(300,000,000 = 3 \\times 10^8\\).\n\nThe \\(3\\) is called the fraction (coefficient or mantissa).\nThe \\(8\\) (from \\(10^8\\)) is called the exponent.\n\nIEEE 754 defines:\n\nThe base, typically \\(2\\) for binary, but sometimes \\(10\\).\nPrecision (number of digits to represent the fraction).\nAn exponent range."
+    "objectID": "CSC4001-S15-Deadlock.html#prevent-mutual-exclusion",
+    "href": "CSC4001-S15-Deadlock.html#prevent-mutual-exclusion",
+    "title": "Deadlock",
+    "section": "Prevent mutual exclusion",
+    "text": "Prevent mutual exclusion\n\n\n\nMutual exclusion:\na process requires exclusive access to a resource.\nSolution:\nallow multiple devices to access the same resource at the same time.\nDrawback often impossible.\nE.g., printer, mechanical hard disk drive with one read/write head."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-numbers-1",
-    "href": "CSC4001-S03-VonNeumann.html#floating-point-numbers-1",
-    "title": "Architecture overview",
-    "section": "Floating point numbers",
-    "text": "Floating point numbers\n\nUsing \\(n\\) bits, the representation consists of\n\n\\(1\\) bit for the sign,\n\\(n - p - 1\\) bits for the exponent.\n\\(p\\) bits for the fraction (stored in Binary),\n\nAny signed number up to \\(p\\) significant digits and a maximum exponent of \\(n-p-1\\) can be defined.\nPositive and negative infinity.\nA representation for not a number, e.g., for the result of division by zero."
+    "objectID": "CSC4001-S15-Deadlock.html#prevent-mutual-exclusion-1",
+    "href": "CSC4001-S15-Deadlock.html#prevent-mutual-exclusion-1",
+    "title": "Deadlock",
+    "section": "prevent mutual exclusion",
+    "text": "prevent mutual exclusion\n\nAlternative solution: virtual resources.\n\nProcess appears to have exclusive access to a resource, while OS is storing the operations to be performed later.\nEarly example: spooling – process writes to magnetic tape, later OS prints out paper tape. Process does not have to wait for [access to] the printer."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#bit-floating-point",
-    "href": "CSC4001-S03-VonNeumann.html#bit-floating-point",
-    "title": "Architecture overview",
-    "section": "32-bit floating point",
-    "text": "32-bit floating point\nRepresentation used for the float type in many programming languages.\n\n\n\\(32\\) bits:\n\n\\(1\\) bit for the sign,\n\\(8\\) bits for the exponent,\n\\(23\\) bits for the fraction.\n\nAround \\(7\\) decimal digits for the fraction.\nA double uses \\(64\\) bits, \\(52\\) bits (around \\(16\\) decimal digits)."
+    "objectID": "CSC4001-S15-Deadlock.html#prevent-no-pre-emption",
+    "href": "CSC4001-S15-Deadlock.html#prevent-no-pre-emption",
+    "title": "Deadlock",
+    "section": "Prevent No pre-emption",
+    "text": "Prevent No pre-emption\n\nNo Pre-emption\nonce a process has a resource, it cannot be taken away.\nSolution:\ntake resources away as needed.\nDrawback\nprocess expects the resource to be in the same state as when it was taken away.\nWe need to take care to save and restore the state or resources,\nso that the process can resume working on them as before.\n\n\n\nsometimes easy, as we will see with memory\nsometimes difficult or impossible, e.g., with a printer."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-numbers-2",
-    "href": "CSC4001-S03-VonNeumann.html#floating-point-numbers-2",
-    "title": "Architecture overview",
-    "section": "Floating point numbers",
-    "text": "Floating point numbers\nAdvantages\n\nEfficient representation of very large and very small numbers.\nFast computation due to many years of hardware development.\n\nDisadvantages\n\nFloating point errors."
+    "objectID": "CSC4001-S15-Deadlock.html#dining-philosophers-and-the-circular-wait",
+    "href": "CSC4001-S15-Deadlock.html#dining-philosophers-and-the-circular-wait",
+    "title": "Deadlock",
+    "section": "Dining philosophers and the circular wait",
+    "text": "Dining philosophers and the circular wait\n\n\n\n12 philosophers sit around a table,\nThey want to share a bowl of noodles, eaten with chopsticks.\nEach philosopher has one chopstick to the left and one chopstick to the right of their plate:\na philosopher needs two chopsticks to eat.\n\nThere are not enough chopsticks to go around."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#precision-and-accuracy",
-    "href": "CSC4001-S03-VonNeumann.html#precision-and-accuracy",
-    "title": "Architecture overview",
-    "section": "Precision and accuracy",
-    "text": "Precision and accuracy\n\nPrecision: how many significant digits,\nAccuracy: how close to the true value.\n\nA value may be precise but not accurate, accurate but not precise, or both inaccurate and imprecise."
+    "objectID": "CSC4001-S15-Deadlock.html#dining-philosophers-and-the-circular-wait-1",
+    "href": "CSC4001-S15-Deadlock.html#dining-philosophers-and-the-circular-wait-1",
+    "title": "Deadlock",
+    "section": "Dining philosophers and the circular wait",
+    "text": "Dining philosophers and the circular wait\nThe Coffman conditions all hold!\n\nMutual exclusion: one chopstick can be used by at most one philosopher at a time.\nHold and wait: a greedy philosopher will not put down a chopstick once they have picked it up.\nNo pre-emption: no waiter has ever been brave enough to take a chopstick from a hungry philosopher!\n\nThe disk writing deadlock was an example of circular wait."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#floating-point-errors",
-    "href": "CSC4001-S03-VonNeumann.html#floating-point-errors",
-    "title": "Architecture overview",
-    "section": "Floating point errors",
-    "text": "Floating point errors\n\nWe know that \\(1/3 + 1/3 + 1/3 = 1\\).\nHowever, \\(0.3333333333 + 0.3333333333 + 0.3333333333 = 0.9999999999\\)!\n\\(1/10\\) is easy to represent in decimal: \\(0.1\\).\nHowever, in binary, it is \\(0.001100110011\\).\nFloating point representation is sufficient for most applications, e.g., 3D games.\nHowever, we have to take care with things like currency, which must be correct."
+    "objectID": "CSC4001-S15-Deadlock.html#preventing-circular-wait",
+    "href": "CSC4001-S15-Deadlock.html#preventing-circular-wait",
+    "title": "Deadlock",
+    "section": "Preventing Circular Wait",
+    "text": "Preventing Circular Wait\n\nCircular wait\neach process in a circle is waiting for a resource that the next process has.\nSolution\n\nPut an order on resources, e.g., \\(\\underbrace{M_{1}&lt;\\cdots&lt;M_{k}}_{\\text{memory}}&lt;\\underbrace{D_{1}&lt;\\ldots&lt;D_{\\ell}}_{\\text{disks}}&lt;\\underbrace{P_{1}&lt;\\cdots&lt;P_{m}}_{\\text{printers}}\\).\nA process can only access resources greater than the ones it already has."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#but-first-why-are-we-doing-this",
-    "href": "CSC4001-S03-VonNeumann.html#but-first-why-are-we-doing-this",
-    "title": "Architecture overview",
-    "section": "But first, why are we doing this?",
-    "text": "But first, why are we doing this?\n\nGain perspective.\nUnderstanding of why things are the way they are today.\nLearn from previous successes and failures."
+    "objectID": "CSC4001-S15-Deadlock.html#how-does-this-prevent-circular-wait",
+    "href": "CSC4001-S15-Deadlock.html#how-does-this-prevent-circular-wait",
+    "title": "Deadlock",
+    "section": "How does this prevent circular wait?",
+    "text": "How does this prevent circular wait?\n\nSuppose \\(P_1\\) has \\(D_1\\) and wants \\(D_2\\).\nIt requests and gets access to $D_1 &lt; \\(D_2\\).\nIt is impossible, if \\(P_2\\) has \\(D_2\\) for it to get \\(D_1\\), since \\(D_1 &lt; D_2\\).\n\nCircular dependencies are no longer possible.\n\nSame problems as with preventing hold-and-wait.\n\nInefficient use of hardware,\nresources unknown so cannot request in ascending order,\nsometimes degrades to “request all resources at once”."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#the-eniac-1945",
-    "href": "CSC4001-S03-VonNeumann.html#the-eniac-1945",
-    "title": "Architecture overview",
-    "section": "The ENIAC (1945)",
-    "text": "The ENIAC (1945)\n\n\nElectronic Numerical Integrator and Computer\n\nSpecial purpose computer for artillery firing table calculations.\nLocated at the School of Engineering and Applied Science, Pennsylvania State University\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCould be “programmed” by using the plug-board and switches, data entered via punched cards.\nLater converted into a stored program computer.\nBase-10 arithmetic instead of the usual binary.\nUsed vacuum tubes, which burnt out often – high maintenance."
+    "objectID": "CSC4001-S15-Deadlock.html#avoidance",
+    "href": "CSC4001-S15-Deadlock.html#avoidance",
+    "title": "Deadlock",
+    "section": "Avoidance",
+    "text": "Avoidance\n\nDon’t let a situation arise where deadlock is possible.\nI.e., a request is refused if granting it could cause deadlock now or later.\nThis is hard to do, since it’s impossible to predict the future."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#colossus-1943-45",
-    "href": "CSC4001-S03-VonNeumann.html#colossus-1943-45",
-    "title": "Architecture overview",
-    "section": "Colossus (1943-45)",
-    "text": "Colossus (1943-45)\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecial purpose computer developed at Bletchley Park to help break the Lorenz cipher.\nDesigned by Tommy Flowers, a research engineer at the General Post Office, based on plans by Code and Cipher School mathematician Max Newman.\n\n\n\n\nUsed vacuum tubes; programmed using switches and a plug board.\nData memory was a cycling strip of paper tape.\nColossus Mk II, which used shift registers to run 6 times faster, went into operation in time for the D-day landings.\nBy the end of the war, 10 Colossi were in operation."
+    "objectID": "CSC4001-S15-Deadlock.html#dijkstras-banker-algorithm",
+    "href": "CSC4001-S15-Deadlock.html#dijkstras-banker-algorithm",
+    "title": "Deadlock",
+    "section": "Dijkstra’s Banker Algorithm",
+    "text": "Dijkstra’s Banker Algorithm\n\nDeadlock prevention algorithm based on the idea of a banker lending money.\nEach request must be\n\nfeasible: can be granted,\ne.g., it is impossible to allocate 100GB of memory if the computer has only 16GB.\nSafe: there is no chance of deadlock if the request is granted.\n\nA very cautious approach:\nMaybe we get lucky 9/10 times and no deadlock happens, but the Banker will never grant the request."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#general-purpose-computers-post-ww2",
-    "href": "CSC4001-S03-VonNeumann.html#general-purpose-computers-post-ww2",
-    "title": "Architecture overview",
-    "section": "General purpose computers (post WW2)",
-    "text": "General purpose computers (post WW2)\nVon Neumann arranged a 6-week summer workshop to design and build a new type of computer.\n\nGeneral purpose: many early computers were designed with a specific task in mind, which meant they were difficult to repurpose.\nVon Neumann wanted to build a stored program computer.\nElectronic:replacing electromechanical components which were brittle, hot and noisy.\nColossus and the ENIAC both consumed 150KW of power.\nUse binary, which is the easiest encoding to work with when using electronic components."
+    "objectID": "CSC4001-S15-Deadlock.html#limitations",
+    "href": "CSC4001-S15-Deadlock.html#limitations",
+    "title": "Deadlock",
+    "section": "Limitations",
+    "text": "Limitations\nThe algorithm requires\n\nA fixed number of resources, which is often, but not always, true,\nA fixed number of processes, which is rare in a modern PC (no new processes, no processes can exit),\nEach process needs to know its maximum needs in advance.\nSafety decision is computationally intensive, and gets harder as more resources are added.\nPotentially inefficient use of resources due to the cautious approach."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#maurice-wilkes",
-    "href": "CSC4001-S03-VonNeumann.html#maurice-wilkes",
-    "title": "Architecture overview",
-    "section": "Maurice Wilkes",
-    "text": "Maurice Wilkes\n\nCambridge mathematician, physics PhD on “radio propagation of very long radio waves in the ionosphere”.\nAttended Jon Neumann’s workshop, then returned to Cambridge to build the EDSAC machine.\nWorked in radar during WW2, which inspired the memory technology for EDSAC.\nMemory was a limitation for early electronic computers, Wilkes used “delay lines”, mercury tubes and an oscilloscope, as memory.\n\n\nMore information on mercury delay lines: Radar pulses were captured and played as sound waves. Sound waves passed through mercury, which slowed them down. Picked up by a microphone and displayed no an oscilloscope screen. Sound wave amplified and played back through the speaker so the pulse would repeat as long as needed."
+    "objectID": "CSC4001-S15-Deadlock.html#detection-and-breaking",
+    "href": "CSC4001-S15-Deadlock.html#detection-and-breaking",
+    "title": "Deadlock",
+    "section": "Detection and breaking",
+    "text": "Detection and breaking\n\nIt seems almost impossible to break the Coffman Conditions,\nPrevention, e.g., using the banker’s algorithm, is limited and computationally difficult,\nMaybe it’s easier and cheaper to spot deadlocks an fix them when they happen."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#edsac-6-may-1949",
-    "href": "CSC4001-S03-VonNeumann.html#edsac-6-may-1949",
-    "title": "Architecture overview",
-    "section": "EDSAC (6 May 1949)",
-    "text": "EDSAC (6 May 1949)\n\n\nElectronic Delay Storage Automatic Calculator\n\nOne of the first stored program computers which used binary.\nDeveloped by Maurice Wilkes, William Renwick (hardware engineer) and David Wheeler (first system software engineer).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCould perform 700 additions or 200 multiplications per second.\n512 18-bit words of memory for programs and data, upgraded to 1024 18-bit words in 1952.\nData and programs were loaded via 5-hole punched paper tape, initial orders instructed the computer to load the program.\nConsumed 11KW of power.\nThe delay line memory was sub-optimal, but one of the best options at the time.\nAlthough the words were 18-bits, only 17 bits were used in practice owing to unreliability of memory. ## Programming the EDSAC\nPrograms designed on paper and then punched, in assembler, onto 5-hole paper tape. Programmers became proficient at reading programs from the tape.\nProgrammers would hang their tape on a line, waiting for an operator to run them – the first “job queue”.\nOperator would load program and data and then either return the printed output or inform the programmer of the memory address at which the program failed. ## Operating EDSAC\nBuilt-in add, multiply, bus and conditional jump.\n\nNo load. Instead, Instead clear the register (set to \\(0\\)) and add the value from memory to the register.\nNo division, but it was included as a subroutine.\n\nIn case of a program error, the operator would inform the programmer at which address their program failed.\nThere was no debugger. An oscilloscope screen showed the state of the registers, and a speaker played a different note depending on the value of the accumulator register. An experienced programmer learnt the sound of a failing program, e.g., if there was an infinite loop. ## Operating EDSAC\nProgrammers had to use “bad” programming technique. E.g., to access a different array element, the code would modify itself to point to the correct address.\nNo built-in mechanism for subroutines, instead perform a Wheeler jump: Jump with return memory address, computer would modify the last instruction of the subroutine to jump back to this return address.- No recursion was possible on the EDSAC. Turing proposed the call stack in his 1945 paper, which implemented subroutines “properly” and allowed recursion."
+    "objectID": "CSC4001-S15-Deadlock.html#deadlock-detection",
+    "href": "CSC4001-S15-Deadlock.html#deadlock-detection",
+    "title": "Deadlock",
+    "section": "Deadlock detection",
+    "text": "Deadlock detection\nEarliest method:\n\nDetection by operator,\ni.e., the operator notices the computer is hanging.\nEDSAC had an audio output, experienced operators could “hear” an infinite loop."
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#usage",
-    "href": "CSC4001-S03-VonNeumann.html#usage",
-    "title": "Architecture overview",
-    "section": "Usage",
-    "text": "Usage\nA condition for funding was that EDSAC must provide a service, as opposed to just being an engineering experiment.\n\nRonald Fisher, with Wilkes and Wheeler, used EDSAC to solve a differential equation for gene frequency – first use of computers in biology.\nIn 1951, Miller and Wheeler computed a 79-digit prime number, the largest known at its time.\nEDSAC played a role in Nobel-prize-winning research: Nobel laureates thanked EDSAC in their acceptance speech. John Kendrew and Max Perutz (Chemistry, 1962), Andrew Huxley (Medicine, 1963) and Martin Ryle (Physics, 1974)\nEDSAC remained in operation until 11 July 1958, when it was superseded by EDSAC 2, which ran until 1965."
+    "objectID": "CSC4001-S15-Deadlock.html#resource-request-and-allocation-graphs-rrags",
+    "href": "CSC4001-S15-Deadlock.html#resource-request-and-allocation-graphs-rrags",
+    "title": "Deadlock",
+    "section": "Resource Request and Allocation Graphs RRAGs",
+    "text": "Resource Request and Allocation Graphs RRAGs\nA visual representation of requests and allocations or resources,\nallows us to easily spot deadlocks.\n\nProcesses are represented by squares,"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#exercise-computer-history-research",
-    "href": "CSC4001-S03-VonNeumann.html#exercise-computer-history-research",
-    "title": "Architecture overview",
-    "section": "Exercise: computer history research",
-    "text": "Exercise: computer history research\nIn pairs, teams, or individually…\n\nChoose a computer from history. Find out:\n\nWho created it, and when?\nWhat could it do? hardware operations\nSpecs: processing, memory, operations per second.\nHow was it programmed? Could it be programmed?\nHow did programmers / operators / scientists interact with it? Input/output mechanisms, how was it debugged?"
+    "objectID": "CSC4001-S15-Deadlock.html#rrags",
+    "href": "CSC4001-S15-Deadlock.html#rrags",
+    "title": "Deadlock",
+    "section": "RRAGs",
+    "text": "RRAGs\n\nResources are represented by squares (number represents how many of this resource there are),"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#exercise-play-with-the-edsac-simulator",
-    "href": "CSC4001-S03-VonNeumann.html#exercise-play-with-the-edsac-simulator",
-    "title": "Architecture overview",
-    "section": "Exercise: play with the EDSAC simulator",
-    "text": "Exercise: play with the EDSAC simulator\n\nMartin Campbell Kelly, University of Warwick, developed an EDSAC simulator.\nhttps://dcs.warwick.ac.uk/~edsac/\nSeveral programs and games are available.\nTry Sandy Douglas’ OXO game (a tic-tac-toe game vs the computer).\nAlthough a faithful simulation, it is still easier to use than the real thing – imagine loading the paper tape, vacuum tubes blowing frequently, and try setting the speed to EDSAC real-time."
+    "objectID": "CSC4001-S15-Deadlock.html#rrags-1",
+    "href": "CSC4001-S15-Deadlock.html#rrags-1",
+    "title": "Deadlock",
+    "section": "RRAGs",
+    "text": "RRAGs\n\nRequests by arrows from process to resource,"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#part-1-research",
-    "href": "CSC4001-S03-VonNeumann.html#part-1-research",
-    "title": "Architecture overview",
-    "section": "Part 1: research",
-    "text": "Part 1: research\n\nChoose a time period of 15-20 years, and an element of computer hardware.\nConsider the following prompt: explain the impact of your chosen element of computer architecture during your chosen time period.\nWithout using an LLM, but with reference to at least three academic sources, answer the above prompt. Focus on why evolutions in your chosen component had the impact they did, 800 words approx, not including refgerences and citations\n\n\nWhy did the developments succeed or fail at the time? If they failed, has there been a comeback in more recent years, and why (or why not)? Have these developments changed how we interact with computers, and if so, how (for instance, consider how computers are used in business, academia, and at home, and how programming languages and operating systems have evolved to take advantage of the developments you discussed, for better or for worse)?"
+    "objectID": "CSC4001-S15-Deadlock.html#rrags-2",
+    "href": "CSC4001-S15-Deadlock.html#rrags-2",
+    "title": "Deadlock",
+    "section": "RRAGs",
+    "text": "RRAGs\n\nAllocations by arrows from resources to processes,"
   },
   {
-    "objectID": "CSC4001-S03-VonNeumann.html#part-2-llm-analysis",
-    "href": "CSC4001-S03-VonNeumann.html#part-2-llm-analysis",
-    "title": "Architecture overview",
-    "section": "Part 2: LLM analysis",
-    "text": "Part 2: LLM analysis\n\nUse an LLM to generate a response to the above prompt.\nAnalyse the LLM’s response: validate the claims it has made, with reference to a range of academic sources.\nConclude whether you are able to accept or reject its claims.\n800 words approx\n\n\nComment on the accuracy and relevance of its response, checking its claims against academic sources. Has the LLM committed any falacies, made any assumptions or generated its answer based on any biases? Has the LLM’s response made you reconsider your own answer?"
+    "objectID": "CSC4001-S15-Deadlock.html#example-successful-request",
+    "href": "CSC4001-S15-Deadlock.html#example-successful-request",
+    "title": "Deadlock",
+    "section": "Example: successful request",
+    "text": "Example: successful request\n\nRequest: Process P1 requests resource R1.\n\n\n\n\n\n\n\n\n\nAllocation: Resource R1 allocated to process P1."
+  },
+  {
+    "objectID": "CSC4001-S15-Deadlock.html#example-unsuccessful-request",
+    "href": "CSC4001-S15-Deadlock.html#example-unsuccessful-request",
+    "title": "Deadlock",
+    "section": "Example: unsuccessful request",
+    "text": "Example: unsuccessful request\n\n\n\n\n\n\n\n\n\n\n\\(P2\\) requests resource \\(R1\\).\n\\(R1\\) is already allocated to \\(P1\\).\nTherefore \\(P2\\) is not allocated \\(R1\\)."
+  },
+  {
+    "objectID": "CSC4001-S15-Deadlock.html#example-circular-wait",
+    "href": "CSC4001-S15-Deadlock.html#example-circular-wait",
+    "title": "Deadlock",
+    "section": "Example: circular wait",
+    "text": "Example: circular wait\n\n\n\\(R1\\) allocated to \\(P1\\); \\(R2\\) allocated to \\(P2\\).\n\\(P1\\) then requests \\(R2\\) and \\(P2\\) requests \\(R1\\).\nNeither request can be fulfilled.\n\nNotice that loops in the RRAG indicate deadlocks."
+  },
+  {
+    "objectID": "CSC4001-S15-Deadlock.html#breaking-deadlock",
+    "href": "CSC4001-S15-Deadlock.html#breaking-deadlock",
+    "title": "Deadlock",
+    "section": "Breaking deadlock",
+    "text": "Breaking deadlock\n\nWhen a deadlock is detected, we know\n\nthe processes involved, and\nthe resources involved.\n\nBut how can we break the deadlock?\n\nKill the processes,\n\nbut which of the deadlocking processes to kill?\n\nTake the resource away\nit may be possible to fix the deadlock by taking only some the resources away from some of the processes.\n\n\n\n\nthe art is to kill as few processes and pre-empt as few resources as we can, but this is quite difficult."
+  },
+  {
+    "objectID": "CSC4001-S15-Deadlock.html#exercise-dining-philosophers",
+    "href": "CSC4001-S15-Deadlock.html#exercise-dining-philosophers",
+    "title": "Deadlock",
+    "section": "Exercise: dining philosophers",
+    "text": "Exercise: dining philosophers\nHow might you break the deadlock in the dining philosophers’ problem."
+  },
+  {
+    "objectID": "CSC4001-S15-Deadlock.html#a-better-solution-virtualisation",
+    "href": "CSC4001-S15-Deadlock.html#a-better-solution-virtualisation",
+    "title": "Deadlock",
+    "section": "A better solution: virtualisation",
+    "text": "A better solution: virtualisation\n\nA computer can create almost limitless “virtual” resources,\ne.g., virtual memory, printers, disks.\nProcess uses them as though they are true resources.\nLater, the OS performs the operations done on the virtual resources on the real thing.\nNew problem: resource scheduling. E.g., how to write data to disk most efficiently.\n\n\n\nwith a mechanical HDD, having one write head, we can write most efficiently if the head moves around as little as possible.\ntherefore, writes were re-ordered so that they could be performed most efficiently."
+  },
+  {
+    "objectID": "CSC4001-S15-Deadlock.html#aside-hard-disk-drive-at-work",
+    "href": "CSC4001-S15-Deadlock.html#aside-hard-disk-drive-at-work",
+    "title": "Deadlock",
+    "section": "Aside: hard disk drive at work",
+    "text": "Aside: hard disk drive at work\n\nVideo of a HDD reading and writing\nExplanation of how a hard disk drive works\n\n\nA little aside, for those who are interested. Explaining how a HDD works."
+  },
+  {
+    "objectID": "CSC4001-S15-Deadlock.html#priorities-and-no-pre-emption",
+    "href": "CSC4001-S15-Deadlock.html#priorities-and-no-pre-emption",
+    "title": "Deadlock",
+    "section": "Priorities and no pre-emption",
+    "text": "Priorities and no pre-emption\n\nSome resources cannot be pre-empted,\ne.g., if their state cannot be restored or the operation is destructive.\nSuppose a low priority process has a resource which a high priority process is blocking on.\nHigh priority process must wait for the low priority process to finish with the resource.\nHowever the low priority process is scheduled infrequently.\nIn effect, the high priority process has been given lower priority than the low priority process.\n\nThis situation is called priority inversion."
+  },
+  {
+    "objectID": "CSC4001-S15-Deadlock.html#resource-protection",
+    "href": "CSC4001-S15-Deadlock.html#resource-protection",
+    "title": "Deadlock",
+    "section": "Resource protection",
+    "text": "Resource protection\n\nOne of the main goals of the operating system.\nPrevents accidental or malicious damage to resources,\ne.g., corruption of other programs or data.\nNow we need to ensure that one process cannot interfere with another.\nMore precisely, one user’s process cannot interfere with those belonging to another user."
+  },
+  {
+    "objectID": "CSC4001-S15-Deadlock.html#users",
+    "href": "CSC4001-S15-Deadlock.html#users",
+    "title": "Deadlock",
+    "section": "Users",
+    "text": "Users\n\nEach user has a user ID, a whole number.\nResources or processes can be owned by a certain user,\nby flagging them with the user’s ID.\nRecall process spawning. The process which requested creation becomes the parent,\nnew process also inherits the user ID.\nA process can make a syscall, requesting a resource,\nbut the request can only be granted if the resource is owned by the same user as the process."
+  },
+  {
+    "objectID": "CSC4001-S15-Deadlock.html#advantages",
+    "href": "CSC4001-S15-Deadlock.html#advantages",
+    "title": "Deadlock",
+    "section": "Advantages",
+    "text": "Advantages\n\nProvides isolation, since a user can only mess with their own processes.\nSecurity, since malware can only infiltrate one user’s programs and data.\n\nIn some operating systems, e.g., early Windows, many programs were run as admin.\nThis gave potential malware access to everything."
+  },
+  {
+    "objectID": "CSC4001-S15-Deadlock.html#the-root-user",
+    "href": "CSC4001-S15-Deadlock.html#the-root-user",
+    "title": "Deadlock",
+    "section": "The Root User",
+    "text": "The Root User\n\nOperating systems include a special user,\noften called admin, superuser or root.\nThis user has access to all resources and can signal all processes,\ni.e., can kill processes belonging to any user.\nThe admin user can often do things ordinary users cannot, e.g.,\n\nturn off the system,\ndelete OS files,\nmess around with network configuration.\n\nAdmin user is a similar idea to privileged mode,\nNote that the admin user’s instructions are still unprivileged – only OS code is privileged."
+  },
+  {
+    "objectID": "CSC4001-S15-Deadlock.html#with-great-power-comes-great-responsibility",
+    "href": "CSC4001-S15-Deadlock.html#with-great-power-comes-great-responsibility",
+    "title": "Deadlock",
+    "section": "With great power comes great responsibility",
+    "text": "With great power comes great responsibility\n\nIt is best to spend as little time as possible as the admin user,\nthis reduces the risk of accidental damage or security vulnerabilities destroying your system.\n\n# sudo rm -fr /* # removes all the French files??\n# alias please=sudo # ask the OS politely to do the thing."
+  },
+  {
+    "objectID": "CSC4001-S15-Deadlock.html#bootstrapping",
+    "href": "CSC4001-S15-Deadlock.html#bootstrapping",
+    "title": "Deadlock",
+    "section": "Bootstrapping",
+    "text": "Bootstrapping\n\nThe admin user can create any process.\nWhen an ordinary user logs in,\n\nadmin user creates a new process,\nthen changes the user ID to that of the new user,\nall the new user’s processes can be spawned from that one, inheriting its user ID."
+  },
+  {
+    "objectID": "CSC4001-S15-Deadlock.html#capabilities",
+    "href": "CSC4001-S15-Deadlock.html#capabilities",
+    "title": "Deadlock",
+    "section": "Capabilities",
+    "text": "Capabilities\n\nOffers finer, more granular control over resources,\ne.g.,\n\nread / modify certain areas of memory or files on disk,\naccess to the network, ability to install software or shutdown the computer.\n\nThis can be system wide, or as granular as per-file.\nTo work efficiently, hardware support is required."
+  },
+  {
+    "objectID": "CSC4001-S15-Deadlock.html#permissions",
+    "href": "CSC4001-S15-Deadlock.html#permissions",
+    "title": "Deadlock",
+    "section": "Permissions",
+    "text": "Permissions\n\nThe idea of capabilities never took off.\nSmartphones now have permissions, which use a similar idea.\nUser has to grant access to filesystem / location / camera on a per-app basis.\nA great idea in principle, but depends on a knowledgeable user.\nMany smartphone users are novices and they can easily accidentally grant access to malicious apps.\nSee also polkit in Linux."
+  },
+  {
+    "objectID": "CSC4001-S15-Deadlock.html#next-time",
+    "href": "CSC4001-S15-Deadlock.html#next-time",
+    "title": "Deadlock",
+    "section": "Next time",
+    "text": "Next time\nInter-process communication"
   },
   {
     "objectID": "CSC4001-S01-Logic.html#learning-outcomes",

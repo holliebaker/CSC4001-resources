@@ -321,12 +321,24 @@ CSC4001: Computer Systems and Architecture
 </section>
 <section id="a-scheduler-should-2" class="slide level2">
 <h2>A scheduler should</h2>
+<div class="columns-2">
+<div class="column">
 <ul>
-<li><p>Note that other other resources, e.g., I/O, need scheduling, too.</p>
+<li><p>Note that other resources, e.g., I/O, need scheduling, too.</p>
 <p>The different resource schedulers may disagree about which process to run next.</p></li>
 </ul>
-
-<img data-src="../assets/07-tug.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%" alt="cartoon tug of war"></section>
+</div><div class="column">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/07-tug.jpg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="cartoon tug of war"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+</section>
 <section id="long-medium-and-short-term-scheduling" class="slide level2">
 <h2>Long, medium and short-term scheduling</h2>
 <p>We can divide scheduling up into three categories:</p>
@@ -624,14 +636,14 @@ CSC4001: Computer Systems and Architecture
 </section>
 <section id="multilevel-feedback-queue" class="slide level2">
 <h2>Multilevel Feedback Queue</h2>
-<div class="columns-Multiple">
-<p>2 ::: columnFIFO queues, <span class="math display">\[Q_0,Q_1,\ldots,Q_n,\]</span> where</p>
+<div class="columns-2">
+<div class="column">
+<p>Multiple FIFO queues, <span class="math display">\[Q_0,Q_1,\ldots,Q_n,\]</span> where</p>
 <ul>
 <li><span class="math inline">\(Q_0\)</span> has the <strong>highest priority</strong></li>
 <li>and <span class="math inline">\(Q_n\)</span> the lowest.</li>
 </ul>
-</div>
-<aside class="notes">
+</div><div class="column">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -641,18 +653,7 @@ CSC4001: Computer Systems and Architecture
 </div>
 </div>
 </div>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<p>:::::</p>
+</div></div>
 </section>
 <section id="multilevel-feedback-queue-1" class="slide level2">
 <h2>Multilevel Feedback Queue</h2>
@@ -677,13 +678,25 @@ CSC4001: Computer Systems and Architecture
 </section>
 <section id="multilevel-feedback-queue-2" class="slide level2">
 <h2>Multilevel Feedback Queue</h2>
+<div class="columns-2">
+<div class="column">
 <p>Suppose <span class="math inline">\(P\)</span> is in <span class="math inline">\(Q_i\)</span>.</p>
 <ul>
 <li>If <span class="math inline">\(P\)</span> uses all of its timeslice, it is <strong>demoted</strong> to <span class="math inline">\(Q_{i+1}\)</span>,</li>
 <li>If <span class="math inline">\(P\)</span> voluntarily relinquishes before its timeslice is over, it <strong>remains</strong> in <span class="math inline">\(Q_i\)</span>.</li>
 <li>If <span class="math inline">\(P\)</span> blocks for I/O, it is <strong>promoted</strong> to <span class="math inline">\(Q_{i-1}\)</span>.</li>
 </ul>
-<p>::: ::: column :::: {.cell layout-align=“center”} ::: cell-output-display <img data-src="../assets/07-mfq3.svg" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="yellow proc is now running, shows three possibilities (same queue, promotion or demotion) as above."> ::: ::: ::::</p>
+</div><div class="column">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../assets/07-mfq3.svg" class="quarto-figure quarto-figure-center" style="width:70.0%" alt="yellow proc is now running, shows three possibilities (same queue, promotion or demotion) as above."></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
 </section>
 <section id="multilevel-feedback-queue-3" class="slide level2">
 <h2>Multilevel Feedback Queue</h2>
