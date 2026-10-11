@@ -133,14 +133,14 @@ width="90%"}
 
 ## Phones, microcontrollers and Raspberry Pis {.smaller}
 
-- Complex instruction set architecture (CISC), consumes around
+- Reduced instruction set architecture (CISC), consumes around
   **20-80W** of power.
 
 - Memory (RAM) ~~is becoming cheaper~~ (that was written before the LLM explosion):
 
   - Between **2GB** and **4GB** in the 2010s,
-  - Common to see **16GB** in modern laptops.
-  - **DDR4** (*dourbe data random access memory*): high bandwidth with
+  - Common to see **16GB+** in modern laptops.
+  - **DDR4** (*double data random access memory*): high bandwidth with
     synchronous access for read and write, released in 2014.
 
 - SSDs are commonplace, unlikely to find a spinning HDD in a modern
@@ -185,6 +185,30 @@ width="90%"}
   - **3KB** program memory.
   - **2KB** of SRAM.
   - **1KB** of EEPROM (persistent storage).
+
+## S and A brought to you by...
+
+::: columns-2
+::: column
+
+ - 2x Arduino Leonardo's
+
+  - 32 KB flash memory for program
+  - 2.5 KB SRAM for data
+  - 16 MHz clock speed
+
+:::
+::: column
+
+![Pinout diagram for Arduino Leonardo](./assets/08-leonardo.webp)
+:::
+:::
+
+::: notes
+Canute 360 prototype was originally developed on the Arduino Leonardo
+Originally had one ATMega, using threading to handle input/output and control the motors
+Lots of problems with multithreading, dev team printed out the code and laid it along the floor to debug. Decided to run the i/o and motor thread on its own microcontroller.
+:::
 
 # Comparison of memory
 
@@ -385,6 +409,50 @@ width="70%"}
 
 - Share analogies and discuss what reflects computer memory well / not
   so well.
+
+# RAM in PC's
+
+![Amount of RAM installed in the 2 million x86 PCs which ran passmark benchmark between 2009 and 2018](./assets/08-passmark1.png)
+{fig.align="center" fig.width="95%" fig.alt="RAM increasing over time, 8 and 16 GB most common, less than 1GB starting about 50% and tailing off to nothing by the end."}
+
+::: notes
+Would you / have you used a PC with 1GB or less? Which OS, and how was your experience?
+:::
+
+## RAM in PCs
+
+![](./assets/08-passmark2.png)
+
+::: notes
+16 and 32 becoming more commonplace.
+If you were buying a PC how much memory would you want / need?
+Why?
+:::
+
+## RAM prices
+
+![](./assets/08-ramprice.png)
+
+::: notes
+Prices are for the United Kingdom region and are shown in GBP.
+Prices are 19.3% higher than they were 30 days ago.
+The current price is 17% above the 90-day average of £379.
+Price history covers the period from July 2023 to October 2026.
+The data was last updated on October 10, 2026.
+Please note that prices are shown without shipping costs, unless otherwise noted by the retailer.
+
+from https://pangoly.com/en/price-trends/ram/32gb-ddr5
+:::
+
+## Exercise: alternative random access memory
+
+- RAM prices are skyrocketing
+- Come up with a creative alternative to RAM
+  - It must be able to store 0's and 1's
+  - think about speed of access, does it take the same length of time to access every bit
+  - power, size, heat, cost
+
+- If a technical solution is not possible, come up with a strategy to reduce RAM prices.
 
 # Next time
 
