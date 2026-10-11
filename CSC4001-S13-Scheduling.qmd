@@ -135,7 +135,7 @@ Deciding which process should run next.
 - I.e., OS moves processes from one state to another.
 
 :::
-:::column
+::: column
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
@@ -189,15 +189,22 @@ Deciding which process should run next.
 
 ## A scheduler should
 
-- Note that other other resources, e.g., I/O, need scheduling, too.
+::: columns-2
+::: column
+
+- Note that other resources, e.g., I/O, need scheduling, too.
 
   The different resource schedulers may disagree about which process to run next.
 
+:::
+::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
 ![](../assets/07-tug.jpg){fig-align="center" fig-alt="cartoon tug of war" width="60%"}
 :::
 ::::
+:::
+:::
 
 ## Long, medium and short-term scheduling
 
@@ -223,7 +230,7 @@ We can divide scheduling up into three categories:
 - **Medium-term** scheduler is given a list of processes by the **short-term** scheduler.
 
 :::
-:::column
+::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
 ![](../assets/07-sml.svg){fig-align="center" fig-alt="short, medium and long-term scheduling" width="60%"}
@@ -457,9 +464,10 @@ Now we look at an algorithm which does not require estimating time remaining.
 
 ## Multilevel Feedback Queue
 
-::::: columns-Multiple
-2
-::: columnFIFO queues,
+::::: columns-2
+::: column
+
+Multiple FIFO queues,
 $$Q_0,Q_1,\ldots,Q_n,$$
 where
 
@@ -467,7 +475,7 @@ where
 - and $Q_n$ the lowest.
 
 :::
-::: notes
+::: column
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
@@ -499,6 +507,8 @@ Run processes in priority queue order.
 
 ## Multilevel Feedback Queue
 
+::: columns-2
+::: column
 Suppose $P$ is in $Q_i$.
 
 - If $P$ uses all of its timeslice, it is **demoted** to $Q_{i+1}$,
@@ -511,8 +521,9 @@ Suppose $P$ is in $Q_i$.
 ::: cell-output-display
 ![](../assets/07-mfq3.svg){fig-align="center" fig-alt="yellow proc is now running, shows three possibilities (same queue, promotion or demotion) as above." width="70%"}
 :::
-:::
 ::::
+:::
+:::
 
 ## Multilevel Feedback Queue
 

@@ -526,4 +526,4 @@ width="70%"}
 
 ## Next time
 
-Scheduling algorithms
+Scheduling

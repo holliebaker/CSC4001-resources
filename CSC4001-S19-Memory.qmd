@@ -1,0 +1,710 @@
+---
+title: "Memory"
+author: "CSC4001: Computer Systems and Architecture"
+date: ""
+format:
+  revealjs:
+    theme: simple
+    css: ./style.css
+---
+
+## Objectives
+
+- Explain why the OS needs to manage memory.
+- Summarise the history of memory management and state the problem each evolution solved.
+- Explain what is meant by **virtual memory** and state its benefits.
+- Explain why, although conveniently managed by the OS, programmers still need to understand how memory works.
+
+## Recap: operating systems
+
+Purpose:
+
+- to manage resources
+
+- and provide a convenient interface to the programmer.
+
+## Recap: operating systems
+
+- So far, we have looked at **processes**:
+
+  code, data and metadata held by the operating system.
+- Typically operating systems run several (dozen, hundred) processes
+- OS manages processes:
+
+  - **Scheduling**: deciding which process should run when,
+  - **Protection**: ensuring that one user's processes cannot interfere with another user's processes,
+  - **IPC**: facilitating safe communication (allowing *synchronisation* and *data sharing* between processes).
+
+## Recap: hardware components
+
+As well as managing **processes**, the OS must look after other hardware.
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/02-vna.svg){fig-align="center" fig-alt="diagram of Von Neumann architecture showing five components" width="40%"}
+:::
+::::
+
+*Von Neumann architecture is used in many modern computers.*
+
+Next, we will look at **memory management**.
+
+# Memory
+
+## Purpose
+
+- **Protection and management**:
+
+  - share out a limited resource,
+  - ensure processes cannot interfere with each other's memory,
+
+- **programming interface**:
+
+  - allow processes to safely request and access memory,
+  - do as much low-level work for the programmer as possible.
+
+## Limited resource?
+
+- We have already discussed that **everything is limited**,
+
+  even in modern computers where memory is plentiful.
+
+- **Wirth's law**: software is *decelerating* faster than hardware is *accelerating*.
+
+  *Gates' law: programs double in size every 18 months.*
+
+  - PC software such as games performs best with as many resources as possible,
+  - Some problems in scientific computation are still to big for even the largest mainframes.
+- Generative AI.
+
+::: notes
+- Wirth's law. as computers get faster, software can afford to run slower (be less efficient) and still run at the same speed as before. Wirth's law states that it's actually worse: software is slowing down more than hardware is speeding up.
+:::
+
+## Processes and memory
+
+- Each process requires some memory
+
+  - to store its **code** (instructions),
+  - **data**, and **OS metadata**.
+
+- A process may request memory either **at startup** or **while it is running**.
+
+- Likewise, it may *reallocate* memory at any point while it is **running**, or when it **exits**.
+
+## Memory layout
+
+::::::::: columns-2
+::: column
+- The CPU expects instructions to **appear in order**,
+
+  i.e., so the next one can be found by **incrementing the program counter**,
+
+- Program expects data to appear in **one contiguous block**.
+
+- Early computers allocated **contiguous blocks of memory** for each process.
+
+:::
+::: column
+:::::::: outer-block
+::::::: memory-diagram
+::: {style="flex:10%; background-color: lightgrey"}
+    OS (kernel)
+:::
+
+::: {style="flex:30%; background-color: lightblue"}
+    P1
+:::
+
+::: {style="flex:30%; background-color: yellow"}
+    P2
+:::
+
+::: {style="flex:30%; background-color: lightgreen"}
+    P3
+:::
+:::::::
+::::::::
+:::
+:::::::::
+
+## Evolution: static memory
+
+- The OS splits memory up into contiguous blocks called **partitions**.
+
+- Early machines were **static**,
+
+  i.e., they had a **fixed number of partitions**.
+
+- Each process could be a **fixed size**,
+
+  which the programmer would estimate at startup.
+
+- If memory was needed while the process was running, the programmer would usually **over-estimate** its needs.
+
+## Evolution: static memory
+
+- Partitions may be **all the same size** or **different sizes**.
+
+  - Same size could be inefficient as a big and a small process got the same allocation,
+  - Dynamic was better, but it could be hard to find a partition to fit the upcoming process.
+
+## Dynamic allocation
+
+- Quickly added to OS's, then, later to high-level programming languages.
+
+- Memory is allocated **as needed**.
+
+- Many programming languages use **implicit** dynamic allocation, where memory is allocated automatically.
+
+  E.g., Java, Python, C++ strings (which are not primitive types).
+
+- Other languages use **explicit** dynamic allocation, where the programmer must ask the OS for a certain number of bytes,
+
+  E.g., C/C++ `malloc()` and `free()`.
+
+- Both approaches have pros and cons...
+
+## Dynamic allocation
+
+:::::::::: columns-2
+::: column
+- OS **implicitly allocates memory** when a new process is created.
+
+- Again, contiguous blocks are needed and the size must be known at startup.
+
+  Programmers used clever tricks to squeeze more into a smaller chunk of memory.
+
+- When a process **exits**, it leaves a *gap* in memory.
+
+  - A tricky problem became *how best to fill the gaps*.
+  - This is known as **fragmentation**, and is a common problem.
+
+:::
+::: column
+::::::::: outer-block
+:::::::: memory-diagram
+::: {style="flex:10%; background-color: lightgrey"}
+    OS (kernel)
+:::
+
+::: {style="flex:20%; background-color: lightblue"}
+    P1
+:::
+
+::: {style="flex:15%; background-color: yellow"}
+    P2
+:::
+
+::: {style="flex:25%; background-color: lightgreen"}
+    P3
+:::
+
+::: {}
+    Free memory
+:::
+::::::::
+:::::::::
+:::
+::::::::::
+
+::: notes
+- programming trick: overlays
+- if all code, or all data did not fit into memory, a programmer would manually copy parts of it to / from main memory.
+- i.e., if some code needs to be copied, the programmer must be aware, keep track of this, and explicitly load it from disk.
+- extremely fiddly and easy to get wrong -- required excellent programmers to do it right.
+- fragmentation: you've likely heard of this in relation to data on a hard disk drive, where the same thing happens -- as files are deleted, new ones get spread out across lots of small chunks of memory.
+:::
+
+## Exercise: fragmentation
+
+- Check out the [following exercise](https://adventofcode.com/2024/day/9) from Advent of Code 2024.
+
+  You will fragment data on a hard disk.
+
+- Feel free to use a language of our choice, or write pseudo-code if you prefer.
+
+## Gaps in memory
+
+:::::::::: columns-2
+::: column
+- When processes end, they leave *gaps* in memory.
+
+  A tricky problem became how to fill the gaps...
+
+  - *First fit*: first large enough gap found.
+  - *Best fit*: smallest gap large enough to accommodate it,
+  - *Worst fit*: largest gap available.
+
+- Surprisingly, *worst fit* is the best option, since it leaves gaps large enough to be used by other processes.
+
+  Whereas the gaps left by *best fit* are too small for anything useful.
+
+:::
+::: column
+::::::::: outer-block
+:::::::: memory-diagram
+::: {style="flex:10%; background-color: lightgrey"}
+    OS (kernel)
+:::
+
+::: {style="flex:20%; background-color: lightblue"}
+    P1
+:::
+
+::: {style="flex:15%; background-color: white"}
+    Gap left by P2
+:::
+
+::: {style="flex:25%; background-color: lightgreen"}
+    P3
+:::
+
+::: {}
+    Free memory
+:::
+::::::::
+:::::::::
+:::
+::::::::::
+
+## Garbage collection
+
+- All data can periodically be **compacted** into a contiguous block.
+
+- Garbage collection periodically
+
+  - Deletes data which is no longer needed,
+  - re-organises data to get best use of space.
+
+- The operation is performed for **all of memory** and runs **relatively often**.
+
+  - Takes a significant amount of time, since it's expensive to move blocks of data around.
+  - More overheads, less time for user processes.
+  - Garbage collection pause is unsuitable for real-time software.
+
+- Better solutions exist (with hardware support).
+
+## Gaps in memory
+
+- What should the OS do if there is not a big enough gap?
+
+  - Refuse to admit the process,
+  - If the new process is sufficiently important, **kill other processes**.
+  - **Pre-empt memory** -- take it away from other processes.
+
+## Swapping
+
+- Move some data from memory to disk to **free up space**.
+
+- Allow other processes to use the freed memory,
+
+- **copy data back** from disk to memory the next time the process is scheduled.
+
+- Note that other processes may need to be swapped to allow the original one back in.
+
+- Typically, a process which is **already blocked** is swapped.
+
+## Another cooking analogy
+
+::::: columns-2
+::: column
+- Suppose you're cooking, but your really finicky housemate comes in.
+- They demand to cook immediately, but claim that there is not enough space in the kitchen.
+- You reluctantly pack all of your ingredients back into the fridge and your cupboard.
+- Your housemate uses the now free work surface to cook an elaborate meal which they do not share.
+
+:::
+::: column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/10-kitchen.jpg){fig-align="center" fig-alt="cartoon: tidying up a messy kitchen, then giving up" width="90%"}
+:::
+::::
+:::
+:::::
+
+## Convenient programming interface
+
+- Similar idea to **overlays**,
+
+- This time, copying code and data to and from memory is **handled by the OS**.
+
+- Programmers should still be aware,
+
+  since they should try to avoid swapping.
+
+## Swapping
+
+- The OS must decide which process(es) to swap.
+
+- E.g., several small ones, or one large one.
+
+- Part of the problem of **medium-term scheduling**:
+
+  deciding what to load into memory for the short-term scheduler to consider.
+
+## Swapping
+
+- I/O vs compute intensive?
+
+  - I/O processes require occasional small timeslices but a fast response,
+
+    therefore waiting for a swap may be unacceptable.
+
+  - Compute processes require longer timeslices and want to be run now,
+
+    the swap time is less critical, but these processes want to be run immediately.
+
+- Another trade-off for the OS to consider.
+
+## Pages
+
+- We tend to swap collections of **pages** rather than collections of **bytes**.
+
+- A **page** is a contiguous block of memory,
+
+- Hardware can copy pages to and from memory **very quickly and efficiently**.
+
+- Recall that processes require a **contiguous block** of memory.
+
+- Sometimes there is sufficient memory, but it is fragmented.
+
+- Random Access Memory means any byte can be accessed in a constant time,
+
+  unlike mechanical hard disk drives, where data far apart takes longer to read.
+
+## Pages
+
+- We can solve the problem of fragmentation by making it look like the process has a contiguous block even if it does not:
+
+  **virtual memory**.
+
+- The OS creates a mapping from **physical** page addresses to **virtual** page addresses,
+
+- Every process gets a **virtual** contiguous block, regardless of the **physical location** of pages.
+
+## Page tables
+
+::::: columns-2
+::: column
+- A **page table** maps virtual pages currently in use by each process to their physical memory addresses.
+
+- Provides **isolation** and **memory protection**:
+
+  since each process gets its own virtual page space, it can only access memory the OS allows it to.
+
+:::
+::: column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/10-pagetable.jpg){fig-align="center" fig-alt="diagram of page tables mapping to physical memory" width="80%"}
+:::
+::::
+:::
+:::::
+
+::: notes
+- the page table contains page mappings, i.e., virtual address x ==\> physical address y, rather than pages themselves.
+- tables consume memory, so should be kept as small as possible. this is why only memory in current use is tracked.
+- providing each process with its own set of virtual pages gives the illusion that each process has exclusive access to all of memory. the OS can then enforce memory protection (if a process tries to access memory out of bounds) and isolation (since it can ensure virtual addresses for each process point to different areas of memory).
+:::
+
+## Overheads?
+
+- Suppose a process wants to **read** a value from memory, **increment it** and then **write** the result to a different location.
+
+  The OS must:
+
+  - Look up the physical address of data in the page table,
+  - Fetch the value,
+  - Perform the increment,
+  - Look up the physical address of the new location in tho page table,
+  - Write the value to memory.
+  - Since instructions are stored in memory, too, the page table must be checked for **every instruction fetch** as well!
+
+- We've now **doubled** the number of slow memory accesses!
+
+## Hardware support: the TLB
+
+::::: columns-2
+::: column
+- Very fast area of memory which stores a section of the page table.
+- Fast memory is **expensive** so it can only hold a **small number** of mappings.
+- Sits between the CPU and main memory and **automatically translates** virtual to physical addresses.
+
+:::
+::: column
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/10-tlb.jpg){fig-align="center" fig-alt="diagram showing memory, page tables, and TLB, holding a small subset of the pgae table, in between" width="80%"}
+:::
+::::
+:::
+:::::
+
+## Hit or Miss
+
+- Suppose the CPU does a **fetch from memory**.
+
+  The TLB attempts to translate virtual to physical address.
+
+  - **Hit**: mapping found, fetch from physical address,
+
+  - **Miss**: need to search the page table (another read from memory) for the mapping.
+
+    New mapping is loaded into the TLB and the fetch continues.
+
+- This can be done **entirely in hardware**, which is fast and transparent to the OS.
+
+- If there is no hardware support, a *TLB miss interrupt* is raised and the OS must implement and manage this process.
+
+## TLB misses
+
+- A search through the page table to find a mapping which is missing from the TLB is called a **page walk**.
+
+- If there is a TLB miss and **no mapping in the page table**, the OS may
+
+  - allocate a new page, storing its mapping in the page table,
+  - refuse to allocate the new page: raises a **segmentation violation** (`SIGSEGV`)
+
+::: notes
+- when no mapping is found, this is called a "page fault".
+- a TLB miss is often called a "minor" page fault. With hardware support, this can be handled independently from the OS.
+- a TLB miss plus no mapping in the page table cannot be handled in hardware, and needs intervention by the OS. This is called a "major" page fault, and an interrupt is always sent to the OS.
+- what really happens in the OS?
+  - process instruction says read from memory address x.
+  - TLB checks for a mapping, but none is found. minor page fault is raised.
+  - with hardware support, automatic page walk is performed. if the mapping is found in the page table, then it is placed in the TLB and the fetch continues.
+  - if no mapping is found in the page table, a **major page fault** interrupt is raised.
+  - current process is de-scheduled, and OS code begins to run.
+  - If the OS decides not to allocate a new page, it sens a SIGSEGV (segmentation violation signal) to the process. Next time the process is scheduled, this signal will be handled and the process will be terminated.
+  - if the OS decides it will allocate a new page, the mapping is placed in the page table. next time the process is scheduled, the pgae walk is repeated, but this time the mapping will be fonud and the fetch will go ahead.
+:::
+
+## Exercise: hardware support
+
+- x86 processors have hardware support,
+
+- Spark and MIPS processors do not.
+
+- Find out whether the processor in...
+
+  - **the computer you're currently using**, **your smartphone**, and
+  - any other **smart devices you have** (e.g., watch, TV, speaker)
+
+  has hardware support for handling minor page faults.
+
+## TLB misses
+
+- A search through the page table to find a mapping which is missing from the TLB is called a **page walk**.
+
+- If there is a TLB miss and **no mapping in the page table**,
+
+  a **page fault interrupt** is raised.
+
+- The OS may decide to **allocate a new page** or **send a segmentation violation signal** to the process.
+
+- Even with hardware support, a **page walk** is expensive.
+
+- A major page fault, causing an interrupt, is even more so.
+
+- We want to have as few TLB misses as possible!
+
+## Paging: swapping pages
+
+- Page tables give us a convenient way of providing
+
+  **contiguous blocks of memory** as well as **memory protection** and **process isolation**.
+
+- Pages can also be **swapped** to disk.
+
+- All done automatically by the OS,
+
+  but the OS has to decide **which pages to throw out**.
+
+## Paging strategies
+
+- Which pages should the OS throw out?
+
+  - **Random**: pick any.
+
+## Paging strategies
+  - **Random**:
+
+    Simple, surprisingly effective.
+
+  - **FIFO**: first page loaded is first thrown out.
+
+## Paging strategies
+
+  - (**FIFO**:
+  
+    Poor, since pages which have been around for a long time tend to be needed.
+
+  - **Least recently used**: throw out the page accessed the longest time ago.
+
+## Paging strategies
+
+
+  - **Least Recently used**
+
+    Works well, but needs hardware support.
+
+
+  - **Least frequently used**: keep a count of accesses, the page with fewest accesses is thrown out.
+
+## Paging strategies
+
+- **Least frequently used**
+
+    Poor because newly loaded pages tend to get thrown out immediately.
+
+::: notes
+- the most efficient option is least recently used.
+- TLB and page table now needs an extra storage space to track last access time.
+- "pages which have been around the longest tend to be most used" - most programs tend to declare some variables and use them throughout. A program which creates lots of variables and accesses memory all over the place can cause lots of TLB misses and run more slowly than a conventionally written program.
+:::
+
+## Lazy allocation and contiguous blocks
+
+- Each time a process requests a new page,
+
+  the OS simply takes the **next available in memory**.
+
+- Virtual mapping takes care of creating a **contiguous block**.
+
+- Pages are only allocated when needed -- **lazy allocation**,
+
+  only memory used is allocated, solves the problem of over-allocation.
+
+- Unlike with **overlays**, which were completely manual,
+
+  paging has abstracted all the complexity away from the programmer.
+
+- Programmers should still be aware of how things work,
+
+  and write programs accordingly (e.g., to avoid swapping).
+
+## Context-switching
+
+- Each process has its own page table.
+
+- When a context-switch happens, the TLB should be cleared.
+
+- Most of the cost in context-switching comes from repopulating the TLB.
+
+- More sophisticated TLB also store the process ID,
+
+  lookup is based on virtual address and process ID, no longer needs clearing.
+
+## Shared memory
+
+- Shared memory can easily be set up:
+
+  simply map virtual addresses for multiple processes to the **same physical locations**.
+
+- Code can be shared, too -- **shared libraries**.
+
+  E.g., the `printf` function is likely used by lots of processes.
+
+  - Each process maps to **the same** printf instructions.
+  - Reduces overall memory use,
+  - also reduces TLB misses as it is often looked up.
+
+## Shared memory
+
+- **Copy-on-write**: if several processes share data, but few of them modify it.
+
+  - Map to the shared data,
+  - If modified, write back to a new location in memory, reserved for that process.
+  - Efficient, but adds complexity.
+
+::: notes
+- a clever copy-on-write trick: zeros
+- many programs request a large chunk of fresh memory, initialised with zeros (can be done using the `calloc` function).
+- Thus, the OS keeps a large chuck of memory full of zeros ready for this purpose.
+- rather than setting aside all the memory at once, the process is simply given a reference to this huge pool of zeros.
+- due to copy-on-write, if the program modifies any of the memory, they are allocated their own copy, but only of the parts it has changed.
+- this can be really efficient, e.g., when working with sparse matrices (2d arrays in which most of the values are zero).
+:::
+
+## Spooling
+
+- **Spooling**: early computers would write data to memory, and the OS would schedule printing later.
+
+- Virtual memory can be mapped to anything:
+
+  files, I/O devices, e.g., sound cards.
+
+- Process accesses the devices by "writing to memory",
+
+  OS can handle this in the most efficient way.
+
+::: notes
+- note: this is more convenience for the programmer as they don't have to worry about hardware or technicalities of writing to different devices or files, they only need to know how to access memory.
+:::
+
+# Cache
+
+## Memory discrepancy
+
+- The CPU runs at 1000s of MHz (GHz),
+
+- Memory may run at a few 100s of MHz,
+
+- Accessing memory is orders of magnitude slower than the CPU can run.
+
+- The time taken to access memory is also very long (latency).
+
+- We could add **many parallel channels** connecting the CPU and memory,
+
+  this allows more throughput, but doesn't fix the latency.
+
+## Registers and cache
+
+- Registers are small chunks of memory on the CPU itself,
+
+  typically used to store intermediate values.
+
+- A **cache** is a small, fast chunk of memory which sits between the CPU and main memory,
+
+  used to store frequently used values.
+
+- Access to memory **goes through the cache**:
+
+  - if the data is in the cache, it is returned very quickly,
+  - otherwise, it is fetched from memory,
+  - done automatically, transparent from the OS.
+
+## Memory hierarchy
+
+- Since faster memory is more expensive, we often have multiple **levels** of cache,
+
+  each level, further from the CPU, is larger and slower.
+
+:::: {.cell layout-align="center"}
+::: cell-output-display
+![](../assets/04-hierarchy.webp){fig-align="center" fig-alt="memory hierarchy diagram: registers, cache, memory, disk; speed decreases, size increases" width="60%"}
+:::
+::::
+
+## Recap
+
+- Computer architecture broken down into 5 components: ALU, Control Unit, Memory, Input and Output.
+- VNA has shared memory for instructions and data
+- Harvard has separate memory for instructions and data.
+
+## Multi-processor architecture
+
+- So far we have considered only **single-processor** architectures,
+
+  but almost all modern computers include **multiple processors** (or multiple cores).
+
+- Each processor may have its **own cache**, but we need to keep cached values consistent across CPUs.
+
+- A **shared cache** solves this problem, but causes a bottleneck.
+
+## Next time
+
+Files and filesystems
