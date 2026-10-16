@@ -16,6 +16,18 @@ format:
 - State the differences in size and speed of the different types of
   memory, and the reasons behind this.
 
+# But first... a side rant
+
+# From Ed Rogers...
+
+# About Generative AI
+
+# Ed Rogers Side Rant {.smaller}
+
+> When coding can happen faster than the programmer can think, it makes things without thought. When all friction is removed from the act of creation, creation becomes cheap. How many great acts of creation can you think from history were arrived at without friction? How many of them would still have been possible if the friction had been removed for the artist in advance? That doesn't mean we should cause always resist automation, but we should always be wary of it. GK Chesterton said we should know why a fence was put there in the first place before we tear it down. Programming has always had barriers to overcome, more than were strictly limitations of the machines --- otherwise why are we still teaching low level languages rather than just Scratch and Python? How sure are we that none of those old barriers to overcome had any benefit or function?
+
+--- Ed Rogers, 16/10/26
+
 ## Recap: the CPU
 
 :::: {.cell layout-align="center"}
