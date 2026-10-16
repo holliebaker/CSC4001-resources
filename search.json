@@ -1320,49 +1320,49 @@
     "href": "CSC4001-S08-Memory.html#laptops-desktops",
     "title": "Memory Architecture",
     "section": "Laptops, desktops",
-    "text": "Laptops, desktops\n\nIntel Core I5:\n\nFirst released in 2010.\nClock speed of 2.5GHz, turbo-boost of 3.2Ghz.\n8MB of cache.\n\nIntel Core 7 250U:\n\nFirst released in Quarter 1, 2025.\nMaximum clock speed of 5.40GHz.\n12M of cache."
+    "text": "Laptops, desktops\n\nIntel Core I5:\n\nFirst released in 2010.\nClock speed of 2.5GHz, turbo-boost of 3.2Ghz.\n8MB of cache.\n\nIntel Core 7 250U:\n\nFirst released in Quarter 1, 2025.\nMaximum clock speed of 5.40GHz.\n12M of cache.\n\n\n\n2010 vs 2025 laptop 2.5GHz turbo to 3.2 vs max 5 8M v 12M cache"
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#the-trend",
+    "href": "CSC4001-S08-Memory.html#the-trend",
+    "title": "Memory Architecture",
+    "section": "The trend?",
+    "text": "The trend?\n\nComplex instruction set architecture (CISC), consumes around 20-80W of power.\nMemory (RAM) is becoming cheaper (that was written before the LLM explosion):\n\nBetween 2GB and 4GB in the 2010s,\nCommon to see 16GB in modern laptops.\nDDR4 (dourbe data random access memory): high bandwidth with synchronous access for read and write, released in 2014.\n\nSSDs are commonplace, unlikely to find a spinning HDD in a modern computer."
   },
   {
     "objectID": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis",
     "href": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis",
     "title": "Memory Architecture",
     "section": "Phones, microcontrollers and Raspberry Pis",
-    "text": "Phones, microcontrollers and Raspberry Pis\n\nReduced instruction set architecture (CISC), consumes around 20-80W of power.\nMemory (RAM) is becoming cheaper (that was written before the LLM explosion):\n\nBetween 2GB and 4GB in the 2010s,\nCommon to see 16GB+ in modern laptops.\nDDR4 (double data random access memory): high bandwidth with synchronous access for read and write, released in 2014.\n\nSSDs are commonplace, unlikely to find a spinning HDD in a modern computer."
+    "text": "Phones, microcontrollers and Raspberry Pis\n\nTypically ARM processors with lower power consumption.\nMotorola Moto G:\n\n8 cores: 2 x 2.0GHz Cortex-A78 plus 6 x 1.8GHz Cortex-A55\n32KB of L1 Instruction cache plus 32KB L1 Data cache.\n250-512 KiB of L2 cache.\n4GB of memory."
   },
   {
     "objectID": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-1",
     "href": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-1",
     "title": "Memory Architecture",
     "section": "Phones, microcontrollers and Raspberry Pis",
-    "text": "Phones, microcontrollers and Raspberry Pis\n\nTypically ARM processors with lower power consumption.\nMotorola Moto G:\n\n8 cores: 2 x 2.0GHz Cortex-A78 plus 6 x 1.8GHz Cortex-A55\n32KB of L1 Instruction cache plus 32KB L1 Data cache.\n250-512 KiB of L2 cache.\n4GB of memory."
+    "text": "Phones, microcontrollers and Raspberry Pis\n\nGalaxy S21:\n\n4 cores 1 x 2.9GHz Cortex-X1 plus 3 x 2.8GHz Cortex-A78\n8GB memory.\n\n\n\nComparing affordable vs high end smartphones froma couple of years ago. What is most noticeable? How have things changed in recent years? Why do we need so much RAM in a phone?"
   },
   {
     "objectID": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-2",
     "href": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-2",
     "title": "Memory Architecture",
     "section": "Phones, microcontrollers and Raspberry Pis",
-    "text": "Phones, microcontrollers and Raspberry Pis\n\nGalaxy S21:\n\n4 cores 1 x 2.9GHz Cortex-X1 plus 3 x 2.8GHz Cortex-A78\n8GB memory."
+    "text": "Phones, microcontrollers and Raspberry Pis\n\nRaspberry Pi 4 / 400:\n\nBroadcom BCM2711; 4 cores, Cortex-A72 (ARM v8) 64-bit SoC @ 1.8GHz.\n80KiB of L1 cache, 512KiB of L2 cache.\n4GB memory.\n\n\n(Happily running a couple of Chromium tabs, a number of terminal tabs and the screenreader.)"
   },
   {
     "objectID": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-3",
     "href": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-3",
     "title": "Memory Architecture",
     "section": "Phones, microcontrollers and Raspberry Pis",
-    "text": "Phones, microcontrollers and Raspberry Pis\n\nRaspberry Pi 4:\n\nBroadcom BCM2711; 4 cores, Cortex-A72 (ARM v8) 64-bit SoC @ 1.8GHz.\n80KiB of L1 cache, 512KiB of L2 cache.\n4GB memory."
-  },
-  {
-    "objectID": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-4",
-    "href": "CSC4001-S08-Memory.html#phones-microcontrollers-and-raspberry-pis-4",
-    "title": "Memory Architecture",
-    "section": "Phones, microcontrollers and Raspberry Pis",
-    "text": "Phones, microcontrollers and Raspberry Pis\n\nArduino Uno:\n\nATmega328P – 8 bit AVR family microcontroller.\n16MHz clock speed.\nHarvard architecture (separate, 32KB program memory).\n3KB program memory.\n2KB of SRAM.\n1KB of EEPROM (persistent storage)."
+    "text": "Phones, microcontrollers and Raspberry Pis\n\nArduino Uno:\n\nATmega328P – 8 bit AVR family microcontroller.\n16MHz clock speed.\nHarvard architecture (separate, 32KB program memory).\n3KB program memory.\n2KB of SRAM.\n1KB of EEPROM (persistent storage).\n\n\n(Powering your evelator sim, and…)"
   },
   {
     "objectID": "CSC4001-S08-Memory.html#s-and-a-brought-to-you-by",
     "href": "CSC4001-S08-Memory.html#s-and-a-brought-to-you-by",
     "title": "Memory Architecture",
     "section": "S and A brought to you by…",
-    "text": "S and A brought to you by…\n\n\n\n2x Arduino Leonardo’s\n32 KB flash memory for program\n2.5 KB SRAM for data\n16 MHz clock speed\n\n\n\n\n\nPinout diagram for Arduino Leonardo\n\n\n\n\nCanute 360 prototype was originally developed on the Arduino Leonardo Originally had one ATMega, using threading to handle input/output and control the motors Lots of problems with multithreading, dev team printed out the code and laid it along the floor to debug. Decided to run the i/o and motor thread on its own microcontroller."
+    "text": "S and A brought to you by…\n\n\n\n2x Arduino Leonardo’s\n32 KB flash memory for program\n2.5 KB SRAM for data\n16 MHz clock speed\n\n\n\n\n\nPinout diagram for Arduino Leonardo\n\n\n\n\nCanute 360 prototype was originally developed on the Arduino Leonardo Originally had one ATMega, using threading to handle input/output and control the motors Lots of problems with multithreading, dev team printed out the code and laid it along the floor to debug. Decided to run the i/o and motor thread on its own microcontroller. The Canute actually has 2 leonardo’s on a custom PCB, two simpler PCB’s on eachc side (rod lifters) and two moters in each of the 40 columns connected to the mainboard via H bridges. Also has a pi zero to power standalone mode and facilitate firmware updates. 2 beefy haptic motors and a 3.5mm audio out, connected up but not utilised in firmware."
   },
   {
     "objectID": "CSC4001-S08-Memory.html#analogy-lets-bake-a-cake",
@@ -1383,7 +1383,7 @@
     "href": "CSC4001-S08-Memory.html#add-eggs",
     "title": "Memory Architecture",
     "section": "Add eggs",
-    "text": "Add eggs\n\n\n\nFetch eggs from the fridge…\nBut you realise there are no eggs left.\nFortunately, you keep chickens and they are laying well.\nGo to the end of the garden and collect some eggs.\nReturning from the shop, you place the eggs on the work surface.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRather than fetching from the comparatively quick main memory (cupboard / fridge), you have to do a “read from disk” – walk down the garden, go into the chicken coop and locate the eggs. This is comparatively much slower than retrieving something from the nearby cupboard.\n\nLittle aside on pre-fetching. - Had you known in advance there were no eggs in main memory, you could have optimised: - Ask your friend to collect eggs while you are mixing butter and sugar. You will be ready for the eggs, which they loaded into cache (put on the worktop), or better still, cracked straight into the mixing bowl as they return (load directly into registers), for your use."
+    "text": "Add eggs\n\n\n\nFetch eggs from the fridge…\nBut you realise there are no eggs left.\nFortunately, you keep chickens and they are laying well.\nGo to the end of the garden and collect some eggs.\nReturning from the chicken coop, you place the eggs on the work surface.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRather than fetching from the comparatively quick main memory (cupboard / fridge), you have to do a “read from disk” – walk down the garden, go into the chicken coop and locate the eggs. This is comparatively much slower than retrieving something from the nearby cupboard.\n\nLittle aside on pre-fetching. - Had you known in advance there were no eggs in main memory, you could have optimised: - Ask your friend to collect eggs while you are mixing butter and sugar. You will be ready for the eggs, which they loaded into cache (put on the worktop), or better still, cracked straight into the mixing bowl as they return (load directly into registers), for your use."
   },
   {
     "objectID": "CSC4001-S08-Memory.html#add-flour-and-bake",
@@ -1426,6 +1426,34 @@
     "title": "Memory Architecture",
     "section": "Exercise: alternative random access memory",
     "text": "Exercise: alternative random access memory\n\nRAM prices are skyrocketing\nCome up with a creative alternative to RAM\n\nIt must be able to store 0’s and 1’s\nthink about speed of access, does it take the same length of time to access every bit\npower, size, heat, cost\n\nIf a technical solution is not possible, come up with a strategy to reduce RAM prices."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#but-wait-thats-not-the-whole-story",
+    "href": "CSC4001-S08-Memory.html#but-wait-thats-not-the-whole-story",
+    "title": "Memory Architecture",
+    "section": "But wait, that’s not the whole story",
+    "text": "But wait, that’s not the whole story\n\nYou’ve forgotten about GPU memory!\nNvidia RTX 3090\n\n10,752 CUDA cores\n24GB Video RAM (GDDR6)\n\n\n\nCUDA: Nvidia’s parallel computing api. (Compute uniform device architecture). General purpose computations via c++ api, for data parallel computations. Kind of vector processor."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#unified-memory",
+    "href": "CSC4001-S08-Memory.html#unified-memory",
+    "title": "Memory Architecture",
+    "section": "Unified memory",
+    "text": "Unified memory\n\nFound in, e.g., Apple silicon.\nHigh bandwidth memory shared by CPU, GPU and “neural processor”\n\nCPU, GPU and memory on same chip, no need to copy between RAM and VRAM.\n\nLess memory needed overall , lower power consumption, win win win, right?"
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#apple-silicon",
+    "href": "CSC4001-S08-Memory.html#apple-silicon",
+    "title": "Memory Architecture",
+    "section": "Apple silicon",
+    "text": "Apple silicon\n\nSingle bus between CPU, GPU NPU and main memory.\nCareful and clever power management needed to manage heat.\nCustom ARM architecture."
+  },
+  {
+    "objectID": "CSC4001-S08-Memory.html#apple-silicon-isa",
+    "href": "CSC4001-S08-Memory.html#apple-silicon-isa",
+    "title": "Memory Architecture",
+    "section": "Apple silicon ISA",
+    "text": "Apple silicon ISA\n\n31 general purpose registers, stack pointer, prorgam counter, etc\n\n128 bit for SIMD\n\nSpecial purpose, e.g., high precision timers, microkernel level.\nStandard instruction with enhancements:\n\nhigh throughput load and store\n\nCrypto instructions:\nAES, SHa1 / SHA256\nLinear algebra\n\nfash matrix multiplication (for “AI”)\nuses special-purpose “neural processing unit”."
   },
   {
     "objectID": "CSC4001-S13-Scheduling.html#learning-outcomes",
@@ -2307,7 +2335,7 @@
     "href": "index.html",
     "title": "CSC4001: Systems and Architecture",
     "section": "",
-    "text": "Index\n\nS00: \nS01: \nCSC4001-S02W-Logic.qmd: \nS02: \nS03: \nS04: \nCSC4001-S05W-GoingUp.qmd: \nS05: \nCSC4001-S06W-riscv.qmd: \nS06: \nS08: \nS10: \nS11: \nS13: \nS15: \nS17: \nS19: \nS21:"
+    "text": "Index\n\nS00: Welcome\nS01: Logic Gates \nCSC4001-S02W-Logic.qmd: Building With Logic Gates - Worksheet\nS02: Building With Logic Gates\nS03: Architecture overview\nS04: The CPU\nCSC4001-S05W-GoingUp.qmd: Workshop: Going up\nS05: Workshop: Going up\nCSC4001-S06W-riscv.qmd: RISC-V, Let’s Assemble\nS06: Pipelines, Out Of Order Execution, and Parallelism\nS08: Memory Architecture\nS10: Operating Systems\nS11: Processes\nS13: Processes\nS15: Deadlock\nS17: Intr-Process Communication\nS19: Memory\nS21: Files and Filesystems"
   },
   {
     "objectID": "CSC4001-S02W-Logic.html",
