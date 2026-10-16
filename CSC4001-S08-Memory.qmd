@@ -131,16 +131,22 @@ width="90%"}
   - Maximum clock speed of **5.40GHz**.
   - **12M** of cache.
 
-## Phones, microcontrollers and Raspberry Pis {.smaller}
+::: notes
+2010 vs 2025 laptop
+2.5GHz turbo to 3.2 vs max 5
+8M v 12M cache
+:::
 
-- Reduced instruction set architecture (CISC), consumes around
+## The trend? 
+
+- Complex instruction set architecture (CISC), consumes around
   **20-80W** of power.
 
 - Memory (RAM) ~~is becoming cheaper~~ (that was written before the LLM explosion):
 
   - Between **2GB** and **4GB** in the 2010s,
-  - Common to see **16GB+** in modern laptops.
-  - **DDR4** (*double data random access memory*): high bandwidth with
+  - Common to see **16GB** in modern laptops.
+  - **DDR4** (*dourbe data random access memory*): high bandwidth with
     synchronous access for read and write, released in 2014.
 
 - SSDs are commonplace, unlikely to find a spinning HDD in a modern
@@ -166,14 +172,20 @@ width="90%"}
     *Cortex-A78*
   - **8GB** memory.
 
+::: notes
+Comparing affordable vs high end smartphones froma couple of years ago. What is most noticeable? How have things changed in recent years? Why do we need so much RAM in a phone?
+:::
+
 ## Phones, microcontrollers and Raspberry Pis {.smaller}
 
-- **Raspberry Pi 4**:
+- **Raspberry Pi 4 / 400**:
 
   - *Broadcom BCM2711*; **4 cores**, *Cortex-A72* (ARM v8) 64-bit SoC @
     **1.8GHz**.
   - **80KiB** of *L1 cache*, **512KiB** of *L2 cache*.
   - **4GB** memory.
+
+(Happily running a couple of Chromium tabs, a number of terminal tabs and the screenreader.)
 
 ## Phones, microcontrollers and Raspberry Pis {.smaller}
 
@@ -185,6 +197,8 @@ width="90%"}
   - **3KB** program memory.
   - **2KB** of SRAM.
   - **1KB** of EEPROM (persistent storage).
+
+(Powering your evelator sim, and...)
 
 ## S and A brought to you by...
 
@@ -208,9 +222,10 @@ width="90%"}
 Canute 360 prototype was originally developed on the Arduino Leonardo
 Originally had one ATMega, using threading to handle input/output and control the motors
 Lots of problems with multithreading, dev team printed out the code and laid it along the floor to debug. Decided to run the i/o and motor thread on its own microcontroller.
+The Canute actually has 2 leonardo's on a custom PCB, two simpler PCB's on eachc side (rod lifters) and two moters in each of the 40 columns connected to the mainboard via H bridges. Also has a pi zero to power standalone mode and facilitate firmware updates. 2 beefy haptic motors and a 3.5mm audio out, connected up but not utilised in firmware.
 :::
 
-# Comparison of memory
+# Hungry? Let's talk about memory hierarchy
 
 ## Analogy: let's bake a cake
 
@@ -299,7 +314,7 @@ fig-alt="photo of butter and sugar added to a mixing bowl" width="55%"}
 
     Go to the end of the garden and collect some eggs.
 
-6.  Returning from the shop, you place the eggs on the **work surface**.
+6.  Returning from the chicken coop, you place the eggs on the **work surface**.
 
 :::
 :::column
@@ -453,6 +468,50 @@ from https://pangoly.com/en/price-trends/ram/32gb-ddr5
   - power, size, heat, cost
 
 - If a technical solution is not possible, come up with a strategy to reduce RAM prices.
+
+## But wait, that's not the whole story
+
+- You've forgotten about GPU memory!
+- Nvidia RTX 3090
+
+  - 10,752 CUDA cores
+  - 24GB Video RAM (GDDR6)
+
+::: notes
+CUDA: Nvidia's parallel computing api. (Compute uniform device architecture). General purpose computations via c++ api, for data parallel computations. Kind of vector processor.
+:::
+
+## Unified memory
+
+- Found in, e.g., Apple silicon.
+
+- High bandwidth memory shared by CPU, GPU and "neural processor"
+
+- - CPU, GPU and memory on same chip, no need to copy between RAM and VRAM.
+
+- Less memory needed overall , lower power consumption, win win win, right?
+
+## Apple silicon
+
+- Single bus between CPU, GPU NPU and main memory.
+
+- Careful and clever power management needed to manage heat.
+
+- Custom ARM architecture. 
+
+## Apple silicon ISA {.smaller}
+
+- 31 general purpose registers, stack pointer, prorgam counter, etc
+- - 128 bit for SIMD
+- Special purpose, e.g., high precision timers, microkernel level.
+- Standard instruction with enhancements:
+  - high throughput load and store
+ - Crypto instructions:
+  - AES, SHa1 / SHA256
+- Linear algebra
+  - fash matrix multiplication (for "AI")
+  - uses special-purpose "neural processing unit".
+
 
 # Next time
 
