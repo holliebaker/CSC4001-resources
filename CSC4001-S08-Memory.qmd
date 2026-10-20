@@ -28,6 +28,12 @@ format:
 
 --- Ed Rogers, 16/10/26
 
+## Something to reflect on...
+
+Generative AI can produce in second what used to take days. How has this changed the landscape of computing / cyber security? Reflect on the difference between process and output.
+
+Slowing down is suddenly everywhere: slow tech, slow fashion, even gen AI companies are promising to slow down for safety. However, slowing down can be a privilage. Do you feel able to slow down? (And, indeed, do you want to?) How can you do this without judging others for using faster tools?
+
 ## Recap: the CPU
 
 :::: {.cell layout-align="center"}
