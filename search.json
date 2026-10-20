@@ -1253,6 +1253,13 @@
     "text": "Learning Outcomes\n\nState the different types of computer memory — registers, cache, main memory, disk.\nRecall the memory hierarchy.\nState the differences in size and speed of the different types of memory, and the reasons behind this."
   },
   {
+    "objectID": "CSC4001-S08-Memory.html#something-to-reflect-on",
+    "href": "CSC4001-S08-Memory.html#something-to-reflect-on",
+    "title": "Memory Architecture",
+    "section": "Something to reflect on…",
+    "text": "Something to reflect on…\nGenerative AI can produce in second what used to take days. How has this changed the landscape of computing / cyber security? Reflect on the difference between process and output.\nSlowing down is suddenly everywhere: slow tech, slow fashion, even gen AI companies are promising to slow down for safety. However, slowing down can be a privilage. Do you feel able to slow down? (And, indeed, do you want to?) How can you do this without judging others for using faster tools?"
+  },
+  {
     "objectID": "CSC4001-S08-Memory.html#recap-the-cpu",
     "href": "CSC4001-S08-Memory.html#recap-the-cpu",
     "title": "Memory Architecture",
