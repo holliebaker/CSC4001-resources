@@ -2009,6 +2009,83 @@
     "text": "Summary: what have early computers taught us?\n\nResources need managing,\nsince they are limited, we want to get best performance otu of hardware and best user experience.\nResources also need protection\nfrom out or malicious programs, e.g., limiting access to memory, but also files and network.\nProgrammers need a convenient interface,\nto best interact with hardware, avoid repeating code, and produce fewer errors."
   },
   {
+    "objectID": "CSC4001-S10-OS.html#the-ibm-pc",
+    "href": "CSC4001-S10-OS.html#the-ibm-pc",
+    "title": "Operating Systems",
+    "section": "The IBM PC",
+    "text": "The IBM PC\n\n1980: IBM launches IBM PC\nFor home use\nUtilising off-the-shelf compenents, so easier and cheaper to design and build.\nIntel 8088 procesor (16 bit)"
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#digital-research-inc.",
+    "href": "CSC4001-S10-OS.html#digital-research-inc.",
+    "title": "Operating Systems",
+    "section": "Digital Research Inc.",
+    "text": "Digital Research Inc.\n\nFounded by Gary Kildall in 1973\nCP/M (control program/monitor) operating system\nsold 250,000 copies by 1980"
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#basic-problems",
+    "href": "CSC4001-S10-OS.html#basic-problems",
+    "title": "Operating Systems",
+    "section": "BASIC problems",
+    "text": "BASIC problems\n\nIBM needed an operating system for their PC.\nCP/M first choice, but needed migrating from 8 to 16 bit\nunsuccessful contract negotiation\n\n\nKildall didn’t attend the meeting. as a result his wife Dorathy McEwan. Dorathy wasn’t happy with the restrictive NDA. Accounts diverge, either she refused to sign, asked for his thoughts, he signed but negotiations never completed… anyway no agreement was reached"
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#small-fry",
+    "href": "CSC4001-S10-OS.html#small-fry",
+    "title": "Operating Systems",
+    "section": "Small fry",
+    "text": "Small fry\n\nMeanwhile, small company called Microsoft based in Seattle.\nKnown for designing programming languages, particularly BASIC\nIBM CEO John Opal travels to MS HQ\nAgreement reached to develop an OS\nAlready had a contract to develop a BASIC interpreter.\nMary Gates worked with John at Opal."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#tim-patterson-and-qdos",
+    "href": "CSC4001-S10-OS.html#tim-patterson-and-qdos",
+    "title": "Operating Systems",
+    "section": "Tim Patterson and QDOS",
+    "text": "Tim Patterson and QDOS\n\nPatterson develops QDOS: Quick and Dirty Operating System\n8086 Operating System\nRenamed to 86 DOS.\n\nMS licenses 86 DOS for $25,000 in December 1980\nLater buys exclusive rights for $50,000 more"
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#dos-51",
+    "href": "CSC4001-S10-OS.html#dos-51",
+    "title": "Operating Systems",
+    "section": "DOS 5,1",
+    "text": "DOS 5,1\n\n4000 lines of assembler\nIBM PC released in ’81 with PC-DOS\nIBM choose to license QDOS, rather than buy outright.\nMS able to license to other manufacturers…"
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#ms-do",
+    "href": "CSC4001-S10-OS.html#ms-do",
+    "title": "Operating Systems",
+    "section": "MS DO",
+    "text": "MS DO\n\nA generic version of PC DOS\nBecomes popular with Japanese manufacturers, then IBM PC clones."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#kildall-is-suss",
+    "href": "CSC4001-S10-OS.html#kildall-is-suss",
+    "title": "Operating Systems",
+    "section": "Kildall is suss",
+    "text": "Kildall is suss\n\nKilldall claims QDOS is a 16-bit copy of CPM\nPatterson argues that he simply created a compatible version from the documentation — he never saw the code.\nLikens it to copying a recipe: can’t patent a recipe."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#ecosystem-building",
+    "href": "CSC4001-S10-OS.html#ecosystem-building",
+    "title": "Operating Systems",
+    "section": "Ecosystem building",
+    "text": "Ecosystem building\n\nPC DOS becomes less popular\nMS DOS has more applications\nMicrosoft remain a leader in programming language development\nslow to release licenses for Microsoft BASIC, and when they do charge high fees\nEasier to develop for DOS, easy to port from CPM to MS DOS but not the other way around."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#ms-dos",
+    "href": "CSC4001-S10-OS.html#ms-dos",
+    "title": "Operating Systems",
+    "section": "MS DOS",
+    "text": "MS DOS\n\nDisk Operating System\n16 bit for Intel CPUs\nSingle user\nco-operative multitasking,\nthird party programs to do time slicing\noriginally assumed only 640KB of mem would be used, Intel 8086 could only access 1MB\n\nsoftware drivers written to move mpages around to provide access to memory above 1MB."
+  },
+  {
+    "objectID": "CSC4001-S10-OS.html#os-research",
+    "href": "CSC4001-S10-OS.html#os-research",
+    "title": "Operating Systems",
+    "section": "OS Research",
+    "text": "OS Research\n\nChoose an old operating system (DOS / Tron / RISCOS / Mac OS 9)-\nFind out:\n\n\nWhat hardware did it support (CPU architecture, memory address space)\nHow were programs scheduled (proe-emptive / co-operative)\nOS level memory management (protection)\nWhat filesystem did it use\nHow was it programmed (language support)\nWhat were its strengths and limitations compared to other operating systems at the time."
+  },
+  {
     "objectID": "CSC4001-S19-Memory.html#objectives",
     "href": "CSC4001-S19-Memory.html#objectives",
     "title": "Memory",

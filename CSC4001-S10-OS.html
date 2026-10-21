@@ -755,6 +755,145 @@ CSC4001: Computer Systems and Architecture
 <p>to best interact with hardware, avoid repeating code, and produce fewer errors.</p></li>
 </ul>
 </section></section>
+<section>
+<section id="quick-and-dirty-os" class="title-slide slide level1 center">
+<h1>Quick and Dirty OS ?!</h1>
+
+</section>
+<section id="the-ibm-pc" class="slide level2">
+<h2>The IBM PC</h2>
+<ul>
+<li>1980: IBM launches IBM PC</li>
+<li>For home use</li>
+<li>Utilising off-the-shelf compenents, so easier and cheaper to design and build.</li>
+<li>Intel 8088 procesor (16 bit)</li>
+</ul>
+</section>
+<section id="digital-research-inc." class="slide level2">
+<h2>Digital Research Inc.</h2>
+<ul>
+<li>Founded by Gary Kildall in 1973</li>
+<li>CP/M (control program/monitor) operating system</li>
+<li>sold 250,000 copies by 1980</li>
+</ul>
+</section>
+<section id="basic-problems" class="slide level2">
+<h2>BASIC problems</h2>
+<ul>
+<li>IBM needed an operating system for their PC.</li>
+<li>CP/M first choice, but needed migrating from 8 to 16 bit</li>
+<li>unsuccessful contract negotiation</li>
+</ul>
+<aside class="notes">
+<p>Kildall didn’t attend the meeting. as a result his wife Dorathy McEwan. Dorathy wasn’t happy with the restrictive NDA. Accounts diverge, either she refused to sign, asked for his thoughts, he signed but negotiations never completed… anyway no agreement was reached</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="small-fry" class="slide level2">
+<h2>Small fry</h2>
+<ul>
+<li>Meanwhile, small company called Microsoft based in Seattle.</li>
+<li>Known for designing programming languages, particularly BASIC</li>
+<li>IBM CEO John Opal travels to MS HQ</li>
+<li>Agreement reached to develop an OS</li>
+<li>Already had a contract to develop a BASIC interpreter.</li>
+<li>Mary Gates worked with John at Opal.</li>
+</ul>
+</section>
+<section id="tim-patterson-and-qdos" class="slide level2">
+<h2>Tim Patterson and QDOS</h2>
+<ul>
+<li>Patterson develops QDOS: Quick and Dirty Operating System</li>
+<li>8086 Operating System</li>
+<li>Renamed to 86 DOS.
+<ul>
+<li>MS licenses 86 DOS for $25,000 in December 1980</li>
+<li>Later buys exclusive rights for $50,000 more</li>
+</ul></li>
+</ul>
+</section>
+<section id="dos-51" class="slide level2">
+<h2>DOS 5,1</h2>
+<ul>
+<li>4000 lines of assembler</li>
+<li>IBM PC released in ’81 with PC-DOS</li>
+<li>IBM choose to <em>license</em> QDOS, rather than buy outright.</li>
+<li>MS able to license to other manufacturers…</li>
+</ul>
+</section>
+<section id="ms-do" class="slide level2">
+<h2>MS DO</h2>
+<ul>
+<li>A generic version of PC DOS</li>
+<li>Becomes popular with Japanese manufacturers, then IBM PC clones.</li>
+</ul>
+</section>
+<section id="kildall-is-suss" class="slide level2">
+<h2>Kildall is suss</h2>
+<ul>
+<li>Killdall claims QDOS is a 16-bit copy of CPM</li>
+<li>Patterson argues that he simply created a compatible version from the documentation — he never saw the code.</li>
+<li>Likens it to copying a recipe: can’t patent a recipe.</li>
+</ul>
+</section>
+<section id="ecosystem-building" class="slide level2">
+<h2>Ecosystem building</h2>
+<ul>
+<li>PC DOS becomes less popular</li>
+<li>MS DOS has more applications</li>
+<li>Microsoft remain a leader in programming language development</li>
+<li>slow to release licenses for Microsoft BASIC, and when they do charge high fees</li>
+<li>Easier to develop for DOS, easy to port from CPM to MS DOS but not the other way around.</li>
+</ul>
+</section>
+<section id="ms-dos" class="slide level2">
+<h2>MS DOS</h2>
+<ul>
+<li>Disk Operating System</li>
+<li>16 bit for Intel CPUs</li>
+<li>Single user</li>
+<li>co-operative multitasking,</li>
+<li>third party programs to do time slicing</li>
+<li>originally assumed only 640KB of mem would be used, Intel 8086 could only access 1MB
+<ul>
+<li>software drivers written to move mpages around to provide access to memory above 1MB.</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="riscos" class="title-slide slide level1 center">
+<h1>RISCOS</h1>
+<ul>
+<li>Designed in Cambridge at Acorn</li>
+<li>By team who developed ARM</li>
+<li>Co-operative multitasking</li>
+<li>Interesting user interface paradigm.</li>
+</ul>
+</section>
+<section id="os-research" class="slide level2">
+<h2>OS Research</h2>
+<ol type="1">
+<li>Choose an old operating system (DOS / Tron / RISCOS / Mac OS 9)-</li>
+<li>Find out:</li>
+</ol>
+<ul>
+<li>What hardware did it support (CPU architecture, memory address space)</li>
+<li>How were programs scheduled (proe-emptive / co-operative)</li>
+<li>OS level memory management (protection)</li>
+<li>What filesystem did it use</li>
+<li>How was it programmed (language support)</li>
+<li>What were its strengths and limitations compared to other operating systems at the time.</li>
+</ul>
+</section></section>
 <section id="next-time" class="title-slide slide level1 center">
 <h1>Next time</h1>
 <p>Reading week…</p>
