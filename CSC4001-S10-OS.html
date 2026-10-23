@@ -153,6 +153,74 @@ CSC4001: Computer Systems and Architecture
 <li>Overview computer history in the context of operating systems, and use this to explain why the functions of an operating system are important.</li>
 </ul>
 </section>
+<section>
+<section id="i-have-content-but-this-is-more-interesting-and-perhaps-tangentially-relevant" class="title-slide slide level1 center">
+<h1>I have content, but this is more interesting… and perhaps tangentially relevant?</h1>
+
+</section>
+<section id="php2shell-vulnerabilities" class="slide level2">
+<h2>php2shell vulnerabilities</h2>
+<ul>
+<li>CVE-2026-109618, CVE-2026-109619</li>
+<li>PHP Hypertext Preprocessor, extremely widely used, e.g., NextCloud, MediaWiki, Blackboard, eVision, …</li>
+<li>Permits remote execution of code on a webserver running PHP</li>
+<li>Out of memory condition triggering corruption, potential to run unauthenticated code remotely.</li>
+<li>Fixes published on 21 Oct 2026</li>
+</ul>
+<aside class="notes">
+<p>PHP is a widely used open-source server-side scripting language, so these vulnerabilities may affect a broad range of internet-facing web applications and products that embed or depend on PHP. Extremely widely used, e.g., NLNet took their NextCloud down, Wikipedia froze editing. The impact is not limited to websites: PHP is also embedded in appliances, network devices, management interfaces and other vendor products where administrators may not be able to update PHP directly. More detail:</p>
+<p>CVE-2026-109618: Out-of-memory handling can interrupt PHP while internal request data is only partially initialized. Request cleanup may then treat the invalid data as valid. CVE-2026-109619: Request-owned internal state can survive after its backing memory has been freed. A later request handled by the same worker may use that stale state before normal initialization resets it.</p>
+<p>https://www.ncsc.gov.uk/news/critical-security-issue-affecting-php https://github.com/NCSC-NL/php2shell</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="navier-stokes" class="slide level2">
+<h2>Navier-Stokes</h2>
+<ul>
+<li>Mathematical model for fluid dynamics developed in around 1850 by Claude-Louis Navier and George Gabriel Stokes.</li>
+<li>Set of partial differential equations modelling momentum in fluids</li>
+<li>Important in aircraft design, model of blood flow, etc</li>
+</ul>
+<p>But why did this make it into Friday’s systems &amp; architecture?</p>
+</section>
+<section id="agents" class="slide level2">
+<h2>100 agents</h2>
+<ul>
+<li>Navier stokes problem, simplistically: can we make the system blow up?</li>
+<li>10,000 agents, 2.7 million messages, 88 hours, generating 130 billion output tokens (hypothetical cost of $6.5 million)</li>
+<li>Claims to have solved the forced Navier-Stokes existence and smoothness problem, formalisation in Lean (proof assistant)</li>
+<li>Not verified by mathematicians, still listed as open by Clay Mathematics Institute.</li>
+<li>OpenAI says they won’t claim the Millenium Prize.</li>
+<li>Dispute with Levent Alpöge, employee of Anthropic, and Tristan Buckmaster: very similar to their results.</li>
+</ul>
+<aside class="notes">
+<p>Buchmaster interview: https://www.numberphile.com/videos/the-buckmaster-interview Nice explanation of the fluid dynamics, by Hannah Fry https://www.youtube.com/watch?v=xuHOralyJao</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="now-for-todays-actual-content" class="title-slide slide level1 center">
+<h1>Now for today’s actual content</h1>
+
+</section>
 <section id="what-is-an-operating-system" class="slide level2">
 <h2>What is an Operating System</h2>
 <ul>
@@ -460,7 +528,7 @@ CSC4001: Computer Systems and Architecture
 <p>“If you notice your operating system, then it’s not doing it’s job properly.”</p>
 </blockquote>
 <p>– Russell Bradford</p>
-</section>
+</section></section>
 <section>
 <section id="history" class="title-slide slide level1 center">
 <h1>History</h1>
@@ -891,7 +959,7 @@ CSC4001: Computer Systems and Architecture
 <li>OS level memory management (protection)</li>
 <li>What filesystem did it use</li>
 <li>How was it programmed (language support)</li>
-<li>What were its strengths and limitations compared to other operating systems at the time.</li>
+<li>What was its strengths and limitations compared to other operating systems at the time.</li>
 </ul>
 </section></section>
 <section id="next-time" class="title-slide slide level1 center">
