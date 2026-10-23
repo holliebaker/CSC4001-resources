@@ -17,6 +17,52 @@ format:
   this to explain why the functions of an operating system are
   important.
 
+# I have content, but this is more interesting... and perhaps tangentially relevant?
+
+## php2shell vulnerabilities 
+
+- CVE-2026-109618, CVE-2026-109619 
+- PHP Hypertext Preprocessor, extremely widely used, e.g., NextCloud, MediaWiki, Blackboard, eVision, ...
+- Permits remote execution of code on a webserver running PHP
+- Out of memory condition triggering corruption, potential to run unauthenticated code remotely.
+- Fixes published on 21 Oct 2026 
+
+::: notes
+PHP is a widely used open-source server-side scripting language, so these vulnerabilities may affect a broad range of internet-facing web applications and products that embed or depend on PHP.
+Extremely widely used, e.g., NLNet took their NextCloud down, Wikipedia froze editing.
+The impact is not limited to websites: PHP is also embedded in appliances, network devices, management interfaces and other vendor products where administrators may not be able to update PHP directly.
+More detail:
+
+CVE-2026-109618: Out-of-memory handling can interrupt PHP while internal request data is only partially initialized. Request cleanup may then treat the invalid data as valid.
+CVE-2026-109619: Request-owned internal state can survive after its backing memory has been freed. A later request handled by the same worker may use that stale state before normal initialization resets it.
+
+https://www.ncsc.gov.uk/news/critical-security-issue-affecting-php
+https://github.com/NCSC-NL/php2shell
+:::
+
+## Navier-Stokes
+
+- Mathematical model for fluid dynamics developed in around 1850 by  Claude-Louis Navier and George Gabriel Stokes.
+- Set of partial differential equations modelling momentum in fluids
+- Important in aircraft design, model of blood flow, etc
+
+But why did this make it into Friday's systems & architecture?
+
+## 100 agents
+
+- Navier stokes problem, simplistically: can we make the system blow up?
+- 10,000 agents, 2.7 million messages, 88 hours, generating  130 billion output tokens (hypothetical cost of $6.5 million)
+- Claims to have solved the forced Navier-Stokes existence and smoothness problem, formalisation in Lean (proof assistant)
+- Not verified by mathematicians, still listed as open by Clay Mathematics Institute.
+- OpenAI says they won't claim the Millenium Prize.
+- Dispute with Levent Alpöge, employee of Anthropic, and Tristan Buckmaster: very similar to their results.
+
+::: notes
+Buchmaster interview: https://www.numberphile.com/videos/the-buckmaster-interview
+Nice explanation of the fluid dynamics, by Hannah Fry https://www.youtube.com/watch?v=xuHOralyJao
+:::
+
+# Now for today's actual content
 ## What is an Operating System
 
 - Just another **program**.
@@ -729,7 +775,7 @@ Dorathy wasn't happy with the restrictive NDA. Accounts diverge, either she refu
   - OS level memory management (protection)
   - What filesystem did it use
   - How was it programmed (language support)
-  - What were its strengths and limitations compared to other operating systems at the time.
+  - What was its strengths and limitations compared to other operating systems at the time.
 
 # Next time
 
