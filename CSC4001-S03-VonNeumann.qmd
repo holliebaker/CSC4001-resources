@@ -251,7 +251,7 @@ Representation used for the `float` type in many programming languages.
 
 :::: {.cell fig.caption="center"}
 ::: cell-output-display
-![](../assets/03-float.png){fig-alt="representation of a floating point number with ISO 754"
+![](./assets/03-float.png){fig-alt="representation of a floating point number with ISO 754"
 width="90%"}
 :::
 ::::

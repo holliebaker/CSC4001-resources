@@ -25,7 +25,7 @@ Early computers such as EDSAC had no operating system.
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/02-edsac.jpg){fig-align="center" fig-alt="EDSAC"
+![](./assets/02-edsac.jpg){fig-align="center" fig-alt="EDSAC"
 width="90%"}
 :::
 ::::
@@ -190,7 +190,7 @@ Deciding which process should run next.
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/06-pickme.jpg){fig-align="center"
+![](./assets/06-pickme.jpg){fig-align="center"
 fig-alt="cartoon saying pick me pick me" width="70%"}
 :::
 ::::
@@ -241,7 +241,7 @@ fig-alt="cartoon saying pick me pick me" width="70%"}
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/06-lifecycle.svg){fig-align="center"
+![](./assets/06-lifecycle.svg){fig-align="center"
 fig-alt="diagram showing possible process state transitions"
 width="90%"}
 :::
@@ -478,7 +478,7 @@ width="90%"}
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/06-bootstraps.jpg){fig-align="center"
+![](./assets/06-bootstraps.jpg){fig-align="center"
 fig-alt="cartoon of someone trying to lift themself up by their bootstraps"
 width="70%"}
 :::

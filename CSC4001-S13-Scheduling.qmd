@@ -139,7 +139,7 @@ Deciding which process should run next.
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/06-pickme.jpg){fig-align="center" fig-alt="cartoon saying pick me pick me" width="70%"}
+![](./assets/06-pickme.jpg){fig-align="center" fig-alt="cartoon saying pick me pick me" width="70%"}
 :::
 ::::
 :::
@@ -200,7 +200,7 @@ Deciding which process should run next.
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/07-tug.jpg){fig-align="center" fig-alt="cartoon tug of war" width="60%"}
+![](./assets/07-tug.jpg){fig-align="center" fig-alt="cartoon tug of war" width="60%"}
 :::
 ::::
 :::
@@ -233,7 +233,7 @@ We can divide scheduling up into three categories:
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/07-sml.svg){fig-align="center" fig-alt="short, medium and long-term scheduling" width="60%"}
+![](./assets/07-sml.svg){fig-align="center" fig-alt="short, medium and long-term scheduling" width="60%"}
 :::
 ::::
 :::
@@ -291,7 +291,7 @@ We can divide scheduling up into three categories:
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/07-genie.jpg){fig-align="center" fig-alt="Genie: I'll give you a billion dollars if you can spend 100M in a month. There are three rules: no gifting, no gambling, no throwing it away. SRE: Can I use AWS?" width="80%"}
+![](./assets/07-genie.jpg){fig-align="center" fig-alt="Genie: I'll give you a billion dollars if you can spend 100M in a month. There are three rules: no gifting, no gambling, no throwing it away. SRE: Can I use AWS?" width="80%"}
 :::
 ::::
 :::
@@ -479,7 +479,7 @@ where
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/07-mfq.svg){fig-align="center" fig-alt="diagram of mfq with 3 queues, one process running on the CPU." width="90%"}
+![](./assets/07-mfq.svg){fig-align="center" fig-alt="diagram of mfq with 3 queues, one process running on the CPU." width="90%"}
 :::
 ::::
 :::
@@ -499,7 +499,7 @@ Run processes in priority queue order.
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/07-mfq2.svg){fig-align="center" fig-alt="diagram of mfq with 3 queue, Q0 is empty, so yellow process at the front of Q1 is scheduled" width="90%"}
+![](./assets/07-mfq2.svg){fig-align="center" fig-alt="diagram of mfq with 3 queue, Q0 is empty, so yellow process at the front of Q1 is scheduled" width="90%"}
 :::
 ::::
 :::
@@ -519,7 +519,7 @@ Suppose $P$ is in $Q_i$.
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/07-mfq3.svg){fig-align="center" fig-alt="yellow proc is now running, shows three possibilities (same queue, promotion or demotion) as above." width="70%"}
+![](./assets/07-mfq3.svg){fig-align="center" fig-alt="yellow proc is now running, shows three possibilities (same queue, promotion or demotion) as above." width="70%"}
 :::
 ::::
 :::

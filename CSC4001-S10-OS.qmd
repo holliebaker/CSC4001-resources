@@ -173,7 +173,7 @@ Nice explanation of the fluid dynamics, by Hannah Fry https://www.youtube.com/wa
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/05-layercake.jpg){fig-align="center"
+![](./assets/05-layercake.jpg){fig-align="center"
 fig-alt="layered cake" width="60%"}
 :::
 ::::
@@ -205,7 +205,7 @@ fig-alt="layered cake" width="60%"}
 :::column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/05-scone.jpg){fig-align="center"
+![](./assets/05-scone.jpg){fig-align="center"
 fig-alt="scone with jam first, then cream on top" width="80%"}
 :::
 :::
@@ -299,7 +299,7 @@ constructed scone.
 :::column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/05-bsod.jpg){fig-align="center"
+![](./assets/05-bsod.jpg){fig-align="center"
 fig-alt="image of an error screen; the blue screen of death"
 width="80%"}
 :::
@@ -328,7 +328,7 @@ The famous "blue screen of death".
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/05-android.png){fig-align="center"
+![](./assets/05-android.png){fig-align="center"
 fig-alt="a phone, tablet, smart watch and TV all running android"
 width="60%"}
 :::
@@ -336,7 +336,7 @@ width="60%"}
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/05-linux.jpg){fig-align="center"
+![](./assets/05-linux.jpg){fig-align="center"
 fig-alt="a collection of devices running Linux" width="60%"}
 :::
 ::::
@@ -379,7 +379,7 @@ fig-alt="a collection of devices running Linux" width="60%"}
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/02-edsac.jpg){fig-align="center" fig-alt="EDSAC"
+![](./assets/02-edsac.jpg){fig-align="center" fig-alt="EDSAC"
 width="90%"}
 :::
 ::::
@@ -405,7 +405,7 @@ width="90%"}
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/05-tape.jpg){fig-align="center"
+![](./assets/05-tape.jpg){fig-align="center"
 fig-alt="5-hole paper tape" width="90%"}
 :::
 ::::

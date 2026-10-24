@@ -26,7 +26,7 @@ format:
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/02-harvard.svg){fig-align="center"
+![](./assets/02-harvard.svg){fig-align="center"
 fig-alt="diagram of Harvard architecture showing the same components as Von Neumann, but with separate memory and separate buses for instructions and data"
 width="60%"}
 :::
@@ -47,7 +47,7 @@ mainframes.
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/02-vna.svg){fig-align="center"
+![](./assets/02-vna.svg){fig-align="center"
 fig-alt="diagram of Von Neumann architecture showing five components"
 width="55%"}
 :::
@@ -68,7 +68,7 @@ This is the architecture found in most desktop computers today.
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/03-cpu.svg){fig-align="center"
+![](./assets/03-cpu.svg){fig-align="center"
 fig-alt="diagram of Von Neumann architecture showing five components described on the next page"
 width="50%"}
 :::
@@ -110,7 +110,7 @@ A CPU goes through **four stages** to run an instruction:
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/03-fetch.svg){fig-align="center"
+![](./assets/03-fetch.svg){fig-align="center"
 fig-alt="shows four stages, fetch decode execute and store, linked in a loop"
 width="30%"}
 :::
@@ -134,7 +134,7 @@ width="30%"}
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/03-fetch-f.svg){fig-align="center"
+![](./assets/03-fetch-f.svg){fig-align="center"
 fig-alt="shows four stages, fetch decode execute and store, linked in a loop"
 width="60%"}
 :::
@@ -159,7 +159,7 @@ width="60%"}
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/03-fetch-d.svg){fig-align="center"
+![](./assets/03-fetch-d.svg){fig-align="center"
 fig-alt="shows four stages, fetch decode execute and store, linked in a loop"
 width="60%"}
 :::
@@ -190,7 +190,7 @@ The CPU is now **ready to execute the instruction**.
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/03-fetch-e.svg){fig-align="center"
+![](./assets/03-fetch-e.svg){fig-align="center"
 fig-alt="shows four stages, fetch decode execute and store, linked in a loop"
 width="60%"}
 :::
@@ -218,7 +218,7 @@ Ready for the next stage...
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/03-fetch-s.svg){fig-align="center"
+![](./assets/03-fetch-s.svg){fig-align="center"
 fig-alt="shows four stages, fetch decode execute and store, linked in a loop"
 width="60%"}
 :::
@@ -258,7 +258,7 @@ width="60%"}
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/03-mailroom.jpg){fig-align="center"
+![](./assets/03-mailroom.jpg){fig-align="center"
 fig-alt="photograph of a mailroom with mailboxes on the wall"
 width="60%"}
 :::
@@ -580,7 +580,7 @@ Suppose we want to *increment* a value stored in *main memory*.
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/03-tradic.jpg){fig-align="center"
+![](./assets/03-tradic.jpg){fig-align="center"
 fig-alt="TRADIC computer" width="30%"}
 :::
 ::::
@@ -642,7 +642,7 @@ which has remained (mostly) true.
 
 :::: {.cell fag.align="center"}
 ::: cell-output-display
-![](../assets/03-moore.png){fig-alt="A semi-log plot of transistor counts for microprocessors against dates of introduction, nearly doubling every two years"
+![](./assets/03-moore.png){fig-alt="A semi-log plot of transistor counts for microprocessors against dates of introduction, nearly doubling every two years"
 width="95%"}
 :::
 ::::
@@ -681,7 +681,7 @@ width="95%"}
 
 :::: {.cell fag.align="center"}
 ::: cell-output-display
-![](../assets/03-powerwall.png){fig-alt="graph illustrating power wall"
+![](./assets/03-powerwall.png){fig-alt="graph illustrating power wall"
 width="95%"}
 :::
 ::::

@@ -38,7 +38,7 @@ Slowing down is suddenly everywhere: slow tech, slow fashion, even gen AI compan
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/03-cpu.svg){fig-align="center"
+![](./assets/03-cpu.svg){fig-align="center"
 fig-alt="diagram of Von Neumann architecture showing five components described on the next page"
 width="50%"}
 :::
@@ -50,7 +50,7 @@ width="50%"}
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/04-memory.svg){fig-align="center"
+![](./assets/04-memory.svg){fig-align="center"
 fig-alt="diagram showing computer memory structure: registers (on cpu), memory (RAM), disk and network"
 width="80%"}
 :::
@@ -60,7 +60,7 @@ width="80%"}
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/04-hierarchy.webp){fig-align="center"
+![](./assets/04-hierarchy.webp){fig-align="center"
 fig-alt="memory hierarchy diagram: registers, cache, memory, disk; speed decreases, size increases"
 width="90%"}
 :::
@@ -253,7 +253,7 @@ Imagine you're plannning to bake a cake.
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/04-cake.jpg){fig-align="center"
+![](./assets/04-cake.jpg){fig-align="center"
 fig-alt="photo of a sponge cake" width="60%"}
 :::
 ::::
@@ -268,7 +268,7 @@ fig-alt="photo of a sponge cake" width="60%"}
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/04-kitchen.jpg){fig-align="center"
+![](./assets/04-kitchen.jpg){fig-align="center"
 fig-alt="photo of a kitchen" width="55%"}
 :::
 ::::
@@ -303,7 +303,7 @@ fig-alt="photo of a kitchen" width="55%"}
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/04-butter.jpg){fig-align="center"
+![](./assets/04-butter.jpg){fig-align="center"
 fig-alt="photo of butter and sugar added to a mixing bowl" width="55%"}
 :::
 ::::
@@ -338,7 +338,7 @@ fig-alt="photo of butter and sugar added to a mixing bowl" width="55%"}
 :::column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/04-eggs.jpg){fig-align="center" fig-alt="photo of eggs"
+![](./assets/04-eggs.jpg){fig-align="center" fig-alt="photo of eggs"
 width="80%"}
 :::
 ::::
@@ -376,7 +376,7 @@ directly into registers), for your use.
 :::column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/04-baking.jpg){fig-align="center"
+![](./assets/04-baking.jpg){fig-align="center"
 fig-alt="photo of a cake baking in the oven" width="95%"}
 :::
 ::::
@@ -407,7 +407,7 @@ things (you can prepare the butter cream / frosting while the cake bakes).
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/04-cake2.jpg){fig-align="center"
+![](./assets/04-cake2.jpg){fig-align="center"
 fig-alt="photo of a finished sponge cake with jam and cream in the middle"
 width="70%"}
 :::

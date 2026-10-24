@@ -112,7 +112,7 @@ As well as **scheduling processes**, the OS also has to:
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/09-file.png){fig-align="center" fig-alt="file icon" width="80%"}
+![](./assets/09-file.png){fig-align="center" fig-alt="file icon" width="80%"}
 :::
 ::::
 :::
@@ -146,7 +146,7 @@ As well as **scheduling processes**, the OS also has to:
 
 :::: {.cell layout-align="center" alt="a cartoonised unix pipe, showing how data comes out of one process and is passed into another as input"}
 ::: cell-output-display
-![](../assets/09-pipes.png){fig-align="center" width="90%"}
+![](./assets/09-pipes.png){fig-align="center" width="90%"}
 :::
 ::::
 
@@ -206,7 +206,7 @@ As well as **scheduling processes**, the OS also has to:
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/09-ram.png){fig-align="center" fig-alt="icon indicating shared memory" width="80%"}
+![](./assets/09-ram.png){fig-align="center" fig-alt="icon indicating shared memory" width="80%"}
 :::
 ::::
 :::
@@ -339,7 +339,7 @@ As well as **scheduling processes**, the OS also has to:
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/09-semaphore.jpg){fig-align="center" fig-alt="a person signalling with flags (semaphore language)" width="80%"}
+![](./assets/09-semaphore.jpg){fig-align="center" fig-alt="a person signalling with flags (semaphore language)" width="80%"}
 :::
 ::::
 
@@ -386,7 +386,7 @@ As well as **scheduling processes**, the OS also has to:
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/09-railway.jpg){fig-align="center" fig-alt="photograph of a railway semaphore" width="60%"}
+![](./assets/09-railway.jpg){fig-align="center" fig-alt="photograph of a railway semaphore" width="60%"}
 :::
 ::::
 :::
@@ -424,7 +424,7 @@ As well as **scheduling processes**, the OS also has to:
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/08-dining.jpg){fig-align="center" fig-alt="diagram showing philosophers sitting at a round table, each has one item of cutlery at each side of their plate" width="90%"}
+![](./assets/08-dining.jpg){fig-align="center" fig-alt="diagram showing philosophers sitting at a round table, each has one item of cutlery at each side of their plate" width="90%"}
 :::
 ::::
 :::

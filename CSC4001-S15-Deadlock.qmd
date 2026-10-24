@@ -48,7 +48,7 @@ format:
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/06-lifecycle.svg){fig-align="center" fig-alt="diagram showing possible process state transitions" width="90%"}
+![](./assets/06-lifecycle.svg){fig-align="center" fig-alt="diagram showing possible process state transitions" width="90%"}
 :::
 ::::
 
@@ -58,7 +58,7 @@ Process is **running**.
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/08-lifecycle1.svg){fig-align="center" fig-alt="lifecycle diagram with running highlighted" width="70%"}
+![](./assets/08-lifecycle1.svg){fig-align="center" fig-alt="lifecycle diagram with running highlighted" width="70%"}
 :::
 ::::
 
@@ -70,7 +70,7 @@ OS moves the process to **blocked**.
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/08-lifecycle2.svg){fig-align="center" fig-alt="lifecycle diagram with blocked highlighted" width="70%"}
+![](./assets/08-lifecycle2.svg){fig-align="center" fig-alt="lifecycle diagram with blocked highlighted" width="70%"}
 :::
 ::::
 
@@ -82,7 +82,7 @@ When the I/O request is done, OS moves the process to **ready**.
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/08-lifecycle3.svg){fig-align="center" fig-alt="lifecycle diagram with ready highlighted" width="70%"}
+![](./assets/08-lifecycle3.svg){fig-align="center" fig-alt="lifecycle diagram with ready highlighted" width="70%"}
 :::
 ::::
 
@@ -153,7 +153,7 @@ What happens?
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/08-deadlock.png){fig-align="center" fig-alt="diagram of two processes with a circular wait for two resources" width="90%"}
+![](./assets/08-deadlock.png){fig-align="center" fig-alt="diagram of two processes with a circular wait for two resources" width="90%"}
 :::
 ::::
 :::
@@ -182,7 +182,7 @@ What happens?
 :::column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/08-deadlock.png){fig-align="center" fig-alt="diagram of two processes with a circular wait for two resources" width="90%"}
+![](./assets/08-deadlock.png){fig-align="center" fig-alt="diagram of two processes with a circular wait for two resources" width="90%"}
 :::
 ::::
 :::
@@ -314,7 +314,7 @@ How are the three conditions met in the disk writing example we considered earli
 :::column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/08-hdd.jpg){fig-align="center" fig-alt="photograph of inside of HDD, showing a single read/write head" width="90%"}
+![](./assets/08-hdd.jpg){fig-align="center" fig-alt="photograph of inside of HDD, showing a single read/write head" width="90%"}
 :::
 ::::
 :::
@@ -368,7 +368,7 @@ There are not enough chopsticks to go around.
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/08-dining.jpg){fig-align="center" fig-alt="diagram showing philosophers sitting at a round table, each has one item of cutlery at each side of their plate" width="90%"}
+![](./assets/08-dining.jpg){fig-align="center" fig-alt="diagram showing philosophers sitting at a round table, each has one item of cutlery at each side of their plate" width="90%"}
 :::
 ::::
 :::
@@ -472,7 +472,7 @@ allows us to easily **spot deadlocks**.
 
   :::: cell
   ::: cell-output-display
-  ![](../assets/08-rrag-p.svg){fig-alt="square with label P1" height="5%"}
+  ![](./assets/08-rrag-p.svg){fig-alt="square with label P1" height="5%"}
   :::
   ::::
 
@@ -482,7 +482,7 @@ allows us to easily **spot deadlocks**.
 
   :::: cell
   ::: cell-output-display
-  ![](../assets/08-rrag-r.svg){fig-alt="circle labelled R1 (2)" height="5%"}
+  ![](./assets/08-rrag-r.svg){fig-alt="circle labelled R1 (2)" height="5%"}
   :::
   ::::
 
@@ -492,7 +492,7 @@ allows us to easily **spot deadlocks**.
 
   :::: cell
   ::: cell-output-display
-  ![](../assets/08-rrag-req.svg){fig-alt="arrow from circle to square" height="5%"}
+  ![](./assets/08-rrag-req.svg){fig-alt="arrow from circle to square" height="5%"}
   :::
   ::::
 
@@ -502,7 +502,7 @@ allows us to easily **spot deadlocks**.
 
   :::: cell
   ::: cell-output-display
-  ![](../assets/08-rrag-al.svg){fig-alt="arrow from square to circle" height="5%"}
+  ![](./assets/08-rrag-al.svg){fig-alt="arrow from square to circle" height="5%"}
   :::
   ::::
 :::
@@ -513,7 +513,7 @@ allows us to easily **spot deadlocks**.
 
   :::: cell
   ::: cell-output-display
-  ![](../assets/08-rrag-req.svg){fig-alt="arrow from P1 to R1" height="5%"}
+  ![](./assets/08-rrag-req.svg){fig-alt="arrow from P1 to R1" height="5%"}
   :::
   ::::
 
@@ -521,7 +521,7 @@ allows us to easily **spot deadlocks**.
 
   :::: cell
   ::: cell-output-display
-  ![](../assets/08-rrag-al.svg){fig-alt="arrow from R1 to P1" height="5%"}
+  ![](./assets/08-rrag-al.svg){fig-alt="arrow from R1 to P1" height="5%"}
   :::
   ::::
 
@@ -529,7 +529,7 @@ allows us to easily **spot deadlocks**.
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/08-rrag-no.svg){fig-align="center" fig-alt="arrow from R1 to P1" height="80%"}
+![](./assets/08-rrag-no.svg){fig-align="center" fig-alt="arrow from R1 to P1" height="80%"}
 :::
 ::::
 
@@ -541,7 +541,7 @@ allows us to easily **spot deadlocks**.
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/08-rrag-cir.svg){fig-align="center" fig-alt="P1 -> R1 -> P2 -> R2 -> P1" width="80%"}
+![](./assets/08-rrag-cir.svg){fig-align="center" fig-alt="P1 -> R1 -> P2 -> R2 -> P1" width="80%"}
 :::
 ::::
 
@@ -578,7 +578,7 @@ How might you break the deadlock in the **dining philosophers'** problem.
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/08-dining.jpg){fig-align="center" fig-alt="diagram showing philosophers sitting at a round table, each has one item of cutlery at each side of their plate" width="35%"}
+![](./assets/08-dining.jpg){fig-align="center" fig-alt="diagram showing philosophers sitting at a round table, each has one item of cutlery at each side of their plate" width="35%"}
 :::
 ::::
 

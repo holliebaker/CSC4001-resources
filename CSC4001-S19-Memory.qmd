@@ -41,7 +41,7 @@ As well as managing **processes**, the OS must look after other hardware.
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/02-vna.svg){fig-align="center" fig-alt="diagram of Von Neumann architecture showing five components" width="40%"}
+![](./assets/02-vna.svg){fig-align="center" fig-alt="diagram of Von Neumann architecture showing five components" width="40%"}
 :::
 ::::
 
@@ -318,7 +318,7 @@ Next, we will look at **memory management**.
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/10-kitchen.jpg){fig-align="center" fig-alt="cartoon: tidying up a messy kitchen, then giving up" width="90%"}
+![](./assets/10-kitchen.jpg){fig-align="center" fig-alt="cartoon: tidying up a messy kitchen, then giving up" width="90%"}
 :::
 ::::
 :::
@@ -398,7 +398,7 @@ Next, we will look at **memory management**.
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/10-pagetable.jpg){fig-align="center" fig-alt="diagram of page tables mapping to physical memory" width="80%"}
+![](./assets/10-pagetable.jpg){fig-align="center" fig-alt="diagram of page tables mapping to physical memory" width="80%"}
 :::
 ::::
 :::
@@ -437,7 +437,7 @@ Next, we will look at **memory management**.
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/10-tlb.jpg){fig-align="center" fig-alt="diagram showing memory, page tables, and TLB, holding a small subset of the pgae table, in between" width="80%"}
+![](./assets/10-tlb.jpg){fig-align="center" fig-alt="diagram showing memory, page tables, and TLB, holding a small subset of the pgae table, in between" width="80%"}
 :::
 ::::
 :::
@@ -685,7 +685,7 @@ Next, we will look at **memory management**.
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/04-hierarchy.webp){fig-align="center" fig-alt="memory hierarchy diagram: registers, cache, memory, disk; speed decreases, size increases" width="60%"}
+![](./assets/04-hierarchy.webp){fig-align="center" fig-alt="memory hierarchy diagram: registers, cache, memory, disk; speed decreases, size increases" width="60%"}
 :::
 ::::
 

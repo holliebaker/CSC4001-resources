@@ -18,7 +18,7 @@ format:
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/03-fetch.svg){fig-align="center"
+![](./assets/03-fetch.svg){fig-align="center"
 fig-alt="shows four stages, fetch decode execute and store, linked in a loop"
 width="30%"}
 :::
@@ -42,7 +42,7 @@ Suppose the CPU can perform **one stage** per CPU cycle.
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/03-pipeline.svg){fig-align="center"
+![](./assets/03-pipeline.svg){fig-align="center"
 fig-alt="four simultaneous F-D-E-S cycles, staggered so that the ALU during execute stage is always busy"
 width="90%"}
 :::

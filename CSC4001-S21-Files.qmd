@@ -70,7 +70,7 @@ So far, we have looked at
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/11-disks.jpg){fig-align="center" fig-alt="photograph of a hard-disk-drive and a solid-state-drive" width="90%"}
+![](./assets/11-disks.jpg){fig-align="center" fig-alt="photograph of a hard-disk-drive and a solid-state-drive" width="90%"}
 :::
 ::::
 
@@ -110,7 +110,7 @@ So far, we have looked at
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/11-messy.jpg){fig-align="center" fig-alt="photograph of piles of unorganised papers" width="70%"}
+![](./assets/11-messy.jpg){fig-align="center" fig-alt="photograph of piles of unorganised papers" width="70%"}
 :::
 ::::
 
@@ -118,7 +118,7 @@ So far, we have looked at
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/11-organised.jpg){fig-align="center" fig-alt="photograph of organised drawers of index cards" width="70%"}
+![](./assets/11-organised.jpg){fig-align="center" fig-alt="photograph of organised drawers of index cards" width="70%"}
 :::
 ::::
 :::
@@ -136,7 +136,7 @@ So far, we have looked at
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/11-dodgson.jpg){fig-align="center" fig-alt="picture of Charles Dodgson" width="50%"}
+![](./assets/11-dodgson.jpg){fig-align="center" fig-alt="picture of Charles Dodgson" width="50%"}
 :::
 ::::
 
@@ -157,7 +157,7 @@ So far, we have looked at
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/11-dag.svg){fig-align="center" fig-alt="directed acyclic graph representing unix file hierarchy" width="95%"}
+![](./assets/11-dag.svg){fig-align="center" fig-alt="directed acyclic graph representing unix file hierarchy" width="95%"}
 :::
 ::::
 :::
@@ -184,7 +184,7 @@ So far, we have looked at
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/11-dag.svg){fig-align="center" fig-alt="directed acyclic graph representing unix file hierarchy" width="95%"}
+![](./assets/11-dag.svg){fig-align="center" fig-alt="directed acyclic graph representing unix file hierarchy" width="95%"}
 :::
 ::::
 :::
@@ -204,7 +204,7 @@ So far, we have looked at
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/11-dag.svg){fig-align="center" fig-alt="directed acyclic graph representing unix file hierarchy" width="95%"}
+![](./assets/11-dag.svg){fig-align="center" fig-alt="directed acyclic graph representing unix file hierarchy" width="95%"}
 :::
 ::::
 :::
@@ -509,7 +509,7 @@ Principles on which the UNIX OS was built:
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
-![](../assets/11-thompson.jpg){fig-align="center" fig-alt="photograph of Ken Thompson" width="80%"}
+![](./assets/11-thompson.jpg){fig-align="center" fig-alt="photograph of Ken Thompson" width="80%"}
 :::
 ::::
 
