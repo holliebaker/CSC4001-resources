@@ -248,24 +248,24 @@ CSC4001: Computer Systems and Architecture
 <section id="recap-process-lifecycle" class="slide level2">
 <h2>Recap: process lifecycle</h2>
 
-<img data-src="../assets/06-lifecycle.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%" alt="diagram showing possible process state transitions"></section>
+<img data-src="./assets/06-lifecycle.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%" alt="diagram showing possible process state transitions"></section>
 <section id="example-blocking-on-io" class="slide level2">
 <h2>Example: blocking on I/O</h2>
 <p>Process is <strong>running</strong>.</p>
 
-<img data-src="../assets/08-lifecycle1.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%" alt="lifecycle diagram with running highlighted"><p>Makes a <strong>syscall</strong>, requesting <strong>I/O</strong>.</p>
+<img data-src="./assets/08-lifecycle1.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%" alt="lifecycle diagram with running highlighted"><p>Makes a <strong>syscall</strong>, requesting <strong>I/O</strong>.</p>
 </section>
 <section id="example-blocking-on-io-1" class="slide level2">
 <h2>Example: blocking on I/O</h2>
 <p>OS moves the process to <strong>blocked</strong>.</p>
 
-<img data-src="../assets/08-lifecycle2.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%" alt="lifecycle diagram with blocked highlighted"><p>Process remains <strong>blocked</strong> until I/O request has been completed.</p>
+<img data-src="./assets/08-lifecycle2.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%" alt="lifecycle diagram with blocked highlighted"><p>Process remains <strong>blocked</strong> until I/O request has been completed.</p>
 </section>
 <section id="example-blocking-on-io-2" class="slide level2">
 <h2>Example: blocking on I/O</h2>
 <p>When the I/O request is done, OS moves the process to <strong>ready</strong>.</p>
 
-<img data-src="../assets/08-lifecycle3.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%" alt="lifecycle diagram with ready highlighted"><p>OS Will move the process to <strong>running</strong> when it is scheduled.</p>
+<img data-src="./assets/08-lifecycle3.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:70.0%" alt="lifecycle diagram with ready highlighted"><p>OS Will move the process to <strong>running</strong> when it is scheduled.</p>
 <ul>
 <li>Note that this may not happen immediately.</li>
 </ul>
@@ -328,7 +328,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/08-deadlock.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="diagram of two processes with a circular wait for two resources"></p>
+<p><img data-src="./assets/08-deadlock.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="diagram of two processes with a circular wait for two resources"></p>
 </figure>
 </div>
 </div>
@@ -352,7 +352,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/08-deadlock.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="diagram of two processes with a circular wait for two resources"></p>
+<p><img data-src="./assets/08-deadlock.png" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="diagram of two processes with a circular wait for two resources"></p>
 </figure>
 </div>
 </div>
@@ -508,7 +508,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/08-hdd.jpg" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="photograph of inside of HDD, showing a single read/write head"></p>
+<p><img data-src="./assets/08-hdd.jpg" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="photograph of inside of HDD, showing a single read/write head"></p>
 </figure>
 </div>
 </div>
@@ -570,7 +570,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/08-dining.jpg" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="diagram showing philosophers sitting at a round table, each has one item of cutlery at each side of their plate"></p>
+<p><img data-src="./assets/08-dining.jpg" class="quarto-figure quarto-figure-center" style="width:90.0%" alt="diagram showing philosophers sitting at a round table, each has one item of cutlery at each side of their plate"></p>
 </figure>
 </div>
 </div>
@@ -676,7 +676,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="../assets/08-rrag-p.svg" style="height:5.0%" alt="square with label P1"></p>
+<p><img data-src="./assets/08-rrag-p.svg" style="height:5.0%" alt="square with label P1"></p>
 </figure>
 </div>
 </div>
@@ -691,7 +691,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="../assets/08-rrag-r.svg" style="height:5.0%" alt="circle labelled R1 (2)"></p>
+<p><img data-src="./assets/08-rrag-r.svg" style="height:5.0%" alt="circle labelled R1 (2)"></p>
 </figure>
 </div>
 </div>
@@ -706,7 +706,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="../assets/08-rrag-req.svg" style="height:5.0%" alt="arrow from circle to square"></p>
+<p><img data-src="./assets/08-rrag-req.svg" style="height:5.0%" alt="arrow from circle to square"></p>
 </figure>
 </div>
 </div>
@@ -721,7 +721,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="../assets/08-rrag-al.svg" style="height:5.0%" alt="arrow from square to circle"></p>
+<p><img data-src="./assets/08-rrag-al.svg" style="height:5.0%" alt="arrow from square to circle"></p>
 </figure>
 </div>
 </div>
@@ -738,7 +738,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="../assets/08-rrag-req.svg" style="height:5.0%" alt="arrow from P1 to R1"></p>
+<p><img data-src="./assets/08-rrag-req.svg" style="height:5.0%" alt="arrow from P1 to R1"></p>
 </figure>
 </div>
 </div>
@@ -748,7 +748,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="../assets/08-rrag-al.svg" style="height:5.0%" alt="arrow from R1 to P1"></p>
+<p><img data-src="./assets/08-rrag-al.svg" style="height:5.0%" alt="arrow from R1 to P1"></p>
 </figure>
 </div>
 </div>
@@ -761,7 +761,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/08-rrag-no.svg" class="quarto-figure quarto-figure-center" style="height:80.0%" alt="arrow from R1 to P1"></p>
+<p><img data-src="./assets/08-rrag-no.svg" class="quarto-figure quarto-figure-center" style="height:80.0%" alt="arrow from R1 to P1"></p>
 </figure>
 </div>
 </div>
@@ -775,7 +775,7 @@ CSC4001: Computer Systems and Architecture
 <section id="example-circular-wait" class="slide level2">
 <h2>Example: circular wait</h2>
 
-<img data-src="../assets/08-rrag-cir.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%" alt="P1 -> R1 -> P2 -> R2 -> P1"><ul>
+<img data-src="./assets/08-rrag-cir.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%" alt="P1 -> R1 -> P2 -> R2 -> P1"><ul>
 <li><span class="math inline">\(R1\)</span> allocated to <span class="math inline">\(P1\)</span>; <span class="math inline">\(R2\)</span> allocated to <span class="math inline">\(P2\)</span>.</li>
 <li><span class="math inline">\(P1\)</span> then requests <span class="math inline">\(R2\)</span> and <span class="math inline">\(P2\)</span> requests <span class="math inline">\(R1\)</span>.</li>
 <li>Neither request can be fulfilled.</li>
@@ -820,7 +820,7 @@ CSC4001: Computer Systems and Architecture
 <h2>Exercise: dining philosophers</h2>
 <p>How might you break the deadlock in the <strong>dining philosophers’</strong> problem.</p>
 
-<img data-src="../assets/08-dining.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:35.0%" alt="diagram showing philosophers sitting at a round table, each has one item of cutlery at each side of their plate"></section>
+<img data-src="./assets/08-dining.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:35.0%" alt="diagram showing philosophers sitting at a round table, each has one item of cutlery at each side of their plate"></section>
 <section id="a-better-solution-virtualisation" class="slide level2">
 <h2>A better solution: virtualisation</h2>
 <ul>

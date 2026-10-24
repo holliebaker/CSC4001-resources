@@ -155,7 +155,7 @@ CSC4001: Computer Systems and Architecture
 <section id="optimising-the-fetch-decode-execute-store-cycle" class="slide level2">
 <h2>Optimising the fetch-decode-execute-store cycle</h2>
 
-<img data-src="../assets/03-fetch.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%" alt="shows four stages, fetch decode execute and store, linked in a loop"><p>Suppose the CPU can perform <strong>one stage</strong> per CPU cycle.</p>
+<img data-src="./assets/03-fetch.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%" alt="shows four stages, fetch decode execute and store, linked in a loop"><p>Suppose the CPU can perform <strong>one stage</strong> per CPU cycle.</p>
 </section>
 <section id="von-neumann-architecture-is-sequential" class="slide level2">
 <h2>Von Neumann architecture is sequential</h2>
@@ -170,7 +170,7 @@ CSC4001: Computer Systems and Architecture
 <h2>Pipelines</h2>
 <p><strong>Overlap</strong> stages of the fetch-decode-execute-store cycle.</p>
 
-<img data-src="../assets/03-pipeline.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%" alt="four simultaneous F-D-E-S cycles, staggered so that the ALU during execute stage is always busy"><p>ALU receives a <strong>constant stream</strong> of work.</p>
+<img data-src="./assets/03-pipeline.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%" alt="four simultaneous F-D-E-S cycles, staggered so that the ALU during execute stage is always busy"><p>ALU receives a <strong>constant stream</strong> of work.</p>
 <aside class="notes">
 <p>Instruction pipelining is a bit like a production line. Each piece of hardware has its designated job – Control unit for decoding, ALU for executing. Once an instruction is decoded, it is passed to the ALU for execution, while the ALU executes the instruction, the Control unit is decoding the next. This means the ALU is not sitting idle while the control unit decodes instructions for it.</p>
 <style type="text/css">

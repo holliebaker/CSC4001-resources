@@ -158,7 +158,7 @@ CSC4001: Computer Systems and Architecture
 <section id="recap-harvard-architecture" class="slide level2">
 <h2>Recap: Harvard architecture</h2>
 
-<img data-src="../assets/02-harvard.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%" alt="diagram of Harvard architecture showing the same components as Von Neumann, but with separate memory and separate buses for instructions and data"><aside class="notes">
+<img data-src="./assets/02-harvard.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:60.0%" alt="diagram of Harvard architecture showing the same components as Von Neumann, but with separate memory and separate buses for instructions and data"><aside class="notes">
 <p>Recall the control unit, arithmetic logic unit, input and output. Harvard architecture has separate memory for programs and data, and a separate bus. This meant there was less contention as instructions and data could be accessed simultaneously, but the machine was less flexible, e.g., the program memory may not be full when data memory is, but we cannot use the free space in the program memory for additional data. This architecture commonly used in embedded systems, and mainframes.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -175,7 +175,7 @@ CSC4001: Computer Systems and Architecture
 <section id="the-von-neumann-architecture" class="slide level2">
 <h2>The Von Neumann Architecture</h2>
 
-<img data-src="../assets/02-vna.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:55.0%" alt="diagram of Von Neumann architecture showing five components"><aside class="notes">
+<img data-src="./assets/02-vna.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:55.0%" alt="diagram of Von Neumann architecture showing five components"><aside class="notes">
 <p>Same components: control unit, arithmetic logic unit, input and output. In the Harvard architecture, data and instructions are stored in the <strong>same</strong> memory. A single memory bus can be a bottleneck, and concerns were raised about security (e.g., a program can write to any location in memory, including modifying the instructions. Simpler and more flexible. This is the architecture found in most desktop computers today.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -197,7 +197,7 @@ CSC4001: Computer Systems and Architecture
 <section id="components" class="slide level2">
 <h2>Components</h2>
 
-<img data-src="../assets/03-cpu.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%" alt="diagram of Von Neumann architecture showing five components described on the next page"></section>
+<img data-src="./assets/03-cpu.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%" alt="diagram of Von Neumann architecture showing five components described on the next page"></section>
 <section id="the-cpu-1" class="slide level2">
 <h2>The CPU</h2>
 <ul>
@@ -232,7 +232,7 @@ CSC4001: Computer Systems and Architecture
 <h2>The Fetch, decode, execute store Cycle</h2>
 <p>A CPU goes through <strong>four stages</strong> to run an instruction:</p>
 
-<img data-src="../assets/03-fetch.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%" alt="shows four stages, fetch decode execute and store, linked in a loop"></section>
+<img data-src="./assets/03-fetch.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:30.0%" alt="shows four stages, fetch decode execute and store, linked in a loop"></section>
 <section id="fetch" class="slide level2">
 <h2>Fetch</h2>
 <div class="columns">
@@ -248,7 +248,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/03-fetch-f.svg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="shows four stages, fetch decode execute and store, linked in a loop"></p>
+<p><img data-src="./assets/03-fetch-f.svg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="shows four stages, fetch decode execute and store, linked in a loop"></p>
 </figure>
 </div>
 </div>
@@ -269,7 +269,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/03-fetch-d.svg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="shows four stages, fetch decode execute and store, linked in a loop"></p>
+<p><img data-src="./assets/03-fetch-d.svg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="shows four stages, fetch decode execute and store, linked in a loop"></p>
 </figure>
 </div>
 </div>
@@ -293,7 +293,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/03-fetch-e.svg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="shows four stages, fetch decode execute and store, linked in a loop"></p>
+<p><img data-src="./assets/03-fetch-e.svg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="shows four stages, fetch decode execute and store, linked in a loop"></p>
 </figure>
 </div>
 </div>
@@ -316,7 +316,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/03-fetch-s.svg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="shows four stages, fetch decode execute and store, linked in a loop"></p>
+<p><img data-src="./assets/03-fetch-s.svg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="shows four stages, fetch decode execute and store, linked in a loop"></p>
 </figure>
 </div>
 </div>
@@ -347,7 +347,7 @@ CSC4001: Computer Systems and Architecture
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/03-mailroom.jpg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="photograph of a mailroom with mailboxes on the wall"></p>
+<p><img data-src="./assets/03-mailroom.jpg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="photograph of a mailroom with mailboxes on the wall"></p>
 </figure>
 </div>
 </div>
@@ -644,7 +644,7 @@ STA mem</code></pre></li>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../assets/03-tradic.jpg" class="quarto-figure quarto-figure-center" style="width:30.0%" alt="TRADIC computer"></p>
+<p><img data-src="./assets/03-tradic.jpg" class="quarto-figure quarto-figure-center" style="width:30.0%" alt="TRADIC computer"></p>
 </figure>
 </div>
 </div>
@@ -704,7 +704,7 @@ STA mem</code></pre></li>
 <section id="moores-law-graph" class="slide level2">
 <h2>Moore’s Law Graph</h2>
 
-<img data-src="../assets/03-moore.png" style="width:95.0%" alt="A semi-log plot of transistor counts for microprocessors against dates of introduction, nearly doubling every two years" class="r-stretch"></section>
+<img data-src="./assets/03-moore.png" style="width:95.0%" alt="A semi-log plot of transistor counts for microprocessors against dates of introduction, nearly doubling every two years" class="r-stretch"></section>
 <section id="dennard-scaling" class="slide level2">
 <h2>Dennard scaling</h2>
 <ul>
@@ -729,7 +729,7 @@ STA mem</code></pre></li>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="../assets/03-powerwall.png" style="width:95.0%" alt="graph illustrating power wall"></p>
+<p><img data-src="./assets/03-powerwall.png" style="width:95.0%" alt="graph illustrating power wall"></p>
 </figure>
 </div>
 </div>
