@@ -1,0 +1,226 @@
+---
+title: "Workshop: the Linux Command Line 3: Processes, pipes, redirection and signals"
+author: ""
+date: ""
+css: worksheet.css
+---
+
+## Processes
+
+### 1. Understanding `ps` and `top`
+
+   - Run the `ps` command without any arguments. What information does it display? Try adding the `-e` option and explain the differences.
+   - Run `top` in another terminal. Notice any processes that are running. Use the `k` key to kill a process (choose one that you are sure is not critical). Press `q` to close `top`. If this is one of the Cyber Pi's, then feel free to return to this at the end of the session. How many processes can you terminate before the system becomes inoperable?
+   - Use `ps` to find the process ID (PID) of a specific process. Hint: You can use `pgrep` to find processes by name.
+   - Remember that processes are "forked" or "spawned" from a parent process. The first process to be created in Linux is `init`. Use `pstree` to examine the relationships between processes. `pstree <pid>` can be used to show a specific process and its children.
+   - All processes have a "process control block": metadata that the operating system uses to manage the process. 
+   - Print out the process control block of your current shell
+```sh
+# ps # show running processes (example output on a Fedora 45 system)
+    PID TTY          TIME CMD
+  52830 pts/1    00:00:00 bash
+ 187013 pts/1    00:00:00 ps
+# cat /proc/52830/status
+```
+Do you recognise any of the information?
+
+### 2. Backgrounding Processes
+
+   - Start a process in the background by adding an `&` at the end of the command (e.g., `sleep 30 &`). 
+     - Use `jobs` to see the background jobs. 
+     - Use `fg` to bring it to the foreground, 
+     - and `bg` to send it back to the background.
+   - Use `nohup` and `&` together to run a command in the background and ensure it runs even after the terminal session ends (e.g., `nohup sleep 300 &`).
+     - Log out out and back in again to check  eprocess keeps running. 
+   - Use `&>` and `>` to redirect both standard output and standard error to a file, then check the file to see the output (e.g., `sleep 300 &> output.log`).
+
+### 3. Using `kill`
+
+   - Start a process that runs indefinitely (e.g., `watch -n 10 date &`). 
+   - Use `ps` or `top` to find its PID.
+   - Kill the process using the `kill` command with the PID you found (e.g., `kill <PID>`). Verify that the process has stopped.
+   - Use `kill -9` to forcefully terminate a process (use this carefully, as it does not give the process a chance to clean up).
+   - Use `pkill` to kill a process by name (e.g., `pkill -f 'watch'`).
+
+### 4. File Redirection
+
+   - Redirect the output of a command to a file (e.g., `ls > filelist.txt`).
+   - Redirect both standard output and standard error to a file (e.g., `ls > filelist.txt 2>&1`).
+   - Append the output to a file instead of overwriting it (e.g., `ls >> filelist.txt`).
+   - Use `cat` and `echo` to redirect input to a file (e.g., `echo "Hello, World!" | cat >> filelist.txt`).
+
+## Pipes
+
+Pipes are used to send the output of one command as input to another command. The vertical bar `|` character is used to create a pipe. For instance, if I wanted to list all the files in the current directory using `ls`, and then send the output to `grep` to search for any files containing `foo`, I could type
+```sh
+ls | grep foo
+```
+
+### 1. Basic Pipes
+
+
+- **Exercise 1:** List all files in the current directory, filter out directories, and sort the results.
+
+  ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+```bash
+ls -l | grep -v / | sort
+```
+:::
+
+- **Exercise 2:** List all files, filter out files with a `.txt` extension, and count the number of such files.
+
+  ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+```bash
+ls -l | grep '\.txt$' | wc -l
+```
+:::
+
+- **Exercise 3:** List all directories, sort them, and print the first 10 lines.
+
+  ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+```bash
+ls -d */ | sort | head -n 10
+```
+:::
+
+::: {.callout-important}
+There are several ways you could have retrieved the above information: with `ls` piped to `grep`, or with `find` and its flags. Compare commands with your neighbour.
+:::
+
+### 2. Redirecting Output
+
+Redirection allows you to save the output of a command to a file, or use a file as input to a command. The greatr than `>` character sends output of a command to a file, e.g., `echo "Hello" > greeting.txt` will send the output of `echo "hello"` to `greeting.txt`. The `>` operator overwrites the contents of a file, while the `>>` operator appends content to the end of a file. E.g., `echo "How are you?" >> greeting.txt` will add "How are you" to the end of `greeting.txt. The `<` operator sends the contents of a file to a command as input. For example, `grep hello < greeting.txt` will send the contents of `greeting.txt` to the `grep` command.
+
+::: {.callout-important}
+In Unix, **everything is a file** --- standard in, standard out, disks, networks. This means you can't just redirect data to text files, but write it directly to standard in, collect it directly to standard out, or even interface with peripherals. Piping and redirection are incredibly powerful tools. 
+:::
+
+There are some special files in Unix-like operating systems:
+
+- `/dev/null` is a file that discrds any data. It can be useful when writing scripts, if you want to hide a command's output in order to give the user a cleaner output. 
+- `/dev/zero` is a file that will provide an endless stream of `0`'s when read from. 
+- `/dev/urandom` provides an endless stream of randm numbers. 
+
+Try `head /dev/zero` and `/head /dev/urandom` to see what these files contain. 
+
+- **Exercise 4:** List all files in the current directory and save the output to a file named `files.txt`.
+
+  ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+```bash
+ls -l > files.txt
+```
+:::
+
+- **Exercise 5:** List all files and filter out directories, then save the output to a file named `non_directories.txt`.
+
+  ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+```bash
+ls -l | grep -v / > non_directories.txt
+```
+:::
+
+- **Exercise 6:** List all files and save the output to a file, appending the results to the same file.
+
+  ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+```bash
+ls -l >> files.txt
+```
+:::
+
+- **Exercise 7:** List all files and save the output to a file, overwriting the file if it already exists.
+
+  ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+  ```bash
+  ls -l > files.txt
+  ```
+:::
+
+### 3. Combining Pipes and Redirecting
+
+Combining pipes and redirection lets you chain lots of simple commands together to create more complex operations. 
+
+- **Exercise 8:** List all files, sort them, and then save the sorted output to a file.
+
+  ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+  ```bash
+  ls -l | sort > sorted_files.txt
+  ```
+:::
+
+- **Exercise 9:** List all files, filter out directories, and save the output to a file.
+
+  ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+  ```bash
+  ls -l | grep -v / > non_directories.txt
+  ```
+:::
+
+- **Exercise 10:** List all files, filter out directories, sort the output, and save it to a file.
+
+  ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+  ```bash
+  ls -l | grep -v / | sort > non_directories_sorted.txt
+  ```
+:::
+
+### 4. Chaining Commands
+
+Chaining commands allows you to build complex operations by using the output of one command as the input of the next. The Unix philosophy advises that each command should do one thing and do it well, and that inputs and outputs should be streams of text in a predictble format.
+
+- **Exercise 11:** List all files, filter out directories, sort the output, and then display the first 5 lines.
+
+  ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+  ```bash
+  ls -l | grep -v / | sort | head -n 5
+  ```
+:::
+
+- **Exercise 12:** List all files, filter out directories, sort the output, and count the number of non-directory files.
+
+  ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+  ```bash
+  ls -l | grep -v / | sort | wc -l
+  ```
+:::
+
+- **Exercise 13:** List all files, filter out directories, sort the output, and save the first 10 lines to a file.
+
+  ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+  ```bash
+  ls -l | grep -v / | sort | head -n 10 > top_10_non_directories.txt
+  ```
+
+### 5. Advanced Pipes and Redirecting
+For more advanced usage, consider the following:
+
+- **Exercise 14:** List all files in a directory, filter out directories, and then use `xargs` to run `chmod` on each file.
+
+  ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+  ```bash
+  ls -l | grep -v / | awk '{print $9}' | xargs chmod 644
+  ```
+:::
+
+- **Exercise 15:** List all files, filter out directories, and use `xargs` to run `cp` to copy these files to a different directory.
+
+::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+  ```bash
+  ls -l | grep -v / | awk '{print $9}' | xargs cp /path/to/destination/
+  ```
+:::
+

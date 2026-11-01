@@ -1,0 +1,312 @@
+---
+title: "Workshop: the Linux Command Line"
+author: ""
+date: ""
+css: worksheet.css
+---
+
+You can do pretty much everything you can do in the GUI on the command line, although you might have to take a different approach. However, command line interfaces are most commonly used for system administration. Many systems, e.g., servers, don't run a graphical user interface to leave more resources for the applications the server is hosting. 
+
+> learn to navigate a Linux machine entirely from the command line, manage files, users, processes and networking, and explore aspects of system security.
+
+Command line, shell, terminal, command prompt, tty, terminal. These terms are used interchangeably.
+
+
+
+## The Cyber‑Pi Cluster
+
+> The cluster consists of **10 Raspberry Pi 4** boards running **BusyBox Linux** (minimalist Linux) and **OpenWrt** (router firmware). Each Pi creates its own Wi‑Fi access point called something like 
+`OpenWrt‑ABC123`.
+
+**Question**: The SSID needs to be unique. Tthe `abc123` part of the SSID is automatically generated from some property of the system. What is it? How does it guarantee that the SSID is unique? 
+
+- The Pi’s **MAC address** is embedded in its firmware. OpenWrt uses this to generate the SSID. Hardware addresses are unique. 
+
+## Connecting to the Wi-Fi
+
+The password is a string made from the words `bsu`, `cyber`, `lab` in lowercase and **no spaces**.  
+
+> **Example:** `bsulab` or `labcyberbsu`.
+
+Your first challenge is to guess the password.
+
+Once connected, find out your IP address. This is usually shown in your system settings. 
+
+## Logging in via SSH
+
+Each Pi runs an SSH server with no password for `root`.  
+
+Log in using a command like
+```bash
+ssh root@host
+```
+where `host` is the IP address of the PI. Note that this address is different from the address it gave your machine, but is likely to start with the same numbers.
+
+> **Side challenge** Find out about IP addresses (CIDR). What class of IP address does your Pi's network use?
+
+
+You’ll be dropped into a shell as the `root` user. `root` is the "ssuperuser" or administrator. Linux has diffirent levels of privilage, for example, regular users cannot modify or delete files in certain folders, or perform certain operations. However, `root` can do anything, so be careful. 
+
+**Don't worry** these Pi's reset at 6pm every day, so it's okay if you brick the system. If you do brick it, though, please make a note of how you did it, for future reference. 
+
+## Running commands
+
+If you're new to the command line, it may seem a bit daunting. It does away with the familiar windows, icons, menus and pointer from the GUI and presents you with a blank prompt, cursor blinking threateningly, expecting you to know what to type, rather than recognise an icon to click on. It's incredibly powerful and useful once you get the hang of it. 
+
+Commands are made up of letters, numbers and dashes. They can have options and switches. COmmands and their arguments are separated by a space. For instance:
+```bash
+# ls
+```
+lists all files in your current directory. 
+
+```
+ls -l
+```
+
+lists all files with some additional information including its permissionns, owner, size and modified date. The `-l` is a **flag** or **switch**. 
+
+```bash
+ls /etc
+```
+lists all files in the directory `/etc` --- `/etc` is given as an argument to `ls`.
+
+Some commands, like `ls`, produce output. Others don't. For example
+```bash
+cd path/to/folder
+```
+changes your **working directory** to `path/to/folder`. Your **working directory** is the folder in which commands are run. When first logging in, you are in your **home directory**, `/root`, in this case. To return to your home directory, type
+```bash
+cd
+```
+If `cd` succeeds, it gives no output, but it does move you to the new directory. If the command fails, it prints out an error.
+
+These might seem a bit esoteric at first --- they are purposefully short to be easier to type.
+
+**Make yourself a cheatsheet**: as you pick up more commands, make a note of the command and what it does. 
+
+## Getting around the Filesystem
+
+1. **Where am I?**  
+    Find a command to print your working directory.
+1. **Who am I?**  
+    Find the command that prints your username. 
+1. **List files in the root folder** 
+    Is  that all the files?
+1. **Create a file named `oranges.txt`**  
+   The `touch` command creates a file if it doesn't exist, or updates the last modified date.
+1. **Text editor**
+    The `nano` command opens a text editor: `nano oranges.txt`. Type some text, then close the file by pressing Ctrl-O followex by Ctrl-X. (This saves the contents to disk, then exits nano). There are many editors, `vim`, `emacs`, many others. **Side challenge**: Argue among yourselves about which is the best editor.
+1. **Concatenate**:
+    Output the file's contents to the terminal without opening it in a text editor. 
+1. **Copy oranges to `/tmp`** 
+1. **Move the file to `/tmp` and rename to `notes.txt`**  
+1. **Delete the file**  Note: deleting in Linux cannot be undone, so be careful. 
+10. **Download a text file from the web**  
+   ```bash
+   wget https://raw.githubusercontent.com/xmpf/awesome-risc-v/refs/heads/master/README.md
+   ```
+1. **Side challenge**: `git`
+    Git can be used from the command line. Clone a public repository using git.
+
+## Learning more about a command
+
+```bash
+man command
+```
+opens its manual page.
+
+Manual pages can be a little overwhelming. `cht.sh` may be a faster and friendlier alternative:
+```bash
+wget cht.sh/ls
+cat ls
+```
+
+## Processes & Signals
+
+1. **Run a background process**  
+   ```bash
+   sleep 60 &
+   ```
+2. **Find its PID**  
+   ```bash
+   ps aux | grep sleep
+   ```
+3. **Send it SIGTERM**  
+   ```bash
+   kill <PID>
+   ```
+4. **Re‑run it, but this time send SIGHUP**  
+   ```bash
+   sleep 60 &
+   kill -HUP <PID>
+   ```
+
+## Multiple users
+
+### Creating a new user
+
+```bash
+adduser alice # prompts for password
+```
+
+`adduser` automatically creates a home directory `/home/alice`.
+
+### Logging in as the new user
+
+```bash
+ssh alice@hostname
+```
+
+You’ll be prompted for the password you set.
+
+### Sending a message to the other user
+
+```bash
+write alice
+```
+
+(You’ll get a prompt to type your message. Press Ctrl‑D to finish.)
+
+### Exercise
+
+1. **Create a second user `bob`**.  
+2. **Log in as `bob`** from a separate terminal window (you can use a local SSH client).  
+3. **Use `write` to send `bob` a hello message from `alice`.**  
+
+## Networking – Your MAC & IP
+
+```bash
+ip link show # shows MAC addresses
+ip addr show # shows IP addresses
+```
+
+### Harden your system
+
+- If anyone can SSH to `root@<IP>`, you’re insecure.  
+- Add a password for the root account:
+
+```bash
+passwd root
+```
+
+**Now, root can no longer log in without a password.**  
+
+## Securing a machine with remote access
+
+1. **Generate an SSH key pair on your local machine**
+
+   ```bash
+   ssh-keygen -t ed25519
+   ```
+
+   (You can accept the default file location and set no passphrase for this exercise.)
+
+2. **Copy the public key to the Pi**
+
+   ```bash
+   ssh-copy-id root@hostname
+   ```
+
+3. **Log in without a password**
+
+   ```bash
+   ssh root@192.168.1.23
+   ```
+
+> **Why is this more secure?**  
+
+### SSH Configuration
+
+Edit `/etc/ssh/sshd_config` (you may need `sudo`):
+
+```bash
+sudo nano /etc/ssh/sshd_config
+```
+
+```text
+Port 12345
+PermitRootLogin no
+PasswordAuthentication no
+AllowUsers alice bob
+```
+
+Restart SSH for the changes to take effect
+```bash
+sudo systemctl restart sshd
+```
+
+> What do the above changes do? What attacks do they prevent?
+
+### Setting up a firewall
+
+```bash
+sudo ufw enable
+sudo ufw allow from 192.168.1.0/24 to any port 22
+```
+
+## Advanced (but super useful): Terminal Multiplexers
+
+### Why use them?
+
+- Keep sessions alive after you log out.  
+- Share a terminal with another user.  
+- Copy/paste inside the session without using the host OS clipboard.
+
+### Installing `screen`
+
+```bash
+sudo apt update
+sudo apt install screen
+```
+
+### Basic usage
+
+1. **Start a new session**
+
+   ```bash
+   screen -S mysession
+   ```
+
+2. **Detach** (leave it running)
+
+   ```bash
+   Ctrl‑A then D
+   ```
+
+3. **Re‑attach**
+
+   ```bash
+   screen -r mysession
+   ```
+
+4. **List sessions**
+
+   ```bash
+   screen -ls
+   ```
+
+5. **Share a session with another user**
+
+   - Make sure the session is running as a shared group (e.g., both users belong to `screen` group).  
+   - The other user can `screen -x mysession`.
+
+6. **Copy/paste inside screen**
+
+   - Press `Ctrl‑A` then `Esc` to enter copy mode.  
+   - Move the cursor to the start of the text, press `Space`, move to the end, press `Space` again.  
+   - Exit copy mode, press `Ctrl‑A` then `]` to paste.
+
+### Exercises
+
+1. **Create a screen session called `demo`.**  
+2. **Run `top` inside the session.**  
+3. **Detach and re‑attach to the session from another terminal.**  
+4. **Share the session with your friend (use `screen -x demo`).**  
+
+### Resources
+
+- `man <command>` – manual pages for any command.  
+- `info <command>` – extended documentation.  
+- Online tutorials:  
+  - (Video) The Operating System: Using the Command Line | Google IT Support Certificate https://www.youtube.com/watch?v=xg_1UjZqMdQ
+  - Basics for navigating the Linux Command Line (from Canute Console manual, surprisingly good beginner friendly walkthrough) [https://gitlab.com/Bristol-Braille/canute-scientific-learn/-/blob/main/manuals-sources/en-canute-console-manual.md?ref_type=heads#basics-for-navigating-the-linux-command-line]

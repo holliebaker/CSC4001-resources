@@ -1,0 +1,186 @@
+---
+title: "Workshop: the Linux Command Line 2: searching and editing files"
+author: ""
+date: ""
+css: worksheet.css
+---
+
+## Task 0: Get set up
+
+- Download the zip file from
+- Extract it into your current directory:
+  ```sh
+unzip CSC4001-samplefiles.zip
+  ```
+- explore: print all files and directories out as a tree
+  ```sh
+tree files
+  ```
+
+## Task 1: searching for files
+
+Find allows you to search for files by name, as well as perform tasks with those files. 
+
+The command takes the form 
+```sh
+find <directory-to-search-in> <search-criteria>
+```
+find is very powerful, and there are lots of `search-criteria`. You'll try some examples below. 
+
+1. Text files
+
+   The `-name` option allows you to search by name. Wildcards are supported so if, for example, you only wanted files that started with `foo`, then you could use `-name "foo*"`. The Linux filesystem is case sensitive, `-iname` lets you do a case insensitive search.
+   - Find all files in the current directory and its subdirectories that have a `.txt` extension.
+
+     ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+```sh
+find . -name ".txt"
+```
+:::
+
+2. Only the directories
+
+  The `-type` flag lets you search for only files (`f`) or only directories (`d`).
+
+   - Find all directories in the current directory and its subdirectories.
+
+     ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+```sh
+find . -type d
+```
+:::
+
+3. Do something with what you found
+  - Find all files with `oranges` in their name, and print their contents.
+
+    ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+```sh
+find . -name "*oranges*" -exec cat {} \;
+```
+:::
+
+  - Tidy up the files:
+    - Move all the `.csv` files into `spreadsheets`, all the `.cpp` and `.sh` files into `coding`, all the `md` files into `coursework and all the `txt` files into `fanfiction`
+
+4. Go further: see `man find` and `cht.sh/find` for full usage and some common examples.
+
+## Task 2: Using `grep`
+
+The `grep` command lets you search for strings (and regular expressions) in text. It's commonly used to find relevant information in text files, search for a file with some specific content, or filter verbose command output to get only the information you need. 
+
+1. Finding a string in a file.
+
+   The simplest usage of grep is `grep "text string" filename`.
+   - Find all lines containing the word "duck" in a file named `slop.txt`.
+
+     ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+```sh
+grep "duck" slop.txt
+```
+:::
+
+2. Where are the chickens?
+
+   The `-r` flag lets you search multiple files for a given string. You can select multiple files using "wildcards" (`*`). For instance, if you wanted to list all `.txt` files, then you could run `ls *.txt`. The same applies with `grep`. 
+   - Recursively search for the word "chicken" in all `.txt` files in the current directory and its subdirectories.
+
+     ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+```sh
+grep -r "example" .txt
+```
+:::
+
+3. Case sensitivity.
+
+   By default, `grep` is case sensitive, so `duck`, `DUCK` and `Duck` are all different words. The `-i` flag lets you perform a case insensitive search.
+   - Perform a case-insensitive search for the word "duck" in `slop.txt`.
+
+     ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+```sh
+grep -i "duck" slop.txt
+```
+:::
+
+4. No more chickens!
+
+   The `-v` flag returns all lines that *do not* contain the given string.
+   - Find all lines that do not contain the word "chicken" in `slop.txt`.
+
+     ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+```sh
+grep -v "chicken" slop.txt
+```
+:::
+
+5. Only lone chickens.
+
+   - Find all lines where "chicken" is a whole word (not part of another word) in `slop.txt`.
+
+     ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+```sh
+grep -w "chicken" slop.txt
+```
+:::
+
+## Task 3: Stream editing
+
+The `sed` (stream editor) lets you edit text line-by-line, uing regular expressions. It is very powerful and widely used. In some cases, however, `sed` won't be powerful enough to do the job at hand (e.g., parsing a non-regular language), then you'll have to break out `awk`!
+
+1. Replacing text
+
+   Sed works with regular expresions. A regex that finds all instances of one string and replaces it with another is `s/string1/string2/g`. Note that this doesn't match whole words, so it'll also replace `mystring`' with `mystring2`. Also note that `sed` reads one line at a time, so `s/my string/stuff and things/g` wonat match
+   ```
+my 
+string
+   ```
+
+   - Replace all occurrences of "chicken" with "dick" in a file named `slop.txt`.
+
+     ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+```sh
+sed 's/chicken/duck/g' slop.txt
+```
+:::
+
+3. Multiple expressions.
+
+   The `-e <regex>` flag can appear multiple times. 
+   - Replace "duck" with "quail" and "chicken" with "flamingo" in `slop.txt`.
+
+     ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+```sh
+sed -e 's/duck/quail/g' -e 's/chicken/flamingo/g' slop.txt
+```
+:::
+
+   - How would you replace "duck" with "chicken" and "chicken" with "ostrich" in slop.txt
+
+     ::: {.callout-note appearance="minimal" collapse="true"}
+### Solution
+```sh
+sed -e 's/duck/quail/g' -e 's/chicken/flamingo/g' slop.txt
+```
+:::
+
+## Task 4: Regular expressions
+
+Regular expressions define patterns in text, permitting search and validation. For instance
+
+- Match any text that begins with `foo` followed by one or more digits `0-9` (`foo[0-9]+`), then replace `foo` with `bar` (`s/foo\([0-9]+\)/bar\1/g`, the `\1` is called a capturing group).
+- Validate a phone number, email address or domain name.
+
+Regular expressions are modelled by *finite state machines* (told you they were useful!). This makes them simple to implement and efficient to run (with a string of `n` letters taking `n` steps to check). However, regular expressions can't match everything. In particular, a state machine has no memory, so it can't count or spot a match [in general]. So a regex can't parse a programming language (can't match brackets) or validate HTML (see this stackoverflow answer about that https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags).
+
+Chek out [https://regex101.com/](https://regex101.com/)
+
+If you prefer gamified learning, then maybe [Slash escape](https://www.therobinlord.com/projects/slash-escape)

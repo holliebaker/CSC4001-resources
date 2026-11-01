@@ -2,6 +2,7 @@
 title: "Building With Logic Gates - Worksheet"
 author: ""
 date: ""
+css: worksheet.css
 ---
 
 Adapted from [https://cccu-uk.github.io/U10793_FCC_Labs/Logic_Gates/Logic_Gates.html](https://cccu-uk.github.io/U10793_FCC_Labs/Logic_Gates/Logic_Gates.html)

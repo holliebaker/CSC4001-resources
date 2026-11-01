@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&&display=swap');
+
+body { 
+	max-width: 70em; /* Roughly 144 characters wide */
+	margin: 0em auto 2em auto; 
+	padding: 0 1rem;
+	font-size: 16pt;
+	font-family: 'Atkinson Hyperlegible', sans-serif; 
+	border-image: linear-gradient(to right, black, white, white, black) fill 0//0 100vw;
+}
+a {
+	color: darkblue;
+}
+a:visited {
+	color: darkblue;
+}
+nav { 
+	display: block; 
+	background: white;
+	color: rgb(50,50,50);
+	padding: 1rem 0;
+	margin: 0;
+}
+article {
+}
+article aside:first-child {
+	margin-top: 0;
+	padding-top: 2rem;
+}
+nav ol {
+	padding: 1rem 0;
+	margin: 0;
+	display: block; 
+	font-size: 13pt;
+}
+nav li {
+	float: left;
+	list-style: none;
+	margin-right: .67rem;
+	margin-bottom: .5rem;
+}
+nav li:last-of-type {
+	margin-right: 0;
+}
+nav li a {
+	color: rgb(50,50,50);
+	font-weight: normal;
+	text-decoration: none;
+	border-bottom: 1px dotted black;
+}
+nav li:first-child a {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: rgb(191,0,65);
+	border-bottom: 1px dotted rgb(191,0,65);
+}
+nav li a:visited {
+	color: rgb(50,50,50);
+}
+nav li:first-child a:visited {
+	color: rgb(191,0,65);
+	border-bottom: 1px dotted rgb(191,0,65);
+}
+.clear {
+	clear: both;
+}
+h1, h2 { 
+	text-align: center; 
+	clear: both; 
+	background: black;
+	color: white;
+	padding: .5rem;
+	margin: 2rem 0 2rem 0;
+	/*border-image: conic-gradient(black 0 0) fill 0//0 100vw;*/
+}
+h1, h2 {
+	text-transform: uppercase;
+}
+h3 { 
+	text-align: left; 
+	clear: both; 
+	background: black;
+	color: white;
+	padding: .5rem;
+	margin: 1rem 0 1rem 0em;
+}
+h1, h2, h3 {
+	page-break-after: avoid;
+}
+.author, .date {
+	text-align: center;
+	clear: both;
+}
+	.author::before { 
+		content: "By ";
+	}
+	.date::before { 
+		content: "Date: ";
+	}
+p { 
+	text-align: left; 
+}
+sup, sub { 
+	font-size: 0.5rem
+}
+table { 
+	clear: both;
+	border: 1px solid black; 
+	margin: 1rem auto 1rem auto;
+	width: 100%;
+	page-break-inside: avoid;
+} 
+th, td { 
+	padding: 0.5rem;
+	border: 1px solid black; 
+	max-width: 50%;
+}
+th {
+	background: black;
+	color: white;
+}
+img { 
+	clear: both;
+	max-width: 100%;
+}
+p img { 
+	margin: 1rem 2rem 0rem 2rem;
+	max-width: calc(100% - 4rem);
+}
+img + em { 
+	display: block;
+	font-size: 13pt;
+	color: rgb(50,50,50);
+	font-style: normal;
+	margin: 0rem 2rem 1rem 2rem;
+	max-width: calc(100% - 4rem);
+}
+	img + em::before { 
+		content: "Figure: ";
+	}
+.distributor { 
+	display: none; 
+}
+.code {
+	font-family: 'Lucida Console', monospace !important;
+	color: rgb(50,50,50);
+}
+aside { 
+	background: black;
+	color: white;
+	padding: 1rem 0;
+	margin: 2.5rem 0 2.5rem 0;
+	border-image: conic-gradient(black 0 0) fill 0//0 100vw;
+	clear: both;
+}
+	aside p:first-child {
+		clear: both; 
+		font-weight: bold;
+		text-transform: uppercase;
+		margin: 0;
+		padding: 0;
+		text-align: left;
+		font-size: 4rem;
+	}
+	aside p:last-child {
+		margin: 1rem 0 .3rem 20%;
+		padding: 0;
+		max-width: 80%;
+		text-align: right;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 2rem;
+	}
+	aside p .code {
+		color: rgb(200,200,200);
+	}
+	aside p:last-child sup, aside p:last-child sub {
+		font-size: 1.5rem;
+	}
+	aside::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+quote {
+	margin: 1rem;
+	font-style: italic;
+}
+quote.box {
+	font-style: italic;
+	font-size: smaller;
+	width: 42%; 
+	padding: 0;
+	border: dotted 0.15rem lightgrey;
+	margin: 0 1.5rem 1.5rem 0;
+	float: left;
+	position: relative;
+}
+quote.box p {
+	padding: 0;
+	margin: 0.5rem;
+	text-align: left;
+}
+quote.box em {
+	font-style: normal;
+}
+.box-links p {
+	float: left;
+	display: block;
+	margin: 0.1rem;
+	padding: 0.2rem;
+	border: 0;
+	height: 11rem;
+	width: 11rem;
+	background-color: black;
+}
+	.box-links p a {
+		color: white;
+		font-weight: normal;
+		text-decoration: none;
+		border-bottom: 1px dotted white;
+	}
+		.box-links p a:visited {
+			color: white;
+		}
+footer {
+	margin: 2.5rem 0;
+	font-size: smaller;
+}
+footer p {
+	text-align: center;
+}
+footer quote {
+	display: block;
+	text-align: center;
+	font-style: italic;
+}
+.footnotes {
+	margin-top: 5em;
+	border-top: 1px solid grey;
+	padding-top: 5em;
+	font-size: 0.8rem;
+	color: rgb(50,50,50);
+}
+strong {
+	color: rgb(191,0,65);
+}
+.print-only {
+	display: none !important;
+}
+.web-only {
+	display: block !important;
+}
+
+@media only screen and (max-width: 640px) {
+	body {
+		font-size: 12pt;
+	}
+	aside p:first-child {
+		font-size: 3rem;
+	}
+	aside p:last-child {
+		font-size: 1.5rem;
+	}
+}
+
+@media print { /* Assumes portrait printing */
+	@page {
+		size: A4 portrait;
+		margin: 3rem;
+	}
+	body {
+		padding: 0;
+		font-size: 16pt;
+	}
+	.print-only {
+		margin: 5rem;
+		display: block !important;
+	}
+	.web-only {
+		display: none;
+	}
+	h1 {
+		/*margin-top: 26rem;*/
+	}
+	.new-page {
+		page-break-before: always;
+	}
+	nav {
+		display: none;
+	}
+	nav, h1, h2, h3 {
+		border-image: none;
+	}
+	header {
+		display: none;
+	}
+	.pagebreak { 
+		page-break-before: always;
+	}
+	aside { 
+		height: calc( 100vh - 3.25rem);
+		padding: 1rem 2rem;
+		page-break-before: always;
+		page-break-after: always;
+	}
+	aside p:first-child {
+		font-size: 5.5rem;
+	}
+	aside p:last-child {
+		font-size: 3.5rem;
+		max-width: 90%;
+		float: right;
+		margin: 35.5vh .35rem 0 0;
+	}
+		aside p sup, aside p sub {
+			font-size: 2.625rem;
+		}
+	aside.cover p:last-child {
+		margin-top: 45.5vh;
+	}
+	aside.back-cover p:last-child {
+		margin-top: 87.25vh;
+		text-align: right;
+	}
+	.footnotes {
+		page-break-after: always;
+	}
+}
+
+
