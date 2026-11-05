@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.11.9">
+
+  <meta name="author" content="CSC4001: Computer Systems and Architecture">
+  <title>CSC4001-resources – Game Theory</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-1ddb21c2f84686f497aff9e1fdc170fd.css">
+  <link rel="stylesheet" href="./style.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Game Theory</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+CSC4001: Computer Systems and Architecture
+</div>
+</div>
+</div>
+
+</section>
+<section>
+<section id="game-theory" class="title-slide slide level1 center">
+<h1>Game Theory</h1>
+<p>The maths thing, not the other one</p>
+<p>Massive thanks to Ed Longford, pro game theorist, for the material!</p>
+</section>
+<section id="what-is-it" class="slide level2">
+<h2>What is it?</h2>
+<ul>
+<li><p>Game theory is an area of study within mathematics (used by economists and political scientists) which builds models of human interaction</p></li>
+<li><p>It provides a mathematical foundation for generating predictions on group interaction</p></li>
+<li><p>Typically two-player games</p>
+<ul>
+<li><p>A player in a game is a person or group of people that interact in the same social environment</p></li>
+<li><p>They are normally restricted by the rules of the game (same as normal games) but only in the sense that we model their actions as 1 of several types of action</p></li>
+<li><p>The assumption is that players are rational actors within the game. Reasonable? All people are rational…</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="types-of-game" class="slide level2">
+<h2>Types of game</h2>
+<ul>
+<li><p>Three main categories, each with two types (taxonomy by Ed).</p></li>
+<li><p>Now always completely descriptive, but they do describe the mechanics and optima strategies to win.</p></li>
+</ul>
+<blockquote>
+<p>Oh and I say “I break the games down”, because apparently I am an “expert” in this topic</p>
+</blockquote>
+<p>— Ed</p>
+<blockquote>
+<p>He is. He did his PhD on it. No need to be humble, Ed.</p>
+</blockquote>
+<p>— Hollie</p>
+</section>
+<section id="zero-sum-vs-plus-sum" class="slide level2">
+<h2>Zero Sum Vs Plus Sum</h2>
+<ul>
+<li><p>Zero Sum games are resource limited games. If one of the players wants to “win” or increase the amount of resources they have the other player(s) will either have fewer resources or none at all. So the gains of 1 player should equal the losses of the other.</p></li>
+<li><p>Plus Sum games, in contrast to zero sum games, allow resources to grow or allow players allocation of resources to be at a cheaper cost to each player.</p></li>
+</ul>
+</section>
+<section id="cooperative-vs-non-cooperative" class="slide level2">
+<h2>Cooperative Vs Non-Cooperative</h2>
+<ul>
+<li><p>Cooperative or non-competitive games are where players are encouraged to work together.</p></li>
+<li><p>Non-cooperative or competitive games are where players are encouraged to behave selfishly.</p></li>
+</ul>
+</section>
+<section id="simultaneous-vs-sequential" class="slide level2">
+<h2>Simultaneous Vs Sequential</h2>
+<ul>
+<li><p>Simultaneous games are where players all make their move concurrently, or without knowledge of the other player(s) move(s).</p></li>
+<li><p>Sequential games happen when each player takes turns making moves, and each player knows what the last move was before they need to decide what move they are going to make.</p></li>
+</ul>
+</section>
+<section id="these-are-not-individual-game-types" class="slide level2">
+<h2>These are not individual game types</h2>
+<p>Most games are a combination of those three categories.</p>
+<ul>
+<li><p>Noughts and Crosses, Chess, and Go are competitive, zero sum games which are played sequentially.</p></li>
+<li><p>Some games switch between different categories: they might start cooperative and then become non-cooperative - for example Diplomacy</p></li>
+</ul>
+</section>
+<section id="information---complete-or-incomplete" class="slide level2">
+<h2>Information - complete or incomplete</h2>
+<ul>
+<li><p>Games contain information - both about the other players and the game rules</p></li>
+<li><p>Information is either complete or incomplete - i.e.&nbsp;you either know everything or have limited knowledge</p></li>
+<li><p>Chess is an example of a complete information game as you can know all the possible moves the other player can make</p></li>
+</ul>
+</section>
+<section id="payouts-and-cost" class="slide level2">
+<h2>Payouts and Cost</h2>
+<ul>
+<li><p>In games players are awarded a number of points (a payout) for winning the game</p></li>
+<li><p>Sometimes actions in a game come with a cost of action this means that each action in the game will force the player to use up some resources to perform said action.</p></li>
+<li><p>Costs are common in most scenarios, e.g.&nbsp;coming to S&amp;A has a cost of not doing something else more fun!</p>
+<blockquote>
+<p>Hey, Ed, are you trying to say my classes are no fun? Actually, don’t answer that, please.</p>
+</blockquote></li>
+<li><p>Payouts can either be symmetric or asymmetric</p></li>
+</ul>
+</section>
+<section id="so-either-players-can-have-the-same-payout-and-cost-for-each-action-or-different-players-have-different-payouts-and-costs-for-each-action" class="slide level2">
+<h2>So either players can have the same payout and cost for each action, or different players have different payouts and costs for each action</h2>
+<ul>
+<li><p>Which means that games are not always fair for all players,</p></li>
+<li><p>Hovewer, games can be fair while having different costs and payouts. More on that shortly.</p></li>
+</ul>
+</section>
+<section id="number-of-plays---1-shot-or-repeated" class="slide level2">
+<h2>Number of plays - 1 shot or repeated</h2>
+<ul>
+<li><p>Games are either 1 shot (take place only once) with the same players</p></li>
+<li><p>Or repeated games where games take place multiple times with the same players</p></li>
+<li><p>Sometimes repeated games are none-continuous games (players are returned to their original start positions) or continuous so any cost or payouts from previous games are carried forward</p></li>
+</ul>
+</section>
+<section id="games-we-are-going-to-cover" class="slide level2">
+<h2>Games we are going to cover</h2>
+<ul>
+<li><p>Chicken</p></li>
+<li><p>Prisoner’s Dilemma</p></li>
+<li><p>Auction</p></li>
+<li><p>Snowdrift</p></li>
+</ul>
+<p>Note: Other games exist, but many games are just variations of these or games that cover rare examples.</p>
+<p>The games we cover today are applicable to most situations and can be modified to meet the needs of the players and situation</p>
+</section>
+<section id="chicken" class="slide level2">
+<h2>1. Chicken</h2>
+<ul>
+<li><p>Chicken is a zero sum, non-cooperative, and simultaneous game</p></li>
+<li><p>The original scenario is 2 cars driving at each other and each driver has a choice to swerve or continue driving straight.</p></li>
+</ul>
+</section>
+<section id="chicken-payout-matrix" class="slide level2">
+<h2>Chicken Payout Matrix</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Swerve</th>
+<th style="text-align: center;">Straight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Swerve</td>
+<td style="text-align: center;">0, 0</td>
+<td style="text-align: center;">1, 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Straight</td>
+<td style="text-align: center;">0, 1</td>
+<td style="text-align: center;">-1000, -1000</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="cold-war---a-game-of-nuclear-chicken" class="slide level2">
+<h2>Cold War - a game of nuclear chicken</h2>
+<ul>
+<li><p>American advisors used chicken to determine how to negotiate with the USSR</p></li>
+<li><p>Cuban Missile Crisis (1962)</p>
+<ul>
+<li><p>8th September Soviet deliver medium range missiles with nuclear warheads capable a striking Washington DC</p></li>
+<li><p>Missile sites spotted by U2 spy planes October 19th</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="todo-this-slide-has-no-text" class="slide level2">
+<h2>TODO: this slide has no text</h2>
+</section>
+<section id="us-came-up-with-6-options" class="slide level2">
+<h2>US came up with 6 options</h2>
+<ol type="1">
+<li><p>Do nothing: American vulnerability to Soviet missiles was not new.</p></li>
+<li><p>Invasion: Full-force invasion of Cuba and overthrow of Castro.</p></li>
+<li><p>Air strike: Use the US Air Force to attack all known missile sites.</p></li>
+<li><p>Blockade: Use the US Navy to block any missiles from arriving in Cuba.</p></li>
+<li><p>Secret approach: Offer Castro the choice of splitting with the Soviets or being invaded.</p></li>
+<li><p>Diplomacy: Use diplomatic pressure to get the Soviet Union to remove the missiles.</p></li>
+</ol>
+</section></section>
+<section>
+<section id="which-option" class="title-slide slide level1 center">
+<h1>Which option?</h1>
+
+</section>
+<section id="what-happened" class="slide level2">
+<h2>What happened?</h2>
+<p>US chose Blockade</p>
+<p>US deployed 12 destroyers for the initial blockade ordered to stop and search all ships heading to the northern Caribbean this was later scaled to 1 aircraft carrier, 2 cruisers, 22 destroyers, and 2 guided missile frigates</p>
+<p>Soviets deployed an unknown number of submarines armed with nuclear weapons and over 40 warships of various sizes</p>
+<p>Each side increased both military and diplomatic efforts to force the other to swerve - US goes to DEFCON 2 (DEFCON 1 is where nuclear weapons are launched)</p>
+</section>
+<section id="what-happened-1" class="slide level2">
+<h2>What happened?</h2>
+<p>Germany and China mobilise troops to prepare for invasions</p>
+<p>Soviet Union backs down</p>
+<p>After several games of chicken, the USSR swerves and agrees to withdraw its missiles from Cuba</p>
+<p>The ships carrying the missiles are turned around and head back to their home ports</p>
+<p>The US claims victory and its allies breathe a sigh of relief as the world did not end in a nuclear holocaust or invasion of US and Europe</p>
+</section>
+<section id="what-happened-2" class="slide level2">
+<h2>What happened?</h2>
+<p>… or did they? Secret Negotiations</p>
+<p>There is 1 part that is often left out of the story</p>
+<p>While each side was ramping up world tension (driving straight) members of the KGB were in contact with members of the CIA, FBI, and US State Department seeking a diplomatic solution</p>
+<p>And the game transformed from Chicken to Prisoner’s Dilemma…..</p>
+</section>
+<section id="prisoners-dilemma" class="slide level2">
+<h2>2. Prisoner’s Dilemma</h2>
+<p>Prisoner’s Dilemma is a zero sum, cooperative/non-cooperative, and simultaneous game</p>
+<p>2 prisoners are arrested by the police, placed in separate rooms and given a choice</p>
+<ul>
+<li>Say your partner committed the crime and get set free,</li>
+<li>or say nothing and go to jail</li>
+</ul>
+</section>
+<section id="prisoners-dilemma-payout-matrix" class="slide level2">
+<h2>Prisoner’s Dilemma Payout Matrix</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Stay Silent</th>
+<th style="text-align: center;">Betray</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Stay Silent</td>
+<td style="text-align: center;">2, 2</td>
+<td style="text-align: center;">0, 10</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Betray</td>
+<td style="text-align: center;">10, 0</td>
+<td style="text-align: center;">5, 5</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="both-sides-were-willing-to-cooperate-from-the-outset" class="slide level2">
+<h2>Both sides were willing to cooperate from the outset</h2>
+<p>Instead of playing chicken and driving headlong into a war, both the US and USSR were cooperating for the majority of the crisis, with a few minor defections along the way</p>
+<p>A good indication that they were playing Prisoner’s Dilemma is the outcome:</p>
+<p>Yes, USSR missiles were removed from Cuba, but US missiles were removed from Italy and Turkey as part of the exchange.</p>
+</section>
+<section id="auction-games" class="slide level2">
+<h2>Auction Games</h2>
+<p>Also known as bidding games</p>
+<ul>
+<li><p>There are a wide range of auction games, each has a variety of rules, each changing their overall strategy</p></li>
+<li><p>Most start off with 2 or more players with a set amount of resources and 1 or more items for each player to bid on to win</p></li>
+</ul>
+</section>
+<section id="some-auction-types" class="slide level2">
+<h2>Some auction types</h2>
+<ul>
+<li><p>Single Blind Bid - all players bid for a single prize but they do not know the value of the prize</p></li>
+<li><p>Single Visible Bid - all players bid for a single prize knowing the value of the prize</p></li>
+<li><p>Multiple Blind Bids - All players bid for multiple prizes but do not know the value of any prize</p></li>
+<li><p>Multiple Visible Bids - Players can bid on a number of prizes where they do know the value</p></li>
+</ul>
+</section>
+<section id="cost-of-bidding" class="slide level2">
+<h2>Cost of bidding</h2>
+<p>Depending on the game rules, when a player bids they might lose their bid regardless of whether they win or lose. Think of this as the cost of time for doing a certain action - e.g.&nbsp;writing a piece of code for an assessment</p>
+<p>Additionally, some games are simultaneous, so all bids must be placed before the game starts so each player cannot change their bids after the game begins - again like assessments</p>
+</section>
+<section id="example-2-visible-single-bid" class="slide level2">
+<h2>Example: 2 visible single bid</h2>
+<ul>
+<li><p>Two boxes: £9 and £15</p></li>
+<li><p>3 players each have £10 to bid on 2 prizes</p></li>
+<li><p>You will lose whatever you bid</p></li>
+<li><p>How much do you bid on each box?</p></li>
+</ul>
+</section>
+<section id="possibilities" class="slide level2">
+<h2>Possibilities?</h2>
+<ul>
+<li><p>Well there is no point in spending more than £9 on the first prize</p></li>
+<li><p>But if you place too high a bid on the £9 prize then you probably won’t win the 2nd prize of £15 which is higher than your initial starting bid so you should put more money on the 2nd box</p></li>
+<li><p>But what if other players also think this? So perhaps placing more money on the 1st prize increases your chances of winning?</p></li>
+</ul>
+</section>
+<section id="player-choices" class="slide level2">
+<h2>Player Choices</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Prize 1 (£9) bid</th>
+<th style="text-align: center;">Prize 2 (£15) bid</th>
+<th style="text-align: center;">Max Payout</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Option 1</td>
+<td style="text-align: center;">£10</td>
+<td style="text-align: center;">£0</td>
+<td style="text-align: center;">-£1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Option 2</td>
+<td style="text-align: center;">£7</td>
+<td style="text-align: center;">£3</td>
+<td style="text-align: center;">£14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Option 3</td>
+<td style="text-align: center;">£5</td>
+<td style="text-align: center;">£5</td>
+<td style="text-align: center;">£14</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Option 4</td>
+<td style="text-align: center;">£3</td>
+<td style="text-align: center;">£7</td>
+<td style="text-align: center;">£14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Option 5</td>
+<td style="text-align: center;">£0</td>
+<td style="text-align: center;">£10</td>
+<td style="text-align: center;">£5</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="payouts-depend-on-other-player-choices" class="slide level2">
+<h2>Payouts depend on other player choices</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Prize 1 (£9) bid</th>
+<th style="text-align: center;">Prize 2 (£15) bid</th>
+<th style="text-align: center;">Max Payout</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Option 1</td>
+<td style="text-align: center;">£10 (£5)</td>
+<td style="text-align: center;">£0 (£5)</td>
+<td style="text-align: center;">-£1 (£10)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Option 2</td>
+<td style="text-align: center;">£7 (£5)</td>
+<td style="text-align: center;">£3 (£5)</td>
+<td style="text-align: center;">£2 (£10)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Option 3</td>
+<td style="text-align: center;">£5 (£5)</td>
+<td style="text-align: center;">£5 (£5)</td>
+<td style="text-align: center;">£0 (£0)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Option 4</td>
+<td style="text-align: center;">£3 (£5)</td>
+<td style="text-align: center;">£7 (£5)</td>
+<td style="text-align: center;">£8 (£4)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Option 5</td>
+<td style="text-align: center;">£0 (£5)</td>
+<td style="text-align: center;">£10 (£5)</td>
+<td style="text-align: center;">£5 (£4)</td>
+</tr>
+</tbody>
+</table>
+<p>Here player 2 splits their bid £5 for each prize</p>
+</section>
+<section id="payouts-depend-on-other-player-choices-1" class="slide level2">
+<h2>Payouts depend on other player choices</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Prize 1 (£9) bid</th>
+<th style="text-align: center;">Prize 2 (£15) bid</th>
+<th style="text-align: center;">Max Payout</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Option 1</td>
+<td style="text-align: center;">£10 (£3)</td>
+<td style="text-align: center;">£0 (£7)</td>
+<td style="text-align: center;">-£1 (£8)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Option 2</td>
+<td style="text-align: center;">£7 (£3)</td>
+<td style="text-align: center;">£3 (£7)</td>
+<td style="text-align: center;">£2 (£8)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Option 3</td>
+<td style="text-align: center;">£5 (£3)</td>
+<td style="text-align: center;">£5 (£7)</td>
+<td style="text-align: center;">£4 (£8)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Option 4</td>
+<td style="text-align: center;">£3 (£3)</td>
+<td style="text-align: center;">£7 (£7)</td>
+<td style="text-align: center;">£0 (£0)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Option 5</td>
+<td style="text-align: center;">£0 (£3)</td>
+<td style="text-align: center;">£10 (£7)</td>
+<td style="text-align: center;">£5 (£6)</td>
+</tr>
+</tbody>
+</table>
+<p>Here player 2 splits their bid £3 for the first prize and £7 for the second</p>
+</section>
+<section id="payouts-depend-on-other-player-choices-2" class="slide level2">
+<h2>Payouts depend on other player choices</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Prize 1 (£9) bid</th>
+<th style="text-align: center;">Prize 2 (£15) bid</th>
+<th style="text-align: center;">Max Payout</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Option 1</td>
+<td style="text-align: center;">£10 (£7)</td>
+<td style="text-align: center;">£0 (£3)</td>
+<td style="text-align: center;">-£3 (£10)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Option 2</td>
+<td style="text-align: center;">£7 (£7)</td>
+<td style="text-align: center;">£3 (£3)</td>
+<td style="text-align: center;">£0 (£0)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Option 3</td>
+<td style="text-align: center;">£5 (£7)</td>
+<td style="text-align: center;">£5 (£3)</td>
+<td style="text-align: center;">£10 (£2)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Option 4</td>
+<td style="text-align: center;">£3 (£7)</td>
+<td style="text-align: center;">£7 (£3)</td>
+<td style="text-align: center;">£8 (£2)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Option 5</td>
+<td style="text-align: center;">£0 (£7)</td>
+<td style="text-align: center;">£10 (£3)</td>
+<td style="text-align: center;">£5 (£2)</td>
+</tr>
+</tbody>
+</table>
+<p>Here player 2 splits their bid £7 for the first prize and £3 for the second</p>
+</section>
+<section id="payouts-depend-on-other-player-choices-3" class="slide level2">
+<h2>Payouts depend on other player choices</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Prize 1 (£9) bid</th>
+<th style="text-align: center;">Prize 2 (£15) bid</th>
+<th style="text-align: center;">Max Payout</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Option 1</td>
+<td style="text-align: center;">£10 (£10)</td>
+<td style="text-align: center;">£0 (£0)</td>
+<td style="text-align: center;">£0 (£0)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Option 2</td>
+<td style="text-align: center;">£7 (£10)</td>
+<td style="text-align: center;">£3 (£0)</td>
+<td style="text-align: center;">£12 (-£1)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Option 3</td>
+<td style="text-align: center;">£5 (£10)</td>
+<td style="text-align: center;">£5 (£0)</td>
+<td style="text-align: center;">£10 (-£1)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Option 4</td>
+<td style="text-align: center;">£3 (£10)</td>
+<td style="text-align: center;">£7 (£0)</td>
+<td style="text-align: center;">£8 (-£1)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Option 5</td>
+<td style="text-align: center;">£0 (£10)</td>
+<td style="text-align: center;">£10 (£0)</td>
+<td style="text-align: center;">£5 (-£1)</td>
+</tr>
+</tbody>
+</table>
+<p>Finally player 2 is bad at maths and splits £10, £0</p>
+</section>
+<section id="however" class="slide level2">
+<h2>However</h2>
+<ul>
+<li><p>While we have added a value to each prize, the prizes might not be worth the same to each player</p></li>
+<li><p>That £9 item might be worth more to a player if it happens to be a limited edition collectable (personal value) or a value that changes over time</p></li>
+<li><p>And the stake of £10 is not the same value either, £10 for someone with a £80,000pa income is worth less than someone on £15,000pa</p></li>
+</ul>
+</section></section>
+<section>
+<section id="which-choice-is-optimal" class="title-slide slide level1 center">
+<h1>Which choice is optimal?</h1>
+
+</section>
+<section id="auction-games-give-us-3-strategies" class="slide level2">
+<h2>Auction games give us 3 strategies</h2>
+<ul>
+<li><p>To win as much as possible</p></li>
+<li><p>Minimise the other players winnings</p></li>
+<li><p>Deciding not to play as the winnings do not outweigh the costs</p></li>
+</ul>
+</section>
+<section id="but-we-need-to-know-the-rules-before-we-can-work-out-what-is-best" class="slide level2">
+<h2>But we need to know the rules before we can work out what is best</h2>
+<p>Auction Game Alternative rules</p>
+<ul>
+<li><p>Only pay if you win the prize</p></li>
+<li><p>Pay the 2nd highest bid if you win a prize</p></li>
+<li><p>Bidding is done sequentially</p></li>
+<li><p>Prizes are divided based on bid contributions</p></li>
+</ul>
+</section>
+<section id="snowdrift" class="slide level2">
+<h2>Snowdrift</h2>
+<p>Cooperative, plus sum, simultaneous</p>
+<p>You are out driving in a car when suddenly an avalanche blocks the road, both in front and behind you.</p>
+<p>You are stuck and cannot drive around. You are 50 km from the nearest shelter and will die if you stay in your car as temperatures are due to drop sharply overnight</p>
+<p>Your only choice is to clear the snow before you freeze to death…</p>
+</section>
+<section id="shared-costs-and-payouts" class="slide level2">
+<h2>Shared costs and payouts</h2>
+<p>There is physical effort required to clear the snow, but you will get to save your life</p>
+<p>If there are 2 people clearing the snow, then it will be less effortful for each of you to clear the snow and you can both drive to safety</p>
+<p>However, if you stay in the car and let the other person clear the snow, you can still drive to safety, but you also got to stay in your warm car.</p>
+</section>
+<section id="snowdrift-payout-matrix" class="slide level2">
+<h2>Snowdrift Payout Matrix</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Stay in Car</th>
+<th style="text-align: center;">Clear Snow</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Stay in Car</td>
+<td style="text-align: center;">-1000, -1000</td>
+<td style="text-align: center;">100, 300</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Clear Snow</td>
+<td style="text-align: center;">300, 100</td>
+<td style="text-align: center;">200, 200</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="game-theory-what-is-the-point" class="slide level2">
+<h2>Game Theory, what is the point?</h2>
+<p>Game theory allows us to create a series of mathematical rules to simulate social situations</p>
+<p>We can use this to create AI systems to interact with or monitor human behaviour, and even predict future events</p>
+<p>We can also develop strategies to work out how best to play these games (“toy problems” that reflect real-world scenarios).</p>
+</section>
+<section id="game-strategies" class="slide level2">
+<h2>Game Strategies</h2>
+<ul>
+<li><p>Cooperator - A player that always cooperates</p></li>
+<li><p>Cooperator Spite - A player that starts off cooperating, then on turn 3 defects for the rest of the match</p></li>
+<li><p>Defector - A player that always defects.</p></li>
+<li><p>Random (0.2, 0.5, and 0.8) - A player that chooses randomly with a bias towards cooperation modifier of either 0.2, 0.5, 0.8.</p></li>
+<li><p>Spiteful Tit for Tat - A player that will cooperate, but will defect permanently after the other player defects twice in a row.</p></li>
+<li><p>Tit for 2 Tats - A player that mimics the last pair of moves from the other player, or returns previous action.</p></li>
+</ul>
+</section>
+<section id="game-strategies-1" class="slide level2">
+<h2>Game Strategies</h2>
+<ul>
+<li><p>Tit for Tat - A player mirrors the actions of the other player.</p></li>
+<li><p>Tricky Cooperator - A cooperator that will occasionally defect to improve payout.</p></li>
+<li><p>Tricky Defector - A defector that will occasionally try to trick the other player into cooperating to improve payout.</p></li>
+<li><p>Two Tits for Tat - A player that will defect twice each time the other player defects.</p></li>
+<li><p>Tit for Tat Grim - A player that will mimic the lowest cooperation level, e.g.&nbsp;if player plays C, C, D, C, C then this strategy will play C, C, D, D, D.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="ed-made-his-own-game-well-2-really" class="title-slide slide level1 center">
+<h1>Ed made his own game (well 2 really)</h1>
+
+</section>
+<section id="modified-snowdrift" class="slide level2">
+<h2>Modified snowdrift</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 24%">
+<col style="width: 26%">
+<col style="width: 20%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Cooperate Light</th>
+<th style="text-align: center;">Cooperate String</th>
+<th style="text-align: center;">Defect Light</th>
+<th style="text-align: center;">Defect Strong</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Cooperate Strong</td>
+<td style="text-align: center;">200/200</td>
+<td style="text-align: center;">225/175</td>
+<td style="text-align: center;">250/150</td>
+<td style="text-align: center;">300/100</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Cooperate Light</td>
+<td style="text-align: center;">175/225</td>
+<td style="text-align: center;">150/150</td>
+<td style="text-align: center;">175/125</td>
+<td style="text-align: center;">200/100</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Defect Light</td>
+<td style="text-align: center;">150/250</td>
+<td style="text-align: center;">125/175</td>
+<td style="text-align: center;">25/25</td>
+<td style="text-align: center;">0/25</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Defect Strong</td>
+<td style="text-align: center;">100/300</td>
+<td style="text-align: center;">100/200</td>
+<td style="text-align: center;">25/0</td>
+<td style="text-align: center;">0/0</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="first-experiment" class="slide level2">
+<h2>First experiment</h2>
+<ul>
+<li><p>Take each of the major strategies, have them play Prisoner’s Dilemma against every other strategy (repeated 10,000 times for each strategy combination)</p></li>
+<li><p>Modify those strategies and have them play modified Snowdrift</p></li>
+<li><p>Rank each strategy by total amount won in these games and compare these rankings</p></li>
+</ul>
+</section>
+<section id="todo-this-slide-has-no-text-1" class="slide level2">
+<h2>TODO: this slide has no text</h2>
+</section>
+<section id="nd-game" class="slide level2">
+<h2>2nd game</h2>
+<p>2 player, plus sum game, simultaneous</p>
+<ul>
+<li><p>Each player gets a choice of investing money into a group, or keeping money for themselves</p>
+<p><span class="math inline">\(\{10, 0\}, \{7, 3\}, \{3,7\}, \{0,10\}\)</span></p></li>
+<li><p>Players placed money into a central pot which was given a 10% bonus at the end of the game and split between players</p></li>
+</ul>
+</section>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 22%">
+<col style="width: 27%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Player 1 pay in</th>
+<th style="text-align: center;">Player 2 pay in</th>
+<th style="text-align: center;">Total Player 1 win</th>
+<th style="text-align: center;">Total Player 2 win</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">9.35</td>
+<td style="text-align: center;">12.35</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">7.15</td>
+<td style="text-align: center;">14.15</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">6.85</td>
+<td style="text-align: center;">13.85</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">11.65</td>
+<td style="text-align: center;">8.65</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="experiment-2" class="slide level2">
+<h2>Experiment 2</h2>
+<ul>
+<li><p>114 human players, each was asked to play against a different AI strategy until they did not want to play anymore</p></li>
+<li><p>Strategies were then ranked by modal (most common) number of plays and and by mean amount of earned money</p></li>
+<li><p>Number of Plays vs a human player comparing number of plays and winnings</p></li>
+</ul>
+</section>
+<section id="summery" class="slide level2">
+<h2>Summery</h2>
+<ul>
+<li><p>All games are combination of: Cooperation/non-cooperation, sequential/simultaneous, and plus/zero sum</p></li>
+<li><p>Games are further developed by level of information, payout and costs of actions, symmetry of these payouts/costs, and how many times the game is played</p></li>
+<li><p>All situations can be modeled as different sorts of games, and this allows us to build mathematical models out of them</p></li>
+</ul>
+</section>
+<section id="lab-work" class="slide level2">
+<h2>Lab work</h2>
+<p>Play the games we have learnt today with other groups, and try to earn more points for your team</p>
+</section>
+<section id="game-1-chicken" class="slide level2">
+<h2>Game 1 Chicken</h2>
+<p>If after 3 turns you are both going straight, both teams lose</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Swerve</th>
+<th style="text-align: center;">Straight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Swerve</td>
+<td style="text-align: center;">0, 0</td>
+<td style="text-align: center;">10, 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Straight</td>
+<td style="text-align: center;">0, 10</td>
+<td style="text-align: center;">-30, -30</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="game-2---prisoners-dilemma" class="slide level2">
+<h2>Game 2 - Prisoner’s Dilemma</h2>
+<p>Note that payouts are negative</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Stay Silent</th>
+<th style="text-align: center;">Betray</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Stay Silent</td>
+<td style="text-align: center;">-5, -5</td>
+<td style="text-align: center;">0, -20</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Betray</td>
+<td style="text-align: center;">-20, 0</td>
+<td style="text-align: center;">-10, -10</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="auction-game" class="slide level2">
+<h2>Auction game</h2>
+<p>TODO: I have no idea how that is meant to be formatted, please fix. thanks.</p>
+<p>Round 1 bidding -</p>
+<p>Round 2 bidding</p>
+<p>Round 3 bidding</p>
+<p>10</p>
+<p>20</p>
+<p>10</p>
+<p>40</p>
+<p>10</p>
+<p>10</p>
+<p>15</p>
+<p>15</p>
+<p>30</p>
+</section>
+<section id="lab-work-1" class="slide level2">
+<h2>Lab work</h2>
+<p>Identify the games that best fit 5 scenarios - I will give you 3, you have to decide on 2 others</p>
+<ul>
+<li><p>Buying a car</p></li>
+<li><p>Splitting time between university work and social activities</p></li>
+<li><p>Applying for jobs</p></li>
+<li><p>+2 more you came up with on your own</p></li>
+</ul>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"\u003ci class=\"fas fa-gear\">\u003c/i>","content":"\u003cul class=\"slide-menu-items\">\n\u003cli class=\"slide-tool-item active\" data-item=\"0\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\">\u003ckbd>f\u003c/kbd> Fullscreen\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"1\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\">\u003ckbd>s\u003c/kbd> Speaker View\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"2\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\">\u003ckbd>o\u003c/kbd> Slide Overview\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"3\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\">\u003ckbd>e\u003c/kbd> PDF Export Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"4\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\">\u003ckbd>r\u003c/kbd> Scroll View Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"5\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\">\u003ckbd>?\u003c/kbd> Keyboard Help\u003c/a>\u003c/li>\n\u003c/ul>"}],"openButton":true,"openButtonLabel":"Slide menu"},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("https:\/\/holliebaker\.github\.io\/CSC4001-resources\/");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+          window.quartoDecorateExternalLinks = function (root) {
+         var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+              if (!link.classList.contains('no-external-icon')) {
+              }
+            }
+          }
+          };
+          window.quartoDecorateExternalLinks(window.document);
+        // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+        // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+        const hideOnEscAndFocusOut = {
+          name: 'hideOnEscAndFocusOut',
+          defaultValue: true,
+          fn(instance) {
+            const dismiss = () => {
+              // A show scheduled by the trigger delay would otherwise reopen it
+              instance.clearDelayTimeouts();
+              instance.hide();
+            };
+            const onKeyDown = (event) => {
+              if (event.key !== 'Escape') {
+                return;
+              }
+              // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+              // except an open reveal.js slide menu, which Esc should close too.
+              // The menu handles keys only when its keyboard option is on.
+              const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+                window.Reveal.getConfig().menu?.keyboard !== false;
+              if (!menuHandlesEsc) {
+                event.stopPropagation();
+              }
+              if (instance.popper.contains(window.document.activeElement)) {
+                // Disabled while refocusing so the focus trigger does not reopen it
+                instance.disable();
+                instance.reference.focus();
+                instance.enable();
+              }
+              dismiss();
+            };
+            const onFocusOut = (event) => {
+              const target = event.relatedTarget;
+              if (target && !instance.reference.contains(target) &&
+                  !instance.popper.contains(target)) {
+                dismiss();
+              }
+            };
+            // On the trigger too: a click trigger (code-annotations: select) has no
+            // blur handling. Attached for the instance's lifetime so leaving the
+            // trigger also cancels a show still pending on the trigger delay.
+            instance.reference.addEventListener('focusout', onFocusOut);
+            return {
+              onShow() {
+                window.document.addEventListener('keydown', onKeyDown, true);
+                instance.popper.addEventListener('focusout', onFocusOut);
+              },
+              onHide() {
+                window.document.removeEventListener('keydown', onKeyDown, true);
+                instance.popper.removeEventListener('focusout', onFocusOut);
+              },
+              onDestroy() {
+                instance.reference.removeEventListener('focusout', onFocusOut);
+              },
+            };
+          },
+        };
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+            plugins: [hideOnEscAndFocusOut],
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
