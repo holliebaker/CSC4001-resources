@@ -1,0 +1,95 @@
+---
+title: "Scheduling (presentations)"
+author: "CSC4001: Computer Systems and Architecture"
+date: ""
+format:
+  revealjs:
+    theme: simple
+    css: ./style.css
+---
+
+## Question 1
+
+Short term scheduling is...
+
+A. Deciding which processes to load into memory
+B. Beciding which process to run on the CPU
+C. Deciding whether a process can be admitted
+
+## Question 2
+
+Run until completion...
+
+A. Works well on desktop PCs
+B. Is an example of pre-emptive multi-tasking
+C. Has no scheduling overheads
+
+## Question 3
+
+Which of the following is **NOT** a problem with pre-emptive round robin?
+
+A. Starvation
+B. Compute intensive and interactive processes both get the same amount of CPU time
+C. Doesn't allow critical processes to run in real-time
+
+## Question 4
+
+WHich of the following **does not** require estimating the runtime of a process?
+
+A. Shortest job first
+B. Shortest remaining time
+C. Least completed next
+
+## Question 5
+
+Thrashing occurs when
+
+A. One or more processes is never scheduled on the CPU
+B. Two or more processes are blocked because they are waiting for something from one of the others
+C. The CPU spends most of its time deciding which process to run, rather than running the rpocesses.
+
+# Group Presentations
+
+## Objectives
+
+- Research a particular scheduling algorithm in teams.
+- Share findings with the class, discuss, comparing and contrasting the different algorithms.
+
+## Get into groups
+
+## What to find out
+
+- Choose a scheduling algorithm
+- Find out
+  - Type of scheduler
+  - Briefly describe the algorithm
+  - Advantages / disadvantages
+  - How do we measure its performance?
+  - Use cases?
+
+## Ideas
+
+- CPU
+  - Linux $O(n)$ scheduler vs Linux $O(1)$ scheduler
+  - Completely Fair Scheduler
+  - Mach scheduler (used in MacOS)
+  - Windows Scheduler
+- Fair(er) DRM scheduler (Linux GPU scheduler)
+- Network scheduling (OpenWRT)
+- Something else...
+
+## Example
+
+**Shortest Job First on Legacy Batch Systems**
+
+- **Type of scheduler**: shortest job first
+- **Description:** Non-preemptive; prioritizes shortest jobs to minimize waiting time.
+- **Advantages:** Optimal for minimizing average waiting time.
+- **Disadvantages:** Requires knowing job lengths in advance, potential starvation for long jobs.
+- **Performance Metrics:** Turnaround time, throughput.
+- **Use Cases:** Batch processing, where job lengths are predictable.
+- **Comparisons:** Contrast with Shortest Remaining Time First for preemptive variants.
+
+## Next TIme
+
+GAME THEORY!
