@@ -1670,7 +1670,7 @@
     "href": "index.html",
     "title": "CSC4001: Systems and Architecture",
     "section": "",
-    "text": "Index\n\nS00: Welcome\nS01: Logic Gates \nCSC4001-S02W-Logic.qmd: Building With Logic Gates - Worksheet\nS02: Building With Logic Gates\nS03: Architecture overview\nS04: The CPU\nCSC4001-S05W-GoingUp.qmd: Workshop: Going up\nS05: Workshop: Going up\nCSC4001-S06W-riscv.qmd: RISC-V, Let’s Assemble\nS06: Pipelines, Out Of Order Execution, and Parallelism\nS08: Memory Architecture\nS08: Memory Architecture\nS10: Operating Systems\nS11: Processes\nS12: Workshop: the Linux Command Line\nS13: Processes\nS14: Workshop: the Linux Command Line 2: searching and editing files\nS15: Deadlock\nS16: Workshop: the Linux Command Line 3: Processes, pipes, redirection and signals\nS17: Intr-Process Communication\nS18: System Design\nS19: Memory\nS20: Game Theory\nS21: Koyash!\nS22: Files and Filesystems"
+    "text": "Index\n\nS00: Welcome\nS01: Logic Gates \nCSC4001-S02W-Logic.qmd: Building With Logic Gates - Worksheet\nS02: Building With Logic Gates\nS03: Architecture overview\nS04: The CPU\nCSC4001-S05W-GoingUp.qmd: Workshop: Going up\nS05: Workshop: Going up\nCSC4001-S06W-riscv.qmd: RISC-V, Let’s Assemble\nS06: Pipelines, Out Of Order Execution, and Parallelism\nS08: Memory Architecture\nS08: Memory Architecture\nS10: Operating Systems\nS11: Processes\nS12: Workshop: the Linux Command Line\nCSC4001-S13a-SchedulingPresentations.qmd: Scheduling (presentations)\nS13: Processes\nS14: Workshop: the Linux Command Line 2: searching and editing files\nS15: Deadlock\nS16: Workshop: the Linux Command Line 3: Processes, pipes, redirection and signals\nS17: Intr-Process Communication\nS18: System Design\nS19: Memory\nS20: Game Theory\nS21: Koyash!\nS22: Files and Filesystems"
   },
   {
     "objectID": "CSC4001-S14-commandline2.html",
@@ -2317,6 +2317,153 @@
     "text": "Exercise: everything is a file\n\nFile redirection.\nSpecial files (which aren’t really files),\n\nstdin, stdout and stderr,\n/dev/null, /dev/zero, /dev/random."
   },
   {
+    "objectID": "CSC4001-S13a-SchedulingPresentations.html#question-1",
+    "href": "CSC4001-S13a-SchedulingPresentations.html#question-1",
+    "title": "Scheduling (presentations)",
+    "section": "Question 1",
+    "text": "Question 1\nShort term scheduling is…\nA. Deciding which processes to load into memory B. Beciding which process to run on the CPU C. Deciding whether a process can be admitted"
+  },
+  {
+    "objectID": "CSC4001-S13a-SchedulingPresentations.html#question-2",
+    "href": "CSC4001-S13a-SchedulingPresentations.html#question-2",
+    "title": "Scheduling (presentations)",
+    "section": "Question 2",
+    "text": "Question 2\nRun until completion…\nA. Works well on desktop PCs B. Is an example of pre-emptive multi-tasking C. Has no scheduling overheads"
+  },
+  {
+    "objectID": "CSC4001-S13a-SchedulingPresentations.html#question-3",
+    "href": "CSC4001-S13a-SchedulingPresentations.html#question-3",
+    "title": "Scheduling (presentations)",
+    "section": "Question 3",
+    "text": "Question 3\nWhich of the following is NOT a problem with pre-emptive round robin?\nA. Starvation B. Compute intensive and interactive processes both get the same amount of CPU time C. Doesn’t allow critical processes to run in real-time"
+  },
+  {
+    "objectID": "CSC4001-S13a-SchedulingPresentations.html#question-4",
+    "href": "CSC4001-S13a-SchedulingPresentations.html#question-4",
+    "title": "Scheduling (presentations)",
+    "section": "Question 4",
+    "text": "Question 4\nWHich of the following does not require estimating the runtime of a process?\nA. Shortest job first B. Shortest remaining time C. Least completed next"
+  },
+  {
+    "objectID": "CSC4001-S13a-SchedulingPresentations.html#question-5",
+    "href": "CSC4001-S13a-SchedulingPresentations.html#question-5",
+    "title": "Scheduling (presentations)",
+    "section": "Question 5",
+    "text": "Question 5\nThrashing occurs when\nA. One or more processes is never scheduled on the CPU B. Two or more processes are blocked because they are waiting for something from one of the others C. The CPU spends most of its time deciding which process to run, rather than running the rpocesses."
+  },
+  {
+    "objectID": "CSC4001-S13a-SchedulingPresentations.html#objectives",
+    "href": "CSC4001-S13a-SchedulingPresentations.html#objectives",
+    "title": "Scheduling (presentations)",
+    "section": "Objectives",
+    "text": "Objectives\n\nResearch a particular scheduling algorithm in teams.\nShare findings with the class, discuss, comparing and contrasting the different algorithms."
+  },
+  {
+    "objectID": "CSC4001-S13a-SchedulingPresentations.html#get-into-groups",
+    "href": "CSC4001-S13a-SchedulingPresentations.html#get-into-groups",
+    "title": "Scheduling (presentations)",
+    "section": "Get into groups",
+    "text": "Get into groups"
+  },
+  {
+    "objectID": "CSC4001-S13a-SchedulingPresentations.html#what-to-find-out",
+    "href": "CSC4001-S13a-SchedulingPresentations.html#what-to-find-out",
+    "title": "Scheduling (presentations)",
+    "section": "What to find out",
+    "text": "What to find out\n\nChoose a scheduling algorithm\nFind out\n\nType of scheduler\nBriefly describe the algorithm\nAdvantages / disadvantages\nHow do we measure its performance?\nUse cases?"
+  },
+  {
+    "objectID": "CSC4001-S13a-SchedulingPresentations.html#ideas",
+    "href": "CSC4001-S13a-SchedulingPresentations.html#ideas",
+    "title": "Scheduling (presentations)",
+    "section": "Ideas",
+    "text": "Ideas\n\nCPU\n\nLinux \\(O(n)\\) scheduler vs Linux \\(O(1)\\) scheduler\nCompletely Fair Scheduler\nMach scheduler (used in MacOS)\nWindows Scheduler\n\nFair(er) DRM scheduler (Linux GPU scheduler)\nNetwork scheduling (OpenWRT)\nSomething else…"
+  },
+  {
+    "objectID": "CSC4001-S13a-SchedulingPresentations.html#example",
+    "href": "CSC4001-S13a-SchedulingPresentations.html#example",
+    "title": "Scheduling (presentations)",
+    "section": "Example",
+    "text": "Example\nShortest Job First on Legacy Batch Systems\n\nType of scheduler: shortest job first\nDescription: Non-preemptive; prioritizes shortest jobs to minimize waiting time.\nAdvantages: Optimal for minimizing average waiting time.\nDisadvantages: Requires knowing job lengths in advance, potential starvation for long jobs.\nPerformance Metrics: Turnaround time, throughput.\nUse Cases: Batch processing, where job lengths are predictable.\nComparisons: Contrast with Shortest Remaining Time First for preemptive variants."
+  },
+  {
+    "objectID": "CSC4001-S13a-SchedulingPresentations.html#next-time",
+    "href": "CSC4001-S13a-SchedulingPresentations.html#next-time",
+    "title": "Scheduling (presentations)",
+    "section": "Next TIme",
+    "text": "Next TIme\nGAME THEORY!"
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html",
+    "href": "CSC4001-S02W-Logic.html",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "",
+    "text": "Adapted from https://cccu-uk.github.io/U10793_FCC_Labs/Logic_Gates/Logic_Gates.html"
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#universal-logic-circuits",
+    "href": "CSC4001-S02W-Logic.html#universal-logic-circuits",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Universal Logic Circuits",
+    "text": "Universal Logic Circuits\nWe can build any of the fundamental logic gates by chaining only nand or only nor gates together.\nQuestion 1 Create the circuit as shown below.\n\n\n\n\n\nDraw its truth table. Which logic gate does it represent?\nQuestion 2 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 3 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 4 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 5 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 6 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents."
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#sr-latch-with-only-nand-gates",
+    "href": "CSC4001-S02W-Logic.html#sr-latch-with-only-nand-gates",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "SR Latch with only NAND gates",
+    "text": "SR Latch with only NAND gates\nQuestion 1 Rebuild the below SR latch with only NAND gates.\n\n\n\n\n\n\n\n\n\nQuestion 2 Rebuild the below gated SR latch with only NAND gates."
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#the-clock",
+    "href": "CSC4001-S02W-Logic.html#the-clock",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "The Clock",
+    "text": "The Clock\nUse the clock to generate signals.\nCreate the circuit as shown below:\n\n\n\n\n\nConnecting the clock as input and adding the data graph.\n\nExperiment with different Clock Input Frequencies, what observations can you make? Discuss with the a peer or with the tutor.\nReplace the or gate with a different gate, change the frequency.\nDoes the data graph show a pattern?"
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#half-adder",
+    "href": "CSC4001-S02W-Logic.html#half-adder",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Half Adder",
+    "text": "Half Adder\nRecreate the half adder circuit as shown below. \nUse the simulator to complete the truth table\n\n\n\nA\nB\nS\nCout\n\n\n\n\n1\n1\n\n\n\n\n1\n0\n\n\n\n\n0\n1\n\n\n\n\n0\n0"
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#full-adder",
+    "href": "CSC4001-S02W-Logic.html#full-adder",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Full adder",
+    "text": "Full adder\nNow produce a full adder, simulate and complete the truth table.\n\n\n\nA\nB\nCin\nS\nCout\n\n\n\n\n1\n1\n1\n\n\n\n\n1\n1\n0\n\n\n\n\n1\n0\n1\n\n\n\n\n1\n0\n0\n\n\n\n\n1\n1\n1\n\n\n\n\n0\n1\n0\n\n\n\n\n0\n0\n1\n\n\n\n\n0\n0\n0"
+  },
+  {
+    "objectID": "CSC4001-S02W-Logic.html#binary-decoder",
+    "href": "CSC4001-S02W-Logic.html#binary-decoder",
+    "title": "Building With Logic Gates - Worksheet",
+    "section": "Binary Decoder",
+    "text": "Binary Decoder\nResearch and implement a 2-bit binary decoder.\nA binary decoder takes \\(n\\) bits as input and can output one of \\(2^n\\) possible options, depending on the value of the input. For example, in a 2-bit decoder, there are four possible outputs, each corresponding to one of the possible assignments of bits:\n\n\\(00\\)\n\\(01\\)\n\\(10\\)\n\\(11\\)"
+  },
+  {
+    "objectID": "CSC4001-S16-commandline3.html",
+    "href": "CSC4001-S16-commandline3.html",
+    "title": "Workshop: the Linux Command Line 3: Processes, pipes, redirection and signals",
+    "section": "",
+    "text": "Run the ps command without any arguments. What information does it display? Try adding the -e option and explain the differences.\nRun top in another terminal. Notice any processes that are running. Use the k key to kill a process (choose one that you are sure is not critical). Press q to close top. If this is one of the Cyber Pi’s, then feel free to return to this at the end of the session. How many processes can you terminate before the system becomes inoperable?\nUse ps to find the process ID (PID) of a specific process. Hint: You can use pgrep to find processes by name.\nRemember that processes are “forked” or “spawned” from a parent process. The first process to be created in Linux is init. Use pstree to examine the relationships between processes. pstree &lt;pid&gt; can be used to show a specific process and its children.\nAll processes have a “process control block”: metadata that the operating system uses to manage the process.\nPrint out the process control block of your current shell\n\n# ps # show running processes (example output on a Fedora 45 system)\n    PID TTY          TIME CMD\n  52830 pts/1    00:00:00 bash\n 187013 pts/1    00:00:00 ps\n# cat /proc/52830/status\nDo you recognise any of the information?\n\n\n\n\nStart a process in the background by adding an & at the end of the command (e.g., sleep 30 &).\n\nUse jobs to see the background jobs.\nUse fg to bring it to the foreground,\nand bg to send it back to the background.\n\nUse nohup and & together to run a command in the background and ensure it runs even after the terminal session ends (e.g., nohup sleep 300 &).\n\nLog out out and back in again to check eprocess keeps running.\n\nUse &&gt; and &gt; to redirect both standard output and standard error to a file, then check the file to see the output (e.g., sleep 300 &&gt; output.log).\n\n\n\n\n\nStart a process that runs indefinitely (e.g., watch -n 10 date &).\nUse ps or top to find its PID.\nKill the process using the kill command with the PID you found (e.g., kill &lt;PID&gt;). Verify that the process has stopped.\nUse kill -9 to forcefully terminate a process (use this carefully, as it does not give the process a chance to clean up).\nUse pkill to kill a process by name (e.g., pkill -f 'watch').\n\n\n\n\n\nRedirect the output of a command to a file (e.g., ls &gt; filelist.txt).\nRedirect both standard output and standard error to a file (e.g., ls &gt; filelist.txt 2&gt;&1).\nAppend the output to a file instead of overwriting it (e.g., ls &gt;&gt; filelist.txt).\nUse cat and echo to redirect input to a file (e.g., echo \"Hello, World!\" | cat &gt;&gt; filelist.txt)."
+  },
+  {
+    "objectID": "CSC4001-S16-commandline3.html#processes",
+    "href": "CSC4001-S16-commandline3.html#processes",
+    "title": "Workshop: the Linux Command Line 3: Processes, pipes, redirection and signals",
+    "section": "",
+    "text": "Run the ps command without any arguments. What information does it display? Try adding the -e option and explain the differences.\nRun top in another terminal. Notice any processes that are running. Use the k key to kill a process (choose one that you are sure is not critical). Press q to close top. If this is one of the Cyber Pi’s, then feel free to return to this at the end of the session. How many processes can you terminate before the system becomes inoperable?\nUse ps to find the process ID (PID) of a specific process. Hint: You can use pgrep to find processes by name.\nRemember that processes are “forked” or “spawned” from a parent process. The first process to be created in Linux is init. Use pstree to examine the relationships between processes. pstree &lt;pid&gt; can be used to show a specific process and its children.\nAll processes have a “process control block”: metadata that the operating system uses to manage the process.\nPrint out the process control block of your current shell\n\n# ps # show running processes (example output on a Fedora 45 system)\n    PID TTY          TIME CMD\n  52830 pts/1    00:00:00 bash\n 187013 pts/1    00:00:00 ps\n# cat /proc/52830/status\nDo you recognise any of the information?\n\n\n\n\nStart a process in the background by adding an & at the end of the command (e.g., sleep 30 &).\n\nUse jobs to see the background jobs.\nUse fg to bring it to the foreground,\nand bg to send it back to the background.\n\nUse nohup and & together to run a command in the background and ensure it runs even after the terminal session ends (e.g., nohup sleep 300 &).\n\nLog out out and back in again to check eprocess keeps running.\n\nUse &&gt; and &gt; to redirect both standard output and standard error to a file, then check the file to see the output (e.g., sleep 300 &&gt; output.log).\n\n\n\n\n\nStart a process that runs indefinitely (e.g., watch -n 10 date &).\nUse ps or top to find its PID.\nKill the process using the kill command with the PID you found (e.g., kill &lt;PID&gt;). Verify that the process has stopped.\nUse kill -9 to forcefully terminate a process (use this carefully, as it does not give the process a chance to clean up).\nUse pkill to kill a process by name (e.g., pkill -f 'watch').\n\n\n\n\n\nRedirect the output of a command to a file (e.g., ls &gt; filelist.txt).\nRedirect both standard output and standard error to a file (e.g., ls &gt; filelist.txt 2&gt;&1).\nAppend the output to a file instead of overwriting it (e.g., ls &gt;&gt; filelist.txt).\nUse cat and echo to redirect input to a file (e.g., echo \"Hello, World!\" | cat &gt;&gt; filelist.txt)."
+  },
+  {
+    "objectID": "CSC4001-S16-commandline3.html#pipes",
+    "href": "CSC4001-S16-commandline3.html#pipes",
+    "title": "Workshop: the Linux Command Line 3: Processes, pipes, redirection and signals",
+    "section": "Pipes",
+    "text": "Pipes\nPipes are used to send the output of one command as input to another command. The vertical bar | character is used to create a pipe. For instance, if I wanted to list all the files in the current directory using ls, and then send the output to grep to search for any files containing foo, I could type\nls | grep foo\n\n1. Basic Pipes\n\nExercise 1: List all files in the current directory, filter out directories, and sort the results.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep -v / | sort\n\n\n\nExercise 2: List all files, filter out files with a .txt extension, and count the number of such files.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep '\\.txt$' | wc -l\n\n\n\nExercise 3: List all directories, sort them, and print the first 10 lines.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -d */ | sort | head -n 10\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nThere are several ways you could have retrieved the above information: with ls piped to grep, or with find and its flags. Compare commands with your neighbour.\n\n\n\n\n2. Redirecting Output\nRedirection allows you to save the output of a command to a file, or use a file as input to a command. The greatr than &gt; character sends output of a command to a file, e.g., echo \"Hello\" &gt; greeting.txt will send the output of echo \"hello\" to greeting.txt. The &gt; operator overwrites the contents of a file, while the &gt;&gt; operator appends content to the end of a file. E.g., echo \"How are you?\" &gt;&gt; greeting.txt will add “How are you” to the end of greeting.txt. The&lt;operator sends the contents of a file to a command as input. For example,grep hello &lt; greeting.txtwill send the contents ofgreeting.txtto thegrep` command.\n\n\n\n\n\n\nImportant\n\n\n\nIn Unix, everything is a file — standard in, standard out, disks, networks. This means you can’t just redirect data to text files, but write it directly to standard in, collect it directly to standard out, or even interface with peripherals. Piping and redirection are incredibly powerful tools.\n\n\nThere are some special files in Unix-like operating systems:\n\n/dev/null is a file that discrds any data. It can be useful when writing scripts, if you want to hide a command’s output in order to give the user a cleaner output.\n/dev/zero is a file that will provide an endless stream of 0’s when read from.\n/dev/urandom provides an endless stream of randm numbers.\n\nTry head /dev/zero and /head /dev/urandom to see what these files contain.\n\nExercise 4: List all files in the current directory and save the output to a file named files.txt.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l &gt; files.txt\n\n\n\nExercise 5: List all files and filter out directories, then save the output to a file named non_directories.txt.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep -v / &gt; non_directories.txt\n\n\n\nExercise 6: List all files and save the output to a file, appending the results to the same file.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l &gt;&gt; files.txt\n\n\n\nExercise 7: List all files and save the output to a file, overwriting the file if it already exists.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l &gt; files.txt\n\n\n\n\n\n\n3. Combining Pipes and Redirecting\nCombining pipes and redirection lets you chain lots of simple commands together to create more complex operations.\n\nExercise 8: List all files, sort them, and then save the sorted output to a file.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | sort &gt; sorted_files.txt\n\n\n\nExercise 9: List all files, filter out directories, and save the output to a file.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep -v / &gt; non_directories.txt\n\n\n\nExercise 10: List all files, filter out directories, sort the output, and save it to a file.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep -v / | sort &gt; non_directories_sorted.txt\n\n\n\n\n\n\n4. Chaining Commands\nChaining commands allows you to build complex operations by using the output of one command as the input of the next. The Unix philosophy advises that each command should do one thing and do it well, and that inputs and outputs should be streams of text in a predictble format.\n\nExercise 11: List all files, filter out directories, sort the output, and then display the first 5 lines.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep -v / | sort | head -n 5\n\n\n\nExercise 12: List all files, filter out directories, sort the output, and count the number of non-directory files.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep -v / | sort | wc -l\n\n\n\nExercise 13: List all files, filter out directories, sort the output, and save the first 10 lines to a file.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep -v / | sort | head -n 10 &gt; top_10_non_directories.txt\n\n\n\n\n\n\n5. Advanced Pipes and Redirecting\nFor more advanced usage, consider the following:\n\nExercise 14: List all files in a directory, filter out directories, and then use xargs to run chmod on each file.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep -v / | awk '{print $9}' | xargs chmod 644\n\n\n\nExercise 15: List all files, filter out directories, and use xargs to run cp to copy these files to a different directory.\n\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep -v / | awk '{print $9}' | xargs cp /path/to/destination/"
+  },
+  {
     "objectID": "CSC4001-S12-commandline.html",
     "href": "CSC4001-S12-commandline.html",
     "title": "Workshop: the Linux Command Line",
@@ -2399,76 +2546,6 @@
     "title": "Workshop: the Linux Command Line",
     "section": "Advanced (but super useful): Terminal Multiplexers",
     "text": "Advanced (but super useful): Terminal Multiplexers\n\nWhy use them?\n\nKeep sessions alive after you log out.\n\nShare a terminal with another user.\n\nCopy/paste inside the session without using the host OS clipboard.\n\n\n\nInstalling screen\nsudo apt update\nsudo apt install screen\n\n\nBasic usage\n\nStart a new session\nscreen -S mysession\nDetach (leave it running)\nCtrl‑A then D\nRe‑attach\nscreen -r mysession\nList sessions\nscreen -ls\nShare a session with another user\n\nMake sure the session is running as a shared group (e.g., both users belong to screen group).\n\nThe other user can screen -x mysession.\n\nCopy/paste inside screen\n\nPress Ctrl‑A then Esc to enter copy mode.\n\nMove the cursor to the start of the text, press Space, move to the end, press Space again.\n\nExit copy mode, press Ctrl‑A then ] to paste.\n\n\n\n\nExercises\n\nCreate a screen session called demo.\n\nRun top inside the session.\n\nDetach and re‑attach to the session from another terminal.\n\nShare the session with your friend (use screen -x demo).\n\n\n\nResources\n\nman &lt;command&gt; – manual pages for any command.\n\ninfo &lt;command&gt; – extended documentation.\n\nOnline tutorials:\n\n(Video) The Operating System: Using the Command Line | Google IT Support Certificate https://www.youtube.com/watch?v=xg_1UjZqMdQ\nBasics for navigating the Linux Command Line (from Canute Console manual, surprisingly good beginner friendly walkthrough) [https://gitlab.com/Bristol-Braille/canute-scientific-learn/-/blob/main/manuals-sources/en-canute-console-manual.md?ref_type=heads#basics-for-navigating-the-linux-command-line]"
-  },
-  {
-    "objectID": "CSC4001-S16-commandline3.html",
-    "href": "CSC4001-S16-commandline3.html",
-    "title": "Workshop: the Linux Command Line 3: Processes, pipes, redirection and signals",
-    "section": "",
-    "text": "Run the ps command without any arguments. What information does it display? Try adding the -e option and explain the differences.\nRun top in another terminal. Notice any processes that are running. Use the k key to kill a process (choose one that you are sure is not critical). Press q to close top. If this is one of the Cyber Pi’s, then feel free to return to this at the end of the session. How many processes can you terminate before the system becomes inoperable?\nUse ps to find the process ID (PID) of a specific process. Hint: You can use pgrep to find processes by name.\nRemember that processes are “forked” or “spawned” from a parent process. The first process to be created in Linux is init. Use pstree to examine the relationships between processes. pstree &lt;pid&gt; can be used to show a specific process and its children.\nAll processes have a “process control block”: metadata that the operating system uses to manage the process.\nPrint out the process control block of your current shell\n\n# ps # show running processes (example output on a Fedora 45 system)\n    PID TTY          TIME CMD\n  52830 pts/1    00:00:00 bash\n 187013 pts/1    00:00:00 ps\n# cat /proc/52830/status\nDo you recognise any of the information?\n\n\n\n\nStart a process in the background by adding an & at the end of the command (e.g., sleep 30 &).\n\nUse jobs to see the background jobs.\nUse fg to bring it to the foreground,\nand bg to send it back to the background.\n\nUse nohup and & together to run a command in the background and ensure it runs even after the terminal session ends (e.g., nohup sleep 300 &).\n\nLog out out and back in again to check eprocess keeps running.\n\nUse &&gt; and &gt; to redirect both standard output and standard error to a file, then check the file to see the output (e.g., sleep 300 &&gt; output.log).\n\n\n\n\n\nStart a process that runs indefinitely (e.g., watch -n 10 date &).\nUse ps or top to find its PID.\nKill the process using the kill command with the PID you found (e.g., kill &lt;PID&gt;). Verify that the process has stopped.\nUse kill -9 to forcefully terminate a process (use this carefully, as it does not give the process a chance to clean up).\nUse pkill to kill a process by name (e.g., pkill -f 'watch').\n\n\n\n\n\nRedirect the output of a command to a file (e.g., ls &gt; filelist.txt).\nRedirect both standard output and standard error to a file (e.g., ls &gt; filelist.txt 2&gt;&1).\nAppend the output to a file instead of overwriting it (e.g., ls &gt;&gt; filelist.txt).\nUse cat and echo to redirect input to a file (e.g., echo \"Hello, World!\" | cat &gt;&gt; filelist.txt)."
-  },
-  {
-    "objectID": "CSC4001-S16-commandline3.html#processes",
-    "href": "CSC4001-S16-commandline3.html#processes",
-    "title": "Workshop: the Linux Command Line 3: Processes, pipes, redirection and signals",
-    "section": "",
-    "text": "Run the ps command without any arguments. What information does it display? Try adding the -e option and explain the differences.\nRun top in another terminal. Notice any processes that are running. Use the k key to kill a process (choose one that you are sure is not critical). Press q to close top. If this is one of the Cyber Pi’s, then feel free to return to this at the end of the session. How many processes can you terminate before the system becomes inoperable?\nUse ps to find the process ID (PID) of a specific process. Hint: You can use pgrep to find processes by name.\nRemember that processes are “forked” or “spawned” from a parent process. The first process to be created in Linux is init. Use pstree to examine the relationships between processes. pstree &lt;pid&gt; can be used to show a specific process and its children.\nAll processes have a “process control block”: metadata that the operating system uses to manage the process.\nPrint out the process control block of your current shell\n\n# ps # show running processes (example output on a Fedora 45 system)\n    PID TTY          TIME CMD\n  52830 pts/1    00:00:00 bash\n 187013 pts/1    00:00:00 ps\n# cat /proc/52830/status\nDo you recognise any of the information?\n\n\n\n\nStart a process in the background by adding an & at the end of the command (e.g., sleep 30 &).\n\nUse jobs to see the background jobs.\nUse fg to bring it to the foreground,\nand bg to send it back to the background.\n\nUse nohup and & together to run a command in the background and ensure it runs even after the terminal session ends (e.g., nohup sleep 300 &).\n\nLog out out and back in again to check eprocess keeps running.\n\nUse &&gt; and &gt; to redirect both standard output and standard error to a file, then check the file to see the output (e.g., sleep 300 &&gt; output.log).\n\n\n\n\n\nStart a process that runs indefinitely (e.g., watch -n 10 date &).\nUse ps or top to find its PID.\nKill the process using the kill command with the PID you found (e.g., kill &lt;PID&gt;). Verify that the process has stopped.\nUse kill -9 to forcefully terminate a process (use this carefully, as it does not give the process a chance to clean up).\nUse pkill to kill a process by name (e.g., pkill -f 'watch').\n\n\n\n\n\nRedirect the output of a command to a file (e.g., ls &gt; filelist.txt).\nRedirect both standard output and standard error to a file (e.g., ls &gt; filelist.txt 2&gt;&1).\nAppend the output to a file instead of overwriting it (e.g., ls &gt;&gt; filelist.txt).\nUse cat and echo to redirect input to a file (e.g., echo \"Hello, World!\" | cat &gt;&gt; filelist.txt)."
-  },
-  {
-    "objectID": "CSC4001-S16-commandline3.html#pipes",
-    "href": "CSC4001-S16-commandline3.html#pipes",
-    "title": "Workshop: the Linux Command Line 3: Processes, pipes, redirection and signals",
-    "section": "Pipes",
-    "text": "Pipes\nPipes are used to send the output of one command as input to another command. The vertical bar | character is used to create a pipe. For instance, if I wanted to list all the files in the current directory using ls, and then send the output to grep to search for any files containing foo, I could type\nls | grep foo\n\n1. Basic Pipes\n\nExercise 1: List all files in the current directory, filter out directories, and sort the results.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep -v / | sort\n\n\n\nExercise 2: List all files, filter out files with a .txt extension, and count the number of such files.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep '\\.txt$' | wc -l\n\n\n\nExercise 3: List all directories, sort them, and print the first 10 lines.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -d */ | sort | head -n 10\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nThere are several ways you could have retrieved the above information: with ls piped to grep, or with find and its flags. Compare commands with your neighbour.\n\n\n\n\n2. Redirecting Output\nRedirection allows you to save the output of a command to a file, or use a file as input to a command. The greatr than &gt; character sends output of a command to a file, e.g., echo \"Hello\" &gt; greeting.txt will send the output of echo \"hello\" to greeting.txt. The &gt; operator overwrites the contents of a file, while the &gt;&gt; operator appends content to the end of a file. E.g., echo \"How are you?\" &gt;&gt; greeting.txt will add “How are you” to the end of greeting.txt. The&lt;operator sends the contents of a file to a command as input. For example,grep hello &lt; greeting.txtwill send the contents ofgreeting.txtto thegrep` command.\n\n\n\n\n\n\nImportant\n\n\n\nIn Unix, everything is a file — standard in, standard out, disks, networks. This means you can’t just redirect data to text files, but write it directly to standard in, collect it directly to standard out, or even interface with peripherals. Piping and redirection are incredibly powerful tools.\n\n\nThere are some special files in Unix-like operating systems:\n\n/dev/null is a file that discrds any data. It can be useful when writing scripts, if you want to hide a command’s output in order to give the user a cleaner output.\n/dev/zero is a file that will provide an endless stream of 0’s when read from.\n/dev/urandom provides an endless stream of randm numbers.\n\nTry head /dev/zero and /head /dev/urandom to see what these files contain.\n\nExercise 4: List all files in the current directory and save the output to a file named files.txt.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l &gt; files.txt\n\n\n\nExercise 5: List all files and filter out directories, then save the output to a file named non_directories.txt.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep -v / &gt; non_directories.txt\n\n\n\nExercise 6: List all files and save the output to a file, appending the results to the same file.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l &gt;&gt; files.txt\n\n\n\nExercise 7: List all files and save the output to a file, overwriting the file if it already exists.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l &gt; files.txt\n\n\n\n\n\n\n3. Combining Pipes and Redirecting\nCombining pipes and redirection lets you chain lots of simple commands together to create more complex operations.\n\nExercise 8: List all files, sort them, and then save the sorted output to a file.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | sort &gt; sorted_files.txt\n\n\n\nExercise 9: List all files, filter out directories, and save the output to a file.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep -v / &gt; non_directories.txt\n\n\n\nExercise 10: List all files, filter out directories, sort the output, and save it to a file.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep -v / | sort &gt; non_directories_sorted.txt\n\n\n\n\n\n\n4. Chaining Commands\nChaining commands allows you to build complex operations by using the output of one command as the input of the next. The Unix philosophy advises that each command should do one thing and do it well, and that inputs and outputs should be streams of text in a predictble format.\n\nExercise 11: List all files, filter out directories, sort the output, and then display the first 5 lines.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep -v / | sort | head -n 5\n\n\n\nExercise 12: List all files, filter out directories, sort the output, and count the number of non-directory files.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep -v / | sort | wc -l\n\n\n\nExercise 13: List all files, filter out directories, sort the output, and save the first 10 lines to a file.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep -v / | sort | head -n 10 &gt; top_10_non_directories.txt\n\n\n\n\n\n\n5. Advanced Pipes and Redirecting\nFor more advanced usage, consider the following:\n\nExercise 14: List all files in a directory, filter out directories, and then use xargs to run chmod on each file.\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep -v / | awk '{print $9}' | xargs chmod 644\n\n\n\nExercise 15: List all files, filter out directories, and use xargs to run cp to copy these files to a different directory.\n\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\nls -l | grep -v / | awk '{print $9}' | xargs cp /path/to/destination/"
-  },
-  {
-    "objectID": "CSC4001-S02W-Logic.html",
-    "href": "CSC4001-S02W-Logic.html",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "",
-    "text": "Adapted from https://cccu-uk.github.io/U10793_FCC_Labs/Logic_Gates/Logic_Gates.html"
-  },
-  {
-    "objectID": "CSC4001-S02W-Logic.html#universal-logic-circuits",
-    "href": "CSC4001-S02W-Logic.html#universal-logic-circuits",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "Universal Logic Circuits",
-    "text": "Universal Logic Circuits\nWe can build any of the fundamental logic gates by chaining only nand or only nor gates together.\nQuestion 1 Create the circuit as shown below.\n\n\n\n\n\nDraw its truth table. Which logic gate does it represent?\nQuestion 2 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 3 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 4 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 5 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents.\n\n\n\n\n\nQuestion 6 By experimenting with the circuit and constructing a truth table, identify which logic gate the following circuit represents."
-  },
-  {
-    "objectID": "CSC4001-S02W-Logic.html#sr-latch-with-only-nand-gates",
-    "href": "CSC4001-S02W-Logic.html#sr-latch-with-only-nand-gates",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "SR Latch with only NAND gates",
-    "text": "SR Latch with only NAND gates\nQuestion 1 Rebuild the below SR latch with only NAND gates.\n\n\n\n\n\n\n\n\n\nQuestion 2 Rebuild the below gated SR latch with only NAND gates."
-  },
-  {
-    "objectID": "CSC4001-S02W-Logic.html#the-clock",
-    "href": "CSC4001-S02W-Logic.html#the-clock",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "The Clock",
-    "text": "The Clock\nUse the clock to generate signals.\nCreate the circuit as shown below:\n\n\n\n\n\nConnecting the clock as input and adding the data graph.\n\nExperiment with different Clock Input Frequencies, what observations can you make? Discuss with the a peer or with the tutor.\nReplace the or gate with a different gate, change the frequency.\nDoes the data graph show a pattern?"
-  },
-  {
-    "objectID": "CSC4001-S02W-Logic.html#half-adder",
-    "href": "CSC4001-S02W-Logic.html#half-adder",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "Half Adder",
-    "text": "Half Adder\nRecreate the half adder circuit as shown below. \nUse the simulator to complete the truth table\n\n\n\nA\nB\nS\nCout\n\n\n\n\n1\n1\n\n\n\n\n1\n0\n\n\n\n\n0\n1\n\n\n\n\n0\n0"
-  },
-  {
-    "objectID": "CSC4001-S02W-Logic.html#full-adder",
-    "href": "CSC4001-S02W-Logic.html#full-adder",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "Full adder",
-    "text": "Full adder\nNow produce a full adder, simulate and complete the truth table.\n\n\n\nA\nB\nCin\nS\nCout\n\n\n\n\n1\n1\n1\n\n\n\n\n1\n1\n0\n\n\n\n\n1\n0\n1\n\n\n\n\n1\n0\n0\n\n\n\n\n1\n1\n1\n\n\n\n\n0\n1\n0\n\n\n\n\n0\n0\n1\n\n\n\n\n0\n0\n0"
-  },
-  {
-    "objectID": "CSC4001-S02W-Logic.html#binary-decoder",
-    "href": "CSC4001-S02W-Logic.html#binary-decoder",
-    "title": "Building With Logic Gates - Worksheet",
-    "section": "Binary Decoder",
-    "text": "Binary Decoder\nResearch and implement a 2-bit binary decoder.\nA binary decoder takes \\(n\\) bits as input and can output one of \\(2^n\\) possible options, depending on the value of the input. For example, in a 2-bit decoder, there are four possible outputs, each corresponding to one of the possible assignments of bits:\n\n\\(00\\)\n\\(01\\)\n\\(10\\)\n\\(11\\)"
   },
   {
     "objectID": "CSC4001-S00-welcome.html#teaching-staff",
