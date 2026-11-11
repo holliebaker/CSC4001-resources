@@ -3822,6 +3822,20 @@
     "text": "Resources\n\nhttps://projectf.io/posts/riscv-cheat-sheet/\nhttps://easyriscv.dram.page/ this was heavily based on that tutorial."
   },
   {
+    "objectID": "CSC4001-S20-game.html#game-theory",
+    "href": "CSC4001-S20-game.html#game-theory",
+    "title": "Game Theory",
+    "section": "Game Theory",
+    "text": "Game Theory\nThe maths thing, not the other one\nMassive thanks to Ed Longford, pro game theorist, for the material!"
+  },
+  {
+    "objectID": "CSC4001-S20-game.html#objectives",
+    "href": "CSC4001-S20-game.html#objectives",
+    "title": "Game Theory",
+    "section": "Objectives",
+    "text": "Objectives\n\nDefine game, player and strategy\nClassify toy problems and real world examples by game type\nCreate payoff matrices for games and use them to analyse strategies"
+  },
+  {
     "objectID": "CSC4001-S20-game.html#what-is-it",
     "href": "CSC4001-S20-game.html#what-is-it",
     "title": "Game Theory",
@@ -3855,13 +3869,6 @@
     "title": "Game Theory",
     "section": "Simultaneous Vs Sequential",
     "text": "Simultaneous Vs Sequential\n\nSimultaneous games are where players all make their move concurrently, or without knowledge of the other player(s) move(s).\nSequential games happen when each player takes turns making moves, and each player knows what the last move was before they need to decide what move they are going to make."
-  },
-  {
-    "objectID": "CSC4001-S20-game.html#these-are-not-individual-game-types",
-    "href": "CSC4001-S20-game.html#these-are-not-individual-game-types",
-    "title": "Game Theory",
-    "section": "These are not individual game types",
-    "text": "These are not individual game types\nMost games are a combination of those three categories.\n\nNoughts and Crosses, Chess, and Go are competitive, zero sum games which are played sequentially.\nSome games switch between different categories: they might start cooperative and then become non-cooperative - for example Diplomacy"
   },
   {
     "objectID": "CSC4001-S20-game.html#information---complete-or-incomplete",
@@ -3903,7 +3910,7 @@
     "href": "CSC4001-S20-game.html#chicken",
     "title": "Game Theory",
     "section": "1. Chicken",
-    "text": "1. Chicken\n\nChicken is a zero sum, non-cooperative, and simultaneous game\nThe original scenario is 2 cars driving at each other and each driver has a choice to swerve or continue driving straight."
+    "text": "1. Chicken\n\n\n\nChicken is a zero sum, non-cooperative, and simultaneous game\nThe original scenario is 2 cars driving at each other and each driver has a choice to swerve or continue driving straight."
   },
   {
     "objectID": "CSC4001-S20-game.html#chicken-payout-matrix",
@@ -3918,13 +3925,6 @@
     "title": "Game Theory",
     "section": "Cold War - a game of nuclear chicken",
     "text": "Cold War - a game of nuclear chicken\n\nAmerican advisors used chicken to determine how to negotiate with the USSR\nCuban Missile Crisis (1962)\n\n8th September Soviet deliver medium range missiles with nuclear warheads capable a striking Washington DC\nMissile sites spotted by U2 spy planes October 19th"
-  },
-  {
-    "objectID": "CSC4001-S20-game.html#todo-this-slide-has-no-text",
-    "href": "CSC4001-S20-game.html#todo-this-slide-has-no-text",
-    "title": "Game Theory",
-    "section": "TODO: this slide has no text",
-    "text": "TODO: this slide has no text"
   },
   {
     "objectID": "CSC4001-S20-game.html#us-came-up-with-6-options",
@@ -3979,8 +3979,8 @@
     "objectID": "CSC4001-S20-game.html#auction-games",
     "href": "CSC4001-S20-game.html#auction-games",
     "title": "Game Theory",
-    "section": "Auction Games",
-    "text": "Auction Games\nAlso known as bidding games\n\nThere are a wide range of auction games, each has a variety of rules, each changing their overall strategy\nMost start off with 2 or more players with a set amount of resources and 1 or more items for each player to bid on to win"
+    "section": "3. Auction Games",
+    "text": "3. Auction Games\nAlso known as bidding games\n\nThere are a wide range of auction games, each has a variety of rules, each changing their overall strategy\nMost start off with 2 or more players with a set amount of resources and 1 or more items for each player to bid on to win"
   },
   {
     "objectID": "CSC4001-S20-game.html#some-auction-types",
@@ -4070,8 +4070,8 @@
     "objectID": "CSC4001-S20-game.html#snowdrift",
     "href": "CSC4001-S20-game.html#snowdrift",
     "title": "Game Theory",
-    "section": "Snowdrift",
-    "text": "Snowdrift\nCooperative, plus sum, simultaneous\nYou are out driving in a car when suddenly an avalanche blocks the road, both in front and behind you.\nYou are stuck and cannot drive around. You are 50 km from the nearest shelter and will die if you stay in your car as temperatures are due to drop sharply overnight\nYour only choice is to clear the snow before you freeze to death…"
+    "section": "4. Snowdrift",
+    "text": "4. Snowdrift\n\n\nCooperative, plus sum, simultaneous\nYou are out driving in a car when suddenly an avalanche blocks the road, both in front and behind you.\nYou are stuck and cannot drive around. You are 50 km from the nearest shelter and will die if you stay in your car as temperatures are due to drop sharply overnight\nYour only choice is to clear the snow before you freeze to death…"
   },
   {
     "objectID": "CSC4001-S20-game.html#shared-costs-and-payouts",
@@ -4109,48 +4109,6 @@
     "text": "Game Strategies\n\nTit for Tat - A player mirrors the actions of the other player.\nTricky Cooperator - A cooperator that will occasionally defect to improve payout.\nTricky Defector - A defector that will occasionally try to trick the other player into cooperating to improve payout.\nTwo Tits for Tat - A player that will defect twice each time the other player defects.\nTit for Tat Grim - A player that will mimic the lowest cooperation level, e.g. if player plays C, C, D, C, C then this strategy will play C, C, D, D, D."
   },
   {
-    "objectID": "CSC4001-S20-game.html#modified-snowdrift",
-    "href": "CSC4001-S20-game.html#modified-snowdrift",
-    "title": "Game Theory",
-    "section": "Modified snowdrift",
-    "text": "Modified snowdrift\n\n\n\n\n\n\n\n\n\n\n\nCooperate Light\nCooperate String\nDefect Light\nDefect Strong\n\n\n\n\nCooperate Strong\n200/200\n225/175\n250/150\n300/100\n\n\nCooperate Light\n175/225\n150/150\n175/125\n200/100\n\n\nDefect Light\n150/250\n125/175\n25/25\n0/25\n\n\nDefect Strong\n100/300\n100/200\n25/0\n0/0"
-  },
-  {
-    "objectID": "CSC4001-S20-game.html#first-experiment",
-    "href": "CSC4001-S20-game.html#first-experiment",
-    "title": "Game Theory",
-    "section": "First experiment",
-    "text": "First experiment\n\nTake each of the major strategies, have them play Prisoner’s Dilemma against every other strategy (repeated 10,000 times for each strategy combination)\nModify those strategies and have them play modified Snowdrift\nRank each strategy by total amount won in these games and compare these rankings"
-  },
-  {
-    "objectID": "CSC4001-S20-game.html#todo-this-slide-has-no-text-1",
-    "href": "CSC4001-S20-game.html#todo-this-slide-has-no-text-1",
-    "title": "Game Theory",
-    "section": "TODO: this slide has no text",
-    "text": "TODO: this slide has no text"
-  },
-  {
-    "objectID": "CSC4001-S20-game.html#nd-game",
-    "href": "CSC4001-S20-game.html#nd-game",
-    "title": "Game Theory",
-    "section": "2nd game",
-    "text": "2nd game\n2 player, plus sum game, simultaneous\n\nEach player gets a choice of investing money into a group, or keeping money for themselves\n\\(\\{10, 0\\}, \\{7, 3\\}, \\{3,7\\}, \\{0,10\\}\\)\nPlayers placed money into a central pot which was given a 10% bonus at the end of the game and split between players"
-  },
-  {
-    "objectID": "CSC4001-S20-game.html#examples",
-    "href": "CSC4001-S20-game.html#examples",
-    "title": "Game Theory",
-    "section": "Examples",
-    "text": "Examples\n\n\n\n\n\n\n\n\n\nPlayer 1 pay in\nPlayer 2 pay in\nTotal Player 1 win\nTotal Player 2 win\n\n\n\n\n10\n10\n11\n11\n\n\n10\n7\n9.35\n12.35\n\n\n10\n3\n7.15\n14.15\n\n\n7\n0\n6.85\n13.85\n\n\n0\n3\n11.65\n8.65"
-  },
-  {
-    "objectID": "CSC4001-S20-game.html#experiment-2",
-    "href": "CSC4001-S20-game.html#experiment-2",
-    "title": "Game Theory",
-    "section": "Experiment 2",
-    "text": "Experiment 2\n\n114 human players, each was asked to play against a different AI strategy until they did not want to play anymore\nStrategies were then ranked by modal (most common) number of plays and and by mean amount of earned money\nNumber of Plays vs a human player comparing number of plays and winnings"
-  },
-  {
     "objectID": "CSC4001-S20-game.html#summery",
     "href": "CSC4001-S20-game.html#summery",
     "title": "Game Theory",
@@ -4183,7 +4141,7 @@
     "href": "CSC4001-S20-game.html#auction-game",
     "title": "Game Theory",
     "section": "Auction game",
-    "text": "Auction game\nTODO: I have no idea how that is meant to be formatted, please fix. thanks.\nRound 1 bidding -\nRound 2 bidding\nRound 3 bidding\n10\n20\n10\n40\n10\n10\n15\n15\n30"
+    "text": "Auction game\n\n\n\n\nBox A\nBox B\nBox C\n\n\n\n\nRound 1\n10\n20\n10\n\n\nRound 2\n40\n10 10\n\n\n\nRound 3\n15\n15\n30"
   },
   {
     "objectID": "CSC4001-S20-game.html#lab-work-1",

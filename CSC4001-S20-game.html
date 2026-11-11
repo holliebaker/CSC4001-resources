@@ -145,11 +145,18 @@ CSC4001: Computer Systems and Architecture
 </div>
 
 </section>
-<section>
-<section id="game-theory" class="title-slide slide level1 center">
-<h1>Game Theory</h1>
+<section id="game-theory" class="slide level2">
+<h2>Game Theory</h2>
 <p>The maths thing, not the other one</p>
 <p>Massive thanks to Ed Longford, pro game theorist, for the material!</p>
+</section>
+<section id="objectives" class="slide level2">
+<h2>Objectives</h2>
+<ul>
+<li>Define game, player and strategy</li>
+<li>Classify toy problems and real world examples by game type</li>
+<li>Create payoff matrices for games and use them to analyse strategies</li>
+</ul>
 </section>
 <section id="what-is-it" class="slide level2">
 <h2>What is it?</h2>
@@ -200,8 +207,9 @@ CSC4001: Computer Systems and Architecture
 <li><p>Sequential games happen when each player takes turns making moves, and each player knows what the last move was before they need to decide what move they are going to make.</p></li>
 </ul>
 </section>
-<section id="these-are-not-individual-game-types" class="slide level2">
-<h2>These are not individual game types</h2>
+<section class="slide level2">
+
+<p>These are not individual game types</p>
 <p>Most games are a combination of those three categories.</p>
 <ul>
 <li><p>Noughts and Crosses, Chess, and Go are competitive, zero sum games which are played sequentially.</p></li>
@@ -256,10 +264,15 @@ CSC4001: Computer Systems and Architecture
 </section>
 <section id="chicken" class="slide level2">
 <h2>1. Chicken</h2>
+<div class="columns">
+<div class="column">
 <ul>
 <li><p>Chicken is a zero sum, non-cooperative, and simultaneous game</p></li>
 <li><p>The original scenario is 2 cars driving at each other and each driver has a choice to swerve or continue driving straight.</p></li>
 </ul>
+</div><div class="column">
+<p><img data-src="./assets/game/01-car-head-on-collission.png" data-figalt="Car crash"></p>
+</div></div>
 </section>
 <section id="chicken-payout-matrix" class="slide level2">
 <h2>Chicken Payout Matrix</h2>
@@ -296,8 +309,22 @@ CSC4001: Computer Systems and Architecture
 </ul></li>
 </ul>
 </section>
-<section id="todo-this-slide-has-no-text" class="slide level2">
-<h2>TODO: this slide has no text</h2>
+<section class="slide level2">
+
+
+<img data-src="./assets/game/02-cuban-missile-crisis-tree.png" data-fig.alt="Cuban missile crisis tree" class="r-stretch"><aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="us-came-up-with-6-options" class="slide level2">
 <h2>US came up with 6 options</h2>
@@ -309,7 +336,7 @@ CSC4001: Computer Systems and Architecture
 <li><p>Secret approach: Offer Castro the choice of splitting with the Soviets or being invaded.</p></li>
 <li><p>Diplomacy: Use diplomatic pressure to get the Soviet Union to remove the missiles.</p></li>
 </ol>
-</section></section>
+</section>
 <section>
 <section id="which-option" class="title-slide slide level1 center">
 <h1>Which option?</h1>
@@ -342,8 +369,8 @@ CSC4001: Computer Systems and Architecture
 <p>Prisoner’s Dilemma is a zero sum, cooperative/non-cooperative, and simultaneous game</p>
 <p>2 prisoners are arrested by the police, placed in separate rooms and given a choice</p>
 <ul>
-<li>Say your partner committed the crime and get set free,</li>
-<li>or say nothing and go to jail</li>
+<li><p>Say your partner committed the crime and get set free,</p></li>
+<li><p>or say nothing and go to jail</p></li>
 </ul>
 </section>
 <section id="prisoners-dilemma-payout-matrix" class="slide level2">
@@ -377,7 +404,7 @@ CSC4001: Computer Systems and Architecture
 <p>Yes, USSR missiles were removed from Cuba, but US missiles were removed from Italy and Turkey as part of the exchange.</p>
 </section>
 <section id="auction-games" class="slide level2">
-<h2>Auction Games</h2>
+<h2>3. Auction Games</h2>
 <p>Also known as bidding games</p>
 <ul>
 <li><p>There are a wide range of auction games, each has a variety of rules, each changing their overall strategy</p></li>
@@ -676,11 +703,16 @@ CSC4001: Computer Systems and Architecture
 </ul>
 </section>
 <section id="snowdrift" class="slide level2">
-<h2>Snowdrift</h2>
+<h2>4. Snowdrift</h2>
+<div class="columns">
+<div class="column">
 <p>Cooperative, plus sum, simultaneous</p>
 <p>You are out driving in a car when suddenly an avalanche blocks the road, both in front and behind you.</p>
 <p>You are stuck and cannot drive around. You are 50 km from the nearest shelter and will die if you stay in your car as temperatures are due to drop sharply overnight</p>
 <p>Your only choice is to clear the snow before you freeze to death…</p>
+</div><div class="column">
+<p><img data-src="./assets/game/05-road-blocked-avalanche.png" data-fig.alt="Road blocked after avalanche"></p>
+</div></div>
 </section>
 <section id="shared-costs-and-payouts" class="slide level2">
 <h2>Shared costs and payouts</h2>
@@ -737,141 +769,6 @@ CSC4001: Computer Systems and Architecture
 <li><p>Tricky Defector - A defector that will occasionally try to trick the other player into cooperating to improve payout.</p></li>
 <li><p>Two Tits for Tat - A player that will defect twice each time the other player defects.</p></li>
 <li><p>Tit for Tat Grim - A player that will mimic the lowest cooperation level, e.g.&nbsp;if player plays C, C, D, C, C then this strategy will play C, C, D, D, D.</p></li>
-</ul>
-</section></section>
-<section>
-<section id="ed-made-his-own-game-well-2-really" class="title-slide slide level1 center">
-<h1>Ed made his own game (well 2 really)</h1>
-
-</section>
-<section id="modified-snowdrift" class="slide level2">
-<h2>Modified snowdrift</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 7%">
-<col style="width: 24%">
-<col style="width: 26%">
-<col style="width: 20%">
-<col style="width: 21%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;"></th>
-<th style="text-align: center;">Cooperate Light</th>
-<th style="text-align: center;">Cooperate String</th>
-<th style="text-align: center;">Defect Light</th>
-<th style="text-align: center;">Defect Strong</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Cooperate Strong</td>
-<td style="text-align: center;">200/200</td>
-<td style="text-align: center;">225/175</td>
-<td style="text-align: center;">250/150</td>
-<td style="text-align: center;">300/100</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Cooperate Light</td>
-<td style="text-align: center;">175/225</td>
-<td style="text-align: center;">150/150</td>
-<td style="text-align: center;">175/125</td>
-<td style="text-align: center;">200/100</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Defect Light</td>
-<td style="text-align: center;">150/250</td>
-<td style="text-align: center;">125/175</td>
-<td style="text-align: center;">25/25</td>
-<td style="text-align: center;">0/25</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Defect Strong</td>
-<td style="text-align: center;">100/300</td>
-<td style="text-align: center;">100/200</td>
-<td style="text-align: center;">25/0</td>
-<td style="text-align: center;">0/0</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="first-experiment" class="slide level2">
-<h2>First experiment</h2>
-<ul>
-<li><p>Take each of the major strategies, have them play Prisoner’s Dilemma against every other strategy (repeated 10,000 times for each strategy combination)</p></li>
-<li><p>Modify those strategies and have them play modified Snowdrift</p></li>
-<li><p>Rank each strategy by total amount won in these games and compare these rankings</p></li>
-</ul>
-</section>
-<section id="todo-this-slide-has-no-text-1" class="slide level2">
-<h2>TODO: this slide has no text</h2>
-</section>
-<section id="nd-game" class="slide level2">
-<h2>2nd game</h2>
-<p>2 player, plus sum game, simultaneous</p>
-<ul>
-<li><p>Each player gets a choice of investing money into a group, or keeping money for themselves</p>
-<p><span class="math inline">\(\{10, 0\}, \{7, 3\}, \{3,7\}, \{0,10\}\)</span></p></li>
-<li><p>Players placed money into a central pot which was given a 10% bonus at the end of the game and split between players</p></li>
-</ul>
-</section>
-<section id="examples" class="slide level2">
-<h2>Examples</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 23%">
-<col style="width: 22%">
-<col style="width: 27%">
-<col style="width: 26%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Player 1 pay in</th>
-<th style="text-align: center;">Player 2 pay in</th>
-<th style="text-align: center;">Total Player 1 win</th>
-<th style="text-align: center;">Total Player 2 win</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">11</td>
-<td style="text-align: center;">11</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">7</td>
-<td style="text-align: center;">9.35</td>
-<td style="text-align: center;">12.35</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">7.15</td>
-<td style="text-align: center;">14.15</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">7</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">6.85</td>
-<td style="text-align: center;">13.85</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">11.65</td>
-<td style="text-align: center;">8.65</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="experiment-2" class="slide level2">
-<h2>Experiment 2</h2>
-<ul>
-<li><p>114 human players, each was asked to play against a different AI strategy until they did not want to play anymore</p></li>
-<li><p>Strategies were then ranked by modal (most common) number of plays and and by mean amount of earned money</p></li>
-<li><p>Number of Plays vs a human player comparing number of plays and winnings</p></li>
 </ul>
 </section>
 <section id="summery" class="slide level2">
@@ -938,19 +835,36 @@ CSC4001: Computer Systems and Architecture
 </section>
 <section id="auction-game" class="slide level2">
 <h2>Auction game</h2>
-<p>TODO: I have no idea how that is meant to be formatted, please fix. thanks.</p>
-<p>Round 1 bidding -</p>
-<p>Round 2 bidding</p>
-<p>Round 3 bidding</p>
-<p>10</p>
-<p>20</p>
-<p>10</p>
-<p>40</p>
-<p>10</p>
-<p>10</p>
-<p>15</p>
-<p>15</p>
-<p>30</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Box A</th>
+<th style="text-align: center;">Box B</th>
+<th style="text-align: center;">Box C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Round 1</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Round 2</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">10 10</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Round 3</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">30</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="lab-work-1" class="slide level2">
 <h2>Lab work</h2>
@@ -1000,7 +914,7 @@ CSC4001: Computer Systems and Architecture
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"\u003ci class=\"fas fa-gear\">\u003c/i>","content":"\u003cul class=\"slide-menu-items\">\n\u003cli class=\"slide-tool-item active\" data-item=\"0\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\">\u003ckbd>f\u003c/kbd> Fullscreen\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"1\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\">\u003ckbd>s\u003c/kbd> Speaker View\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"2\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\">\u003ckbd>o\u003c/kbd> Slide Overview\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"3\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\">\u003ckbd>e\u003c/kbd> PDF Export Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"4\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\">\u003ckbd>r\u003c/kbd> Scroll View Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"5\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\">\u003ckbd>?\u003c/kbd> Keyboard Help\u003c/a>\u003c/li>\n\u003c/ul>"}],"openButton":true,"openButtonLabel":"Slide menu"},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,
