@@ -15,6 +15,12 @@ The maths thing, not the other one
 
 Massive thanks to Ed Longford, pro game theorist, for the material!
 
+## Objectives
+
+- Define game, player and strategy
+- Classify toy problems and real world examples by game type
+- Create payoff matrices for games and use them to analyse strategies
+
 ## What is it?
 
 - Game theory is an area of study within mathematics (used by economists and political scientists) which builds models of human interaction
