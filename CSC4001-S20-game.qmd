@@ -9,6 +9,28 @@ format:
     smaller: true
 ---
 
+## Computing trends
+
+> "There is nothing new in computing, just recurring trends."
+
+- **Individually**, think about the above quote.
+
+  - Other than early time-sharing computers vs cloud computing services, can you think of any other examples of recurring fashions?
+
+  - Are there any completely new trends?
+
+*(5 minutes to think, research and write down some ideas)*
+
+## Computing trends
+
+Discuss with the person sitting next to you
+
+(*5 minutes*)
+
+## Share your thoughts
+
+> "There is nothing new in computing, just recurring trends."
+
 ## Game Theory
 
 The maths thing, not the other one
@@ -97,7 +119,9 @@ Most games are a combination of those three categories.
 
 - Payouts can either be symmetric or asymmetric
 
-## So either players can have the same payout and cost for each action, or different players have different payouts and costs for each action 
+---
+
+Players can either have the same payout and cost for each action, or different players have different payouts and costs for each action 
 
 - Which means that games are not always fair for all players, 
 
