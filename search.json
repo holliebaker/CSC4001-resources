@@ -3822,6 +3822,27 @@
     "text": "Resources\n\nhttps://projectf.io/posts/riscv-cheat-sheet/\nhttps://easyriscv.dram.page/ this was heavily based on that tutorial."
   },
   {
+    "objectID": "CSC4001-S20-game.html#computing-trends",
+    "href": "CSC4001-S20-game.html#computing-trends",
+    "title": "Game Theory",
+    "section": "Computing trends",
+    "text": "Computing trends\n\n“There is nothing new in computing, just recurring trends.”\n\n\nIndividually, think about the above quote.\n\nOther than early time-sharing computers vs cloud computing services, can you think of any other examples of recurring fashions?\nAre there any completely new trends?\n\n\n(5 minutes to think, research and write down some ideas)"
+  },
+  {
+    "objectID": "CSC4001-S20-game.html#computing-trends-1",
+    "href": "CSC4001-S20-game.html#computing-trends-1",
+    "title": "Game Theory",
+    "section": "Computing trends",
+    "text": "Computing trends\nDiscuss with the person sitting next to you\n(5 minutes)"
+  },
+  {
+    "objectID": "CSC4001-S20-game.html#share-your-thoughts",
+    "href": "CSC4001-S20-game.html#share-your-thoughts",
+    "title": "Game Theory",
+    "section": "Share your thoughts",
+    "text": "Share your thoughts\n\n“There is nothing new in computing, just recurring trends.”"
+  },
+  {
     "objectID": "CSC4001-S20-game.html#game-theory",
     "href": "CSC4001-S20-game.html#game-theory",
     "title": "Game Theory",
@@ -3883,13 +3904,6 @@
     "title": "Game Theory",
     "section": "Payouts and Cost",
     "text": "Payouts and Cost\n\nIn games players are awarded a number of points (a payout) for winning the game\nSometimes actions in a game come with a cost of action this means that each action in the game will force the player to use up some resources to perform said action.\nCosts are common in most scenarios, e.g. coming to S&A has a cost of not doing something else more fun!\n\nHey, Ed, are you trying to say my classes are no fun? Actually, don’t answer that, please.\n\nPayouts can either be symmetric or asymmetric"
-  },
-  {
-    "objectID": "CSC4001-S20-game.html#so-either-players-can-have-the-same-payout-and-cost-for-each-action-or-different-players-have-different-payouts-and-costs-for-each-action",
-    "href": "CSC4001-S20-game.html#so-either-players-can-have-the-same-payout-and-cost-for-each-action-or-different-players-have-different-payouts-and-costs-for-each-action",
-    "title": "Game Theory",
-    "section": "So either players can have the same payout and cost for each action, or different players have different payouts and costs for each action",
-    "text": "So either players can have the same payout and cost for each action, or different players have different payouts and costs for each action\n\nWhich means that games are not always fair for all players,\nHovewer, games can be fair while having different costs and payouts. More on that shortly."
   },
   {
     "objectID": "CSC4001-S20-game.html#number-of-plays---1-shot-or-repeated",
