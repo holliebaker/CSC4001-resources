@@ -2454,14 +2454,14 @@
     "href": "CSC4001-S21-Koyash.html#the-games",
     "title": "Koyash!",
     "section": "The games",
-    "text": "The games\n\nThere will be a series of events that happen to both countries. You (as a team) will need to decide the direction of your country.\nThe games are split into 2 phases\n\nStart with a blind bidding game\nFolowed by a series of events that effect the future of your country. \n\ne outcomes of these events will depend on your decisions for the blind bidding game at the beginning. Of the phase\nOne al choice of international partners. The choice in phase 1 will have an impact on political points for phase 2"
+    "text": "The games\n\nSeries of events that happen to both countries. You (as a team) will need to decide the direction of your country.\nSplit into 2 phases: 1. a blind bidding game, 2. a series of events that effect the future of your country. \nOutcomes depend on your decisions for the blind bidding game at the beginning of the phase\nOne additional choice of international partners. The choice in phase 1 will have an impact on political points for phase 2"
   },
   {
-    "objectID": "CSC4001-S21-Koyash.html#nd-bidding",
-    "href": "CSC4001-S21-Koyash.html#nd-bidding",
+    "objectID": "CSC4001-S21-Koyash.html#blind-bidding",
+    "href": "CSC4001-S21-Koyash.html#blind-bidding",
     "title": "Koyash!",
-    "section": "nd Bidding",
-    "text": "nd Bidding\nYou start with 15 points of political power. \nThis power can be spent in the following categories:\n\nEconomy\nMilitary\nSecurity\nWelfare\nEducation\n\nEach category can have a maximum of 10 power spent"
+    "section": "Blind Bidding",
+    "text": "Blind Bidding\nYou start with 15 points of political power. \nThis power can be spent in the following categories:\n\nEconomy\nMilitary\nSecurity\nWelfare\nEducation\n\nEach category can have a maximum of 10 power spent"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#you-decide-how-to-spend-that-power",
@@ -2469,6 +2469,13 @@
     "title": "Koyash!",
     "section": "You decide how to spend that power",
     "text": "You decide how to spend that power\nSome decisions will be locked out by the amount you spend on categories\nIf any category drops below 0 you lose"
+  },
+  {
+    "objectID": "CSC4001-S21-Koyash.html#events",
+    "href": "CSC4001-S21-Koyash.html#events",
+    "title": "Koyash!",
+    "section": "Events",
+    "text": "Events\n\nTODO: copy text from that slide here."
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-1",
@@ -2482,7 +2489,7 @@
     "href": "CSC4001-S21-Koyash.html#refugee-results",
     "title": "Koyash!",
     "section": "Refugee results",
-    "text": "Refugee results\n-1 in Military points\nGet 2 new political power points to spend – force other team to choose option 2\nIf welfare &lt; 5, \n-2 in welfare, education, economy, and security points\n\nGet 1 new political power point to spent\nOtherwise\n-1 welfare\n(successful)  -1 in welfare, education, economy, and security points\n          Get 2 new political power points to spend from cooperation.\n(successful) your country – 1 economy, other country -1 welfare\n           Get 2 new political power points to spend from cooperation."
+    "text": "Refugee results\n-1 in Military points\nGet 2 new political power points to spend – force other team to choose option 2\nIf welfare &lt; 5, \n-2 in welfare, education, economy, and security points\n\nGet 1 new political power point to spent\nOtherwise\n-1 welfare\n(successful)  -1 in welfare, education, economy, and security points\n          Get 2 new political power points to spend from cooperation.\n(successful) your country – 1 economy, other country -1 welfare\n           Get 2 new political power points to spend from cooperation.\n\nTODO: conversion tool didn’t preserve bullet points of numbers. please add back the numbers so outcomes match up with choices on the previous page."
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-2",
@@ -2496,28 +2503,70 @@
     "href": "CSC4001-S21-Koyash.html#cooperation-payout",
     "title": "Koyash!",
     "section": "Cooperation payout ",
-    "text": "Cooperation payout \nKoy/Tia Cooperate Defect\nCooperate +1 econ, -1 sec + 1 PPP / +1 econ, -1 sec + 1 PPP + 2 econ + 2 PPP / +1 econ, -1 sec\nDefect +1 econ, -1 sec / + 2 econ, + 2 PPP -2 econ / -2 econ\nRefugee Bonus round!\nConflict decider\nMilitary x2 of other country -1 Mil, + 2 econ, +2 PPP / - 2 Mil, +1 PPP\nMilitary x1.5 of other country -1 Mil, - 1 econ, + 2 PPP (both)\nMilitary less than 1.5 of other county -2 Mil, -2 econ, + 1 PPP (both)"
+    "text": "Cooperation payout \n\n\n\n\n\n\n\n\nKoy/Tia\nCooperate\nDefect\n\n\n\n\nCooperate\n+1 econ, -1 sec + 1 PPP / +1 econ, -1 sec + 1 PPP\n+ 2 econ + 2 PPP / +1 econ, -1 sec\n\n\nDefect\n+1 econ, -1 sec / + 2 econ, + 2 PPP\n-2 econ / -2 econ"
+  },
+  {
+    "objectID": "CSC4001-S21-Koyash.html#refugee-bonus-round",
+    "href": "CSC4001-S21-Koyash.html#refugee-bonus-round",
+    "title": "Koyash!",
+    "section": "Refugee Bonus round!",
+    "text": "Refugee Bonus round!\n\nTODO: This appeared to have some boxes on it but I’m not sure what they represent?"
+  },
+  {
+    "objectID": "CSC4001-S21-Koyash.html#conflict-decider",
+    "href": "CSC4001-S21-Koyash.html#conflict-decider",
+    "title": "Koyash!",
+    "section": "Conflict decider",
+    "text": "Conflict decider\n\nMilitary x2 of other country -1 Mil, + 2 econ, +2 PPP / - 2 Mil, +1 PPP\nMilitary x1.5 of other country -1 Mil, - 1 econ, + 2 PPP (both)\nMilitary less than 1.5 of other county -2 Mil, -2 econ, + 1 PPP (both)"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-3",
     "href": "CSC4001-S21-Koyash.html#event-3",
     "title": "Koyash!",
     "section": "Event 3",
-    "text": "Event 3\nDisease outbreak in Koyash\nDisease results\nKoyash effects  Tiamat effects\nTiamat decides to fully help -1 welfare, + 1 PPP -1 welfare, + 1 PPP\nTiamat provides some aid -2 welfare, + 1 PPP + 1 PPP\nTiamat refuses all aid -3 welfare, - 1 sec, -1 econ + 2 PPProll dice:2+ disease flows over the boarder – 1 welfare, 4+ major outbreak – 3 welfare, -1 sec, -1 econ\nEvent 4 – Armed militant group in Tiamat\nArmed militant results\nTiamat effects  Koyash effects\nKoyash decides to fully help -1 Mil, -1 sec, + 2 PPP -1 Mil, + 1 PPP\nKoyash provides some aid -2 Mil, -2 sec, + 1 PPP + 1 PPP\nKoyash refuses all aid -3 Mil, - 1 welfare, - 1 sec, -1 econ + 2 PPProll dice: 4+ major attacks – 2 Mil, -1 welfare, -1 sec, -1 econ\nKoyash supports Militants 3 Mil, - 3 sec, - 2 econ Access to new resources + 1 econ, + 2 PPP"
+    "text": "Event 3\nDisease outbreak in Koyash\n\nA virulent disease has broken out in Koyash and threatens to spread into Tiamat\nIf Koyash’s Welfare is &gt; 6 they can control the disease without assistance \nOtherwise, Tiamat needs to decide if they are going to support (high or low) Koyash with their healthcare needs or abandon them to their fates"
+  },
+  {
+    "objectID": "CSC4001-S21-Koyash.html#disease-results",
+    "href": "CSC4001-S21-Koyash.html#disease-results",
+    "title": "Koyash!",
+    "section": "Disease results",
+    "text": "Disease results\n\n\n\n\nKoyash effects\nTiamat effects\n\n\n\n\nTiamat fully helps\n-1 welfare, + 1 PPP\n-1 welfare, + 1 PPP\n\n\nSome aid\n-2 welfare, + 1 PPP\n+ 1 PPP\n\n\nRefuses\n-3 welfare, -1 sec, -1 econ\n+ 2 PPP\n\n\n\nRefuse, for tiamat: roll dice: - 2+ disease flows over the border — 1 welfare, - 4+ major outbreak — 3 welfare, -1 sec, -1 econ"
+  },
+  {
+    "objectID": "CSC4001-S21-Koyash.html#event-4",
+    "href": "CSC4001-S21-Koyash.html#event-4",
+    "title": "Koyash!",
+    "section": "Event 4",
+    "text": "Event 4\nArmed militant group in Tiamat\n\nRiots have broken out in Tiamat, a regional group is unhappy about the lack of representation in Government and has turned violent\nIf Tiamat’s Security is &gt; 6 they can control the riots without assistance \nOtherwise, Koyash needs to decide if they are going to support Tiamat with their militant groups, abandon them to their fates, or support militant groups."
+  },
+  {
+    "objectID": "CSC4001-S21-Koyash.html#armed-militant-results",
+    "href": "CSC4001-S21-Koyash.html#armed-militant-results",
+    "title": "Koyash!",
+    "section": "Armed militant results",
+    "text": "Armed militant results\n\n\n\n\n\n\n\n\n\nTiamat effects\nKoyash effects\n\n\n\n\nKoyash fully help\n-1 Mil, -1 sec, + 2 PPP\n-1 Mil, + 1 PPP\n\n\nSome aid\n-2 Mil, -2 sec, + 1 PPP\n+1 PPP\n\n\nRefuses\n-3 Mil, - 1 welfare, - 1 sec, -1 econ\n+ 2 PPProll dice: 4+ major attacks – 2 Mil, -1 welfare, -1 sec, -1 econ\n\n\nSupports militants\n3 Mil, - 3 sec, - 2 econ\nAccess to new resources + 1 econ, + 2 PPP"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-5",
     "href": "CSC4001-S21-Koyash.html#event-5",
     "title": "Koyash!",
     "section": "Event 5",
+    "text": "Event 5\nResearch Program Joint Research Options\n\nThe Thearchy of Shantia has offered a joint research program with investment into your education system, however there are some strings attached at the funding is being provided by the Maastricht Khaganate\nIf you agree to cooperate with one of these options, costs will be halved."
+  },
+  {
+    "objectID": "CSC4001-S21-Koyash.html#event-5-1",
+    "href": "CSC4001-S21-Koyash.html#event-5-1",
+    "title": "Koyash!",
+    "section": "Event 5",
     "text": "Event 5\nResearch Program Joint Research Options\n\nEnter into research project unilaterally (education score &gt;=6 )\nFull scale reform of education system with universal education for children of all genders until age 18\nEconomic reforms with market liberalisations\nGovernmental reforms with anti corruption methods institutions pushing for democratic reforms\nReject research proposal"
   },
   {
-    "objectID": "CSC4001-S21-Koyash.html#jr-results",
-    "href": "CSC4001-S21-Koyash.html#jr-results",
+    "objectID": "CSC4001-S21-Koyash.html#joint-research-results",
+    "href": "CSC4001-S21-Koyash.html#joint-research-results",
     "title": "Koyash!",
-    "section": "JR results",
-    "text": "JR results"
+    "section": "Joint Research results",
+    "text": "Joint Research results\n\nTODO: please copy text, numbered, from the powerpoint text boxes onto here."
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#end-of-phase-1",
@@ -2527,39 +2576,60 @@
     "text": "End of Phase 1\n\nSo far decisions have been restricted to a series of options. Which should have helped guide you through the ideas of cooperation vs non-cooperation\nAs we enter phase 2, decision making processes will be up to you, do you cooperate or betray?\nThis section will also be more narrative-focussed, as you guide your country through \n\nAnd the scores?  Country with the highest combined score at the end of Phase 2 wins"
   },
   {
+    "objectID": "CSC4001-S21-Koyash.html#phase-2-story",
+    "href": "CSC4001-S21-Koyash.html#phase-2-story",
+    "title": "Koyash!",
+    "section": "Phase 2 story",
+    "text": "Phase 2 story\nYou thought the militant uprising in Tiamat was an isolated event. But rebellion and revolutions have been spreading like wildfire through the Donfia Kingdoms. Formally secular regimes have been replaced by regressive dictatorships.\nLinshia Union has increased its military spending, seeking to disrupt the interests of Thearchy of Shantia by sending older military equipment to support these new regimes."
+  },
+  {
     "objectID": "CSC4001-S21-Koyash.html#event-6",
     "href": "CSC4001-S21-Koyash.html#event-6",
     "title": "Koyash!",
     "section": "Event 6",
-    "text": "Event 6\nChoosing sides Work together or apart – will you seek to cooperate with each other for protection or align yourself with Thearchy of Shantia, Linshia Union, or the Donfia Kingdoms?"
+    "text": "Event 6\nChoosing sides\nWork together or apart – will you seek to cooperate with each other for protection or align yourself with Thearchy of Shantia, Linshia Union, or the Donfia Kingdoms?"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#choosing-sides-results",
     "href": "CSC4001-S21-Koyash.html#choosing-sides-results",
     "title": "Koyash!",
     "section": "Choosing Sides Results",
-    "text": "Choosing Sides Results\nCooperate with each other (both must agree) + 5 PPP\nThearchy of Shantia + 1 Econ, + 1 Welfare, + 1 Edu, - 2 MilIf you have JRP: + 1 PPP\nLinshia Union + 2 Mil, + 1 Econ, + 1 Welfare, - 1 EduIf you have refugees: -2 Sec with protests\nDonfia Kingdoms -3 Edu, + 1 Mil, -2 Econ\nNo cooperation +2 PPP"
+    "text": "Choosing Sides Results\nCooperate with each other (both must agree) + 5 PPP\nThearchy of Shantia + 1 Econ, + 1 Welfare, + 1 Edu, - 2 MilIf you have JRP: + 1 PPP\nLinshia Union + 2 Mil, + 1 Econ, + 1 Welfare, - 1 EduIf you have refugees: -2 Sec with protests\nDonfia Kingdoms -3 Edu, + 1 Mil, -2 Econ\nNo cooperation +2 PPP\n\nTODO please format this nicely, thanks."
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-7",
     "href": "CSC4001-S21-Koyash.html#event-7",
     "title": "Koyash!",
     "section": "Event 7",
-    "text": "Event 7\nAirport Shooting"
+    "text": "Event 7\nAirport Shooting\nKoyash’s international airport was attacked by unknown forces. Several civilians and security officers were killed in the attack.\nDevise a response based on your current scores in each category. \nKoyash – 2 Sec="
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-7-results",
     "href": "CSC4001-S21-Koyash.html#event-7-results",
     "title": "Koyash!",
     "section": "Event 7 Results",
-    "text": "Event 7 Results\nEvent 8 - Thearchy of Shantia invades Dofnia Kingdoms\nKoyash wasn’t the only country to be attacked. Multiple attacks happened across the Maastricht Khaganate, leading the Thearchy of Shantia to launch an invasion of several Dofnia Kingdoms.\nDevise a response based on your stats and which side you chose previously. \nOutcomes\nAligned with Dofina\nJoin war –2 mil, econ, sec, + 3 PP\nSupport indirect –1 econ, sec. + 1PP\nIgnore  - + 2 PP\nDefect and join Maastrict - + 3 PP\nAligned with Maastrict\nSupport + 1 mil, + 2 PP\nDon’t support – 2 mil, - 1 edu, -1 sec\nAligned Linshia Union\nSupport indirectly –1 econ, sec. + 1PP\nDon’t support - -1mil\nAligned to each other\nJoin war with Maastrict –2 mil, - 2 econ + 3 PP\nJoin war with Dofina  - 4 mil, - 2 econ + 5 PP"
+    "text": "Event 7 Results\n\nAny act in isolation leads to –2 in that category as resources are expended.  Gain + 1 PPP\nIf the action is done jointly –1 to that category and + 2 PPP"
+  },
+  {
+    "objectID": "CSC4001-S21-Koyash.html#event-8",
+    "href": "CSC4001-S21-Koyash.html#event-8",
+    "title": "Koyash!",
+    "section": "Event 8",
+    "text": "Event 8\nThearchy of Shantia invades Dofnia Kingdoms\nKoyash wasn’t the only country to be attacked. Multiple attacks happened across the Maastricht Khaganate, leading the Thearchy of Shantia to launch an invasion of several Dofnia Kingdoms.\nDevise a response based on your stats and which side you chose previously."
+  },
+  {
+    "objectID": "CSC4001-S21-Koyash.html#outcomes",
+    "href": "CSC4001-S21-Koyash.html#outcomes",
+    "title": "Koyash!",
+    "section": "Outcomes",
+    "text": "Outcomes\nAligned with Dofina\nJoin war –2 mil, econ, sec, + 3 PP\nSupport indirect –1 econ, sec. + 1PP\nIgnore  - + 2 PP\nDefect and join Maastrict - + 3 PP\nAligned with Maastrict\nSupport + 1 mil, + 2 PP\nDon’t support – 2 mil, - 1 edu, -1 sec\nAligned Linshia Union\nSupport indirectly –1 econ, sec. + 1PP\nDon’t support - -1mil\nAligned to each other\nJoin war with Maastrict –2 mil, - 2 econ + 3 PP\nJoin war with Dofina  - 4 mil, - 2 econ + 5 PP"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-9",
     "href": "CSC4001-S21-Koyash.html#event-9",
     "title": "Koyash!",
     "section": "Event 9",
-    "text": "Event 9\nEarthquake"
+    "text": "Event 9\nEarthquake\nKingdom of Tiamat suffers a strength 9 earthquake, causing 2 major cities to collapse \nTiamat – 2 Econ"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#earthquake-response",
@@ -2573,7 +2643,14 @@
     "href": "CSC4001-S21-Koyash.html#event-10",
     "title": "Koyash!",
     "section": "Event 10",
-    "text": "Event 10\n** Military couperation attempt in both countries**\n\nMilitary officers are unhappy with the direction of your Government’s actions, calling for a return to the Megiddoin Empire.\nThe attack appears coordinated\nThey have taken control of a major bridge in the capital city of each country and troops are heading towards the governmental buildings.\n\nIf education &gt; 6 AND welfare &gt; 6 the coup attempt will automatically fail as the military won’t be able to persuade the population to join its revolt\nOtherwise both countries lose – 2 sec and – 2 Mil"
+    "text": "Event 10\n-Military couperation attempt in both countries\nMilitary officers are unhappy with the direction of your Government’s actions, calling for a return to the Megiddoin Empire. The attack appears to be coordinated with attackers taking control of a major bridge in the capital city of each country and troops are heading towards the governmental buildings.\n\nIf education &gt; 6 AND welfare &gt; 6 the coup attempt will automatically fail as the military won’t be able to persuade the population to join its revolt\nOtherwise both countries lose – 2 sec and – 2 Mil"
+  },
+  {
+    "objectID": "CSC4001-S21-Koyash.html#coup-results",
+    "href": "CSC4001-S21-Koyash.html#coup-results",
+    "title": "Koyash!",
+    "section": "Coup Results",
+    "text": "Coup Results\nKoy/Tia Cooperate Defect\nCooperate +1 Mil, + 1 PPP / +1 Mil, + 1 PPP + 2 Mil + 2 PPP / -2 Mil, -1 sec\nDefect -2 Mil/ + 2 Mil, + 2 PPP -2 Mil, -1 Edu, - 2 Econ / -2 Mil, -1 Edu, - 2 Econ"
   },
   {
     "objectID": "CSC4001-S02W-Logic.html",

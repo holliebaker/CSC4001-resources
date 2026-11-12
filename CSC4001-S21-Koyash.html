@@ -203,18 +203,14 @@ CSC4001: Computer Systems and Architecture
 <section id="the-games" class="slide level2">
 <h2>The games</h2>
 <ul>
-<li><p>There will be a series of events that happen to both countries. <strong>You</strong> (as a team) will need to decide the direction of your country.</p></li>
-<li><p>The games are split into 2 phases</p>
-<ul>
-<li><p>Start with a blind bidding game</p></li>
-<li><p>Folowed by a series of events that effect the future of your country.&nbsp;</p></li>
-</ul></li>
-<li><p>e outcomes of these events will depend on your decisions for the blind bidding game at the beginning. Of the phase</p></li>
-<li><p>One al choice of international partners. The choice in phase 1 will have an impact on political points for phase 2&nbsp;</p></li>
+<li><p>Series of events that happen to both countries. <strong>You</strong> (as a team) will need to decide the direction of your country.</p></li>
+<li><p>Split into 2 phases: 1. a blind bidding game, 2. a series of events that effect the future of your country.&nbsp;</p></li>
+<li><p>Outcomes depend on your decisions for the blind bidding game at the beginning of the phase</p></li>
+<li><p>One additional choice of international partners. The choice in phase 1 will have an impact on political points for phase 2&nbsp;</p></li>
 </ul>
 </section>
-<section id="nd-bidding" class="slide level2">
-<h2>nd Bidding</h2>
+<section id="blind-bidding" class="slide level2">
+<h2>Blind Bidding</h2>
 <p>You start with <strong>15 points</strong> of political power.&nbsp;</p>
 <p>This power can be spent in the following categories:</p>
 <ul>
@@ -230,13 +226,24 @@ CSC4001: Computer Systems and Architecture
 <h2>You decide how to spend that power</h2>
 <p>Some decisions will be locked out by the amount you spend on categories</p>
 <p>If any&nbsp;category drops below 0&nbsp;you lose</p>
-</section></section>
-<section>
-<section id="events" class="title-slide slide level1 center">
-<h1>Events</h1>
-
 </section>
-<section id="event-1" class="slide level2">
+<section id="events" class="slide level2">
+<h2>Events</h2>
+<aside class="notes">
+<p>TODO: copy text from that slide here.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="event-1" class="slide level2 smaller">
 <h2>Event 1</h2>
 <p><strong>Linshia Union has attacked our neighbouring Donfia Kingdom, Refugees are heading towards our boarders, what do you do?</strong></p>
 <ol type="1">
@@ -246,7 +253,7 @@ CSC4001: Computer Systems and Architecture
 <li><p>Negotiate with other country (Koyash/Tiamat) for them to take all the refugees in exchange for some economic support</p></li>
 </ol>
 </section>
-<section id="refugee-results" class="slide level2">
+<section id="refugee-results" class="slide level2 smaller">
 <h2>Refugee results</h2>
 <p>-1 in Military points</p>
 <p>Get 2 new political power points to spend – force other team to choose option 2</p>
@@ -260,6 +267,19 @@ Get 1 new political power point to spent</code></pre>
 <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Get 2 new political power points to spend from cooperation.</p>
 <p>(successful) your country – 1 economy, other country -1 welfare</p>
 <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Get 2 new political power points to spend from cooperation.</p>
+<aside class="notes">
+<p>TODO: conversion tool didn’t preserve bullet points of numbers. please add back the numbers so outcomes match up with choices on the previous page.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="event-2" class="slide level2">
 <h2>Event 2</h2>
@@ -272,32 +292,153 @@ Get 1 new political power point to spent</code></pre>
 </section>
 <section id="cooperation-payout" class="slide level2">
 <h2>Cooperation payout&nbsp;</h2>
-<p>Koy/Tia Cooperate Defect</p>
-<p>Cooperate +1 econ, -1 sec + 1 PPP / +1 econ, -1 sec + 1 PPP + 2 econ + 2 PPP / +1 econ, -1 sec</p>
-<p>Defect +1 econ, -1 sec / + 2 econ, + 2 PPP -2 econ / -2 econ</p>
-<p>Refugee Bonus round!</p>
-<p>Conflict decider</p>
-<p>Military x2 of other country -1 Mil, + 2 econ, +2 PPP / - 2 Mil, +1 PPP</p>
-<p>Military x1.5 of other country -1 Mil, - 1 econ, + 2 PPP (both)</p>
-<p>Military less than 1.5 of other county -2 Mil, -2 econ, + 1 PPP (both)</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 39%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Koy/Tia</th>
+<th style="text-align: center;">Cooperate</th>
+<th style="text-align: center;">Defect</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Cooperate</td>
+<td style="text-align: center;">+1 econ, -1 sec + 1 PPP / +1 econ, -1 sec + 1 PPP</td>
+<td style="text-align: center;">+ 2 econ + 2 PPP / +1 econ, -1 sec</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Defect</td>
+<td style="text-align: center;">+1 econ, -1 sec / + 2 econ, + 2 PPP</td>
+<td style="text-align: center;">-2 econ / -2 econ</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="refugee-bonus-round" class="slide level2">
+<h2>Refugee Bonus round!</h2>
+<aside class="notes">
+<p>TODO: This appeared to have some boxes on it but I’m not sure what they represent?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="conflict-decider" class="slide level2">
+<h2>Conflict decider</h2>
+<ul>
+<li><p>Military x2 of other country -1 Mil, + 2 econ, +2 PPP / - 2 Mil, +1 PPP</p></li>
+<li><p>Military x1.5 of other country -1 Mil, - 1 econ, + 2 PPP (both)</p></li>
+<li><p>Military less than 1.5 of other county -2 Mil, -2 econ, + 1 PPP (both)</p></li>
+</ul>
 </section>
 <section id="event-3" class="slide level2">
 <h2>Event 3</h2>
 <p><strong>Disease outbreak in Koyash</strong></p>
-<p>Disease results</p>
-<pre><code>Koyash effects  Tiamat effects</code></pre>
-<p>Tiamat decides to fully help -1 welfare, + 1 PPP -1 welfare, + 1 PPP</p>
-<p>Tiamat provides some aid -2 welfare, + 1 PPP + 1 PPP</p>
-<p>Tiamat refuses all aid -3 welfare, - 1 sec, -1 econ + 2 PPProll dice:2+ disease flows over the boarder – 1 welfare, 4+ major outbreak – 3 welfare, -1 sec, -1 econ</p>
-<p>Event 4 – Armed militant group in Tiamat</p>
-<p>Armed militant results</p>
-<pre><code>Tiamat effects  Koyash effects</code></pre>
-<p>Koyash decides to fully help -1 Mil, -1 sec, + 2 PPP -1 Mil, + 1 PPP</p>
-<p>Koyash provides some aid -2 Mil, -2 sec, + 1 PPP + 1 PPP</p>
-<p>Koyash refuses all aid -3 Mil, - 1 welfare, - 1 sec, -1 econ + 2 PPProll dice: 4+ major attacks – 2 Mil, -1 welfare, -1 sec, -1 econ</p>
-<p>Koyash supports Militants 3 Mil, - 3 sec, - 2 econ Access to new resources + 1 econ, + 2 PPP</p>
+<ul>
+<li>A virulent disease has broken out in Koyash and threatens to spread into Tiamat</li>
+<li>If Koyash’s Welfare is &gt; 6 they can control the disease without assistance&nbsp;</li>
+<li>Otherwise, Tiamat needs to decide if they are going to support (high or low)&nbsp;Koyash with their healthcare needs or abandon them to their fates</li>
+</ul>
+</section>
+<section id="disease-results" class="slide level2">
+<h2>Disease results</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Koyash effects</th>
+<th style="text-align: center;">Tiamat effects</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Tiamat fully helps</td>
+<td style="text-align: center;">-1 welfare, + 1 PPP</td>
+<td style="text-align: center;">-1 welfare, + 1 PPP</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Some aid</td>
+<td style="text-align: center;">-2 welfare, + 1 PPP</td>
+<td style="text-align: center;">+ 1 PPP</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Refuses</td>
+<td style="text-align: center;">-3 welfare, -1 sec, -1 econ</td>
+<td style="text-align: center;">+ 2 PPP</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Refuse, for tiamat</strong>: roll dice: - 2+ disease flows over the border — 1 welfare, - 4+ major outbreak — 3 welfare, -1 sec, -1 econ</p>
+</section>
+<section id="event-4" class="slide level2">
+<h2>Event 4</h2>
+<p><strong>Armed militant group in Tiamat</strong></p>
+<ul>
+<li>Riots have broken out in Tiamat, a regional group is unhappy about the lack of representation in Government and has turned violent</li>
+<li>If&nbsp;Tiamat’s Security is &gt; 6 they can control the riots without assistance&nbsp;</li>
+<li>Otherwise, Koyash needs to decide if they are going to support&nbsp;Tiamat with their&nbsp;militant groups, abandon them to their fates, or support militant groups.</li>
+</ul>
+</section>
+<section id="armed-militant-results" class="slide level2">
+<h2>Armed militant results</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 43%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Tiamat effects</th>
+<th style="text-align: center;">Koyash effects</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Koyash fully help</td>
+<td style="text-align: center;">-1 Mil, -1 sec, + 2 PPP</td>
+<td style="text-align: center;">-1 Mil, + 1 PPP</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Some aid</td>
+<td style="text-align: center;">-2 Mil, -2 sec, + 1 PPP</td>
+<td style="text-align: center;">+1 PPP</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Refuses</td>
+<td style="text-align: center;">-3 Mil, - 1 welfare, - 1 sec, -1 econ</td>
+<td style="text-align: center;">+ 2 PPProll dice: 4+ major attacks – 2 Mil, -1 welfare, -1 sec, -1 econ</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Supports militants</td>
+<td style="text-align: center;">3 Mil, - 3 sec, - 2 econ</td>
+<td style="text-align: center;">Access to new resources + 1 econ, + 2 PPP</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="event-5" class="slide level2">
+<h2>Event 5</h2>
+<p><strong>Research Program</strong> Joint Research Options</p>
+<ul>
+<li><p>The Thearchy of&nbsp;Shantia has offered a joint research program with investment into your education system, however there are some strings attached at the funding is being provided by the&nbsp;Maastricht Khaganate</p></li>
+<li><p>If you agree to cooperate with one of these options, costs will be halved.</p></li>
+</ul>
+</section>
+<section id="event-5-1" class="slide level2">
 <h2>Event 5</h2>
 <p><strong>Research Program</strong> Joint Research Options</p>
 <ol type="1">
@@ -308,8 +449,21 @@ Get 1 new political power point to spent</code></pre>
 <li><p>Reject research proposal&nbsp;</p></li>
 </ol>
 </section>
-<section id="jr-results" class="slide level2">
-<h2>JR results</h2>
+<section id="joint-research-results" class="slide level2">
+<h2>Joint Research results</h2>
+<aside class="notes">
+<p>TODO: please copy text, numbered, from the powerpoint text boxes onto here.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="end-of-phase-1" class="slide level2">
 <h2>End of Phase 1</h2>
@@ -323,17 +477,15 @@ Get 1 new political power point to spent</code></pre>
 <section class="slide level2">
 
 </section>
-<section class="slide level2">
-
-</section></section>
-<section>
-<section id="phase-2-story" class="title-slide slide level1 center">
-<h1>Phase 2 story</h1>
-
+<section id="phase-2-story" class="slide level2 smaller">
+<h2>Phase 2 story</h2>
+<p>You thought the militant uprising in Tiamat was an isolated event. But rebellion and revolutions have been spreading like wildfire through the Donfia Kingdoms. Formally secular regimes have been replaced by regressive dictatorships.</p>
+<p>Linshia Union has increased its military spending, seeking to disrupt the interests of&nbsp;Thearchy of&nbsp;Shantia by sending older military equipment to support these new regimes.&nbsp;</p>
 </section>
 <section id="event-6" class="slide level2">
 <h2>Event 6</h2>
-<p><strong>Choosing sides</strong> Work together or apart – will you seek to cooperate with each other for protection or align yourself with&nbsp;Thearchy of Shantia, Linshia Union, or the Donfia Kingdoms?&nbsp;</p>
+<p><strong>Choosing sides</strong></p>
+<p>Work together or apart – will you seek to cooperate with each other for protection or align yourself with&nbsp;Thearchy of Shantia, Linshia Union, or the Donfia Kingdoms?&nbsp;</p>
 </section>
 <section id="choosing-sides-results" class="slide level2">
 <h2>Choosing Sides Results</h2>
@@ -342,17 +494,42 @@ Get 1 new political power point to spent</code></pre>
 <p>Linshia Union + 2 Mil, + 1 Econ, + 1 Welfare, - 1 EduIf you have refugees: -2 Sec with protests</p>
 <p>Donfia Kingdoms -3 Edu, + 1 Mil, -2 Econ</p>
 <p>No cooperation +2 PPP</p>
+<aside class="notes">
+<p>TODO please format this nicely, thanks.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="event-7" class="slide level2">
 <h2>Event 7</h2>
 <p><strong>Airport Shooting</strong></p>
+<p>Koyash’s international airport was attacked by unknown forces. Several civilians and security&nbsp;officers were killed in the attack.</p>
+<p>Devise a response based on your current scores in each category.&nbsp;</p>
+<p><strong>Koyash – 2 Sec=</strong></p>
 </section>
 <section id="event-7-results" class="slide level2">
 <h2>Event 7 Results</h2>
-<p>Event 8 -&nbsp;Thearchy of Shantia invades Dofnia Kingdoms</p>
+<ul>
+<li>Any act in isolation leads to –2 in that category as resources are expended.&nbsp; Gain + 1 PPP</li>
+<li>If the action is done jointly –1 to that category and + 2 PPP</li>
+</ul>
+</section>
+<section id="event-8" class="slide level2">
+<h2>Event 8</h2>
+<p><strong>Thearchy of Shantia invades Dofnia Kingdoms</strong></p>
 <p>Koyash wasn’t the only country to be attacked. Multiple attacks happened across the Maastricht Khaganate, leading the Thearchy of Shantia to launch an invasion of several Dofnia Kingdoms.</p>
 <p>Devise a response based on your stats and which side you chose previously.&nbsp;</p>
-<p>Outcomes</p>
+</section>
+<section id="outcomes" class="slide level2 smaller">
+<h2>Outcomes</h2>
 <p>Aligned with Dofina</p>
 <p>Join war –2 mil, econ, sec, + 3 PP</p>
 <p>Support indirect –1 econ, sec.&nbsp;+ 1PP</p>
@@ -371,6 +548,8 @@ Get 1 new political power point to spent</code></pre>
 <section id="event-9" class="slide level2">
 <h2>Event 9</h2>
 <p><strong>Earthquake</strong></p>
+<p>Kingdom of Tiamat suffers a strength 9 earthquake, causing 2 major cities to collapse&nbsp;</p>
+<p><strong>Tiamat – 2 Econ</strong></p>
 </section>
 <section id="earthquake-response" class="slide level2">
 <h2>Earthquake response</h2>
@@ -380,22 +559,19 @@ Get 1 new political power point to spent</code></pre>
 </section>
 <section id="event-10" class="slide level2">
 <h2>Event 10</h2>
-<p>** Military couperation attempt in both countries**</p>
+<p>-<strong>Military couperation attempt in both countries</strong></p>
+<p>Military officers are unhappy with the direction of your Government’s actions, calling for a return to the&nbsp;Megiddoin&nbsp;Empire. The attack appears to be coordinated with attackers taking control of a major bridge in the capital city of each country and troops are heading towards the governmental buildings.</p>
 <ul>
-<li><p>Military officers are unhappy with the direction of your Government’s actions, calling for a return to the&nbsp;Megiddoin&nbsp;Empire.</p></li>
-<li><p>The attack appears coordinated</p></li>
-<li><p>They have taken control of a major bridge in the capital city of each country and troops are heading towards the governmental buildings.</p></li>
+<li><p>If <code>education &gt; 6 AND welfare &gt; 6</code> the coup attempt will automatically fail as the military won’t be able to persuade the population to join its revolt</p></li>
+<li><p>Otherwise both countries lose – 2 sec and – 2 Mil</p></li>
 </ul>
-<p><strong>If <code>education &gt; 6 AND welfare &gt; 6</code> the coup attempt will automatically fail as the military won’t be able to persuade the population to join its revolt</strong></p>
-<p><strong>Otherwise both countries lose – 2 sec and – 2 Mil</strong></p>
-</section></section>
-<section id="co-up-results" class="title-slide slide level1 center">
-<h1>Co-up Results</h1>
+</section>
+<section id="coup-results" class="slide level2">
+<h2>Coup Results</h2>
 <p>Koy/Tia Cooperate Defect</p>
 <p>Cooperate +1 Mil, + 1 PPP / +1 Mil, + 1 PPP + 2 Mil + 2 PPP / -2 Mil, -1 sec</p>
 <p>Defect -2 Mil/ + 2 Mil, + 2 PPP -2 Mil, -1 Edu, - 2 Econ / -2 Mil, -1 Edu, - 2 Econ</p>
-</section>
-
+</section></section>
 <section id="who-won" class="title-slide slide level1 center">
 <h1>Who Won?</h1>
 
