@@ -4,7 +4,7 @@ author: "CSC4001: Computer Systems and Architecture"
 date: ""
 format:
   revealjs:
-    theme: simple
+    theme: moon
     css: ./style.css
 ---
 
@@ -14,117 +14,124 @@ Game theory through role play
 
 Many thanks to Ed Longford for this excellent presentation!
 
-This slide has no text.
+---
 
-Republic of Koyash/Kingdom of Tiamat
+
+## Republic of Koyash/Kingdom of Tiamat
 
 The death of empires leaves chaos in their wake. The downfall of the Megiddoin Empire was no different
 
+## Republic of Koyash/Kingdom of Tiamat
+
 Foolish overseas military adventure lead to the collapse of the government and a decade long civil war
+
+## Republic of Koyash/Kingdom of Tiamat
 
 The international community stepped in and carved the dying empire into new countries following geographic lines. 
 
+## Republic of Koyash/Kingdom of Tiamat
+
 It falls to you, the new government, to lead your country. But will you achieve greatness or repeat the mistakes of your ancestors?
 
-Republic of Koyash/Kingdom of Tiamat
+# Republic of Koyash/Kingdom of Tiamat
 
-Both countries are 
+Both countries...
 
-Economically poor
+- are economically poor
 
-Low levels of female empowerment
+- have Low levels of female empowerment
 
-Outdated educational facilities
+- have Outdated educational facilities
 
-Lack of democratic principals
+- Lack democratic principals
 
-Highly discriminatory laws based on ethnic and religious identity. 
+- have Highly discriminatory laws based on ethnic and religious identity. 
 
-Your Neighbours 
+## Your Neighbours: Linshia Union
 
-Linshia Union
+- Atheistic autocracy, centered around  a strong leader and cabinet that controls most of the state. 
 
-Atheistic autocracy, centered around  a strong leader and cabinet that controls most of the state. 
+- While controlled at home they offer military and economic assistance to other countries with no additional upfront requirements
 
-While controlled at home they offer military and economic assistance to other countries with no additional upfront requirements
+## Your neighbours: Thearchy of Shantia
 
-Thearchy of Shantia
+- Part of the Maastricht Khaganate – a group of states that have agreed to sacrifice some of the autonomy in order to cooperate on common economic and security goals
 
-Part of the Maastricht Khaganate – a group of states that have agreed to sacrifice some of the autonomy in order to cooperate on common economic and security goals
+- Secular and progressive
 
-Secular and progressive
+- Offer significant economic and social aid, but in exchange for systematic reforms to align your politics with theirs
 
-Offer significant economic and social aid, but in exchange for systematic reforms to align your politics with theirs
+## Your neighbours: Donfia Kingdoms 
 
-Donfia Kingdoms 
+- A collection of tribal kingdoms, mostly secular and moving towards The Maastricht Khaganate for economic growth and cultural standards
 
-A collection of tribal kingdoms, mostly secular and moving towards The Maastricht Khaganate for economic growth and cultural standards
+- Represents multiple ethnic identities that became independent when the Megiddoin Empire collapsed
 
-Represents multiple ethnic identities that became independent when the Megiddoin Empire collapsed
+## The games
 
-The games
+- There will be a series of events that happen to both countries. **You** (as a team) will need to decide the direction of your country. 
 
-There will be a series of events that happen to both countries, you as a group will need to decide the direction of your country. 
+- The games are split into 2 phases
 
-The games are split into 2 phases
+  - Start with a blind bidding game
 
-These start with a blind bidding game
+  - Folowed by a series of events that effect the future of your country. 
 
-This is followed by a series of events that effect the future of your country. 
+- e outcomes of these events will depend on your decisions for the blind bidding game at the beginning. Of the phase
 
-The outcomes of these events will depend on your decisions for the blind bidding game at the beginning. Of the phase
+- One al choice of international partners. The choice in phase 1 will have an impact on political points for phase 2 
 
-There is 1 additional choice of international partners. The choice in phase 1 will have an impact on political points for phase 2 
+## nd Bidding
 
-Blind Bidding
-
-You start with 15 points of political power. 
+You start with **15 points** of political power. 
 
 This power can be spent in the following categories:
 
-Economy
+- Economy
 
-Military
+- Military
 
-Security
+- Security
 
-Welfare
+- Welfare
 
-Education
+- Education
 
-Each category can have a maximum of 10 power spent
+Each category can have a **maximum of 10 power** spent
 
-You will need to decide as a group how to spend that power
+## You decide how to spend that power
 
 Some decisions will be locked out by the amount you spend on categories
 
 If any category drops below 0 you lose
 
-Events
+# Events
 
-Event 1 – Linshia Union has attacked our neighbouring Donfia Kingdom, Refugees are heading towards our boarders, what do you do?
+## Event 1
 
-Place the military on the boarder (military score >= 6 points) This forces refugees to go to the other country (Koyash/Tiamat) 
+**Linshia Union has attacked our neighbouring Donfia Kingdom, Refugees are heading towards our boarders, what do you do?**
 
-Allow all the refugees into your country (large impacts on welfare, education, economy, and security) – welfare spending will influence the result.
+1. Place the military on the boarder (military score >= 6 points) This forces refugees to go to the other country (Koyash/Tiamat) 
 
-Negotiate with other country (Koyash/Tiamat) to take half the refugees each (lower impact on welfare, education, economy, and security) 
+2. Allow all the refugees into your country (large impacts on welfare, education, economy, and security) – welfare spending will influence the result.
 
-Negotiate with other country (Koyash/Tiamat) for them to take all the refugees in exchange for some economic support
+3. Negotiate with other country (Koyash/Tiamat) to take half the refugees each (lower impact on welfare, education, economy, and security) 
 
-Refugee results
+4. Negotiate with other country (Koyash/Tiamat) for them to take all the refugees in exchange for some economic support
+
+## Refugee results
 
 -1 in Military points
 
 Get 2 new political power points to spend – force other team to choose option 2
 
-IF welfare < 5, 
+If welfare < 5, 
 
 	-2 in welfare, education, economy, and security points
 
 	Get 1 new political power point to spent
 
-Else
+Otherwise
 
 	-1 welfare
 
@@ -136,15 +143,17 @@ Else
 
            Get 2 new political power points to spend from cooperation.
 
-Event 2 – Oil has been discovered, but the deposit sits in the middle of both Koyash's and Tiamat's EEZ
+## Event 2
 
-Try to take all the resources for yourself (will lead to either a conflict with other country if they also choose this option)
+**Oil has been discovered, but the deposit sits in the middle of both Koyash's and Tiamat's EEZ**
 
-Seek to cooperate with the other country and share the construction costs and profits equally
+1. Try to take all the resources for yourself (will lead to either a conflict with other country if they also choose this option)
 
-Seek cooperation but only to share profits, only apply minimal input into the construction costs
+2. Seek to cooperate with the other country and share the construction costs and profits equally
 
-Cooperation payout 
+3. Seek cooperation but only to share profits, only apply minimal input into the construction costs
+
+## Cooperation payout 
 
 Koy/Tia	Cooperate	Defect
 
@@ -162,7 +171,9 @@ Military x1.5 of other country	-1 Mil, - 1 econ, + 2 PPP (both)
 
 Military less than 1.5 of other county	-2 Mil, -2 econ, + 1 PPP (both)
 
-Event 3 – Disease outbreak in Koyash 
+## Event 3
+
+**Disease outbreak in Koyash**
 
 Disease results
 
@@ -188,41 +199,43 @@ Koyash refuses all aid	-3 Mil, - 1 welfare, - 1 sec, -1 econ	+ 2 PPProll dice: 4
 
 Koyash supports Militants	3 Mil, - 3 sec, - 2 econ	Access to new resources + 1 econ, + 2 PPP
 
-Event 5 – Reseach Program
+## Event 5
 
-Joint Reseach Options
+**Research Program** Joint Research Options
 
-Enter into research project unilaterally (education score >=6 )
+1. Enter into research project unilaterally (education score >=6 )
 
-Full scale reform of education system with universal education for children of all genders until age 18
+2. Full scale reform of education system with universal education for children of all genders until age 18
 
-Economic reforms with market liberalisations
+3. Economic reforms with market liberalisations
 
-Governmental reforms with anti corruption methods institutions pushing for democratic reforms 
+4. Governmental reforms with anti corruption methods institutions pushing for democratic reforms 
 
-Reject research proposal 
+5. Reject research proposal 
 
-JR results
+## JR results
 
-End of Phase 1
+## End of Phase 1
 
-So far decisions have been restricted to a series of options. Which should have helped guide you through the ideas of cooperation vs non-cooperation
+- So far decisions have been restricted to a series of options. Which should have helped guide you through the ideas of cooperation vs non-cooperation
 
-As we enter phase 2, decision making processes will be up to you, do you cooperate or betray?
+- As we enter phase 2, decision making processes will be up to you, do you cooperate or betray?
 
-This section will also be more narrative focus, as you guide your country through 
+- This section will also be more narrative-focussed, as you guide your country through 
 
-And the scores?  Country with the highest combined score at the end of Phase 2 wins
+**And the scores?  Country with the highest combined score at the end of Phase 2 wins**
 
-This slide has no text.
+---
 
-Phase 2 story
+---
 
-Event 6 - Choosing sides
+# Phase 2 story
 
-Work together or apart – will you seek to cooperate with each other for protection or align yourself with Thearchy of Shantia, Linshia Union, or the Donfia Kingdoms? 
+## Event 6 
 
-Choosing Sides Results
+**Choosing sides** Work together or apart – will you seek to cooperate with each other for protection or align yourself with Thearchy of Shantia, Linshia Union, or the Donfia Kingdoms? 
+
+## Choosing Sides Results
 
 Cooperate with each other (both must agree)	+ 5 PPP
 
@@ -234,9 +247,11 @@ Donfia Kingdoms	-3 Edu, + 1 Mil, -2 Econ
 
 No cooperation	+2 PPP
 
-Event 7 – Airport Shooting
+## Event 7
 
-Event 7 Results
+**Airport Shooting** 
+
+## Event 7 Results
 
 Event 8 - Thearchy of Shantia invades Dofnia Kingdoms
 
@@ -274,9 +289,11 @@ Join war with Maastrict –2 mil, - 2 econ + 3 PP
 
 Join war with Dofina  - 4 mil, - 2 econ + 5 PP
 
-Event 9 - Earthquake
+## Event 9 
 
-Earthquake response
+**Earthquake** 
+
+## Earthquake response
 
 Koy/Tia	Cooperate	Defect
 
@@ -284,19 +301,21 @@ Cooperate	+1 econ, + 1 PPP / +1 econ, + 1 PPP	+ 2 econ + 1 PPP / -2 econ, -1 sec
 
 Defect	+1 econ / + 2 econ, + 2 PPP	-2 econ / -2 econ
 
-Event 10 – Military coup attempt in both countries
+## Event 10
 
-Military officers are unhappy with the direction with your Government's actions calling for a return to the Megiddoin Empire.
+** Military couperation attempt in both countries**
 
-The attack appears coordinated
+- Military officers are unhappy with the direction of your Government's actions, calling for a return to the Megiddoin Empire.
 
-They have taken control of a major bridge in the capital city of each country and troops are heading towards the governmental buildings.
+- The attack appears coordinated
 
-If education > 6 AND welfare > 6 the coup attempt will automatically fail as the military won't be able to pursued the population to join its revolt
+- They have taken control of a major bridge in the capital city of each country and troops are heading towards the governmental buildings.
 
-Otherwise both countries lose – 2 sec and – 2 Mil
+**If `education > 6 AND welfare > 6` the coup attempt will automatically fail as the military won't be able to persuade the population to join its revolt**
 
-Coup Results
+**Otherwise both countries lose – 2 sec and – 2 Mil**
+
+# Co-up Results
 
 Koy/Tia	Cooperate	Defect
 
@@ -304,4 +323,4 @@ Cooperate	+1 Mil, + 1 PPP / +1 Mil, + 1 PPP	+ 2 Mil + 2 PPP / -2 Mil, -1 sec
 
 Defect	-2 Mil/ + 2 Mil, + 2 PPP	-2 Mil, -1 Edu, - 2 Econ / -2 Mil, -1 Edu, - 2 Econ
 
-Who Won?
+# Who Won?
