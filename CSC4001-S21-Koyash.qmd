@@ -69,19 +69,14 @@ Both countries...
 
 ## The games
 
-- There will be a series of events that happen to both countries. **You** (as a team) will need to decide the direction of your country. 
+- Series of events that happen to both countries. **You** (as a team) will need to decide the direction of your country. 
+- Split into 2 phases: 1. a blind bidding game, 2. a series of events that effect the future of your country. 
 
-- The games are split into 2 phases
+- Outcomes depend on your decisions for the blind bidding game at the beginning of the phase
 
-  - Start with a blind bidding game
+- One additional choice of international partners. The choice in phase 1 will have an impact on political points for phase 2 
 
-  - Folowed by a series of events that effect the future of your country. 
-
-- e outcomes of these events will depend on your decisions for the blind bidding game at the beginning. Of the phase
-
-- One al choice of international partners. The choice in phase 1 will have an impact on political points for phase 2 
-
-## nd Bidding
+## Blind Bidding
 
 You start with **15 points** of political power. 
 
@@ -105,9 +100,13 @@ Some decisions will be locked out by the amount you spend on categories
 
 If any category drops below 0 you lose
 
-# Events
+## Events
 
-## Event 1
+::: notes
+TODO: copy text from that slide here.
+:::
+
+## Event 1 {.smaller}
 
 **Linshia Union has attacked our neighbouring Donfia Kingdom, Refugees are heading towards our boarders, what do you do?**
 
@@ -119,7 +118,7 @@ If any category drops below 0 you lose
 
 4. Negotiate with other country (Koyash/Tiamat) for them to take all the refugees in exchange for some economic support
 
-## Refugee results
+## Refugee results {.smaller}
 
 -1 in Military points
 
@@ -143,6 +142,10 @@ Otherwise
 
            Get 2 new political power points to spend from cooperation.
 
+::: notes
+TODO: conversion tool didn't preserve bullet points of numbers. please add back the numbers so outcomes match up with choices on the previous page.
+:::
+
 ## Event 2
 
 **Oil has been discovered, but the deposit sits in the middle of both Koyash's and Tiamat's EEZ**
@@ -155,49 +158,70 @@ Otherwise
 
 ## Cooperation payout 
 
-Koy/Tia	Cooperate	Defect
+| Koy/Tia	| Cooperate |	Defect |
+|:-------:|:---------:|:------:|
+| Cooperate |	+1 econ, -1 sec + 1 PPP / +1 econ, -1 sec + 1 PPP	| + 2 econ + 2 PPP / +1 econ, -1 sec |
+| Defect | +1 econ, -1 sec / + 2 econ, + 2 PPP | -2 econ / -2 econ |
 
-Cooperate	+1 econ, -1 sec + 1 PPP / +1 econ, -1 sec + 1 PPP	+ 2 econ + 2 PPP / +1 econ, -1 sec
+## Refugee Bonus round!
 
-Defect	+1 econ, -1 sec / + 2 econ, + 2 PPP	-2 econ / -2 econ
 
-Refugee Bonus round!
+::: notes
+TODO: This appeared to have some boxes on it but I'm not sure what they represent?
+:::
 
-Conflict decider
+## Conflict decider
 
-Military x2 of other country	-1 Mil, + 2 econ, +2 PPP / - 2 Mil, +1 PPP
+- Military x2 of other country	-1 Mil, + 2 econ, +2 PPP / - 2 Mil, +1 PPP
 
-Military x1.5 of other country	-1 Mil, - 1 econ, + 2 PPP (both)
+- Military x1.5 of other country	-1 Mil, - 1 econ, + 2 PPP (both)
 
-Military less than 1.5 of other county	-2 Mil, -2 econ, + 1 PPP (both)
+- Military less than 1.5 of other county	-2 Mil, -2 econ, + 1 PPP (both)
 
 ## Event 3
 
 **Disease outbreak in Koyash**
 
-Disease results
+- A virulent disease has broken out in Koyash and threatens to spread into Tiamat
+- If Koyash's Welfare is > 6 they can control the disease without assistance 
+- Otherwise, Tiamat needs to decide if they are going to support (high or low) Koyash with their healthcare needs or abandon them to their fates
 
-	Koyash effects	Tiamat effects
+## Disease results
 
-Tiamat decides to fully help	-1 welfare, + 1 PPP	-1 welfare, + 1 PPP
+|     |	Koyash effects | Tiamat effects |
+|:---:|:--------------:|:--------------:|
+| Tiamat fully helps | -1 welfare, + 1 PPP | -1 welfare, + 1 PPP |
+| Some aid | -2 welfare, + 1 PPP | + 1 PPP |
+| Refuses | -3 welfare, -1 sec, -1 econ	| + 2 PPP |
 
-Tiamat provides some aid	-2 welfare, + 1 PPP	+ 1 PPP
+**Refuse, for tiamat**: roll dice: 
+- 2+ disease flows over the border --- 1 welfare, 
+- 4+ major outbreak --- 3 welfare, -1 sec, -1 econ
 
-Tiamat refuses all aid	-3 welfare, - 1 sec, -1 econ	+ 2 PPProll dice:2+ disease flows over the boarder – 1 welfare, 4+ major outbreak – 3 welfare, -1 sec, -1 econ
+## Event 4
 
-Event 4 – Armed militant group in Tiamat
+**Armed militant group in Tiamat**
 
-Armed militant results
+- Riots have broken out in Tiamat, a regional group is unhappy about the lack of representation in Government and has turned violent
+- If Tiamat's Security is > 6 they can control the riots without assistance 
+- Otherwise, Koyash needs to decide if they are going to support Tiamat with their militant groups, abandon them to their fates, or support militant groups.
 
-	Tiamat effects	Koyash effects
+## Armed militant results
 
-Koyash decides to fully help	-1 Mil, -1 sec, + 2 PPP	-1 Mil, + 1 PPP
+|     | Tiamat effects | Koyash effects |
+|:---:|:--------------:|:--------------:|
+| Koyash fully help |	-1 Mil, -1 sec, + 2 PPP	| -1 Mil, + 1 PPP |
+| Some aid | -2 Mil, -2 sec, + 1 PPP | +1 PPP |
+| Refuses| -3 Mil, - 1 welfare, - 1 sec, -1 econ | + 2 PPProll dice: 4+ major attacks – 2 Mil, -1 welfare, -1 sec, -1 econ |
+| Supports militants |	3 Mil, - 3 sec, - 2 econ | Access to new resources + 1 econ, + 2 PPP |
 
-Koyash provides some aid	-2 Mil, -2 sec, + 1 PPP	+ 1 PPP
+## Event 5
 
-Koyash refuses all aid	-3 Mil, - 1 welfare, - 1 sec, -1 econ	+ 2 PPProll dice: 4+ major attacks – 2 Mil, -1 welfare, -1 sec, -1 econ
+**Research Program** Joint Research Options
 
-Koyash supports Militants	3 Mil, - 3 sec, - 2 econ	Access to new resources + 1 econ, + 2 PPP
+- The Thearchy of Shantia has offered a joint research program with investment into your education system, however there are some strings attached at the funding is being provided by the Maastricht Khaganate
+
+- If you agree to cooperate with one of these options, costs will be halved. 
 
 ## Event 5
 
@@ -213,7 +237,11 @@ Koyash supports Militants	3 Mil, - 3 sec, - 2 econ	Access to new resources + 1 e
 
 5. Reject research proposal 
 
-## JR results
+## Joint Research results
+
+::: notes
+TODO: please copy text, numbered, from the powerpoint text boxes onto here.
+:::
 
 ## End of Phase 1
 
@@ -229,11 +257,18 @@ Koyash supports Militants	3 Mil, - 3 sec, - 2 econ	Access to new resources + 1 e
 
 ---
 
-# Phase 2 story
+## Phase 2 story {.smaller}
+
+You thought the militant uprising in Tiamat was an isolated event. But rebellion and revolutions have been spreading like wildfire through the Donfia Kingdoms. Formally secular regimes have been replaced by regressive dictatorships.
+
+Linshia Union has increased its military spending, seeking to disrupt the interests of Thearchy of Shantia by sending older military equipment to support these new regimes. 
+
 
 ## Event 6 
 
-**Choosing sides** Work together or apart – will you seek to cooperate with each other for protection or align yourself with Thearchy of Shantia, Linshia Union, or the Donfia Kingdoms? 
+**Choosing sides** 
+
+Work together or apart – will you seek to cooperate with each other for protection or align yourself with Thearchy of Shantia, Linshia Union, or the Donfia Kingdoms? 
 
 ## Choosing Sides Results
 
@@ -247,19 +282,34 @@ Donfia Kingdoms	-3 Edu, + 1 Mil, -2 Econ
 
 No cooperation	+2 PPP
 
+::: notes
+TODO please format this nicely, thanks.
+:::
+
 ## Event 7
 
 **Airport Shooting** 
 
+Koyash's international airport was attacked by unknown forces. Several civilians and security officers were killed in the attack. 
+
+Devise a response based on your current scores in each category. 
+
+**Koyash – 2 Sec=**
+
 ## Event 7 Results
 
-Event 8 - Thearchy of Shantia invades Dofnia Kingdoms
+- Any act in isolation leads to –2 in that category as resources are expended.  Gain + 1 PPP
+- If the action is done jointly –1 to that category and + 2 PPP
+
+## Event 8
+
+**Thearchy of Shantia invades Dofnia Kingdoms**
 
 Koyash wasn't the only country to be attacked. Multiple attacks happened across the Maastricht Khaganate, leading the Thearchy of Shantia to launch an invasion of several Dofnia Kingdoms.
 
 Devise a response based on your stats and which side you chose previously. 
 
-Outcomes
+## Outcomes {.smaller}
 
 Aligned with Dofina
 
@@ -293,6 +343,10 @@ Join war with Dofina  - 4 mil, - 2 econ + 5 PP
 
 **Earthquake** 
 
+Kingdom of Tiamat suffers a strength 9 earthquake, causing 2 major cities to collapse 
+
+**Tiamat – 2 Econ**
+
 ## Earthquake response
 
 Koy/Tia	Cooperate	Defect
@@ -303,19 +357,15 @@ Defect	+1 econ / + 2 econ, + 2 PPP	-2 econ / -2 econ
 
 ## Event 10
 
-** Military couperation attempt in both countries**
+-**Military couperation attempt in both countries**
 
-- Military officers are unhappy with the direction of your Government's actions, calling for a return to the Megiddoin Empire.
+Military officers are unhappy with the direction of your Government's actions, calling for a return to the Megiddoin Empire. The attack appears to be coordinated with attackers taking control of a major bridge in the capital city of each country and troops are heading towards the governmental buildings.
 
-- The attack appears coordinated
+- If `education > 6 AND welfare > 6` the coup attempt will automatically fail as the military won't be able to persuade the population to join its revolt
 
-- They have taken control of a major bridge in the capital city of each country and troops are heading towards the governmental buildings.
+- Otherwise both countries lose – 2 sec and – 2 Mil
 
-**If `education > 6 AND welfare > 6` the coup attempt will automatically fail as the military won't be able to persuade the population to join its revolt**
-
-**Otherwise both countries lose – 2 sec and – 2 Mil**
-
-# Co-up Results
+## Coup Results
 
 Koy/Tia	Cooperate	Defect
 
