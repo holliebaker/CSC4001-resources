@@ -3826,7 +3826,7 @@
     "href": "CSC4001-S18-Toasters.html#requirements-1",
     "title": "System Design",
     "section": "Requirements",
-    "text": "Requirements\nwhat do you want?\nWhat do people want?\n\nWell, the simple answer is people are too stupid to know what they want.\nI will come back to this point many, many times in the future\n\n— De Longford"
+    "text": "Requirements\nwhat do you want?\nWhat do people want?\n\nWell, the simple answer is people are too stupid to know what they want.\nI will come back to this point many, many times in the future\n\n— Dr Longford"
   },
   {
     "objectID": "CSC4001-S18-Toasters.html#example-of-people-being-stupid",
@@ -3834,6 +3834,13 @@
     "title": "System Design",
     "section": "Example of people being stupid",
     "text": "Example of people being stupid\nI want AI built into my toaster!\nOh, what the place other than heaven – lets make a “smart” Toaster"
+  },
+  {
+    "objectID": "CSC4001-S18-Toasters.html#how-do-you-like-your-toast",
+    "href": "CSC4001-S18-Toasters.html#how-do-you-like-your-toast",
+    "title": "System Design",
+    "section": "How do you like your toast?",
+    "text": "How do you like your toast?\n\n\n\n\nA graphical chart showing toast doneness levels from A1 to I9, ranging from lightly toasted bread to extremely burnt toast."
   },
   {
     "objectID": "CSC4001-S18-Toasters.html#lets-make-a-list-of-requirements",
@@ -3847,7 +3854,14 @@
     "href": "CSC4001-S18-Toasters.html#functional-vs-non-functional",
     "title": "System Design",
     "section": "Functional vs Non-Functional",
-    "text": "Functional vs Non-Functional\nFunctional\nWhat the system should do\n\nToaster must be able to accommodate 2 slices of standard sized bread\nToaster must be able to detect the level of toastiness\nAutomatically switches off when toast reaches the correct level of toastiness\nMust have LED lighting system which can change colour depending on users mood\n\nNon-Functional\nHow the system should function\n\nToaster should use less than 1KW of power\nMust meet current UK safety standards\nCasting and shape of the toaster must be attractive\nToaster should take no more than 5 seconds to reach desired temperature\nInternal camera must not degrade under normal heating conditions"
+    "text": "Functional vs Non-Functional\nFunctional\nWhat the system should do\n\nToaster must be able to accommodate 2 slices of standard sized bread\nToaster must be able to detect the level of toastiness\nAutomatically switches off when toast reaches the correct level of toastiness\nMust have LED lighting system which can change colour depending on users mood"
+  },
+  {
+    "objectID": "CSC4001-S18-Toasters.html#non-functional",
+    "href": "CSC4001-S18-Toasters.html#non-functional",
+    "title": "System Design",
+    "section": "Non-Functional",
+    "text": "Non-Functional\nHow the system should function\n\nToaster should use less than 1KW of power\nMust meet current UK safety standards\nCasting and shape of the toaster must be attractive\nToaster should take no more than 5 seconds to reach desired temperature\nInternal camera must not degrade under normal heating conditions"
   },
   {
     "objectID": "CSC4001-S18-Toasters.html#feature-creep",
@@ -3861,7 +3875,7 @@
     "href": "CSC4001-S18-Toasters.html#custom-images-on-toast",
     "title": "System Design",
     "section": "Custom images on toast?",
-    "text": "Custom images on toast?\n\nThere is a hand mold toy that can be used to create images by pushing pins\n[[ Insert Hollie Baker side rant on the cost of refreshable Braille. ]]\nThese pins could be heated to burn the toast\nThe images could be uploaded to the toaster\nWIFI? USB? Both?"
+    "text": "Custom images on toast?\n\nThere is a hand mold toy that can be used to create images by pushing pins\n[[ Insert Hollie Baker side rant on the cost of refreshable Braille. ]]\nThese pins could be heated to burn the toast\nThe images could be uploaded to the toaster\nWIFI? USB? Both?\n\n\nHollie, if you are reading this, I am going to put some toast through the braille printer wish me luck (might have to make sure it’s stale first)"
   },
   {
     "objectID": "CSC4001-S18-Toasters.html#bread-delivery-drone",
@@ -4002,6 +4016,13 @@
     "title": "System Design",
     "section": "Results",
     "text": "Results\n\nWe now have a toaster, with an AI control system\nIncluding a heat reenforced camera to monitor the toast\nOnboard storage for different images for toast patterns\nA drone that flies around the kitchen\n\nAnd Ha-Satan knows how many other features we’ve come up with\nTotal cost to customer: £3,500"
+  },
+  {
+    "objectID": "CSC4001-S18-Toasters.html#is-that-a-good-deal",
+    "href": "CSC4001-S18-Toasters.html#is-that-a-good-deal",
+    "title": "System Design",
+    "section": "Is that a good deal?",
+    "text": "Is that a good deal?\n\n\n\n\n\n\n\n\nIs £3500 really an appropriate cost for a toaster?? When you can just buy one of these and it does the same job…"
   },
   {
     "objectID": "CSC4001-S18-Toasters.html#everything-went-wrong",
