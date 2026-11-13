@@ -2394,6 +2394,13 @@
     "text": "Next TIme\nGAME THEORY!"
   },
   {
+    "objectID": "CSC4001-S21-Koyash.html#can-you-save-the-republic-of-koyashkingdom-of-tiamat",
+    "href": "CSC4001-S21-Koyash.html#can-you-save-the-republic-of-koyashkingdom-of-tiamat",
+    "title": "Koyash!",
+    "section": "Can you save the Republic of Koyash/Kingdom of Tiamat?",
+    "text": "Can you save the Republic of Koyash/Kingdom of Tiamat?\nGame theory through role play\nMany thanks to Ed Longford for this excellent presentation!"
+  },
+  {
     "objectID": "CSC4001-S21-Koyash.html#republic-of-koyashkingdom-of-tiamat",
     "href": "CSC4001-S21-Koyash.html#republic-of-koyashkingdom-of-tiamat",
     "title": "Koyash!",
@@ -2475,7 +2482,7 @@
     "href": "CSC4001-S21-Koyash.html#events",
     "title": "Koyash!",
     "section": "Events",
-    "text": "Events\n\nTODO: copy text from that slide here."
+    "text": "Events\n\nIn each event there will be a series of options\nSome options are restricted by your spending on political points\nSome choices may have effects on later events…\nThe early events will have fixed options, later events will allow you to be more dynamic with your decisions"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-1",
@@ -2489,7 +2496,7 @@
     "href": "CSC4001-S21-Koyash.html#refugee-results",
     "title": "Koyash!",
     "section": "Refugee results",
-    "text": "Refugee results\n-1 in Military points\nGet 2 new political power points to spend – force other team to choose option 2\nIf welfare &lt; 5, \n-2 in welfare, education, economy, and security points\n\nGet 1 new political power point to spent\nOtherwise\n-1 welfare\n(successful)  -1 in welfare, education, economy, and security points\n          Get 2 new political power points to spend from cooperation.\n(successful) your country – 1 economy, other country -1 welfare\n           Get 2 new political power points to spend from cooperation.\n\nTODO: conversion tool didn’t preserve bullet points of numbers. please add back the numbers so outcomes match up with choices on the previous page."
+    "text": "Refugee results\n\n-1 in Military points\nGet 2 new political power points to spend – force other team to choose option 2\nIf welfare &lt; 5, \n\n-2 in welfare, education, economy, and security points and get 1 new political power point to spend\n\nOtherwise\n\n-1 welfare\n\n(successful)  -1 in welfare, education, economy, and security points and get 2 new political power points to spend from cooperation.\n(successful) your country – 1 economy, other country -1 welfare and get 2 new political power points to spend from cooperation."
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-2",
@@ -2510,7 +2517,7 @@
     "href": "CSC4001-S21-Koyash.html#refugee-bonus-round",
     "title": "Koyash!",
     "section": "Refugee Bonus round!",
-    "text": "Refugee Bonus round!\n\nWhen taking in refugees, there is always a chance that there is a proportion of highly educated or skilled workers who want to support their host country\n\nDice roll boosts:\n\nIf you took all the refugees on a 3+ dice roll get + 3 PPP\nIf you took some refugees on a 5+ dice roll get + 2 PPP\n\n\nTODO: This appeared to have some boxes on it but I’m not sure what they represent? - they were just for design I have extracted the text (smiley face)"
+    "text": "Refugee Bonus round!\n\nWhen taking in refugees, there is always a chance that there is a proportion of highly educated or skilled workers who want to support their host country\n\nDice roll boosts:\n\nIf you took all the refugees on a 3+ dice roll get + 3 PPP\nIf you took some refugees on a 5+ dice roll get + 2 PPP"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#conflict-decider",
@@ -2566,7 +2573,7 @@
     "href": "CSC4001-S21-Koyash.html#joint-research-results",
     "title": "Koyash!",
     "section": "Joint Research results",
-    "text": "Joint Research results\n\nTODO: please copy text, numbered, from the powerpoint text boxes onto here."
+    "text": "Joint Research results\n\n\n2 Edu, + 2 PPP\n\n2 Mil, - 2 Econ, + 3 Edu, + 1 PPP, (-1 Mil, -1 Econ, + 3 Edu + 2 PPP if jointly agreed)\n\n1 Econ, + 1 Edu, - 2 Welfare + 1 PPP (+ 1 Econ, + 1 Edu, -1 Welfare, ++ 1PPP if jointly agreed)\n\n\n1 Edu, + 1 Sec, + 1 Welfare, - 2 Mil, - 2 Econ + 1 PPP (+ 1 Edu, + 1 Sec, + 1 Welfare, -1 Mil, - 1 Econ, + 1 PPP if jointly agreed)\n\n\n1 Edu, - 1 Econ, + 2 + 1 Sec"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#end-of-phase-1",
@@ -2594,7 +2601,7 @@
     "href": "CSC4001-S21-Koyash.html#choosing-sides-results",
     "title": "Koyash!",
     "section": "Choosing Sides Results",
-    "text": "Choosing Sides Results\nCooperate with each other (both must agree) + 5 PPP\nThearchy of Shantia + 1 Econ, + 1 Welfare, + 1 Edu, - 2 MilIf you have JRP: + 1 PPP\nLinshia Union + 2 Mil, + 1 Econ, + 1 Welfare, - 1 EduIf you have refugees: -2 Sec with protests\nDonfia Kingdoms -3 Edu, + 1 Mil, -2 Econ\nNo cooperation +2 PPP\n\nTODO please format this nicely, thanks."
+    "text": "Choosing Sides Results\n\nCooperate with each other (both must agree) + 5 PPP\n\nThearchy of Shantia + 1 Econ, + 1 Welfare, + 1 Edu, - 2 MilIf you have JRP: + 1 PPP\nLinshia Union + 2 Mil, + 1 Econ, + 1 Welfare, - 1 EduIf you have refugees: -2 Sec with protests\nDonfia Kingdoms -3 Edu, + 1 Mil, -2 Econ\n\nNo cooperation +2 PPP"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-7",
@@ -2622,7 +2629,7 @@
     "href": "CSC4001-S21-Koyash.html#outcomes",
     "title": "Koyash!",
     "section": "Outcomes",
-    "text": "Outcomes\nAligned with Dofina\nJoin war –2 mil, econ, sec, + 3 PP\nSupport indirect –1 econ, sec. + 1PP\nIgnore  - + 2 PP\nDefect and join Maastrict - + 3 PP\nAligned with Maastrict\nSupport + 1 mil, + 2 PP\nDon’t support – 2 mil, - 1 edu, -1 sec\nAligned Linshia Union\nSupport indirectly –1 econ, sec. + 1PP\nDon’t support - -1mil\nAligned to each other\nJoin war with Maastrict –2 mil, - 2 econ + 3 PP\nJoin war with Dofina  - 4 mil, - 2 econ + 5 PP"
+    "text": "Outcomes\n\n\n– Aligned with Dofina\n\nJoin war –2 mil, econ, sec, + 3 PP\nSupport indirect –1 econ, sec. + 1PP\nIgnore  - + 2 PP\nDefect and join Maastrict - + 3 PP\n\nAligned with Maastrict\nSupport + 1 mil, + 2 PP\nDon’t support – 2 mil, - 1 edu, -1 sec\n\nAligned Linshia Union\n\nSupport indirectly –1 econ, sec. + 1PP\nDon’t support - -1mil\n\n\n\n\nAligned to each other\n\nJoin war with Maastrict –2 mil, - 2 eco PP\nJoin war with Dofina - 4 mil, - 2 econ PP\nSupport indirectly –1 econ, sec. + 1PP\n\nDon’t support - -1mil\n\nAligned to each other\nJoin war with Maastrict –2 mil, - 2 econ + 3 PP\nJoin war with Dofina  - 4 mil, - 2 econ + 5 PP"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-9",
@@ -2636,7 +2643,7 @@
     "href": "CSC4001-S21-Koyash.html#earthquake-response",
     "title": "Koyash!",
     "section": "Earthquake response",
-    "text": "Earthquake response\nKoy/Tia Cooperate Defect\nCooperate +1 econ, + 1 PPP / +1 econ, + 1 PPP + 2 econ + 1 PPP / -2 econ, -1 sec\nDefect +1 econ / + 2 econ, + 2 PPP -2 econ / -2 econ"
+    "text": "Earthquake response\n\n\n\n\n\n\n\n\nKoy/Tia\nCooperate\nDefect\n\n\n\n\nCooperate\n+1 econ, + 1 PPP / +1 econ, + 1 PPP\n+ 2 econ + 1 PPP / -2 econ, -1 sec\n\n\nDefect\n+1 econ / + 2 econ, + 2 PPP\n-2 econ / -2 econ"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-10",
@@ -2650,7 +2657,7 @@
     "href": "CSC4001-S21-Koyash.html#coup-results",
     "title": "Koyash!",
     "section": "Coup Results",
-    "text": "Coup Results\nKoy/Tia Cooperate Defect\nCooperate +1 Mil, + 1 PPP / +1 Mil, + 1 PPP + 2 Mil + 2 PPP / -2 Mil, -1 sec\nDefect -2 Mil/ + 2 Mil, + 2 PPP -2 Mil, -1 Edu, - 2 Econ / -2 Mil, -1 Edu, - 2 Econ"
+    "text": "Coup Results\n\n\n\n\n\n\n\n\nKoy/Tia\nCooperate\nDefect\n\n\n\n\nCooperate\n+1 Mil, + 1 PPP / +1 Mil, + 1 PPP\n+ 2 Mil + 2 PPP / -2 Mil, -1 sec\n\n\nDefect\n-2 Mil/ + 2 Mil, + 2 PPP\n-2 Mil, -1 Edu, - 2 Econ / -2 Mil, -1 Edu, - 2 Econ"
   },
   {
     "objectID": "CSC4001-S02W-Logic.html",
