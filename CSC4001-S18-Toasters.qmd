@@ -10,6 +10,11 @@ format:
 
 Many thanks to Ed Longford for the presentation and its evolution into a side rant on AI-powered toasters.
 
+::: cell-output-display
+![](./assets/Ed-Longford-jumpscare.jpg){fig-align="center"
+fig-alt="Staff photo of Ed Longford" width="40%"}
+:::
+
 # The Creative Process
 
 Or at least a version of it
@@ -37,13 +42,26 @@ What do people want?
 > 
 > I will come back to this point many, many times in the future
 
---- De Longford
+--- Dr Longford
 
 ## Example of people being stupid
 
 I want AI built into my toaster!
 
 Oh, what the place other than heaven – lets make a “smart” Toaster
+
+::: cell-output-display
+![](./assets/toaster-ai-slop.png){fig-align="center"
+fig-alt="Picture of an AI toaster with the text 'AI slop detected' edited on the top" width="40%"}
+:::
+
+## How do you like your toast?
+
+::: {.cell-output-display}
+
+![A graphical chart showing toast doneness levels from A1 to I9, ranging from lightly toasted bread to extremely burnt toast.](./assets/toast-graph-meme.jpg){fig-align="center" width="80%"}
+
+:::
 
 ## Let's make a list of requirements
 
@@ -73,7 +91,7 @@ What the system should do
 
 - Must have LED lighting system which can change colour depending on users mood
 
-### Non-Functional
+## Non-Functional
 
 How the system should function
 
@@ -112,6 +130,10 @@ This can be because:
 - The images could be uploaded to the toaster
 
   WIFI? USB? Both?
+
+::: notes
+Hollie, if you are reading this, I am going to put some toast through the braille printer wish me luck (might have to make sure it's stale first)
+:::
 
 
 ## Bread delivery drone
