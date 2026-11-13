@@ -4,18 +4,18 @@ author: "CSC4001: Computer Systems and Architecture"
 date: ""
 format:
   revealjs:
-    theme: moon
-    css: ./style.css
+    theme: blood
 ---
 
-# Can you save the Republic of Koyash/Kingdom of Tiamat? 
+## Can you save the Republic of Koyash/Kingdom of Tiamat? 
 
 Game theory through role play
 
 Many thanks to Ed Longford for this excellent presentation!
 
----
+# {background-color="black" background-image="/assets/Ed-Longford-jumpscare.jpg"}
 
+# {background-color="black" background-image="/assets/koyash-map-1.png"}
 
 ## Republic of Koyash/Kingdom of Tiamat
 
@@ -100,11 +100,12 @@ Some decisions will be locked out by the amount you spend on categories
 
 If any category drops below 0 you lose
 
-## Events
+## Events {.smaller}
 
-::: notes
-TODO: copy text from that slide here.
-:::
+- In each event there will be a series of options
+- Some options are restricted by your spending on political points
+- Some choices may have effects on later events…
+- The early events will have fixed options, later events will allow you to be more dynamic with your decisions 
 
 ## Event 1 {.smaller}
 
@@ -120,31 +121,21 @@ TODO: copy text from that slide here.
 
 ## Refugee results {.smaller}
 
--1 in Military points
+1. -1 in Military points
 
-Get 2 new political power points to spend – force other team to choose option 2
+   Get 2 new political power points to spend – force other team to choose option 2
 
-If welfare < 5, 
+2. If welfare < 5, 
 
-	-2 in welfare, education, economy, and security points
+   - -2 in welfare, education, economy, and security points and get 1 new political power point to spend
 
-	Get 1 new political power point to spent
+   Otherwise
 
-Otherwise
+	 - -1 welfare
 
-	-1 welfare
+3. (successful)  -1 in welfare, education, economy, and security points and get 2 new political power points to spend from cooperation.
 
-(successful)  -1 in welfare, education, economy, and security points
-
-          Get 2 new political power points to spend from cooperation.
-
-(successful) your country – 1 economy, other country -1 welfare
-
-           Get 2 new political power points to spend from cooperation.
-
-::: notes
-TODO: conversion tool didn't preserve bullet points of numbers. please add back the numbers so outcomes match up with choices on the previous page.
-:::
+4. (successful) your country – 1 economy, other country -1 welfare and get 2 new political power points to spend from cooperation.
 
 ## Event 2
 
@@ -172,10 +163,6 @@ TODO: conversion tool didn't preserve bullet points of numbers. please add back 
 - If you took all the refugees on a 3+ dice roll get + 3 PPP
 
 - If you took some refugees on a 5+ dice roll get + 2 PPP
-
-::: notes
-TODO: This appeared to have some boxes on it but I'm not sure what they represent? - they were just for design I have extracted the text (smiley face)
-:::
 
 ## Conflict decider
 
@@ -213,7 +200,7 @@ TODO: This appeared to have some boxes on it but I'm not sure what they represen
 - If Tiamat's Security is > 6 they can control the riots without assistance 
 - Otherwise, Koyash needs to decide if they are going to support Tiamat with their militant groups, abandon them to their fates, or support militant groups.
 
-## Armed militant results
+## Armed militant results {.smaller}
 
 |     | Tiamat effects | Koyash effects |
 |:---:|:--------------:|:--------------:|
@@ -244,11 +231,18 @@ TODO: This appeared to have some boxes on it but I'm not sure what they represen
 
 5. Reject research proposal 
 
-## Joint Research results
+## Joint Research results {.smaller}
 
-::: notes
-TODO: please copy text, numbered, from the powerpoint text boxes onto here.
-:::
+1. + 2 Edu, + 2 PPP
+
+2. 2 Mil, - 2 Econ, + 3 Edu, + 1 PPP, (-1 Mil, -1 Econ, + 3 Edu + 2 PPP if jointly agreed)
+
+3. + 1 Econ, + 1 Edu, - 2 Welfare + 1 PPP (+ 1 Econ, + 1 Edu, -1 Welfare, ++ 1PPP if jointly
+agreed) 
+
+4. + 1 Edu, + 1 Sec, + 1 Welfare, - 2 Mil, - 2 Econ + 1 PPP (+ 1 Edu, + 1 Sec, + 1 Welfare, -1 Mil, - 1 Econ, + 1 PPP if jointly agreed)
+
+5. - 1 Edu, - 1 Econ, + 2 + 1 Sec
 
 ## End of Phase 1
 
@@ -279,19 +273,15 @@ Work together or apart – will you seek to cooperate with each other for protec
 
 ## Choosing Sides Results
 
-Cooperate with each other (both must agree)	+ 5 PPP
+- Cooperate with each other (both must agree)	+ 5 PPP
 
-Thearchy of Shantia	+ 1 Econ, + 1 Welfare, + 1 Edu, - 2 MilIf you have JRP: + 1 PPP
+  - Thearchy of Shantia	+ 1 Econ, + 1 Welfare, + 1 Edu, - 2 MilIf you have JRP: + 1 PPP
 
-Linshia Union	+ 2 Mil, + 1 Econ, + 1 Welfare, - 1 EduIf you have refugees: -2 Sec with protests
+  - Linshia Union	+ 2 Mil, + 1 Econ, + 1 Welfare, - 1 EduIf you have refugees: -2 Sec with protests
 
-Donfia Kingdoms	-3 Edu, + 1 Mil, -2 Econ
+  - Donfia Kingdoms	-3 Edu, + 1 Mil, -2 Econ
 
-No cooperation	+2 PPP
-
-::: notes
-TODO please format this nicely, thanks.
-:::
+- No cooperation	+2 PPP
 
 ## Event 7
 
@@ -318,33 +308,42 @@ Devise a response based on your stats and which side you chose previously. 
 
 ## Outcomes {.smaller}
 
-Aligned with Dofina
+::: columns
+::: column
+-- Aligned with Dofina
 
-Join war –2 mil, econ, sec, + 3 PP
+  - Join war –2 mil, econ, sec, + 3 PP
+  - Support indirect –1 econ, sec. + 1PP
+  - Ignore  - + 2 PP
 
-Support indirect –1 econ, sec. + 1PP
+- Defect and join Maastrict - + 3 PP
 
-Ignore  - + 2 PP
+  - Aligned with Maastrict
+  - Support + 1 mil, + 2 PP
+  - Don’t support – 2 mil, - 1 edu, -1 sec
 
-Defect and join Maastrict - + 3 PP
+- Aligned Linshia Union
 
-Aligned with Maastrict
+  - Support indirectly –1 econ, sec. + 1PP
+  - Don't support - -1mil
 
-Support + 1 mil, + 2 PP
+:::
+::: column
 
-Don’t support – 2 mil, - 1 edu, -1 sec
+- Aligned to each other
 
-Aligned Linshia Union
+  - Join war with Maastrict –2 mil, - 2 eco PP
+  - Join war with Dofina - 4 mil, - 2 econ PP
+  - Support indirectly –1 econ, sec. + 1PP
 
-Support indirectly –1 econ, sec. + 1PP
+- Don't support - -1mil
 
-Don't support - -1mil
+  - Aligned to each other
+  - Join war with Maastrict –2 mil, - 2 econ + 3 PP
+  - Join war with Dofina  - 4 mil, - 2 econ + 5 PP
 
-Aligned to each other
-
-Join war with Maastrict –2 mil, - 2 econ + 3 PP
-
-Join war with Dofina  - 4 mil, - 2 econ + 5 PP
+:::
+:::
 
 ## Event 9 
 
@@ -356,13 +355,12 @@ Kingdom of Tiamat suffers a strength 9 earthquake, causing 2 major cities to col
 
 ## Earthquake response
 
-Koy/Tia	Cooperate	Defect
+| Koy/Tia | Cooperate | Defect |
+|:-------:|:---------:|:------:|
+| Cooperate | +1 econ, + 1 PPP / +1 econ, + 1 PPP | + 2 econ + 1 PPP / -2 econ, -1 sec |
+| Defect | +1 econ / + 2 econ, + 2 PPP | -2 econ / -2 econ |
 
-Cooperate	+1 econ, + 1 PPP / +1 econ, + 1 PPP	+ 2 econ + 1 PPP / -2 econ, -1 sec
-
-Defect	+1 econ / + 2 econ, + 2 PPP	-2 econ / -2 econ
-
-## Event 10
+## Event 10 {.smaller}
 
 -**Military couperation attempt in both countries**
 
@@ -374,10 +372,9 @@ Military officers are unhappy with the direction of your Government's actions, c
 
 ## Coup Results
 
-Koy/Tia	Cooperate	Defect
-
-Cooperate	+1 Mil, + 1 PPP / +1 Mil, + 1 PPP	+ 2 Mil + 2 PPP / -2 Mil, -1 sec
-
-Defect	-2 Mil/ + 2 Mil, + 2 PPP	-2 Mil, -1 Edu, - 2 Econ / -2 Mil, -1 Edu, - 2 Econ
+| Koy/Tia | Cooperate | Defect |
+|:-------:|:---------:|:------:|
+| Cooperate | +1 Mil, + 1 PPP / +1 Mil, + 1 PPP | + 2 Mil + 2 PPP / -2 Mil, -1 sec |
+| Defect | -2 Mil/ + 2 Mil, + 2 PPP | -2 Mil, -1 Edu, - 2 Econ / -2 Mil, -1 Edu, - 2 Econ | 
 
 # Who Won?
