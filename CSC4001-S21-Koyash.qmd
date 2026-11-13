@@ -165,9 +165,16 @@ TODO: conversion tool didn't preserve bullet points of numbers. please add back 
 
 ## Refugee Bonus round!
 
+- When taking in refugees, there is always a chance that there is a proportion of highly educated or skilled workers who want to support their host country
+
+### Dice roll boosts:
+
+- If you took all the refugees on a 3+ dice roll get + 3 PPP
+
+- If you took some refugees on a 5+ dice roll get + 2 PPP
 
 ::: notes
-TODO: This appeared to have some boxes on it but I'm not sure what they represent?
+TODO: This appeared to have some boxes on it but I'm not sure what they represent? - they were just for design I have extracted the text (smiley face)
 :::
 
 ## Conflict decider
