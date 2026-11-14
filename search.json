@@ -1869,11 +1869,11 @@
     "text": "Exercise: RISC-V Assembler\n\nWork through the challenges at\nhttps://studyriscv.com/problems/\n\nUse studyriscv.com/simulator, although this requires login,\ninstall riscvsim on your own PC,\ntry an online simulator, e.g., https://riscv-simulator-five.vercel.app/\n\nResources to get started:\n\nCheat sheet https://projectf.io/posts/riscv-cheat-sheet/\nStudy RISC-V installation https://studyriscv.com/docs/#instruction-blt\nRISC-V is an open standard. There is a plethora of resources out theer. Do some research!"
   },
   {
-    "objectID": "CSC4001-S17-IPC.html#learning-outcomes",
-    "href": "CSC4001-S17-IPC.html#learning-outcomes",
+    "objectID": "CSC4001-S17-IPC.html#objectives",
+    "href": "CSC4001-S17-IPC.html#objectives",
     "title": "Intr-Process Communication",
-    "section": "Learning Outcomes",
-    "text": "Learning Outcomes\n\nExplain why inter-process communication is nedeed, and why it must be facilitated by the OS.\nGive an overview of IPC mechanisms, including how they work and their advantages and disadvantages.\nDescribe what POSIX is, and state some of the things it defines.\nUse POSIX pipes to give the output from one process as the input of another."
+    "section": "Objectives",
+    "text": "Objectives\n\nExplain why inter-process communication is needed, and why it must be facilitated by the OS.\nGive an overview of IPC mechanisms, including how they work and their advantages and disadvantages. ::: notes\nDescribe what POSIX is, and state some of the things it defines.\nUse POSIX pipes to give the output from one process as the input of another. :::"
   },
   {
     "objectID": "CSC4001-S17-IPC.html#recap-scheduling",
@@ -1916,6 +1916,13 @@
     "title": "Intr-Process Communication",
     "section": "Inter-process communication",
     "text": "Inter-process communication\n\nOS facilitates communication between processes,\nbut takes care to do this safely.\nMany methods of IPC, we will study a few:\n\nFiles,\nPipes,\nShared Memory,\nSignals,\nSemaphores."
+  },
+  {
+    "objectID": "CSC4001-S17-IPC.html#your-challenge",
+    "href": "CSC4001-S17-IPC.html#your-challenge",
+    "title": "Intr-Process Communication",
+    "section": "Your challenge",
+    "text": "Your challenge\n\nChoose two IPC mechanisms, e.g., files vs semaphores\n\nGive a brief description of each\nCompare and contrast: where used, benefits and drawbacks."
   },
   {
     "objectID": "CSC4001-S17-IPC.html#files",
@@ -3351,6 +3358,13 @@
     "title": "Files and Filesystems",
     "section": "Exercise: everything is a file",
     "text": "Exercise: everything is a file\n\nFile redirection.\nSpecial files (which aren’t really files),\n\nstdin, stdout and stderr,\n/dev/null, /dev/zero, /dev/random."
+  },
+  {
+    "objectID": "CSC4001-S22-Files.html#lab-work",
+    "href": "CSC4001-S22-Files.html#lab-work",
+    "title": "Files and Filesystems",
+    "section": "Lab Work",
+    "text": "Lab Work\nWhy are there so many filesystems?\n\nChoose a filesystem. modern or ancient, and find research its unique selling point.\n\nWhat does it do differently?\nBenefits and drawbacks\nWhere is it used"
   },
   {
     "objectID": "CSC4001-S01-Logic.html#learning-outcomes",
