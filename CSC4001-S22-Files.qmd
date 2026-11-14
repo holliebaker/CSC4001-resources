@@ -561,3 +561,13 @@ In their Unix paper of 1974, Ritchie and Thompson quote the following design con
 
   - `stdin`, `stdout` and `stderr`,
   - `/dev/null`, `/dev/zero`, `/dev/random`.
+
+## Lab Work
+
+Why are there so many filesystems?
+
+- Choose a filesystem. modern or ancient, and find research its unique selling point.
+
+  - What does it do differently?
+  - Benefits and drawbacks
+  - Where is it used
