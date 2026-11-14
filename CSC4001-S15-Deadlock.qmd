@@ -10,16 +10,16 @@ format:
 
 ## Objectives
 
-## Learning Outcomes
-
+::: notes
 - State the **formal definition of deadlock** and give an example of a situation where deadlock occurs.
+:::
 - Give the three **Coffman conditions** required for deadlock to be possible.
 - Overview the ways in which an OS may prevent or detect and break deadlock.
-- Explain why processes require **protection**.
-- Describe the measures the OS uses to provide process protection.
+
 
 ## Recap: the process lifecycle
 
+::: notes
 - One process may ask the OS to create a new one (fork or spawn),
 
   OS creates a process in the **new** state.
@@ -34,8 +34,6 @@ format:
 
   OS sets its state to **blocked** until the I/O is done, then its state i set to **ready**.
 
-## Recap: the process lifecycle
-
 - A **running** process may be interrupted or pre-empted,
 
   then its data is saved and state changed to **ready**.
@@ -43,14 +41,15 @@ format:
 - When a process is finished, its state is set to **exit**,
 
   the OS does some cleanup before the process is deleted.
-
-## Recap: process lifecycle
+:::
 
 :::: {.cell layout-align="center"}
 ::: cell-output-display
 ![](./assets/06-lifecycle.svg){fig-align="center" fig-alt="diagram showing possible process state transitions" width="90%"}
 :::
 ::::
+
+# What happens when a process needs to do disk I/O?
 
 ## Example: blocking on I/O
 
@@ -90,30 +89,24 @@ OS Will move the process to **running** when it is scheduled.
 
 - Note that this may not happen immediately.
 
-## Recap: scheduling
+## Recap: scheduling {.smaller}
 
 Deciding what to do next.
 
 A good scheduler should:
 
 1.  not give any process too much CPU, but
-
     not give any process too little, either (*starvation*).
 
 2.  Give compute-heavy processes longer, larger slices of CPU time, but
-
     give interactive processes small slices of CPU time very often.
 
 3.  Ensure real-time (safety-critical) processes run immediately.
 
 4.  Ensure optimum use of hardware,
-
     everything should be busy, nothing should be waiting.
 
-## Recap: scheduling
-
 5.  Optimise for different types of hardware, e.g.,
-
     mice and printers are slow, network and disk is (comparatively) fast.
 
 6.  Provide **predictable** behaviour, and
@@ -121,12 +114,12 @@ A good scheduler should:
 7.  degrade gracefully under excessive load.
 
 8.  Run **fast**, so as to maximise time spent running user-land applications
-
     and **avoid thrashing**.
 
-- Note that other other resources, e.g., I/O, need scheduling, too.
-
+- Note that other resources, e.g., I/O, need scheduling, too.
   Different resource schedulers may disagree about which process to run next.
+
+# Easy, right? Well that's not all...
 
 ## The OS also needs to
 
@@ -140,6 +133,16 @@ A good scheduler should:
 
 # Deadlock
 
+## The Scenario
+
+- Two keen students, Alice and Bob, sit at a desk. On the desk is one piece of paper and one pen. Both students want to take meticulous notes.
+- Simultaneously, Alice grabs for the pen and Bob snatches up the paper. 
+- They stare blankly at each other, realising that neither of them can take notes.
+- Oscar arrives. How does he break the deadlock between Bob and Alice?
+  1. What is the cause of the deadlock?
+  2. How can Oscar break the deadlock?
+- Where does this situation occur in computers?
+
 ## Example
 
 ::::: columns-2
@@ -150,6 +153,7 @@ A good scheduler should:
 
 What happens?
 
+:::
 ::: column
 :::: {.cell layout-align="center"}
 ::: cell-output-display
@@ -222,6 +226,8 @@ A group of processes is deadlockd if:
 - Every process is waiting for an event to happen
 - But only another process in the group can trigger the event.
 
+# What conditions are required for a deadlock to occur?
+
 ## Coffman conditions
 
 1.  **Mutual exclusion**:
@@ -258,6 +264,8 @@ How are the three conditions met in the disk writing example we considered earli
 
 - Seems possible, but maybe harder than it looks...
 
+# Prevent hold and wait...
+
 ## Prevent hold and wait
 
 - **Hold and wait**
@@ -293,6 +301,8 @@ How are the three conditions met in the disk writing example we considered earli
   - similar to previous, also
   - 2hr computation plus 20s write to disk. process has exclusive access to the disk for its entire 2:00:20 running time (during which, of course, no other process can access the disk).
 :::
+
+# Prevent mutual exclusion
 
 ## Prevent mutual exclusion
 
@@ -345,10 +355,11 @@ How are the three conditions met in the disk writing example we considered earli
 
   so that the process can resume working on them as before.
 
-::: notes
 - sometimes easy, as we will see with memory
 - sometimes difficult or impossible, e.g., with a printer.
-:::
+
+
+# What does eating pasta with chopsticks have to do with deadlock?
 
 ## Dining philosophers and the circular wait
 
@@ -420,6 +431,24 @@ Circular dependencies are no longer possible.
 
 - This is hard to do, since it's impossible to predict the future.
 
+## Lab Work
+
+- Split into 3 teams
+- **Team A**: Dijkstra's Banker Algorithm
+
+  What is it? What are the conditions needed for resources to be allocated? What are its limitations?
+- **Team B**: deadlock detection
+
+  What is a request resource allocation graph? How do they prevent deadlock? E.g. circular wait.
+- **Team C** virtualisation
+
+  What is resource virtualisation? Are there any drawbacks? Describe priority inversion.
+
+# Next Time
+
+Process protection
+
+::: notes
 ## Dijkstra's Banker Algorithm
 
 - Deadlock prevention algorithm based on the idea of a banker lending money.
@@ -505,7 +534,6 @@ allows us to easily **spot deadlocks**.
   ![](./assets/08-rrag-al.svg){fig-alt="arrow from square to circle" height="5%"}
   :::
   ::::
-:::
 
 ## Example: successful request
 
@@ -568,9 +596,7 @@ Notice that **loops** in the RRAG indicate deadlocks.
 
     it may be possible to fix the deadlock by taking only some the resources away from some of the processes.
 
-::: notes
 - the art is to kill as few processes and pre-empt as few resources as we can, but this is quite difficult.
-:::
 
 ## Exercise: dining philosophers
 
@@ -594,19 +620,15 @@ How might you break the deadlock in the **dining philosophers'** problem.
 
   New problem: resource scheduling. E.g., how to write data to disk most efficiently.
 
-::: notes
 - with a mechanical HDD, having one write head, we can write most efficiently if the head moves around as little as possible.
 - therefore, writes were re-ordered so that they could be performed most efficiently.
-:::
 
 ## Aside: hard disk drive at work
 
 - [Video of a HDD reading and writing](https://upload.wikimedia.org/wikipedia/commons/transcoded/c/cf/HDD_Startup_and_Shutdown.webm/HDD_Startup_and_Shutdown.webm.1080p.vp9.webm)
 - [Explanation of how a hard disk drive works](https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f8/Harddrive-engineerguy.ogv/Harddrive-engineerguy.ogv.360p.webm)
 
-::: notes
 A little aside, for those who are interested. Explaining how a HDD works.
-:::
 
 ## Priorities and no pre-emption
 
@@ -623,113 +645,7 @@ A little aside, for those who are interested. Explaining how a HDD works.
 - In effect, the high priority process has been given **lower priority** than the low priority process.
 
 This situation is called **priority inversion**.
-
-# Process protection
-
-## Resource protection
-
-- One of the main goals of the operating system.
-
-- Prevents accidental or malicious damage to resources,
-
-  e.g., corruption of other programs or data.
-
-- Now we need to ensure that one process cannot interfere with another.
-
-  More precisely, one **user's** process cannot interfere with those belonging to another user.
-
-## Users
-
-- Each user has a **user ID**, a whole number.
-
-- Resources or processes can be **owned** by a certain user,
-
-  by flagging them with the user's ID.
-
-- Recall *process spawning*. The process which requested creation becomes the *parent*,
-
-  new process also **inherits the user ID**.
-
-- A process can make a **syscall**, requesting a resource,
-
-  but the request can only be granted if the resource is owned by the **same user** as the process.
-
-## Advantages
-
-- Provides **isolation**, since a user can only mess with their own processes.
-
-- **Security**, since malware can only infiltrate one user's programs and data.
-
-  - In some operating systems, e.g., early Windows, many programs were run as **admin**.
-  - This gave potential malware **access to everything**.
-
-## The Root User
-
-- Operating systems include a special user,
-
-  often called **admin**, **superuser** or **root**.
-
-- This user has access to **all resources** and can *signal* **all processes**,
-
-  i.e., can kill processes belonging to any user.
-
-- The admin user can often do things ordinary users cannot, e.g.,
-
-  - turn off the system,
-  - delete OS files,
-  - mess around with network configuration.
-
-- Admin user is a similar idea to **privileged mode**,
-
-  Note that the admin user's instructions are still **unprivileged** -- only OS code is **privileged**.
-
-## With great power comes great responsibility
-
-- It is best to spend as **little time as possible** as the admin user,
-
-- this reduces the risk of accidental damage or security vulnerabilities destroying your system.
-
-```bash
-# sudo rm -fr /* # removes all the French files??
-# alias please=sudo # ask the OS politely to do the thing.
-```
-
-## Bootstrapping
-
-- The admin user can create **any** process.
-
-- When an ordinary user logs in,
-
-  - admin user creates a new process,
-  - then **changes the user ID** to that of the new user,
-  - all the new user's processes can be spawned from that one, inheriting its user ID.
-
-## Capabilities
-
-- Offers finer, more granular control over resources,
-
-  e.g.,
-
-  - read / modify certain **areas of memory** or **files on disk**,
-  - access to the **network**, ability to **install software** or **shutdown the computer**.
-
-- This can be **system wide**, or as granular as **per-file**.
-
-- To work efficiently, hardware support is required.
-
-## Permissions
-
-- The idea of **capabilities** never took off.
-
-- Smartphones now have **permissions**, which use a similar idea.
-
-- User has to grant access to filesystem / location / camera on a per-app basis.
-
-- A great idea in principle, but depends on a knowledgeable user.
-
-  Many smartphone users are novices and they can easily accidentally grant access to malicious apps.
-
-- See also `polkit` in Linux.
+:::
 
 ## Next time
 
