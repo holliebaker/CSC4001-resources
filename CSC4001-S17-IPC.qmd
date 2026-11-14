@@ -8,13 +8,16 @@ format:
     css: ./style.css
 ---
 
-## Learning Outcomes
+## Objectives
 
-- Explain why **inter-process communication** is nedeed, and why it must be facilitated by the OS.
+- Explain why **inter-process communication** is needed, and why it must be facilitated by the OS.
 - Give an overview of **IPC mechanisms**, including how they work and their advantages and disadvantages.
+::: notes
 - Describe what **POSIX** is, and state some of the things it defines.
 - Use **POSIX pipes** to give the output from one process as the input of another.
+:::
 
+::: notes
 ## Recap: scheduling
 
 - Deciding which process should run next.
@@ -71,6 +74,7 @@ As well as **scheduling processes**, the OS also has to:
 - A special user, called **root** can mess with the processes of **all users**.
 
 - The MMU also provides a hardware solution to prevent one process from accessing another process's memory.
+:::
 
 # Inter-process communication
 
@@ -98,6 +102,13 @@ As well as **scheduling processes**, the OS also has to:
   - Signals,
   - Semaphores.
 
+## Your challenge
+
+- Choose **two** IPC mechanisms, e.g., `files` vs `semaphores`
+  - Give a brief description of each
+  - Compare and contrast: where used, benefits and drawbacks.
+  
+::: notes
 ## Files
 
 ::::: columns-2
@@ -465,6 +476,7 @@ As well as **scheduling processes**, the OS also has to:
 - What does POSIX stand for?
 - *Pipes* are part of POSIX, find five other things included in the POSIX standard that we've discussed in this module.
 - Is the OS you are running POSIX compliant (or partially POSIX compliant)?
+:::
 
 ## Next time
 
