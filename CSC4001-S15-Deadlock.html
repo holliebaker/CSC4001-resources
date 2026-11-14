@@ -34,72 +34,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-1ddb21c2f84686f497aff9e1fdc170fd.css">
   <link rel="stylesheet" href="./style.css">
@@ -213,19 +147,29 @@ CSC4001: Computer Systems and Architecture
 </section>
 <section id="objectives" class="slide level2">
 <h2>Objectives</h2>
-</section>
-<section id="learning-outcomes" class="slide level2">
-<h2>Learning Outcomes</h2>
+<aside class="notes">
 <ul>
 <li>State the <strong>formal definition of deadlock</strong> and give an example of a situation where deadlock occurs.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<ul>
 <li>Give the three <strong>Coffman conditions</strong> required for deadlock to be possible.</li>
 <li>Overview the ways in which an OS may prevent or detect and break deadlock.</li>
-<li>Explain why processes require <strong>protection</strong>.</li>
-<li>Describe the measures the OS uses to provide process protection.</li>
 </ul>
 </section>
 <section id="recap-the-process-lifecycle" class="slide level2">
 <h2>Recap: the process lifecycle</h2>
+<aside class="notes">
 <ul>
 <li><p>One process may ask the OS to create a new one (fork or spawn),</p>
 <p>OS creates a process in the <strong>new</strong> state.</p></li>
@@ -234,21 +178,29 @@ CSC4001: Computer Systems and Architecture
 <p>its state is changed to <strong>running</strong> and any saved data is restored (MMU, registers).</p></li>
 <li><p>if a process requires I/O, it requests this from the OS via a <strong>syscall</strong>,</p>
 <p>OS sets its state to <strong>blocked</strong> until the I/O is done, then its state i set to <strong>ready</strong>.</p></li>
-</ul>
-</section>
-<section id="recap-the-process-lifecycle-1" class="slide level2">
-<h2>Recap: the process lifecycle</h2>
-<ul>
 <li><p>A <strong>running</strong> process may be interrupted or pre-empted,</p>
 <p>then its data is saved and state changed to <strong>ready</strong>.</p></li>
 <li><p>When a process is finished, its state is set to <strong>exit</strong>,</p>
 <p>the OS does some cleanup before the process is deleted.</p></li>
 </ul>
-</section>
-<section id="recap-process-lifecycle" class="slide level2">
-<h2>Recap: process lifecycle</h2>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 
 <img data-src="./assets/06-lifecycle.svg" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%" alt="diagram showing possible process state transitions"></section>
+<section>
+<section id="what-happens-when-a-process-needs-to-do-disk-io" class="title-slide slide level1 center">
+<h1>What happens when a process needs to do disk I/O?</h1>
+
+</section>
 <section id="example-blocking-on-io" class="slide level2">
 <h2>Example: blocking on I/O</h2>
 <p>Process is <strong>running</strong>.</p>
@@ -270,34 +222,28 @@ CSC4001: Computer Systems and Architecture
 <li>Note that this may not happen immediately.</li>
 </ul>
 </section>
-<section id="recap-scheduling" class="slide level2">
+<section id="recap-scheduling" class="slide level2 smaller">
 <h2>Recap: scheduling</h2>
 <p>Deciding what to do next.</p>
 <p>A good scheduler should:</p>
 <ol type="1">
-<li><p>not give any process too much CPU, but</p>
-<p>not give any process too little, either (<em>starvation</em>).</p></li>
-<li><p>Give compute-heavy processes longer, larger slices of CPU time, but</p>
-<p>give interactive processes small slices of CPU time very often.</p></li>
+<li><p>not give any process too much CPU, but not give any process too little, either (<em>starvation</em>).</p></li>
+<li><p>Give compute-heavy processes longer, larger slices of CPU time, but give interactive processes small slices of CPU time very often.</p></li>
 <li><p>Ensure real-time (safety-critical) processes run immediately.</p></li>
-<li><p>Ensure optimum use of hardware,</p>
-<p>everything should be busy, nothing should be waiting.</p></li>
-</ol>
-</section>
-<section id="recap-scheduling-1" class="slide level2">
-<h2>Recap: scheduling</h2>
-<ol start="5" type="1">
-<li><p>Optimise for different types of hardware, e.g.,</p>
-<p>mice and printers are slow, network and disk is (comparatively) fast.</p></li>
+<li><p>Ensure optimum use of hardware, everything should be busy, nothing should be waiting.</p></li>
+<li><p>Optimise for different types of hardware, e.g., mice and printers are slow, network and disk is (comparatively) fast.</p></li>
 <li><p>Provide <strong>predictable</strong> behaviour, and</p></li>
 <li><p>degrade gracefully under excessive load.</p></li>
-<li><p>Run <strong>fast</strong>, so as to maximise time spent running user-land applications</p>
-<p>and <strong>avoid thrashing</strong>.</p></li>
+<li><p>Run <strong>fast</strong>, so as to maximise time spent running user-land applications and <strong>avoid thrashing</strong>.</p></li>
 </ol>
 <ul>
-<li><p>Note that other other resources, e.g., I/O, need scheduling, too.</p>
-<p>Different resource schedulers may disagree about which process to run next.</p></li>
+<li>Note that other resources, e.g., I/O, need scheduling, too. Different resource schedulers may disagree about which process to run next.</li>
 </ul>
+</section></section>
+<section>
+<section id="easy-right-well-thats-not-all" class="title-slide slide level1 center">
+<h1>Easy, right? Well that’s not all…</h1>
+
 </section>
 <section id="the-os-also-needs-to" class="slide level2">
 <h2>The OS also needs to</h2>
@@ -307,11 +253,25 @@ CSC4001: Computer Systems and Architecture
 <li><p>Process protection:</p>
 <p>insuring that processes cannot interfere with one another.</p></li>
 </ul>
-</section>
+</section></section>
 <section>
 <section id="deadlock" class="title-slide slide level1 center">
 <h1>Deadlock</h1>
 
+</section>
+<section id="the-scenario" class="slide level2">
+<h2>The Scenario</h2>
+<ul>
+<li>Two keen students, Alice and Bob, sit at a desk. On the desk is one piece of paper and one pen. Both students want to take meticulous notes.</li>
+<li>Simultaneously, Alice grabs for the pen and Bob snatches up the paper.</li>
+<li>They stare blankly at each other, realising that neither of them can take notes.</li>
+<li>Oscar arrives. How does he break the deadlock between Bob and Alice?
+<ol type="1">
+<li>What is the cause of the deadlock?</li>
+<li>How can Oscar break the deadlock?</li>
+</ol></li>
+<li>Where does this situation occur in computers?</li>
+</ul>
 </section>
 <section id="example" class="slide level2">
 <h2>Example</h2>
@@ -323,7 +283,7 @@ CSC4001: Computer Systems and Architecture
 <li>Only one process can access the disk at any one time.</li>
 </ul>
 <p>What happens?</p>
-<div class="column">
+</div><div class="column">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -333,7 +293,9 @@ CSC4001: Computer Systems and Architecture
 </div>
 </div>
 </div>
-</div></div><section id="example-1" class="slide level2">
+</div></div>
+</section>
+<section id="example-1" class="slide level2">
 <h2>Example</h2>
 <div class="columns-2">
 <div class="column">
@@ -399,6 +361,11 @@ CSC4001: Computer Systems and Architecture
 <li>Every process is waiting for an event to happen</li>
 <li>But only another process in the group can trigger the event.</li>
 </ul>
+</section></section>
+<section>
+<section id="what-conditions-are-required-for-a-deadlock-to-occur" class="title-slide slide level1 center">
+<h1>What conditions are required for a deadlock to occur?</h1>
+
 </section>
 <section id="coffman-conditions" class="slide level2">
 <h2>Coffman conditions</h2>
@@ -444,8 +411,13 @@ CSC4001: Computer Systems and Architecture
 <li><p>If we break <strong>at least one</strong> Coffman condition, deadlock is <strong>impossible</strong>.</p></li>
 <li><p>Seems possible, but maybe harder than it looks…</p></li>
 </ul>
+</section></section>
+<section>
+<section id="prevent-hold-and-wait" class="title-slide slide level1 center">
+<h1>Prevent hold and wait…</h1>
+
 </section>
-<section id="prevent-hold-and-wait" class="slide level2">
+<section id="prevent-hold-and-wait-1" class="slide level2">
 <h2>Prevent hold and wait</h2>
 <ul>
 <li><p><strong>Hold and wait</strong></p>
@@ -457,7 +429,7 @@ CSC4001: Computer Systems and Architecture
 <li><p>It may <strong>never be possible</strong> to grab all resources at once.</p></li>
 </ul>
 </section>
-<section id="prevent-hold-and-wait-1" class="slide level2">
+<section id="prevent-hold-and-wait-2" class="slide level2">
 <h2>Prevent hold and wait</h2>
 <ul>
 <li><p>Why not block until <strong>all</strong> resources become available?</p>
@@ -490,8 +462,13 @@ CSC4001: Computer Systems and Architecture
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section></section>
+<section>
+<section id="prevent-mutual-exclusion" class="title-slide slide level1 center">
+<h1>Prevent mutual exclusion</h1>
+
 </section>
-<section id="prevent-mutual-exclusion" class="slide level2">
+<section id="prevent-mutual-exclusion-1" class="slide level2">
 <h2>Prevent mutual exclusion</h2>
 <div class="columns-2">
 <div class="column">
@@ -515,7 +492,7 @@ CSC4001: Computer Systems and Architecture
 </div>
 </div></div>
 </section>
-<section id="prevent-mutual-exclusion-1" class="slide level2">
+<section id="prevent-mutual-exclusion-2" class="slide level2">
 <h2>prevent mutual exclusion</h2>
 <ul>
 <li><p><strong>Alternative solution</strong>: virtual resources.</p>
@@ -536,23 +513,14 @@ CSC4001: Computer Systems and Architecture
 <p>process expects the resource to be in the same state as when it was taken away.</p></li>
 <li><p>We need to take care to save and restore the state or resources,</p>
 <p>so that the process can resume working on them as before.</p></li>
+<li><p>sometimes easy, as we will see with memory</p></li>
+<li><p>sometimes difficult or impossible, e.g., with a printer.</p></li>
 </ul>
-<aside class="notes">
-<ul>
-<li>sometimes easy, as we will see with memory</li>
-<li>sometimes difficult or impossible, e.g., with a printer.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+</section></section>
+<section>
+<section id="what-does-eating-pasta-with-chopsticks-have-to-do-with-deadlock" class="title-slide slide level1 center">
+<h1>What does eating pasta with chopsticks have to do with deadlock?</h1>
+
 </section>
 <section id="dining-philosophers-and-the-circular-wait" class="slide level2">
 <h2>Dining philosophers and the circular wait</h2>
@@ -624,6 +592,24 @@ CSC4001: Computer Systems and Architecture
 <li><p>This is hard to do, since it’s impossible to predict the future.</p></li>
 </ul>
 </section>
+<section id="lab-work" class="slide level2">
+<h2>Lab Work</h2>
+<ul>
+<li><p>Split into 3 teams</p></li>
+<li><p><strong>Team A</strong>: Dijkstra’s Banker Algorithm</p>
+<p>What is it? What are the conditions needed for resources to be allocated? What are its limitations?</p></li>
+<li><p><strong>Team B</strong>: deadlock detection</p>
+<p>What is a request resource allocation graph? How do they prevent deadlock? E.g. circular wait.</p></li>
+<li><p><strong>Team C</strong> virtualisation</p>
+<p>What is resource virtualisation? Are there any drawbacks? Describe priority inversion.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="next-time" class="title-slide slide level1 center">
+<h1>Next Time</h1>
+<p>Process protection</p>
+</section>
+<aside class="notes">
 <section id="dijkstras-banker-algorithm" class="slide level2">
 <h2>Dijkstra’s Banker Algorithm</h2>
 <ul>
@@ -728,8 +714,6 @@ CSC4001: Computer Systems and Architecture
 </div></li>
 </ul>
 </section>
-</div>
-</section>
 <section id="example-successful-request" class="slide level2">
 <h2>Example: successful request</h2>
 <ul>
@@ -799,22 +783,8 @@ CSC4001: Computer Systems and Architecture
 <li><p><strong>Take the resource away</strong></p>
 <p>it may be possible to fix the deadlock by taking only some the resources away from some of the processes.</p></li>
 </ul></li>
+<li><p>the art is to kill as few processes and pre-empt as few resources as we can, but this is quite difficult.</p></li>
 </ul>
-<aside class="notes">
-<ul>
-<li>the art is to kill as few processes and pre-empt as few resources as we can, but this is quite difficult.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="exercise-dining-philosophers" class="slide level2">
 <h2>Exercise: dining philosophers</h2>
@@ -829,23 +799,9 @@ CSC4001: Computer Systems and Architecture
 <li><p>Process uses them as though they are true resources.</p></li>
 <li><p>Later, the OS performs the operations done on the virtual resources on the real thing.</p>
 <p>New problem: resource scheduling. E.g., how to write data to disk most efficiently.</p></li>
+<li><p>with a mechanical HDD, having one write head, we can write most efficiently if the head moves around as little as possible.</p></li>
+<li><p>therefore, writes were re-ordered so that they could be performed most efficiently.</p></li>
 </ul>
-<aside class="notes">
-<ul>
-<li>with a mechanical HDD, having one write head, we can write most efficiently if the head moves around as little as possible.</li>
-<li>therefore, writes were re-ordered so that they could be performed most efficiently.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="aside-hard-disk-drive-at-work" class="slide level2">
 <h2>Aside: hard disk drive at work</h2>
@@ -853,19 +809,7 @@ CSC4001: Computer Systems and Architecture
 <li><a href="https://upload.wikimedia.org/wikipedia/commons/transcoded/c/cf/HDD_Startup_and_Shutdown.webm/HDD_Startup_and_Shutdown.webm.1080p.vp9.webm">Video of a HDD reading and writing</a></li>
 <li><a href="https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f8/Harddrive-engineerguy.ogv/Harddrive-engineerguy.ogv.360p.webm">Explanation of how a hard disk drive works</a></li>
 </ul>
-<aside class="notes">
 <p>A little aside, for those who are interested. Explaining how a HDD works.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="priorities-and-no-pre-emption" class="slide level2">
 <h2>Priorities and no pre-emption</h2>
@@ -878,108 +822,19 @@ CSC4001: Computer Systems and Architecture
 <li><p>In effect, the high priority process has been given <strong>lower priority</strong> than the low priority process.</p></li>
 </ul>
 <p>This situation is called <strong>priority inversion</strong>.</p>
-</section></section>
-<section>
-<section id="process-protection" class="title-slide slide level1 center">
-<h1>Process protection</h1>
-
 </section>
-<section id="resource-protection" class="slide level2">
-<h2>Resource protection</h2>
-<ul>
-<li><p>One of the main goals of the operating system.</p></li>
-<li><p>Prevents accidental or malicious damage to resources,</p>
-<p>e.g., corruption of other programs or data.</p></li>
-<li><p>Now we need to ensure that one process cannot interfere with another.</p>
-<p>More precisely, one <strong>user’s</strong> process cannot interfere with those belonging to another user.</p></li>
-</ul>
-</section>
-<section id="users" class="slide level2">
-<h2>Users</h2>
-<ul>
-<li><p>Each user has a <strong>user ID</strong>, a whole number.</p></li>
-<li><p>Resources or processes can be <strong>owned</strong> by a certain user,</p>
-<p>by flagging them with the user’s ID.</p></li>
-<li><p>Recall <em>process spawning</em>. The process which requested creation becomes the <em>parent</em>,</p>
-<p>new process also <strong>inherits the user ID</strong>.</p></li>
-<li><p>A process can make a <strong>syscall</strong>, requesting a resource,</p>
-<p>but the request can only be granted if the resource is owned by the <strong>same user</strong> as the process.</p></li>
-</ul>
-</section>
-<section id="advantages" class="slide level2">
-<h2>Advantages</h2>
-<ul>
-<li><p>Provides <strong>isolation</strong>, since a user can only mess with their own processes.</p></li>
-<li><p><strong>Security</strong>, since malware can only infiltrate one user’s programs and data.</p>
-<ul>
-<li>In some operating systems, e.g., early Windows, many programs were run as <strong>admin</strong>.</li>
-<li>This gave potential malware <strong>access to everything</strong>.</li>
-</ul></li>
-</ul>
-</section>
-<section id="the-root-user" class="slide level2">
-<h2>The Root User</h2>
-<ul>
-<li><p>Operating systems include a special user,</p>
-<p>often called <strong>admin</strong>, <strong>superuser</strong> or <strong>root</strong>.</p></li>
-<li><p>This user has access to <strong>all resources</strong> and can <em>signal</em> <strong>all processes</strong>,</p>
-<p>i.e., can kill processes belonging to any user.</p></li>
-<li><p>The admin user can often do things ordinary users cannot, e.g.,</p>
-<ul>
-<li>turn off the system,</li>
-<li>delete OS files,</li>
-<li>mess around with network configuration.</li>
-</ul></li>
-<li><p>Admin user is a similar idea to <strong>privileged mode</strong>,</p>
-<p>Note that the admin user’s instructions are still <strong>unprivileged</strong> – only OS code is <strong>privileged</strong>.</p></li>
-</ul>
-</section>
-<section id="with-great-power-comes-great-responsibility" class="slide level2">
-<h2>With great power comes great responsibility</h2>
-<ul>
-<li><p>It is best to spend as <strong>little time as possible</strong> as the admin user,</p></li>
-<li><p>this reduces the risk of accidental damage or security vulnerabilities destroying your system.</p></li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-label="1"></a><span class="co"># sudo rm -fr /* # removes all the French files??</span></span>
-<span id="cb1-2"><a aria-label="2"></a><span class="co"># alias please=sudo # ask the OS politely to do the thing.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="bootstrapping" class="slide level2">
-<h2>Bootstrapping</h2>
-<ul>
-<li><p>The admin user can create <strong>any</strong> process.</p></li>
-<li><p>When an ordinary user logs in,</p>
-<ul>
-<li>admin user creates a new process,</li>
-<li>then <strong>changes the user ID</strong> to that of the new user,</li>
-<li>all the new user’s processes can be spawned from that one, inheriting its user ID.</li>
-</ul></li>
-</ul>
-</section>
-<section id="capabilities" class="slide level2">
-<h2>Capabilities</h2>
-<ul>
-<li><p>Offers finer, more granular control over resources,</p>
-<p>e.g.,</p>
-<ul>
-<li>read / modify certain <strong>areas of memory</strong> or <strong>files on disk</strong>,</li>
-<li>access to the <strong>network</strong>, ability to <strong>install software</strong> or <strong>shutdown the computer</strong>.</li>
-</ul></li>
-<li><p>This can be <strong>system wide</strong>, or as granular as <strong>per-file</strong>.</p></li>
-<li><p>To work efficiently, hardware support is required.</p></li>
-</ul>
-</section>
-<section id="permissions" class="slide level2">
-<h2>Permissions</h2>
-<ul>
-<li><p>The idea of <strong>capabilities</strong> never took off.</p></li>
-<li><p>Smartphones now have <strong>permissions</strong>, which use a similar idea.</p></li>
-<li><p>User has to grant access to filesystem / location / camera on a per-app basis.</p></li>
-<li><p>A great idea in principle, but depends on a knowledgeable user.</p>
-<p>Many smartphone users are novices and they can easily accidentally grant access to malicious apps.</p></li>
-<li><p>See also <code>polkit</code> in Linux.</p></li>
-</ul>
-</section>
-<section id="next-time" class="slide level2">
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<section id="next-time-1" class="slide level2">
 <h2>Next time</h2>
 <p>Inter-process communication</p>
 
