@@ -377,4 +377,4 @@ Military officers are unhappy with the direction of your Government's actions, c
 | Cooperate | +1 Mil, + 1 PPP / +1 Mil, + 1 PPP | + 2 Mil + 2 PPP / -2 Mil, -1 sec |
 | Defect | -2 Mil/ + 2 Mil, + 2 PPP | -2 Mil, -1 Edu, - 2 Econ / -2 Mil, -1 Edu, - 2 Econ | 
 
-# Who Won?
+# Who Won? {background-color="black" background-image="/assets/fish.png" alt="Your prize: a comedic wide fish with a large rounded body, yellow orange snout, blue grey fins and dark stripes along its side."}
