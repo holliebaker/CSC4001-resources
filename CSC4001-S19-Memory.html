@@ -145,6 +145,14 @@ CSC4001: Computer Systems and Architecture
 </div>
 
 </section>
+<section id="discuss-wirths-law" class="slide level2">
+<h2>DIscuss: Wirth’s law</h2>
+<ul>
+<li>What does Wirth’s Law state?</li>
+<li>Do you agree?</li>
+<li>Can you think of some examples?</li>
+</ul>
+</section>
 <section id="objectives" class="slide level2">
 <h2>Objectives</h2>
 <ul>
@@ -214,7 +222,7 @@ CSC4001: Computer Systems and Architecture
 <li>PC software such as games performs best with as many resources as possible,</li>
 <li>Some problems in scientific computation are still to big for even the largest mainframes.</li>
 </ul></li>
-<li><p>Generative AI.</p></li>
+<li><p>Generative AI?!</p></li>
 </ul>
 <aside class="notes">
 <ul>
@@ -243,6 +251,17 @@ CSC4001: Computer Systems and Architecture
 <li><p>A process may request memory either <strong>at startup</strong> or <strong>while it is running</strong>.</p></li>
 <li><p>Likewise, it may <em>reallocate</em> memory at any point while it is <strong>running</strong>, or when it <strong>exits</strong>.</p></li>
 </ul>
+</section>
+<section id="allocating-memory" class="slide level2">
+<h2>Allocating memory</h2>
+<ul>
+<li><p>You have a generous <strong>64KB</strong> of RAM to use.</p></li>
+<li><p>Your computer expects instructions to appear in order, so no fragmentation.</p></li>
+<li><p>The OS already occupies the first <strong>32K</strong>.</p></li>
+<li><p>A user process consumes <strong>16K</strong> in the middle of the remaining memory, leaving <strong>two 8K blocks</strong>.</p></li>
+<li><p>A new process is admitted and requests <strong>12K</strong> of memory.</p></li>
+</ul>
+<p><strong>What do you do?</strong></p>
 </section>
 <section id="memory-layout" class="slide level2">
 <h2>Memory layout</h2>
@@ -381,9 +400,22 @@ CSC4001: Computer Systems and Architecture
 <li><em>Best fit</em>: smallest gap large enough to accommodate it,</li>
 <li><em>Worst fit</em>: largest gap available.</li>
 </ul></li>
-<li><p>Surprisingly, <em>worst fit</em> is the best option, since it leaves gaps large enough to be used by other processes.</p>
-<p>Whereas the gaps left by <em>best fit</em> are too small for anything useful.</p></li>
 </ul>
+<aside class="notes">
+<ul>
+<li>Surprisingly, <em>worst fit</em> is the best option, since it leaves gaps large enough to be used by other processes. Whereas the gaps left by <em>best fit</em> are too small for anything useful.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </div><div class="column">
 <div class="outer-block">
 <div class="memory-diagram">
@@ -556,6 +588,11 @@ CSC4001: Computer Systems and Architecture
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+</section></section>
+<section>
+<section id="any-overheads-how-can-we-overcome-them" class="title-slide slide level1 center">
+<h1>Any overheads? How can we overcome them?</h1>
+
 </section>
 <section id="overheads" class="slide level2">
 <h2>Overheads?</h2>
@@ -691,6 +728,17 @@ CSC4001: Computer Systems and Architecture
 </ul>
 </section>
 <section id="paging-strategies-1" class="slide level2">
+<h2>Paging Strategies</h2>
+<p>WHich strategy is the best?</p>
+<ul>
+<li><strong>Random</strong>: throw out pages at random</li>
+<li><strong>Random</strong>: first page loaded is first thrown out</li>
+<li><strong>Least recently used</strong>: throw out the page accessed the longest time ago.</li>
+<li><strong>Least frequently used</strong>: keep a count of accesses, the page with fewest accesses is thrown out.</li>
+</ul>
+<p>Consider: what is meant by <em>best</em>? Why did you pick that strategy?</p>
+</section>
+<section id="paging-strategies-2" class="slide level2">
 <h2>Paging strategies</h2>
 <ul>
 <li><p><strong>Random</strong>:</p>
@@ -698,15 +746,15 @@ CSC4001: Computer Systems and Architecture
 <li><p><strong>FIFO</strong>: first page loaded is first thrown out.</p></li>
 </ul>
 </section>
-<section id="paging-strategies-2" class="slide level2">
+<section id="paging-strategies-3" class="slide level2">
 <h2>Paging strategies</h2>
 <ul>
-<li><p>(<strong>FIFO</strong>:</p>
+<li><p><strong>FIFO</strong>:</p>
 <p>Poor, since pages which have been around for a long time tend to be needed.</p></li>
 <li><p><strong>Least recently used</strong>: throw out the page accessed the longest time ago.</p></li>
 </ul>
 </section>
-<section id="paging-strategies-3" class="slide level2">
+<section id="paging-strategies-4" class="slide level2">
 <h2>Paging strategies</h2>
 <ul>
 <li><p><strong>Least Recently used</strong></p>
@@ -714,7 +762,7 @@ CSC4001: Computer Systems and Architecture
 <li><p><strong>Least frequently used</strong>: keep a count of accesses, the page with fewest accesses is thrown out.</p></li>
 </ul>
 </section>
-<section id="paging-strategies-4" class="slide level2">
+<section id="paging-strategies-5" class="slide level2">
 <h2>Paging strategies</h2>
 <ul>
 <li><p><strong>Least frequently used</strong></p>
@@ -887,6 +935,10 @@ CSC4001: Computer Systems and Architecture
 <li><p>Each processor may have its <strong>own cache</strong>, but we need to keep cached values consistent across CPUs.</p></li>
 <li><p>A <strong>shared cache</strong> solves this problem, but causes a bottleneck.</p></li>
 </ul>
+</section>
+<section id="lab-work" class="slide level2">
+<h2>Lab work</h2>
+<p>Research a cyber attack that was caused by a memory issue. What happened? How was the memory issue exploited? How can this be mitigated in future?</p>
 </section>
 <section id="next-time" class="slide level2">
 <h2>Next time</h2>

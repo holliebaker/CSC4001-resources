@@ -2212,6 +2212,13 @@
     "text": "Test cases and stretch tasks\nCheck out the worksheet"
   },
   {
+    "objectID": "CSC4001-S19-Memory.html#discuss-wirths-law",
+    "href": "CSC4001-S19-Memory.html#discuss-wirths-law",
+    "title": "Memory",
+    "section": "DIscuss: Wirth’s law",
+    "text": "DIscuss: Wirth’s law\n\nWhat does Wirth’s Law state?\nDo you agree?\nCan you think of some examples?"
+  },
+  {
     "objectID": "CSC4001-S19-Memory.html#objectives",
     "href": "CSC4001-S19-Memory.html#objectives",
     "title": "Memory",
@@ -2251,7 +2258,7 @@
     "href": "CSC4001-S19-Memory.html#limited-resource",
     "title": "Memory",
     "section": "Limited resource?",
-    "text": "Limited resource?\n\nWe have already discussed that everything is limited,\neven in modern computers where memory is plentiful.\nWirth’s law: software is decelerating faster than hardware is accelerating.\nGates’ law: programs double in size every 18 months.\n\nPC software such as games performs best with as many resources as possible,\nSome problems in scientific computation are still to big for even the largest mainframes.\n\nGenerative AI.\n\n\n\nWirth’s law. as computers get faster, software can afford to run slower (be less efficient) and still run at the same speed as before. Wirth’s law states that it’s actually worse: software is slowing down more than hardware is speeding up."
+    "text": "Limited resource?\n\nWe have already discussed that everything is limited,\neven in modern computers where memory is plentiful.\nWirth’s law: software is decelerating faster than hardware is accelerating.\nGates’ law: programs double in size every 18 months.\n\nPC software such as games performs best with as many resources as possible,\nSome problems in scientific computation are still to big for even the largest mainframes.\n\nGenerative AI?!\n\n\n\nWirth’s law. as computers get faster, software can afford to run slower (be less efficient) and still run at the same speed as before. Wirth’s law states that it’s actually worse: software is slowing down more than hardware is speeding up."
   },
   {
     "objectID": "CSC4001-S19-Memory.html#processes-and-memory",
@@ -2259,6 +2266,13 @@
     "title": "Memory",
     "section": "Processes and memory",
     "text": "Processes and memory\n\nEach process requires some memory\n\nto store its code (instructions),\ndata, and OS metadata.\n\nA process may request memory either at startup or while it is running.\nLikewise, it may reallocate memory at any point while it is running, or when it exits."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#allocating-memory",
+    "href": "CSC4001-S19-Memory.html#allocating-memory",
+    "title": "Memory",
+    "section": "Allocating memory",
+    "text": "Allocating memory\n\nYou have a generous 64KB of RAM to use.\nYour computer expects instructions to appear in order, so no fragmentation.\nThe OS already occupies the first 32K.\nA user process consumes 16K in the middle of the remaining memory, leaving two 8K blocks.\nA new process is admitted and requests 12K of memory.\n\nWhat do you do?"
   },
   {
     "objectID": "CSC4001-S19-Memory.html#memory-layout",
@@ -2307,7 +2321,7 @@
     "href": "CSC4001-S19-Memory.html#gaps-in-memory",
     "title": "Memory",
     "section": "Gaps in memory",
-    "text": "Gaps in memory\n\n\n\nWhen processes end, they leave gaps in memory.\nA tricky problem became how to fill the gaps…\n\nFirst fit: first large enough gap found.\nBest fit: smallest gap large enough to accommodate it,\nWorst fit: largest gap available.\n\nSurprisingly, worst fit is the best option, since it leaves gaps large enough to be used by other processes.\nWhereas the gaps left by best fit are too small for anything useful.\n\n\n\n\n\nOS (kernel)\n\n\nP1\n\n\nGap left by P2\n\n\nP3\n\n\nFree memory"
+    "text": "Gaps in memory\n\n\n\nWhen processes end, they leave gaps in memory.\nA tricky problem became how to fill the gaps…\n\nFirst fit: first large enough gap found.\nBest fit: smallest gap large enough to accommodate it,\nWorst fit: largest gap available.\n\n\n\n\nSurprisingly, worst fit is the best option, since it leaves gaps large enough to be used by other processes. Whereas the gaps left by best fit are too small for anything useful.\n\n\n\n\n\n\nOS (kernel)\n\n\nP1\n\n\nGap left by P2\n\n\nP3\n\n\nFree memory"
   },
   {
     "objectID": "CSC4001-S19-Memory.html#garbage-collection",
@@ -2439,26 +2453,33 @@
     "objectID": "CSC4001-S19-Memory.html#paging-strategies-1",
     "href": "CSC4001-S19-Memory.html#paging-strategies-1",
     "title": "Memory",
-    "section": "Paging strategies",
-    "text": "Paging strategies\n\nRandom:\nSimple, surprisingly effective.\nFIFO: first page loaded is first thrown out."
+    "section": "Paging Strategies",
+    "text": "Paging Strategies\nWHich strategy is the best?\n\nRandom: throw out pages at random\nRandom: first page loaded is first thrown out\nLeast recently used: throw out the page accessed the longest time ago.\nLeast frequently used: keep a count of accesses, the page with fewest accesses is thrown out.\n\nConsider: what is meant by best? Why did you pick that strategy?"
   },
   {
     "objectID": "CSC4001-S19-Memory.html#paging-strategies-2",
     "href": "CSC4001-S19-Memory.html#paging-strategies-2",
     "title": "Memory",
     "section": "Paging strategies",
-    "text": "Paging strategies\n\n(FIFO:\nPoor, since pages which have been around for a long time tend to be needed.\nLeast recently used: throw out the page accessed the longest time ago."
+    "text": "Paging strategies\n\nRandom:\nSimple, surprisingly effective.\nFIFO: first page loaded is first thrown out."
   },
   {
     "objectID": "CSC4001-S19-Memory.html#paging-strategies-3",
     "href": "CSC4001-S19-Memory.html#paging-strategies-3",
     "title": "Memory",
     "section": "Paging strategies",
-    "text": "Paging strategies\n\nLeast Recently used\nWorks well, but needs hardware support.\nLeast frequently used: keep a count of accesses, the page with fewest accesses is thrown out."
+    "text": "Paging strategies\n\nFIFO:\nPoor, since pages which have been around for a long time tend to be needed.\nLeast recently used: throw out the page accessed the longest time ago."
   },
   {
     "objectID": "CSC4001-S19-Memory.html#paging-strategies-4",
     "href": "CSC4001-S19-Memory.html#paging-strategies-4",
+    "title": "Memory",
+    "section": "Paging strategies",
+    "text": "Paging strategies\n\nLeast Recently used\nWorks well, but needs hardware support.\nLeast frequently used: keep a count of accesses, the page with fewest accesses is thrown out."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#paging-strategies-5",
+    "href": "CSC4001-S19-Memory.html#paging-strategies-5",
     "title": "Memory",
     "section": "Paging strategies",
     "text": "Paging strategies\n\nLeast frequently used\nPoor because newly loaded pages tend to get thrown out immediately.\n\n\n\nthe most efficient option is least recently used.\nTLB and page table now needs an extra storage space to track last access time.\n“pages which have been around the longest tend to be most used” - most programs tend to declare some variables and use them throughout. A program which creates lots of variables and accesses memory all over the place can cause lots of TLB misses and run more slowly than a conventionally written program."
@@ -2532,6 +2553,13 @@
     "title": "Memory",
     "section": "Multi-processor architecture",
     "text": "Multi-processor architecture\n\nSo far we have considered only single-processor architectures,\nbut almost all modern computers include multiple processors (or multiple cores).\nEach processor may have its own cache, but we need to keep cached values consistent across CPUs.\nA shared cache solves this problem, but causes a bottleneck."
+  },
+  {
+    "objectID": "CSC4001-S19-Memory.html#lab-work",
+    "href": "CSC4001-S19-Memory.html#lab-work",
+    "title": "Memory",
+    "section": "Lab work",
+    "text": "Lab work\nResearch a cyber attack that was caused by a memory issue. What happened? How was the memory issue exploited? How can this be mitigated in future?"
   },
   {
     "objectID": "CSC4001-S19-Memory.html#next-time",
@@ -2874,7 +2902,7 @@
     "href": "CSC4001-S21-Koyash.html#refugee-results",
     "title": "Koyash!",
     "section": "Refugee results",
-    "text": "Refugee results\n\n-1 in Military points\nGet 2 new political power points to spend – force other team to choose option 2\nIf welfare &lt; 5, \n\n-2 in welfare, education, economy, and security points and get 1 new political power point to spend\n\nOtherwise\n\n-1 welfare\n\n(successful)  -1 in welfare, education, economy, and security points and get 2 new political power points to spend from cooperation.\n(successful) your country – 1 economy, other country -1 welfare and get 2 new political power points to spend from cooperation."
+    "text": "Refugee results\n\n\\(-1\\) in Military points\nGet \\(2\\) new political power points to spend – force other team to choose option 2\nIf welfare \\(&lt; 5\\), \n\n\\(-2\\) in welfare, education, economy, and security points and get \\(1\\) new political power point to spend\n\nOtherwise\n\n\\(-1\\) welfare\n\n(successful)  \\(-1\\) in welfare, education, economy, and security points and get \\(2\\) new political power points to spend from cooperation.\n(successful) your country \\(-1\\) economy, other country \\(-1\\) welfare and get 2 new political power points to spend from cooperation."
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-2",
@@ -2888,21 +2916,21 @@
     "href": "CSC4001-S21-Koyash.html#cooperation-payout",
     "title": "Koyash!",
     "section": "Cooperation payout ",
-    "text": "Cooperation payout \n\n\n\n\n\n\n\n\nKoy/Tia\nCooperate\nDefect\n\n\n\n\nCooperate\n+1 econ, -1 sec + 1 PPP / +1 econ, -1 sec + 1 PPP\n+ 2 econ + 2 PPP / +1 econ, -1 sec\n\n\nDefect\n+1 econ, -1 sec / + 2 econ, + 2 PPP\n-2 econ / -2 econ"
+    "text": "Cooperation payout \n\n\n\n\n\n\n\n\nKoy/Tia\nCooperate\nDefect\n\n\n\n\nCooperate\n\\(+1\\) econ, \\(-1\\) sec \\(+1\\) PPP / \\(+1\\) econ, \\(-1\\) sec \\(+1\\) PPP\n\\(+2\\) econ \\(+2\\) PPP / \\(+1\\) econ, \\(-1\\) sec\n\n\nDefect\n\\(+1\\) econ, \\(-1\\) sec / \\(+2\\) econ, \\(+2\\) PPP\n\\(-2\\) econ / \\(-2\\) econ"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#refugee-bonus-round",
     "href": "CSC4001-S21-Koyash.html#refugee-bonus-round",
     "title": "Koyash!",
     "section": "Refugee Bonus round!",
-    "text": "Refugee Bonus round!\n\nWhen taking in refugees, there is always a chance that there is a proportion of highly educated or skilled workers who want to support their host country\n\nDice roll boosts:\n\nIf you took all the refugees on a 3+ dice roll get + 3 PPP\nIf you took some refugees on a 5+ dice roll get + 2 PPP"
+    "text": "Refugee Bonus round!\n\nWhen taking in refugees, there is always a chance that there is a proportion of highly educated or skilled workers who want to support their host country\n\nDice roll boosts:\n\nIf you took all the refugees: on a \\(3+\\) dice roll get \\(+3\\) PPP\nIf you took some refugees on a \\(5+\\) dice roll get \\(+2\\) PPP"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#conflict-decider",
     "href": "CSC4001-S21-Koyash.html#conflict-decider",
     "title": "Koyash!",
     "section": "Conflict decider",
-    "text": "Conflict decider\n\nMilitary x2 of other country -1 Mil, + 2 econ, +2 PPP / - 2 Mil, +1 PPP\nMilitary x1.5 of other country -1 Mil, - 1 econ, + 2 PPP (both)\nMilitary less than 1.5 of other county -2 Mil, -2 econ, + 1 PPP (both)"
+    "text": "Conflict decider\n\nMilitary \\(\\times2\\) of other country \\(-1\\) Mil, \\(+2\\) econ, \\(+2\\) PPP / \\(-2\\) Mil, \\(+1\\) PPP\nMilitary \\(\\times1.5\\) of other country \\(-1\\) Mil, \\(-1\\) econ, \\(+2\\) PPP (both)\nMilitary \\(&lt;1.5\\) of other county \\(-2\\) Mil, \\(-2\\) econ, \\(+1\\) PPP (both)"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-3",
@@ -2916,7 +2944,7 @@
     "href": "CSC4001-S21-Koyash.html#disease-results",
     "title": "Koyash!",
     "section": "Disease results",
-    "text": "Disease results\n\n\n\n\nKoyash effects\nTiamat effects\n\n\n\n\nTiamat fully helps\n-1 welfare, + 1 PPP\n-1 welfare, + 1 PPP\n\n\nSome aid\n-2 welfare, + 1 PPP\n+ 1 PPP\n\n\nRefuses\n-3 welfare, -1 sec, -1 econ\n+ 2 PPP\n\n\n\nRefuse, for tiamat: roll dice: - 2+ disease flows over the border — 1 welfare, - 4+ major outbreak — 3 welfare, -1 sec, -1 econ"
+    "text": "Disease results\n\n\n\n\nKoyash effects\nTiamat effects\n\n\n\n\nTiamat fully helps\n\\(-1\\) welfare, \\(+1\\) PPP\n\\(-1\\) welfare, \\(+1\\) PPP\n\n\nSome aid\n\\(-2\\) welfare, \\(+1\\) PPP\n\\(+1\\) PPP\n\n\nRefuses\n\\(-3\\) welfare, \\(-1\\) sec, \\(-1\\) econ\n\\(+2\\) PPP\n\n\n\nRefuse, for tiamat: roll dice: - \\(2+\\) disease flows over the border – \\(-1\\) welfare, - \\(4+\\) major outbreak – \\(-3\\) welfare, \\(-1\\) sec, \\(-1\\) econ"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-4",
@@ -2930,7 +2958,7 @@
     "href": "CSC4001-S21-Koyash.html#armed-militant-results",
     "title": "Koyash!",
     "section": "Armed militant results",
-    "text": "Armed militant results\n\n\n\n\n\n\n\n\n\nTiamat effects\nKoyash effects\n\n\n\n\nKoyash fully help\n-1 Mil, -1 sec, + 2 PPP\n-1 Mil, + 1 PPP\n\n\nSome aid\n-2 Mil, -2 sec, + 1 PPP\n+1 PPP\n\n\nRefuses\n-3 Mil, - 1 welfare, - 1 sec, -1 econ\n+ 2 PPProll dice: 4+ major attacks – 2 Mil, -1 welfare, -1 sec, -1 econ\n\n\nSupports militants\n3 Mil, - 3 sec, - 2 econ\nAccess to new resources + 1 econ, + 2 PPP"
+    "text": "Armed militant results\n\n\n\n\n\n\n\n\n\nTiamat effects\nKoyash effects\n\n\n\n\nKoyash fully help\n\\(-1\\) Mil, \\(-1\\) sec, \\(+2\\) PPP\n\\(-1\\) Mil, \\(+1\\) PPP\n\n\nSome aid\n\\(-2\\) Mil, \\(-2\\) sec, \\(+1\\) PPP\n\\(+1\\) PPP\n\n\nRefuses\n-3 Mil, - 1 welfare, - 1 sec, -1 econ\n+ 2 PPProll dice: 4+ major attacks – 2 Mil, -1 welfare, -1 sec, -1 econ\n\n\nSupports militants\n\\(3\\) Mil, \\(-3\\) sec, \\(-2\\) econ\nAccess to new resources \\(+1\\) econ, \\(+2\\) PPP"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-5",
@@ -2951,7 +2979,7 @@
     "href": "CSC4001-S21-Koyash.html#joint-research-results",
     "title": "Koyash!",
     "section": "Joint Research results",
-    "text": "Joint Research results\n\n\n2 Edu, + 2 PPP\n\n2 Mil, - 2 Econ, + 3 Edu, + 1 PPP, (-1 Mil, -1 Econ, + 3 Edu + 2 PPP if jointly agreed)\n\n1 Econ, + 1 Edu, - 2 Welfare + 1 PPP (+ 1 Econ, + 1 Edu, -1 Welfare, ++ 1PPP if jointly agreed)\n\n\n1 Edu, + 1 Sec, + 1 Welfare, - 2 Mil, - 2 Econ + 1 PPP (+ 1 Edu, + 1 Sec, + 1 Welfare, -1 Mil, - 1 Econ, + 1 PPP if jointly agreed)\n\n\n1 Edu, - 1 Econ, + 2 + 1 Sec"
+    "text": "Joint Research results\n\n\\(+2\\) Edu, \\(+2\\) PPP\n\\(2\\) Mil, \\(-2\\) Econ, \\(+3\\) Edu, \\(+1\\) PPP, (\\(-1\\) Mil, \\(-1\\) Econ, \\(+3\\) Edu \\(+2\\) PPP if jointly agreed)\n\\(+1\\) Econ, \\(+1\\) Edu, \\(-2\\) Welfare \\(+1\\) PPP (\\(+1\\) Econ, \\(+1\\) Edu, \\(-1\\) Welfare, plus \\(+1\\) PPP if jointly agreed)\n\\(+1\\) Edu, \\(+1\\) Sec, \\(+1\\) Welfare, \\(-2\\) Mil, \\(-2\\) Econ \\(+1\\) PPP (\\(+1\\) Edu, \\(+1\\) Sec, \\(+1\\) Welfare, \\(-1\\) Mil, \\(-1\\) Econ, \\(+1\\) PPP if jointly agreed)\n\\(-1\\) Edu, \\(-1\\) Econ, \\(+1\\) Sec"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#end-of-phase-1",
@@ -2979,7 +3007,7 @@
     "href": "CSC4001-S21-Koyash.html#choosing-sides-results",
     "title": "Koyash!",
     "section": "Choosing Sides Results",
-    "text": "Choosing Sides Results\n\nCooperate with each other (both must agree) + 5 PPP\n\nThearchy of Shantia + 1 Econ, + 1 Welfare, + 1 Edu, - 2 MilIf you have JRP: + 1 PPP\nLinshia Union + 2 Mil, + 1 Econ, + 1 Welfare, - 1 EduIf you have refugees: -2 Sec with protests\nDonfia Kingdoms -3 Edu, + 1 Mil, -2 Econ\n\nNo cooperation +2 PPP"
+    "text": "Choosing Sides Results\n\nCooperate with each other (both must agree) \\(+5\\) PPP\n\nThearchy of Shantia \\(+1\\) Econ, \\(+1\\) Welfare, \\(+1\\) Edu, \\(-2\\) MilIf you have “joint research program”: \\(+1\\) PPP\nLinshia Union \\(+2\\) Mil, \\(+1\\) Econ, \\(+1\\) Welfare, \\(-1\\) Edu If you have refugees: \\(-2\\) Sec with protests\nDonfia Kingdoms \\(-3\\) Edu, \\(+1\\) Mil, \\(-2\\) Econ\n\nNo cooperation \\(+2\\) PPP"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-7",
@@ -2993,7 +3021,7 @@
     "href": "CSC4001-S21-Koyash.html#event-7-results",
     "title": "Koyash!",
     "section": "Event 7 Results",
-    "text": "Event 7 Results\n\nAny act in isolation leads to –2 in that category as resources are expended.  Gain + 1 PPP\nIf the action is done jointly –1 to that category and + 2 PPP"
+    "text": "Event 7 Results\n\nAny act in isolation leads to \\(-2\\) in that category as resources are expended. \nGain \\(+1\\) PPP\nIf the action is done jointly \\(-1\\) to that category and \\(+2\\) PPP"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-8",
@@ -3007,21 +3035,21 @@
     "href": "CSC4001-S21-Koyash.html#outcomes",
     "title": "Koyash!",
     "section": "Outcomes",
-    "text": "Outcomes\n\n\n– Aligned with Dofina\n\nJoin war –2 mil, econ, sec, + 3 PP\nSupport indirect –1 econ, sec. + 1PP\nIgnore  - + 2 PP\nDefect and join Maastrict - + 3 PP\n\nAligned with Maastrict\nSupport + 1 mil, + 2 PP\nDon’t support – 2 mil, - 1 edu, -1 sec\n\nAligned Linshia Union\n\nSupport indirectly –1 econ, sec. + 1PP\nDon’t support - -1mil\n\n\n\n\nAligned to each other\n\nJoin war with Maastrict –2 mil, - 2 eco PP\nJoin war with Dofina - 4 mil, - 2 econ PP\nSupport indirectly –1 econ, sec. + 1PP\n\nDon’t support - -1mil\n\nAligned to each other\nJoin war with Maastrict –2 mil, - 2 econ + 3 PP\nJoin war with Dofina  - 4 mil, - 2 econ + 5 PP"
+    "text": "Outcomes\n\n\n– Aligned with Dofina\n\nJoin war \\(-2\\) mil, econ, and sec, \\(+3\\) PPP\nSupport indirect \\(-1\\) econ, sec. $+1 $ PPP\nIgnore  \\(+2\\) PPP\nDefect and join Maastrict - \\(+3\\) PPP\nAligned with Maastrict\n\nSupport \\(+1\\) mil, \\(+ 2\\) PPP\nDon’t support \\(-2\\) mil, \\(-1\\) edu, \\(-1\\) sec\n\nAligned Linshia Union\n\nSupport indirectly \\(-1\\) econ, sec. \\(+ 1\\) PPP\nDon’t support \\(-1\\) mil\n\n\n\n\nAligned to each other\n\nJoin war with Maastrict \\(-2\\) mil, \\(-2\\) econ \\(+1\\) PPP\nJoin war with Dofina \\(-4\\) mil, \\(-2\\) econ \\(+1\\) PPP\nSupport indirectly \\(-1\\) econ, sec. \\(+ 1\\) PPP\n\nDon’t support \\(-1\\) mil\nAligned to each other\n\nJoin war with Maastrict \\(-2\\) mil, \\(-2\\) econ \\(+3\\) PPP\nJoin war with Dofina \\(-4\\) mil, \\(-2\\) econ \\(+ 5\\) PPP"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-9",
     "href": "CSC4001-S21-Koyash.html#event-9",
     "title": "Koyash!",
     "section": "Event 9",
-    "text": "Event 9\nEarthquake\nKingdom of Tiamat suffers a strength 9 earthquake, causing 2 major cities to collapse \nTiamat – 2 Econ"
+    "text": "Event 9\nEarthquake\nKingdom of Tiamat suffers a strength 9 earthquake, causing 2 major cities to collapse \nTiamat \\(-2\\) Econ"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#earthquake-response",
     "href": "CSC4001-S21-Koyash.html#earthquake-response",
     "title": "Koyash!",
     "section": "Earthquake response",
-    "text": "Earthquake response\n\n\n\n\n\n\n\n\nKoy/Tia\nCooperate\nDefect\n\n\n\n\nCooperate\n+1 econ, + 1 PPP / +1 econ, + 1 PPP\n+ 2 econ + 1 PPP / -2 econ, -1 sec\n\n\nDefect\n+1 econ / + 2 econ, + 2 PPP\n-2 econ / -2 econ"
+    "text": "Earthquake response\n\n\n\n\n\n\n\n\nKoy/Tia\nCooperate\nDefect\n\n\n\n\nCooperate\n\\(+1\\) econ, \\(+1\\) PPP / \\(+1\\) econ, \\(+1\\) PPP\n\\(+2\\) econ \\(+1\\) PPP / \\(-2\\) econ, \\(-1\\) sec\n\n\nDefect\n\\(+1\\) econ / \\(+2\\) econ, \\(+2\\) PPP\n\\(-2\\) econ / \\(-2\\) econ"
   },
   {
     "objectID": "CSC4001-S21-Koyash.html#event-10",
@@ -3035,7 +3063,7 @@
     "href": "CSC4001-S21-Koyash.html#coup-results",
     "title": "Koyash!",
     "section": "Coup Results",
-    "text": "Coup Results\n\n\n\n\n\n\n\n\nKoy/Tia\nCooperate\nDefect\n\n\n\n\nCooperate\n+1 Mil, + 1 PPP / +1 Mil, + 1 PPP\n+ 2 Mil + 2 PPP / -2 Mil, -1 sec\n\n\nDefect\n-2 Mil/ + 2 Mil, + 2 PPP\n-2 Mil, -1 Edu, - 2 Econ / -2 Mil, -1 Edu, - 2 Econ"
+    "text": "Coup Results\n\n\n\n\n\n\n\n\nKoy/Tia\nCooperate\nDefect\n\n\n\n\nCooperate\n\\(+1\\) Mil, \\(+1\\) PPP / \\(+1\\) Mil, \\(+1\\) PPP\n\\(+2\\) Mil \\(+2\\) PPP / \\(-2\\) Mil, \\(-1\\) sec\n\n\nDefect\n\\(-2\\) Mil/ \\(+ 2\\) Mil, \\(+ 2\\) PPP\n\\(-2\\) Mil, \\(-1\\) Edu, \\(- 2\\) Econ / \\(-2\\) Mil, \\(-1\\) Edu, \\(- 2\\) Econ"
   },
   {
     "objectID": "CSC4001-S13a-SchedulingPresentations.html#question-1",
