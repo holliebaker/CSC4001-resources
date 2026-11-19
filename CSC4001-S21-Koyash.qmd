@@ -4,7 +4,7 @@ author: "CSC4001: Computer Systems and Architecture"
 date: ""
 format:
   revealjs:
-    theme: blood
+    theme: dark
 ---
 
 ## Can you save the Republic of Koyash/Kingdom of Tiamat? 
@@ -114,28 +114,27 @@ If any category drops below 0 you lose
 1. Place the military on the boarder (military score >= 6 points) This forces refugees to go to the other country (Koyash/Tiamat) 
 
 2. Allow all the refugees into your country (large impacts on welfare, education, economy, and security) – welfare spending will influence the result.
-
 3. Negotiate with other country (Koyash/Tiamat) to take half the refugees each (lower impact on welfare, education, economy, and security) 
 
 4. Negotiate with other country (Koyash/Tiamat) for them to take all the refugees in exchange for some economic support
 
 ## Refugee results {.smaller}
 
-1. -1 in Military points
+1. $-1$ in Military points
 
-   Get 2 new political power points to spend – force other team to choose option 2
+   Get $2$ new political power points to spend – force other team to choose option 2
 
-2. If welfare < 5, 
+2. If welfare $< 5$, 
 
-   - -2 in welfare, education, economy, and security points and get 1 new political power point to spend
+   - $-2$ in welfare, education, economy, and security points and get $1$ new political power point to spend
 
    Otherwise
 
-	 - -1 welfare
+	 - $-1$ welfare
 
-3. (successful)  -1 in welfare, education, economy, and security points and get 2 new political power points to spend from cooperation.
+3. (successful)  $-1$ in welfare, education, economy, and security points and get $2$ new political power points to spend from cooperation.
 
-4. (successful) your country – 1 economy, other country -1 welfare and get 2 new political power points to spend from cooperation.
+4. (successful) your country $-1$ economy, other country $-1$ welfare and get 2 new political power points to spend from cooperation.
 
 ## Event 2
 
@@ -151,8 +150,8 @@ If any category drops below 0 you lose
 
 | Koy/Tia	| Cooperate |	Defect |
 |:-------:|:---------:|:------:|
-| Cooperate |	+1 econ, -1 sec + 1 PPP / +1 econ, -1 sec + 1 PPP	| + 2 econ + 2 PPP / +1 econ, -1 sec |
-| Defect | +1 econ, -1 sec / + 2 econ, + 2 PPP | -2 econ / -2 econ |
+| Cooperate |	$+1$ econ, $-1$ sec $+1$ PPP / $+1$ econ, $-1$ sec $+1$ PPP	| $+2$ econ $+2$ PPP / $+1$ econ, $-1$ sec |
+| Defect | $+1$ econ, $-1$ sec / $+2$ econ, $+2$ PPP | $-2$ econ / $-2$ econ |
 
 ## Refugee Bonus round!
 
@@ -160,17 +159,17 @@ If any category drops below 0 you lose
 
 ### Dice roll boosts:
 
-- If you took all the refugees on a 3+ dice roll get + 3 PPP
+- If you took all the refugees: on a $3+$ dice roll get $+3$ PPP
 
-- If you took some refugees on a 5+ dice roll get + 2 PPP
+- If you took some refugees on a $5+$ dice roll get $+2$ PPP
 
 ## Conflict decider
 
-- Military x2 of other country	-1 Mil, + 2 econ, +2 PPP / - 2 Mil, +1 PPP
+- Military $\times2$ of other country	$-1$ Mil, $+2$ econ, $+2$ PPP / $-2$ Mil, $+1$ PPP
 
-- Military x1.5 of other country	-1 Mil, - 1 econ, + 2 PPP (both)
+- Military $\times1.5$ of other country	$-1$ Mil, $-1$ econ, $+2$ PPP (both)
 
-- Military less than 1.5 of other county	-2 Mil, -2 econ, + 1 PPP (both)
+- Military $<1.5$ of other county	$-2$ Mil, $-2$ econ, $+1$ PPP (both)
 
 ## Event 3
 
@@ -184,13 +183,13 @@ If any category drops below 0 you lose
 
 |     |	Koyash effects | Tiamat effects |
 |:---:|:--------------:|:--------------:|
-| Tiamat fully helps | -1 welfare, + 1 PPP | -1 welfare, + 1 PPP |
-| Some aid | -2 welfare, + 1 PPP | + 1 PPP |
-| Refuses | -3 welfare, -1 sec, -1 econ	| + 2 PPP |
+| Tiamat fully helps | $-1$ welfare, $+1$ PPP | $-1$ welfare, $+1$ PPP |
+| Some aid | $-2$ welfare, $+1$ PPP | $+1$ PPP |
+| Refuses | $-3$ welfare, $-1$ sec, $-1$ econ	| $+2$ PPP |
 
 **Refuse, for tiamat**: roll dice: 
-- 2+ disease flows over the border --- 1 welfare, 
-- 4+ major outbreak --- 3 welfare, -1 sec, -1 econ
+- $2+$ disease flows over the border -- $-1$ welfare, 
+- $4+$ major outbreak -- $-3$ welfare, $-1$ sec, $-1$ econ
 
 ## Event 4
 
@@ -204,10 +203,10 @@ If any category drops below 0 you lose
 
 |     | Tiamat effects | Koyash effects |
 |:---:|:--------------:|:--------------:|
-| Koyash fully help |	-1 Mil, -1 sec, + 2 PPP	| -1 Mil, + 1 PPP |
-| Some aid | -2 Mil, -2 sec, + 1 PPP | +1 PPP |
+| Koyash fully help |	$-1$ Mil, $-1$ sec, $+2$ PPP	| $-1$ Mil, $+1$ PPP |
+| Some aid | $-2$ Mil, $-2$ sec, $+1$ PPP | $+1$ PPP |
 | Refuses| -3 Mil, - 1 welfare, - 1 sec, -1 econ | + 2 PPProll dice: 4+ major attacks – 2 Mil, -1 welfare, -1 sec, -1 econ |
-| Supports militants |	3 Mil, - 3 sec, - 2 econ | Access to new resources + 1 econ, + 2 PPP |
+| Supports militants |	$3$ Mil, $-3$ sec, $-2$ econ | Access to new resources $+1$ econ, $+2$ PPP |
 
 ## Event 5
 
@@ -233,16 +232,16 @@ If any category drops below 0 you lose
 
 ## Joint Research results {.smaller}
 
-1. + 2 Edu, + 2 PPP
+1. $+2$ Edu, $+2$ PPP
 
-2. 2 Mil, - 2 Econ, + 3 Edu, + 1 PPP, (-1 Mil, -1 Econ, + 3 Edu + 2 PPP if jointly agreed)
+2. $2$ Mil, $-2$ Econ, $+3$ Edu, $+1$ PPP, ($-1$ Mil, $-1$ Econ, $+3$ Edu $+2$ PPP if jointly agreed)
 
-3. + 1 Econ, + 1 Edu, - 2 Welfare + 1 PPP (+ 1 Econ, + 1 Edu, -1 Welfare, ++ 1PPP if jointly
+3. $+1$ Econ, $+1$ Edu, $-2$ Welfare $+1$ PPP ($+1$ Econ, $+1$ Edu, $-1$ Welfare, plus $+1$ PPP if jointly
 agreed) 
 
-4. + 1 Edu, + 1 Sec, + 1 Welfare, - 2 Mil, - 2 Econ + 1 PPP (+ 1 Edu, + 1 Sec, + 1 Welfare, -1 Mil, - 1 Econ, + 1 PPP if jointly agreed)
+4. $+1$ Edu, $+1$ Sec, $+1$ Welfare, $-2$ Mil, $-2$ Econ $+1$ PPP ($+1$ Edu, $+1$ Sec, $+1$ Welfare, $-1$ Mil, $-1$ Econ, $+1$ PPP if jointly agreed)
 
-5. - 1 Edu, - 1 Econ, + 2 + 1 Sec
+5. $-1$ Edu, $-1$ Econ, $+1$ Sec
 
 ## End of Phase 1
 
@@ -254,9 +253,7 @@ agreed)
 
 **And the scores?  Country with the highest combined score at the end of Phase 2 wins**
 
----
-
----
+# {background-color="black" background-image="/assets/koyash-map-1.png"}
 
 ## Phase 2 story {.smaller}
 
@@ -273,15 +270,15 @@ Work together or apart – will you seek to cooperate with each other for protec
 
 ## Choosing Sides Results
 
-- Cooperate with each other (both must agree)	+ 5 PPP
+- Cooperate with each other (both must agree)	$+5$ PPP
 
-  - Thearchy of Shantia	+ 1 Econ, + 1 Welfare, + 1 Edu, - 2 MilIf you have JRP: + 1 PPP
+  - Thearchy of Shantia	$+1$ Econ, $+1$ Welfare, $+1$ Edu, $-2$ MilIf you have "joint research program": $+1$ PPP
 
-  - Linshia Union	+ 2 Mil, + 1 Econ, + 1 Welfare, - 1 EduIf you have refugees: -2 Sec with protests
+  - Linshia Union	$+2$ Mil, $+1$ Econ, $+1$ Welfare, $-1$ Edu If you have refugees: $-2$ Sec with protests
 
-  - Donfia Kingdoms	-3 Edu, + 1 Mil, -2 Econ
+  - Donfia Kingdoms	$-3$ Edu, $+1$ Mil, $-2$ Econ
 
-- No cooperation	+2 PPP
+- No cooperation	$+2$ PPP
 
 ## Event 7
 
@@ -295,8 +292,10 @@ Devise a response based on your current scores in each category. 
 
 ## Event 7 Results
 
-- Any act in isolation leads to –2 in that category as resources are expended.  Gain + 1 PPP
-- If the action is done jointly –1 to that category and + 2 PPP
+- Any act in isolation leads to $-2$ in that category as resources are expended. 
+
+  Gain $+1$ PPP
+- If the action is done jointly $-1$ to that category and $+2$ PPP
 
 ## Event 8
 
@@ -312,35 +311,35 @@ Devise a response based on your stats and which side you chose previously. 
 ::: column
 -- Aligned with Dofina
 
-  - Join war –2 mil, econ, sec, + 3 PP
-  - Support indirect –1 econ, sec. + 1PP
-  - Ignore  - + 2 PP
+  - Join war $-2$ mil, econ, and sec, $+3$ PPP
+  - Support indirect $-1$ econ, sec. $+1 $ PPP
+  - Ignore  $+2$ PPP
 
-- Defect and join Maastrict - + 3 PP
+- Defect and join Maastrict - $+3$ PPP
 
-  - Aligned with Maastrict
-  - Support + 1 mil, + 2 PP
-  - Don’t support – 2 mil, - 1 edu, -1 sec
+- Aligned with Maastrict
+  - Support $+1$ mil, $+ 2$ PPP
+  - Don’t support $-2$ mil, $-1$ edu, $-1$ sec
 
 - Aligned Linshia Union
 
-  - Support indirectly –1 econ, sec. + 1PP
-  - Don't support - -1mil
+  - Support indirectly $-1$ econ, sec. $+ 1$ PPP
+  - Don't support $-1$ mil
 
 :::
 ::: column
 
 - Aligned to each other
 
-  - Join war with Maastrict –2 mil, - 2 eco PP
-  - Join war with Dofina - 4 mil, - 2 econ PP
-  - Support indirectly –1 econ, sec. + 1PP
+  - Join war with Maastrict $-2$ mil,  $-2$ econ $+1$ PPP
+  - Join war with Dofina $-4$ mil, $-2$ econ $+1$ PPP
+  - Support indirectly $-1$ econ, sec. $+ 1$ PPP
 
-- Don't support - -1mil
+- Don't support  $-1$ mil
 
-  - Aligned to each other
-  - Join war with Maastrict –2 mil, - 2 econ + 3 PP
-  - Join war with Dofina  - 4 mil, - 2 econ + 5 PP
+- Aligned to each other
+  - Join war with Maastrict $-2$ mil, $-2$ econ $+3$ PPP
+  - Join war with Dofina $-4$ mil, $-2$ econ $+ 5$ PPP
 
 :::
 :::
@@ -351,14 +350,14 @@ Devise a response based on your stats and which side you chose previously. 
 
 Kingdom of Tiamat suffers a strength 9 earthquake, causing 2 major cities to collapse 
 
-**Tiamat – 2 Econ**
+**Tiamat $-2$ Econ**
 
 ## Earthquake response
 
 | Koy/Tia | Cooperate | Defect |
 |:-------:|:---------:|:------:|
-| Cooperate | +1 econ, + 1 PPP / +1 econ, + 1 PPP | + 2 econ + 1 PPP / -2 econ, -1 sec |
-| Defect | +1 econ / + 2 econ, + 2 PPP | -2 econ / -2 econ |
+| Cooperate | $+1$ econ, $+1$ PPP / $+1$ econ, $+1$ PPP | $+2$ econ $+1$ PPP / $-2$ econ, $-1$ sec |
+| Defect | $+1$ econ / $+2$ econ, $+2$ PPP | $-2$ econ / $-2$ econ |
 
 ## Event 10 {.smaller}
 
@@ -374,7 +373,7 @@ Military officers are unhappy with the direction of your Government's actions, c
 
 | Koy/Tia | Cooperate | Defect |
 |:-------:|:---------:|:------:|
-| Cooperate | +1 Mil, + 1 PPP / +1 Mil, + 1 PPP | + 2 Mil + 2 PPP / -2 Mil, -1 sec |
-| Defect | -2 Mil/ + 2 Mil, + 2 PPP | -2 Mil, -1 Edu, - 2 Econ / -2 Mil, -1 Edu, - 2 Econ | 
+| Cooperate | $+1$ Mil, $+1$ PPP / $+1$ Mil, $+1$ PPP | $+2$ Mil $+2$ PPP / $-2$ Mil, $-1$ sec |
+| Defect | $-2$ Mil/ $+ 2$ Mil, $+ 2$ PPP | $-2$ Mil, $-1$ Edu, $- 2$ Econ / $-2$ Mil, $-1$ Edu, $- 2$ Econ | 
 
 # Who Won? {background-color="black" background-image="/assets/fish.png" alt="Your prize: a comedic fat wide fish with a large rounded body, yellow orange snout, blue grey fins and dark stripes along its side."}

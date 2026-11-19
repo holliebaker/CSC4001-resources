@@ -8,6 +8,12 @@ format:
     css: ./style.css
 ---
 
+## DIscuss: Wirth's law
+
+- What does Wirth's Law state?
+- Do you agree?
+- Can you think of some examples?
+
 ## Objectives
 
 - Explain why the OS needs to manage memory.
@@ -75,7 +81,7 @@ Next, we will look at **memory management**.
 
   - PC software such as games performs best with as many resources as possible,
   - Some problems in scientific computation are still to big for even the largest mainframes.
-- Generative AI.
+- Generative AI?!
 
 ::: notes
 - Wirth's law. as computers get faster, software can afford to run slower (be less efficient) and still run at the same speed as before. Wirth's law states that it's actually worse: software is slowing down more than hardware is speeding up.
@@ -91,6 +97,20 @@ Next, we will look at **memory management**.
 - A process may request memory either **at startup** or **while it is running**.
 
 - Likewise, it may *reallocate* memory at any point while it is **running**, or when it **exits**.
+
+## Allocating memory
+
+- You have a generous **64KB** of RAM to use.
+
+- Your computer expects instructions to appear in order, so no fragmentation. 
+
+- The OS already occupies the first **32K**. 
+
+- A user process consumes **16K** in the middle of the remaining memory, leaving **two 8K blocks**. 
+
+- A new process is admitted and requests **12K** of memory. 
+
+**What do you do?**
 
 ## Memory layout
 
@@ -236,9 +256,10 @@ Next, we will look at **memory management**.
   - *Best fit*: smallest gap large enough to accommodate it,
   - *Worst fit*: largest gap available.
 
+::: notes
 - Surprisingly, *worst fit* is the best option, since it leaves gaps large enough to be used by other processes.
-
   Whereas the gaps left by *best fit* are too small for anything useful.
+:::
 
 :::
 ::: column
@@ -410,6 +431,8 @@ Next, we will look at **memory management**.
 - providing each process with its own set of virtual pages gives the illusion that each process has exclusive access to all of memory. the OS can then enforce memory protection (if a process tries to access memory out of bounds) and isolation (since it can ensure virtual addresses for each process point to different areas of memory).
 :::
 
+# Any overheads? How can we overcome them?
+
 ## Overheads?
 
 - Suppose a process wants to **read** a value from memory, **increment it** and then **write** the result to a different location.
@@ -529,7 +552,19 @@ Next, we will look at **memory management**.
 
   - **Random**: pick any.
 
+## Paging Strategies
+
+WHich strategy is the best?
+
+- **Random**: throw out pages at random
+- **Random**: first page loaded is first thrown out
+- **Least recently used**: throw out the page accessed the longest time ago.
+- **Least frequently used**: keep a count of accesses, the page with fewest accesses is thrown out.
+
+Consider: what is meant by *best*? Why did you pick that strategy?
+
 ## Paging strategies
+
   - **Random**:
 
     Simple, surprisingly effective.
@@ -538,7 +573,7 @@ Next, we will look at **memory management**.
 
 ## Paging strategies
 
-  - (**FIFO**:
+  - **FIFO**:
   
     Poor, since pages which have been around for a long time tend to be needed.
 
@@ -550,7 +585,6 @@ Next, we will look at **memory management**.
   - **Least Recently used**
 
     Works well, but needs hardware support.
-
 
   - **Least frequently used**: keep a count of accesses, the page with fewest accesses is thrown out.
 
@@ -704,6 +738,10 @@ Next, we will look at **memory management**.
 - Each processor may have its **own cache**, but we need to keep cached values consistent across CPUs.
 
 - A **shared cache** solves this problem, but causes a bottleneck.
+
+## Lab work
+
+Research a cyber attack that was caused by a memory issue. What happened? How was the memory issue exploited? How can this be mitigated in future?
 
 ## Next time
 
