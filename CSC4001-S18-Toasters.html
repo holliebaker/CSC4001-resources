@@ -263,11 +263,21 @@ CSC4001: Computer Systems and Architecture
 <section id="custom-images-on-toast" class="slide level2">
 <h2>Custom images on toast?</h2>
 <ul>
-<li><p>There is a hand mold toy that can be used to create images by pushing pins</p>
-<p>[[ Insert Hollie Baker side rant on the cost of refreshable Braille. ]]</p></li>
+<li><p>There is a hand mold toy that can be used to create images by pushing pins</p></li>
 <li><p>These pins could be heated to burn the toast</p></li>
 <li><p>The images could be uploaded to the toaster</p>
 <p>WIFI? USB? Both?</p></li>
+</ul>
+</section>
+<section id="but-actuating-pins-is-expensive" class="slide level2">
+<h2>But actuating pins is expensive</h2>
+<ul>
+<li><p>Mod the Braille embosser?</p>
+<ul>
+<li>Braille embossers have tiny hammers actuated by solonoids which can be moved horizontally, and paper rollers to draw paper vertically</li>
+</ul></li>
+<li><p>Simpler, cheaper, fewer moving parts.</p></li>
+<li><p>Somewhat like print printers, Braille printers have intuitive controls, always connect to the PC first time, and the paper never jams. Braille printers have the added bonus of shouting “OUT OF PAPER” when they need to be fed.</p></li>
 </ul>
 <aside class="notes">
 <p>Hollie, if you are reading this, I am going to put some toast through the braille printer wish me luck (might have to make sure it’s stale first)</p>
@@ -283,12 +293,72 @@ CSC4001: Computer Systems and Architecture
           display:block!important;
       }</style></aside>
 </section>
+<section id="toasty-printer-embosser-mod-requirements" class="slide level2">
+<h2>Toasty Printer Embosser Mod Requirements</h2>
+<h3 id="functional-1">Functional</h3>
+<ul>
+<li><p>Must be able to draw a standard sized slice of toasted bread through without breaking it (the bread that is)</p></li>
+<li><p>Must be able to scorch a dotty image onto the toast</p></li>
+<li><p>Must still be able toaccommodate ordinary paper so the user can also print documents.</p></li>
+</ul>
+</section>
+<section id="nonfunctional" class="slide level2">
+<h2>Nonfunctional</h2>
+<ul>
+<li><p>Must not catch on fire</p></li>
+<li><p>Embossing hammers, solonoids and left-to-right actuator must operate optimally under high temperatures</p></li>
+<li><p>Must operate below a certain noise threshold</p></li>
+<li><ul>
+<li>Must be inexpensive enough to be affordable by the average 6-person household</li>
+</ul></li>
+</ul>
+</section>
+<section id="affordable-braille-you-say" class="slide level2">
+<h2>Affordable Braille, you say?</h2>
+<ul>
+<li><p>Modding the Canute to scorch Braille on toast</p>
+<p><span class="math inline">\(9+9+40+40 &lt; 360\times 6\)</span></p>
+<ul>
+<li>Machine already gets hot while in use</li>
+<li>Rotors are robust and dots do not compress when pressure is applied</li>
+</ul></li>
+</ul>
+</section>
+<section id="braille-on-toast" class="slide level2">
+<h2>Braille on toast</h2>
+<ul>
+<li><p>So we turn off the thermal cut-out and run the Canute for an hour</p></li>
+<li><p>move rotors into position and press into toasted bread… Voila!</p></li>
+<li><p>But plastic’s not a great conductor, so we’ll need copper discs</p></li>
+<li><p>Also toast crumbs will jam up the mechanism, so we’ll need to press the Canute down into the toast.</p>
+<ul>
+<li>Now we need a Canute actuation system. Some kind of mini crane?</li>
+</ul></li>
+<li><p>And software to drive it, of course!</p></li>
+</ul>
+</section>
+<section id="canute-based-toast-scorcher" class="slide level2">
+<h2>Canute Based Toast Scorcher</h2>
+<ul>
+<li><p>Must reach optimal heat in under 5 minutes</p></li>
+<li><p>Must have an intuitive user interface for non-technical and non-Braille reading users.</p></li>
+<li><p>Must be able to scorch 100,000 slices of toast before a motor fails (on average).</p></li>
+<li><p>Must be able to burn the image into the toast before toast has cooled too much that it can’t melt butter.</p></li>
+</ul>
+</section>
 <section id="bread-delivery-drone" class="slide level2">
 <h2>Bread delivery drone</h2>
 <ul>
 <li><p>Drone has to be small enough to fly around a kitchen</p></li>
 <li><p>Capable of visually identifying bread</p></li>
 <li><p>Capable of picking up bread without destroying it</p></li>
+</ul>
+</section>
+<section id="toaster-to-plate-system" class="slide level2">
+<h2>Toaster to plate system</h2>
+<ul>
+<li><p>Toaster spring must be correctly callibrated to eject the toast, fling it into the air, and ensure that it lands on the plate.</p></li>
+<li><p>Toast must not be hurled out of the machine at such a force that it could inflict injury to users.</p></li>
 </ul>
 </section></section>
 <section>
