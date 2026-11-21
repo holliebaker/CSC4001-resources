@@ -123,18 +123,78 @@ This can be because:
 
 - There is a hand mold toy that can be used to create images by pushing pins
 
-  [[ Insert Hollie Baker side rant on the cost of refreshable Braille. ]]
-
 - These pins could be heated to burn the toast 
 
 - The images could be uploaded to the toaster
 
   WIFI? USB? Both?
 
+## But actuating pins is expensive
+
+- Mod the Braille embosser? 
+
+  - Braille embossers have tiny hammers actuated by solonoids which can be moved horizontally, and paper rollers to draw paper vertically
+
+- Simpler, cheaper, fewer moving parts.
+
+- Somewhat like print printers, Braille printers have intuitive controls, always connect to the PC first time, and the paper never jams. Braille printers have the added bonus of shouting "OUT OF PAPER" when they need to be fed. 
+
 ::: notes
 Hollie, if you are reading this, I am going to put some toast through the braille printer wish me luck (might have to make sure it's stale first)
 :::
 
+## Toasty Printer Embosser Mod Requirements
+
+### Functional
+
+- Must be able to draw a standard sized slice of toasted bread through without breaking it (the bread that is)
+
+- Must be able to scorch a dotty image onto the toast
+
+- Must still be able toaccommodate ordinary paper so the user can also print documents.
+
+## Nonfunctional
+
+- Must not catch on fire
+
+- Embossing hammers, solonoids and left-to-right actuator must operate optimally under high temperatures
+
+- Must operate below a certain noise threshold
+
+- - Must be inexpensive enough to be affordable by the average 6-person household
+
+## Affordable Braille, you say?
+
+- Modding the Canute to scorch Braille on toast
+
+  $9+9+40+40 < 360\times 6$
+
+  - Machine already gets hot while in use
+  - Rotors are robust and dots do not compress when pressure is applied
+
+## Braille on toast
+
+- So we turn off the thermal cut-out and run the Canute for an hour
+
+- move rotors into position and press into toasted bread... Voila!
+
+- But plastic's not a great conductor, so we'll need copper discs
+
+- Also toast crumbs will jam up the mechanism, so we'll need to press the Canute down into the toast.
+
+  - Now we need a Canute actuation system. Some kind of mini crane?
+
+- And software to drive it, of course!
+
+## Canute Based Toast Scorcher
+
+- Must reach optimal heat in under 5 minutes
+
+- Must have an intuitive user interface for non-technical and non-Braille reading users.
+
+- Must be able to scorch 100,000 slices of toast before a motor fails (on average).
+
+- Must be able to burn the image into the toast before toast has cooled too much that it can't melt butter. 
 
 ## Bread delivery drone
 
@@ -143,6 +203,12 @@ Hollie, if you are reading this, I am going to put some toast through the braill
 - Capable of visually identifying bread
 
 - Capable of picking up bread without destroying it
+
+## Toaster to plate system
+
+- Toaster spring must be correctly callibrated to eject the toast, fling it into the air, and ensure that it lands on the plate.
+
+- Toast must not be hurled out of the machine at such a force that it could inflict injury to users. 
 
 # Planning
 
