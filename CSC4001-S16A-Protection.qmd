@@ -25,17 +25,6 @@ format:
 
   More precisely, one **user's** process cannot interfere with those belonging to another user.
 
-## Your challenge
-
-In teams, reseorch
-
-- **Users** have all operating systems always had multiple users, and have all users had equal rights? How does having different users provide process protection? Does it work well? E.g., what happens when you need access to low level actions such as writing directly to hardware or signalling other processes?
-
-- **Capabilities** What are they? How do they provide process protection? Do they exist in modern operating systems, and if not, is there anything that does something similar?
-
-- **Hacking, attacking and generally breaking things**: research a cyber attack which has exploited poor process protection. How did it work? Has anything changed in modern systems to prevent it happening again?
-
-::: notes
 ## Users
 
 - Each user has a **user ID**, a whole number.
@@ -128,7 +117,13 @@ In teams, reseorch
   Many smartphone users are novices and they can easily accidentally grant access to malicious apps.
 
 - See also `polkit` in Linux.
-:::
+
+## Your challenge
+
+In teams, research
+
+- **Hacking, attacking and generally breaking things**: research a cyber attack which has exploited poor process protection. How did it work? Has anything changed in modern systems to prevent it happening again?
+
 
 # Next time
 
