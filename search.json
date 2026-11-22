@@ -777,13 +777,6 @@
     "text": "Resource protection\n\nOne of the main goals of the operating system.\nPrevents accidental or malicious damage to resources,\ne.g., corruption of other programs or data.\nNow we need to ensure that one process cannot interfere with another.\nMore precisely, one user’s process cannot interfere with those belonging to another user."
   },
   {
-    "objectID": "CSC4001-S16A-Protection.html#your-challenge",
-    "href": "CSC4001-S16A-Protection.html#your-challenge",
-    "title": "Process Protection",
-    "section": "Your challenge",
-    "text": "Your challenge\nIn teams, reseorch\n\nUsers have all operating systems always had multiple users, and have all users had equal rights? How does having different users provide process protection? Does it work well? E.g., what happens when you need access to low level actions such as writing directly to hardware or signalling other processes?\nCapabilities What are they? How do they provide process protection? Do they exist in modern operating systems, and if not, is there anything that does something similar?\nHacking, attacking and generally breaking things: research a cyber attack which has exploited poor process protection. How did it work? Has anything changed in modern systems to prevent it happening again?"
-  },
-  {
     "objectID": "CSC4001-S16A-Protection.html#users",
     "href": "CSC4001-S16A-Protection.html#users",
     "title": "Process Protection",
@@ -831,6 +824,13 @@
     "title": "Process Protection",
     "section": "Permissions",
     "text": "Permissions\n\nThe idea of capabilities never took off.\nSmartphones now have permissions, which use a similar idea.\nUser has to grant access to filesystem / location / camera on a per-app basis.\nA great idea in principle, but depends on a knowledgeable user.\nMany smartphone users are novices and they can easily accidentally grant access to malicious apps.\nSee also polkit in Linux."
+  },
+  {
+    "objectID": "CSC4001-S16A-Protection.html#your-challenge",
+    "href": "CSC4001-S16A-Protection.html#your-challenge",
+    "title": "Process Protection",
+    "section": "Your challenge",
+    "text": "Your challenge\nIn teams, research\n\nHacking, attacking and generally breaking things: research a cyber attack which has exploited poor process protection. How did it work? Has anything changed in modern systems to prevent it happening again?"
   },
   {
     "objectID": "CSC4001-S12-commandline.html",
