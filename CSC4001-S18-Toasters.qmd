@@ -262,12 +262,39 @@ Hollie, if you are reading this, I am going to put some toast through the braill
 
 - Sequence diagrams show the order that messages flow throughout a digital system, and which objects they interact with
 - Sequence diagram notation
-- Messages can also be returned to the same system object - so objects can message themselves (e.g. timer function) 
-- Asynchronous messages are denoted by an open arrowhead. These messages do not require a response before the next message is sent
+  - Objects are displayed in columns with a vertical line extending downwards
+  - Messages are represented by arrows drawn horizontally.
+  - Messages can also be returned to the same system object - so objects can message themselves (e.g. timer function) 
+  - Asynchronous messages are denoted by an open arrowhead. These messages do not require a response before the next message is sent
+  - Loops and alternative routes are denoted by boxes and a small label in the top left hand corner showing if it is a loop statement or an alternative route
+- The diagram should be read from top to bottom. e.j
 
 ## Sequence diagram notation
 
-Loops and alternative routes are denoted by boxes and a small label in the top left hand corner showing if it is a loop statement or an alternative route
+```{mermaid}
+sequenceDiagram
+  autonumber
+  actor User
+  participant Toaster
+  participant Drone as Bread Delivery Drone Control Subsystem
+  participant Api as Image generation API
+  participant Toastiness as Toastiness Determination Subsystem
+  participant Image as Fire Brand Subsystem
+  User ->> Toaster: Press start
+  Toaster ->> Drone: Collect bread request
+  Drone --> Toaster: Deliver bread
+  User ->> Toaster: Select toastiness
+  Toaster ->> Toastiness: Set toastiness value
+  Toastiness ->> Toastiness: Check desired toastiness
+  Toastiness ->> Toaster: Desired toastiness reached
+  User ->> Toaste:r Enter image prompt
+  Toaster ->> Api: Prompt LLM to generate pixel art
+  Api ->> Toaster: Return generated pixel art
+  Toaster ->> Image: Send pixel art
+  Image ->> Image: Actuate and heat pins, burn image into toast
+  Image ->> Toaster: Image burning complete
+  Toaster --> User: Eject toast 
+```
 
 ## Communication diagram
 
@@ -279,7 +306,7 @@ Loops and alternative routes are denoted by boxes and a small label in the top l
 
 - Use case diagrams map different user journeys throughout the system, detailing the main interactions between each user and the system. 
 
-- It also shows where 2 or more users might interact with the same system component at the same time.
+- They also show where 2 or more users might interact with the same system component at the same time.
 
 ## Use Case Diagram 
 
