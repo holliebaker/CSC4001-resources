@@ -2048,14 +2048,14 @@
     "href": "CSC4001-S18-Toasters.html#sequence-diagram",
     "title": "System Design",
     "section": "Sequence diagram",
-    "text": "Sequence diagram\n\nSequence diagrams show the order that messages flow throughout a digital system, and which objects they interact with\nSequence diagram notation\nMessages can also be returned to the same system object - so objects can message themselves (e.g. timer function)\nAsynchronous messages are denoted by an open arrowhead. These messages do not require a response before the next message is sent"
+    "text": "Sequence diagram\n\nSequence diagrams show the order that messages flow throughout a digital system, and which objects they interact with\nSequence diagram notation\n\nObjects are displayed in columns with a vertical line extending downwards\nMessages are represented by arrows drawn horizontally.\nMessages can also be returned to the same system object - so objects can message themselves (e.g. timer function)\nAsynchronous messages are denoted by an open arrowhead. These messages do not require a response before the next message is sent\nLoops and alternative routes are denoted by boxes and a small label in the top left hand corner showing if it is a loop statement or an alternative route\n\nThe diagram should be read from top to bottom. e.j"
   },
   {
     "objectID": "CSC4001-S18-Toasters.html#sequence-diagram-notation",
     "href": "CSC4001-S18-Toasters.html#sequence-diagram-notation",
     "title": "System Design",
     "section": "Sequence diagram notation",
-    "text": "Sequence diagram notation\nLoops and alternative routes are denoted by boxes and a small label in the top left hand corner showing if it is a loop statement or an alternative route"
+    "text": "Sequence diagram notation\n\n\n\n\n\n\nsequenceDiagram\n  autonumber\n  actor User\n  participant Toaster\n  participant Drone as Bread Delivery Drone Control Subsystem\n  participant Api as Image generation API\n  participant Toastiness as Toastiness Determination Subsystem\n  participant Image as Fire Brand Subsystem\n  User -&gt;&gt; Toaster: Press start\n  Toaster -&gt;&gt; Drone: Collect bread request\n  Drone --&gt; Toaster: Deliver bread\n  User -&gt;&gt; Toaster: Select toastiness\n  Toaster -&gt;&gt; Toastiness: Set toastiness value\n  Toastiness -&gt;&gt; Toastiness: Check desired toastiness\n  Toastiness -&gt;&gt; Toaster: Desired toastiness reached\n  User -&gt;&gt; Toaste:r Enter image prompt\n  Toaster -&gt;&gt; Api: Prompt LLM to generate pixel art\n  Api -&gt;&gt; Toaster: Return generated pixel art\n  Toaster -&gt;&gt; Image: Send pixel art\n  Image -&gt;&gt; Image: Actuate and heat pins, burn image into toast\n  Image -&gt;&gt; Toaster: Image burning complete\n  Toaster --&gt; User: Eject toast"
   },
   {
     "objectID": "CSC4001-S18-Toasters.html#communication-diagram",
@@ -2069,7 +2069,7 @@
     "href": "CSC4001-S18-Toasters.html#use-case-diagram",
     "title": "System Design",
     "section": "Use Case Diagram",
-    "text": "Use Case Diagram\n\nUse case diagrams map different user journeys throughout the system, detailing the main interactions between each user and the system.\nIt also shows where 2 or more users might interact with the same system component at the same time."
+    "text": "Use Case Diagram\n\nUse case diagrams map different user journeys throughout the system, detailing the main interactions between each user and the system.\nThey also show where 2 or more users might interact with the same system component at the same time."
   },
   {
     "objectID": "CSC4001-S18-Toasters.html#use-case-diagram-1",

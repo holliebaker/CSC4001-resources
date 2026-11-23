@@ -128,6 +128,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -419,14 +422,53 @@ CSC4001: Computer Systems and Architecture
 <h2>Sequence diagram</h2>
 <ul>
 <li>Sequence diagrams show the order that messages flow throughout a digital system, and which objects they interact with</li>
-<li>Sequence diagram notation</li>
+<li>Sequence diagram notation
+<ul>
+<li>Objects are displayed in columns with a vertical line extending downwards</li>
+<li>Messages are represented by arrows drawn horizontally.</li>
 <li>Messages can also be returned to the same system object - so objects can message themselves (e.g.&nbsp;timer function)</li>
 <li>Asynchronous messages are denoted by an open arrowhead. These messages do not require a response before the next message is sent</li>
+<li>Loops and alternative routes are denoted by boxes and a small label in the top left hand corner showing if it is a loop statement or an alternative route</li>
+</ul></li>
+<li>The diagram should be read from top to bottom. e.j</li>
 </ul>
 </section>
 <section id="sequence-diagram-notation" class="slide level2">
 <h2>Sequence diagram notation</h2>
-<p>Loops and alternative routes are denoted by boxes and a small label in the top left hand corner showing if it is a loop statement or an alternative route</p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+
+<pre class="mermaid mermaid-js">sequenceDiagram
+  autonumber
+  actor User
+  participant Toaster
+  participant Drone as Bread Delivery Drone Control Subsystem
+  participant Api as Image generation API
+  participant Toastiness as Toastiness Determination Subsystem
+  participant Image as Fire Brand Subsystem
+  User -&gt;&gt; Toaster: Press start
+  Toaster -&gt;&gt; Drone: Collect bread request
+  Drone --&gt; Toaster: Deliver bread
+  User -&gt;&gt; Toaster: Select toastiness
+  Toaster -&gt;&gt; Toastiness: Set toastiness value
+  Toastiness -&gt;&gt; Toastiness: Check desired toastiness
+  Toastiness -&gt;&gt; Toaster: Desired toastiness reached
+  User -&gt;&gt; Toaste:r Enter image prompt
+  Toaster -&gt;&gt; Api: Prompt LLM to generate pixel art
+  Api -&gt;&gt; Toaster: Return generated pixel art
+  Toaster -&gt;&gt; Image: Send pixel art
+  Image -&gt;&gt; Image: Actuate and heat pins, burn image into toast
+  Image -&gt;&gt; Toaster: Image burning complete
+  Toaster --&gt; User: Eject toast 
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 </section>
 <section id="communication-diagram" class="slide level2">
 <h2>Communication diagram</h2>
@@ -439,7 +481,7 @@ CSC4001: Computer Systems and Architecture
 <h2>Use Case Diagram</h2>
 <ul>
 <li><p>Use case diagrams map different user journeys throughout the system, detailing the main interactions between each user and the system.</p></li>
-<li><p>It also shows where 2 or more users might interact with the same system component at the same time.</p></li>
+<li><p>They also show where 2 or more users might interact with the same system component at the same time.</p></li>
 </ul>
 </section>
 <section id="use-case-diagram-1" class="slide level2">
