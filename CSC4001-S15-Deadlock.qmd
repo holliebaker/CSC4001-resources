@@ -448,7 +448,6 @@ Circular dependencies are no longer possible.
 
 Process protection
 
-::: notes
 ## Dijkstra's Banker Algorithm
 
 - Deadlock prevention algorithm based on the idea of a banker lending money.
@@ -645,7 +644,6 @@ A little aside, for those who are interested. Explaining how a HDD works.
 - In effect, the high priority process has been given **lower priority** than the low priority process.
 
 This situation is called **priority inversion**.
-:::
 
 ## Next time
 
