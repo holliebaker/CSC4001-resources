@@ -59,7 +59,7 @@ fig-alt="Picture of an AI toaster with the text 'AI slop detected' edited on the
 
 ::: {.cell-output-display}
 
-![A graphical chart showing toast doneness levels from A1 to I9, ranging from lightly toasted bread to extremely burnt toast.](./assets/toast-graph-meme.jpg){fig-align="center" width="80%"}
+!["A graphical chart showing toast doneness levels from A1 to I9, ranging from lightly toasted bread to extremely burnt toast. Captioned The bread industry has finally released its periodic table"](./assets/toast-graph-meme.jpg){fig-align="center" width="80%"}
 
 :::
 
@@ -85,7 +85,7 @@ What the system should do
 
 - Toaster must be able to accommodate 2 slices of standard sized bread
 
-- Toaster must be able to detect the level of toastiness 
+- Toaster must be able to detect the level of toastiness, colour, texture, and structural integrity
 
 - Automatically switches off when toast reaches the correct level of toastiness
 
@@ -151,9 +151,9 @@ Hollie, if you are reading this, I am going to put some toast through the braill
 
 - Must be able to scorch a dotty image onto the toast
 
-- Must still be able toaccommodate ordinary paper so the user can also print documents.
+- Must still be able to accommodate ordinary paper so the user can also print documents.
 
-## Nonfunctional
+## Non-functional
 
 - Must not catch on fire
 
@@ -161,7 +161,12 @@ Hollie, if you are reading this, I am going to put some toast through the braill
 
 - Must operate below a certain noise threshold
 
-- - Must be inexpensive enough to be affordable by the average 6-person household
+- Must be inexpensive enough to be affordable by the average 6-person household
+
+::: cell-output-display
+![](./assets/braille-angry-face.png){fig-align="center"
+fig-alt="Picture of the braille angry face" width="40%"}
+:::
 
 ## Affordable Braille, you say?
 
@@ -209,6 +214,14 @@ Hollie, if you are reading this, I am going to put some toast through the braill
 - Toaster spring must be correctly callibrated to eject the toast, fling it into the air, and ensure that it lands on the plate.
 
 - Toast must not be hurled out of the machine at such a force that it could inflict injury to users. 
+
+## 3D Printed toast decoration
+
+- Must use food grade filament to ensure edibility
+
+- Must be capable of printing a smaller toast design inside a larger toast design, creating a recursive toast
+
+- Must be able to generate personalised toast designs based on user data
 
 # Planning
 
@@ -287,7 +300,7 @@ sequenceDiagram
   Toaster ->> Toastiness: Set toastiness value
   Toastiness ->> Toastiness: Check desired toastiness
   Toastiness ->> Toaster: Desired toastiness reached
-  User ->> Toaste:r Enter image prompt
+  User ->> Toaster: Enter image prompt
   Toaster ->> Api: Prompt LLM to generate pixel art
   Api ->> Toaster: Return generated pixel art
   Toaster ->> Image: Send pixel art
