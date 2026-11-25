@@ -223,6 +223,8 @@ fig-alt="Picture of the braille angry face" width="40%"}
 
 - Must be able to generate personalised toast designs based on user data
 
+> You know it's a good idea, they already did something a bit similar: [Pancake Bot](https://pancakebot.com/)
+
 # Planning
 
 ## Waterfall methodology
@@ -313,7 +315,7 @@ sequenceDiagram
 
 - Communication diagrams are somewhere between a sequence diagram and a conceptual ERD diagram.
 
-- They show the direction and flow of information through the system, but lays out the objects within a system in the style of an ERD
+- They show the direction and flow of information through the system, but lay out the objects within a system in the style of an ERD
 
 ## Use Case Diagram 
 
@@ -357,13 +359,16 @@ sequenceDiagram
 
 - Including a heat reenforced camera to monitor the toast
 
-- Onboard storage for different images for toast patterns
+- LLM integration for AI slop on toast
+- 3D print or dotty graphics capabilities
 
 - A drone that flies around the kitchen
 
 And Ha-Satan knows how many other features we’ve come up with
 
-Total cost to customer: **£3,500**
+Total cost to customer: **£3,499.99* for the basic model, plus **2,495** for the Braille printer addition
+
+It's a deal, it's a steal, it's the sale of the century.
 
 ## Is that a good deal?
 
