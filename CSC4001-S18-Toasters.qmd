@@ -5,6 +5,7 @@ date: ""
 format:
   revealjs:
     theme: simple
+    smaller: true
     css: ./style.css
 ---
 
@@ -57,11 +58,7 @@ fig-alt="Picture of an AI toaster with the text 'AI slop detected' edited on the
 
 ## How do you like your toast?
 
-::: {.cell-output-display}
-
 !["A graphical chart showing toast doneness levels from A1 to I9, ranging from lightly toasted bread to extremely burnt toast. Captioned The bread industry has finally released its periodic table"](./assets/toast-graph-meme.jpg){fig-align="center" width="80%"}
-
-:::
 
 ## Let's make a list of requirements
 
@@ -217,17 +214,26 @@ fig-alt="Picture of the braille angry face" width="40%"}
 
 ## 3D Printed toast decoration
 
-- Must use food grade filament to ensure edibility
+- Must use food grade filament to ensure Ed-ibility
 
-- Must be capable of printing a smaller toast design inside a larger toast design, creating a recursive toast
+- Must be capable of printing a smaller toast design inside a larger toast design, creating a recursive toast. An edible fractal, if you will.
 
 - Must be able to generate personalised toast designs based on user data
 
 > You know it's a good idea, they already did something a bit similar: [Pancake Bot](https://pancakebot.com/)
 
-# Planning
+# Software development methodologies
 
 ## Waterfall methodology
+
+::: cell-output-display
+![](./assets/waterfall.png){fig-align="center"
+fig-alt="Diagram representing waterfall methodology" width="40%"}
+:::
+
+::: notes
+TO DO I copy/pasted Ed's image, please can you write out all the text that appears on that diagram? Thanks! ))
+:::
 
 ## Advantages
 
@@ -251,10 +257,35 @@ fig-alt="Picture of the braille angry face" width="40%"}
 
 ## Agile Methodology
 
+::: cell-output-display
+![](./assets/agile.png){fig-align="center"
+fig-alt="Diagram representing agile methodology" width="40%"}
+:::
+
+::: notes
+TO DO as above, image description, please, and thank you.
+:::
+
+## The Agile Manifesto
+
+- Individuals and interactions over processes and tools
+- Working software over comprehensive documentation
+- Customer collaboration over contract negotiation
+- Responding to change over following a plan
+
+## SCRUM
+
+- Teams prioritise and break down projects into goals
+- Work in time-boxed, iterative cycles called sprints
+- Size of goals are estimated in "points", using Fibbonacci numbers
+- Teams estimate how many "points" they can complete in one sprint, aiming for no rollover.
+- Teams of 7 plus or minus two
+- Daily "stand-up" meetings, sprint planning, review and retrospectives.
+- Teams are self managing and have all the skills to do the job, scrum master's job is not to manage but remove barriers. 
+
 ## Advantages
 
 - High Adaptability: Teams can quickly and easily respond to changing requirements, market conditions, or customer feedback, even late in development.
-
 - Reduced Risk: Frequent delivery of working increments allows defects and problems to be detected and fixed early, preventing minor issues from escalating.
 
 - Increased Team Morale: Self-organizing teams have greater autonomy and ownership, leading to higher engagement and productivity.
@@ -267,11 +298,145 @@ fig-alt="Picture of the braille angry face" width="40%"}
 
 - High Dependency on Customer: Success relies heavily on the Product Owner or client being available and committed to providing timely, clear feedback throughout every iteration.
 
-## Design
+## Not a Panacea
+
+Usually a mix of both is used. "Scrum, but". 
+
+# Design
+
+## Entity relationship diagrams
+
+- Entities represented by boxes
+- Lines connecting boxes represent relationships
+- arrowheads tell us if the relationship is optional, one, or many.
+- Can have high level conceptual or low level physical diagrams
+- Widely used in relational database schema design.
+
+::: {hidden=true}
+```{mermaid}
+```
+This is a horrible hack: since I manually imported Mermaid 12, the first diagram would fail to load, saying it could not recognise diagram type. So I will load an empty diagram and then hide it. It's too late to figure out why it's broken.
+:::
 
 ## Conceptual diagram
 
-## Physical Diagram
+```{mermaid}
+erDiagram
+  USER }|--o{ PROMPT : creates
+  PROMPT ||--|{ IMAGE : generates
+  IMAGE }o--o{ USER : returnedTo
+  USER ||--|| TIER : belongsTo
+```
+
+::: notes
+How to read the diagram:
+line represents 1, crows foot represents many, 0 represents optional relationship, label on line gives us contextual information
+Did I normalise this correctly? Ed?
+:::
+
+---
+
+
+```{mermaid}
+---
+config:
+  layout: elk.rectpacking
+---
+erDiagram
+  USER {
+    int user_id PK
+    string username
+    string password
+    date account_created
+    int tier FK
+    int tokens_used
+    bool subscription_paid
+    bool live
+  }
+  PROMPT {
+    int prompt_id PK
+    string text
+    date created_at
+  }
+  IMAGE {
+    int image_id PK
+    string base64
+    int prompt_id FK  
+  }
+  TIER {
+    int tier_id PK
+    int tokens_per_month
+    int price
+  }  
+  USER }|--o{ PROMPT : ""
+  PROMPT ||--|{ IMAGE : ""
+  IMAGE }o--o{ USER : ""
+  USER ||--|| TIER : ""
+```
+
+---
+
+
+```{mermaid}
+---
+config:
+  layout: elk.rectpacking % this compresses the diagram so it fits neatly on screen
+---
+erDiagram
+  USER }|--o| USER_PROMPT : ""
+  USER_PROMPT |o--o{ PROMPT : ""
+  PROMPT ||--|{ IMAGE : ""
+  IMAGE }o--o| USER_IMAGE : ""
+  USER_IMAGE |o--o{ USER : ""
+  USER ||--|| TIER : ""
+  USER {
+    int user_id PK
+    string username
+    string password
+    date account_created
+    int tier FK
+    int tokens_used
+    bool subscription_paid
+    bool live
+  }
+  PROMPT {
+    int prompt_id PK
+    string text
+    date created_at
+  }
+  IMAGE {
+    int image_id PK
+    string base64
+    int prompt_id FK  
+  }
+  TIER {
+    int tier_id PK
+    int tokens_per_month
+    int price
+  }  
+  USER_PROMPT {
+    int user_id FK
+    int prompt_id FK
+  }
+  USER_IMAGE {
+    int user_id FK
+    int image_id FK
+  }
+```
+
+::: notes
+Foreign keys are good! Nobody likes orphan data.
+Patient appointment notes with no patient? NHS mandatory dataset values that don't actually map to anything?
+not null fields are nice, also. how about an appointment with no date?
+and live fields good too. what about when someone leaves, their account is deleted, and suddenly all those medical record accesses were done by a random number!
+End Hollie's working in healthcare IT side rant. for more database horror stories, please see Ed. He literally wrote an entire module about it.
+:::
+
+## Here endeth the databases side rant
+
+::: notes
+Because Ed literally has a whole module about it. You're gonna love it, especially the normalisation. ;)
+:::
 
 ## Sequence diagram
 
@@ -282,7 +447,7 @@ fig-alt="Picture of the braille angry face" width="40%"}
   - Messages can also be returned to the same system object - so objects can message themselves (e.g. timer function) 
   - Asynchronous messages are denoted by an open arrowhead. These messages do not require a response before the next message is sent
   - Loops and alternative routes are denoted by boxes and a small label in the top left hand corner showing if it is a loop statement or an alternative route
-- The diagram should be read from top to bottom. e.j
+- The diagram should be read from top to bottom.
 
 ## Sequence diagram notation
 
@@ -325,17 +490,13 @@ sequenceDiagram
 
 ## Use Case Diagram 
 
-- Stick figures are used to show users within the system
+- Stick figures are used to denote users within the system
 
-- Ovals are used to show system interaction points, they are not detailed software just descriptions of tasks users will do within a system
-
-## Use Case Diagram 
+- Ovals are used to show system interaction points, they are not detailed software just descriptions of tasks users will complete within a system
 
 - All system objects should be contained within a box to show this is the system they are interacting with. All users should be external to that system.
 
 - Users are connected to these system objects via lines. There is no given order to the interactions listed.
-
-## Use Case Diagram 
 
 - System objects can have an extend or an include.
 
@@ -343,15 +504,29 @@ sequenceDiagram
 
   - `<<include>>` is where a use case requires another interaction to function properly
 
-- The direction of the arrow shows the direction of the user journey so an invalid password goes to the user, buying a product takes the user to a login page
-
-## Use Case Diagram 
-
 - You can also show a mixture of generalised and child uses, where children either adopt parts of the parent or override parts of the parent.
 
-- This example is where two different search categories change the behaviour of the parent
+## Use case diagram
 
-## Smart Toaster UML
+```{mermaid}
+usecase-beta
+direction LR
+actor U("Hungry user")
+systemBoundary "AI Toaster"
+  App("Intuitive Mobile App")
+  Toastiness("Toastiness Determination Subsystem")
+  Drone("Bread delivery drone")
+  Braille("Braille Fire Brand")
+  Print("Edible 3D Print Fractal")
+  TTP("Toaster to plate missile system")
+end
+User --> App
+App --> Drone
+Drone --> Toastiness
+App ..> : extend Braille
+App ..> : extend Print
+User ..> : include TTP
+```
 
 ## Results
 
@@ -360,15 +535,16 @@ sequenceDiagram
 - Including a heat reenforced camera to monitor the toast
 
 - LLM integration for AI slop on toast
+
 - 3D print or dotty graphics capabilities
 
 - A drone that flies around the kitchen
 
 And Ha-Satan knows how many other features we’ve come up with
 
-Total cost to customer: **£3,499.99* for the basic model, plus **2,495** for the Braille printer addition
+Total cost to customer: only **£3,499.99** for the basic model, plus **2,495** for the Braille printer addition
 
-It's a deal, it's a steal, it's the sale of the century.
+> It's a deal, it's a steal, it's the sale of the century.
 
 ## Is that a good deal?
 
@@ -383,3 +559,26 @@ Is £3500 really an appropriate cost for a toaster?? When you can just buy one o
 
 ## Everything went wrong
 
+- From the requirements stage...
+
+  > Note to self: don't have a competition with another tutor to see who can think of the most ridiculous requirements. If it's a serious project, anyway. 
+
+- Once we start adding unnecesary elements to the end product, it is destined to fail from the start.
+
+- "Fail to prepare; prepare to fail", but failing to prepare properly is just as bad. 
+
+## Validation and verification
+
+- Verification: are we building it right (testing)
+
+- Validation: are we building the right thing?
+
+## Well that was fun* now for the serious part...
+
+*Fun, for some definition of fun. 
+
+# The S2 Assessment is out!
+
+Who's excited?
+
+<script src=" https://cdn.jsdelivr.net/npm/mermaid@12.4.0/dist/mermaid.min.js"></script>
